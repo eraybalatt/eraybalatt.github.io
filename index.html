@@ -126,6 +126,8 @@
   .cover-d{background:linear-gradient(135deg,#22d3ee,#1e90e8)}
   .cover-e{background:linear-gradient(135deg,#2f8fe6,#0a2f5c)}
   .cover-f{background:linear-gradient(135deg,#7dd3fc,#0c3f80)}
+  .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .thumb .play,.thumb .pill{z-index:2}
 
   .embed-note{border:1px dashed var(--card-brd);border-radius:var(--radius);padding:20px;color:var(--muted);text-align:center;background:var(--card);font-size:.9rem}
   .embed-note code{color:var(--c2)}
@@ -143,8 +145,13 @@
   footer{text-align:center;padding:38px 20px;color:var(--muted);border-top:1px solid var(--card-brd);font-size:.86rem}
   footer .brand-sm{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
 
-  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+  .reveal{opacity:0;transform:translateY(32px) scale(.98);transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1)}
   .reveal.show{opacity:1;transform:none}
+  .grid .reveal:nth-child(2){transition-delay:.09s}
+  .grid .reveal:nth-child(3){transition-delay:.18s}
+  .grid .reveal:nth-child(4){transition-delay:.27s}
+  .grid .reveal:nth-child(5){transition-delay:.36s}
+  .grid .reveal:nth-child(6){transition-delay:.45s}
 
   @media(max-width:900px){
     .g-3,.g-gallery{grid-template-columns:repeat(2,1fr)}
@@ -268,9 +275,9 @@
     <h2 class="sec-title reveal" data-en="AI Music Videos" data-tr="AI Müzik Videoları">AI Music Videos</h2>
     <p class="sec-sub reveal" data-en="Original songs and artist videos, scored with Suno and directed end-to-end." data-tr="Suno ile bestelenmiş, baştan sona yönetilmiş özgün şarkılar ve sanatçı videoları.">Original songs and artist videos, scored with Suno and directed end-to-end.</p>
     <div class="grid g-3">
-      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-a"><span class="play"></span><span class="pill">Music Video</span></div><div class="card-body"><h3>Diyardan Diyara</h3><p data-en="AI Music Video · for @cakaldoksanbes" data-tr="AI Müzik Video · @cakaldoksanbes için">AI Music Video · for @cakaldoksanbes</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-d"><span class="play"></span><span class="pill">Music Video</span></div><div class="card-body"><h3>Last Stop: Paris</h3><p data-en="AI Music Video · 2026" data-tr="AI Müzik Video · 2026">AI Music Video · 2026</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-b"><span class="play"></span><span class="pill">Visual</span></div><div class="card-body"><h3>Polémique — Paris</h3><p data-en="AI Visual Scene · 2026" data-tr="AI Görsel Sahne · 2026">AI Visual Scene · 2026</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=fKDGLdquHj4" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/fKDGLdquHj4/hqdefault.jpg" alt="Diyardan Diyara" loading="lazy" /><span class="play"></span><span class="pill">Music Video</span></div><div class="card-body"><h3>Diyardan Diyara</h3><p data-en="AI Music Video · for @cakaldoksanbes" data-tr="AI Müzik Video · @cakaldoksanbes için">AI Music Video · for @cakaldoksanbes</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=GCPRUwIEH4o" target="_blank" rel="noopener"><div class="thumb cover-d"><img src="https://i.ytimg.com/vi/GCPRUwIEH4o/hqdefault.jpg" alt="Last Stop: Paris" loading="lazy" /><span class="play"></span><span class="pill">Music Video</span></div><div class="card-body"><h3>Last Stop: Paris</h3><p data-en="AI Music Video · 2026" data-tr="AI Müzik Video · 2026">AI Music Video · 2026</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=JBihKmSdyDI" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="https://i.ytimg.com/vi/JBihKmSdyDI/hqdefault.jpg" alt="Polémique — Paris" loading="lazy" /><span class="play"></span><span class="pill">Visual</span></div><div class="card-body"><h3>Polémique — Paris</h3><p data-en="AI Visual Scene · 2026" data-tr="AI Görsel Sahne · 2026">AI Visual Scene · 2026</p></div></a>
     </div>
   </section>
 
@@ -291,9 +298,9 @@
     <h2 class="sec-title reveal" data-en="Short Films" data-tr="Kısa Filmler">Short Films</h2>
     <p class="sec-sub reveal" data-en="Narrative short films — both AI and live-action direction." data-tr="Anlatı kısa filmleri — hem AI hem canlı çekim yönetimi.">Narrative short films — both AI and live-action direction.</p>
     <div class="grid g-3">
-      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-f"><span class="play"></span><span class="pill">🏆 Selection</span></div><div class="card-body"><h3>Die Post</h3><p data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024">Short Film · Erciyes University, 2024</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-a"><span class="play"></span></div><div class="card-body"><h3>Boomerang</h3><p data-en="Short Movie" data-tr="Kısa Film">Short Movie</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><span class="play"></span></div><div class="card-body"><h3>Run or Run</h3><p data-en="Short Movie" data-tr="Kısa Film">Short Movie</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" target="_blank" rel="noopener"><div class="thumb cover-f"><img src="https://i.ytimg.com/vi/kvaQqoMVsVA/hqdefault.jpg" alt="Die Post" loading="lazy" /><span class="play"></span><span class="pill">🏆 Selection</span></div><div class="card-body"><h3>Die Post</h3><p data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024">Short Film · Erciyes University, 2024</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/oH3zKef9h0Q/hqdefault.jpg" alt="Boomerang" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Boomerang</h3><p data-en="Short Movie · 4:38" data-tr="Kısa Film · 4:38">Short Movie · 4:38</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/-XgWX9IR5xE/hqdefault.jpg" alt="Run or Run" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Run or Run</h3><p data-en="Short Movie · 2:34" data-tr="Kısa Film · 2:34">Short Movie · 2:34</p></div></a>
     </div>
   </section>
 
@@ -301,27 +308,25 @@
   <section id="brands">
     <div class="eyebrow reveal" data-en="Selected Work" data-tr="Seçili İşler">Selected Work</div>
     <h2 class="sec-title reveal" data-en="Brands &amp; Projects" data-tr="Markalar &amp; Projeler">Brands &amp; Projects</h2>
-    <p class="sec-sub reveal" data-en="Commercial product films, UGC and creative projects I've directed." data-tr="Yönettiğim ticari ürün filmleri, UGC ve yaratıcı projeler.">Commercial product films, UGC and creative projects I've directed.</p>
-    <div class="grid g-clients">
-      <div class="client reveal"><span class="name">CITRINE</span><span class="kind" data-en="Creative label" data-tr="Yaratıcı etiket">Creative label</span></div>
-      <div class="client reveal"><span class="name">EXOTIC</span><span class="kind" data-en="Beverage campaign" data-tr="İçecek kampanyası">Beverage campaign</span></div>
-      <div class="client reveal"><span class="name">BANEVA</span><span class="kind" data-en="Artist visuals" data-tr="Sanatçı görselleri">Artist visuals</span></div>
-      <div class="client reveal"><span class="name">Studio Atelia</span><span class="kind" data-en="Production visuals" data-tr="Prodüksiyon görselleri">Production visuals</span></div>
+    <p class="sec-sub reveal" data-en="Original projects and creative work I direct end-to-end." data-tr="Baştan sona yönettiğim özgün projeler ve yaratıcı işler.">Original projects and creative work I direct end-to-end.</p>
+    <div class="grid g-3">
+      <div class="card reveal"><div class="card-body" style="padding:24px 22px"><h3 style="font-family:'Space Grotesk';font-size:1.3rem;margin-bottom:9px">CITRINE</h3><p style="font-size:.92rem;line-height:1.6" data-en="My own creative label — original AI films, music videos and concept visuals released under the CITRINE name, built end-to-end with a custom generative pipeline." data-tr="Kendi yaratıcı etiketim — CITRINE adıyla, baştan sona özel bir üretken yapay zekâ hattıyla yayınladığım özgün AI filmler, müzik videoları ve konsept görseller.">My own creative label — original AI films, music videos and concept visuals released under the CITRINE name, built end-to-end with a custom generative pipeline.</p></div></div>
+      <div class="card reveal"><div class="card-body" style="padding:24px 22px"><h3 style="font-family:'Space Grotesk';font-size:1.3rem;margin-bottom:9px">BANEVA</h3><p style="font-size:.92rem;line-height:1.6" data-en="Concert visuals for the artist BANEVA — a four-era reconstruction revisualizing seven years of their career through a bespoke AI workflow. My most-watched piece, 32K+ plays, directed as ÆRAY." data-tr="BANEVA için konser görselleri — bir sanatçının 7 yıllık kariyerini özel bir AI hattıyla yeniden görselleştiren 4 dönemlik bir rekonstrüksiyon. 32K+ izlenmeyle en çok izlenen işim, ÆRAY imzalı.">Concert visuals for the artist BANEVA — a four-era reconstruction revisualizing seven years of their career through a bespoke AI workflow. My most-watched piece, 32K+ plays, directed as ÆRAY.</p></div></div>
+      <div class="card reveal"><div class="card-body" style="padding:24px 22px"><h3 style="font-family:'Space Grotesk';font-size:1.3rem;margin-bottom:9px" data-en="Music Video Direction" data-tr="Müzik Video Yönetmenliği">Music Video Direction</h3><p style="font-size:.92rem;line-height:1.6" data-en="End-to-end AI music videos for independent artists — including “Diyardan Diyara” and “Last Stop: Paris” — written, directed, scored with Suno and finished in Premiere Pro." data-tr="Bağımsız sanatçılar için baştan sona AI müzik videoları — “Diyardan Diyara” ve “Last Stop: Paris” dahil — yazım, yönetim, Suno ile müzik ve Premiere Pro'da kurgu.">End-to-end AI music videos for independent artists — including “Diyardan Diyara” and “Last Stop: Paris” — written, directed, scored with Suno and finished in Premiere Pro.</p></div></div>
     </div>
   </section>
 
   <!-- SHORTS -->
   <section id="shorts">
-    <div class="eyebrow reveal" data-en="04 — Vertical" data-tr="04 — Dikey">04 — Vertical</div>
-    <h2 class="sec-title reveal" data-en="Shorts / Reels" data-tr="Shorts / Reels">Shorts / Reels</h2>
-    <p class="sec-sub reveal" data-en="Short vertical films for Reels, Shorts &amp; TikTok." data-tr="Reels, Shorts ve TikTok için kısa dikey filmler.">Short vertical films for Reels, Shorts &amp; TikTok.</p>
-    <div class="grid g-shorts">
-      <a class="card reveal" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener"><div class="thumb v cover-a"><span class="play"></span></div><div class="card-body"><h3>Eurotrip · Paris</h3></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener"><div class="thumb v cover-b"><span class="play"></span></div><div class="card-body"><h3>Golden Hour</h3></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener"><div class="thumb v cover-c"><span class="play"></span></div><div class="card-body"><h3>Switzerland</h3></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener"><div class="thumb v cover-e"><span class="play"></span></div><div class="card-body"><h3>The Last Feast</h3></div></a>
+    <div class="eyebrow reveal" data-en="04 — Short Pieces" data-tr="04 — Kısa Parçalar">04 — Short Pieces</div>
+    <h2 class="sec-title reveal" data-en="Short Pieces &amp; Visuals" data-tr="Kısa Parçalar &amp; Görseller">Short Pieces &amp; Visuals</h2>
+    <p class="sec-sub reveal" data-en="Quick AI visual experiments and bite-size films." data-tr="Hızlı AI görsel denemeleri ve kısacık filmler.">Quick AI visual experiments and bite-size films.</p>
+    <div class="grid g-3">
+      <a class="card reveal" href="https://www.youtube.com/watch?v=P6qFzKNRHz4" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/P6qFzKNRHz4/hqdefault.jpg" alt="The Last Feast" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>The Last Feast</h3><p data-en="AI Short · 0:44" data-tr="AI Kısa · 0:44">AI Short · 0:44</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="https://i.ytimg.com/vi/rYHPU-_RqOc/hqdefault.jpg" alt="Switzerland in One Hour" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Switzerland in One Hour 🇨🇭</h3><p data-en="AI Short · 0:45" data-tr="AI Kısa · 0:45">AI Short · 0:45</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=IADNypjkZGg" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/IADNypjkZGg/hqdefault.jpg" alt="Midjourney x Suno" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Midjourney × Suno</h3><p data-en="AI Visual · soundtrack" data-tr="AI Görsel · müzik">AI Visual · soundtrack</p></div></a>
     </div>
-    <p class="embed-note reveal" style="margin-top:22px" data-en="▶ Drop me the exact YouTube / Instagram links and I'll embed real players &amp; thumbnails everywhere above." data-tr="▶ YouTube / Instagram linklerini ver, yukarıdaki her yere gerçek oynatıcı ve kapakları gömeyim.">▶ Drop me the exact YouTube / Instagram links and I'll embed real players &amp; thumbnails everywhere above.</p>
+    <p class="embed-note reveal" style="margin-top:22px" data-en="📱 More vertical reels on Instagram — @documenteray" data-tr="📱 Daha fazla dikey reel Instagram'da — @documenteray"><a href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener" style="color:var(--c2)">📱 More vertical reels on Instagram — @documenteray</a></p>
   </section>
 
   <!-- CONTACT -->
