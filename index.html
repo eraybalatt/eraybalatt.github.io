@@ -32,7 +32,7 @@
   a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
 
   .blobs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-  .blob{position:absolute;width:46vw;height:46vw;border-radius:50%;filter:blur(95px);opacity:.5;animation:float 18s ease-in-out infinite}
+  .blob{position:absolute;width:46vw;height:46vw;border-radius:50%;filter:blur(110px);opacity:.32;animation:float 18s ease-in-out infinite}
   .blob.b1{background:var(--c3);top:-12%;left:-8%}
   .blob.b2{background:var(--c2);top:30%;right:-12%;animation-delay:-4s}
   .blob.b3{background:var(--c5);bottom:-15%;left:18%;animation-delay:-8s}
@@ -61,7 +61,7 @@
   .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:90px}
   .hero .eyebrow{margin-bottom:16px}
   .hero-logo{width:min(600px,88%);filter:drop-shadow(0 14px 55px rgba(56,189,248,.5));margin-bottom:10px}
-  .hero h1{font-size:clamp(1.25rem,3vw,1.8rem);font-weight:600;color:var(--text);margin-bottom:14px;max-width:720px}
+  .hero h1{font-size:clamp(1.55rem,3.6vw,2.2rem);font-weight:600;color:var(--text);margin-bottom:14px;max-width:760px}
   .hero p.lead{color:var(--muted);max-width:600px;margin-bottom:26px;font-size:1.02rem}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:32px}
   .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:.98rem;cursor:pointer;transition:transform .2s,box-shadow .2s;border:none}
@@ -139,8 +139,8 @@
 
   .contact{text-align:center;background:var(--bg-soft);border:1px solid var(--card-brd);border-radius:28px;padding:58px 24px}
   .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
-  .social{display:inline-flex;align-items:center;gap:9px;padding:12px 19px;border-radius:999px;border:1px solid var(--card-brd);background:var(--card);transition:.2s;font-size:.93rem}
-  .social:hover{transform:translateY(-3px);border-color:var(--c2)}
+  .social{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:13px;border:1px solid var(--card-brd);background:linear-gradient(180deg,rgba(125,211,252,.05),rgba(125,211,252,0));transition:.25s;font-family:'Space Grotesk';font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text)}
+  .social:hover{transform:translateY(-3px);border-color:var(--c2);background:linear-gradient(180deg,rgba(56,189,248,.14),rgba(56,189,248,.02));box-shadow:0 12px 32px -14px var(--c3)}
 
   footer{text-align:center;padding:38px 20px;color:var(--muted);border-top:1px solid var(--card-brd);font-size:.86rem}
   footer .brand-sm{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
@@ -235,7 +235,7 @@
         <p data-en="I study Radio &amp; Television at Erciyes University and build custom AI pipelines — Midjourney, Kling, Veo, Seedream and Suno — finished in Premiere Pro. My signature: deep-black frames and a glowing <b>light-blue</b> palette (my favorite color)."
            data-tr="Erciyes Üniversitesi'nde Radyo &amp; Televizyon okuyorum ve kendi AI prodüksiyon hatlarımı kuruyorum — Midjourney, Kling, Veo, Seedream ve Suno — Premiere Pro'da bitiriyorum. İmzam: derin siyah kareler ve parlayan <b>açık mavi</b> palet (en sevdiğim renk).">I study Radio &amp; Television at Erciyes University and build custom AI pipelines — Midjourney, Kling, Veo, Seedream and Suno — finished in Premiere Pro. My signature: deep-black frames and a glowing <b>light-blue</b> palette (my favorite color).</p>
         <ul class="hl">
-          <li><span>🏆</span><b data-en="Official Selection — Student Video Contest 2026" data-tr="Official Selection — Student Video Contest 2026">Official Selection — Student Video Contest 2026</b></li>
+          <li><span>🏆</span><b data-en="“Boomerang” — Honorable Mention, Student Video Contest 2026 (also Selected at Duemila30)" data-tr="“Boomerang” — Mansiyon, Student Video Contest 2026 (ayrıca Duemila30 Seçkisi)">“Boomerang” — Honorable Mention, Student Video Contest 2026 (also Selected at Duemila30)</b></li>
           <li><span>🎤</span><span data-en="BANEVA concert visuals — 32K+ plays (directed as ÆRAY)" data-tr="BANEVA konser görselleri — 32K+ izlenme (ÆRAY imzalı)">BANEVA concert visuals — 32K+ plays (directed as ÆRAY)</span></li>
           <li><span>🎬</span><span data-en="Director, “Die Post” short film — Erciyes University, 2024" data-tr="Yönetmen, “Die Post” kısa filmi — Erciyes Üni., 2024">Director, “Die Post” short film — Erciyes University, 2024</span></li>
           <li><span>🌍</span><span data-en="Based in Türkiye — working globally" data-tr="Türkiye merkezli — global çalışıyor">Based in Türkiye — working globally</span></li>
@@ -293,21 +293,22 @@
     <h2 class="sec-title reveal" data-en="Short Films" data-tr="Kısa Filmler">Short Films</h2>
     <p class="sec-sub reveal" data-en="Narrative short films — both AI and live-action direction." data-tr="Anlatı kısa filmleri — hem AI hem canlı çekim yönetimi.">Narrative short films — both AI and live-action direction.</p>
     <div class="grid g-3">
-      <a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" target="_blank" rel="noopener"><div class="thumb cover-f"><img src="https://i.ytimg.com/vi/kvaQqoMVsVA/hqdefault.jpg" alt="Die Post" loading="lazy" /><span class="play"></span><span class="pill">🏆 Selection</span></div><div class="card-body"><h3>Die Post</h3><p data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024">Short Film · Erciyes University, 2024</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/oH3zKef9h0Q/hqdefault.jpg" alt="Boomerang" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Boomerang</h3><p data-en="Short Movie · 4:38" data-tr="Kısa Film · 4:38">Short Movie · 4:38</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/oH3zKef9h0Q/hqdefault.jpg" alt="Boomerang" loading="lazy" /><span class="play"></span><span class="pill">🏆 Honorable Mention</span></div><div class="card-body"><h3>Boomerang</h3><p data-en="Honorable Mention · Student Video Contest 2026 · Selected at Duemila30" data-tr="Mansiyon · Student Video Contest 2026 · Duemila30 Seçkisi">Honorable Mention · Student Video Contest 2026 · Selected at Duemila30</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" target="_blank" rel="noopener"><div class="thumb cover-f"><img src="https://i.ytimg.com/vi/kvaQqoMVsVA/hqdefault.jpg" alt="Die Post" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Die Post</h3><p data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024">Short Film · Erciyes University, 2024</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/-XgWX9IR5xE/hqdefault.jpg" alt="Run or Run" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Run or Run</h3><p data-en="Short Movie · 2:34" data-tr="Kısa Film · 2:34">Short Movie · 2:34</p></div></a>
     </div>
   </section>
 
   <!-- BRANDS / CLIENTS -->
   <section id="brands">
-    <div class="eyebrow reveal" data-en="Selected Work" data-tr="Seçili İşler">Selected Work</div>
-    <h2 class="sec-title reveal" data-en="Brands &amp; Projects" data-tr="Markalar &amp; Projeler">Brands &amp; Projects</h2>
-    <p class="sec-sub reveal" data-en="Original projects and creative work I direct end-to-end." data-tr="Baştan sona yönettiğim özgün projeler ve yaratıcı işler.">Original projects and creative work I direct end-to-end.</p>
-    <div class="grid g-3">
-      <div class="card reveal"><div class="card-body" style="padding:24px 22px"><h3 style="font-family:'Space Grotesk';font-size:1.3rem;margin-bottom:9px">CITRINE</h3><p style="font-size:.92rem;line-height:1.6" data-en="My own creative label — original AI films, music videos and concept visuals released under the CITRINE name, built end-to-end with a custom generative pipeline." data-tr="Kendi yaratıcı etiketim — CITRINE adıyla, baştan sona özel bir üretken yapay zekâ hattıyla yayınladığım özgün AI filmler, müzik videoları ve konsept görseller.">My own creative label — original AI films, music videos and concept visuals released under the CITRINE name, built end-to-end with a custom generative pipeline.</p></div></div>
-      <div class="card reveal"><div class="card-body" style="padding:24px 22px"><h3 style="font-family:'Space Grotesk';font-size:1.3rem;margin-bottom:9px">BANEVA</h3><p style="font-size:.92rem;line-height:1.6" data-en="Concert visuals for the artist BANEVA — a four-era reconstruction revisualizing seven years of their career through a bespoke AI workflow. My most-watched piece, 32K+ plays, directed as ÆRAY." data-tr="BANEVA için konser görselleri — bir sanatçının 7 yıllık kariyerini özel bir AI hattıyla yeniden görselleştiren 4 dönemlik bir rekonstrüksiyon. 32K+ izlenmeyle en çok izlenen işim, ÆRAY imzalı.">Concert visuals for the artist BANEVA — a four-era reconstruction revisualizing seven years of their career through a bespoke AI workflow. My most-watched piece, 32K+ plays, directed as ÆRAY.</p></div></div>
-      <div class="card reveal"><div class="card-body" style="padding:24px 22px"><h3 style="font-family:'Space Grotesk';font-size:1.3rem;margin-bottom:9px" data-en="Music Video Direction" data-tr="Müzik Video Yönetmenliği">Music Video Direction</h3><p style="font-size:.92rem;line-height:1.6" data-en="End-to-end AI music videos for independent artists — including “Diyardan Diyara” and “Last Stop: Paris” — written, directed, scored with Suno and finished in Premiere Pro." data-tr="Bağımsız sanatçılar için baştan sona AI müzik videoları — “Diyardan Diyara” ve “Last Stop: Paris” dahil — yazım, yönetim, Suno ile müzik ve Premiere Pro'da kurgu.">End-to-end AI music videos for independent artists — including “Diyardan Diyara” and “Last Stop: Paris” — written, directed, scored with Suno and finished in Premiere Pro.</p></div></div>
+    <div class="eyebrow reveal" data-en="What I Do" data-tr="Ne Yapıyorum">What I Do</div>
+    <h2 class="sec-title reveal" data-en="Films, Music &amp; Brand Content" data-tr="Film, Müzik &amp; Marka İçeriği">Films, Music &amp; Brand Content</h2>
+    <p class="sec-sub reveal" data-en="Not just music videos — I direct documentaries, films, artist visuals and commercial content, end-to-end." data-tr="Sadece müzik videosu değil — belgesel, film, sanatçı görselleri ve ticari içeriği baştan sona yönetiyorum.">Not just music videos — I direct documentaries, films, artist visuals and commercial content, end-to-end.</p>
+    <div class="grid g-clients">
+      <div class="card reveal"><div class="card-body" style="padding:22px 20px"><h3 style="font-family:'Space Grotesk';font-size:1.18rem;margin-bottom:8px" data-en="🎬 Documentaries" data-tr="🎬 Belgeseller">🎬 Documentaries</h3><p style="font-size:.88rem;line-height:1.55" data-en="Long-form, research-driven AI documentaries — like The Charlie Kirk Case (ft. a former FBI agent) and the upcoming Antwerp Diamond Heist." data-tr="Uzun soluklu, araştırmaya dayalı AI belgeseller — Charlie Kirk Vakası (eski bir FBI ajanıyla) ve yakında Antwerp Elmas Soygunu gibi.">Long-form, research-driven AI documentaries — like The Charlie Kirk Case (ft. a former FBI agent) and the upcoming Antwerp Diamond Heist.</p></div></div>
+      <div class="card reveal"><div class="card-body" style="padding:22px 20px"><h3 style="font-family:'Space Grotesk';font-size:1.18rem;margin-bottom:8px" data-en="🎵 Music Videos" data-tr="🎵 Müzik Videoları">🎵 Music Videos</h3><p style="font-size:.88rem;line-height:1.55" data-en="Artist and original-song videos — including the BANEVA concert visuals (32K+ plays), “Diyardan Diyara” and “Last Stop: Paris.”" data-tr="Sanatçı ve özgün şarkı videoları — BANEVA konser görselleri (32K+ izlenme), “Diyardan Diyara” ve “Last Stop: Paris” dahil.">Artist and original-song videos — including the BANEVA concert visuals (32K+ plays), “Diyardan Diyara” and “Last Stop: Paris.”</p></div></div>
+      <div class="card reveal"><div class="card-body" style="padding:22px 20px"><h3 style="font-family:'Space Grotesk';font-size:1.18rem;margin-bottom:8px" data-en="📦 Brand &amp; UGC Content" data-tr="📦 Marka &amp; UGC İçeriği">📦 Brand &amp; UGC Content</h3><p style="font-size:.88rem;line-height:1.55" data-en="Product films, ads and UGC-style content for brands — AI video and motion that sells, tailored to each brand's look." data-tr="Markalar için ürün filmleri, reklam ve UGC tarzı içerik — her markanın diline uygun, satışa yönelik AI video ve motion.">Product films, ads and UGC-style content for brands — AI video and motion that sells, tailored to each brand's look.</p></div></div>
+      <div class="card reveal"><div class="card-body" style="padding:22px 20px"><h3 style="font-family:'Space Grotesk';font-size:1.18rem;margin-bottom:8px">🟡 CITRINE</h3><p style="font-size:.88rem;line-height:1.55" data-en="My own creative label — original AI films and concept work released under the CITRINE name." data-tr="Kendi yaratıcı etiketim — CITRINE adıyla yayınladığım özgün AI filmler ve konsept işler.">My own creative label — original AI films and concept work released under the CITRINE name.</p></div></div>
     </div>
   </section>
 
@@ -331,15 +332,15 @@
       <h2 class="sec-title" data-en="Let's create together 🤝" data-tr="Birlikte üretelim 🤝">Let's create together 🤝</h2>
       <p class="sec-sub" style="margin:8px auto 0" data-en="Open for commissions and brand work — music videos, documentaries, product films &amp; more." data-tr="Sipariş ve marka işlerine açığım — müzik videoları, belgeseller, ürün filmleri ve daha fazlası.">Open for commissions and brand work — music videos, documentaries, product films &amp; more.</p>
       <div class="socials">
-        <a class="social" href="mailto:eray@eraybalat.com">✉️ Email</a>
-        <a class="social" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener">▶️ YouTube</a>
-        <a class="social" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener">📸 Instagram</a>
-        <a class="social" href="https://x.com/documenteray" target="_blank" rel="noopener">𝕏 Twitter</a>
-        <a class="social" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener">🅱️ Behance</a>
-        <a class="social" href="https://filmfreeway.com/ErayBalat" target="_blank" rel="noopener">🎬 FilmFreeway</a>
-        <a class="social" href="https://medium.com/@eraybalat" target="_blank" rel="noopener">✍️ Medium</a>
-        <a class="social" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener">💼 Upwork</a>
-        <a class="social" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener">in LinkedIn</a>
+        <a class="social" href="mailto:eray@eraybalat.com">Email</a>
+        <a class="social" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener">YouTube</a>
+        <a class="social" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener">Instagram</a>
+        <a class="social" href="https://x.com/documenteray" target="_blank" rel="noopener">Twitter / X</a>
+        <a class="social" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener">Behance</a>
+        <a class="social" href="https://filmfreeway.com/ErayBalat" target="_blank" rel="noopener">FilmFreeway</a>
+        <a class="social" href="https://medium.com/@eraybalat" target="_blank" rel="noopener">Medium</a>
+        <a class="social" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener">Upwork</a>
+        <a class="social" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </section>
