@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eray Balat — Creative AI Producer & Filmmaker</title>
+<meta name="description" content="Eray Balat (documenteray) — Creative AI Producer & filmmaker. Cinematic AI music videos, documentaries, short films, product films and visuals for brands and artists worldwide." />
+
+<meta property="og:title" content="Eray Balat — Creative AI Producer & Filmmaker" />
+<meta property="og:description" content="Cinematic stories, rebuilt frame by frame with AI." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://eraybalat.com" />
+<meta property="og:image" content="https://eraybalat.com/assets/directed-by-eray.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#050a1a; --bg-soft:#0a1230;
+    --card:rgba(120,180,255,.06); --card-brd:rgba(125,211,252,.16);
+    --text:#eaf2ff; --muted:#93a7cc;
+    --c1:#7dd3fc; --c2:#38bdf8; --c3:#1e90e8; --c4:#0e6fd1; --c5:#0c3f80;
+    --grad:linear-gradient(120deg,var(--c1),var(--c2) 35%,var(--c3) 70%,var(--c4));
+    --radius:20px; --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+  a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+
+  .blobs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .blob{position:absolute;width:46vw;height:46vw;border-radius:50%;filter:blur(95px);opacity:.5;animation:float 18s ease-in-out infinite}
+  .blob.b1{background:var(--c3);top:-12%;left:-8%}
+  .blob.b2{background:var(--c2);top:30%;right:-12%;animation-delay:-4s}
+  .blob.b3{background:var(--c5);bottom:-15%;left:18%;animation-delay:-8s}
+  .blob.b4{background:#22d3ee;top:8%;right:25%;width:30vw;height:30vw;animation-delay:-12s;opacity:.3}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(4%,6%) scale(1.12)}}
+
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(5,10,26,.6);border-bottom:1px solid var(--card-brd)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:10px}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--grad);box-shadow:0 0 16px var(--c2)}
+  .nav-right{display:flex;align-items:center;gap:10px}
+  .nav-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+  .nav-links a{padding:8px 12px;border-radius:999px;font-size:.88rem;color:var(--muted);transition:.2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--card)}
+  .lang{display:inline-flex;border:1px solid var(--card-brd);border-radius:999px;overflow:hidden;background:var(--card)}
+  .lang-btn{background:none;border:none;color:var(--muted);font-family:'Space Grotesk';font-weight:600;font-size:.78rem;padding:7px 12px;cursor:pointer;transition:.2s}
+  .lang-btn.active{background:var(--grad);color:#fff}
+  .nav-toggle{display:none;background:none;border:1px solid var(--card-brd);color:var(--text);font-size:1.4rem;border-radius:12px;padding:2px 11px;cursor:pointer}
+
+  main{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  section{padding:84px 0;scroll-margin-top:80px}
+  .eyebrow{font-family:'Space Grotesk';font-size:.8rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
+  .sec-title{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:700;margin-bottom:8px}
+  .sec-sub{color:var(--muted);max-width:600px;margin-bottom:36px}
+
+  .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:90px}
+  .hero .eyebrow{margin-bottom:16px}
+  .hero-logo{width:min(600px,88%);filter:drop-shadow(0 14px 55px rgba(56,189,248,.5));margin-bottom:10px}
+  .hero h1{font-size:clamp(1.25rem,3vw,1.8rem);font-weight:600;color:var(--text);margin-bottom:14px;max-width:720px}
+  .hero p.lead{color:var(--muted);max-width:600px;margin-bottom:26px;font-size:1.02rem}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:32px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:.98rem;cursor:pointer;transition:transform .2s,box-shadow .2s;border:none}
+  .btn-grad{background:var(--grad);color:#fff;box-shadow:0 8px 30px -8px var(--c3)}
+  .btn-grad:hover{transform:translateY(-3px);box-shadow:0 14px 40px -8px var(--c3)}
+  .btn-ghost{background:var(--card);border:1px solid var(--card-brd);color:var(--text)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--c2)}
+  .creds{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:center}
+  .cred{display:inline-flex;align-items:center;gap:9px;color:var(--muted);font-size:.85rem}
+  .cred .laurel{height:48px;background:#fff;border-radius:10px;padding:5px 8px}
+  .cred .citrine{height:24px}
+  .cred-tag{font-family:'Space Grotesk';font-weight:600;color:var(--text)}
+  .verified{color:var(--c2)}
+
+  /* tools marquee */
+  .tools{border-top:1px solid var(--card-brd);border-bottom:1px solid var(--card-brd);overflow:hidden;background:rgba(10,18,48,.4)}
+  .tools-track{display:flex;gap:42px;padding:16px 0;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
+  .tools-track span{font-family:'Space Grotesk';font-weight:600;color:var(--muted);font-size:.95rem;letter-spacing:.03em}
+  .tools-track span b{color:var(--c2);margin-right:42px}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  .about-wrap{display:grid;grid-template-columns:300px 1fr;gap:42px;align-items:center}
+  .portrait{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:1/1;border:1px solid var(--card-brd);background:linear-gradient(135deg,var(--c2),var(--c5));display:flex;align-items:center;justify-content:center}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+  .portrait .ph{font-family:'Space Grotesk';font-weight:700;font-size:3rem;color:rgba(255,255,255,.85)}
+  .about-body p{color:var(--muted);margin-bottom:16px;max-width:640px}
+  .about-body p b{color:var(--text)}
+  .hl{list-style:none;display:grid;gap:9px;margin-top:6px}
+  .hl li{font-size:.92rem;color:var(--text)}
+  .hl li span{color:var(--c2);margin-right:8px}
+
+  .feature{display:grid;grid-template-columns:1.15fr 1fr;gap:34px;align-items:center;background:var(--bg-soft);border:1px solid var(--card-brd);border-radius:28px;padding:30px;overflow:hidden}
+  .feature .media{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/9;background:linear-gradient(135deg,#2f8fe6,#0a2f5c);display:flex;align-items:center;justify-content:center}
+  .feature .media .play,.thumb .play,.feature .media .badge{position:absolute}
+  .feature .media .play{width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.4)}
+  .feature .media .play::after{content:"";border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff;margin-left:4px}
+  .stat{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:5px 12px;font-size:.78rem;font-weight:600}
+  .feature h3{font-size:clamp(1.5rem,3.5vw,2.1rem);margin-bottom:6px}
+  .feature .role{font-family:'Space Grotesk';font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--c2);margin-bottom:14px}
+  .feature p{color:var(--muted);margin-bottom:18px}
+
+  .grid{display:grid;gap:22px}
+  .g-3{grid-template-columns:repeat(3,1fr)}
+  .g-2{grid-template-columns:repeat(2,1fr)}
+  .g-shorts{grid-template-columns:repeat(4,1fr)}
+  .g-gallery{grid-template-columns:repeat(3,1fr)}
+  .g-clients{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;position:relative}
+  .card:hover{transform:translateY(-6px);border-color:rgba(125,211,252,.45);box-shadow:0 20px 50px -20px rgba(2,10,40,.9)}
+  .thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;font-size:2.2rem}
+  .thumb.v{aspect-ratio:9/16} .thumb.sq{aspect-ratio:1/1}
+  .thumb .play{width:50px;height:50px;border-radius:50%;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.4)}
+  .thumb .play::after{content:"";border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff;margin-left:3px}
+  .card-body{padding:15px 17px}
+  .card-body h3{font-size:1.02rem;margin-bottom:3px}
+  .card-body p{font-size:.84rem;color:var(--muted)}
+  .pill{position:absolute;top:11px;left:11px;font-size:.68rem;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25)}
+  .pill.live{background:rgba(56,189,248,.25);border-color:var(--c2)}
+  .cover-a{background:linear-gradient(135deg,#7dd3fc,#0e6fd1)}
+  .cover-b{background:linear-gradient(135deg,#38bdf8,#0c3f80)}
+  .cover-c{background:linear-gradient(135deg,#4ea8f0,#0e6fd1)}
+  .cover-d{background:linear-gradient(135deg,#22d3ee,#1e90e8)}
+  .cover-e{background:linear-gradient(135deg,#2f8fe6,#0a2f5c)}
+  .cover-f{background:linear-gradient(135deg,#7dd3fc,#0c3f80)}
+
+  .embed-note{border:1px dashed var(--card-brd);border-radius:var(--radius);padding:20px;color:var(--muted);text-align:center;background:var(--card);font-size:.9rem}
+  .embed-note code{color:var(--c2)}
+
+  .client{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;padding:26px 18px;border:1px solid var(--card-brd);border-radius:var(--radius);background:var(--card);text-align:center;transition:.2s}
+  .client:hover{border-color:var(--c2);transform:translateY(-4px)}
+  .client .name{font-family:'Space Grotesk';font-weight:700;font-size:1.2rem;letter-spacing:.02em}
+  .client .kind{font-size:.78rem;color:var(--muted)}
+
+  .contact{text-align:center;background:var(--bg-soft);border:1px solid var(--card-brd);border-radius:28px;padding:58px 24px}
+  .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
+  .social{display:inline-flex;align-items:center;gap:9px;padding:12px 19px;border-radius:999px;border:1px solid var(--card-brd);background:var(--card);transition:.2s;font-size:.93rem}
+  .social:hover{transform:translateY(-3px);border-color:var(--c2)}
+
+  footer{text-align:center;padding:38px 20px;color:var(--muted);border-top:1px solid var(--card-brd);font-size:.86rem}
+  footer .brand-sm{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+  .reveal.show{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .g-3,.g-gallery{grid-template-columns:repeat(2,1fr)}
+    .g-shorts,.g-clients{grid-template-columns:repeat(2,1fr)}
+    .feature,.about-wrap{grid-template-columns:1fr}
+    .portrait{max-width:280px;margin:0 auto}
+  }
+  @media(max-width:680px){
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:rgba(5,10,26,.98);padding:12px;gap:4px;border-bottom:1px solid var(--card-brd)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 16px}
+    .nav-toggle{display:block}
+    .g-2{grid-template-columns:1fr}
+    section{padding:62px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="blobs" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand"><span class="dot"></span> Eray Balat</a>
+    <div class="nav-right">
+      <nav class="nav-links" id="navlinks">
+        <a href="#about"    data-en="About"      data-tr="Hakkımda">About</a>
+        <a href="#featured" data-en="Featured"   data-tr="Öne Çıkan">Featured</a>
+        <a href="#music"    data-en="Music Videos" data-tr="Müzik Video">Music Videos</a>
+        <a href="#docs"     data-en="Documentary" data-tr="Belgesel">Documentary</a>
+        <a href="#films"    data-en="Short Films" data-tr="Kısa Film">Short Films</a>
+        <a href="#brands"   data-en="Brands"     data-tr="Markalar">Brands</a>
+        <a href="#contact"  data-en="Contact"    data-tr="İletişim">Contact</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="tr">TR</button>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="eyebrow reveal" data-en="Creative AI Producer · Filmmaker" data-tr="Creative AI Producer · Yönetmen">Creative AI Producer · Filmmaker</div>
+    <img class="hero-logo reveal" src="assets/directed-by-eray-clean.png" alt="directed by Eray Balat" />
+    <h1 class="reveal" data-en="Cinematic stories, rebuilt frame by frame with AI." data-tr="Sinematik hikâyeler, kare kare yapay zekâ ile yeniden inşa edildi.">Cinematic stories, rebuilt frame by frame with AI.</h1>
+    <p class="lead reveal" data-en="I direct AI music videos, documentaries, short films and product films for brands and artists worldwide." data-tr="Markalar ve sanatçılar için AI müzik videoları, belgeseller, kısa filmler ve ürün filmleri yönetiyorum.">I direct AI music videos, documentaries, short films and product films for brands and artists worldwide.</p>
+    <div class="cta-row reveal">
+      <a href="#featured" class="btn btn-grad" data-en="Watch my work →" data-tr="İşlerimi İzle →">Watch my work →</a>
+      <a href="#contact" class="btn btn-ghost" data-en="Work with me" data-tr="Benimle çalış">Work with me</a>
+    </div>
+    <div class="creds reveal">
+      <span class="cred"><img class="laurel" src="assets/official-selection-2026.png" alt="Official Selection — Student Video Contest 2026" /></span>
+      <span class="cred"><span class="verified">✔</span> <span class="cred-tag" data-en="Verified creator @documenteray" data-tr="Doğrulanmış @documenteray">Verified creator @documenteray</span></span>
+      <span class="cred"><img class="citrine" src="assets/citrine.png" alt="CITRINE" /></span>
+    </div>
+  </section>
+</main>
+
+<!-- TOOLS MARQUEE -->
+<div class="tools" aria-hidden="true">
+  <div class="tools-track">
+    <span><b>Midjourney</b><b>Kling</b><b>Veo</b><b>Seedream</b><b>Minimax Hailuo</b><b>Suno</b><b>Magnific</b><b>Topaz</b><b>Premiere Pro</b></span>
+    <span><b>Midjourney</b><b>Kling</b><b>Veo</b><b>Seedream</b><b>Minimax Hailuo</b><b>Suno</b><b>Magnific</b><b>Topaz</b><b>Premiere Pro</b></span>
+  </div>
+</div>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="eyebrow reveal" data-en="About" data-tr="Hakkımda">About</div>
+    <h2 class="sec-title reveal">Eray Balat</h2>
+    <div class="about-wrap" style="margin-top:26px">
+      <div class="portrait reveal">
+        <img src="assets/profile.jpg" alt="Eray Balat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="ph" style="display:none">EB</div>
+      </div>
+      <div class="about-body reveal">
+        <p data-en="I'm <b>Eray Balat</b> — a Creative AI Producer and filmmaker working under the name <b>documenteray</b> (and sometimes <b>ÆRAY</b>). I treat generative AI as a camera, an edit suite and a scoring stage, directing music videos, documentaries, product films and short films for brands and artists worldwide."
+           data-tr="Ben <b>Eray Balat</b> — <b>documenteray</b> (ve bazen <b>ÆRAY</b>) adıyla çalışan bir Creative AI Producer ve film yönetmeniyim. Üretken yapay zekâyı bir kamera, kurgu masası ve müzik stüdyosu gibi kullanıyorum; markalar ve sanatçılar için müzik videoları, belgeseller, ürün filmleri ve kısa filmler yönetiyorum.">I'm <b>Eray Balat</b> — a Creative AI Producer and filmmaker working under the name <b>documenteray</b> (and sometimes <b>ÆRAY</b>). I treat generative AI as a camera, an edit suite and a scoring stage, directing music videos, documentaries, product films and short films for brands and artists worldwide.</p>
+        <p data-en="I study Radio &amp; Television at Erciyes University and build custom AI pipelines — Midjourney, Kling, Veo, Seedream and Suno — finished in Premiere Pro. My signature: deep-black frames and a glowing <b>light-blue</b> palette (my favorite color)."
+           data-tr="Erciyes Üniversitesi'nde Radyo &amp; Televizyon okuyorum ve kendi AI prodüksiyon hatlarımı kuruyorum — Midjourney, Kling, Veo, Seedream ve Suno — Premiere Pro'da bitiriyorum. İmzam: derin siyah kareler ve parlayan <b>açık mavi</b> palet (en sevdiğim renk).">I study Radio &amp; Television at Erciyes University and build custom AI pipelines — Midjourney, Kling, Veo, Seedream and Suno — finished in Premiere Pro. My signature: deep-black frames and a glowing <b>light-blue</b> palette (my favorite color).</p>
+        <ul class="hl">
+          <li><span>🏆</span><b data-en="Official Selection — Student Video Contest 2026" data-tr="Official Selection — Student Video Contest 2026">Official Selection — Student Video Contest 2026</b></li>
+          <li><span>🎤</span><span data-en="BANEVA concert visuals — 32K+ plays (directed as ÆRAY)" data-tr="BANEVA konser görselleri — 32K+ izlenme (ÆRAY imzalı)">BANEVA concert visuals — 32K+ plays (directed as ÆRAY)</span></li>
+          <li><span>🎬</span><span data-en="Director, “Die Post” short film — Erciyes University, 2024" data-tr="Yönetmen, “Die Post” kısa filmi — Erciyes Üni., 2024">Director, “Die Post” short film — Erciyes University, 2024</span></li>
+          <li><span>🌍</span><span data-en="Based in Türkiye — working globally" data-tr="Türkiye merkezli — global çalışıyor">Based in Türkiye — working globally</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section id="featured">
+    <div class="eyebrow reveal" data-en="Featured Work" data-tr="Öne Çıkan İş">Featured Work</div>
+    <h2 class="sec-title reveal">BANEVA — 4-Era Reconstruction</h2>
+    <p class="sec-sub reveal" data-en="My most-watched project: concert visuals revisualizing seven years of an artist's career." data-tr="En çok izlenen işim: bir sanatçının 7 yıllık kariyerini yeniden görselleştiren konser görselleri.">My most-watched project: concert visuals revisualizing seven years of an artist's career.</p>
+    <div class="feature reveal">
+      <a class="media" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener">
+        <span class="play"></span>
+        <span class="stat">▶ 32K+ plays</span>
+      </a>
+      <div>
+        <div class="role" data-en="Concert Visuals · Directed as ÆRAY" data-tr="Konser Görselleri · ÆRAY imzalı">Concert Visuals · Directed as ÆRAY</div>
+        <h3>BANEVA</h3>
+        <p data-en="A “4-era reconstruction” that revisualizes seven years of an artist's career through a custom AI pipeline — built for @therealbaneva. My signature cinematic, light-blue look across every frame."
+           data-tr="Bir sanatçının 7 yıllık kariyerini, özel bir AI prodüksiyon hattıyla yeniden görselleştiren bir “4 dönem rekonstrüksiyonu” — @therealbaneva için. Her karede sinematik, açık mavi imzam.">A “4-era reconstruction” that revisualizes seven years of an artist's career through a custom AI pipeline — built for @therealbaneva. My signature cinematic, light-blue look across every frame.</p>
+        <a href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener" class="btn btn-grad" data-en="Watch on Instagram →" data-tr="Instagram'da İzle →">Watch on Instagram →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC VIDEOS -->
+  <section id="music">
+    <div class="eyebrow reveal" data-en="01 — Music Videos" data-tr="01 — Müzik Videoları">01 — Music Videos</div>
+    <h2 class="sec-title reveal" data-en="AI Music Videos" data-tr="AI Müzik Videoları">AI Music Videos</h2>
+    <p class="sec-sub reveal" data-en="Original songs and artist videos, scored with Suno and directed end-to-end." data-tr="Suno ile bestelenmiş, baştan sona yönetilmiş özgün şarkılar ve sanatçı videoları.">Original songs and artist videos, scored with Suno and directed end-to-end.</p>
+    <div class="grid g-3">
+      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-a"><span class="play"></span><span class="pill">Music Video</span></div><div class="card-body"><h3>Diyardan Diyara</h3><p data-en="AI Music Video · for @cakaldoksanbes" data-tr="AI Müzik Video · @cakaldoksanbes için">AI Music Video · for @cakaldoksanbes</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-d"><span class="play"></span><span class="pill">Music Video</span></div><div class="card-body"><h3>Last Stop: Paris</h3><p data-en="AI Music Video · 2026" data-tr="AI Müzik Video · 2026">AI Music Video · 2026</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-b"><span class="play"></span><span class="pill">Visual</span></div><div class="card-body"><h3>Polémique — Paris</h3><p data-en="AI Visual Scene · 2026" data-tr="AI Görsel Sahne · 2026">AI Visual Scene · 2026</p></div></a>
+    </div>
+  </section>
+
+  <!-- DOCUMENTARY -->
+  <section id="docs">
+    <div class="eyebrow reveal" data-en="02 — Documentary" data-tr="02 — Belgesel">02 — Documentary</div>
+    <h2 class="sec-title reveal" data-en="AI Documentaries" data-tr="AI Belgeseller">AI Documentaries</h2>
+    <p class="sec-sub reveal" data-en="Long-form, research-driven documentaries built with AI." data-tr="Uzun soluklu, araştırmaya dayalı, AI ile üretilen belgeseller.">Long-form, research-driven documentaries built with AI.</p>
+    <div class="grid g-2">
+      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-e"><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Charlie Kirk Case</h3><p data-en="AI Documentary · ft. former FBI Special Agent Erdal Kaya" data-tr="AI Belgesel · eski FBI Özel Ajanı Erdal Kaya ile">AI Documentary · ft. former FBI Special Agent Erdal Kaya</p></div></a>
+      <a class="card reveal" href="#docs"><div class="thumb cover-c"><span class="play"></span><span class="pill live" data-en="In Production" data-tr="Yapım Aşamasında">In Production</span></div><div class="card-body"><h3>The Antwerp Diamond Heist</h3><p data-en="AI Documentary · coming soon" data-tr="AI Belgesel · çok yakında">AI Documentary · coming soon</p></div></a>
+    </div>
+  </section>
+
+  <!-- SHORT FILMS -->
+  <section id="films">
+    <div class="eyebrow reveal" data-en="03 — Cinema" data-tr="03 — Sinema">03 — Cinema</div>
+    <h2 class="sec-title reveal" data-en="Short Films" data-tr="Kısa Filmler">Short Films</h2>
+    <p class="sec-sub reveal" data-en="Narrative short films — both AI and live-action direction." data-tr="Anlatı kısa filmleri — hem AI hem canlı çekim yönetimi.">Narrative short films — both AI and live-action direction.</p>
+    <div class="grid g-3">
+      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-f"><span class="play"></span><span class="pill">🏆 Selection</span></div><div class="card-body"><h3>Die Post</h3><p data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024">Short Film · Erciyes University, 2024</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-a"><span class="play"></span></div><div class="card-body"><h3>Boomerang</h3><p data-en="Short Movie" data-tr="Kısa Film">Short Movie</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><span class="play"></span></div><div class="card-body"><h3>Run or Run</h3><p data-en="Short Movie" data-tr="Kısa Film">Short Movie</p></div></a>
+    </div>
+  </section>
+
+  <!-- BRANDS / CLIENTS -->
+  <section id="brands">
+    <div class="eyebrow reveal" data-en="Selected Work" data-tr="Seçili İşler">Selected Work</div>
+    <h2 class="sec-title reveal" data-en="Brands &amp; Projects" data-tr="Markalar &amp; Projeler">Brands &amp; Projects</h2>
+    <p class="sec-sub reveal" data-en="Commercial product films, UGC and creative projects I've directed." data-tr="Yönettiğim ticari ürün filmleri, UGC ve yaratıcı projeler.">Commercial product films, UGC and creative projects I've directed.</p>
+    <div class="grid g-clients">
+      <div class="client reveal"><span class="name">CITRINE</span><span class="kind" data-en="Creative label" data-tr="Yaratıcı etiket">Creative label</span></div>
+      <div class="client reveal"><span class="name">EXOTIC</span><span class="kind" data-en="Beverage campaign" data-tr="İçecek kampanyası">Beverage campaign</span></div>
+      <div class="client reveal"><span class="name">BANEVA</span><span class="kind" data-en="Artist visuals" data-tr="Sanatçı görselleri">Artist visuals</span></div>
+      <div class="client reveal"><span class="name">Studio Atelia</span><span class="kind" data-en="Production visuals" data-tr="Prodüksiyon görselleri">Production visuals</span></div>
+    </div>
+  </section>
+
+  <!-- SHORTS -->
+  <section id="shorts">
+    <div class="eyebrow reveal" data-en="04 — Vertical" data-tr="04 — Dikey">04 — Vertical</div>
+    <h2 class="sec-title reveal" data-en="Shorts / Reels" data-tr="Shorts / Reels">Shorts / Reels</h2>
+    <p class="sec-sub reveal" data-en="Short vertical films for Reels, Shorts &amp; TikTok." data-tr="Reels, Shorts ve TikTok için kısa dikey filmler.">Short vertical films for Reels, Shorts &amp; TikTok.</p>
+    <div class="grid g-shorts">
+      <a class="card reveal" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener"><div class="thumb v cover-a"><span class="play"></span></div><div class="card-body"><h3>Eurotrip · Paris</h3></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener"><div class="thumb v cover-b"><span class="play"></span></div><div class="card-body"><h3>Golden Hour</h3></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener"><div class="thumb v cover-c"><span class="play"></span></div><div class="card-body"><h3>Switzerland</h3></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener"><div class="thumb v cover-e"><span class="play"></span></div><div class="card-body"><h3>The Last Feast</h3></div></a>
+    </div>
+    <p class="embed-note reveal" style="margin-top:22px" data-en="▶ Drop me the exact YouTube / Instagram links and I'll embed real players &amp; thumbnails everywhere above." data-tr="▶ YouTube / Instagram linklerini ver, yukarıdaki her yere gerçek oynatıcı ve kapakları gömeyim.">▶ Drop me the exact YouTube / Instagram links and I'll embed real players &amp; thumbnails everywhere above.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact reveal">
+      <div class="eyebrow" data-en="Contact" data-tr="İletişim">Contact</div>
+      <h2 class="sec-title" data-en="Let's create together 🤝" data-tr="Birlikte üretelim 🤝">Let's create together 🤝</h2>
+      <p class="sec-sub" style="margin:8px auto 0" data-en="Open for commissions and brand work — music videos, documentaries, product films &amp; more." data-tr="Sipariş ve marka işlerine açığım — müzik videoları, belgeseller, ürün filmleri ve daha fazlası.">Open for commissions and brand work — music videos, documentaries, product films &amp; more.</p>
+      <div class="socials">
+        <a class="social" href="mailto:eray@eraybalat.com">✉️ Email</a>
+        <a class="social" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener">▶️ YouTube</a>
+        <a class="social" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener">📸 Instagram</a>
+        <a class="social" href="https://x.com/documenteray" target="_blank" rel="noopener">𝕏 Twitter</a>
+        <a class="social" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener">🅱️ Behance</a>
+        <a class="social" href="https://filmfreeway.com/ErayBalat" target="_blank" rel="noopener">🎬 FilmFreeway</a>
+        <a class="social" href="https://medium.com/@eraybalat" target="_blank" rel="noopener">✍️ Medium</a>
+        <a class="social" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener">💼 Upwork</a>
+        <a class="social" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener">in LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> <span class="brand-sm">Eray Balat</span> · documenteray
+  <span data-en="— Directed with AI · eraybalat.com" data-tr="— AI ile yönetildi · eraybalat.com">— Directed with AI · eraybalat.com</span>
+</footer>
+
+<script>
+  const toggle=document.querySelector('.nav-toggle');
+  const links=document.getElementById('navlinks');
+  toggle.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  const i18nEls=document.querySelectorAll('[data-en]');
+  function setLang(lang){
+    document.documentElement.lang=lang;
+    i18nEls.forEach(el=>{ if(el.dataset[lang]!==undefined) el.innerHTML=el.dataset[lang]; });
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  }
+  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+  setLang('en');
+
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  const navA=[...document.querySelectorAll('.nav-links a')];
+  const spy=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}}),{rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('section[id]').forEach(s=>spy.observe(s));
+</script>
+</body>
+</html>
