@@ -61,8 +61,8 @@
   .sec-sub{color:var(--muted);max-width:600px;margin-bottom:36px}
 
   .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:90px}
-  .hero-bg{position:absolute;inset:0;width:100vw;left:50%;transform:translateX(-50%);height:100%;object-fit:cover;opacity:.14;z-index:0;filter:saturate(.8) contrast(1.05);pointer-events:none}
-  .hero-ov{position:absolute;inset:0;width:100vw;left:50%;transform:translateX(-50%);z-index:1;background:radial-gradient(ellipse at center,rgba(5,10,26,.5),rgba(5,10,26,.93) 95%);pointer-events:none}
+  .hero-bg{position:absolute;inset:0;width:100vw;left:50%;transform:translateX(-50%);height:100%;object-fit:cover;opacity:.2;z-index:0;filter:saturate(.85) contrast(1.05) brightness(1.12);pointer-events:none}
+  .hero-ov{position:absolute;inset:0;width:100vw;left:50%;transform:translateX(-50%);z-index:1;background:radial-gradient(ellipse at center,rgba(5,10,26,.36),rgba(5,10,26,.9) 95%);pointer-events:none}
   .hero .eyebrow,.hero .hero-logo,.hero h1,.hero .lead,.hero .cta-row{position:relative;z-index:2}
   .hero .eyebrow{margin-bottom:16px}
   .hero-logo{width:min(600px,88%);filter:drop-shadow(0 14px 55px rgba(56,189,248,.5));margin-bottom:10px}
@@ -148,7 +148,7 @@
   .client .kind{font-size:.78rem;color:var(--muted)}
 
   .contact{text-align:center;background:var(--bg-soft);border:1px solid var(--card-brd);border-radius:28px;padding:58px 24px}
-  .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px}
+  .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:24px auto 0;max-width:680px}
   .social{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:13px;border:1px solid var(--card-brd);background:linear-gradient(180deg,rgba(125,211,252,.05),rgba(125,211,252,0));transition:.25s;font-family:'Space Grotesk';font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text)}
   .social:hover{transform:translateY(-3px);border-color:var(--c2);background:linear-gradient(180deg,rgba(56,189,248,.14),rgba(56,189,248,.02));box-shadow:0 12px 32px -14px var(--c3)}
 
@@ -185,7 +185,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#home" class="brand"><span class="dot"></span> ÆRAY</a>
+    <a href="#home" class="brand"><img src="favicon.svg" alt="" style="width:22px;height:22px;border-radius:6px;display:inline-block;vertical-align:middle;margin-right:2px" /> ÆRAY</a>
     <div class="nav-right">
       <nav class="nav-links" id="navlinks">
         <a href="#about"    data-en="About"      data-tr="Hakkımda">About</a>
@@ -210,7 +210,7 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <video class="hero-bg" autoplay muted loop playsinline preload="metadata" src="baneva.mp4"></video>
+    <video class="hero-bg" id="heroVid" autoplay muted loop playsinline preload="auto" src="baneva.mp4"></video>
     <div class="hero-ov"></div>
     <div class="eyebrow reveal" data-en="Creative AI Producer · Filmmaker" data-tr="Creative AI Producer · Yönetmen">Creative AI Producer · Filmmaker</div>
     <img class="hero-logo reveal" src="directed-by-eray-clean.png" alt="directed by Eray Balat" />
@@ -226,12 +226,12 @@
 <!-- TOOLS MARQUEE -->
 <div class="tools" aria-hidden="true">
   <div class="tools-track">
-    <span><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b></span>
-    <span><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b></span>
+    <span><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b></span>
+    <span><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b></span>
   </div>
   <div class="tools-track rev tools-row2">
-    <span><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b></span>
-    <span><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b></span>
+    <span><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b></span>
+    <span><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b></span>
   </div>
 </div>
 
@@ -253,7 +253,7 @@
     <h2 class="sec-title reveal">Eray Balat</h2>
     <div class="about-wrap" style="margin-top:26px">
       <div class="portrait reveal">
-        <img src="profile.jpg?v=2" alt="Eray Balat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <img src="profile.jpg?v=3" alt="Eray Balat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
         <div class="ph" style="display:none">EB</div>
       </div>
       <div class="about-body reveal">
@@ -423,6 +423,17 @@
   const navA=[...document.querySelectorAll('.nav-links a')];
   const spy=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}}),{rootMargin:'-45% 0px -50% 0px'});
   document.querySelectorAll('section[id]').forEach(s=>spy.observe(s));
+
+  // keep hero bg video playing/looping (some browsers pause autoplay)
+  const hv=document.getElementById('heroVid');
+  if(hv){
+    const playHero=()=>{const p=hv.play();if(p&&p.catch)p.catch(()=>{});};
+    hv.addEventListener('ended',()=>{hv.currentTime=0;playHero();});
+    hv.addEventListener('pause',()=>{if(!document.hidden)playHero();});
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)playHero();});
+    ['click','scroll','touchstart','keydown'].forEach(ev=>window.addEventListener(ev,playHero,{once:true,passive:true}));
+    playHero();
+  }
 </script>
 </body>
 </html>
