@@ -170,6 +170,11 @@
   .sig-film{display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-bottom:46px}
   .sig-media{width:300px;max-width:100%;flex-shrink:0}
   .sig-text{flex:1;min-width:260px}
+  .music-player{display:flex;align-items:center;gap:14px;margin:0 0 20px;padding:11px 15px;border-radius:14px;background:linear-gradient(120deg,rgba(56,189,248,.13),rgba(14,111,209,.06));border:1px solid rgba(125,211,252,.3);max-width:400px}
+  .mp-btn{width:46px;height:46px;flex-shrink:0;border-radius:50%;border:none;background:var(--grad);color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px -6px var(--c3);transition:transform .2s}
+  .mp-btn:hover{transform:scale(1.08)}
+  .mp-title{font-family:'Space Grotesk';font-weight:600;font-size:.95rem;color:var(--text)}
+  .mp-sub{font-size:.78rem;color:var(--muted)}
   .vstat{display:inline-block;margin-top:9px;padding:5px 11px;border-radius:999px;background:rgba(56,189,248,.13);border:1px solid rgba(125,211,252,.32);color:#bfe6ff;font-size:.72rem;font-weight:600;letter-spacing:.01em}
   .thumb .live-dot{position:absolute;top:12px;right:12px;z-index:2;font-size:.62rem;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:999px;background:rgba(56,189,248,.22);border:1px solid var(--c2);color:#eaf6ff;text-transform:uppercase}
   .row-label{display:flex;align-items:center;gap:14px;margin:52px 0 24px;font-family:'Space Grotesk';font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:#9fd2f8}
@@ -323,6 +328,49 @@
     </div>
   </section>
 
+  <!-- KONFUSE CASE STUDY -->
+  <section id="konfuse">
+    <div class="eyebrow reveal" data-en="Brand World · Case Study" data-tr="Marka Dünyası · Vaka Çalışması">Brand World · Case Study</div>
+    <h2 class="sec-title reveal">Konfuse</h2>
+    <p class="sec-sub reveal" data-en="A complete hyper-real brand world — directed end-to-end, from scratch. AI product photography, a cinematic film, an original 4-minute score and storyboard. From the music to the campaign, every layer built by me." data-tr="Eksiksiz, hiper-gerçekçi bir marka dünyası — sıfırdan, baştan sona yönetildi. AI ürün fotoğrafçılığı, sinematik bir film, özgün 4 dakikalık bir müzik ve storyboard. Müziğinden kampanyasına, her katman benim elimden çıktı.">A complete hyper-real brand world — directed end-to-end, from scratch. AI product photography, a cinematic film, an original 4-minute score and storyboard. From the music to the campaign, every layer built by me.</p>
+
+    <div class="reveal sig-film">
+      <a href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener" class="card sig-media">
+        <div class="thumb v cover-e"><video src="konfuse.mp4" poster="konfuse-poster.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Konfuse</span></div>
+      </a>
+      <div class="sig-text">
+        <div class="role" data-en="The Film · 9:16" data-tr="Film · 9:16">The Film · 9:16</div>
+        <h3 style="font-family:'Space Grotesk';font-size:1.7rem;margin:6px 0 12px">Hyper-Real Duffel Bag Film</h3>
+        <p style="color:var(--muted);line-height:1.62;margin-bottom:16px" data-en="A cinematic product film for Konfuse's embroidered leather goods — vertical-first, built to stop the scroll. Scored with an original track I composed for the world." data-tr="Konfuse'un işlemeli deri ürünleri için sinematik bir ürün filmi — dikey öncelikli, scroll'u durdurmak için. Bu dünya için bestelediğim özgün bir parçayla müziklendirildi.">A cinematic product film for Konfuse's embroidered leather goods — vertical-first, built to stop the scroll. Scored with an original track I composed for the world.</p>
+        <div class="music-player reveal">
+          <button class="mp-btn" type="button" aria-label="Play track">▶</button>
+          <div class="mp-info">
+            <div class="mp-title">Sagu of the Stitched Mountain</div>
+            <div class="mp-sub" data-en="Original score · 4:14" data-tr="Özgün müzik · 4:14">Original score · 4:14</div>
+          </div>
+          <audio src="konfuse-music.mp3" preload="none"></audio>
+        </div>
+        <a href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener" class="btn btn-grad" data-en="View project →" data-tr="Projeyi Gör →">View project →</a>
+      </div>
+    </div>
+
+    <div class="row-label reveal" data-en="Product Photography" data-tr="Ürün Fotoğrafçılığı">Product Photography</div>
+    <a class="card reveal" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener" style="display:block;margin-bottom:16px"><div class="thumb" style="aspect-ratio:16/9"><img src="konfuse-tshirt.jpg" alt="Konfuse apparel — 4 angles" loading="lazy" /><span class="pill">Apparel · 4 angles</span></div></a>
+    <div class="grid g-3">
+      <a class="card reveal" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener"><div class="thumb sq cover-e"><img src="konfuse-bag1.jpg" alt="Konfuse duffel bag — cognac" loading="lazy" /><span class="pill">Duffel · Cognac</span></div></a>
+      <a class="card reveal" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener"><div class="thumb sq cover-e"><img src="konfuse-bag2.jpg" alt="Konfuse duffel bag — black" loading="lazy" /><span class="pill">Duffel · Black</span></div></a>
+      <a class="card reveal" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener"><div class="thumb sq cover-e"><img src="konfuse-bagclose.jpg" alt="Konfuse embroidery detail" loading="lazy" /><span class="pill">Embroidery</span></div></a>
+    </div>
+
+    <div class="row-label reveal" data-en="Brand World — Campaign" data-tr="Marka Dünyası — Kampanya">Brand World — Campaign</div>
+    <div class="grid g-shorts">
+      <a class="card reveal" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener"><div class="thumb v cover-e"><img src="konfuse-c1.jpg" alt="Konfuse campaign" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener"><div class="thumb v cover-e"><img src="konfuse-c2.jpg" alt="Konfuse campaign" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener"><div class="thumb v cover-e"><img src="konfuse-c3.jpg" alt="Konfuse campaign" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener"><div class="thumb v cover-e"><img src="konfuse-c4.jpg" alt="Konfuse campaign" loading="lazy" /></div></a>
+    </div>
+  </section>
+
   <!-- MUSIC VIDEOS -->
   <section id="music">
     <div class="eyebrow reveal" data-en="01 — Music Videos" data-tr="01 — Müzik Videoları">01 — Music Videos</div>
@@ -359,17 +407,6 @@
     <h2 class="sec-title reveal" data-en="Commercial &amp; Brand Campaigns" data-tr="Ticari &amp; Marka Kampanyaları">Commercial &amp; Brand Campaigns</h2>
     <p class="sec-sub reveal" data-en="AI commercials, product visuals &amp; UGC for real brands — on Upwork &amp; Behance." data-tr="Gerçek markalar için AI reklamlar, ürün görselleri &amp; UGC — Upwork &amp; Behance'de.">AI commercials, product visuals &amp; UGC for real brands — on Upwork &amp; Behance.</p>
 
-    <div class="reveal sig-film">
-      <a href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener" class="card sig-media">
-        <div class="thumb v cover-e"><video src="konfuse.mp4" poster="konfuse-poster.jpg" autoplay muted loop playsinline preload="none"></video><span class="pill">Konfuse</span></div>
-      </a>
-      <div class="sig-text">
-        <div class="role" data-en="Signature Brand Film · 9:16" data-tr="İmza Marka Filmi · 9:16">Signature Brand Film · 9:16</div>
-        <h3 style="font-family:'Space Grotesk';font-size:1.7rem;margin:6px 0 12px">Hyper-Real Duffel Bag Film</h3>
-        <p style="color:var(--muted);line-height:1.62;margin-bottom:20px" data-en="A cinematic, hyper-real product film for Konfuse — directed end-to-end with my AI pipeline. Vertical-first, built to stop the scroll on social." data-tr="Konfuse için sinematik, hiper-gerçekçi bir ürün filmi — baştan sona kendi AI hattımla yönetildi. Dikey öncelikli, sosyalde scroll'u durdurmak için üretildi.">A cinematic, hyper-real product film for Konfuse — directed end-to-end with my AI pipeline. Vertical-first, built to stop the scroll on social.</p>
-        <a href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener" class="btn btn-grad" data-en="View project →" data-tr="Projeyi Gör →">View project →</a>
-      </div>
-    </div>
 
     <div class="reveal showreel-banner" id="showreel">
       <video src="showreel.mp4" poster="showreel-p.jpg" autoplay muted loop playsinline preload="none"></video>
@@ -635,6 +672,21 @@
       document.querySelectorAll('.sndbtn').forEach(b=>{b.textContent='🔇';b.classList.remove('on');});
       if(turnOn){vid.muted=false;const p=vid.play();if(p&&p.catch)p.catch(()=>{});btn.textContent='🔊';btn.classList.add('on');}
     });
+  });
+
+  // music player — one track at a time
+  document.querySelectorAll('.mp-btn').forEach(btn=>{
+    const au=btn.closest('.music-player').querySelector('audio');
+    btn.addEventListener('click',e=>{
+      e.preventDefault();e.stopPropagation();
+      if(!au)return;
+      if(au.paused){
+        document.querySelectorAll('audio').forEach(a=>a.pause());
+        document.querySelectorAll('.mp-btn').forEach(b=>b.textContent='▶');
+        const p=au.play();if(p&&p.catch)p.catch(()=>{});btn.textContent='⏸';
+      }else{au.pause();btn.textContent='▶';}
+    });
+    if(au)au.addEventListener('ended',()=>{btn.textContent='▶';});
   });
 
   // performance: only play card videos while on-screen
