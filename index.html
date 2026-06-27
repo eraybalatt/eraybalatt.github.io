@@ -40,15 +40,20 @@
   .blob.b3{background:var(--c5);bottom:-15%;left:18%;animation-delay:-8s}
   .blob.b4{background:#22d3ee;top:8%;right:25%;width:30vw;height:30vw;animation-delay:-12s;opacity:.3}
   @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(4%,6%) scale(1.12)}}
+  #cursor-glow{position:fixed;top:0;left:0;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.14),rgba(56,189,248,.05) 38%,transparent 70%);pointer-events:none;z-index:-1;transform:translate(-50%,-50%);opacity:0;transition:opacity .5s;will-change:transform}
+  @media(hover:none){#cursor-glow{display:none}}
 
   header.nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(18px);background:linear-gradient(180deg,rgba(7,14,36,.94) 0%,rgba(7,14,36,.5) 70%,rgba(7,14,36,.18) 100%);border-bottom:1px solid rgba(125,211,252,.1)}
   .nav-inner{max-width:var(--maxw);margin:0 auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .brand{font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:10px}
-  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--grad);box-shadow:0 0 16px var(--c2)}
+  .brand{display:flex;align-items:center}
+  .brand img{width:30px;height:30px;border-radius:8px;display:block;transition:filter .2s}
+  .brand:hover img{filter:drop-shadow(0 0 10px var(--c2))}
   .nav-right{display:flex;align-items:center;gap:10px}
-  .nav-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
-  .nav-links a{padding:8px 12px;border-radius:999px;font-size:.88rem;color:var(--muted);transition:.2s}
-  .nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--card)}
+  .nav-links{flex:1;display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .nav-links a{padding:9px 14px;border-radius:999px;font-size:.96rem;font-weight:500;color:var(--muted);transition:color .2s,text-shadow .2s,background .2s}
+  .nav-links a:hover{color:#eaf6ff;text-shadow:0 0 14px rgba(56,189,248,.9)}
+  .nav-links a.active{color:var(--text);background:var(--card)}
+  .card:hover .card-body h3{text-shadow:0 0 13px rgba(56,189,248,.5)}
   .lang{display:inline-flex;border:1px solid var(--card-brd);border-radius:999px;overflow:hidden;background:var(--card)}
   .lang-btn{background:none;border:none;color:var(--muted);font-family:'Space Grotesk';font-weight:600;font-size:.78rem;padding:7px 12px;cursor:pointer;transition:.2s}
   .lang-btn.active{background:var(--grad);color:#fff}
@@ -213,21 +218,22 @@
 <body>
 
 <div class="blobs" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div>
+<div id="cursor-glow" aria-hidden="true"></div>
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#home" class="brand"><img src="favicon.svg" alt="" style="width:22px;height:22px;border-radius:6px;display:inline-block;vertical-align:middle;margin-right:2px" /> ÆRAY</a>
+    <a href="#home" class="brand" aria-label="ÆRAY — home"><img src="favicon.svg" alt="ÆRAY" /></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#about"    data-en="About"      data-tr="Hakkımda">About</a>
+      <a href="#showreel" data-en="Showreel"   data-tr="Showreel">Showreel</a>
+      <a href="#featured" data-en="Featured"   data-tr="Öne Çıkan">Featured</a>
+      <a href="#music"    data-en="Music Videos" data-tr="Müzik Video">Music Videos</a>
+      <a href="#docs"     data-en="Documentary" data-tr="Belgesel">Documentary</a>
+      <a href="#films"    data-en="Short Films" data-tr="Kısa Film">Short Films</a>
+      <a href="#brands"   data-en="Brands"     data-tr="Markalar">Brands</a>
+      <a href="#contact"  data-en="Contact"    data-tr="İletişim">Contact</a>
+    </nav>
     <div class="nav-right">
-      <nav class="nav-links" id="navlinks">
-        <a href="#about"    data-en="About"      data-tr="Hakkımda">About</a>
-        <a href="#showreel" data-en="Showreel"   data-tr="Showreel">Showreel</a>
-        <a href="#featured" data-en="Featured"   data-tr="Öne Çıkan">Featured</a>
-        <a href="#music"    data-en="Music Videos" data-tr="Müzik Video">Music Videos</a>
-        <a href="#docs"     data-en="Documentary" data-tr="Belgesel">Documentary</a>
-        <a href="#films"    data-en="Short Films" data-tr="Kısa Film">Short Films</a>
-        <a href="#brands"   data-en="Brands"     data-tr="Markalar">Brands</a>
-        <a href="#contact"  data-en="Contact"    data-tr="İletişim">Contact</a>
-      </nav>
       <div class="lang" role="group" aria-label="Language">
         <button class="lang-btn active" data-lang="en">EN</button>
         <button class="lang-btn" data-lang="tr">TR</button>
@@ -634,6 +640,14 @@
     else{v.pause();}
   }),{threshold:.2});
   cardVids.forEach(v=>vio.observe(v));
+
+  // mouse-following blue glow
+  const cg=document.getElementById('cursor-glow');
+  if(cg){
+    let cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
+    addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;cg.style.opacity='1';},{passive:true});
+    (function loop(){cx+=(tx-cx)*0.16;cy+=(ty-cy)*0.16;cg.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';requestAnimationFrame(loop);})();
+  }
 </script>
 </body>
 </html>
