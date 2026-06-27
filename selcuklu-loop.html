@@ -1,0 +1,318 @@
+<!-- Selçuklu / Turkuaz — "Kurt" hero loop. 9:16, ~14s döngü. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selçuklu — Kurt</title>
+<style>
+  :root{
+    --ink:#04070e;
+    --fz:#34d6d6;          /* firuze */
+    --fz-bright:#a6f4ee;
+    --fz-deep:#1a8a98;
+    --ember:#e8ab68;
+    --stone:#c89e68;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;background:#000;overflow:hidden}
+  body{display:grid;place-items:center;font-family:"Cinzel","Cormorant Garamond",Georgia,serif}
+
+  .frame{
+    position:relative;height:100vh;aspect-ratio:9/16;max-width:100vw;
+    overflow:hidden;background:var(--ink);
+    box-shadow:0 0 120px rgba(0,0,0,.9);
+  }
+  .stage{
+    position:absolute;inset:0;
+    transform-origin:52% 46%;
+    animation:camPush 14s ease-in-out infinite;
+  }
+  svg.scene{display:block;width:100%;height:100%}
+
+  @keyframes camPush{
+    0%,100%{transform:scale(1.0) translateY(0)}
+    50%    {transform:scale(1.052) translateY(-1.2%)}
+  }
+
+  /* --- svg animasyon sınıfları --- */
+  .moonStar{transform-box:fill-box;transform-origin:center;
+    animation:spin 130s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .moonGlow{animation:glowPulse 8s ease-in-out infinite}
+  @keyframes glowPulse{0%,100%{opacity:.6}50%{opacity:.92}}
+
+  .wolf{animation:breathe 7s ease-in-out infinite}
+  @keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+  .beam{transform-box:fill-box;animation:beamSway 9s ease-in-out infinite}
+  .beam:nth-child(2){animation-duration:11s;animation-delay:-3s}
+  .beam:nth-child(3){animation-duration:13s;animation-delay:-6s}
+  .beam:nth-child(4){animation-duration:10s;animation-delay:-2s}
+  .beam:nth-child(5){animation-duration:12s;animation-delay:-8s}
+  @keyframes beamSway{0%,100%{opacity:.14}50%{opacity:.38}}
+
+  .backRidge{animation:ridgeSway 34s ease-in-out infinite}
+  @keyframes ridgeSway{0%,100%{transform:translateX(-8px)}50%{transform:translateX(8px)}}
+
+  .wisp{animation:wispDrift 30s linear infinite}
+  .wisp.b{animation-duration:38s;animation-delay:-16s}
+  @keyframes wispDrift{
+    0%{transform:translateX(-280px);opacity:0}
+    16%{opacity:.5}
+    50%{opacity:.62}
+    84%{opacity:.5}
+    100%{transform:translateX(1380px);opacity:0}
+  }
+
+  .markStar{transform-box:fill-box;transform-origin:center;
+    animation:markPulse 6s ease-in-out infinite}
+  @keyframes markPulse{0%,100%{opacity:.62}50%{opacity:1}}
+
+  .twinkle{animation:tw 4s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.25}50%{opacity:.9}}
+
+  /* --- toz / kül partikülleri --- */
+  .particles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .mote{
+    position:absolute;border-radius:50%;
+    background:var(--fz);
+    box-shadow:0 0 6px 1px var(--fz);
+    animation-name:rise;animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    opacity:0;
+  }
+  .mote.ember{background:var(--ember);box-shadow:0 0 7px 1px var(--ember)}
+  @keyframes rise{
+    0%{transform:translate(0,0);opacity:0}
+    10%{opacity:.7}
+    82%{opacity:.55}
+    100%{transform:translate(var(--drift),-118vh);opacity:0}
+  }
+
+  /* --- film grain --- */
+  #grain{position:absolute;inset:0;width:100%;height:100%;
+    mix-blend-mode:overlay;opacity:.06;pointer-events:none}
+
+  /* --- köşe vinyet (ekstra) --- */
+  .vig{position:absolute;inset:0;pointer-events:none;
+    box-shadow:inset 0 0 200px 60px rgba(2,4,9,.85),
+               inset 0 -180px 160px -60px rgba(2,4,9,.95);}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+
+<div class="frame" id="frame">
+  <div class="stage">
+    <svg class="scene" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0"   stop-color="#080f24"/>
+          <stop offset=".42" stop-color="#0c2c46"/>
+          <stop offset=".70" stop-color="#114a5e"/>
+          <stop offset=".86" stop-color="#0a2433"/>
+          <stop offset="1"   stop-color="#04070e"/>
+        </linearGradient>
+        <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0"  stop-color="#bdf6f0" stop-opacity=".85"/>
+          <stop offset=".4" stop-color="#34d6d6" stop-opacity=".45"/>
+          <stop offset="1"  stop-color="#34d6d6" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="moonDisc" cx="42%" cy="38%" r="72%">
+          <stop offset="0"   stop-color="#e9fffb"/>
+          <stop offset=".35" stop-color="#9cefe8"/>
+          <stop offset=".72" stop-color="#3fc7cd"/>
+          <stop offset="1"   stop-color="#147886"/>
+        </radialGradient>
+        <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#9af3ee" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#9af3ee" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="horizon" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="#e8ab68" stop-opacity=".5"/>
+          <stop offset="1" stop-color="#e8ab68" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="wolfFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0"  stop-color="#0c2330"/>
+          <stop offset=".5" stop-color="#060d16"/>
+          <stop offset="1"  stop-color="#020409"/>
+        </linearGradient>
+        <linearGradient id="backRidgeF" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1d6273" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#0a2230" stop-opacity=".9"/>
+        </linearGradient>
+        <radialGradient id="vig" cx="52%" cy="44%" r="78%">
+          <stop offset="0"   stop-color="#000" stop-opacity="0"/>
+          <stop offset=".62" stop-color="#000" stop-opacity="0"/>
+          <stop offset="1"   stop-color="#000" stop-opacity=".72"/>
+        </radialGradient>
+        <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="34"/>
+        </filter>
+        <filter id="aura" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="13"/>
+        </filter>
+        <filter id="hazeBlur" x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="26"/>
+        </filter>
+      </defs>
+
+      <!-- gökyüzü -->
+      <rect width="1080" height="1920" fill="url(#sky)"/>
+
+      <!-- yıldızlar -->
+      <g id="stars"></g>
+
+      <!-- ay halesi + ay -->
+      <circle class="moonGlow" cx="560" cy="660" r="430" fill="url(#moonGlow)" filter="url(#soft)"/>
+      <circle cx="560" cy="660" r="246" fill="url(#moonDisc)"/>
+      <circle cx="560" cy="660" r="246" fill="none" stroke="#dffffb" stroke-width="2" opacity=".5"/>
+      <circle cx="560" cy="660" r="178" fill="none" stroke="#0c5560" stroke-width="2" opacity=".4"/>
+      <path class="moonStar" id="moonStar" fill="none" stroke="#0a4751"
+            stroke-width="3" opacity=".55"/>
+
+      <!-- ışık huzmeleri -->
+      <g id="beams"></g>
+
+      <!-- ufuk sıcak ışığı -->
+      <ellipse cx="540" cy="1360" rx="640" ry="220" fill="url(#horizon)"/>
+
+      <!-- sis tülleri -->
+      <g id="wisps">
+        <ellipse class="wisp"   cx="0" cy="580" rx="240" ry="36" fill="#bdf6f0" opacity=".5" filter="url(#hazeBlur)"/>
+        <ellipse class="wisp b" cx="0" cy="800" rx="300" ry="44" fill="#7fded8" opacity=".4" filter="url(#hazeBlur)"/>
+      </g>
+
+      <!-- arka sırt -->
+      <g class="backRidge">
+        <polygon fill="url(#backRidgeF)" filter="url(#hazeBlur)"
+          points="-40,1520 -40,1410 150,1438 320,1356 500,1412 670,1338 850,1404 1010,1352 1120,1408 1120,1620 -40,1620"/>
+      </g>
+
+      <!-- KURT -->
+      <g class="wolf">
+        <!-- hale / rim ışık -->
+        <g filter="url(#aura)" transform="translate(170,705) scale(1.45)">
+          <path fill="none" stroke="#7df0ec" stroke-width="15" opacity=".75"
+            d="M150 90 Q196 152 232 202 Q250 216 264 206 Q284 132 306 80
+               Q324 152 340 226 L354 242 Q374 172 392 112 Q414 200 434 304
+               Q454 408 472 512 Q488 562 514 588 L198 588
+               Q176 558 200 480 Q234 378 260 300 Q272 248 240 210
+               Q206 174 186 138 Q166 112 150 90 Z"/>
+        </g>
+        <!-- gövde -->
+        <g transform="translate(170,705) scale(1.45)">
+          <path fill="url(#wolfFill)" stroke="#56e0dc" stroke-width="1.6" stroke-opacity=".55"
+            d="M150 90 Q196 152 232 202 Q250 216 264 206 Q284 132 306 80
+               Q324 152 340 226 L354 242 Q374 172 392 112 Q414 200 434 304
+               Q454 408 472 512 Q488 562 514 588 L198 588
+               Q176 558 200 480 Q234 378 260 300 Q272 248 240 210
+               Q206 174 186 138 Q166 112 150 90 Z"/>
+        </g>
+      </g>
+
+      <!-- ön kayalık -->
+      <polygon fill="#04090f"
+        points="-40,1920 -40,1560 130,1518 270,1582 390,1500 490,1468 570,1492 690,1456 830,1542 970,1500 1120,1560 1120,1920"/>
+      <polygon fill="#070e16" opacity=".6"
+        points="-40,1920 -40,1660 200,1620 420,1690 640,1628 880,1700 1120,1640 1120,1920"/>
+
+      <!-- Selçuklu portal kemeri -->
+      <path d="M168 1820 L168 348 Q168 132 540 60 Q912 132 912 348 L912 1820"
+            fill="none" stroke="#46d3d3" stroke-width="2" opacity=".16"/>
+      <path d="M196 1820 L196 360 Q196 156 540 86 Q884 156 884 360 L884 1820"
+            fill="none" stroke="#46d3d3" stroke-width="1" opacity=".1"/>
+
+      <!-- alt imza yıldızı -->
+      <g transform="translate(540,1632)">
+        <path class="markStar" id="markStar" fill="none" stroke="#7df0ec" stroke-width="2.4"/>
+        <circle r="5" fill="#bdf6f0" opacity=".9"/>
+      </g>
+
+      <!-- vinyet -->
+      <rect width="1080" height="1920" fill="url(#vig)"/>
+    </svg>
+  </div>
+
+  <div class="particles" id="particles"></div>
+  <canvas id="grain"></canvas>
+  <div class="vig"></div>
+</div>
+
+<script>
+  /* ---- Selçuk yıldızı (8 köşeli) ---- */
+  function starPath(cx,cy,R,ratio,n){
+    let d='',r=R*ratio;
+    for(let i=0;i<n*2;i++){
+      const a=Math.PI/n*i-Math.PI/2, rad=(i%2)?r:R;
+      d+=(i?'L':'M')+(cx+Math.cos(a)*rad).toFixed(1)+','+(cy+Math.sin(a)*rad).toFixed(1);
+    }
+    return d+'Z';
+  }
+  document.getElementById('moonStar').setAttribute('d', starPath(560,660,150,.42,8));
+  document.getElementById('markStar').setAttribute('d', starPath(0,0,26,.42,8));
+
+  /* ---- yıldızlar ---- */
+  (function(){
+    const g=document.getElementById('stars'), N=60;
+    let s='';
+    for(let i=0;i<N;i++){
+      const x=(Math.random()*1080).toFixed(0);
+      const y=(Math.random()*1000).toFixed(0);
+      const r=(Math.random()*1.6+.4).toFixed(2);
+      const o=(Math.random()*.5+.2).toFixed(2);
+      const dur=(Math.random()*4+3).toFixed(1);
+      const del=(-Math.random()*6).toFixed(1);
+      s+=`<circle class="twinkle" cx="${x}" cy="${y}" r="${r}" fill="#cdeef0" `
+        +`opacity="${o}" style="animation-duration:${dur}s;animation-delay:${del}s"/>`;
+    }
+    g.innerHTML=s;
+  })();
+
+  /* ---- ışık huzmeleri ---- */
+  (function(){
+    const g=document.getElementById('beams');
+    let s='';
+    const angs=[-28,-12,4,20,38];
+    angs.forEach(a=>{
+      s+=`<rect class="beam" x="540" y="660" width="64" height="1020" `
+        +`fill="url(#ray)" transform="rotate(${a} 560 660) translate(-32 0)"/>`;
+    });
+    g.innerHTML=s;
+  })();
+
+  /* ---- toz / kül ---- */
+  (function(){
+    const pl=document.getElementById('particles'), N=42;
+    for(let i=0;i<N;i++){
+      const p=document.createElement('div');
+      const ember=Math.random()<.16;
+      p.className='mote'+(ember?' ember':'');
+      const sz=(Math.random()*2.6+1).toFixed(1);
+      p.style.width=p.style.height=sz+'px';
+      p.style.left=(Math.random()*100).toFixed(2)+'%';
+      p.style.bottom=(-6-Math.random()*12)+'%';
+      const dur=(Math.random()*9+10).toFixed(1);
+      p.style.animationDuration=dur+'s';
+      p.style.animationDelay=(-Math.random()*dur).toFixed(1)+'s';
+      p.style.setProperty('--drift',(Math.random()*70-35).toFixed(0)+'px');
+      pl.appendChild(p);
+    }
+  })();
+
+  /* ---- film grain (6 kare, döngü) ---- */
+  (function(){
+    const cv=document.getElementById('grain'), ctx=cv.getContext('2d');
+    const W=540,H=960,FR=6;
+    cv.width=W;cv.height=H;
+    const frames=[];
+    for(let f=0;f<FR;f++){
+      const img=ctx.createImageData(W,H), d=img.data;
+      for(let i=0;i<d.length;i+=4){
+        const v=(Math.random()*255)|0;
+        d[i]=d[i+1]=d[i+2]=v;d[i+3]=255;
+      }
+      frames.push(img);
+    }
+    let idx=0;
+    setInterval(()=>{ctx.putImageData(frames[idx],0,0);idx=(idx+1)%FR;},85);
+  })();
+</script>
