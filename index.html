@@ -142,8 +142,13 @@
   .cover-d{background:linear-gradient(135deg,#22d3ee,#1e90e8)}
   .cover-e{background:linear-gradient(135deg,#2f8fe6,#0a2f5c)}
   .cover-f{background:linear-gradient(135deg,#7dd3fc,#0c3f80)}
-  .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .thumb img,.thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   .thumb .play,.thumb .pill{z-index:2}
+  .g-ugc{grid-template-columns:repeat(3,1fr);max-width:730px;margin:0 auto}
+  .vstat{display:inline-block;margin-top:9px;padding:5px 11px;border-radius:999px;background:rgba(56,189,248,.13);border:1px solid rgba(125,211,252,.32);color:#bfe6ff;font-size:.72rem;font-weight:600;letter-spacing:.01em}
+  .thumb .live-dot{position:absolute;top:12px;right:12px;z-index:2;font-size:.62rem;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:999px;background:rgba(56,189,248,.22);border:1px solid var(--c2);color:#eaf6ff;text-transform:uppercase}
+  .row-label{display:flex;align-items:center;gap:14px;margin:52px 0 24px;font-family:'Space Grotesk';font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:#9fd2f8}
+  .row-label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(125,211,252,.4),transparent)}
 
   .embed-note{border:1px dashed var(--card-brd);border-radius:var(--radius);padding:20px;color:var(--muted);text-align:center;background:var(--card);font-size:.9rem}
   .embed-note code{color:var(--c2)}
@@ -334,12 +339,16 @@
     <h2 class="sec-title reveal" data-en="Commercial &amp; Brand Campaigns" data-tr="Ticari &amp; Marka Kampanyaları">Commercial &amp; Brand Campaigns</h2>
     <p class="sec-sub reveal" data-en="AI commercials, product visuals &amp; UGC for real brands — on Upwork &amp; Behance." data-tr="Gerçek markalar için AI reklamlar, ürün görselleri &amp; UGC — Upwork &amp; Behance'de.">AI commercials, product visuals &amp; UGC for real brands — on Upwork &amp; Behance.</p>
     <div class="grid g-3">
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="konfuse-poster.jpg" alt="Konfuse Duffel Bag Film" loading="lazy" /><span class="play"></span><span class="pill">Konfuse</span></div><div class="card-body"><h3>Hyper-Real Duffel Bag Film</h3><p data-en="AI cinematic brand campaign — Konfuse" data-tr="AI sinematik marka kampanyası — Konfuse">AI cinematic brand campaign — Konfuse</p></div></a>
       <a class="card reveal" href="https://www.behance.net/gallery/242412705/Doqu-Home-Motion-Identity-AI-Campaign" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="doqu-home.jpg" alt="Doqu Home Motion Identity" loading="lazy" /><span class="play"></span><span class="pill">Doqu Home</span></div><div class="card-body"><h3>Doqu Home — Motion Identity</h3><p data-en="AI motion-identity campaign · Behance" data-tr="AI motion kimlik kampanyası · Behance">AI motion-identity campaign · Behance</p></div></a>
       <a class="card reveal" href="https://www.behance.net/gallery/247043669/The-Architecture-of-Comfort-AI-Product-Visualization" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="architecture-comfort.jpg" alt="The Architecture of Comfort" loading="lazy" /><span class="play"></span><span class="pill">AI Product Viz</span></div><div class="card-body"><h3>The Architecture of Comfort</h3><p data-en="AI product visualization · Behance" data-tr="AI ürün görselleştirme · Behance">AI product visualization · Behance</p></div></a>
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb cover-d"><span class="play"></span><span class="pill">TeliCall</span></div><div class="card-body"><h3>TeliCall — “The Call Home”</h3><p data-en="UGC ad · EN + DE/PT localized" data-tr="UGC reklam · EN + DE/PT yerelleştirme">UGC ad · EN + DE/PT localized</p></div></a>
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2067011390704791552" target="_blank" rel="noopener"><div class="thumb cover-a"><span class="play"></span><span class="pill">eSIM</span></div><div class="card-body"><h3>eSIM — AI UGC Ad</h3><p data-en="Brief-faithful UGC recreation · 4K" data-tr="Brief'e sadık UGC · 4K">Brief-faithful UGC recreation · 4K</p></div></a>
       <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-f"><span class="play"></span><span class="pill">Behance</span></div><div class="card-body"><h3>See all on Behance →</h3><p data-en="Full portfolio of brand &amp; product work" data-tr="Marka &amp; ürün işlerinin tamamı">Full portfolio of brand &amp; product work</p></div></a>
+    </div>
+
+    <div class="row-label reveal" data-en="UGC Ads · Vertical · Lip-Synced Localization" data-tr="UGC Reklamlar · Dikey · Lip-Sync Lokalizasyon">UGC Ads · Vertical · Lip-Synced Localization</div>
+    <div class="grid g-ugc">
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="konfuse.mp4" poster="konfuse-poster.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Konfuse</span></div><div class="card-body"><h3>Hyper-Real Duffel Bag</h3><p data-en="AI cinematic brand film" data-tr="AI sinematik marka filmi">AI cinematic brand film</p><span class="vstat">🎬 Hyper-real · 9:16</span></div></a>
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><span class="play"></span><span class="pill">TeliCall</span></div><div class="card-body"><h3>TeliCall — “The Call Home”</h3><p data-en="UGC ad · AI actor" data-tr="UGC reklam · AI oyuncu">UGC ad · AI actor</p><span class="vstat">🗣 Lip-synced · EN / DE / PT</span></div></a>
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2067011390704791552" target="_blank" rel="noopener"><div class="thumb v cover-a"><span class="play"></span><span class="pill">eSIM</span></div><div class="card-body"><h3>eSIM — AI UGC Ad</h3><p data-en="Brief-faithful recreation" data-tr="Brief'e sadık yeniden üretim">Brief-faithful recreation</p><span class="vstat">🎯 Brief-faithful · 4K</span></div></a>
     </div>
   </section>
 
