@@ -151,6 +151,9 @@
   .cover-f{background:linear-gradient(135deg,#7dd3fc,#0c3f80)}
   .thumb img,.thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   .thumb .play,.thumb .pill{z-index:2}
+  .sndbtn{position:absolute;bottom:10px;right:10px;z-index:4;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.5);backdrop-filter:blur(4px);color:#fff;font-size:.8rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;padding:0;line-height:1}
+  .sndbtn:hover{background:rgba(56,189,248,.55);border-color:var(--c2);transform:scale(1.08)}
+  .sndbtn.on{background:rgba(56,189,248,.7);border-color:#eaf6ff}
   .g-ugc{grid-template-columns:repeat(3,1fr);max-width:760px;margin:0 auto}
   .g-ex{grid-template-columns:repeat(4,1fr);gap:16px;max-width:880px;margin:0 auto}
   .g-ex .card-body{padding:11px 13px} .g-ex .card-body h3{font-size:.92rem} .g-ex .card-body p{font-size:.76rem}
@@ -371,10 +374,10 @@
 
     <div class="row-label reveal" data-en="Exotic — Beverage Campaign · Citrine Studio" data-tr="Exotic — İçecek Kampanyası · Citrine Studio">Exotic — Beverage Campaign · Citrine Studio</div>
     <div class="grid g-ex">
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="exotic-limonata.mp4" poster="exotic-limonata-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Limonata</span></div><div class="card-body"><h3>Limonata · Hero</h3><p data-en="Fresh-squeezed · 9:16" data-tr="Taze sıkılmış · 9:16">Fresh-squeezed · 9:16</p></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="exotic-limonata2.mp4" poster="exotic-limonata2-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Limonata</span></div><div class="card-body"><h3>Limonata · Extended</h3><p data-en="Brand film · 20s" data-tr="Marka filmi · 20s">Brand film · 20s</p></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="exotic-portakal.mp4" poster="exotic-portakal-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Portakal</span></div><div class="card-body"><h3>Portakal · Bonus</h3><p data-en="Orange · product film" data-tr="Portakal · ürün filmi">Orange · product film</p></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="exotic-portakal2.mp4" poster="exotic-portakal2-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Portakal</span></div><div class="card-body"><h3>Portakal · UGC</h3><p data-en="UGC cut" data-tr="UGC versiyon">UGC cut</p></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="exotic-limonata.mp4" poster="exotic-limonata-p.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Limonata</span></div><div class="card-body"><h3>Limonata · Hero</h3><p data-en="Fresh-squeezed · 9:16" data-tr="Taze sıkılmış · 9:16">Fresh-squeezed · 9:16</p></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="exotic-limonata2.mp4" poster="exotic-limonata2-p.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Limonata</span></div><div class="card-body"><h3>Limonata · Extended</h3><p data-en="Brand film · 20s" data-tr="Marka filmi · 20s">Brand film · 20s</p></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="exotic-portakal.mp4" poster="exotic-portakal-p.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Portakal</span></div><div class="card-body"><h3>Portakal · Bonus</h3><p data-en="Orange · product film" data-tr="Portakal · ürün filmi">Orange · product film</p></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="exotic-portakal2.mp4" poster="exotic-portakal2-p.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Portakal</span></div><div class="card-body"><h3>Portakal · UGC</h3><p data-en="UGC cut" data-tr="UGC versiyon">UGC cut</p></div></a>
     </div>
   </section>
 
@@ -386,14 +389,14 @@
 
     <div class="row-label reveal" data-en="TeliCall — “The Call Home” · EN / DE / PT" data-tr="TeliCall — “The Call Home” · EN / DE / PT">TeliCall — “The Call Home” · EN / DE / PT</div>
     <div class="grid g-ugc">
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-en.mp4" poster="telicall-en-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">EN</span></div><div class="card-body"><h3>The Call Home · EN</h3><p data-en="Original · English" data-tr="Orijinal · İngilizce">Original · English</p><span class="vstat">🗣 Lip-synced original</span></div></a>
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-de.mp4" poster="telicall-de-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">DE</span></div><div class="card-body"><h3>The Call Home · DE</h3><p data-en="Localized · Deutsch" data-tr="Yerel · Almanca">Localized · Deutsch</p><span class="vstat">🗣 Re-lipped · Deutsch</span></div></a>
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-pt.mp4" poster="telicall-pt-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">PT</span></div><div class="card-body"><h3>The Call Home · PT</h3><p data-en="Localized · Português" data-tr="Yerel · Portekizce">Localized · Português</p><span class="vstat">🗣 Re-lipped · Português</span></div></a>
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-en.mp4" poster="telicall-en-p.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">EN</span></div><div class="card-body"><h3>The Call Home · EN</h3><p data-en="🇬🇧 Original · English" data-tr="🇬🇧 Orijinal · İngilizce">🇬🇧 Original · English</p><span class="vstat">🗣 Lip-synced original</span></div></a>
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-de.mp4" poster="telicall-de-p.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">DE</span></div><div class="card-body"><h3>The Call Home · DE</h3><p data-en="🇩🇪 Localized · Deutsch" data-tr="🇩🇪 Yerel · Almanca">🇩🇪 Localized · Deutsch</p><span class="vstat">🗣 Re-lipped · Deutsch</span></div></a>
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-pt.mp4" poster="telicall-pt-p.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">PT</span></div><div class="card-body"><h3>The Call Home · PT</h3><p data-en="🇵🇹 Localized · Português" data-tr="🇵🇹 Yerel · Portekizce">🇵🇹 Localized · Português</p><span class="vstat">🗣 Re-lipped · Português</span></div></a>
     </div>
 
     <div class="row-label reveal" data-en="eSIM.io — AI UGC Ad" data-tr="eSIM.io — AI UGC Reklam">eSIM.io — AI UGC Ad</div>
     <div style="max-width:250px;margin:0 auto">
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2067011390704791552" target="_blank" rel="noopener"><div class="thumb v cover-a"><video src="esim.mp4" poster="esim-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">eSIM</span></div><div class="card-body"><h3>eSIM.io — AI UGC Ad</h3><p data-en="Brief-faithful recreation · 4K" data-tr="Brief'e sadık · 4K">Brief-faithful recreation · 4K</p></div></a>
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2067011390704791552" target="_blank" rel="noopener"><div class="thumb v cover-a"><video src="esim.mp4" poster="esim-p.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">eSIM</span></div><div class="card-body"><h3>eSIM.io — AI UGC Ad</h3><p data-en="Brief-faithful recreation · 4K" data-tr="Brief'e sadık · 4K">Brief-faithful recreation · 4K</p></div></a>
     </div>
   </section>
 
@@ -568,6 +571,19 @@
     ['click','scroll','touchstart','keydown'].forEach(ev=>window.addEventListener(ev,playHero,{once:true,passive:true}));
     playHero();
   }
+
+  // sound toggle on video cards — only one plays audio at a time
+  document.querySelectorAll('.sndbtn').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.preventDefault();e.stopPropagation();
+      const th=btn.closest('.thumb');const vid=th&&th.querySelector('video');
+      if(!vid)return;
+      const turnOn=vid.muted;
+      document.querySelectorAll('video').forEach(v=>{if(v!==document.getElementById('heroVid'))v.muted=true;});
+      document.querySelectorAll('.sndbtn').forEach(b=>{b.textContent='🔇';b.classList.remove('on');});
+      if(turnOn){vid.muted=false;const p=vid.play();if(p&&p.catch)p.catch(()=>{});btn.textContent='🔊';btn.classList.add('on');}
+    });
+  });
 </script>
 </body>
 </html>
