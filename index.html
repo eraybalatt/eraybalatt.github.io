@@ -125,6 +125,11 @@
   .cap p{font-size:.96rem;line-height:1.62;color:var(--muted)}
   .cap .cap-tools{margin-top:16px;font-size:.78rem;letter-spacing:.04em;color:#9fd2f8;text-transform:uppercase;font-weight:500}
   .cap .cap-stat{display:inline-block;margin-top:18px;padding:7px 14px;border-radius:999px;background:rgba(56,189,248,.12);border:1px solid rgba(125,211,252,.32);color:#bfe6ff;font-size:.82rem;font-weight:600}
+  .svc-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:26px 34px}
+  .svc-group h4{font-family:'Space Grotesk';font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:#9fd2f8;margin-bottom:13px;display:flex;align-items:center;gap:9px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{padding:9px 15px;border-radius:11px;background:rgba(125,211,252,.06);border:1px solid var(--card-brd);font-size:.85rem;font-weight:500;color:var(--text);transition:.2s}
+  .chip:hover{border-color:var(--c2);background:rgba(56,189,248,.1);transform:translateY(-2px)}
   .card{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;position:relative}
   .card:hover{transform:translateY(-6px);border-color:rgba(125,211,252,.45);box-shadow:0 20px 50px -20px rgba(2,10,40,.9)}
   .thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;font-size:2.2rem}
@@ -185,7 +190,7 @@
     .nav-links.open{display:flex}
     .nav-links a{padding:12px 16px}
     .nav-toggle{display:block}
-    .g-2,.g-3{grid-template-columns:1fr}
+    .g-2,.g-3,.svc-groups{grid-template-columns:1fr}
     section{padding:62px 0}
   }
 </style>
@@ -390,6 +395,47 @@
         <p data-en="Original songs and scores built in Suno — from full tracks for music videos to brand soundbeds. As a Suno Ambassador I've produced 5,500+ tracks." data-tr="Suno ile üretilen özgün şarkılar ve müzikler — müzik videoları için tam parçalardan marka müziklerine. Suno Ambassador olarak 5.500'den fazla parça ürettim.">Original songs and scores built in Suno — from full tracks for music videos to brand soundbeds. As a Suno Ambassador I've produced 5,500+ tracks.</p>
         <div class="cap-tools">Suno · Sound design · Scoring</div>
         <span class="cap-stat" data-en="5,500+ tracks on Suno · Ambassador" data-tr="Suno'da 5.500+ parça · Ambassador">5,500+ tracks on Suno · Ambassador</span>
+      </div>
+    </div>
+
+    <div class="row-label reveal" data-en="Services I Offer" data-tr="Verdiğim Hizmetler">Services I Offer</div>
+    <div class="svc-groups">
+      <div class="svc-group reveal">
+        <h4>🖼️ <span data-en="Visuals &amp; Images" data-tr="Görsel &amp; İmaj">Visuals &amp; Images</span></h4>
+        <div class="chips">
+          <span class="chip" data-en="AI Image Generation" data-tr="AI Görsel Üretimi">AI Image Generation</span>
+          <span class="chip" data-en="Product Visualization" data-tr="Ürün Görselleştirme">Product Visualization</span>
+          <span class="chip" data-en="Key Art &amp; Posters" data-tr="Key Art &amp; Poster">Key Art &amp; Posters</span>
+          <span class="chip" data-en="Cinematic Stills" data-tr="Sinematik Kareler">Cinematic Stills</span>
+        </div>
+      </div>
+      <div class="svc-group reveal">
+        <h4>🎬 <span data-en="Video &amp; Film" data-tr="Video &amp; Film">Video &amp; Film</span></h4>
+        <div class="chips">
+          <span class="chip" data-en="AI Video Production" data-tr="AI Video Prodüksiyon">AI Video Production</span>
+          <span class="chip" data-en="Music Video Visualizers" data-tr="Müzik Video Visualizer">Music Video Visualizers</span>
+          <span class="chip" data-en="Brand &amp; Product Films" data-tr="Marka &amp; Ürün Filmleri">Brand &amp; Product Films</span>
+          <span class="chip" data-en="Documentaries" data-tr="Belgeseller">Documentaries</span>
+        </div>
+      </div>
+      <div class="svc-group reveal">
+        <h4>🎞️ <span data-en="Motion &amp; Post" data-tr="Motion &amp; Post">Motion &amp; Post</span></h4>
+        <div class="chips">
+          <span class="chip" data-en="Motion Design" data-tr="Motion Design">Motion Design</span>
+          <span class="chip" data-en="Video Editing" data-tr="Video Kurgu">Video Editing</span>
+          <span class="chip" data-en="Color Grading" data-tr="Renk Düzenleme">Color Grading</span>
+          <span class="chip" data-en="VFX &amp; Compositing" data-tr="VFX &amp; Compositing">VFX &amp; Compositing</span>
+        </div>
+      </div>
+      <div class="svc-group reveal">
+        <h4>🎵 <span data-en="Music, Ads &amp; Content" data-tr="Müzik, Reklam &amp; İçerik">Music, Ads &amp; Content</span></h4>
+        <div class="chips">
+          <span class="chip" data-en="AI Music &amp; Scoring" data-tr="AI Müzik &amp; Besteleme">AI Music &amp; Scoring</span>
+          <span class="chip" data-en="Audio Visualizers" data-tr="Ses Visualizer">Audio Visualizers</span>
+          <span class="chip" data-en="UGC Ads" data-tr="UGC Reklam">UGC Ads</span>
+          <span class="chip" data-en="Meta / Social Ads" data-tr="Meta / Social Reklam">Meta / Social Ads</span>
+          <span class="chip" data-en="Social Content" data-tr="Sosyal İçerik">Social Content</span>
+        </div>
       </div>
     </div>
   </section>
