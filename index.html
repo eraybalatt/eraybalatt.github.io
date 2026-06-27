@@ -150,6 +150,8 @@
   .thumb img,.thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   .thumb .play,.thumb .pill{z-index:2}
   .g-ugc{grid-template-columns:repeat(3,1fr);max-width:760px;margin:0 auto}
+  .g-ex{grid-template-columns:repeat(4,1fr);gap:16px;max-width:880px;margin:0 auto}
+  .g-ex .card-body{padding:11px 13px} .g-ex .card-body h3{font-size:.92rem} .g-ex .card-body p{font-size:.76rem}
   .sig-film{display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-bottom:46px}
   .sig-media{width:300px;max-width:100%;flex-shrink:0}
   .sig-text{flex:1;min-width:260px}
@@ -183,7 +185,7 @@
   .grid .reveal:nth-child(6){transition-delay:.45s}
 
   @media(max-width:900px){
-    .g-3,.g-gallery{grid-template-columns:repeat(2,1fr)}
+    .g-3,.g-gallery,.g-ex{grid-template-columns:repeat(2,1fr)}
     .g-shorts,.g-clients{grid-template-columns:repeat(2,1fr)}
     .feature,.about-wrap{grid-template-columns:1fr}
     .portrait{max-width:280px;margin:0 auto}
@@ -365,18 +367,31 @@
       <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-f"><span class="play"></span><span class="pill">Behance</span></div><div class="card-body"><h3>See all on Behance →</h3><p data-en="Full portfolio of brand &amp; product work" data-tr="Marka &amp; ürün işlerinin tamamı">Full portfolio of brand &amp; product work</p></div></a>
     </div>
 
-    <div class="row-label reveal" data-en="Product Visualization · Studio Atelia" data-tr="Ürün Görselleştirme · Studio Atelia">Product Visualization · Studio Atelia</div>
-    <div class="grid g-3">
-      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-1.jpg" alt="Studio Atelia product visualization" loading="lazy" /><span class="pill">Studio Atelia</span></div></a>
-      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-2.jpg" alt="Studio Atelia product visualization" loading="lazy" /><span class="pill">Studio Atelia</span></div></a>
-      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-3.jpg" alt="Studio Atelia product visualization" loading="lazy" /><span class="pill">Studio Atelia</span></div></a>
+    <div class="row-label reveal" data-en="Exotic — Beverage Campaign · Citrine Studio" data-tr="Exotic — İçecek Kampanyası · Citrine Studio">Exotic — Beverage Campaign · Citrine Studio</div>
+    <div class="grid g-ex">
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="exotic-limonata.mp4" poster="exotic-limonata-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Limonata</span></div><div class="card-body"><h3>Limonata · Hero</h3><p data-en="Fresh-squeezed · 9:16" data-tr="Taze sıkılmış · 9:16">Fresh-squeezed · 9:16</p></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="exotic-limonata2.mp4" poster="exotic-limonata2-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Limonata</span></div><div class="card-body"><h3>Limonata · Extended</h3><p data-en="Brand film · 20s" data-tr="Marka filmi · 20s">Brand film · 20s</p></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="exotic-portakal.mp4" poster="exotic-portakal-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Portakal</span></div><div class="card-body"><h3>Portakal · Bonus</h3><p data-en="Orange · product film" data-tr="Portakal · ürün filmi">Orange · product film</p></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="exotic-portakal2.mp4" poster="exotic-portakal2-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Portakal</span></div><div class="card-body"><h3>Portakal · UGC</h3><p data-en="UGC cut" data-tr="UGC versiyon">UGC cut</p></div></a>
+    </div>
+  </section>
+
+  <!-- UGC & LOCALIZATION -->
+  <section id="ugc">
+    <div class="eyebrow reveal" data-en="UGC &amp; Localization" data-tr="UGC &amp; Lokalizasyon">UGC &amp; Localization</div>
+    <h2 class="sec-title reveal" data-en="UGC Ads &amp; Lip-Synced Localization" data-tr="UGC Reklamlar &amp; Lip-Sync Lokalizasyon">UGC Ads &amp; Lip-Synced Localization</h2>
+    <p class="sec-sub reveal" data-en="The same ad — re-voiced and lip-synced across languages with my AI pipeline. Same actor, three markets." data-tr="Aynı reklam — AI hattımla farklı dillerde yeniden seslendirilip dudak senkronu yapıldı. Aynı oyuncu, üç pazar.">The same ad — re-voiced and lip-synced across languages with my AI pipeline. Same actor, three markets.</p>
+
+    <div class="row-label reveal" data-en="TeliCall — “The Call Home” · EN / DE / PT" data-tr="TeliCall — “The Call Home” · EN / DE / PT">TeliCall — “The Call Home” · EN / DE / PT</div>
+    <div class="grid g-ugc">
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-en.mp4" poster="telicall-en-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">EN</span></div><div class="card-body"><h3>The Call Home · EN</h3><p data-en="Original · English" data-tr="Orijinal · İngilizce">Original · English</p><span class="vstat">🗣 Lip-synced original</span></div></a>
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-de.mp4" poster="telicall-de-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">DE</span></div><div class="card-body"><h3>The Call Home · DE</h3><p data-en="Localized · Deutsch" data-tr="Yerel · Almanca">Localized · Deutsch</p><span class="vstat">🗣 Re-lipped · Deutsch</span></div></a>
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-pt.mp4" poster="telicall-pt-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">PT</span></div><div class="card-body"><h3>The Call Home · PT</h3><p data-en="Localized · Português" data-tr="Yerel · Portekizce">Localized · Português</p><span class="vstat">🗣 Re-lipped · Português</span></div></a>
     </div>
 
-    <div class="row-label reveal" data-en="Vertical Ads · UGC · Lip-Synced Localization" data-tr="Dikey Reklamlar · UGC · Lip-Sync Lokalizasyon">Vertical Ads · UGC · Lip-Synced Localization</div>
-    <div class="grid g-ugc">
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="exotic.mp4" poster="exotic-poster.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Exotic</span></div><div class="card-body"><h3>Exotic — “Biz Sıkmayız”</h3><p data-en="Fresh-squeezed beverage campaign · Citrine Studio" data-tr="Taze sıkılmış içecek kampanyası · Citrine Studio">Fresh-squeezed beverage campaign · Citrine Studio</p><span class="vstat">🍋 4K · Vertical hero film</span></div></a>
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><span class="play"></span><span class="pill">TeliCall</span></div><div class="card-body"><h3>TeliCall — “The Call Home”</h3><p data-en="UGC ad · AI actor" data-tr="UGC reklam · AI oyuncu">UGC ad · AI actor</p><span class="vstat">🗣 Lip-synced · EN / DE / PT</span></div></a>
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2067011390704791552" target="_blank" rel="noopener"><div class="thumb v cover-a"><span class="play"></span><span class="pill">eSIM</span></div><div class="card-body"><h3>eSIM — AI UGC Ad</h3><p data-en="Brief-faithful recreation" data-tr="Brief'e sadık yeniden üretim">Brief-faithful recreation</p><span class="vstat">🎯 Brief-faithful · 4K</span></div></a>
+    <div class="row-label reveal" data-en="eSIM.io — AI UGC Ad" data-tr="eSIM.io — AI UGC Reklam">eSIM.io — AI UGC Ad</div>
+    <div style="max-width:250px;margin:0 auto">
+      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2067011390704791552" target="_blank" rel="noopener"><div class="thumb v cover-a"><video src="esim.mp4" poster="esim-p.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">eSIM</span></div><div class="card-body"><h3>eSIM.io — AI UGC Ad</h3><p data-en="Brief-faithful recreation · 4K" data-tr="Brief'e sadık · 4K">Brief-faithful recreation · 4K</p></div></a>
     </div>
   </section>
 
@@ -460,6 +475,22 @@
           <span class="chip" data-en="Social Content" data-tr="Sosyal İçerik">Social Content</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- STUDIO ATELIA -->
+  <section id="atelia">
+    <div class="eyebrow reveal" data-en="Product Visualization" data-tr="Ürün Görselleştirme">Product Visualization</div>
+    <h2 class="sec-title reveal">Studio Atelia</h2>
+    <p class="sec-sub reveal" data-en="A full AI product-visualization set for a modular sofa collection — lifestyle scenes, fabric macros and editorial interiors, rendered end-to-end." data-tr="Modüler bir koltuk koleksiyonu için eksiksiz bir AI ürün-görselleştirme seti — yaşam alanı sahneleri, kumaş makroları ve editoryal mekânlar, baştan sona render.">A full AI product-visualization set for a modular sofa collection — lifestyle scenes, fabric macros and editorial interiors, rendered end-to-end.</p>
+    <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener" style="display:block;margin-bottom:18px"><div class="thumb" style="aspect-ratio:16/7"><img src="atelia-1.jpg" alt="Studio Atelia product visualization" loading="lazy" /><span class="pill">Studio Atelia · AI Product Viz</span></div></a>
+    <div class="grid g-gallery">
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-2.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-3.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-4.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-5.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-6.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-7.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
     </div>
   </section>
 
