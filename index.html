@@ -590,6 +590,15 @@
       if(turnOn){vid.muted=false;const p=vid.play();if(p&&p.catch)p.catch(()=>{});btn.textContent='🔊';btn.classList.add('on');}
     });
   });
+
+  // performance: only play card videos while on-screen
+  const cardVids=[...document.querySelectorAll('.thumb video')];
+  const vio=new IntersectionObserver((es)=>es.forEach(e=>{
+    const v=e.target;
+    if(e.isIntersecting){const p=v.play();if(p&&p.catch)p.catch(()=>{});}
+    else{v.pause();}
+  }),{threshold:.2});
+  cardVids.forEach(v=>vio.observe(v));
 </script>
 </body>
 </html>
