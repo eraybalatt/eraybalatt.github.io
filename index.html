@@ -196,6 +196,14 @@
   .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:24px auto 0;max-width:680px}
   .social{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:13px;border:1px solid var(--card-brd);background:linear-gradient(180deg,rgba(125,211,252,.05),rgba(125,211,252,0));transition:.25s;font-family:'Space Grotesk';font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text)}
   .social:hover{transform:translateY(-3px);border-color:var(--c2);background:linear-gradient(180deg,rgba(56,189,248,.14),rgba(56,189,248,.02));box-shadow:0 12px 32px -14px var(--c3)}
+  .contact-grid{text-align:left;display:grid;grid-template-columns:270px 1fr;gap:42px;align-items:center}
+  .contact-visual{border-radius:18px;overflow:hidden;aspect-ratio:9/16;border:1px solid var(--card-brd);background:#04070e;box-shadow:0 22px 60px -26px rgba(0,0,0,.85)}
+  .contact-visual iframe{width:100%;height:100%;border:0;display:block}
+  .contact-email{display:inline-flex;align-items:center;gap:8px;margin:20px 0 4px;font-family:'Space Grotesk';font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:600;color:#fff;border-bottom:2px solid var(--c2);padding-bottom:3px;transition:color .2s,transform .2s}
+  .contact-email:hover{color:var(--c1);transform:translateX(3px)}
+  .contact-grid .socials{justify-content:flex-start;margin:18px 0 0;max-width:none}
+  .contact-grid .sec-sub{margin:6px 0 0}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr;text-align:center}.contact-visual{max-width:230px;margin:0 auto}.contact-grid .socials{justify-content:center}.contact-email{display:inline-flex}}
 
   footer{text-align:center;padding:38px 20px;color:var(--muted);border-top:1px solid var(--card-brd);font-size:.86rem}
   footer .brand-sm{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
@@ -573,7 +581,8 @@
     <h2 class="sec-title reveal" data-en="Short Pieces &amp; Visuals" data-tr="Kısa Parçalar &amp; Görseller">Short Pieces &amp; Visuals</h2>
     <p class="sec-sub reveal" data-en="Quick AI visual experiments and bite-size films." data-tr="Hızlı AI görsel denemeleri ve kısacık filmler.">Quick AI visual experiments and bite-size films.</p>
     <a class="card reveal" href="https://www.youtube.com/watch?v=P6qFzKNRHz4" target="_blank" rel="noopener" style="display:block;margin-bottom:18px"><div class="thumb" style="aspect-ratio:1100/580"><video src="feast.mp4" poster="feast-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">▶ The Last Feast · 0:44</span></div><div class="card-body"><h3>The Last Feast</h3><p data-en="AI Short film · directed as ÆRAY" data-tr="AI Kısa film · ÆRAY imzalı">AI Short film · directed as ÆRAY</p></div></a>
-    <div class="grid g-2" style="max-width:800px">
+    <div class="grid g-3">
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><video src="turkic.mp4" poster="turkic-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Turkic · Seljuk</span></div><div class="card-body"><h3>Turkic · Seljuk</h3><p data-en="AI cinematic · Instagram →" data-tr="AI sinematik · Instagram →">AI cinematic · Instagram →</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="https://i.ytimg.com/vi/rYHPU-_RqOc/hqdefault.jpg" alt="Switzerland in One Hour" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Switzerland in One Hour 🇨🇭</h3><p data-en="AI Short · 0:45" data-tr="AI Kısa · 0:45">AI Short · 0:45</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=IADNypjkZGg" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/IADNypjkZGg/hqdefault.jpg" alt="Midjourney x Suno" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Midjourney × Suno</h3><p data-en="AI Visual · soundtrack" data-tr="AI Görsel · müzik">AI Visual · soundtrack</p></div></a>
     </div>
@@ -582,10 +591,13 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="contact reveal">
+    <div class="contact reveal contact-grid">
+      <div class="contact-visual"><iframe src="selcuklu-loop.html" title="Selçuklu — Kurt loop" loading="lazy" scrolling="no"></iframe></div>
+      <div class="contact-body">
       <div class="eyebrow" data-en="Contact" data-tr="İletişim">Contact</div>
       <h2 class="sec-title" data-en="Let's create together 🤝" data-tr="Birlikte üretelim 🤝">Let's create together 🤝</h2>
-      <p class="sec-sub" style="margin:8px auto 0" data-en="Open for commissions and brand work — music videos, documentaries, product films &amp; more." data-tr="Sipariş ve marka işlerine açığım — müzik videoları, belgeseller, ürün filmleri ve daha fazlası.">Open for commissions and brand work — music videos, documentaries, product films &amp; more.</p>
+      <p class="sec-sub" data-en="Open for commissions and brand work — music videos, documentaries, product films &amp; more." data-tr="Sipariş ve marka işlerine açığım — müzik videoları, belgeseller, ürün filmleri ve daha fazlası.">Open for commissions and brand work — music videos, documentaries, product films &amp; more.</p>
+      <a class="contact-email" href="mailto:eray@eraybalat.com">✉️ eray@eraybalat.com</a>
       <div class="socials">
         <a class="social" href="mailto:eray@eraybalat.com">Email</a>
         <a class="social" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener">YouTube</a>
@@ -596,6 +608,7 @@
         <a class="social" href="https://medium.com/@eraybalat" target="_blank" rel="noopener">Medium</a>
         <a class="social" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener">Upwork</a>
         <a class="social" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
       </div>
     </div>
   </section>
