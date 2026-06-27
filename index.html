@@ -119,6 +119,12 @@
   .g-shorts{grid-template-columns:repeat(4,1fr)}
   .g-gallery{grid-template-columns:repeat(3,1fr)}
   .g-clients{grid-template-columns:repeat(4,1fr)}
+  .cap{padding:34px 30px;background:linear-gradient(165deg,rgba(18,42,86,.5),rgba(8,18,42,.55));border:1px solid rgba(125,211,252,.18)}
+  .cap .cap-ico{width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;border-radius:16px;background:linear-gradient(150deg,rgba(56,189,248,.22),rgba(14,111,209,.15));border:1px solid rgba(125,211,252,.28);margin-bottom:20px}
+  .cap h3{font-family:'Space Grotesk';font-size:1.5rem;font-weight:600;margin-bottom:12px}
+  .cap p{font-size:.96rem;line-height:1.62;color:var(--muted)}
+  .cap .cap-tools{margin-top:16px;font-size:.78rem;letter-spacing:.04em;color:#9fd2f8;text-transform:uppercase;font-weight:500}
+  .cap .cap-stat{display:inline-block;margin-top:18px;padding:7px 14px;border-radius:999px;background:rgba(56,189,248,.12);border:1px solid rgba(125,211,252,.32);color:#bfe6ff;font-size:.82rem;font-weight:600}
   .card{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;position:relative}
   .card:hover{transform:translateY(-6px);border-color:rgba(125,211,252,.45);box-shadow:0 20px 50px -20px rgba(2,10,40,.9)}
   .thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;font-size:2.2rem}
@@ -174,7 +180,7 @@
     .nav-links.open{display:flex}
     .nav-links a{padding:12px 16px}
     .nav-toggle{display:block}
-    .g-2{grid-template-columns:1fr}
+    .g-2,.g-3{grid-template-columns:1fr}
     section{padding:62px 0}
   }
 </style>
@@ -352,13 +358,30 @@
   <!-- BRANDS / CLIENTS -->
   <section id="brands">
     <div class="eyebrow reveal" data-en="What I Do" data-tr="Ne Yapıyorum">What I Do</div>
-    <h2 class="sec-title reveal" data-en="Films, Music &amp; Brand Content" data-tr="Film, Müzik &amp; Marka İçeriği">Films, Music &amp; Brand Content</h2>
-    <p class="sec-sub reveal" data-en="Not just music videos — I direct documentaries, films, artist visuals and commercial content, end-to-end." data-tr="Sadece müzik videosu değil — belgesel, film, sanatçı görselleri ve ticari içeriği baştan sona yönetiyorum.">Not just music videos — I direct documentaries, films, artist visuals and commercial content, end-to-end.</p>
-    <div class="grid g-clients">
-      <div class="card reveal"><div class="card-body" style="padding:22px 20px"><h3 style="font-family:'Space Grotesk';font-size:1.18rem;margin-bottom:8px" data-en="🎬 Documentaries" data-tr="🎬 Belgeseller">🎬 Documentaries</h3><p style="font-size:.88rem;line-height:1.55" data-en="Long-form, research-driven AI documentaries — like The Charlie Kirk Case (ft. a former FBI agent) and the upcoming Antwerp Diamond Heist." data-tr="Uzun soluklu, araştırmaya dayalı AI belgeseller — Charlie Kirk Vakası (eski bir FBI ajanıyla) ve yakında Antwerp Elmas Soygunu gibi.">Long-form, research-driven AI documentaries — like The Charlie Kirk Case (ft. a former FBI agent) and the upcoming Antwerp Diamond Heist.</p></div></div>
-      <div class="card reveal"><div class="card-body" style="padding:22px 20px"><h3 style="font-family:'Space Grotesk';font-size:1.18rem;margin-bottom:8px" data-en="🎵 Music Videos" data-tr="🎵 Müzik Videoları">🎵 Music Videos</h3><p style="font-size:.88rem;line-height:1.55" data-en="Artist and original-song videos — including the BANEVA concert visuals (32K+ plays), “Diyardan Diyara” and “Last Stop: Paris.”" data-tr="Sanatçı ve özgün şarkı videoları — BANEVA konser görselleri (32K+ izlenme), “Diyardan Diyara” ve “Last Stop: Paris” dahil.">Artist and original-song videos — including the BANEVA concert visuals (32K+ plays), “Diyardan Diyara” and “Last Stop: Paris.”</p></div></div>
-      <div class="card reveal"><div class="card-body" style="padding:22px 20px"><h3 style="font-family:'Space Grotesk';font-size:1.18rem;margin-bottom:8px" data-en="📦 Brand &amp; UGC Content" data-tr="📦 Marka &amp; UGC İçeriği">📦 Brand &amp; UGC Content</h3><p style="font-size:.88rem;line-height:1.55" data-en="“Dark-luxury” AI commercials, product films &amp; UGC for brands — Doqu Home, Bellona, Konfuse, TeliCall, eSIM and more." data-tr="Markalar için “dark-luxury” AI reklamlar, ürün filmleri &amp; UGC — Doqu Home, Bellona, Konfuse, TeliCall, eSIM ve daha fazlası.">“Dark-luxury” AI commercials, product films &amp; UGC for brands — Doqu Home, Bellona, Konfuse, TeliCall, eSIM and more.</p></div></div>
-      <div class="card reveal"><div class="card-body" style="padding:22px 20px"><h3 style="font-family:'Space Grotesk';font-size:1.18rem;margin-bottom:8px">🟡 CITRINE</h3><p style="font-size:.88rem;line-height:1.55" data-en="My own creative label — original AI films and concept work released under the CITRINE name." data-tr="Kendi yaratıcı etiketim — CITRINE adıyla yayınladığım özgün AI filmler ve konsept işler.">My own creative label — original AI films and concept work released under the CITRINE name.</p></div></div>
+    <h2 class="sec-title reveal" data-en="AI Images · AI Videos · AI Music" data-tr="AI Görsel · AI Video · AI Müzik">AI Images · AI Videos · AI Music</h2>
+    <p class="sec-sub reveal" data-en="A full creative pipeline across three crafts — I design the frame, direct the motion and score the sound. All AI-native, finished by hand." data-tr="Üç ayrı zanaatı kapsayan eksiksiz bir yaratıcı hat — kareyi tasarlıyor, hareketi yönetiyor, sesi besteliyorum. Hepsi AI-native, elle bitiriliyor.">A full creative pipeline across three crafts — I design the frame, direct the motion and score the sound. All AI-native, finished by hand.</p>
+    <div class="grid g-3">
+      <div class="card cap reveal">
+        <div class="cap-ico">🖼️</div>
+        <h3 data-en="AI Images" data-tr="AI Görsel">AI Images</h3>
+        <p data-en="Cinematic stills, key art and product visuals — concepted in Midjourney, Seedream &amp; Nano Banana, then upscaled and finished with Magnific and Topaz Photo AI." data-tr="Sinematik kareler, key-art ve ürün görselleri — Midjourney, Seedream &amp; Nano Banana ile kurgulanıp Magnific ve Topaz Photo AI ile büyütülüp bitiriliyor.">Cinematic stills, key art and product visuals — concepted in Midjourney, Seedream &amp; Nano Banana, then upscaled and finished with Magnific and Topaz Photo AI.</p>
+        <div class="cap-tools">Midjourney · Seedream · Nano Banana · Magnific</div>
+        <span class="cap-stat" data-en="Stills · Key art · Product viz" data-tr="Kare · Key-art · Ürün görseli">Stills · Key art · Product viz</span>
+      </div>
+      <div class="card cap reveal">
+        <div class="cap-ico">🎬</div>
+        <h3 data-en="AI Videos" data-tr="AI Video">AI Videos</h3>
+        <p data-en="Documentaries, music videos and brand films — directed with Kling, Veo and Minimax Hailuo, edited and graded in Premiere Pro &amp; After Effects." data-tr="Belgesel, müzik videosu ve marka filmleri — Kling, Veo ve Minimax Hailuo ile yönetiliyor, Premiere Pro &amp; After Effects'te kurgulanıp renklendiriliyor.">Documentaries, music videos and brand films — directed with Kling, Veo and Minimax Hailuo, edited and graded in Premiere Pro &amp; After Effects.</p>
+        <div class="cap-tools">Kling · Veo · Hailuo · Premiere · After Effects</div>
+        <span class="cap-stat" data-en="Modd × Universal Music · CITRINE docs" data-tr="Modd × Universal Music · CITRINE belgeselleri">Modd × Universal Music · CITRINE docs</span>
+      </div>
+      <div class="card cap reveal">
+        <div class="cap-ico">🎵</div>
+        <h3 data-en="AI Music" data-tr="AI Müzik">AI Music</h3>
+        <p data-en="Original songs and scores built in Suno — from full tracks for music videos to brand soundbeds. As a Suno Ambassador I've produced 5,000+ tracks." data-tr="Suno ile üretilen özgün şarkılar ve müzikler — müzik videoları için tam parçalardan marka müziklerine. Suno Ambassador olarak 5.000'den fazla parça ürettim.">Original songs and scores built in Suno — from full tracks for music videos to brand soundbeds. As a Suno Ambassador I've produced 5,000+ tracks.</p>
+        <div class="cap-tools">Suno · Sound design · Scoring</div>
+        <span class="cap-stat" data-en="5,000+ tracks on Suno · Ambassador" data-tr="Suno'da 5.000+ parça · Ambassador">5,000+ tracks on Suno · Ambassador</span>
+      </div>
     </div>
   </section>
 
