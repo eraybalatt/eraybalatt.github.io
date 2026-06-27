@@ -149,7 +149,10 @@
   .cover-f{background:linear-gradient(135deg,#7dd3fc,#0c3f80)}
   .thumb img,.thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   .thumb .play,.thumb .pill{z-index:2}
-  .g-ugc{grid-template-columns:repeat(3,1fr);max-width:730px;margin:0 auto}
+  .g-ugc{grid-template-columns:repeat(2,1fr);max-width:520px;margin:0 auto}
+  .sig-film{display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-bottom:46px}
+  .sig-media{width:300px;max-width:100%;flex-shrink:0}
+  .sig-text{flex:1;min-width:260px}
   .vstat{display:inline-block;margin-top:9px;padding:5px 11px;border-radius:999px;background:rgba(56,189,248,.13);border:1px solid rgba(125,211,252,.32);color:#bfe6ff;font-size:.72rem;font-weight:600;letter-spacing:.01em}
   .thumb .live-dot{position:absolute;top:12px;right:12px;z-index:2;font-size:.62rem;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:999px;background:rgba(56,189,248,.22);border:1px solid var(--c2);color:#eaf6ff;text-transform:uppercase}
   .row-label{display:flex;align-items:center;gap:14px;margin:52px 0 24px;font-family:'Space Grotesk';font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:#9fd2f8}
@@ -242,12 +245,12 @@
 <!-- TOOLS MARQUEE -->
 <div class="tools" aria-hidden="true">
   <div class="tools-track">
-    <span><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b></span>
-    <span><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b><b>Midjourney</b><b>Kling 2.5</b><b>Veo 3.1</b><b>Seedream 4.0</b><b>Minimax Hailuo</b><b>Suno</b><b>Nano Banana</b><b>Magnific</b></span>
+    <span><b>Nano Banana 2</b><b>Kling 3.0</b><b>Seedance 2.0</b><b>Flora AI</b><b>Firefly</b><b>Nano Banana 2</b><b>Kling 3.0</b><b>Seedance 2.0</b><b>Flora AI</b><b>Firefly</b><b>Nano Banana 2</b><b>Kling 3.0</b><b>Seedance 2.0</b><b>Flora AI</b><b>Firefly</b><b>Nano Banana 2</b><b>Kling 3.0</b><b>Seedance 2.0</b><b>Flora AI</b><b>Firefly</b></span>
+    <span><b>Nano Banana 2</b><b>Kling 3.0</b><b>Seedance 2.0</b><b>Flora AI</b><b>Firefly</b><b>Nano Banana 2</b><b>Kling 3.0</b><b>Seedance 2.0</b><b>Flora AI</b><b>Firefly</b><b>Nano Banana 2</b><b>Kling 3.0</b><b>Seedance 2.0</b><b>Flora AI</b><b>Firefly</b><b>Nano Banana 2</b><b>Kling 3.0</b><b>Seedance 2.0</b><b>Flora AI</b><b>Firefly</b></span>
   </div>
   <div class="tools-track rev tools-row2">
-    <span><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b></span>
-    <span><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b><b>After Effects</b><b>Premiere Pro</b><b>Photoshop</b><b>Topaz Video AI</b><b>Topaz Photo AI</b><b>Motion Design</b><b>Color Grading</b></span>
+    <span><b>ElevenLabs</b><b>Topaz</b><b>Photoshop</b><b>After Effects</b><b>ElevenLabs</b><b>Topaz</b><b>Photoshop</b><b>After Effects</b><b>ElevenLabs</b><b>Topaz</b><b>Photoshop</b><b>After Effects</b><b>ElevenLabs</b><b>Topaz</b><b>Photoshop</b><b>After Effects</b></span>
+    <span><b>ElevenLabs</b><b>Topaz</b><b>Photoshop</b><b>After Effects</b><b>ElevenLabs</b><b>Topaz</b><b>Photoshop</b><b>After Effects</b><b>ElevenLabs</b><b>Topaz</b><b>Photoshop</b><b>After Effects</b><b>ElevenLabs</b><b>Topaz</b><b>Photoshop</b><b>After Effects</b></span>
   </div>
 </div>
 
@@ -343,15 +346,34 @@
     <div class="eyebrow reveal" data-en="Client Work" data-tr="Müşteri İşleri">Client Work</div>
     <h2 class="sec-title reveal" data-en="Commercial &amp; Brand Campaigns" data-tr="Ticari &amp; Marka Kampanyaları">Commercial &amp; Brand Campaigns</h2>
     <p class="sec-sub reveal" data-en="AI commercials, product visuals &amp; UGC for real brands — on Upwork &amp; Behance." data-tr="Gerçek markalar için AI reklamlar, ürün görselleri &amp; UGC — Upwork &amp; Behance'de.">AI commercials, product visuals &amp; UGC for real brands — on Upwork &amp; Behance.</p>
+
+    <div class="reveal sig-film">
+      <a href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" target="_blank" rel="noopener" class="card sig-media">
+        <div class="thumb v cover-e"><video src="konfuse.mp4" poster="konfuse-poster.jpg" autoplay muted loop playsinline></video><span class="pill">Konfuse</span></div>
+      </a>
+      <div class="sig-text">
+        <div class="role" data-en="Signature Brand Film · 9:16" data-tr="İmza Marka Filmi · 9:16">Signature Brand Film · 9:16</div>
+        <h3 style="font-family:'Space Grotesk';font-size:1.7rem;margin:6px 0 12px">Hyper-Real Duffel Bag Film</h3>
+        <p style="color:var(--muted);line-height:1.62;margin-bottom:20px" data-en="A cinematic, hyper-real product film for Konfuse — directed end-to-end with my AI pipeline. Vertical-first, built to stop the scroll on social." data-tr="Konfuse için sinematik, hiper-gerçekçi bir ürün filmi — baştan sona kendi AI hattımla yönetildi. Dikey öncelikli, sosyalde scroll'u durdurmak için üretildi.">A cinematic, hyper-real product film for Konfuse — directed end-to-end with my AI pipeline. Vertical-first, built to stop the scroll on social.</p>
+        <a href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" target="_blank" rel="noopener" class="btn btn-grad" data-en="View project →" data-tr="Projeyi Gör →">View project →</a>
+      </div>
+    </div>
+
     <div class="grid g-3">
       <a class="card reveal" href="https://www.behance.net/gallery/242412705/Doqu-Home-Motion-Identity-AI-Campaign" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="doqu-home.jpg" alt="Doqu Home Motion Identity" loading="lazy" /><span class="play"></span><span class="pill">Doqu Home</span></div><div class="card-body"><h3>Doqu Home — Motion Identity</h3><p data-en="AI motion-identity campaign · Behance" data-tr="AI motion kimlik kampanyası · Behance">AI motion-identity campaign · Behance</p></div></a>
-      <a class="card reveal" href="https://www.behance.net/gallery/247043669/The-Architecture-of-Comfort-AI-Product-Visualization" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="architecture-comfort.jpg" alt="The Architecture of Comfort" loading="lazy" /><span class="play"></span><span class="pill">AI Product Viz</span></div><div class="card-body"><h3>The Architecture of Comfort</h3><p data-en="AI product visualization · Behance" data-tr="AI ürün görselleştirme · Behance">AI product visualization · Behance</p></div></a>
+      <a class="card reveal" href="https://www.behance.net/gallery/247043669/The-Architecture-of-Comfort-AI-Product-Visualization" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="architecture-comfort.jpg?v=2" alt="The Architecture of Comfort" loading="lazy" /><span class="play"></span><span class="pill">AI Product Viz</span></div><div class="card-body"><h3>The Architecture of Comfort</h3><p data-en="AI product visualization · Behance" data-tr="AI ürün görselleştirme · Behance">AI product visualization · Behance</p></div></a>
       <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-f"><span class="play"></span><span class="pill">Behance</span></div><div class="card-body"><h3>See all on Behance →</h3><p data-en="Full portfolio of brand &amp; product work" data-tr="Marka &amp; ürün işlerinin tamamı">Full portfolio of brand &amp; product work</p></div></a>
+    </div>
+
+    <div class="row-label reveal" data-en="Product Visualization · Studio Atelia" data-tr="Ürün Görselleştirme · Studio Atelia">Product Visualization · Studio Atelia</div>
+    <div class="grid g-3">
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-1.jpg" alt="Studio Atelia product visualization" loading="lazy" /><span class="pill">Studio Atelia</span></div></a>
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-2.jpg" alt="Studio Atelia product visualization" loading="lazy" /><span class="pill">Studio Atelia</span></div></a>
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-3.jpg" alt="Studio Atelia product visualization" loading="lazy" /><span class="pill">Studio Atelia</span></div></a>
     </div>
 
     <div class="row-label reveal" data-en="UGC Ads · Vertical · Lip-Synced Localization" data-tr="UGC Reklamlar · Dikey · Lip-Sync Lokalizasyon">UGC Ads · Vertical · Lip-Synced Localization</div>
     <div class="grid g-ugc">
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="konfuse.mp4" poster="konfuse-poster.jpg" autoplay muted loop playsinline preload="metadata"></video><span class="pill">Konfuse</span></div><div class="card-body"><h3>Hyper-Real Duffel Bag</h3><p data-en="AI cinematic brand film" data-tr="AI sinematik marka filmi">AI cinematic brand film</p><span class="vstat">🎬 Hyper-real · 9:16</span></div></a>
       <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-d"><span class="play"></span><span class="pill">TeliCall</span></div><div class="card-body"><h3>TeliCall — “The Call Home”</h3><p data-en="UGC ad · AI actor" data-tr="UGC reklam · AI oyuncu">UGC ad · AI actor</p><span class="vstat">🗣 Lip-synced · EN / DE / PT</span></div></a>
       <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2067011390704791552" target="_blank" rel="noopener"><div class="thumb v cover-a"><span class="play"></span><span class="pill">eSIM</span></div><div class="card-body"><h3>eSIM — AI UGC Ad</h3><p data-en="Brief-faithful recreation" data-tr="Brief'e sadık yeniden üretim">Brief-faithful recreation</p><span class="vstat">🎯 Brief-faithful · 4K</span></div></a>
     </div>
