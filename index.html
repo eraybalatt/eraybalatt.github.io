@@ -41,7 +41,7 @@
   .blob.b4{background:#22d3ee;top:8%;right:25%;width:30vw;height:30vw;animation-delay:-12s;opacity:.3}
   @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(4%,6%) scale(1.12)}}
 
-  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(5,10,26,.6);border-bottom:1px solid var(--card-brd)}
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(18px);background:linear-gradient(180deg,rgba(7,14,36,.94) 0%,rgba(7,14,36,.5) 70%,rgba(7,14,36,.18) 100%);border-bottom:1px solid rgba(125,211,252,.1)}
   .nav-inner{max-width:var(--maxw);margin:0 auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
   .brand{font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:10px}
   .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--grad);box-shadow:0 0 16px var(--c2)}
@@ -61,12 +61,13 @@
   .sec-sub{color:var(--muted);max-width:600px;margin-bottom:36px}
 
   .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:90px}
-  .hero-bg{position:absolute;inset:0;width:100vw;left:50%;transform:translateX(-50%);height:100%;object-fit:cover;opacity:.2;z-index:0;filter:saturate(.85) contrast(1.05) brightness(1.12);pointer-events:none}
-  .hero-ov{position:absolute;inset:0;width:100vw;left:50%;transform:translateX(-50%);z-index:1;background:radial-gradient(ellipse at center,rgba(5,10,26,.36),rgba(5,10,26,.9) 95%);pointer-events:none}
+  .hero-bg{position:absolute;inset:0;width:100vw;left:50%;transform:translateX(-50%);height:100%;object-fit:cover;opacity:.34;z-index:0;filter:saturate(.95) contrast(1.06) brightness(1.14);pointer-events:none}
+  .hero-ov{position:absolute;inset:0;width:100vw;left:50%;transform:translateX(-50%);z-index:1;background:radial-gradient(ellipse at center,rgba(5,10,26,.18),rgba(5,10,26,.78) 96%);pointer-events:none}
   .hero .eyebrow,.hero .hero-logo,.hero h1,.hero .lead,.hero .cta-row{position:relative;z-index:2}
   .hero .eyebrow{margin-bottom:16px}
   .hero-logo{width:min(600px,88%);filter:drop-shadow(0 14px 55px rgba(56,189,248,.5));margin-bottom:10px}
-  .hero h1{font-size:clamp(1.55rem,3.6vw,2.2rem);font-weight:600;color:var(--text);margin-bottom:14px;max-width:760px}
+  .hero h1{font-size:clamp(1.6rem,3.7vw,2.3rem);font-weight:600;margin-bottom:14px;max-width:780px;background:linear-gradient(180deg,#f2f9ff 0%,#9fdcff 52%,#38bdf8 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 1px rgba(2,12,40,.5)) drop-shadow(0 0 24px rgba(56,189,248,.4))}
+  .hero .eyebrow{text-shadow:0 0 18px rgba(56,189,248,.55)}
   .hero p.lead{color:var(--muted);max-width:600px;margin-bottom:26px;font-size:1.02rem}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:32px}
   .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:.98rem;cursor:pointer;transition:transform .2s,box-shadow .2s;border:none}
@@ -82,16 +83,17 @@
   .verified{color:var(--c2)}
 
   /* tools marquee */
-  .tools{border-top:1px solid var(--card-brd);border-bottom:1px solid var(--card-brd);overflow:hidden;background:rgba(10,18,48,.4)}
+  .tools{border-top:1px solid var(--card-brd);border-bottom:1px solid var(--card-brd);overflow:hidden;background:linear-gradient(90deg,rgba(10,18,48,.5),rgba(16,34,78,.34) 50%,rgba(10,18,48,.5));-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
   .tools-track{display:flex;gap:0;padding:11px 0;white-space:nowrap;animation:scroll 30s linear infinite;width:max-content}
   .tools-track.rev{animation-direction:reverse;animation-duration:38s}
   .tools-row2{border-top:1px solid rgba(125,211,252,.08)}
   .tools-track span{font-family:'Space Grotesk';font-weight:600;color:var(--muted);font-size:.92rem;letter-spacing:.03em}
-  .tools-track span b{color:var(--c2);margin-right:40px;font-weight:600}
-  .tools-track.rev span b{color:var(--muted)}
+  .tools-track span b{color:#8fdcff;margin-right:40px;font-weight:600;text-shadow:0 0 14px rgba(56,189,248,.25)}
+  .tools-track.rev span b{color:#4f9fe6;text-shadow:none}
   @keyframes scroll{to{transform:translateX(-50%)}}
 
-  .about-wrap{display:grid;grid-template-columns:300px 1fr;gap:42px;align-items:center}
+  .about-wrap{display:grid;grid-template-columns:1fr 300px;gap:42px;align-items:center}
+  .about-wrap .portrait{order:2}
   .portrait{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:1/1;border:1px solid var(--card-brd);background:linear-gradient(135deg,var(--c2),var(--c5));display:flex;align-items:center;justify-content:center}
   .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:saturate(.82) contrast(1.05) brightness(.94)}
   .portrait::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(155deg,rgba(46,165,245,.35),rgba(10,38,86,.55));mix-blend-mode:soft-light;pointer-events:none}
@@ -274,14 +276,14 @@
     <h2 class="sec-title reveal">Eray Balat</h2>
     <div class="about-wrap" style="margin-top:26px">
       <div class="portrait reveal">
-        <img src="profile.jpg?v=3" alt="Eray Balat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <img src="profile.jpg?v=4" alt="Eray Balat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
         <div class="ph" style="display:none">EB</div>
       </div>
       <div class="about-body reveal">
         <p data-en="I'm <b>Eray Balat</b> — a Creative AI Producer and filmmaker working under the name <b>documenteray</b> (and sometimes <b>ÆRAY</b>). I treat generative AI as a camera, an edit suite and a scoring stage, directing music videos, documentaries, product films and short films for brands and artists worldwide."
            data-tr="Ben <b>Eray Balat</b> — <b>documenteray</b> (ve bazen <b>ÆRAY</b>) adıyla çalışan bir Creative AI Producer ve film yönetmeniyim. Üretken yapay zekâyı bir kamera, kurgu masası ve müzik stüdyosu gibi kullanıyorum; markalar ve sanatçılar için müzik videoları, belgeseller, ürün filmleri ve kısa filmler yönetiyorum.">I'm <b>Eray Balat</b> — a Creative AI Producer and filmmaker working under the name <b>documenteray</b> (and sometimes <b>ÆRAY</b>). I treat generative AI as a camera, an edit suite and a scoring stage, directing music videos, documentaries, product films and short films for brands and artists worldwide.</p>
-        <p data-en="I'm a Cinema graduate from Erciyes University and build custom AI pipelines — Midjourney, Kling, Veo, Seedream and Suno — finished in Premiere Pro. My signature: deep-black frames and a glowing <b>light-blue</b> palette (my favorite color)."
-           data-tr="Erciyes Üniversitesi Sinema mezunuyum ve kendi AI prodüksiyon hatlarımı kuruyorum — Midjourney, Kling, Veo, Seedream ve Suno — Premiere Pro'da bitiriyorum. İmzam: derin siyah kareler ve parlayan <b>açık mavi</b> palet (en sevdiğim renk).">I'm a Cinema graduate from Erciyes University and build custom AI pipelines — Midjourney, Kling, Veo, Seedream and Suno — finished in Premiere Pro. My signature: deep-black frames and a glowing <b>light-blue</b> palette (my favorite color).</p>
+        <p data-en="I'm a Cinema graduate from Erciyes University and build custom AI pipelines — Nano Banana, Kling, Seedance, Flora and Suno — finished in Premiere Pro &amp; After Effects. My signature: deep-black frames and a glowing <b>light-blue</b> palette (my favorite color)."
+           data-tr="Erciyes Üniversitesi Sinema mezunuyum ve kendi AI prodüksiyon hatlarımı kuruyorum — Nano Banana, Kling, Seedance, Flora ve Suno — Premiere Pro &amp; After Effects'te bitiriyorum. İmzam: derin siyah kareler ve parlayan <b>açık mavi</b> palet (en sevdiğim renk).">I'm a Cinema graduate from Erciyes University and build custom AI pipelines — Nano Banana, Kling, Seedance, Flora and Suno — finished in Premiere Pro &amp; After Effects. My signature: deep-black frames and a glowing <b>light-blue</b> palette (my favorite color).</p>
         <ul class="hl">
           <li><span>🎬</span><span data-en="Producer @ <b>CITRINE</b> — animated documentaries (Charlie Kirk, 17K views)" data-tr="<b>CITRINE</b> Yapımcısı — animasyonlu belgeseller (Charlie Kirk, 17B izlenme)">Producer @ <b>CITRINE</b> — animated documentaries (Charlie Kirk, 17K views)</span></li>
           <li><span>🎵</span><span data-en="AI Creator for <b>Universal Music Türkiye</b> (Modd) · <b>Suno</b> Ambassador" data-tr="<b>Universal Music Türkiye</b> için AI Creator (Modd) · <b>Suno</b> Ambassador">AI Creator for <b>Universal Music Türkiye</b> (Modd) · <b>Suno</b> Ambassador</span></li>
@@ -331,8 +333,8 @@
   <!-- DOCUMENTARY -->
   <section id="docs">
     <div class="eyebrow reveal" data-en="02 — Documentary · CITRINE" data-tr="02 — Belgesel · CITRINE">02 — Documentary · CITRINE</div>
-    <h2 class="sec-title reveal" data-en="AI Documentaries" data-tr="AI Belgeseller">AI Documentaries</h2>
-    <p class="sec-sub reveal" data-en="Animated documentaries &amp; global insights under my CITRINE label — see beyond the headlines." data-tr="CITRINE etiketim altında animasyonlu belgeseller &amp; küresel analizler — manşetlerin ötesini gör.">Animated documentaries &amp; global insights under my CITRINE label — see beyond the headlines.</p>
+    <h2 class="sec-title reveal" data-en="Animated Documentaries" data-tr="Animasyon Belgeseller">Animated Documentaries</h2>
+    <p class="sec-sub reveal" data-en="Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines." data-tr="CITRINE etiketim altında araştırmaya dayalı belgeseller — 3D, motion graphics ve AI ile üretiliyor. Manşetlerin ötesini gör.">Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines.</p>
     <div class="grid g-3">
       <a class="card reveal" href="https://www.youtube.com/watch?v=-0h3XlqPibo" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="https://i.ytimg.com/vi/-0h3XlqPibo/hqdefault.jpg" alt="The Charlie Kirk Shooting" loading="lazy" /><span class="play"></span><span class="pill">🔥 17K views</span></div><div class="card-body"><h3>The Charlie Kirk Shooting</h3><p data-en="Explained by a former FBI Special Agent · 17:07" data-tr="Eski bir FBI Özel Ajanı anlatıyor · 17:07">Explained by a former FBI Special Agent · 17:07</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=Xchn8HuKOeI" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/Xchn8HuKOeI/hqdefault.jpg" alt="Trump vs Elon Musk" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Meltdown: Trump vs Elon Musk</h3><p data-en="Animated documentary · CITRINE" data-tr="Animasyonlu belgesel · CITRINE">Animated documentary · CITRINE</p></div></a>
