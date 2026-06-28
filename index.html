@@ -129,9 +129,11 @@
   .about-wrap{display:grid;grid-template-columns:1fr 300px;gap:42px;align-items:center}
   .about-wrap .portrait{order:2}
   .portrait{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:1/1;border:1px solid var(--card-brd);background:linear-gradient(135deg,var(--c2),var(--c5));display:flex;align-items:center;justify-content:center}
-  .about-photos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:540px;margin:30px 0 0}
-  .about-photos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;border:1px solid var(--card-brd);box-shadow:0 18px 50px -24px rgba(8,16,34,.9);transition:transform .3s,box-shadow .3s}
-  .about-photos img:hover{transform:translateY(-4px);box-shadow:0 26px 60px -24px rgba(46,155,240,.55)}
+  .about-stack{position:relative;width:100%;min-height:430px}
+  .about-stack img{position:absolute;border-radius:18px;border:1px solid var(--card-brd);box-shadow:0 22px 55px -24px rgba(8,16,34,.95);object-fit:cover;transition:transform .35s,box-shadow .35s}
+  .about-stack .as-1{width:74%;aspect-ratio:1/1;top:0;right:0;z-index:2;transform:rotate(2.5deg)}
+  .about-stack .as-2{width:66%;aspect-ratio:3/4;bottom:0;left:0;z-index:1;transform:rotate(-3.5deg)}
+  .about-stack img:hover{transform:rotate(0) scale(1.03);box-shadow:0 30px 65px -22px rgba(46,155,240,.6);z-index:3}
   .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 28%;filter:saturate(.82) contrast(1.05) brightness(.94)}
   .portrait::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(155deg,rgba(46,155,240,.35),rgba(14,38,80,.55));mix-blend-mode:soft-light;pointer-events:none}
   .portrait::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(8,12,22,.6),rgba(8,12,22,0) 58%);pointer-events:none;border-radius:24px}
@@ -289,6 +291,7 @@
     .g-shorts,.g-clients{grid-template-columns:repeat(2,1fr)}
     .feature,.about-wrap{grid-template-columns:1fr}
     .portrait{max-width:280px;margin:0 auto}
+    .about-stack{max-width:340px;min-height:320px;margin:0 auto}
   }
   @media(max-width:680px){
     .g-2,.g-3,.svc-groups{grid-template-columns:1fr}
@@ -360,9 +363,9 @@
     <div class="eyebrow reveal" data-en="About" data-tr="Hakkımda">About</div>
     <h2 class="sec-title reveal">Eray Balat</h2>
     <div class="about-wrap" style="margin-top:26px">
-      <div class="portrait reveal">
-        <img src="profile.jpg?v=4" alt="Eray Balat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-        <div class="ph" style="display:none">EB</div>
+      <div class="about-stack reveal">
+        <img class="as-1" src="profile.jpg?v=4" alt="Eray Balat" loading="lazy" />
+        <img class="as-2" src="about-1.jpg" alt="Eray Balat — on location, Amsterdam" loading="lazy" />
       </div>
       <div class="about-body reveal">
         <p data-en="I'm <b>Eray Balat</b>, a Creative AI Producer and filmmaker known as <b>documenteray</b> (sometimes <b>ÆRAY</b>). I treat generative AI as a camera, an edit suite and a scoring stage, directing music videos, documentaries, product films and short films for brands and artists worldwide."
@@ -378,9 +381,6 @@
           <li><span>✉️</span><span data-en="Get in touch — <b><a href=&quot;mailto:eray@eraybalat.com&quot; style=&quot;color:#bfe6ff&quot;>eray@eraybalat.com</a></b>" data-tr="İletişim — <b><a href=&quot;mailto:eray@eraybalat.com&quot; style=&quot;color:#bfe6ff&quot;>eray@eraybalat.com</a></b>">Get in touch — <b><a href="mailto:eray@eraybalat.com" style="color:#bfe6ff">eray@eraybalat.com</a></b></span></li>
         </ul>
       </div>
-    </div>
-    <div class="about-photos reveal">
-      <img src="about-1.jpg" alt="Eray Balat — on location" loading="lazy" />
     </div>
   </section>
 
