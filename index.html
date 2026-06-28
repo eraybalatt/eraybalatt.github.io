@@ -158,7 +158,8 @@
   .cover-d{background:linear-gradient(135deg,#22d3ee,#1e90e8)}
   .cover-e{background:linear-gradient(135deg,#2f8fe6,#0a2f5c)}
   .cover-f{background:linear-gradient(135deg,#7dd3fc,#0c3f80)}
-  .thumb img,.thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .thumb img,.thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+  .card:hover .thumb img{transform:scale(1.06)}
   .thumb .play,.thumb .pill{z-index:2}
   .sndbtn{position:absolute;bottom:10px;right:10px;z-index:4;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.5);backdrop-filter:blur(4px);color:#fff;font-size:.8rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;padding:0;line-height:1}
   .sndbtn:hover{background:rgba(56,189,248,.55);border-color:var(--c2);transform:scale(1.08)}
@@ -169,8 +170,10 @@
   .showreel-ov .role{margin-bottom:8px}
   .showreel-ov h3{font-family:'Space Grotesk';font-size:clamp(1.05rem,2.7vw,1.95rem);font-weight:600;color:#fff;max-width:780px;text-shadow:0 2px 22px rgba(0,0,0,.55)}
   .g-ugc{grid-template-columns:repeat(3,1fr);max-width:760px;margin:0 auto}
-  .g-ex{grid-template-columns:repeat(4,1fr);gap:16px;max-width:880px;margin:0 auto}
-  .g-ex .card-body{padding:11px 13px} .g-ex .card-body h3{font-size:.92rem} .g-ex .card-body p{font-size:.76rem}
+  .g-ugc4{grid-template-columns:repeat(4,1fr);gap:10px;max-width:1060px;margin:0 auto}
+  .g-ugc4 .card-body{padding:9px 11px} .g-ugc4 .card-body h3{font-size:.82rem} .g-ugc4 .card-body p{font-size:.7rem}
+  .g-ex{grid-template-columns:repeat(2,1fr);gap:20px;max-width:600px;margin:0 auto}
+  .g-ex .card-body{padding:13px 15px} .g-ex .card-body h3{font-size:1rem} .g-ex .card-body p{font-size:.8rem}
   .sig-film{display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin-bottom:46px}
   .sig-media{width:300px;max-width:100%;flex-shrink:0}
   .sig-text{flex:1;min-width:260px}
@@ -223,7 +226,7 @@
     .nav-toggle{display:block}
   }
   @media(max-width:900px){
-    .g-3,.g-gallery,.g-ex{grid-template-columns:repeat(2,1fr)}
+    .g-3,.g-gallery,.g-ex,.g-ugc4{grid-template-columns:repeat(2,1fr)}
     .g-shorts,.g-clients{grid-template-columns:repeat(2,1fr)}
     .feature,.about-wrap{grid-template-columns:1fr}
     .portrait{max-width:280px;margin:0 auto}
@@ -390,19 +393,6 @@
   </section>
 
   <!-- DOCUMENTARY -->
-  <section id="docs">
-    <div class="eyebrow reveal" data-en="02 — Documentary · CITRINE" data-tr="02 — Belgesel · CITRINE">02 — Documentary · CITRINE</div>
-    <h2 class="sec-title reveal" data-en="Animated Documentaries" data-tr="Animasyon Belgeseller">Animated Documentaries</h2>
-    <p class="sec-sub reveal" data-en="Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines." data-tr="CITRINE etiketim altında araştırmaya dayalı belgeseller — 3D, motion graphics ve AI ile üretiliyor. Manşetlerin ötesini gör.">Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines.</p>
-    <div class="grid g-3">
-      <a class="card reveal" href="https://www.youtube.com/watch?v=-0h3XlqPibo" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="https://i.ytimg.com/vi/-0h3XlqPibo/hqdefault.jpg" alt="The Charlie Kirk Shooting" loading="lazy" /><span class="play"></span><span class="pill">🔥 17K views</span></div><div class="card-body"><h3>The Charlie Kirk Shooting</h3><p data-en="Explained by a former FBI Special Agent · 17:07" data-tr="Eski bir FBI Özel Ajanı anlatıyor · 17:07">Explained by a former FBI Special Agent · 17:07</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=Xchn8HuKOeI" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/Xchn8HuKOeI/hqdefault.jpg" alt="Trump vs Elon Musk" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Meltdown: Trump vs Elon Musk</h3><p data-en="Animated documentary · CITRINE" data-tr="Animasyonlu belgesel · CITRINE">Animated documentary · CITRINE</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=1DqgCLC9EFY" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/1DqgCLC9EFY/hqdefault.jpg" alt="The Louvre Heist" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Louvre Heist Explained</h3><p data-en="7 minutes that changed everything · CITRINE" data-tr="Her şeyi değiştiren 7 dakika · CITRINE">7 minutes that changed everything · CITRINE</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=d9xmp74iJyQ" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="https://i.ytimg.com/vi/d9xmp74iJyQ/hqdefault.jpg" alt="Milei Argentina" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>How Milei Transformed Argentina</h3><p data-en="Economy, explained in 12 months · CITRINE" data-tr="12 ayda ekonomi · CITRINE">Economy, explained in 12 months · CITRINE</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=bSI3UbHurQQ" target="_blank" rel="noopener"><div class="thumb cover-d"><img src="https://i.ytimg.com/vi/bSI3UbHurQQ/hqdefault.jpg" alt="Iran vs Israel" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Secret Nuclear War: Iran vs Israel</h3><p data-en="Geopolitics, explained · CITRINE" data-tr="Jeopolitik analiz · CITRINE">Geopolitics, explained · CITRINE</p></div></a>
-      <a class="card reveal" href="#docs"><div class="thumb cover-f"><span class="play"></span><span class="pill live" data-en="In Production" data-tr="Yapım Aşamasında">In Production</span></div><div class="card-body"><h3>The Antwerp Diamond Heist</h3><p data-en="AI Documentary · coming soon" data-tr="AI Belgesel · çok yakında">AI Documentary · coming soon</p></div></a>
-    </div>
-  </section>
 
   <!-- CLIENT WORK -->
   <section id="clients">
@@ -443,7 +433,7 @@
     </div>
 
     <div class="row-label reveal" data-en="UGC Ads · Brand Content" data-tr="UGC Reklamlar · Marka İçeriği">UGC Ads · Brand Content</div>
-    <div class="grid g-ugc">
+    <div class="grid g-ugc4">
       <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2067011390704791552" target="_blank" rel="noopener"><div class="thumb v cover-a"><video src="esim.mp4" poster="esim-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">eSIM.io</span></div><div class="card-body"><h3>eSIM.io — AI UGC</h3><p data-en="Brief-faithful · 4K" data-tr="Brief'e sadık · 4K">Brief-faithful · 4K</p></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="ugc-xaura.mp4" poster="ugc-xaura-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">XAURA</span></div><div class="card-body"><h3>XAURA — AI UGC</h3><p data-en="Brand content" data-tr="Marka içeriği">Brand content</p></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-b"><video src="ugc-leris.mp4" poster="ugc-leris-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Leris</span></div><div class="card-body"><h3>Leris — Collection</h3><p data-en="Fashion UGC" data-tr="Moda UGC">Fashion UGC</p></div></a>
@@ -461,13 +451,32 @@
 
   <!-- SHORT FILMS -->
   <section id="films">
-    <div class="eyebrow reveal" data-en="03 — Cinema" data-tr="03 — Sinema">03 — Cinema</div>
+    <div class="eyebrow reveal" data-en="02 — Cinema" data-tr="02 — Sinema">02 — Cinema</div>
     <h2 class="sec-title reveal" data-en="Short Films" data-tr="Kısa Filmler">Short Films</h2>
     <p class="sec-sub reveal" data-en="Narrative short films — both AI and live-action direction." data-tr="Anlatı kısa filmleri — hem AI hem canlı çekim yönetimi.">Narrative short films — both AI and live-action direction.</p>
     <div class="grid g-3">
       <a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/oH3zKef9h0Q/hqdefault.jpg" alt="Boomerang" loading="lazy" /><span class="play"></span><span class="pill">🏆 Honorable Mention</span></div><div class="card-body"><h3>Boomerang</h3><p data-en="Honorable Mention · Student Video Contest 2026 · Selected at Duemila30" data-tr="Mansiyon · Student Video Contest 2026 · Duemila30 Seçkisi">Honorable Mention · Student Video Contest 2026 · Selected at Duemila30</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" target="_blank" rel="noopener"><div class="thumb cover-f"><img src="https://i.ytimg.com/vi/kvaQqoMVsVA/hqdefault.jpg" alt="Die Post" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Die Post</h3><p data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024">Short Film · Erciyes University, 2024</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/-XgWX9IR5xE/hqdefault.jpg" alt="Run or Run" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Run or Run</h3><p data-en="Short Movie · 2:34" data-tr="Kısa Film · 2:34">Short Movie · 2:34</p></div></a>
+    </div>
+  </section>
+
+  <section id="docs">
+    <div class="eyebrow reveal" data-en="03 — Documentary · CITRINE" data-tr="03 — Belgesel · CITRINE">03 — Documentary · CITRINE</div>
+    <h2 class="sec-title reveal" data-en="Animated Documentaries" data-tr="Animasyon Belgeseller">Animated Documentaries</h2>
+    <p class="sec-sub reveal" data-en="Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines." data-tr="CITRINE etiketim altında araştırmaya dayalı belgeseller — 3D, motion graphics ve AI ile üretiliyor. Manşetlerin ötesini gör.">Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines.</p>
+    <div class="grid g-3">
+      <a class="card reveal" href="https://www.youtube.com/watch?v=-0h3XlqPibo" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="https://i.ytimg.com/vi/-0h3XlqPibo/hqdefault.jpg" alt="The Charlie Kirk Shooting" loading="lazy" /><span class="play"></span><span class="pill">🔥 17K views</span></div><div class="card-body"><h3>The Charlie Kirk Shooting</h3><p data-en="Explained by a former FBI Special Agent · 17:07" data-tr="Eski bir FBI Özel Ajanı anlatıyor · 17:07">Explained by a former FBI Special Agent · 17:07</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=Xchn8HuKOeI" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/Xchn8HuKOeI/hqdefault.jpg" alt="Trump vs Elon Musk" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Meltdown: Trump vs Elon Musk</h3><p data-en="Animated documentary · CITRINE" data-tr="Animasyonlu belgesel · CITRINE">Animated documentary · CITRINE</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=1DqgCLC9EFY" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/1DqgCLC9EFY/hqdefault.jpg" alt="The Louvre Heist" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Louvre Heist Explained</h3><p data-en="7 minutes that changed everything · CITRINE" data-tr="Her şeyi değiştiren 7 dakika · CITRINE">7 minutes that changed everything · CITRINE</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=d9xmp74iJyQ" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="https://i.ytimg.com/vi/d9xmp74iJyQ/hqdefault.jpg" alt="Milei Argentina" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>How Milei Transformed Argentina</h3><p data-en="Economy, explained in 12 months · CITRINE" data-tr="12 ayda ekonomi · CITRINE">Economy, explained in 12 months · CITRINE</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=bSI3UbHurQQ" target="_blank" rel="noopener"><div class="thumb cover-d"><img src="https://i.ytimg.com/vi/bSI3UbHurQQ/hqdefault.jpg" alt="Iran vs Israel" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Secret Nuclear War: Iran vs Israel</h3><p data-en="Geopolitics, explained · CITRINE" data-tr="Jeopolitik analiz · CITRINE">Geopolitics, explained · CITRINE</p></div></a>
+      <a class="card reveal" href="#docs"><div class="thumb cover-f"><span class="play"></span><span class="pill live" data-en="In Production" data-tr="Yapım Aşamasında">In Production</span></div><div class="card-body"><h3>The Antwerp Diamond Heist</h3><p data-en="AI Documentary · coming soon" data-tr="AI Belgesel · çok yakında">AI Documentary · coming soon</p></div></a>
+    </div>
+    <div class="row-label reveal" data-en="Türkiye · World Cup — Sports Promo" data-tr="Türkiye · Dünya Kupası — Spor Tanıtım">Türkiye · World Cup — Sports Promo</div>
+    <div class="grid g-3" style="max-width:720px">
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-d"><video src="univenn1.mp4" poster="univenn1-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">⚽ World Cup</span></div><div class="card-body"><h3>Türkiye · World Cup</h3><p data-en="AI football spot" data-tr="AI futbol spotu">AI football spot</p></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-b"><video src="univenn2.mp4" poster="univenn2-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">⚽ World Cup</span></div><div class="card-body"><h3>Türkiye · World Cup</h3><p data-en="AI football spot" data-tr="AI futbol spotu">AI football spot</p></div></a>
     </div>
   </section>
 
@@ -549,14 +558,13 @@
     <p class="sec-sub reveal" data-en="High-fidelity, e-commerce-ready product imagery for studios &amp; brands — lifestyle scenes, fabric macros and editorial interiors. Built on a node-based pipeline: thousands of iterations curated down to a clean final hero set." data-tr="Stüdyolar &amp; markalar için yüksek kaliteli, e-ticarete hazır ürün görselleri — yaşam alanı sahneleri, kumaş makroları ve editoryal mekânlar. Node-tabanlı bir pipeline üzerine kurulu: binlerce iterasyon, temiz bir final hero sete indiriliyor.">High-fidelity, e-commerce-ready product imagery for studios &amp; brands — lifestyle scenes, fabric macros and editorial interiors. Built on a node-based pipeline: thousands of iterations curated down to a clean final hero set.</p>
 
     <div class="row-label reveal" data-en="Arden — Furniture" data-tr="Arden — Mobilya">Arden — Furniture</div>
-    <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener" style="display:block;margin-bottom:14px"><div class="thumb" style="aspect-ratio:16/9"><img src="furn-1.jpg" alt="Arden furniture product photography" loading="lazy" /><span class="pill">Arden</span></div></a>
     <div class="grid g-gallery">
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-1.jpg" alt="Arden furniture product photography" loading="lazy" /><span class="pill">Arden</span></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-2.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-3.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-7.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-8.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-12.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-13.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
     </div>
     <div class="grid g-3" style="max-width:560px;margin-top:14px">
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-c"><video src="arden-v1.mp4" poster="arden-v1-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button></div></a>
@@ -565,36 +573,33 @@
     </div>
 
     <div class="row-label reveal" data-en="Mira — Furniture" data-tr="Mira — Mobilya">Mira — Furniture</div>
-    <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener" style="display:block;margin-bottom:14px"><div class="thumb" style="aspect-ratio:16/9"><img src="furn-4.jpg" alt="Mira furniture product photography" loading="lazy" /><span class="pill">Mira</span></div></a>
     <div class="grid g-gallery">
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="furn-4.jpg" alt="Mira furniture product photography" loading="lazy" /><span class="pill">Mira</span></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="furn-5.jpg" alt="Mira furniture product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="furn-6.jpg" alt="Mira furniture product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="furn-9.jpg" alt="Mira furniture product photography" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="furn-10.jpg" alt="Mira furniture product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="furn-11.jpg?v=2" alt="Mira furniture product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="furn-14.jpg?v=2" alt="Mira furniture product photography" loading="lazy" /></div></a>
     </div>
 
     <div class="row-label reveal" data-en="Studio Atelia · Modular Sofas" data-tr="Studio Atelia · Modüler Koltuklar">Studio Atelia · Modular Sofas</div>
-    <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener" style="display:block;margin-bottom:14px"><div class="thumb" style="aspect-ratio:16/9"><img src="atelia-1.jpg" alt="Studio Atelia product visualization" loading="lazy" /><span class="pill">Studio Atelia</span></div></a>
     <div class="grid g-gallery">
+      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-1.jpg" alt="Studio Atelia product visualization" loading="lazy" /><span class="pill">Studio Atelia</span></div></a>
       <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-2.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-3.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-4.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-5.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-6.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="atelia-7.jpg" alt="Studio Atelia product visualization" loading="lazy" /></div></a>
     </div>
 
     <div class="row-label reveal" data-en="Argimo · Sarmobi — Seating" data-tr="Argimo · Sarmobi — Koltuklar">Argimo · Sarmobi — Seating</div>
-    <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener" style="display:block;margin-bottom:14px"><div class="thumb" style="aspect-ratio:16/9"><img src="argimo-1.jpg?v=2" alt="Argimo product photography" loading="lazy" /><span class="pill">Argimo · Sarmobi</span></div></a>
     <div class="grid g-gallery">
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="argimo-1.jpg?v=2" alt="Argimo product photography" loading="lazy" /><span class="pill">Argimo · Sarmobi</span></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="argimo-2.jpg?v=2" alt="Argimo product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="argimo-3.jpg?v=2" alt="Argimo product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="argimo-4.jpg?v=2" alt="Argimo product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-d"><img src="argimo-5.jpg?v=2" alt="Argimo product photography" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-d"><img src="argimo-6.jpg?v=2" alt="Argimo product photography" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="argimo-7.jpg?v=2" alt="Argimo product photography" loading="lazy" /></div></a>
     </div>
   </section>
 
@@ -608,8 +613,6 @@
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><video src="turkic.mp4" poster="turkic-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Turkic · Seljuk</span></div><div class="card-body"><h3>Turkic · Seljuk</h3><p data-en="AI cinematic · Instagram →" data-tr="AI sinematik · Instagram →">AI cinematic · Instagram →</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="https://i.ytimg.com/vi/rYHPU-_RqOc/hqdefault.jpg" alt="Switzerland in One Hour" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Switzerland in One Hour 🇨🇭</h3><p data-en="AI Short · 0:45" data-tr="AI Kısa · 0:45">AI Short · 0:45</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=IADNypjkZGg" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/IADNypjkZGg/hqdefault.jpg" alt="Midjourney x Suno" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Midjourney × Suno</h3><p data-en="AI Visual · soundtrack" data-tr="AI Görsel · müzik">AI Visual · soundtrack</p></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-d"><video src="univenn1.mp4" poster="univenn1-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">⚽ World Cup</span></div><div class="card-body"><h3>Türkiye · World Cup</h3><p data-en="AI football spot" data-tr="AI futbol spotu">AI football spot</p></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><video src="univenn2.mp4" poster="univenn2-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">⚽ World Cup</span></div><div class="card-body"><h3>Türkiye · World Cup</h3><p data-en="AI football spot" data-tr="AI futbol spotu">AI football spot</p></div></a>
     </div>
     <p class="embed-note reveal" style="margin-top:22px" data-en="📱 More vertical reels on Instagram — @documenteray" data-tr="📱 Daha fazla dikey reel Instagram'da — @documenteray"><a href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener" style="color:var(--c2)">📱 More vertical reels on Instagram — @documenteray</a></p>
   </section>
@@ -628,7 +631,12 @@
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="art-6.jpg" alt="Cinematic AI art" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="art-7.jpg" alt="Cinematic AI art" loading="lazy" /></div></a>
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-d"><img src="art-8.jpg" alt="Cinematic AI art" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="art-9.jpg" alt="Cinematic AI art" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="art-10.jpg" alt="Cinematic AI art" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="art-11.jpg" alt="Cinematic AI art" loading="lazy" /></div></a>
+      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="art-12.jpg" alt="Cinematic AI art" loading="lazy" /></div></a>
     </div>
+    <p class="embed-note reveal" style="margin-top:22px" data-en="🎨 Full series on Instagram &amp; Behance" data-tr="🎨 Tüm seri Instagram &amp; Behance'de">🎨 <a href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener" style="color:var(--c2)">Instagram</a> · <a href="https://www.behance.net/eraybalat" target="_blank" rel="noopener" style="color:var(--c2)">Behance</a></p>
   </section>
 
   <!-- CONTACT -->
