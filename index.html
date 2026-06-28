@@ -155,6 +155,11 @@
   .g-shorts{grid-template-columns:repeat(4,1fr)}
   .g-gallery{grid-template-columns:repeat(3,1fr)}
   .g-feat{grid-template-columns:repeat(4,1fr)}
+  .g-mason{display:block;column-count:3;column-gap:14px}
+  .g-mason .mcard{display:block;width:100%;margin:0 0 14px;break-inside:avoid;-webkit-column-break-inside:avoid;border-radius:var(--radius);overflow:hidden;border:1px solid var(--card-brd);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .g-mason .mcard:hover{transform:translateY(-4px);box-shadow:0 16px 42px -18px rgba(8,16,34,.9);border-color:rgba(92,200,255,.45)}
+  .g-mason .mcard img{width:100%;height:auto;display:block;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+  .g-mason .mcard:hover img{transform:scale(1.05)}
   .g-clients{grid-template-columns:repeat(4,1fr)}
   .cap{padding:34px 30px;background:linear-gradient(165deg,rgba(16,40,86,.5),rgba(10,18,40,.55));border:1px solid rgba(92,200,255,.18)}
   .cap .cap-ico{width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;border-radius:16px;background:linear-gradient(150deg,rgba(46,155,240,.22),rgba(46,155,240,.15));border:1px solid rgba(92,200,255,.28);margin-bottom:20px}
@@ -259,6 +264,7 @@
   }
   @media(max-width:900px){
     .g-3,.g-gallery,.g-ex,.g-ugc4,.g-feat{grid-template-columns:repeat(2,1fr)}
+    .g-mason{column-count:2}
     .g-shorts,.g-clients{grid-template-columns:repeat(2,1fr)}
     .feature,.about-wrap{grid-template-columns:1fr}
     .portrait{max-width:280px;margin:0 auto}
@@ -560,19 +566,21 @@
     <p class="sec-sub reveal" data-en="High-fidelity, e-commerce-ready product imagery for studios &amp; brands — lifestyle scenes, fabric macros and editorial interiors. Built on a node-based pipeline: thousands of iterations curated down to a clean final hero set." data-tr="Stüdyolar &amp; markalar için yüksek kaliteli, e-ticarete hazır ürün görselleri — yaşam alanı sahneleri, kumaş makroları ve editoryal mekânlar. Node-tabanlı bir pipeline üzerine kurulu: binlerce iterasyon, temiz bir final hero sete indiriliyor.">High-fidelity, e-commerce-ready product imagery for studios &amp; brands — lifestyle scenes, fabric macros and editorial interiors. Built on a node-based pipeline: thousands of iterations curated down to a clean final hero set.</p>
 
     <div class="row-label reveal" data-en="Arden — Furniture" data-tr="Arden — Mobilya">Arden — Furniture</div>
-    <div class="grid g-gallery">
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-1.jpg" alt="Arden furniture product photography" loading="lazy" /><span class="pill">Arden</span></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-2.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-3.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-7.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-8.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-12.jpg" alt="Arden furniture product photography" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-15.jpg" alt="Arden furniture — coffee corner lifestyle" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-16.jpg" alt="Arden furniture — coffee corner lifestyle" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-17.jpg" alt="Arden furniture — study desk" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-18.jpg" alt="Arden furniture — study desk" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-19.jpg" alt="Arden furniture — anthracite wardrobe" loading="lazy" /></div></a>
-      <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="furn-20.jpg" alt="Arden furniture — anthracite wardrobe" loading="lazy" /></div></a>
+    <div class="grid g-mason">
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-1.jpg" alt="Arden furniture product photography" loading="lazy" /><span class="pill">Arden</span></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-15.jpg?v=2" alt="Arden — coffee corner" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-16.jpg?v=2" alt="Arden — coffee corner" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-2.jpg" alt="Arden furniture product photography" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-17.jpg?v=2" alt="Arden — study desk" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-19.jpg?v=2" alt="Arden — anthracite wardrobe" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-3.jpg" alt="Arden furniture product photography" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-18.jpg?v=2" alt="Arden — study desk" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-21.jpg" alt="Arden — coffee corner" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-7.jpg" alt="Arden furniture product photography" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-20.jpg?v=2" alt="Arden — anthracite wardrobe" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-22.jpg" alt="Arden — anthracite wardrobe" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-8.jpg" alt="Arden furniture product photography" loading="lazy" /></a>
+      <a class="mcard reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><img src="furn-12.jpg" alt="Arden furniture product photography" loading="lazy" /></a>
     </div>
     <div class="grid g-3" style="max-width:560px;margin-top:14px">
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-c"><video src="arden-v1.mp4" poster="arden-v1-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button></div></a>
