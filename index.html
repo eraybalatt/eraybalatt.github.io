@@ -155,11 +155,12 @@
   .g-shorts{grid-template-columns:repeat(4,1fr)}
   .g-gallery{grid-template-columns:repeat(3,1fr)}
   .g-feat{grid-template-columns:repeat(4,1fr)}
-  .g-mason{display:block;column-count:3;column-gap:14px}
-  .g-mason .mcard{display:block;width:100%;margin:0 0 14px;break-inside:avoid;-webkit-column-break-inside:avoid;border-radius:var(--radius);overflow:hidden;border:1px solid var(--card-brd);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s}
-  .g-mason .mcard:hover{transform:translateY(-4px);box-shadow:0 16px 42px -18px rgba(8,16,34,.9);border-color:rgba(92,200,255,.45)}
-  .g-mason .mcard img{width:100%;height:auto;display:block;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+  .g-mason{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:10px;gap:14px;grid-auto-flow:row dense}
+  .g-mason .mcard{height:100%;border-radius:var(--radius);overflow:hidden;border:1px solid var(--card-brd);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .g-mason .mcard:hover{transform:translateY(-4px);box-shadow:0 16px 42px -18px rgba(8,16,34,.9);border-color:rgba(92,200,255,.45);z-index:2}
+  .g-mason .mcard img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
   .g-mason .mcard:hover img{transform:scale(1.05)}
+  .g-mason .t-land{grid-row:span 11} .g-mason .t-sq{grid-row:span 15} .g-mason .t-tall{grid-row:span 23}
   .g-clients{grid-template-columns:repeat(4,1fr)}
   .cap{padding:34px 30px;background:linear-gradient(165deg,rgba(16,40,86,.5),rgba(10,18,40,.55));border:1px solid rgba(92,200,255,.18)}
   .cap .cap-ico{width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;border-radius:16px;background:linear-gradient(150deg,rgba(46,155,240,.22),rgba(46,155,240,.15));border:1px solid rgba(92,200,255,.28);margin-bottom:20px}
@@ -264,7 +265,7 @@
   }
   @media(max-width:900px){
     .g-3,.g-gallery,.g-ex,.g-ugc4,.g-feat{grid-template-columns:repeat(2,1fr)}
-    .g-mason{column-count:2}
+    .g-mason{grid-template-columns:repeat(2,1fr)}
     .g-shorts,.g-clients{grid-template-columns:repeat(2,1fr)}
     .feature,.about-wrap{grid-template-columns:1fr}
     .portrait{max-width:280px;margin:0 auto}
@@ -572,20 +573,20 @@
       <a class="card reveal" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener"><div class="thumb v cover-c"><video src="arden-v3.mp4" poster="arden-v3-p.jpg" autoplay muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button></div></a>
     </div>
     <div class="grid g-mason">
-      <div class="mcard reveal"><img src="furn-1.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /><span class="pill">Arden</span></div>
-      <div class="mcard reveal"><img src="furn-15.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-16.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-2.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-17.jpg?v=4" alt="Arden — study desk" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-19.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-3.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-18.jpg?v=4" alt="Arden — study desk" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-21.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-7.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-20.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-22.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-8.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
-      <div class="mcard reveal"><img src="furn-12.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="furn-1.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /><span class="pill">Arden</span></div>
+      <div class="mcard reveal t-tall"><img src="furn-15.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="furn-16.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="furn-2.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-tall"><img src="furn-17.jpg?v=4" alt="Arden — study desk" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="furn-19.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="furn-3.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-tall"><img src="furn-18.jpg?v=4" alt="Arden — study desk" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="furn-21.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="furn-7.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-tall"><img src="furn-20.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="furn-22.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="furn-8.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="furn-12.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
     </div>
 
     <div class="row-label reveal" data-en="Mira — Furniture" data-tr="Mira — Mobilya">Mira — Furniture</div>
