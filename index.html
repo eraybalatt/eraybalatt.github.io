@@ -379,6 +379,12 @@
   #featured .bnv-watch{margin-top:8px;padding:13px 24px;border-radius:12px;background:linear-gradient(135deg,#2e9bf0,#1f7ccf);border:1px solid rgba(120,210,255,.45);box-shadow:0 13px 32px -12px rgba(46,155,240,.75);text-shadow:none;font-size:.95rem}
   #featured .bnv-watch::after{display:none}
   #featured .bnv-watch:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(46,155,240,.95)}
+  .contact-reach{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin:18px 0 2px}
+  .contact-reach .contact-email{margin:0}
+  .contact-reach .social-cta{margin:0}
+  .foot-link{color:var(--c1);text-decoration:none;transition:color .2s,text-shadow .2s}
+  .foot-link:hover{color:#fff;text-shadow:0 0 10px rgba(92,200,255,.55)}
+  .foot-rights{margin-top:8px;font-size:.76rem;letter-spacing:.04em;color:var(--muted);opacity:.75}
 </style>
 </head>
 <body>
@@ -834,8 +840,10 @@
         <button type="submit" class="form-send" data-en="Send message →" data-tr="Mesaj gönder →">Send message →</button>
         <p class="form-status" aria-live="polite"></p>
       </form>
-      <a class="contact-email" href="mailto:eray@eraybalat.com">✉️ eray@eraybalat.com</a>
-      <a class="social-cta" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener"><span class="uw-dot" aria-hidden="true"></span><span data-en="Hire me on Upwork →" data-tr="Upwork'te benimle çalış →">Hire me on Upwork →</span></a>
+      <div class="contact-reach">
+        <a class="contact-email" href="mailto:eray@eraybalat.com">✉️ eray@eraybalat.com</a>
+        <a class="social-cta" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener"><span class="uw-dot" aria-hidden="true"></span><span data-en="Hire me on Upwork →" data-tr="Upwork'te benimle çalış →">Hire me on Upwork →</span></a>
+      </div>
       <div class="socials">
         <a class="social" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener">Instagram</a>
         <a class="social" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener">YouTube</a>
@@ -852,8 +860,9 @@
 </main>
 
 <footer>
-  © <span id="year"></span> <span class="brand-sm">Eray Balat</span> · documenteray
+  © <span id="year"></span> <span class="brand-sm">Eray Balat</span> · <a class="foot-link" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener">documenteray</a>
   <span data-en="— Directed with AI · eraybalat.com" data-tr="— AI ile yönetildi · eraybalat.com">— Directed with AI · eraybalat.com</span>
+  <div class="foot-rights" data-en="All rights reserved." data-tr="Tüm hakları saklıdır.">All rights reserved.</div>
 </footer>
 
 <script>
