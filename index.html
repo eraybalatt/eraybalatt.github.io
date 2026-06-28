@@ -265,11 +265,6 @@
 
   footer{text-align:center;padding:38px 20px;color:var(--muted);border-top:1px solid var(--card-brd);font-size:.86rem}
   footer .brand-sm{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
-  footer .foot-mail{display:inline-block;font-family:'Space Grotesk';font-size:1.08rem;font-weight:600;color:#fff;border-bottom:2px solid var(--c2);padding-bottom:3px;margin-bottom:16px;transition:color .2s,transform .2s}
-  footer .foot-mail:hover{color:var(--c1);transform:translateY(-1px)}
-  footer .foot-soc{margin-bottom:16px;font-size:.86rem;letter-spacing:.03em;color:var(--muted)}
-  footer .foot-soc .fl{color:var(--muted);margin:0 9px;transition:color .2s,text-shadow .2s}
-  footer .foot-soc .fl:hover{color:var(--c1);text-shadow:0 0 10px rgba(56,189,248,.5)}
 
   .reveal{opacity:0;transform:translateY(32px) scale(.98);transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1)}
   .reveal.show{opacity:1;transform:none}
@@ -296,6 +291,85 @@
   @media(max-width:680px){
     .g-2,.g-3,.svc-groups{grid-template-columns:1fr}
     section{padding:62px 0}
+  }
+  /* ===== #featured — BANEVA Director's Slate ===== */
+  #featured .bnv-feature{align-items:stretch;position:relative}
+  #featured .bnv-feature::before{content:"";position:absolute;inset:0;border-radius:28px;pointer-events:none;z-index:0;background:radial-gradient(120% 80% at 12% 0%,rgba(46,155,240,.10),transparent 60%)}
+  #featured .bnv-stage{display:flex;flex-direction:column;gap:10px;min-width:0;position:relative;z-index:1}
+
+  /* Clapperboard header strip */
+  #featured .bnv-clap{display:flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9fd2f8}
+  #featured .bnv-clap-stripes{flex:0 0 56px;height:11px;border-radius:2px;background:repeating-linear-gradient(45deg,var(--c5) 0 7px,#0c1a30 7px 14px);box-shadow:inset 0 0 0 1px rgba(92,200,255,.35)}
+  #featured .bnv-clap-meta{flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#7fb6e6}
+  #featured .bnv-clap-rec{display:inline-flex;align-items:center;gap:6px;color:#cfe8ff;letter-spacing:.16em}
+  #featured .bnv-clap-rec i{width:8px;height:8px;border-radius:50%;background:var(--c1);box-shadow:0 0 10px rgba(92,200,255,.7);animation:bnvPulse 2.6s ease-in-out infinite}
+  @keyframes bnvPulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+  /* Cinematic 2.39:1 frame — scoped override of .feature .media */
+  #featured .bnv-feature .media{aspect-ratio:2.39/1;border-radius:12px;border:1px solid rgba(92,200,255,.22);box-shadow:0 22px 60px -28px rgba(8,30,60,.9),inset 0 0 0 1px rgba(8,12,22,.6)}
+  #featured .bnv-bar{position:absolute;left:0;right:0;height:9%;min-height:10px;z-index:1;pointer-events:none;background:#05080f}
+  #featured .bnv-bar-t{top:0;box-shadow:0 1px 0 rgba(92,200,255,.18)}
+  #featured .bnv-bar-b{bottom:0;box-shadow:0 -1px 0 rgba(92,200,255,.18)}
+  /* Corner crop-marks */
+  #featured .bnv-crop{position:absolute;width:16px;height:16px;z-index:2;pointer-events:none;border:1.5px solid rgba(92,200,255,.5)}
+  #featured .bnv-tl{top:9px;left:9px;border-right:0;border-bottom:0}
+  #featured .bnv-tr{top:9px;right:9px;border-left:0;border-bottom:0}
+  #featured .bnv-bl{bottom:9px;left:9px;border-right:0;border-top:0}
+  #featured .bnv-br{bottom:9px;right:9px;border-left:0;border-top:0}
+  /* "NOW PLAYING" tag floating on the live frame (top-left, clear of play button) */
+  #featured .bnv-tag{position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;background:rgba(8,13,24,.55);backdrop-filter:blur(5px);border:1px solid rgba(92,200,255,.35);font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#e8f3ff;pointer-events:none}
+  #featured .bnv-tag-dot{width:7px;height:7px;border-radius:50%;background:var(--c1);box-shadow:0 0 9px rgba(92,200,255,.7);animation:bnvPulse 2.6s ease-in-out infinite}
+  /* Keep stat badge + JS-injected play button above slate chrome */
+  #featured .bnv-feature .stat{bottom:14px;right:14px;z-index:3}
+  #featured .bnv-feature .media .play{z-index:4}
+
+  /* Chapter / era tick rail */
+  #featured .bnv-chapters{display:flex;align-items:center;gap:14px;font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#7fb6e6}
+  #featured .bnv-ch-rail{flex:1 1 auto;display:flex;align-items:center;position:relative;height:14px}
+  #featured .bnv-ch-rail::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(92,200,255,.3) 12%,rgba(92,200,255,.3) 88%,transparent)}
+  #featured .bnv-tick{position:relative;flex:1 1 0;height:14px}
+  #featured .bnv-tick::after{content:"";position:absolute;left:0;top:0;width:2px;height:14px;border-radius:2px;background:rgba(92,200,255,.55)}
+  #featured .bnv-tick.bnv-on::after{background:var(--c3);height:16px;top:-1px;box-shadow:0 0 12px rgba(245,197,66,.5)}
+  #featured .bnv-ch-count{color:#cfe8ff;letter-spacing:.12em}
+
+  /* Right column credit sheet */
+  #featured .bnv-card{display:flex;flex-direction:column;justify-content:center;min-width:0;position:relative;z-index:1;padding-left:22px}
+  /* single restrained gold key-line anchoring the column */
+  #featured .bnv-card::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:2px;border-radius:2px;background:linear-gradient(180deg,var(--c3),var(--c4));box-shadow:0 0 16px -4px rgba(245,197,66,.45)}
+
+  /* festival-style header line */
+  #featured .bnv-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  #featured .bnv-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--c1);white-space:nowrap}
+  #featured .bnv-rule{flex:1;height:1px;background:linear-gradient(90deg,rgba(92,200,255,.45),rgba(92,200,255,0))}
+  #featured .bnv-index{font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+
+  #featured .bnv-feature .role{margin-bottom:6px}
+  #featured .bnv-feature h3{font-size:clamp(1.8rem,4.2vw,2.5rem);line-height:1.02;letter-spacing:-.01em;margin-bottom:12px;text-shadow:0 0 30px rgba(46,155,240,.28)}
+  #featured .bnv-feature p{max-width:46ch;margin-bottom:20px}
+
+  /* credit definition list — label/value rows with blue hairlines */
+  #featured .bnv-credits{display:grid;gap:0;margin:0 0 24px;border-top:1px solid rgba(92,200,255,.16)}
+  #featured .bnv-row{display:grid;grid-template-columns:34% 1fr;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid rgba(92,200,255,.13)}
+  #featured .bnv-row dt{font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--c2);margin:0}
+  #featured .bnv-row dd{margin:0;font-size:.95rem;font-weight:500;color:#eaf2fb}
+  #featured .bnv-row:hover{background:linear-gradient(90deg,rgba(46,155,240,.07),transparent)}
+
+  @media(prefers-reduced-motion:reduce){
+    #featured .bnv-clap-rec i,#featured .bnv-tag-dot{animation:none;opacity:.9}
+  }
+  @media(max-width:900px){
+    #featured .bnv-feature{gap:26px}
+    #featured .bnv-feature .media{aspect-ratio:2.2/1}
+    #featured .bnv-card{padding-left:18px}
+    #featured .bnv-feature p{max-width:none}
+  }
+  @media(max-width:680px){
+    #featured .bnv-feature .media{aspect-ratio:16/9}
+    #featured .bnv-bar{height:8%}
+    #featured .bnv-clap-meta{font-size:.6rem}
+    #featured .bnv-head{flex-wrap:wrap;gap:8px}
+    #featured .bnv-rule{display:none}
+    #featured .bnv-row{grid-template-columns:1fr;gap:2px;padding:8px 0}
   }
 </style>
 </head>
@@ -509,16 +583,67 @@
     <div class="eyebrow reveal" data-en="Featured Work" data-tr="Öne Çıkan İş">Featured Work</div>
     <h2 class="sec-title reveal">BANEVA — 4-Era Reconstruction</h2>
     <p class="sec-sub reveal" data-en="My most-watched project: concert visuals revisualizing seven years of an artist's career." data-tr="En çok izlenen işim: bir sanatçının 7 yıllık kariyerini yeniden görselleştiren konser görselleri.">My most-watched project: concert visuals revisualizing seven years of an artist's career.</p>
-    <div class="feature reveal">
-      <a class="media" href="https://www.instagram.com/reel/DU6mb6XCTpQ/" target="_blank" rel="noopener">
-        <video muted loop playsinline preload="none" poster="baneva-poster.jpg" src="baneva.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none"></video>
-        <span class="stat">▶ 32K plays · ♥ 2K · 💬 44</span>
-      </a>
-      <div>
+    <div class="feature bnv-feature reveal">
+      <div class="bnv-stage">
+        <div class="bnv-clap" aria-hidden="true">
+          <span class="bnv-clap-stripes"></span>
+          <span class="bnv-clap-meta">ROLL A · SCENE 04 · TAKE 01</span>
+          <span class="bnv-clap-rec"><i></i>REC</span>
+        </div>
+        <a class="media" href="https://www.instagram.com/reel/DU6mb6XCTpQ/" target="_blank" rel="noopener">
+          <video muted loop playsinline preload="none" poster="baneva-poster.jpg" src="baneva.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none"></video>
+          <span class="bnv-bar bnv-bar-t" aria-hidden="true"></span>
+          <span class="bnv-bar bnv-bar-b" aria-hidden="true"></span>
+          <span class="bnv-crop bnv-tl" aria-hidden="true"></span>
+          <span class="bnv-crop bnv-tr" aria-hidden="true"></span>
+          <span class="bnv-crop bnv-bl" aria-hidden="true"></span>
+          <span class="bnv-crop bnv-br" aria-hidden="true"></span>
+          <span class="bnv-tag">
+            <i class="bnv-tag-dot" aria-hidden="true"></i>
+            <span data-en="Now Playing" data-tr="Şimdi Oynatılıyor">Now Playing</span>
+          </span>
+          <span class="stat">▶ 32K plays · ♥ 2K · 💬 44</span>
+        </a>
+        <div class="bnv-chapters" aria-hidden="true">
+          <span class="bnv-ch-label" data-en="ERAS" data-tr="DÖNEM">ERAS</span>
+          <span class="bnv-ch-rail">
+            <i class="bnv-tick"></i><i class="bnv-tick"></i><i class="bnv-tick bnv-on"></i><i class="bnv-tick"></i>
+          </span>
+          <span class="bnv-ch-count">04</span>
+        </div>
+      </div>
+      <div class="bnv-card">
+        <div class="bnv-head">
+          <span class="bnv-eyebrow" data-en="Now Directing" data-tr="Yönetmenlikte">Now Directing</span>
+          <span class="bnv-rule" aria-hidden="true"></span>
+          <span class="bnv-index" data-en="Selected Work · 01" data-tr="Seçilmiş İş · 01">Selected Work · 01</span>
+        </div>
         <div class="role" data-en="Concert Visuals · Directed as ÆRAY" data-tr="Konser Görselleri · ÆRAY imzalı">Concert Visuals · Directed as ÆRAY</div>
         <h3>BANEVA</h3>
         <p data-en="A “4-era reconstruction” that revisualizes seven years of an artist's career through a custom AI pipeline — built for @therealbaneva. My signature cinematic, light-blue look across every frame."
            data-tr="Bir sanatçının 7 yıllık kariyerini, özel bir AI prodüksiyon hattıyla yeniden görselleştiren bir “4 dönem rekonstrüksiyonu” — @therealbaneva için. Her karede sinematik, açık mavi imzam.">A “4-era reconstruction” that revisualizes seven years of an artist's career through a custom AI pipeline — built for @therealbaneva. My signature cinematic, light-blue look across every frame.</p>
+        <dl class="bnv-credits">
+          <div class="bnv-row">
+            <dt data-en="Artist" data-tr="Sanatçı">Artist</dt>
+            <dd>BANEVA</dd>
+          </div>
+          <div class="bnv-row">
+            <dt data-en="Role" data-tr="Rol">Role</dt>
+            <dd data-en="AI Music Video Director" data-tr="AI Müzik Video Yönetmeni">AI Music Video Director</dd>
+          </div>
+          <div class="bnv-row">
+            <dt data-en="Eras" data-tr="Dönem">Eras</dt>
+            <dd data-en="4 · across 7 years" data-tr="4 · 7 yıla yayılan">4 · across 7 years</dd>
+          </div>
+          <div class="bnv-row">
+            <dt data-en="Pipeline" data-tr="Prodüksiyon Hattı">Pipeline</dt>
+            <dd data-en="Custom AI" data-tr="Özel AI">Custom AI</dd>
+          </div>
+          <div class="bnv-row">
+            <dt data-en="Plays" data-tr="İzlenme">Plays</dt>
+            <dd>≈ 32K · ♥ 2K · 💬 44</dd>
+          </div>
+        </dl>
         <a href="https://www.instagram.com/reel/DU6mb6XCTpQ/" target="_blank" rel="noopener" class="btn btn-grad" data-en="Watch on Instagram →" data-tr="Instagram'da İzle →">Watch on Instagram →</a>
       </div>
     </div>
