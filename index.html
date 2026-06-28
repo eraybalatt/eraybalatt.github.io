@@ -169,6 +169,11 @@
   .g-mason.gm-169 .mcard{aspect-ratio:16/9}
   .g-mason.gm-43 .mcard{aspect-ratio:4/3}
   .g-mason.gm-11 .mcard{aspect-ratio:1/1}
+  /* natural-aspect masonry: full images, no crop/zoom, varied heights, no inner gaps */
+  .g-mason.gm-nat{display:block;column-count:3;column-gap:14px;aspect-ratio:auto}
+  .g-mason.gm-nat .mcard{break-inside:avoid;margin:0 0 14px;aspect-ratio:auto;height:auto}
+  .g-mason.gm-nat .mcard img,.g-mason.gm-nat .mcard video{height:auto;aspect-ratio:auto;object-fit:fill}
+  @media(max-width:760px){.g-mason.gm-nat{column-count:2}}
   .g-mason.gm-bento{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(6,1fr);grid-auto-flow:dense;aspect-ratio:8/9}
   .g-mason.gm-bento .mcard{aspect-ratio:auto}
   .g-mason.gm-bento .mcard:nth-child(1),.g-mason.gm-bento .mcard:nth-child(8),.g-mason.gm-bento .mcard:nth-child(11),.g-mason.gm-bento .mcard:nth-child(12){grid-column:span 2;grid-row:span 2}
@@ -539,7 +544,7 @@
       <div class="card reveal"><div class="thumb v cover-c"><video src="arden-v2.mp4" poster="arden-v2-p.jpg" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Arden · Motion</span></div></div>
       <div class="card reveal"><div class="thumb v cover-c"><video src="arden-v3.mp4" poster="arden-v3-p.jpg" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Arden · Motion</span></div></div>
     </div>
-    <div class="grid g-mason gm-bento">
+    <div class="grid g-mason gm-nat">
       <div class="mcard reveal t-land"><img src="furn-1.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /><span class="pill">Arden</span></div>
       <div class="mcard reveal t-tall"><img src="furn-15.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
       <div class="mcard reveal t-sq"><img src="furn-16.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
@@ -557,7 +562,7 @@
     </div>
 
     <div class="row-label reveal" data-en="Mira — Furniture" data-tr="Mira — Mobilya">Mira — Furniture</div>
-    <div class="grid g-mason gm-bento9">
+    <div class="grid g-mason gm-nat">
       <div class="mcard reveal t-tall"><img src="mira-1.jpg" alt="Mira wardrobe product photography" loading="lazy" /><span class="pill">Mira</span></div>
       <div class="mcard reveal t-land"><img src="mira-3.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
       <div class="mcard reveal t-sq"><img src="mira-2.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
