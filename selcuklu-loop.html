@@ -5,9 +5,9 @@
 <style>
   :root{
     --ink:#070310;
-    --fz:#d94fb0;          /* firuze */
-    --fz-bright:#f0c2e8;
-    --fz-deep:#6e2a5e;
+    --fz:#34a8e0;          /* firuze */
+    --fz-bright:#c2e4f0;
+    --fz-deep:#1e5a6e;
     --ember:#e8ab68;
     --stone:#c89e68;
   }
@@ -107,24 +107,24 @@
         <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0"   stop-color="#080f24"/>
           <stop offset=".42" stop-color="#0c2c46"/>
-          <stop offset=".70" stop-color="#3a1438"/>
+          <stop offset=".70" stop-color="#143a48"/>
           <stop offset=".86" stop-color="#0a2433"/>
           <stop offset="1"   stop-color="#070310"/>
         </linearGradient>
         <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0"  stop-color="#f3cdee" stop-opacity=".85"/>
-          <stop offset=".4" stop-color="#d94fb0" stop-opacity=".45"/>
-          <stop offset="1"  stop-color="#d94fb0" stop-opacity="0"/>
+          <stop offset="0"  stop-color="#cdeaf6" stop-opacity=".85"/>
+          <stop offset=".4" stop-color="#34a8e0" stop-opacity=".45"/>
+          <stop offset="1"  stop-color="#34a8e0" stop-opacity="0"/>
         </radialGradient>
         <radialGradient id="moonDisc" cx="42%" cy="38%" r="72%">
-          <stop offset="0"   stop-color="#fdf0fa"/>
-          <stop offset=".35" stop-color="#edb8e2"/>
-          <stop offset=".72" stop-color="#d24f9e"/>
-          <stop offset="1"   stop-color="#5b2250"/>
+          <stop offset="0"   stop-color="#f0faff"/>
+          <stop offset=".35" stop-color="#b8def0"/>
+          <stop offset=".72" stop-color="#2e9bd6"/>
+          <stop offset="1"   stop-color="#1a4a5b"/>
         </radialGradient>
         <linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#eeb8e4" stop-opacity=".55"/>
-          <stop offset="1" stop-color="#eeb8e4" stop-opacity="0"/>
+          <stop offset="0" stop-color="#b8def0" stop-opacity=".55"/>
+          <stop offset="1" stop-color="#b8def0" stop-opacity="0"/>
         </linearGradient>
         <radialGradient id="horizon" cx="50%" cy="50%" r="50%">
           <stop offset="0" stop-color="#e8ab68" stop-opacity=".5"/>
@@ -136,7 +136,7 @@
           <stop offset="1"  stop-color="#020409"/>
         </linearGradient>
         <linearGradient id="backRidgeF" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#4a1d52" stop-opacity=".55"/>
+          <stop offset="0" stop-color="#1a4a5b" stop-opacity=".55"/>
           <stop offset="1" stop-color="#0a2230" stop-opacity=".9"/>
         </linearGradient>
         <radialGradient id="vig" cx="52%" cy="44%" r="78%">
@@ -164,8 +164,8 @@
       <!-- ay halesi + ay -->
       <circle class="moonGlow" cx="560" cy="660" r="430" fill="url(#moonGlow)" filter="url(#soft)"/>
       <circle cx="560" cy="660" r="246" fill="url(#moonDisc)"/>
-      <circle cx="560" cy="660" r="246" fill="none" stroke="#fbe8f6" stroke-width="2" opacity=".5"/>
-      <circle cx="560" cy="660" r="178" fill="none" stroke="#36143a" stroke-width="2" opacity=".4"/>
+      <circle cx="560" cy="660" r="246" fill="none" stroke="#e8f4fb" stroke-width="2" opacity=".5"/>
+      <circle cx="560" cy="660" r="178" fill="none" stroke="#143640" stroke-width="2" opacity=".4"/>
       <path class="moonStar" id="moonStar" fill="none" stroke="#0a4751"
             stroke-width="3" opacity=".55"/>
 
@@ -177,8 +177,8 @@
 
       <!-- sis tülleri -->
       <g id="wisps">
-        <ellipse class="wisp"   cx="0" cy="580" rx="240" ry="36" fill="#f3cdee" opacity=".5" filter="url(#hazeBlur)"/>
-        <ellipse class="wisp b" cx="0" cy="800" rx="300" ry="44" fill="#e69ad0" opacity=".4" filter="url(#hazeBlur)"/>
+        <ellipse class="wisp"   cx="0" cy="580" rx="240" ry="36" fill="#cdeaf6" opacity=".5" filter="url(#hazeBlur)"/>
+        <ellipse class="wisp b" cx="0" cy="800" rx="300" ry="44" fill="#7fcce8" opacity=".4" filter="url(#hazeBlur)"/>
       </g>
 
       <!-- arka sırt -->
@@ -191,7 +191,7 @@
       <g class="wolf">
         <!-- hale / rim ışık -->
         <g filter="url(#aura)" transform="translate(170,705) scale(1.45)">
-          <path fill="none" stroke="#e9a8dc" stroke-width="15" opacity=".75"
+          <path fill="none" stroke="#a8d8ec" stroke-width="15" opacity=".75"
             d="M150 90 Q196 152 232 202 Q250 216 264 206 Q284 132 306 80
                Q324 152 340 226 L354 242 Q374 172 392 112 Q414 200 434 304
                Q454 408 472 512 Q488 562 514 588 L198 588
@@ -200,7 +200,7 @@
         </g>
         <!-- gövde -->
         <g transform="translate(170,705) scale(1.45)">
-          <path fill="url(#wolfFill)" stroke="#e070bd" stroke-width="1.6" stroke-opacity=".55"
+          <path fill="url(#wolfFill)" stroke="#56c0e8" stroke-width="1.6" stroke-opacity=".55"
             d="M150 90 Q196 152 232 202 Q250 216 264 206 Q284 132 306 80
                Q324 152 340 226 L354 242 Q374 172 392 112 Q414 200 434 304
                Q454 408 472 512 Q488 562 514 588 L198 588
@@ -217,14 +217,14 @@
 
       <!-- Selçuklu portal kemeri -->
       <path d="M168 1820 L168 348 Q168 132 540 60 Q912 132 912 348 L912 1820"
-            fill="none" stroke="#db5cae" stroke-width="2" opacity=".16"/>
+            fill="none" stroke="#3aa6e0" stroke-width="2" opacity=".16"/>
       <path d="M196 1820 L196 360 Q196 156 540 86 Q884 156 884 360 L884 1820"
-            fill="none" stroke="#db5cae" stroke-width="1" opacity=".1"/>
+            fill="none" stroke="#3aa6e0" stroke-width="1" opacity=".1"/>
 
       <!-- alt imza yıldızı -->
       <g transform="translate(540,1632)">
-        <path class="markStar" id="markStar" fill="none" stroke="#e9a8dc" stroke-width="2.4"/>
-        <circle r="5" fill="#f3cdee" opacity=".9"/>
+        <path class="markStar" id="markStar" fill="none" stroke="#a8d8ec" stroke-width="2.4"/>
+        <circle r="5" fill="#cdeaf6" opacity=".9"/>
       </g>
 
       <!-- vinyet -->
@@ -261,7 +261,7 @@
       const o=(Math.random()*.5+.2).toFixed(2);
       const dur=(Math.random()*4+3).toFixed(1);
       const del=(-Math.random()*6).toFixed(1);
-      s+=`<circle class="twinkle" cx="${x}" cy="${y}" r="${r}" fill="#f2d4ec" `
+      s+=`<circle class="twinkle" cx="${x}" cy="${y}" r="${r}" fill="#d4ecf6" `
         +`opacity="${o}" style="animation-duration:${dur}s;animation-delay:${del}s"/>`;
     }
     g.innerHTML=s;
