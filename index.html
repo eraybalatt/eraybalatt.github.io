@@ -126,7 +126,7 @@
   .tools-track.rev span b{color:#4f9fe6;text-shadow:none}
   @keyframes scroll{to{transform:translateX(-50%)}}
 
-  .about-wrap{display:grid;grid-template-columns:290px 1fr;gap:42px;align-items:center}
+  .about-wrap{display:grid;grid-template-columns:290px 1fr;gap:42px;align-items:start}
   .about-wrap .portrait{order:2}
   .portrait{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:1/1;border:1px solid var(--card-brd);background:linear-gradient(135deg,var(--c2),var(--c5));display:flex;align-items:center;justify-content:center}
   .about-stack{position:relative;width:100%;min-height:360px}
@@ -138,7 +138,7 @@
   .portrait::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(155deg,rgba(46,155,240,.35),rgba(14,38,80,.55));mix-blend-mode:soft-light;pointer-events:none}
   .portrait::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(8,12,22,.6),rgba(8,12,22,0) 58%);pointer-events:none;border-radius:24px}
   .portrait .ph{font-family:'Space Grotesk';font-weight:700;font-size:3rem;color:rgba(255,255,255,.85)}
-  .about-body p{color:var(--muted);margin-bottom:16px;max-width:640px}
+  .about-body p{color:var(--muted);margin-bottom:14px;max-width:600px;font-size:.95rem;line-height:1.6}
   .about-body p b{color:var(--text)}
   .hl{list-style:none;display:grid;gap:9px;margin-top:6px}
   .hl li{font-size:.92rem;color:var(--text)}
@@ -160,13 +160,12 @@
   .g-shorts{grid-template-columns:repeat(4,1fr)}
   .g-gallery{grid-template-columns:repeat(3,1fr)}
   .g-feat{grid-template-columns:repeat(4,1fr)}
-  .g-mason{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:10px;gap:14px;grid-auto-flow:row dense}
-  .g-mason .mcard{height:100%;border-radius:var(--radius);overflow:hidden;border:1px solid var(--card-brd);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .g-mason{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .g-mason .mcard{aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;border:1px solid var(--card-brd);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s}
   .g-mason .mcard:hover{transform:translateY(-4px);box-shadow:0 16px 42px -18px rgba(8,16,34,.9);border-color:rgba(92,200,255,.45);z-index:2}
-  .g-mason .mcard img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+  .g-mason .mcard img,.g-mason .mcard video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
   .g-mason .mcard:hover img{transform:scale(1.05)}
-  .g-mason .t-land{grid-row:span 11} .g-mason .t-sq{grid-row:span 16} .g-mason .t-tall{grid-row:span 23}
-  .g-mason .t-wide{grid-column:span 2;grid-row:span 22} .g-mason .t-bigsq{grid-column:span 2;grid-row:span 33}
+  .g-mason .t-land,.g-mason .t-sq,.g-mason .t-tall,.g-mason .t-wide,.g-mason .t-bigsq{grid-column:auto;grid-row:auto}
   .g-clients{grid-template-columns:repeat(4,1fr)}
   .cap{padding:34px 30px;background:linear-gradient(165deg,rgba(16,40,86,.5),rgba(10,18,40,.55));border:1px solid rgba(92,200,255,.18)}
   .cap .cap-ico{width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;border-radius:16px;background:linear-gradient(150deg,rgba(46,155,240,.22),rgba(46,155,240,.15));border:1px solid rgba(92,200,255,.28);margin-bottom:20px}
@@ -242,8 +241,11 @@
 
   .contact{text-align:center;background:var(--bg-soft);border:1px solid var(--card-brd);border-radius:28px;padding:58px 24px}
   .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:24px auto 0;max-width:680px}
-  .social{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;border-radius:13px;border:1px solid var(--card-brd);background:linear-gradient(180deg,rgba(92,200,255,.05),rgba(92,200,255,0));transition:.25s;font-family:'Space Grotesk';font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text)}
-  .social:hover{transform:translateY(-3px);border-color:var(--c2);background:linear-gradient(180deg,rgba(46,155,240,.14),rgba(46,155,240,.02));box-shadow:0 12px 32px -14px var(--c3)}
+  .social{display:inline-flex;align-items:center;justify-content:center;padding:9px 16px;border-radius:11px;border:1px solid var(--card-brd);background:linear-gradient(180deg,rgba(92,200,255,.05),rgba(92,200,255,0));transition:.25s;font-family:'Space Grotesk';font-size:.7rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .social:hover{transform:translateY(-3px);border-color:var(--c2);color:var(--text);background:linear-gradient(180deg,rgba(46,155,240,.14),rgba(46,155,240,.02));box-shadow:0 12px 32px -14px var(--c3)}
+  .social-cta{display:inline-flex;align-items:center;gap:10px;margin:18px 0 2px;padding:13px 24px;border-radius:13px;font-family:'Space Grotesk';font-weight:600;font-size:.94rem;letter-spacing:.01em;color:#fff;background:linear-gradient(135deg,#2e9bf0,#1f7ccf);border:1px solid rgba(120,210,255,.45);box-shadow:0 13px 32px -12px rgba(46,155,240,.75);transition:transform .2s,box-shadow .2s}
+  .social-cta:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(46,155,240,.95)}
+  .social-cta .uw-dot{width:9px;height:9px;border-radius:50%;background:#6fda44;box-shadow:0 0 10px rgba(111,218,68,.85);flex:0 0 auto}
   .contact-grid{text-align:left;display:grid;grid-template-columns:270px 1fr;gap:42px;align-items:center}
   .contact-visual{border-radius:18px;overflow:hidden;aspect-ratio:9/16;border:1px solid var(--card-brd);background:#05080f;box-shadow:0 22px 60px -26px rgba(0,0,0,.85)}
   .contact-visual iframe{width:100%;height:100%;border:0;display:block}
@@ -522,8 +524,8 @@
       <div class="mcard reveal t-land"><img src="furn-7.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
       <div class="mcard reveal t-tall"><img src="furn-20.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
       <div class="mcard reveal t-sq"><img src="furn-22.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img src="furn-8.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img src="furn-12.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
+      
+      
     </div>
 
     <div class="row-label reveal" data-en="Mira — Furniture" data-tr="Mira — Mobilya">Mira — Furniture</div>
@@ -547,7 +549,7 @@
       <div class="mcard reveal t-land"><img src="atelia-4.jpg?v=5" alt="Studio Atelia modular sofa visualization" loading="lazy" /></div>
       <div class="mcard reveal t-wide"><img src="atelia-5.jpg?v=5" alt="Studio Atelia modular sofa visualization" loading="lazy" /></div>
       <div class="mcard reveal t-land"><img src="atelia-6.jpg?v=5" alt="Studio Atelia modular sofa visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img src="atelia-7.jpg?v=5" alt="Studio Atelia modular sofa visualization" loading="lazy" /></div>
+      
     </div>
 
     <div class="row-label reveal" data-en="Argimo · Sarmobi — Seating" data-tr="Argimo · Sarmobi — Koltuklar">Argimo · Sarmobi — Seating</div>
@@ -558,8 +560,8 @@
       <div class="mcard reveal t-sq"><img src="argimo-4.jpg?v=5" alt="Argimo chair product photography" loading="lazy" /></div>
       <div class="mcard reveal t-bigsq"><img src="argimo-5.jpg?v=5" alt="Argimo chair product photography" loading="lazy" /></div>
       <div class="mcard reveal t-sq"><img src="argimo-6.jpg?v=5" alt="Argimo chair product photography" loading="lazy" /></div>
-      <div class="mcard reveal t-sq"><img src="argimo-7.jpg?v=5" alt="Argimo chair product photography" loading="lazy" /></div>
-      <div class="mcard reveal t-sq"><img src="argimo-8.jpg?v=5" alt="Argimo chair product photography" loading="lazy" /></div>
+      
+      
     </div>
   </section>
   <section id="clients">
@@ -827,16 +829,15 @@
         <p class="form-status" aria-live="polite"></p>
       </form>
       <a class="contact-email" href="mailto:eray@eraybalat.com">✉️ eray@eraybalat.com</a>
+      <a class="social-cta" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener"><span class="uw-dot" aria-hidden="true"></span><span data-en="Hire me on Upwork →" data-tr="Upwork'te benimle çalış →">Hire me on Upwork →</span></a>
       <div class="socials">
-        <a class="social" href="mailto:eray@eraybalat.com">Email</a>
-        <a class="social" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener">YouTube</a>
         <a class="social" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener">Instagram</a>
-        <a class="social" href="https://x.com/documenteray" target="_blank" rel="noopener">Twitter / X</a>
+        <a class="social" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener">YouTube</a>
+        <a class="social" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="social" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener">Behance</a>
+        <a class="social" href="https://x.com/documenteray" target="_blank" rel="noopener">Twitter / X</a>
         <a class="social" href="https://filmfreeway.com/ErayBalat" target="_blank" rel="noopener">FilmFreeway</a>
         <a class="social" href="https://medium.com/@eraybalat" target="_blank" rel="noopener">Medium</a>
-        <a class="social" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener">Upwork</a>
-        <a class="social" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       </div>
     </div>
