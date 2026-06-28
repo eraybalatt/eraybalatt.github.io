@@ -50,8 +50,9 @@
   h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
   a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
 
-  .blobs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-  .blob{position:absolute;width:46vw;height:46vw;border-radius:50%;filter:blur(110px);opacity:.55;animation:float 18s ease-in-out infinite}
+  .blobs{position:fixed;top:-25%;left:-25%;width:150%;height:150%;z-index:-1;overflow:hidden;pointer-events:none;animation:bgspin 100s linear infinite}
+  @keyframes bgspin{to{transform:rotate(360deg)}}
+  .blob{position:absolute;width:46vw;height:46vw;border-radius:50%;filter:blur(110px);opacity:.62;animation:float 18s ease-in-out infinite}
   .blob.b1{background:#38bdf8;top:-12%;left:-8%}
   .blob.b2{background:var(--c2);top:30%;right:-12%;animation-delay:-4s}
   .blob.b3{background:var(--c5);bottom:-15%;left:18%;animation-delay:-8s}
@@ -78,7 +79,7 @@
   .card:hover .card-body h3{text-shadow:0 0 13px rgba(46,155,240,.5)}
   .lang{display:inline-flex;border:1px solid var(--card-brd);border-radius:999px;overflow:hidden;background:var(--card)}
   .lang-btn{background:none;border:none;color:var(--muted);font-family:'Space Grotesk';font-weight:600;font-size:.78rem;padding:7px 12px;cursor:pointer;transition:.2s}
-  .lang-btn.active{background:linear-gradient(180deg,#2e9bf0,#f5c542);color:#fff}
+  .lang-btn.active{background:linear-gradient(135deg,#5cc8ff 0%,#2e9bf0 52%,#f5c542 100%);color:#fff;box-shadow:0 0 16px -4px rgba(56,189,248,.6)}
   .nav-toggle{display:none;background:none;border:1px solid var(--card-brd);color:var(--text);font-size:1.4rem;border-radius:12px;padding:2px 11px;cursor:pointer}
 
   main{max-width:var(--maxw);margin:0 auto;padding:0 22px}
@@ -235,6 +236,11 @@
 
   footer{text-align:center;padding:38px 20px;color:var(--muted);border-top:1px solid var(--card-brd);font-size:.86rem}
   footer .brand-sm{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+  footer .foot-mail{display:inline-block;font-family:'Space Grotesk';font-size:1.08rem;font-weight:600;color:#fff;border-bottom:2px solid var(--c2);padding-bottom:3px;margin-bottom:16px;transition:color .2s,transform .2s}
+  footer .foot-mail:hover{color:var(--c1);transform:translateY(-1px)}
+  footer .foot-soc{margin-bottom:16px;font-size:.86rem;letter-spacing:.03em;color:var(--muted)}
+  footer .foot-soc .fl{color:var(--muted);margin:0 9px;transition:color .2s,text-shadow .2s}
+  footer .foot-soc .fl:hover{color:var(--c1);text-shadow:0 0 10px rgba(56,189,248,.5)}
 
   .reveal{opacity:0;transform:translateY(32px) scale(.98);transition:opacity .85s cubic-bezier(.22,.61,.36,1),transform .85s cubic-bezier(.22,.61,.36,1)}
   .reveal.show{opacity:1;transform:none}
@@ -465,8 +471,8 @@
     <div class="eyebrow reveal" data-en="03 — Documentary · CITRINE" data-tr="03 — Belgesel · CITRINE">03 — Documentary · CITRINE</div>
     <h2 class="sec-title reveal" data-en="Animated Documentaries" data-tr="Animasyon Belgeseller">Animated Documentaries</h2>
     <p class="sec-sub reveal" data-en="Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines." data-tr="CITRINE etiketim altında araştırmaya dayalı belgeseller — 3D, motion graphics ve AI ile üretiliyor. Manşetlerin ötesini gör.">Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines.</p>
+    <a class="card reveal" href="https://www.youtube.com/watch?v=-0h3XlqPibo" target="_blank" rel="noopener" style="display:block;margin-bottom:18px"><div class="thumb" style="aspect-ratio:16/9"><img src="https://i.ytimg.com/vi/-0h3XlqPibo/maxresdefault.jpg" alt="The Charlie Kirk Shooting" loading="lazy" /><span class="play"></span><span class="pill">🔥 17K views · 17:07 · Most-watched</span></div><div class="card-body"><h3>The Charlie Kirk Shooting</h3><p data-en="Explained by a former FBI Special Agent · CITRINE" data-tr="Eski bir FBI Özel Ajanı anlatıyor · CITRINE">Explained by a former FBI Special Agent · CITRINE</p></div></a>
     <div class="grid g-3">
-      <a class="card reveal" href="https://www.youtube.com/watch?v=-0h3XlqPibo" target="_blank" rel="noopener"><div class="thumb cover-e"><img src="https://i.ytimg.com/vi/-0h3XlqPibo/hqdefault.jpg" alt="The Charlie Kirk Shooting" loading="lazy" /><span class="play"></span><span class="pill">🔥 17K views</span></div><div class="card-body"><h3>The Charlie Kirk Shooting</h3><p data-en="Explained by a former FBI Special Agent · 17:07" data-tr="Eski bir FBI Özel Ajanı anlatıyor · 17:07">Explained by a former FBI Special Agent · 17:07</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=Xchn8HuKOeI" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/Xchn8HuKOeI/hqdefault.jpg" alt="Trump vs Elon Musk" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Meltdown: Trump vs Elon Musk</h3><p data-en="Animated documentary · CITRINE" data-tr="Animasyonlu belgesel · CITRINE">Animated documentary · CITRINE</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=1DqgCLC9EFY" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/1DqgCLC9EFY/hqdefault.jpg" alt="The Louvre Heist" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Louvre Heist Explained</h3><p data-en="7 minutes that changed everything · CITRINE" data-tr="Her şeyi değiştiren 7 dakika · CITRINE">7 minutes that changed everything · CITRINE</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=d9xmp74iJyQ" target="_blank" rel="noopener"><div class="thumb cover-b"><img src="https://i.ytimg.com/vi/d9xmp74iJyQ/hqdefault.jpg" alt="Milei Argentina" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>How Milei Transformed Argentina</h3><p data-en="Economy, explained in 12 months · CITRINE" data-tr="12 ayda ekonomi · CITRINE">Economy, explained in 12 months · CITRINE</p></div></a>
@@ -666,6 +672,10 @@
 </main>
 
 <footer>
+  <a class="foot-mail" href="mailto:eray@eraybalat.com">✉️ eray@eraybalat.com</a>
+  <div class="foot-soc">
+    <a class="fl" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener">Instagram</a>·<a class="fl" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener">YouTube</a>·<a class="fl" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener">Behance</a>·<a class="fl" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener">Upwork</a>·<a class="fl" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener">LinkedIn</a>·<a class="fl" href="https://x.com/documenteray" target="_blank" rel="noopener">X</a>
+  </div>
   © <span id="year"></span> <span class="brand-sm">Eray Balat</span> · documenteray
   <span data-en="— Directed with AI · eraybalat.com" data-tr="— AI ile yönetildi · eraybalat.com">— Directed with AI · eraybalat.com</span>
 </footer>
