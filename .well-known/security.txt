@@ -1,0 +1,5 @@
+# Security contact for eraybalat.com
+Contact: mailto:eray@eraybalat.com
+Expires: 2027-06-28T23:59:59.000Z
+Preferred-Languages: en, tr
+Canonical: https://eraybalat.com/.well-known/security.txt
