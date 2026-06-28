@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src 'self'; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,7 +50,7 @@
   h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
   a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
 
-  .blobs{position:fixed;top:-25%;left:-25%;width:150%;height:150%;z-index:-1;overflow:hidden;pointer-events:none;animation:bgspin 100s linear infinite}
+  .blobs{position:fixed;top:-25%;left:-25%;width:150%;height:150%;z-index:-1;pointer-events:none;animation:bgspin 100s linear infinite;-webkit-mask-image:radial-gradient(ellipse 58% 58% at 50% 50%,#000 38%,transparent 80%);mask-image:radial-gradient(ellipse 58% 58% at 50% 50%,#000 38%,transparent 80%)}
   @keyframes bgspin{to{transform:rotate(360deg)}}
   .blob{position:absolute;width:46vw;height:46vw;border-radius:50%;filter:blur(82px);opacity:.62;animation:float 18s ease-in-out infinite}
   .blob.b1{background:#38bdf8;top:-12%;left:-8%}
@@ -209,7 +209,7 @@
   .sndbtn{position:absolute;bottom:10px;right:10px;z-index:4;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.5);backdrop-filter:blur(4px);color:#fff;font-size:.8rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;padding:0;line-height:1}
   .sndbtn:hover{background:rgba(46,155,240,.55);border-color:var(--c2);transform:scale(1.08)}
   .sndbtn.on{background:rgba(46,155,240,.7);border-color:#eef4fb}
-  .showreel-banner{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;border:1px solid var(--card-brd);box-shadow:0 30px 80px -30px rgba(8,16,34,.9)}
+  .showreel-banner{position:relative;max-width:880px;margin-inline:auto;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;border:1px solid var(--card-brd);box-shadow:0 30px 80px -30px rgba(8,16,34,.9)}
   .showreel-banner video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
   .showreel-ov{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(20px,4vw,40px);background:linear-gradient(to top,rgba(8,12,22,.92),rgba(8,12,22,.15) 52%,transparent);pointer-events:none}
   .showreel-ov .role{margin-bottom:8px}
@@ -438,7 +438,7 @@
     <h2 class="sec-title reveal">Eray Balat</h2>
     <div class="about-wrap" style="margin-top:26px">
       <div class="about-stack reveal">
-        <img class="as-1" src="profile.jpg?v=4" alt="Eray Balat" loading="lazy" />
+        <img class="as-1" src="profile.jpg?v=5" alt="Eray Balat" loading="lazy" />
         <img class="as-2" src="about-1.jpg" alt="Eray Balat — on location, Amsterdam" loading="lazy" />
       </div>
       <div class="about-body reveal">
@@ -667,7 +667,7 @@
     <div class="eyebrow reveal" data-en="Documentary · CITRINE" data-tr="Belgesel · CITRINE">Documentary · CITRINE</div>
     <h2 class="sec-title reveal" data-en="Animated Documentaries" data-tr="Animasyon Belgeseller">Animated Documentaries</h2>
     <p class="sec-sub reveal" data-en="Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines." data-tr="CITRINE etiketim altında araştırmaya dayalı belgeseller — 3D, motion graphics ve AI ile üretiliyor. Manşetlerin ötesini gör.">Research-driven documentaries under my CITRINE label — built with 3D, motion graphics and AI. See beyond the headlines.</p>
-    <a class="card reveal" href="https://www.youtube.com/watch?v=-0h3XlqPibo" target="_blank" rel="noopener" style="display:block;margin-bottom:18px"><div class="thumb" style="aspect-ratio:16/9"><img src="https://i.ytimg.com/vi/-0h3XlqPibo/maxresdefault.jpg" alt="The Charlie Kirk Shooting" loading="lazy" /><span class="play"></span><span class="pill">🔥 17K views · 17:07 · Most-watched</span></div><div class="card-body"><h3>The Charlie Kirk Shooting</h3><p data-en="Explained by a former FBI Special Agent · CITRINE" data-tr="Eski bir FBI Özel Ajanı anlatıyor · CITRINE">Explained by a former FBI Special Agent · CITRINE</p></div></a>
+    <a class="card reveal" href="https://www.youtube.com/watch?v=-0h3XlqPibo" target="_blank" rel="noopener" data-yt="-0h3XlqPibo" style="display:block;margin-bottom:18px"><div class="thumb" style="aspect-ratio:16/9"><img src="https://i.ytimg.com/vi/-0h3XlqPibo/maxresdefault.jpg" alt="The Charlie Kirk Shooting" loading="lazy" /><span class="play"></span><span class="pill">🔥 17K views · 17:07 · Most-watched</span></div><div class="card-body"><h3>The Charlie Kirk Shooting</h3><p data-en="Explained by a former FBI Special Agent · CITRINE" data-tr="Eski bir FBI Özel Ajanı anlatıyor · CITRINE">Explained by a former FBI Special Agent · CITRINE</p></div></a>
     <div class="grid g-3">
       <a class="card reveal" href="https://www.youtube.com/watch?v=Xchn8HuKOeI" target="_blank" rel="noopener"><div class="thumb cover-c"><img src="https://i.ytimg.com/vi/Xchn8HuKOeI/hqdefault.jpg" alt="Trump vs Elon Musk" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Meltdown: Trump vs Elon Musk</h3><p data-en="Animated documentary · CITRINE" data-tr="Animasyonlu belgesel · CITRINE">Animated documentary · CITRINE</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=1DqgCLC9EFY" target="_blank" rel="noopener"><div class="thumb cover-a"><img src="https://i.ytimg.com/vi/1DqgCLC9EFY/hqdefault.jpg" alt="The Louvre Heist" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Louvre Heist Explained</h3><p data-en="7 minutes that changed everything · CITRINE" data-tr="Her şeyi değiştiren 7 dakika · CITRINE">7 minutes that changed everything · CITRINE</p></div></a>
@@ -931,6 +931,23 @@
   // pause a playing video when it scrolls off-screen (free resources)
   const vio=new IntersectionObserver((es)=>es.forEach(e=>{ if(!e.isIntersecting && !e.target.paused) e.target.pause(); }),{threshold:.05});
   cardVids.forEach(v=>vio.observe(v));
+
+  // inline YouTube play — click a [data-yt] card to swap its thumbnail for an embedded player (stays on-site)
+  document.querySelectorAll('a[data-yt]').forEach(el=>{
+    el.addEventListener('click',e=>{
+      e.preventDefault();
+      const id=el.getAttribute('data-yt');
+      const thumb=el.querySelector('.thumb')||el;
+      if(thumb.querySelector('iframe'))return;
+      const f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      f.title='Video'; f.setAttribute('frameborder','0');
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen=true;
+      f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;z-index:6;border-radius:inherit';
+      thumb.appendChild(f);
+    });
+  });
 
   // mouse-following blue glow
   const cg=document.getElementById('cursor-glow');
