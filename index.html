@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self' https://api.web3forms.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -90,7 +90,7 @@
   .lang{display:inline-flex;border:1px solid var(--card-brd);border-radius:999px;overflow:hidden;background:var(--card)}
   .lang-btn{background:none;border:none;color:var(--muted);font-family:'Space Grotesk';font-weight:600;font-size:.78rem;padding:7px 12px;cursor:pointer;transition:.2s}
   .lang-btn.active{background:linear-gradient(135deg,#5cc8ff 0%,#2e9bf0 52%,#f5c542 100%);color:#fff;box-shadow:0 0 16px -4px rgba(56,189,248,.6)}
-  .nav-toggle{display:none;background:none;border:1px solid var(--card-brd);color:var(--text);font-size:1.4rem;border-radius:12px;padding:2px 11px;cursor:pointer}
+  .nav-toggle{display:none;background:none;border:1px solid var(--card-brd);color:var(--text);font-size:1.4rem;border-radius:12px;padding:7px 13px;line-height:1;cursor:pointer}
 
   main{max-width:var(--maxw);margin:0 auto;padding:0 22px}
   section{padding:84px 0;scroll-margin-top:80px}
@@ -304,7 +304,8 @@
     .about-stack{max-width:340px;min-height:320px;margin:0 auto}
   }
   @media(max-width:680px){
-    .g-2,.g-3,.g-ugc,.svc-groups{grid-template-columns:1fr}
+    .g-2,.g-3,.svc-groups{grid-template-columns:1fr}
+    .g-ugc{grid-template-columns:repeat(2,1fr)}
     section{padding:62px 0}
   }
   /* ===== #featured — BANEVA Director's Slate ===== */
@@ -433,7 +434,7 @@
     <video class="hero-bg" id="heroVid" autoplay muted loop playsinline preload="auto" src="baneva-neon.mp4"></video>
     <div class="hero-ov"></div>
     <div class="eyebrow reveal" data-en="Creative AI Producer · Filmmaker" data-tr="Creative AI Producer · Yönetmen" data-de="Creative AI Producer · Filmemacher">Creative AI Producer · Filmmaker</div>
-    <video class="hero-logo reveal" src="directed-by-eray-hero.mp4" autoplay muted loop playsinline preload="auto" aria-label="directed by Eray Balat" style="mix-blend-mode:screen;filter:none"></video>
+    <video class="hero-logo reveal" src="directed-by-eray-hero.mp4" autoplay muted loop playsinline preload="metadata" aria-label="directed by Eray Balat" style="mix-blend-mode:screen;filter:none"></video>
     <h1 class="reveal" data-en="Cinematic stories, rebuilt frame by frame with AI." data-tr="Sinematik hikâyeler, kare kare yapay zekâ ile yeniden inşa edildi." data-de="Filmische Geschichten, Bild für Bild mit AI neu erschaffen.">Cinematic stories, rebuilt frame by frame with AI.</h1>
     <p class="lead reveal" data-en="I direct AI music videos, documentaries, short films and product films for brands and artists worldwide." data-tr="Markalar ve sanatçılar için AI müzik videoları, belgeseller, kısa filmler ve ürün filmleri yönetiyorum." data-de="Ich inszeniere AI-Musikvideos, Dokumentarfilme, Kurzfilme und Produktfilme für Marken und Künstler weltweit.">I direct AI music videos, documentaries, short films and product films for brands and artists worldwide.</p>
     <div class="cta-row reveal">
@@ -886,8 +887,8 @@
 <script>
   const toggle=document.querySelector('.nav-toggle');
   const links=document.getElementById('navlinks');
-  toggle.addEventListener('click',()=>links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false');});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
   document.getElementById('year').textContent=new Date().getFullYear();
 
   const i18nEls=document.querySelectorAll('[data-en]');
@@ -985,10 +986,10 @@
 
   // mouse-following blue glow
   const cg=document.getElementById('cursor-glow');
-  if(cg){
-    let cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
-    addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;cg.style.opacity='1';},{passive:true});
-    (function loop(){cx+=(tx-cx)*0.16;cy+=(ty-cy)*0.16;cg.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';requestAnimationFrame(loop);})();
+  if(cg&&getComputedStyle(cg).display!=='none'){
+    let cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy,running=false;
+    function loop(){cx+=(tx-cx)*0.16;cy+=(ty-cy)*0.16;cg.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';if(Math.abs(tx-cx)>0.5||Math.abs(ty-cy)>0.5){requestAnimationFrame(loop);}else{running=false;}}
+    addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;cg.style.opacity='1';if(!running){running=true;requestAnimationFrame(loop);}},{passive:true});
   }
 
   // logo → smooth scroll to top
@@ -1002,15 +1003,23 @@
       e.preventDefault();
       const st=cform.querySelector('.form-status'),btn=cform.querySelector('.form-send');
       st.className='form-status';st.textContent='';
+      const fl=(['en','tr','de'].includes(document.documentElement.lang)?document.documentElement.lang:'en');
+      const T={
+        notready:{en:'⚠ Form not connected yet — please email me directly below.',tr:'⚠ Form henüz bağlı değil — lütfen aşağıdan bana doğrudan e-posta gönderin.',de:'⚠ Formular noch nicht verbunden — bitte schreiben Sie mir direkt unten per E-Mail.'},
+        sending:{en:'Sending…',tr:'Gönderiliyor…',de:'Wird gesendet…'},
+        ok:{en:'✓ Thanks! I’ll get back to you shortly.',tr:'✓ Teşekkürler! Kısa süre içinde size döneceğim.',de:'✓ Danke! Ich melde mich in Kürze bei Ihnen.'},
+        fail:{en:'Couldn’t send — please email me directly below.',tr:'Gönderilemedi — lütfen aşağıdan bana doğrudan e-posta gönderin.',de:'Konnte nicht gesendet werden — bitte schreiben Sie mir direkt unten per E-Mail.'},
+        neterr:{en:'Network error — please email me directly below.',tr:'Ağ hatası — lütfen aşağıdan bana doğrudan e-posta gönderin.',de:'Netzwerkfehler — bitte schreiben Sie mir direkt unten per E-Mail.'}
+      };
       const key=(cform.querySelector('[name=access_key]')||{}).value||'';
-      if(!key||key.indexOf('YOUR_')>-1){st.className='form-status err';st.textContent='⚠ Form not connected yet — please email me directly below.';return;}
-      const orig=btn.textContent;btn.disabled=true;btn.textContent='Sending…';
+      if(!key||key.indexOf('YOUR_')>-1){st.className='form-status err';st.textContent=T.notready[fl];return;}
+      const orig=btn.textContent;btn.disabled=true;btn.textContent=T.sending[fl];
       try{
         const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(cform)))});
         const data=await res.json();
-        if(data.success){st.className='form-status ok';st.textContent='✓ Thanks! I’ll get back to you shortly.';cform.reset();}
-        else{st.className='form-status err';st.textContent='Couldn’t send — please email me directly below.';}
-      }catch(_){st.className='form-status err';st.textContent='Network error — please email me directly below.';}
+        if(data.success){st.className='form-status ok';st.textContent=T.ok[fl];cform.reset();}
+        else{st.className='form-status err';st.textContent=T.fail[fl];}
+      }catch(_){st.className='form-status err';st.textContent=T.neterr[fl];}
       btn.disabled=false;btn.textContent=orig;
     });
   }
