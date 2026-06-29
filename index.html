@@ -178,7 +178,13 @@
   .g-natcol .mcard img,.g-natcol .mcard video{width:100%;height:auto;aspect-ratio:auto;object-fit:fill;display:block;transition:transform .7s cubic-bezier(.22,.61,.36,1)}
   .g-natcol .mcard:hover img{transform:scale(1.05)}
   @media(max-width:760px){.g-natcol{flex-direction:column}}
-  @media(min-width:900px){#prodphoto .g-natcol,#prodphoto .g-mason,#prodphoto .row-label{width:min(100vw - 56px,1300px);margin-left:50%;transform:translateX(-50%)}}
+  .g-gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+  .g-gal .mcard{aspect-ratio:1/1;border-radius:14px;overflow:hidden;border:1px solid var(--card-brd);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:inset 0 1px 0 rgba(180,228,255,.08)}
+  .g-gal .mcard:hover{transform:translateY(-4px);border-color:rgba(120,210,255,.55);box-shadow:0 16px 40px -18px rgba(46,155,240,.55),inset 0 1px 0 rgba(180,228,255,.14);z-index:2}
+  .g-gal .mcard img,.g-gal .mcard video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+  .g-gal .mcard:hover img{transform:scale(1.06)}
+  @media(max-width:560px){.g-gal{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:900px){#prodphoto .g-gal,#prodphoto .row-label{width:min(100vw - 56px,1300px);margin-left:50%;transform:translateX(-50%)}}
   .g-clients{grid-template-columns:repeat(4,1fr)}
   .cap{padding:34px 30px;background:linear-gradient(165deg,rgba(22,54,104,.55),rgba(11,24,48,.55));border:1px solid rgba(120,210,255,.26);box-shadow:inset 0 1px 0 rgba(180,228,255,.14),0 24px 60px -42px rgba(46,155,240,.5)}
   .cap .cap-ico{width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;border-radius:16px;background:linear-gradient(150deg,rgba(46,155,240,.22),rgba(46,155,240,.15));border:1px solid rgba(92,200,255,.28);margin-bottom:20px}
@@ -536,39 +542,33 @@
       <div class="card reveal"><div class="thumb v cover-c"><video src="arden-v2.mp4" poster="arden-v2-p.jpg" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Arden · Motion</span></div></div>
       <div class="card reveal"><div class="thumb v cover-c"><video src="arden-v3.mp4" poster="arden-v3-p.jpg" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-label="Toggle sound">🔇</button><span class="pill">Arden · Motion</span></div></div>
     </div>
-    <div class="grid g-natcol">
-      <div class="ncol">
-        <div class="mcard reveal t-tall"><img src="furn-15.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
-        <div class="mcard reveal t-tall"><img src="mira-1.jpg" alt="Mira wardrobe product photography" loading="lazy" /><span class="pill">Mira</span></div>
-        <div class="mcard reveal t-sq"><img src="furn-19.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
-        <div class="mcard reveal t-sq"><img src="furn-16.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
-        <div class="mcard reveal t-sq"><img src="mira-2.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
-        <div class="mcard reveal t-tall"><img src="furn-10.jpg?v=4" alt="Arden — study desk" loading="lazy" /></div>
-        <div class="mcard reveal t-land"><img src="mira-5.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
-      </div>
-      <div class="ncol">
-        <div class="mcard reveal t-tall"><img src="furn-20.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
-        <div class="mcard reveal t-tall"><img src="mira-6.jpg" alt="Mira desk product photography" loading="lazy" /></div>
-        <div class="mcard reveal t-sq"><img src="furn-22.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
-        <div class="mcard reveal t-sq"><img src="mira-7.jpg" alt="Mira desk product photography" loading="lazy" /></div>
-        <div class="mcard reveal t-land"><img src="furn-7.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
-        <div class="mcard reveal t-land"><img src="furn-3.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
-        <div class="mcard reveal t-land"><img src="mira-3.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
-      </div>
-      <div class="ncol">
-        <div class="mcard reveal t-tall"><img src="furn-17.jpg?v=4" alt="Arden — study desk" loading="lazy" /></div>
-        <div class="mcard reveal t-tall"><img src="mira-4.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
-        <div class="mcard reveal t-sq"><img src="furn-21.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
-        <div class="mcard reveal t-sq"><img src="mira-8.jpg" alt="Mira chest of drawers product photography" loading="lazy" /></div>
-        <div class="mcard reveal t-land"><img src="furn-1.jpg?v=4" alt="Arden — living room set" loading="lazy" /><span class="pill">Arden</span></div>
-        <div class="mcard reveal t-land"><img src="furn-2.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
-        <div class="mcard reveal t-land"><img src="mira-9.jpg" alt="Mira chest of drawers product photography" loading="lazy" /></div>
-      </div>
+    <div class="grid g-gal">
+      <div class="mcard reveal t-tall"><img src="furn-15.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
+      <div class="mcard reveal t-tall"><img src="mira-1.jpg" alt="Mira wardrobe product photography" loading="lazy" /><span class="pill">Mira</span></div>
+      <div class="mcard reveal t-sq"><img src="furn-19.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="furn-16.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="mira-2.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-tall"><img src="furn-10.jpg?v=4" alt="Arden — study desk" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="mira-5.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-tall"><img src="furn-20.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
+      <div class="mcard reveal t-tall"><img src="mira-6.jpg" alt="Mira desk product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="furn-22.jpg?v=4" alt="Arden — anthracite wardrobe" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="mira-7.jpg" alt="Mira desk product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="furn-7.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="furn-3.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="mira-3.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-tall"><img src="furn-17.jpg?v=4" alt="Arden — study desk" loading="lazy" /></div>
+      <div class="mcard reveal t-tall"><img src="mira-4.jpg" alt="Mira wardrobe product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="furn-21.jpg?v=4" alt="Arden — coffee corner" loading="lazy" /></div>
+      <div class="mcard reveal t-sq"><img src="mira-8.jpg" alt="Mira chest of drawers product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="furn-1.jpg?v=4" alt="Arden — living room set" loading="lazy" /><span class="pill">Arden</span></div>
+      <div class="mcard reveal t-land"><img src="furn-2.jpg?v=4" alt="Arden furniture product photography" loading="lazy" /></div>
+      <div class="mcard reveal t-land"><img src="mira-9.jpg" alt="Mira chest of drawers product photography" loading="lazy" /></div>
     </div>
 
 
     <div class="row-label reveal" data-en="Studio Atelia · Modular Sofas" data-tr="Studio Atelia · Modüler Koltuklar" data-de="Studio Atelia · Modulare Sofas">Studio Atelia · Modular Sofas</div>
-    <div class="grid g-mason gm-11">
+    <div class="grid g-gal">
       <div class="mcard reveal t-wide"><img src="atelia-1.jpg?v=5" alt="Studio Atelia modular sofa visualization" loading="lazy" /><span class="pill">Studio Atelia</span></div>
       <div class="mcard reveal t-land"><img src="atelia-2.jpg?v=5" alt="Studio Atelia modular sofa visualization" loading="lazy" /></div>
       <div class="mcard reveal t-land"><img src="atelia-3.jpg?v=5" alt="Studio Atelia modular sofa visualization" loading="lazy" /></div>
@@ -578,7 +578,7 @@
     </div>
 
     <div class="row-label reveal" data-en="Argimo · Sarmobi — Seating" data-tr="Argimo · Sarmobi — Koltuklar" data-de="Argimo · Sarmobi — Sitzmöbel">Argimo · Sarmobi — Seating</div>
-    <div class="grid g-mason gm-11">
+    <div class="grid g-gal">
       <div class="mcard reveal t-bigsq"><img src="argimo-1.jpg?v=5" alt="Argimo chair product photography" loading="lazy" /><span class="pill">Argimo · Sarmobi</span></div>
       <div class="mcard reveal t-sq"><img src="argimo-2.jpg?v=5" alt="Argimo chair product photography" loading="lazy" /></div>
       <div class="mcard reveal t-sq"><img src="argimo-3.jpg?v=5" alt="Argimo chair product photography" loading="lazy" /></div>
