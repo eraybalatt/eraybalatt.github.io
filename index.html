@@ -405,6 +405,14 @@
   .slj-divider .slj-star{width:30px;height:30px;flex:0 0 auto;animation:sljpulse 3.2s ease-in-out infinite;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22dv%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2260%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2248%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M50.00%203.00%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97.00%2050.00%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50.00%2097.00%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3.00%2050.00%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23dv%29%22%20stroke%3D%22%2306142e%22%20stroke-width%3D%221.2%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 7px rgba(245,197,66,.45))}
   footer{position:relative}
   footer::before{content:"";position:absolute;top:0;left:0;right:0;height:22px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2226%22%20height%3D%2226%22%20viewBox%3D%220%200%2026%2026%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22b%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2262%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cline%20x1%3D%220%22%20y1%3D%2213%22%20x2%3D%2226%22%20y2%3D%2213%22%20stroke%3D%22%233a9fe0%22%20stroke-width%3D%220.8%22%20opacity%3D%220.5%22/%3E%3Cpath%20d%3D%22M13.0%204.0%20L15.6%206.6%20L19.4%206.6%20L19.4%2010.4%20L22.0%2013.0%20L19.4%2015.6%20L19.4%2019.4%20L15.6%2019.4%20L13.0%2022.0%20L10.4%2019.4%20L6.6%2019.4%20L6.6%2015.6%20L4.0%2013.0%20L6.6%2010.4%20L6.6%206.6%20L10.4%206.6%20Z%22%20fill%3D%22url%28%23b%29%22%20stroke%3D%22%232e9bf0%22%20stroke-width%3D%220.7%22/%3E%3C/svg%3E") repeat-x center;background-size:auto 20px;opacity:.4;-webkit-mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);pointer-events:none}
+  @media(max-width:600px){
+    .eyebrow{display:block;text-align:center;line-height:1.55;max-width:94%;margin-left:auto;margin-right:auto}
+    .eyebrow::before{vertical-align:-2px}
+    .slj-divider{max-width:90%}
+    .nav-right{flex-shrink:0}
+    .brand{flex-shrink:0;min-width:0}
+  }
+  html{overflow-x:hidden}
 </style>
 </head>
 <body>
