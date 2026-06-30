@@ -312,7 +312,21 @@
       }
       frames.push(img);
     }
-    let idx=0;
-    setInterval(()=>{ctx.putImageData(frames[idx],0,0);idx=(idx+1)%FR;},85);
+    let idx=0,timer=null;
+    function start(){ if(!timer) timer=setInterval(()=>{ctx.putImageData(frames[idx],0,0);idx=(idx+1)%FR;},85); }
+    function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+    start();
+    // pause this decorative loop (canvas + all CSS animations) when the parent says we are off-screen
+    const pst=document.createElement('style');
+    pst.textContent='html.eb-paused *,html.eb-paused{animation-play-state:paused!important}';
+    document.head.appendChild(pst);
+    window.addEventListener('message',(e)=>{
+      if(e.data==='eb-pause'){ stop(); document.documentElement.classList.add('eb-paused'); }
+      else if(e.data==='eb-play'){ document.documentElement.classList.remove('eb-paused'); start(); }
+    });
+    document.addEventListener('visibilitychange',()=>{
+      if(document.hidden){ stop(); }
+      else if(!document.documentElement.classList.contains('eb-paused')){ start(); }
+    });
   })();
 </script>
