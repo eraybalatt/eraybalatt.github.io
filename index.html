@@ -96,12 +96,13 @@
     .brand-mark svg{width:28px;height:28px}
     .brand-wm b{font-size:.86rem;letter-spacing:.03em}
     .lang-btn{font-size:.72rem;padding:6px 9px}
-    .eyebrow{font-size:.62rem;letter-spacing:.09em}
-    .eyebrow::before{width:12px;height:12px;margin-right:6px}
+    .eyebrow{font-size:.58rem;letter-spacing:.07em;flex-wrap:wrap;justify-content:center;max-width:92%;text-align:center}
+    .hero .eyebrow{margin:0 auto 14px}
+    .eyebrow::before{width:11px;height:11px;margin-right:5px}
     .hero h1{font-size:clamp(1.4rem,6vw,1.9rem)}
     .hero .lead,.hero .sec-sub{font-size:.92rem}
   }
-  @media(max-width:410px){.brand-wm b{display:none}}
+  @media(max-width:520px){.brand-wm{display:none}}
   .brand:hover img{filter:drop-shadow(0 0 10px var(--c2))}
   .nav-right{display:flex;align-items:center;gap:10px}
   .nav-links{flex:1;display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
