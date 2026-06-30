@@ -334,7 +334,6 @@
   .slj-divider .slj-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(245,197,66,.55))}
   .slj-divider .slj-line:last-child{background:linear-gradient(90deg,rgba(245,197,66,.55),transparent)}
   .slj-divider .slj-star{width:30px;height:30px;flex:0 0 auto;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%20stroke%3D%22%23f5c542%22%20stroke-width%3D%221.3%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20x%3D%227%22%20y%3D%227%22%20width%3D%2218%22%20height%3D%2218%22/%3E%3Crect%20x%3D%227%22%20y%3D%227%22%20width%3D%2218%22%20height%3D%2218%22%20transform%3D%22rotate%2845%2016%2016%29%22/%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%223.4%22/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 7px rgba(245,197,66,.45))}
-  .hero .slj-top{position:absolute;top:94px;left:50%;transform:translateX(-50%);width:88%;max-width:340px;margin:0;z-index:2}
   footer{position:relative}
   footer::before{content:"";position:absolute;top:0;left:0;right:0;height:22px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2242%22%20height%3D%2242%22%20viewBox%3D%220%200%2042%2042%22%20fill%3D%22none%22%20stroke%3D%22%235cc8ff%22%20stroke-width%3D%221.1%22%3E%3Crect%20x%3D%2211%22%20y%3D%2211%22%20width%3D%2220%22%20height%3D%2220%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2211%22%20width%3D%2220%22%20height%3D%2220%22%20transform%3D%22rotate%2845%2021%2021%29%22/%3E%3Ccircle%20cx%3D%2221%22%20cy%3D%2221%22%20r%3D%223%22/%3E%3Cpath%20d%3D%22M0%2021H11M31%2021H42M21%200V11M21%2031V42%22/%3E%3C/svg%3E") repeat-x center;background-size:auto 22px;opacity:.4;-webkit-mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);pointer-events:none}
 </style>
@@ -372,7 +371,6 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="slj-divider slj-top" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
     <video class="hero-bg" id="heroVid" autoplay muted loop playsinline preload="auto" src="baneva-neon.mp4"></video>
     <div class="hero-ov"></div>
     <div class="eyebrow reveal" data-en="Creative AI Producer · Filmmaker" data-tr="Creative AI Producer · Yönetmen" data-de="Creative AI Producer · Filmemacher">Creative AI Producer · Filmmaker</div>
@@ -385,6 +383,8 @@
     </div>
   </section>
 </main>
+
+<div class="slj-divider" aria-hidden="true" style="margin:34px auto 30px"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 
 <!-- TOOLS MARQUEE -->
 <div class="tools" aria-hidden="true">
