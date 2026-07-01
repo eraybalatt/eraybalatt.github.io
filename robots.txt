@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# No crawl restrictions — this is a public portfolio.
+Sitemap: https://eraybalat.com/sitemap.xml
