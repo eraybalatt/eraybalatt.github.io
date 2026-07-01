@@ -412,51 +412,6 @@
     .brand{flex-shrink:0;min-width:0}
   }
   html,body{overflow-x:hidden;max-width:100%}
-
-  /* ===== The Reel — interactive cinematic screening ===== */
-  #reel .sec-sub{margin-bottom:30px}
-  .reel{max-width:1000px;margin:0 auto}
-  .reel-stage{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#04070e;border:1px solid var(--card-brd);box-shadow:0 34px 90px -42px rgba(46,155,240,.7),inset 0 1px 0 rgba(180,228,255,.14);outline:none}
-  .reel-stage:focus-visible{box-shadow:0 0 0 3px rgba(92,200,255,.6),0 34px 90px -42px rgba(46,155,240,.7)}
-  .reel-frame{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .8s ease;pointer-events:none;background:linear-gradient(135deg,#0a1424,#05090f)}
-  .reel-frame.is-active{opacity:1;pointer-events:auto}
-  .reel-frame img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.03)}
-  .reel-frame.is-active img{animation:reelKen 5s ease-out forwards}
-  @keyframes reelKen{from{transform:scale(1.005)}to{transform:scale(1.1)}}
-  .reel-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(125% 95% at 50% 38%,transparent 52%,rgba(2,5,12,.62) 100%),linear-gradient(180deg,rgba(2,5,12,.4) 0%,transparent 20%,transparent 74%,rgba(2,5,12,.78) 100%)}
-  .reel-grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-  .reel-hud{position:absolute;top:13px;left:15px;z-index:3;display:flex;align-items:center;gap:7px;font-family:'Poppins';font-size:.6rem;font-weight:600;letter-spacing:.24em;color:rgba(234,242,255,.82);text-transform:uppercase}
-  .reel-star{width:12px;height:12px;flex:0 0 auto;display:inline-block;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22rs%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2260%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2248%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M50%203%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97%2050%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50%2097%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3%2050%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23rs%29%22%20stroke%3D%22%233a9fe0%22%20stroke-width%3D%221%22/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 4px rgba(92,200,255,.5))}
-  .reel-count{position:absolute;top:12px;right:14px;z-index:3;font-family:'Poppins';font-size:.64rem;font-weight:600;letter-spacing:.14em;color:rgba(234,242,255,.92);background:rgba(4,10,22,.5);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);padding:4px 9px;border-radius:999px;border:1px solid rgba(120,210,255,.28)}
-  .reel-cap{position:absolute;left:17px;bottom:15px;z-index:3;display:flex;flex-direction:column;gap:3px;text-shadow:0 2px 16px rgba(0,0,0,.9)}
-  .reel-title{font-family:'Poppins';font-weight:600;font-size:clamp(1rem,2.7vw,1.4rem);color:#fff;letter-spacing:.01em}
-  .reel-tag{font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--c1)}
-  .reel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:44px;height:44px;border-radius:50%;border:1px solid rgba(180,228,255,.4);background:rgba(6,14,28,.42);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;font-size:1.7rem;line-height:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s,opacity .25s;opacity:0}
-  .reel-stage:hover .reel-arrow,.reel-stage:focus-within .reel-arrow{opacity:1}
-  .reel-arrow:hover{background:rgba(46,155,240,.62);transform:translateY(-50%) scale(1.08)}
-  .reel-arrow.prev{left:12px}.reel-arrow.next{right:12px}
-  .reel-play{position:absolute;bottom:13px;right:14px;z-index:4;width:34px;height:34px;border-radius:50%;border:1px solid rgba(180,228,255,.4);background:rgba(6,14,28,.5);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);color:#fff;font-size:.72rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;padding:0}
-  .reel-play:hover{background:rgba(46,155,240,.62)}
-  .reel-bar{position:absolute;left:0;right:0;bottom:0;height:3px;z-index:4;background:rgba(255,255,255,.12)}
-  .reel-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--c1),var(--c3));box-shadow:0 0 10px rgba(92,200,255,.85)}
-  .reel-bar i.run{animation:reelBar var(--reel-dur,4600ms) linear forwards}
-  @keyframes reelBar{from{width:0}to{width:100%}}
-  .reel-strip{display:flex;gap:9px;margin-top:14px;padding:13px 12px;overflow-x:auto;scroll-snap-type:x proximity;background:linear-gradient(180deg,#0a1220,#070d18);border:1px solid var(--card-brd);border-radius:14px;position:relative;-webkit-overflow-scrolling:touch;cursor:grab;user-select:none;-webkit-user-select:none;scrollbar-width:thin;scrollbar-color:rgba(92,200,255,.4) transparent}
-  .reel-strip.grabbing{cursor:grabbing}
-  .reel-strip::-webkit-scrollbar{height:6px}
-  .reel-strip::-webkit-scrollbar-thumb{background:rgba(92,200,255,.35);border-radius:99px}
-  .reel-strip::before,.reel-strip::after{content:"";position:absolute;left:0;right:0;height:6px;z-index:2;background-image:repeating-linear-gradient(90deg,transparent 0 7px,rgba(3,8,16,.85) 7px 13px);opacity:.55;pointer-events:none}
-  .reel-strip::before{top:0}.reel-strip::after{bottom:0}
-  .reel-thumb{flex:0 0 auto;width:120px;height:68px;border-radius:9px;overflow:hidden;border:2px solid transparent;background:none;padding:0;cursor:pointer;position:relative;scroll-snap-align:center;opacity:.5;transition:opacity .25s,border-color .25s,transform .25s,filter .25s;filter:saturate(.8)}
-  .reel-thumb img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;-webkit-user-drag:none}
-  .reel-thumb:hover{opacity:.88;transform:translateY(-2px)}
-  .reel-thumb.is-active{opacity:1;border-color:var(--c3);filter:none;box-shadow:0 0 0 1px rgba(245,197,66,.5),0 10px 24px -10px rgba(245,197,66,.6)}
-  @media(max-width:600px){
-    .reel-thumb{width:94px;height:54px}
-    .reel-arrow{opacity:1;width:38px;height:38px;font-size:1.4rem}
-    .reel-cap{left:13px;bottom:12px}
-    .reel-hud{top:11px;left:12px}
-  }
 </style>
 </head>
 <body>
@@ -468,7 +423,6 @@
     <a href="#home" class="brand" id="brandTop" aria-label="Eray Balat — Creative AI Producer, back to top"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32"><defs><radialGradient id="brandstar" cx="47%" cy="43%" r="60%"><stop offset="0%" stop-color="#2ba2d4"/><stop offset="48%" stop-color="#0e5b90"/><stop offset="100%" stop-color="#06142e"/></radialGradient></defs><path d="M50.00 3.00 L63.77 16.77 L83.23 16.77 L83.23 36.23 L97.00 50.00 L83.23 63.77 L83.23 83.23 L63.77 83.23 L50.00 97.00 L36.23 83.23 L16.77 83.23 L16.77 63.77 L3.00 50.00 L16.77 36.23 L16.77 16.77 L36.23 16.77 Z" fill="url(#brandstar)" stroke="#06142e" stroke-width="1.2" stroke-linejoin="round"/></svg></span><span class="brand-wm"><b>ERAY BALAT</b><i>Creative AI Producer</i></span></a>
     <nav class="nav-links" id="navlinks">
       <a href="#about"     data-en="About"       data-tr="Hakkımda" data-de="Über mich">About</a>
-      <a href="#reel"      data-en="Reel"        data-tr="Reel" data-de="Reel">Reel</a>
       <a href="#ugc"       data-en="UGC"         data-tr="UGC" data-de="UGC">UGC</a>
       <a href="#prodphoto" data-en="Products"    data-tr="Ürünler" data-de="Produkte">Products</a>
       <a href="#clients"   data-en="Work"        data-tr="İşler" data-de="Arbeiten">Work</a>
@@ -543,45 +497,6 @@
           <li><span>🎓</span><span data-en="Cinema graduate, Erciyes University · based in Türkiye, working globally" data-tr="Erciyes Üniversitesi Sinema mezunu · Türkiye merkezli, global çalışıyor" data-de="Filmabsolvent der Erciyes University · ansässig in der Türkei, weltweit tätig">Cinema graduate, Erciyes University · based in Türkiye, working globally</span></li>
           <li><span>✉️</span><span data-en="Get in touch — <b><a href=&quot;mailto:eray@eraybalat.com&quot; style=&quot;color:#bfe6ff&quot;>eray@eraybalat.com</a></b>" data-tr="İletişim — <b><a href=&quot;mailto:eray@eraybalat.com&quot; style=&quot;color:#bfe6ff&quot;>eray@eraybalat.com</a></b>" data-de="Kontakt aufnehmen — <b><a href=&quot;mailto:eray@eraybalat.com&quot; style=&quot;color:#bfe6ff&quot;>eray@eraybalat.com</a></b>">Get in touch — <b><a href="mailto:eray@eraybalat.com" style="color:#bfe6ff">eray@eraybalat.com</a></b></span></li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="reel">
-    <div class="eyebrow reveal" data-en="The Reel" data-tr="Reel" data-de="Reel">The Reel</div>
-    <h2 class="sec-title reveal" data-en="Signature Frames" data-tr="İmza Kareler" data-de="Markante Frames">Signature Frames</h2>
-    <p class="sec-sub reveal" data-en="A hand-picked screening — drag the strip, tap a frame, or let it roll." data-tr="Seçme karelerden bir gösterim — şeridi sürükle, kareye dokun ya da oynamaya bırak." data-de="Eine handverlesene Vorführung — zieh den Streifen, tippe ein Frame oder lass es laufen.">A hand-picked screening — drag the strip, tap a frame, or let it roll.</p>
-    <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
-
-    <div class="reel reveal" id="reelPlayer">
-      <div class="reel-stage" id="reelStage" tabindex="0" role="region" aria-label="Featured frames screening (use arrow keys)">
-        <figure class="reel-frame is-active"><img src="directed-by-eray-p.jpg" alt="Directed by ÆRAY — showreel title frame" /><figcaption class="reel-cap"><span class="reel-title">Directed by ÆRAY</span><span class="reel-tag" data-en="Showreel" data-tr="Showreel" data-de="Showreel">Showreel</span></figcaption></figure>
-        <figure class="reel-frame"><img src="baneva-poster.jpg" loading="lazy" alt="BANEVA music video — cinematic AI frame" /><figcaption class="reel-cap"><span class="reel-title">BANEVA</span><span class="reel-tag" data-en="Music Video" data-tr="Müzik Videosu" data-de="Musikvideo">Music Video</span></figcaption></figure>
-        <figure class="reel-frame"><img src="feast-p.jpg" loading="lazy" alt="The Last Feast — AI short film still" /><figcaption class="reel-cap"><span class="reel-title">The Last Feast</span><span class="reel-tag" data-en="AI Short Film" data-tr="AI Kısa Film" data-de="AI-Kurzfilm">AI Short Film</span></figcaption></figure>
-        <figure class="reel-frame"><img src="bb-1.jpg" loading="lazy" alt="Breaking Bad reimagined in Pixar style" /><figcaption class="reel-cap"><span class="reel-title">Breaking Bad × Pixar</span><span class="reel-tag" data-en="Personal Study" data-tr="Kişisel Çalışma" data-de="Persönliche Studie">Personal Study</span></figcaption></figure>
-        <figure class="reel-frame"><img src="art-13.jpg" loading="lazy" alt="Visual Lab I — cinematic AI frame" /><figcaption class="reel-cap"><span class="reel-title">Visual Lab I</span><span class="reel-tag" data-en="Cinematic AI" data-tr="Sinematik AI" data-de="Cineastische AI">Cinematic AI</span></figcaption></figure>
-        <figure class="reel-frame"><img src="film-diepost-p.jpg" loading="lazy" alt="Die Post — short film still" /><figcaption class="reel-cap"><span class="reel-title">Die Post</span><span class="reel-tag" data-en="Short Film" data-tr="Kısa Film" data-de="Kurzfilm">Short Film</span></figcaption></figure>
-        <figure class="reel-frame"><img src="architecture-comfort.jpg" loading="lazy" alt="Interior product film — cinematic frame" /><figcaption class="reel-cap"><span class="reel-title">Interiors</span><span class="reel-tag" data-en="Product Film" data-tr="Ürün Filmi" data-de="Produktfilm">Product Film</span></figcaption></figure>
-        <figure class="reel-frame"><img src="art-9.jpg" loading="lazy" alt="Visual Lab II — cinematic AI frame" /><figcaption class="reel-cap"><span class="reel-title">Visual Lab II</span><span class="reel-tag" data-en="Cinematic AI" data-tr="Sinematik AI" data-de="Cineastische AI">Cinematic AI</span></figcaption></figure>
-        <div class="reel-vignette" aria-hidden="true"></div>
-        <div class="reel-grain" aria-hidden="true"></div>
-        <div class="reel-hud" aria-hidden="true"><span class="reel-star"></span> ÆRAY</div>
-        <div class="reel-count" id="reelCount">01 / 08</div>
-        <button class="reel-arrow prev" id="reelPrev" type="button" aria-label="Previous frame">‹</button>
-        <button class="reel-arrow next" id="reelNext" type="button" aria-label="Next frame">›</button>
-        <button class="reel-play" id="reelPlay" type="button" aria-label="Play">▶</button>
-        <div class="reel-bar" aria-hidden="true"><i id="reelBar"></i></div>
-      </div>
-      <div class="reel-strip" id="reelStrip" aria-label="Frame thumbnails">
-        <button class="reel-thumb is-active" data-i="0" type="button" aria-label="Directed by ÆRAY"><img src="directed-by-eray-p.jpg" alt="" loading="lazy" /></button>
-        <button class="reel-thumb" data-i="1" type="button" aria-label="BANEVA"><img src="baneva-poster.jpg" alt="" loading="lazy" /></button>
-        <button class="reel-thumb" data-i="2" type="button" aria-label="The Last Feast"><img src="feast-p.jpg" alt="" loading="lazy" /></button>
-        <button class="reel-thumb" data-i="3" type="button" aria-label="Breaking Bad × Pixar"><img src="bb-1.jpg" alt="" loading="lazy" /></button>
-        <button class="reel-thumb" data-i="4" type="button" aria-label="Visual Lab I"><img src="art-13.jpg" alt="" loading="lazy" /></button>
-        <button class="reel-thumb" data-i="5" type="button" aria-label="Die Post"><img src="film-diepost-p.jpg" alt="" loading="lazy" /></button>
-        <button class="reel-thumb" data-i="6" type="button" aria-label="Interiors"><img src="architecture-comfort.jpg" alt="" loading="lazy" /></button>
-        <button class="reel-thumb" data-i="7" type="button" aria-label="Visual Lab II"><img src="art-9.jpg" alt="" loading="lazy" /></button>
       </div>
     </div>
   </section>
@@ -1097,54 +1012,6 @@
     }),{rootMargin:'150px 0px'});
     cfo.observe(cFrame);
   }
-
-  // ===== The Reel — interactive cinematic screening =====
-  (function(){
-    const player=document.getElementById('reelPlayer'); if(!player)return;
-    const stage=document.getElementById('reelStage');
-    const frames=[...player.querySelectorAll('.reel-frame')];
-    const thumbs=[...player.querySelectorAll('.reel-thumb')];
-    const countEl=document.getElementById('reelCount');
-    const bar=document.getElementById('reelBar');
-    const playBtn=document.getElementById('reelPlay');
-    const strip=document.getElementById('reelStrip');
-    const N=frames.length; if(!N)return;
-    const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-    const DUR=4600;
-    player.style.setProperty('--reel-dur',DUR+'ms');
-    let cur=0,timer=null,wantPlay=false,inView=false,hover=false,visible=!document.hidden,started=false;
-    const pad=n=>String(n).padStart(2,'0');
-    const running=()=>wantPlay&&inView&&!hover&&!reduce&&visible;
-    function restartBar(){ if(!bar)return; bar.classList.remove('run'); void bar.offsetWidth; if(running())bar.classList.add('run'); }
-    // scroll ONLY the strip horizontally — never the page (scrollIntoView would hijack page scroll)
-    function centerThumb(smooth){ const at=thumbs[cur]; if(!at)return; const target=Math.max(0,at.offsetLeft-(strip.clientWidth-at.clientWidth)/2); try{strip.scrollTo({left:target,behavior:smooth?'smooth':'auto'});}catch(e){strip.scrollLeft=target;} }
-    function paint(){
-      frames.forEach((f,x)=>f.classList.toggle('is-active',x===cur));
-      thumbs.forEach((t,x)=>{const on=x===cur;t.classList.toggle('is-active',on);t.setAttribute('aria-current',on?'true':'false');});
-      if(countEl)countEl.textContent=pad(cur+1)+' / '+pad(N);
-    }
-    function next(){ cur=(cur+1)%N; paint(); centerThumb(false); restartBar(); }
-    function sync(){ clearInterval(timer); timer=null; if(running())timer=setInterval(next,DUR); if(playBtn){const p=wantPlay&&!reduce;playBtn.textContent=p?'❚❚':'▶';playBtn.setAttribute('aria-label',p?'Pause':'Play');} restartBar(); }
-    function goUser(i){ cur=(i+N)%N; paint(); centerThumb(true); sync(); }
-    document.getElementById('reelNext').addEventListener('click',()=>goUser(cur+1));
-    document.getElementById('reelPrev').addEventListener('click',()=>goUser(cur-1));
-    if(playBtn)playBtn.addEventListener('click',()=>{ if(reduce){goUser(cur+1);return;} wantPlay=!wantPlay;sync(); });
-    thumbs.forEach((t,i)=>t.addEventListener('click',()=>goUser(i)));
-    player.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'){e.preventDefault();goUser(cur+1);}else if(e.key==='ArrowLeft'){e.preventDefault();goUser(cur-1);}else if(e.key===' '&&e.target===stage){e.preventDefault();if(reduce){goUser(cur+1);}else{wantPlay=!wantPlay;sync();}} });
-    stage.addEventListener('mouseenter',()=>{hover=true;sync();});
-    stage.addEventListener('mouseleave',()=>{hover=false;sync();});
-    document.addEventListener('visibilitychange',()=>{visible=!document.hidden;sync();});
-    const io=new IntersectionObserver(es=>es.forEach(e=>{ inView=e.isIntersecting; if(inView&&!started&&!reduce){started=true;wantPlay=true;} sync(); }),{threshold:.35});
-    io.observe(stage);
-    // drag-to-scroll the film strip
-    let down=false,sx=0,sl=0,moved=false;
-    strip.addEventListener('pointerdown',e=>{down=true;moved=false;sx=e.clientX;sl=strip.scrollLeft;strip.classList.add('grabbing');try{strip.setPointerCapture(e.pointerId);}catch(_){}});
-    strip.addEventListener('pointermove',e=>{ if(!down)return; const dx=e.clientX-sx; if(Math.abs(dx)>4)moved=true; if(moved)e.preventDefault(); strip.scrollLeft=sl-dx; });
-    const endDrag=()=>{down=false;strip.classList.remove('grabbing');};
-    strip.addEventListener('pointerup',endDrag); strip.addEventListener('pointercancel',endDrag);
-    strip.addEventListener('click',e=>{ if(moved){e.preventDefault();e.stopPropagation();} },true);
-    paint(); sync();   // initial paint + correct glyph; NO page scroll on load
-  })();
 
   // inline YouTube play — click a [data-yt] card to swap its thumbnail for an embedded player (stays on-site)
   document.querySelectorAll('a[data-yt]').forEach(el=>{
