@@ -982,7 +982,12 @@
     wel.querySelectorAll('.wel-skip,.wel-close').forEach(b=>b.addEventListener('click',()=>close(null)));
     wel.addEventListener('click',e=>{ if(e.target===wel)close(null); });
     document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&wel.classList.contains('show'))close(null); });
-    if(!seen){ setTimeout(()=>{ wel.classList.add('show'); wel.setAttribute('aria-hidden','false'); const f=wel.querySelector('.wel-chip'); if(f)try{f.focus({preventScroll:true})}catch(e){} },500); }
+    function open(){ if(wel.classList.contains('show'))return; wel.classList.add('show'); wel.setAttribute('aria-hidden','false'); const f=wel.querySelector('.wel-chip'); if(f)try{f.focus({preventScroll:true})}catch(e){} }
+    // don't interrupt on load — let the visitor take in the hero, then greet them once they scroll into the content
+    if(!seen){
+      const onScroll=()=>{ if(window.scrollY > window.innerHeight*0.7){ window.removeEventListener('scroll',onScroll); open(); } };
+      window.addEventListener('scroll',onScroll,{passive:true});
+    }
   })();
 
   const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');}),{threshold:.12});
