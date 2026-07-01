@@ -412,11 +412,49 @@
     .brand{flex-shrink:0;min-width:0}
   }
   html,body{overflow-x:hidden;max-width:100%}
+
+  /* ===== Welcome wayfinder (first visit) ===== */
+  #welcome{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(5,10,22,.76);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px);opacity:0;transition:opacity .35s}
+  #welcome.show{display:flex;opacity:1}
+  #welcome.closing{opacity:0}
+  .wel-card{max-width:560px;width:100%;background:linear-gradient(180deg,#0f1c30,#0a1422);border:1px solid var(--card-brd);border-radius:22px;padding:38px 34px 26px;text-align:center;position:relative;box-shadow:0 44px 130px -46px rgba(46,155,240,.65),inset 0 1px 0 rgba(180,228,255,.16);transform:translateY(12px) scale(.975);transition:transform .42s cubic-bezier(.22,.61,.36,1)}
+  #welcome.show .wel-card{transform:none}
+  .wel-star{width:42px;height:42px;margin:2px auto 15px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22ws%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2260%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2248%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M50%203%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97%2050%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50%2097%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3%2050%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23ws%29%22%20stroke%3D%22%233a9fe0%22%20stroke-width%3D%221%22/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 0 10px rgba(92,200,255,.55));animation:sljpulse 3.2s ease-in-out infinite}
+  .wel-eyebrow{font-family:'Poppins';font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;background:var(--grad);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:9px}
+  .wel-card h3{font-family:'Poppins';font-weight:700;font-size:clamp(1.4rem,4.5vw,1.95rem);line-height:1.15;margin-bottom:8px;color:#fff}
+  .wel-sub{color:var(--muted);font-size:.97rem;margin-bottom:24px}
+  .wel-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:18px}
+  .wel-chip{padding:15px 12px;border-radius:14px;border:1px solid var(--card-brd);background:rgba(98,172,255,.08);color:var(--text);font-family:'Poppins';font-weight:600;font-size:.94rem;cursor:pointer;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}
+  .wel-chip:hover{transform:translateY(-3px);background:rgba(46,155,240,.2);border-color:var(--c1);box-shadow:0 12px 30px -14px rgba(46,155,240,.8)}
+  .wel-skip{background:none;border:none;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;font-size:.92rem;cursor:pointer;padding:6px;transition:color .2s}
+  .wel-skip:hover{color:var(--c1)}
+  .wel-close{position:absolute;top:13px;right:15px;width:32px;height:32px;background:none;border:none;color:var(--muted);font-size:1.05rem;cursor:pointer;line-height:1;border-radius:50%;transition:color .2s,background .2s}
+  .wel-close:hover{color:#fff;background:rgba(255,255,255,.08)}
+  @media(max-width:520px){.wel-grid{grid-template-columns:1fr}.wel-card{padding:30px 22px 22px}}
 </style>
 </head>
 <body>
 
 <div class="blobs" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="blob b5"></div></div>
+
+<div id="welcome" role="dialog" aria-modal="true" aria-labelledby="welTitle" aria-hidden="true">
+  <div class="wel-card">
+    <button class="wel-close" type="button" aria-label="Close">✕</button>
+    <div class="wel-star" aria-hidden="true"></div>
+    <div class="wel-eyebrow" data-en="Welcome" data-tr="Merhaba" data-de="Willkommen">Welcome</div>
+    <h3 id="welTitle" data-en="What would you like to see?" data-tr="Ne görmek istersin?" data-de="Was möchtest du sehen?">What would you like to see?</h3>
+    <p class="wel-sub" data-en="Pick one — I'll take you straight there." data-tr="Birini seç — seni oraya götüreyim." data-de="Wähl eins — ich bring dich direkt hin.">Pick one — I'll take you straight there.</p>
+    <div class="wel-grid">
+      <button class="wel-chip" type="button" data-go="ugc" data-en="UGC Ads" data-tr="UGC Reklamları" data-de="UGC-Ads">UGC Ads</button>
+      <button class="wel-chip" type="button" data-go="prodphoto" data-en="Product Films" data-tr="Ürün Filmleri" data-de="Produktfilme">Product Films</button>
+      <button class="wel-chip" type="button" data-go="music" data-en="Music Videos" data-tr="Müzik Videoları" data-de="Musikvideos">Music Videos</button>
+      <button class="wel-chip" type="button" data-go="docs" data-en="Documentaries" data-tr="Belgeseller" data-de="Dokumentationen">Documentaries</button>
+      <button class="wel-chip" type="button" data-go="films" data-en="Short Films" data-tr="Kısa Filmler" data-de="Kurzfilme">Short Films</button>
+      <button class="wel-chip" type="button" data-go="vlab" data-en="AI Visuals" data-tr="AI Görseller" data-de="AI-Visuals">AI Visuals</button>
+    </div>
+    <button class="wel-skip" type="button" data-en="I'll just browse →" data-tr="Sadece gezineceğim →" data-de="Ich schau mich um →">I'll just browse →</button>
+  </div>
+</div>
 
 <header class="nav">
   <div class="nav-inner">
@@ -929,6 +967,23 @@
   }
   document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{setLang(b.dataset.lang);try{localStorage.setItem('lang',b.dataset.lang)}catch(e){}}));
   (function(){const ok=['en','tr','de'];let l;const p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p;try{localStorage.setItem('lang',p)}catch(e){}}if(!ok.includes(l)){try{l=localStorage.getItem('lang')}catch(e){}}if(!ok.includes(l)){const n=(navigator.language||'en').slice(0,2).toLowerCase();l=n==='de'?'de':n==='tr'?'tr':'en';}setLang(l);})();
+
+  // ===== Welcome wayfinder — greet first-time visitors and route them to a section =====
+  (function(){
+    const wel=document.getElementById('welcome'); if(!wel)return;
+    const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    let seen=false; try{seen=!!localStorage.getItem('eb_welcomed')}catch(e){}
+    function close(go){
+      wel.classList.add('closing'); wel.setAttribute('aria-hidden','true');
+      try{localStorage.setItem('eb_welcomed','1')}catch(e){}
+      setTimeout(()=>{ wel.classList.remove('show','closing'); if(go){const el=document.getElementById(go); if(el)el.scrollIntoView({behavior:reduce?'auto':'smooth'});} },340);
+    }
+    wel.querySelectorAll('.wel-chip').forEach(c=>c.addEventListener('click',()=>close(c.dataset.go)));
+    wel.querySelectorAll('.wel-skip,.wel-close').forEach(b=>b.addEventListener('click',()=>close(null)));
+    wel.addEventListener('click',e=>{ if(e.target===wel)close(null); });
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&wel.classList.contains('show'))close(null); });
+    if(!seen){ setTimeout(()=>{ wel.classList.add('show'); wel.setAttribute('aria-hidden','false'); const f=wel.querySelector('.wel-chip'); if(f)try{f.focus({preventScroll:true})}catch(e){} },500); }
+  })();
 
   const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
