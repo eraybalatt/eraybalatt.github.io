@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>SABAH RİTÜELİ — The Morning Ritual, Kheshig Edition · Eray Balat</title>
+<meta name="theme-color" content="#0A0A0A" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0A0A0A;--text:#F5F5F2;--muted:#9A9A94;--teal:#00A4AD;--line:#1E1E1E;--maxw:1200px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Montserrat',system-ui,-apple-system,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img,video{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--teal);color:#0A0A0A}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3,h4,.num{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.04em;line-height:1.02}
+  .kicker{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+  .section{padding:120px 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(1.9rem,5vw,3.2rem);margin-bottom:16px}
+  .intro{color:var(--muted);max-width:700px;font-size:1.02rem;margin-bottom:52px}
+
+  .rise{opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease}
+  .rise.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none}}
+
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:40;background:rgba(10,10,10,.85);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+  .topbar .back{font-size:.85rem;font-weight:500;color:var(--muted);transition:color .2s}
+  .topbar .back:hover{color:var(--text)}
+  .private-tag{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+
+  /* hero */
+  .hero{text-align:center;padding-top:104px;border-top:none}
+  .hero h1{font-size:clamp(3rem,13vw,8rem);letter-spacing:.02em}
+  .hero .h1-sub{font-family:'Anton';font-size:clamp(.85rem,2.4vw,1.45rem);letter-spacing:.22em;color:var(--muted);margin-top:14px}
+  .hero-logo{width:220px;max-width:62%;margin:46px auto 0;opacity:.95}
+  .hero p{max-width:640px;margin:42px auto 0;color:var(--muted);font-size:1.05rem}
+  .hero .meta{margin-top:34px;color:var(--muted);font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
+
+  /* films */
+  .films-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .film h3{font-size:1.3rem;letter-spacing:.05em;margin:20px 0 7px}
+  .film p{color:var(--muted);font-size:.92rem}
+
+  /* video player */
+  .player{position:relative;aspect-ratio:9/16;max-height:80vh;margin:0 auto;background:#000;border-radius:8px;overflow:hidden;outline:none}
+  .player video{width:100%;height:100%;object-fit:cover}
+  .player::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,transparent 62%,rgba(0,0,0,.5));transition:opacity .3s}
+  .player.playing::after{opacity:0}
+  .v-badge{position:absolute;top:12px;left:12px;z-index:3;display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-size:11px;font-weight:600;letter-spacing:.04em}
+  .v-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal)}
+  .v-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:64px;height:64px;border-radius:50%;border:1.5px solid rgba(255,255,255,.7);background:rgba(0,0,0,.35);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .25s,border-color .2s,background .2s}
+  .v-play:hover{border-color:var(--teal);background:rgba(0,164,173,.28)}
+  .v-play svg{width:23px;height:23px;margin-left:3px}
+  .player.playing .v-play{opacity:0;pointer-events:none}
+  .v-bar{position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;align-items:center;gap:11px;padding:12px 13px;background:linear-gradient(to top,rgba(0,0,0,.78),transparent);opacity:0;transition:opacity .25s}
+  .player:hover .v-bar,.player.touch .v-bar{opacity:1}
+  .v-bar button{background:none;border:none;color:#fff;cursor:pointer;display:flex;padding:0;opacity:.9;transition:opacity .2s,color .2s}
+  .v-bar button:hover{opacity:1;color:var(--teal)}
+  .v-bar svg{width:17px;height:17px}
+  .v-time{font-size:11px;font-weight:600;color:#ddd;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .v-seek{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.25);cursor:pointer;position:relative;touch-action:none}
+  .v-seek-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--teal);border-radius:2px}
+  .v-seek-fill::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);width:10px;height:10px;border-radius:50%;background:var(--teal);opacity:0;transition:opacity .2s}
+  .v-seek:hover .v-seek-fill::after{opacity:1}
+
+  /* cast */
+  .cast-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  .cast-card img{border-radius:8px;width:100%}
+  .cast-master{aspect-ratio:4/5;object-fit:cover}
+  .cast-sheets{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  .cast-sheets img{aspect-ratio:3/4;object-fit:cover}
+  .cast-cap{color:var(--muted);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;margin-top:14px}
+
+  /* catalog */
+  .cat-row{display:grid;grid-template-columns:28% 1fr;gap:32px;align-items:start;padding:46px 0;border-top:1px solid var(--line)}
+  .cat-row:first-of-type{border-top:none;padding-top:6px}
+  .cat-name{font-size:1.15rem;letter-spacing:.05em;margin-bottom:16px}
+  .cat-ref img{border-radius:8px;width:100%;aspect-ratio:3/4;object-fit:cover;background:#141414}
+  .cat-lbl{font-size:.66rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-top:9px}
+  .cat-lbl.ref{color:var(--muted)}
+  .cat-lbl.reb{color:var(--teal)}
+  .cat-rebuild{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .cat-rebuild img{border-radius:8px;width:100%;aspect-ratio:4/5;object-fit:cover;background:#141414}
+  .cat-macro{margin-top:14px}
+  .cat-macro img{max-width:220px;border-radius:8px;aspect-ratio:1/1;object-fit:cover;background:#141414}
+  .cat-macro .cap{color:var(--muted);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;margin-top:7px}
+
+  /* stills */
+  .stills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .stills-grid img{border-radius:8px;width:100%;aspect-ratio:2/3;object-fit:cover;cursor:zoom-in;transition:opacity .2s;background:#141414}
+  .stills-grid img:hover{opacity:.82}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+  .lightbox.on{display:flex}
+  .lightbox img{max-width:92vw;max-height:92vh;border-radius:8px}
+
+  /* process */
+  .proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px 46px}
+  .proc .n{font-size:2.4rem;color:var(--teal);line-height:1;margin-bottom:12px}
+  .proc h4{font-size:1.15rem;letter-spacing:.05em;margin-bottom:10px}
+  .proc p{color:var(--muted);font-size:.94rem}
+  .proc-emph{margin-top:56px;border-left:2px solid var(--teal);padding-left:20px;color:var(--text);font-size:1.06rem;line-height:1.7;max-width:760px}
+
+  /* cta */
+  .cta{text-align:center;border-top:1px solid var(--line)}
+  .cta h2{font-size:clamp(1.9rem,5.5vw,3.4rem);margin-bottom:22px}
+  .cta p{color:var(--muted);max-width:640px;margin:0 auto 34px;font-size:1.02rem}
+  .cta-btn{display:inline-block;font-weight:600;font-size:.95rem;letter-spacing:.02em;color:var(--teal);border:1px solid var(--teal);border-radius:8px;padding:14px 28px;transition:background .2s,color .2s}
+  .cta-btn:hover{background:var(--teal);color:#0A0A0A}
+  .foot{margin-top:56px;color:var(--muted);font-size:.75rem;line-height:1.75}
+
+  @media(max-width:720px){
+    .section{padding:80px 0}
+    .films-grid,.cast-grid,.proc-grid,.cat-rebuild{grid-template-columns:1fr}
+    .cat-row{grid-template-columns:1fr;gap:18px}
+    .cat-ref{max-width:230px}
+    .stills-grid{grid-template-columns:repeat(2,1fr)}
+    .player{max-height:82vh}
+  }
+  @media(max-width:460px){.stills-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- SECTION 0 — Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <a class="back" href="/">← eraybalat.com</a>
+    <span class="private-tag">PRIVATE PREVIEW</span>
+  </div>
+</div>
+
+<main>
+
+  <!-- SECTION 1 — Hero -->
+  <section class="section hero wrap">
+    <div class="kicker rise">A CLIENT CAMPAIGN CONCEPT — PRODUCED END-TO-END BY ERAY BALAT</div>
+    <h1 class="rise">SABAH RİTÜELİ</h1>
+    <div class="h1-sub rise">THE MORNING RITUAL — KHESHIG EDITION</div>
+    <img class="hero-logo rise" src="assets/img/logo-bushido.png" alt="Bushido" width="220" height="120" />
+    <p class="rise">A complete AI-produced campaign for BUSHIDO — a persistent two-character cast, a rebuilt 4K product catalog, three finished films and custom music. Every frame on this page was generated, directed and finished by me. No stock, no photography, no borrowed footage.</p>
+    <div class="meta rise">3 FILMS · 2 CHARACTERS · 7 PRODUCTS · 4K MASTERS · FULL COMMERCIAL PIPELINE</div>
+  </section>
+
+  <!-- SECTION 2 — The Films -->
+  <section class="section wrap" id="films">
+    <div class="kicker rise">01 — THE FILMS</div>
+    <h2 class="rise">THREE FILMS, ONE MORNING</h2>
+    <p class="intro rise">Shot vertically for social. Mastered in 4K at 24fps. Custom instrumental score on each film; the men's film carries a Turkish voice-over.</p>
+    <div class="films-grid">
+      <div class="film rise">
+        <div class="player" tabindex="0" aria-label="HER RITUAL film">
+          <video playsinline preload="metadata" poster="assets/video/poster-1.jpg"><source src="assets/video/video-1-kadin-yuz-bari.mp4" type="video/mp4" /></video>
+          <div class="v-badge"><span class="v-dot"></span>4K MASTER · 24FPS</div>
+          <button class="v-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="v-bar">
+            <button class="v-pp" aria-label="Play/pause"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+            <span class="v-time">0:00 / 0:00</span>
+            <div class="v-seek"><div class="v-seek-fill"></div></div>
+            <button class="v-mute" aria-label="Mute"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 4V6L7 10H3z"/><path d="M16 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+            <button class="v-fs" aria-label="Fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+          </div>
+        </div>
+        <h3>HER RITUAL</h3>
+        <p>The Yağ Dengesi face bar — water, lather, skin. Bright, playful, clean.</p>
+      </div>
+      <div class="film rise">
+        <div class="player" tabindex="0" aria-label="HIS RITUAL film">
+          <video playsinline preload="metadata" poster="assets/video/poster-2.jpg"><source src="assets/video/video-2-erkek-nord.mp4" type="video/mp4" /></video>
+          <div class="v-badge"><span class="v-dot"></span>4K MASTER · 24FPS</div>
+          <button class="v-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="v-bar">
+            <button class="v-pp" aria-label="Play/pause"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+            <span class="v-time">0:00 / 0:00</span>
+            <div class="v-seek"><div class="v-seek-fill"></div></div>
+            <button class="v-mute" aria-label="Mute"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 4V6L7 10H3z"/><path d="M16 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+            <button class="v-fs" aria-label="Fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+          </div>
+        </div>
+        <h3>HIS RITUAL</h3>
+        <p>Bushido Nord beard oil — slow-motion drops, a night-grey bathroom, a Turkish voice-over.</p>
+      </div>
+      <div class="film rise">
+        <div class="player" tabindex="0" aria-label="THE RITUAL, TOGETHER film">
+          <video playsinline preload="metadata" poster="assets/video/poster-3.jpg"><source src="assets/video/video-3-reel-sabah-ritueli.mp4" type="video/mp4" /></video>
+          <div class="v-badge"><span class="v-dot"></span>4K MASTER · 24FPS</div>
+          <button class="v-play" aria-label="Play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="v-bar">
+            <button class="v-pp" aria-label="Play/pause"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+            <span class="v-time">0:00 / 0:00</span>
+            <div class="v-seek"><div class="v-seek-fill"></div></div>
+            <button class="v-mute" aria-label="Mute"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 4V6L7 10H3z"/><path d="M16 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+            <button class="v-fs" aria-label="Fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+          </div>
+        </div>
+        <h3>THE RITUAL, TOGETHER</h3>
+        <p>The couple reel — both rituals cut into one morning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — The Cast -->
+  <section class="section wrap">
+    <div class="kicker rise">02 — THE CAST</div>
+    <h2 class="rise">TWO PEOPLE WHO DO NOT EXIST</h2>
+    <p class="intro rise">Before a single scene, I built the humans. Ayla and Kaan are fully synthetic, persistent characters — each locked with a base identity master and multi-view character sheets (face, profile, back, hands, feet). That lock is what lets the same two faces survive across studio shots, bathroom scenes, masks, foam, slow-motion and film after film.</p>
+    <div class="cast-grid">
+      <div class="cast-card rise">
+        <img class="cast-master" src="assets/img/cast/ayla-master.jpg" alt="Ayla identity master" loading="lazy" />
+        <div class="cast-sheets">
+          <img src="assets/img/cast/ayla-sheet-1.jpg" alt="Ayla character sheet 1" loading="lazy" />
+          <img src="assets/img/cast/ayla-sheet-2.jpg" alt="Ayla character sheet 2" loading="lazy" />
+        </div>
+        <div class="cast-cap">AYLA — identity master &amp; character sheets</div>
+      </div>
+      <div class="cast-card rise">
+        <img class="cast-master" src="assets/img/cast/kaan-master.jpg" alt="Kaan identity master" loading="lazy" />
+        <div class="cast-sheets">
+          <img src="assets/img/cast/kaan-sheet-1.jpg" alt="Kaan character sheet 1" loading="lazy" />
+          <img src="assets/img/cast/kaan-sheet-2.jpg" alt="Kaan character sheet 2" loading="lazy" />
+        </div>
+        <div class="cast-cap">KAAN — identity master &amp; character sheets</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — The Catalog -->
+  <section class="section wrap">
+    <div class="kicker rise">03 — THE CATALOG</div>
+    <h2 class="rise">THE CATALOG, REBUILT IN 4K</h2>
+    <p class="intro rise">I took Bushido's official product references and re-photographed them synthetically — clean white studio catalog imagery, faithful to every stitch, engraving and label line. Reference on the left, my studio rebuild on the right.</p>
+
+    <div class="cat-row rise">
+      <div class="cat-ref"><div class="cat-name">THE KHESHIG TEE</div><img src="assets/img/ref/kheshig-ref.jpg" alt="Kheshig tee official reference" loading="lazy" /><div class="cat-lbl ref">OFFICIAL REFERENCE</div></div>
+      <div><div class="cat-rebuild"><img src="assets/img/catalog/kheshig-front.jpg" alt="Kheshig tee front, studio rebuild" loading="lazy" /><img src="assets/img/catalog/kheshig-back.jpg" alt="Kheshig tee back, studio rebuild" loading="lazy" /></div><div class="cat-macro"><img src="assets/img/catalog/kheshig-embroidery.jpg" alt="Kheshig embroidery macro" loading="lazy" /><div class="cap">embroidery macro</div></div><div class="cat-lbl reb">STUDIO REBUILD — AI</div></div>
+    </div>
+
+    <div class="cat-row rise">
+      <div class="cat-ref"><div class="cat-name">BÖRÜ NECK GAITER</div><img src="assets/img/ref/buff-ref.jpg" alt="Börü neck gaiter official reference" loading="lazy" /><div class="cat-lbl ref">OFFICIAL REFERENCE</div></div>
+      <div><div class="cat-rebuild"><img src="assets/img/catalog/buff-front.jpg" alt="Börü neck gaiter front, studio rebuild" loading="lazy" /><img src="assets/img/catalog/buff-side.jpg" alt="Börü neck gaiter side, studio rebuild" loading="lazy" /></div><div class="cat-lbl reb">STUDIO REBUILD — AI</div></div>
+    </div>
+
+    <div class="cat-row rise">
+      <div class="cat-ref"><div class="cat-name">BASIC BOXER</div><img src="assets/img/ref/boxer-ref.jpg" alt="Basic boxer official reference" loading="lazy" /><div class="cat-lbl ref">OFFICIAL REFERENCE</div></div>
+      <div><div class="cat-rebuild"><img src="assets/img/catalog/boxer-single.jpg" alt="Basic boxer single, studio rebuild" loading="lazy" /><img src="assets/img/catalog/boxer-stack.jpg" alt="Basic boxer stack, studio rebuild" loading="lazy" /></div><div class="cat-lbl reb">STUDIO REBUILD — AI</div></div>
+    </div>
+
+    <div class="cat-row rise">
+      <div class="cat-ref"><div class="cat-name">THE RONIN NECKLACE</div><img src="assets/img/ref/necklace-ref.jpg" alt="Ronin necklace official reference" loading="lazy" /><div class="cat-lbl ref">OFFICIAL REFERENCE</div></div>
+      <div><div class="cat-rebuild"><img src="assets/img/catalog/necklace-solo.jpg" alt="Ronin necklace solo, studio rebuild" loading="lazy" /><img src="assets/img/catalog/necklace-box.jpg" alt="Ronin necklace box, studio rebuild" loading="lazy" /></div><div class="cat-lbl reb">STUDIO REBUILD — AI</div></div>
+    </div>
+
+    <div class="cat-row rise">
+      <div class="cat-ref"><div class="cat-name">NORD BEARD OIL</div><img src="assets/img/ref/nord-ref.jpg" alt="Nord beard oil official reference" loading="lazy" /><div class="cat-lbl ref">OFFICIAL REFERENCE</div></div>
+      <div><div class="cat-rebuild"><img src="assets/img/catalog/nord-duo.jpg" alt="Nord beard oil duo, studio rebuild" loading="lazy" /><img src="assets/img/catalog/nord-solo.jpg" alt="Nord beard oil solo, studio rebuild" loading="lazy" /></div><div class="cat-lbl reb">STUDIO REBUILD — AI</div></div>
+    </div>
+
+    <div class="cat-row rise">
+      <div class="cat-ref"><div class="cat-name">RONIN BASKETBALL SHORT</div><img src="assets/img/ref/shorts-ref.jpg" alt="Ronin basketball short official reference" loading="lazy" /><div class="cat-lbl ref">OFFICIAL REFERENCE</div></div>
+      <div><div class="cat-rebuild"><img src="assets/img/catalog/shorts-front.jpg" alt="Ronin basketball short front, studio rebuild" loading="lazy" /><img src="assets/img/catalog/shorts-angle.jpg" alt="Ronin basketball short angle, studio rebuild" loading="lazy" /></div><div class="cat-lbl reb">STUDIO REBUILD — AI</div></div>
+    </div>
+
+    <div class="cat-row rise">
+      <div class="cat-ref"><div class="cat-name">YAĞ DENGESİ FACE BAR</div><img src="assets/img/ref/soap-ref.jpg" alt="Yağ Dengesi face bar official reference" loading="lazy" /><div class="cat-lbl ref">OFFICIAL REFERENCE</div></div>
+      <div><div class="cat-rebuild"><img src="assets/img/catalog/soap-stack.jpg" alt="Yağ Dengesi face bar stack, studio rebuild" loading="lazy" /><img src="assets/img/catalog/soap-solo.jpg" alt="Yağ Dengesi face bar solo, studio rebuild" loading="lazy" /></div><div class="cat-lbl reb">STUDIO REBUILD — AI</div></div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — Film Stills -->
+  <section class="section wrap">
+    <div class="kicker rise">04 — STILLS</div>
+    <h2 class="rise">FRAMES FROM THE FILMS</h2>
+    <div class="stills-grid rise">
+      <img src="assets/img/stills/still-w-foam.jpg" alt="Film still" loading="lazy" />
+      <img src="assets/img/stills/still-m-drops.jpg" alt="Film still" loading="lazy" />
+      <img src="assets/img/stills/still-c-1.jpg" alt="Film still" loading="lazy" />
+      <img src="assets/img/stills/still-m-beard.jpg" alt="Film still" loading="lazy" />
+      <img src="assets/img/stills/still-c-3.jpg" alt="Film still" loading="lazy" />
+      <img src="assets/img/stills/still-w-macro.jpg" alt="Film still" loading="lazy" />
+      <img src="assets/img/stills/still-c-2.jpg" alt="Film still" loading="lazy" />
+      <img src="assets/img/stills/still-m-close.jpg" alt="Film still" loading="lazy" />
+      <img src="assets/img/stills/still-w-close.jpg" alt="Film still" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- SECTION 6 — The Process -->
+  <section class="section wrap">
+    <div class="kicker rise">05 — PROCESS</div>
+    <h2 class="rise">HOW I BUILT IT</h2>
+    <div class="proc-grid">
+      <div class="proc rise"><div class="num n">01</div><h4>PRODUCT DNA</h4><p>I started from Bushido's official product imagery and rebuilt every item as clean 4K studio catalog shots — logos, embroidery and label typography preserved line by line, verified at 200% zoom.</p></div>
+      <div class="proc rise"><div class="num n">02</div><h4>CAST SYSTEM</h4><p>I designed two persistent characters with identity masters and multi-view character sheets, then dressed them exclusively in the rebuilt products. Identity stays locked across every scene, angle and expression.</p></div>
+      <div class="proc rise"><div class="num n">03</div><h4>SCENE SYSTEM</h4><p>All imagery was generated in node-based flows on Magnific (Business plan) using Google's Nano Banana 2 with multi-reference conditioning — every scene receives the character canon, the product canon and the location canon at once. Two worlds: her bright Mediterranean bathroom, his grey backlit night bathroom.</p></div>
+      <div class="proc rise"><div class="num n">04</div><h4>MOTION</h4><p>Each selected frame was directed into motion with Kling 3.0 using structured JSON direction — choreographed micro-acting (a wink, a suppressed smile, one oil drop landing in a beard), locked product typography, and camera moves written beat by beat.</p></div>
+      <div class="proc rise"><div class="num n">05</div><h4>FINISH</h4><p>Every clip passed through licensed Topaz Video AI Pro (full commercial rights): 4K masters, detail recovery tuned by hand, and frame-interpolated slow motion on the fluid shots. Edited, graded and lettered in After Effects.</p></div>
+      <div class="proc rise"><div class="num n">06</div><h4>SOUND</h4><p>Each film carries its own custom instrumental score, structure-directed to evolve with the cut every few seconds — plus a Turkish voice-over on the men's film. Licensed for commercial use.</p></div>
+    </div>
+    <p class="proc-emph rise">The hard part is not making one beautiful image. It is making the two-hundredth frame agree with the first — same faces, same beard tie, same embroidery, same label type. Consistency was the brief I gave myself, and it is the thing this page is really showing.</p>
+  </section>
+
+  <!-- SECTION 7 — CTA / Footer -->
+  <section class="section cta wrap">
+    <h2 class="rise">THIS IS ONE MORNING. IMAGINE A SEASON.</h2>
+    <p class="rise">Campaign concepts, product films, persistent brand characters, full social packages — produced end-to-end, fast, with full commercial licensing on every tool in the chain.</p>
+    <a class="cta-btn rise" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a>
+    <div class="foot rise">Eray Balat · Citrine Studio · 2026<br />This page is a private, unlisted preview prepared for the Bushido / rekkitz team. All Bushido trademarks and product designs belong to Bushido.</div>
+  </section>
+
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true"><img src="" alt="" /></div>
+
+<script>
+(function(){
+  // ---- reveal on scroll (fade + rise, 80ms stagger within a container) ----
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  var groups={};
+  [].forEach.call(document.querySelectorAll('.rise'),function(el){
+    var key=el.parentNode;
+    groups.k=groups.k||new Map();
+    var i=groups.k.get(key)||0; groups.k.set(key,i+1);
+    el.style.transitionDelay=(Math.min(i,6)*0.08)+'s';
+    io.observe(el);
+  });
+
+  // ---- custom video players ----
+  var PLAY='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+  var PAUSE='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+  var VOL='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 4V6L7 10H3z"/><path d="M16 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+  var MUTED='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4h4l5 4V6L7 10H3z"/><path d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+  var isTouch=('ontouchstart' in window)||navigator.maxTouchPoints>0;
+  var players=[].slice.call(document.querySelectorAll('.player'));
+  function fmt(t){t=Math.max(0,Math.floor(t||0));var m=Math.floor(t/60),s=t%60;return m+':'+(s<10?'0':'')+s;}
+  players.forEach(function(p){
+    if(isTouch)p.classList.add('touch');
+    var v=p.querySelector('video'), big=p.querySelector('.v-play'), pp=p.querySelector('.v-pp');
+    var timeEl=p.querySelector('.v-time'), seek=p.querySelector('.v-seek'), fill=p.querySelector('.v-seek-fill');
+    var mute=p.querySelector('.v-mute'), fs=p.querySelector('.v-fs');
+    function toggle(){
+      if(v.paused){ players.forEach(function(o){ if(o!==p){ o.querySelector('video').pause(); } }); var pr=v.play(); if(pr&&pr.catch)pr.catch(function(){}); }
+      else { v.pause(); }
+    }
+    big.addEventListener('click',toggle);
+    pp.addEventListener('click',function(e){e.stopPropagation();toggle();});
+    v.addEventListener('play',function(){p.classList.add('playing');pp.innerHTML=PAUSE;});
+    v.addEventListener('pause',function(){p.classList.remove('playing');pp.innerHTML=PLAY;});
+    v.addEventListener('ended',function(){p.classList.remove('playing');pp.innerHTML=PLAY;});
+    v.addEventListener('loadedmetadata',function(){timeEl.textContent='0:00 / '+fmt(v.duration);});
+    v.addEventListener('timeupdate',function(){ if(v.duration){ fill.style.width=(v.currentTime/v.duration*100)+'%'; timeEl.textContent=fmt(v.currentTime)+' / '+fmt(v.duration); } });
+    var drag=false;
+    function seekTo(x){ var r=seek.getBoundingClientRect(); var ratio=Math.min(1,Math.max(0,(x-r.left)/r.width)); if(v.duration)v.currentTime=ratio*v.duration; fill.style.width=(ratio*100)+'%'; }
+    seek.addEventListener('pointerdown',function(e){drag=true;try{seek.setPointerCapture(e.pointerId);}catch(_){}seekTo(e.clientX);});
+    seek.addEventListener('pointermove',function(e){if(drag)seekTo(e.clientX);});
+    var end=function(){drag=false;}; seek.addEventListener('pointerup',end); seek.addEventListener('pointercancel',end);
+    mute.addEventListener('click',function(e){e.stopPropagation();v.muted=!v.muted;mute.innerHTML=v.muted?MUTED:VOL;});
+    fs.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(document.fullscreenElement){ document.exitFullscreen(); }
+      else if(p.requestFullscreen){ p.requestFullscreen(); }
+      else if(v.webkitEnterFullscreen){ v.webkitEnterFullscreen(); }
+    });
+    p.addEventListener('keydown',function(e){ if(e.key===' '||e.key==='Spacebar'){ e.preventDefault(); toggle(); } });
+  });
+
+  // ---- lightbox for stills ----
+  var lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img');
+  [].forEach.call(document.querySelectorAll('.stills-grid img'),function(img){
+    img.addEventListener('click',function(){ lbImg.src=img.src; lbImg.alt=img.alt; lb.classList.add('on'); lb.setAttribute('aria-hidden','false'); });
+  });
+  function closeLb(){ lb.classList.remove('on'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
+  lb.addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb.classList.contains('on'))closeLb(); });
+})();
+</script>
+</body>
+</html>
