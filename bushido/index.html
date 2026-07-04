@@ -117,6 +117,9 @@
   .film h3{font-family:'Manrope';font-size:1.12rem;font-weight:600;margin:16px 0 5px}
   .film p{color:var(--muted);font-size:.9rem}
   .film-vid{width:100%;aspect-ratio:9/16;border-radius:var(--radius);border:1px solid var(--card-brd);background:#04070e;box-shadow:0 30px 80px -40px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.12);display:block;object-fit:cover}
+  .yt-btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:'Manrope';font-weight:600;font-size:.82rem;color:#fff;background:linear-gradient(135deg,#2e9bf0,#1f7ccf);border:1px solid rgba(120,210,255,.45);border-radius:11px;padding:9px 16px;box-shadow:0 10px 24px -12px rgba(46,155,240,.7);transition:transform .2s,box-shadow .2s}
+  .yt-btn:hover{transform:translateY(-2px);box-shadow:0 15px 32px -12px rgba(46,155,240,.95)}
+  .yt-btn svg{flex:0 0 auto}
 
   /* cast — character intros */
   .char{padding:32px 0;border-top:1px solid var(--card-brd)}
@@ -158,7 +161,8 @@
   .proc-step p{color:var(--muted);font-size:.93rem;line-height:1.55}
   .tools{margin:58px 0 0}
   .tools .lbl{font-family:'Manrope';font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#9fd2f8;margin-bottom:18px}
-  .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:12px}
+  .tools-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+  .tool{flex:0 1 190px}
   .tool{display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:14px;background:rgba(92,200,255,.06);border:1px solid var(--card-brd);transition:.2s}
   .tool:hover{border-color:var(--c2);background:rgba(46,155,240,.1);transform:translateY(-2px)}
   .tool-ico{width:46px;height:46px;flex:0 0 auto;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -271,14 +275,17 @@
       <div class="film rise">
         <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-1.jpg"><source src="assets/video/film-1.mp4" type="video/mp4" /></video>
         <h3 data-en="Her Ritual" data-tr="Kadının Ritüeli" data-de="Ihr Ritual">Her Ritual</h3><p data-en="Yağ Dengesi face bar — water, lather, light." data-tr="Yağ Dengesi yüz barı — su, köpük, ışık." data-de="Yağ Dengesi Gesichtsseife — Wasser, Schaum, Licht.">Yağ Dengesi face bar — water, lather, light.</p>
+        <a class="yt-btn" href="https://youtube.com/shorts/CZcjyTpPM_M" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
       <div class="film rise">
         <video class="film-vid" controls playsinline preload="metadata" poster="assets/video/poster-3.jpg"><source src="assets/video/film-3.mp4" type="video/mp4" /></video>
         <h3 data-en="The Reel — Sabah Ritüeli" data-tr="Reel — Sabah Ritüeli" data-de="Der Reel — Sabah Ritüeli">The Reel — Sabah Ritüeli</h3><p data-en="The hero film — both rituals in one morning." data-tr="Ana film — iki ritüel tek bir sabahta." data-de="Der Hauptfilm — beide Rituale in einem Morgen.">The hero film — both rituals in one morning.</p>
+        <a class="yt-btn" href="https://youtube.com/shorts/TGTcOunFfUY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
       <div class="film rise">
         <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-2.jpg"><source src="assets/video/film-2.mp4" type="video/mp4" /></video>
         <h3 data-en="His Ritual" data-tr="Erkeğin Ritüeli" data-de="Sein Ritual">His Ritual</h3><p data-en="Nord beard oil — slow-motion drops, Turkish VO." data-tr="Nord sakal yağı — ağır çekim damlalar, Türkçe seslendirme." data-de="Nord Bartöl — Zeitlupen-Tropfen, türkisches Voice-over.">Nord beard oil — slow-motion drops, Turkish VO.</p>
+        <a class="yt-btn" href="https://youtube.com/shorts/m5UfRGEmqSA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
     </div>
   </section>
@@ -421,7 +428,7 @@
     <div class="cta-band rise">
       <div class="eyebrow" style="justify-content:center" data-en="Let's work" data-tr="Çalışalım" data-de="Arbeiten wir zusammen">Let's work</div>
       <h2 class="sec-title" style="margin-left:auto;margin-right:auto" data-en="This is one morning. Imagine a season." data-tr="Bu tek bir sabah. Bir sezonu hayal et." data-de="Das ist ein Morgen. Stell dir eine ganze Saison vor.">This is one morning. Imagine a season.</h2>
-      <p data-en="Campaign concepts, product films, brand characters — end-to-end, fast, fully licensed. Let's talk scope and pricing." data-tr="Kampanya konseptleri, ürün filmleri, marka karakterleri — baştan sona, hızlı, tam lisanslı. Kapsam ve fiyatı konuşalım." data-de="Kampagnenkonzepte, Produktfilme, Markencharaktere — end-to-end, schnell, voll lizenziert. Sprechen wir über Umfang und Preis.">Campaign concepts, product films, brand characters — end-to-end, fast, fully licensed. Let's talk scope and pricing.</p>
+      <p data-en="Campaign concepts, product films, brand characters — end-to-end, fast, fully licensed. Email me directly and let's talk scope and pricing." data-tr="Kampanya konseptleri, ürün filmleri, marka karakterleri — baştan sona, hızlı, tam lisanslı. Bana doğrudan yaz, kapsam ve fiyatı konuşalım." data-de="Kampagnenkonzepte, Produktfilme, Markencharaktere — end-to-end, schnell, voll lizenziert. Schreib mir direkt und wir besprechen Umfang und Preis.">Campaign concepts, product films, brand characters — end-to-end, fast, fully licensed. Email me directly and let's talk scope and pricing.</p>
       <div class="cta-btns">
         <a class="cta-btn" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a>
         <a class="cta-btn hire" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener"><span class="uw-dot" aria-hidden="true"></span><span data-en="Hire me on Upwork →" data-tr="Upwork'te benimle çalış →" data-de="Auf Upwork beauftragen →">Hire me on Upwork →</span></a>
