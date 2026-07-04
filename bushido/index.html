@@ -112,19 +112,15 @@
   .cast-cap{color:#9fd2f8;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-top:14px;font-weight:600}
 
   /* catalog */
-  .cat-row{display:grid;grid-template-columns:28% 1fr;gap:30px;align-items:start;padding:44px 0;border-top:1px solid var(--card-brd)}
-  .cat-row:first-of-type{border-top:none;padding-top:4px}
-  .cat-row.no-ref{grid-template-columns:1fr}
-  .cat-name{font-family:'Manrope';font-size:1.1rem;font-weight:600;margin-bottom:15px}
-  .cat-ref img{border-radius:12px;width:100%;aspect-ratio:3/4;object-fit:cover;background:#0b1524;border:1px solid var(--card-brd)}
-  .cat-lbl{font-family:'Manrope';font-size:.64rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-top:9px}
-  .cat-lbl.ref{color:var(--muted)}
-  .cat-lbl.reb{color:var(--c3)}
-  .cat-rebuild{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-  .cat-rebuild img{border-radius:12px;width:100%;aspect-ratio:4/5;object-fit:cover;background:#0b1524;border:1px solid var(--card-brd)}
-  .cat-macro{margin-top:13px}
-  .cat-macro img{max-width:210px;border-radius:12px;aspect-ratio:1/1;object-fit:cover;background:#0b1524;border:1px solid var(--card-brd)}
-  .cat-macro .cap{color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-top:7px}
+  .cat-item{padding:40px 0;border-top:1px solid var(--card-brd)}
+  .cat-item:first-of-type{border-top:none;padding-top:6px}
+  .cat-head{display:flex;align-items:baseline;gap:13px;flex-wrap:wrap;margin-bottom:20px}
+  .cat-num{font-family:'Manrope';font-weight:800;font-size:.85rem;letter-spacing:.02em;background:linear-gradient(120deg,#5cc8ff,#2e9bf0 45%,#f5c542);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cat-name{font-family:'Manrope';font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+  .cat-desc{color:var(--muted);font-size:.9rem}
+  .cat-shots{display:flex;flex-wrap:wrap;gap:16px}
+  .cat-shot{flex:1 1 210px;max-width:340px;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--card-brd);box-shadow:0 22px 55px -32px rgba(46,155,240,.6),inset 0 1px 0 rgba(255,255,255,.5)}
+  .cat-shot img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;display:block}
 
   /* stills */
   .stills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -163,9 +159,8 @@
   footer b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
   @media(max-width:820px){
-    .films-grid,.cast-grid,.proc-grid,.cat-rebuild{grid-template-columns:1fr}
-    .cat-row{grid-template-columns:1fr;gap:16px}
-    .cat-ref{max-width:230px}
+    .films-grid,.cast-grid,.proc-grid{grid-template-columns:1fr}
+    .cat-shot{max-width:none}
   }
   @media(max-width:640px){section{padding:78px 0}.hero{padding-top:120px}.stills-grid{grid-template-columns:repeat(2,1fr)}}
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.rise{opacity:1!important;transform:none!important}}
@@ -258,15 +253,14 @@
   <!-- CATALOG -->
   <section class="wrap">
     <div class="eyebrow rise">03 · The Catalog</div>
-    <h2 class="sec-title rise">The catalog, rebuilt in 4K</h2>
-    <p class="intro-p rise">I took Bushido's official product references and re-photographed them synthetically: clean white studio catalog imagery, faithful to every stitch, engraving and label line. Reference on the left, my studio rebuild on the right.</p>
-    <div class="cat-row rise"><div class="cat-ref"><div class="cat-name">The Kheshig Tee</div><img src="assets/img/ref/kheshig-ref.jpg" alt="Kheshig tee reference" loading="lazy" /><div class="cat-lbl ref">Official Reference</div></div><div><div class="cat-rebuild"><img src="assets/img/catalog/kheshig-front.jpg" alt="Kheshig tee front rebuild" loading="lazy" /><img src="assets/img/catalog/kheshig-back.jpg" alt="Kheshig tee back rebuild" loading="lazy" /></div><div class="cat-macro"><img src="assets/img/catalog/kheshig-embroidery.jpg" alt="Kheshig embroidery macro" loading="lazy" /><div class="cap">embroidery macro</div></div><div class="cat-lbl reb">Studio Rebuild · AI</div></div></div>
-    <div class="cat-row rise"><div class="cat-ref"><div class="cat-name">Börü Neck Gaiter</div><img src="assets/img/ref/buff-ref.jpg" alt="Börü neck gaiter reference" loading="lazy" /><div class="cat-lbl ref">Official Reference</div></div><div><div class="cat-rebuild"><img src="assets/img/catalog/buff-front.jpg" alt="Börü neck gaiter front rebuild" loading="lazy" /><img src="assets/img/catalog/buff-side.jpg" alt="Börü neck gaiter side rebuild" loading="lazy" /></div><div class="cat-lbl reb">Studio Rebuild · AI</div></div></div>
-    <div class="cat-row rise"><div class="cat-ref"><div class="cat-name">Basic Boxer</div><img src="assets/img/ref/boxer-ref.jpg" alt="Basic boxer reference" loading="lazy" /><div class="cat-lbl ref">Official Reference</div></div><div><div class="cat-rebuild"><img src="assets/img/catalog/boxer-single.jpg" alt="Basic boxer rebuild" loading="lazy" /><img src="assets/img/catalog/boxer-stack.jpg" alt="Basic boxer stack rebuild" loading="lazy" /></div><div class="cat-lbl reb">Studio Rebuild · AI</div></div></div>
-    <div class="cat-row rise"><div class="cat-ref"><div class="cat-name">The Ronin Necklace</div><img src="assets/img/ref/necklace-ref.jpg" alt="Ronin necklace reference" loading="lazy" /><div class="cat-lbl ref">Official Reference</div></div><div><div class="cat-rebuild"><img src="assets/img/catalog/necklace-solo.jpg" alt="Ronin necklace rebuild" loading="lazy" /><img src="assets/img/catalog/necklace-box.jpg" alt="Ronin necklace box rebuild" loading="lazy" /></div><div class="cat-lbl reb">Studio Rebuild · AI</div></div></div>
-    <div class="cat-row rise"><div class="cat-ref"><div class="cat-name">Nord Beard Oil</div><img src="assets/img/ref/nord-ref.jpg" alt="Nord beard oil reference" loading="lazy" /><div class="cat-lbl ref">Official Reference</div></div><div><div class="cat-rebuild"><img src="assets/img/catalog/nord-duo.jpg" alt="Nord beard oil duo rebuild" loading="lazy" /><img src="assets/img/catalog/nord-solo.jpg" alt="Nord beard oil solo rebuild" loading="lazy" /></div><div class="cat-lbl reb">Studio Rebuild · AI</div></div></div>
-    <div class="cat-row rise"><div class="cat-ref"><div class="cat-name">Ronin Basketball Short</div><img src="assets/img/ref/shorts-ref.jpg" alt="Ronin basketball short reference" loading="lazy" /><div class="cat-lbl ref">Official Reference</div></div><div><div class="cat-rebuild"><img src="assets/img/catalog/shorts-front.jpg" alt="Ronin short front rebuild" loading="lazy" /><img src="assets/img/catalog/shorts-angle.jpg" alt="Ronin short angle rebuild" loading="lazy" /></div><div class="cat-lbl reb">Studio Rebuild · AI</div></div></div>
-    <div class="cat-row rise"><div class="cat-ref"><div class="cat-name">Yağ Dengesi Face Bar</div><img src="assets/img/ref/soap-ref.jpg" alt="Yağ Dengesi face bar reference" loading="lazy" /><div class="cat-lbl ref">Official Reference</div></div><div><div class="cat-rebuild"><img src="assets/img/catalog/soap-stack.jpg" alt="Yağ Dengesi face bar stack rebuild" loading="lazy" /><img src="assets/img/catalog/soap-solo.jpg" alt="Yağ Dengesi face bar solo rebuild" loading="lazy" /></div><div class="cat-lbl reb">Studio Rebuild · AI</div></div></div>
+    <h2 class="sec-title rise">The catalog, built in 4K</h2>
+    <p class="intro-p rise">Every product in the campaign, built from scratch as clean 4K studio packshots — logos, embroidery and label typography recreated line for line. No photography, no physical samples.</p>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">01</span><span class="cat-name">The Kheshig Tee</span><span class="cat-desc">Oversized cotton tee · front &amp; back print</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/kheshig-front.jpg" alt="Kheshig tee front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/kheshig-back.jpg" alt="Kheshig tee back print" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/kheshig-embroidery.jpg" alt="Kheshig chest embroidery" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">02</span><span class="cat-name">Börü Neck Gaiter</span><span class="cat-desc">Seamless tube bandana · beast print</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/buff-front.jpg" alt="Börü neck gaiter front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/buff-side.jpg" alt="Börü neck gaiter side" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">03</span><span class="cat-name">Basic Boxer</span><span class="cat-desc">Cotton-stretch trunk · woven waistband</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/boxer-single.jpg" alt="Basic boxer" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/boxer-stack.jpg" alt="Basic boxer three pack" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">04</span><span class="cat-name">Nord Beard Oil</span><span class="cat-desc">50ml amber dropper · printed carton</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/nord-duo.jpg" alt="Nord beard oil bottle and box" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/nord-solo.jpg" alt="Nord beard oil bottle" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">05</span><span class="cat-name">Ronin Basketball Short</span><span class="cat-desc">Mesh performance short · side stripe</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/shorts-front.jpg" alt="Ronin basketball short front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/shorts-angle.jpg" alt="Ronin basketball short angle" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">06</span><span class="cat-name">Yağ Dengesi Face Bar</span><span class="cat-desc">120g cleansing bar · kraft sleeve</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/soap-stack.jpg" alt="Yağ Dengesi face bar and box" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/soap-solo.jpg" alt="Yağ Dengesi face bar" loading="lazy" /></div></div></div>
   </section>
 
   <!-- STILLS -->
@@ -362,13 +356,6 @@
   function closeLb(){ lb.classList.remove('on'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
   lb.addEventListener('click',closeLb);
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb.classList.contains('on'))closeLb(); });
-  // catalog: collapse to rebuild-only when official reference image is absent
-  [].forEach.call(document.querySelectorAll('.cat-row'),function(row){
-    var refImg=row.querySelector('.cat-ref img'); if(!refImg)return;
-    function collapse(){ var ref=row.querySelector('.cat-ref'), name=row.querySelector('.cat-name'), right=row.children[1]; if(name&&right&&right!==ref)right.insertBefore(name,right.firstChild); if(ref)ref.style.display='none'; row.classList.add('no-ref'); }
-    if(refImg.complete&&refImg.naturalWidth===0)collapse();
-    refImg.addEventListener('error',collapse);
-  });
 })();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74"}'></script>
