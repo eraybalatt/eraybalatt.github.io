@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; base-uri 'self'; form-action 'self'; object-src 'none'" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'; object-src 'none'" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
@@ -67,7 +67,8 @@
   @keyframes sljpulse{0%,100%{filter:drop-shadow(0 0 6px rgba(245,197,66,.4));transform:scale(1)}50%{filter:drop-shadow(0 0 15px rgba(245,197,66,.8));transform:scale(1.07)}}
 
   /* section headers */
-  section{padding:108px 0}
+  section{padding:80px 0}
+  .sec-sep{margin:2px auto!important}
   .eyebrow{display:inline-flex;align-items:center;font-family:'Manrope';font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:16px;animation:shimmer 5s linear infinite}
   .eyebrow::before{content:"";display:inline-block;width:14px;height:14px;margin-right:9px;vertical-align:-2px;flex:0 0 auto;opacity:.92;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22eb%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2260%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2248%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M50%203%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97%2050%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50%2097%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3%2050%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23eb%29%22%20stroke%3D%22%2306142e%22%20stroke-width%3D%221.2%22/%3E%3C/svg%3E") center/contain no-repeat}
   @keyframes shimmer{to{background-position:220% center}}
@@ -97,7 +98,7 @@
   .collab-row .x{font-family:'Manrope';font-weight:600;color:var(--c1);font-size:clamp(1rem,2vw,1.5rem);filter:none}
   .collab-cap{font-family:'Manrope';font-size:.64rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#7ea6d8}
 
-  /* films — youtube embeds */
+  /* films — self-hosted video */
   .film-hero{max-width:392px;margin:0 auto 46px}
   .film-cap{text-align:center;margin-top:16px}
   .film-cap h3{font-family:'Manrope';font-size:1.35rem;font-weight:700;margin-bottom:5px}
@@ -105,6 +106,7 @@
   .films-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:720px;margin:0 auto}
   .film h3{font-family:'Manrope';font-size:1.12rem;font-weight:600;margin:16px 0 5px}
   .film p{color:var(--muted);font-size:.9rem}
+  .film-vid{width:100%;aspect-ratio:9/16;border-radius:var(--radius);border:1px solid var(--card-brd);background:#04070e;box-shadow:0 30px 80px -40px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.12);display:block;object-fit:cover}
   .yt{position:relative;aspect-ratio:9/16;border-radius:var(--radius);overflow:hidden;border:1px solid var(--card-brd);background:#04070e;box-shadow:0 30px 80px -40px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.12);cursor:pointer}
   .yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
   .yt:hover img{transform:scale(1.05)}
@@ -179,6 +181,11 @@
   .cta-band p{color:var(--muted);max-width:600px;margin:0 auto 30px;font-size:1.02rem}
   .cta-btn{display:inline-block;font-family:'Manrope';font-weight:600;font-size:.95rem;color:#fff;background:linear-gradient(135deg,#2e9bf0,#1f7ccf);border:1px solid rgba(120,210,255,.45);border-radius:13px;padding:14px 28px;box-shadow:0 13px 32px -12px rgba(46,155,240,.75);transition:transform .2s,box-shadow .2s}
   .cta-btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(46,155,240,.95)}
+  .cta-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:24px}
+  .cta-links a{font-family:'Manrope';font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#9fd2f8;position:relative;padding:3px 2px;transition:color .2s}
+  .cta-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--c1);transform:scaleX(0);transition:transform .2s}
+  .cta-links a:hover{color:#fff}
+  .cta-links a:hover::after{transform:scaleX(1)}
   footer{position:relative;text-align:center;padding:46px 20px 40px;color:var(--muted);font-size:.8rem;line-height:1.8}
   footer::before{content:"";position:absolute;top:0;left:0;right:0;height:20px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2226%22%20height%3D%2226%22%20viewBox%3D%220%200%2026%2026%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22b%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2262%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M13.0%204.0%20L15.6%206.6%20L19.4%206.6%20L19.4%2010.4%20L22.0%2013.0%20L19.4%2015.6%20L19.4%2019.4%20L15.6%2019.4%20L13.0%2022.0%20L10.4%2019.4%20L6.6%2019.4%20L6.6%2015.6%20L4.0%2013.0%20L6.6%2010.4%20L6.6%206.6%20L10.4%206.6%20Z%22%20fill%3D%22url%28%23b%29%22%20stroke%3D%22%232e9bf0%22%20stroke-width%3D%220.7%22/%3E%3C/svg%3E") repeat-x center;background-size:auto 18px;opacity:.4;-webkit-mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent)}
   footer b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -241,26 +248,22 @@
     <h2 class="sec-title rise">Three films, one morning</h2>
     <p class="intro-p rise">Vertical, 4K, 24fps. A custom score on each film; a Turkish voice-over on the men's.</p>
     <div class="film-hero rise">
-      <div class="yt" data-yt="TGTcOunFfUY" role="button" tabindex="0" aria-label="Play the reel">
-        <img src="assets/video/poster-3.jpg" alt="Sabah Ritüeli reel" loading="lazy" /><span class="pb"></span>
-      </div>
+      <video class="film-vid" controls playsinline preload="metadata" poster="assets/video/poster-3.jpg"><source src="assets/video/film-3.mp4" type="video/mp4" />Your browser does not support the video tag.</video>
       <div class="film-cap"><h3>The Reel — Sabah Ritüeli</h3><p>The hero film — both rituals cut into one morning.</p></div>
     </div>
     <div class="films-grid">
       <div class="film rise">
-        <div class="yt" data-yt="CZcjyTpPM_M" role="button" tabindex="0" aria-label="Play Her Ritual">
-          <img src="assets/video/poster-1.jpg" alt="Her Ritual" loading="lazy" /><span class="pb"></span>
-        </div>
+        <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-1.jpg"><source src="assets/video/film-1.mp4" type="video/mp4" /></video>
         <h3>Her Ritual</h3><p>Yağ Dengesi face bar — water, lather, light.</p>
       </div>
       <div class="film rise">
-        <div class="yt" data-yt="m5UfRGEmqSA" role="button" tabindex="0" aria-label="Play His Ritual">
-          <img src="assets/video/poster-2.jpg" alt="His Ritual" loading="lazy" /><span class="pb"></span>
-        </div>
+        <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-2.jpg"><source src="assets/video/film-2.mp4" type="video/mp4" /></video>
         <h3>His Ritual</h3><p>Nord beard oil — slow-motion drops, Turkish VO.</p>
       </div>
     </div>
   </section>
+
+  <div class="slj-divider sec-sep" aria-hidden="true"><span class="l"></span><span class="s"></span><span class="l"></span></div>
 
   <!-- CAST -->
   <section class="wrap">
@@ -311,6 +314,8 @@
     </div>
   </section>
 
+  <div class="slj-divider sec-sep" aria-hidden="true"><span class="l"></span><span class="s"></span><span class="l"></span></div>
+
   <!-- CATALOG -->
   <section class="wrap">
     <div class="eyebrow rise">03 · The Catalog</div>
@@ -325,6 +330,8 @@
     <div class="cat-item rise"><div class="cat-head"><span class="cat-num">06</span><span class="cat-name">Yağ Dengesi Face Bar</span><span class="cat-desc">120g cleansing bar · kraft sleeve</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/soap-stack.jpg" alt="Yağ Dengesi face bar and box" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/soap-solo.jpg" alt="Yağ Dengesi face bar" loading="lazy" /></div></div></div>
     </div>
   </section>
+
+  <div class="slj-divider sec-sep" aria-hidden="true"><span class="l"></span><span class="s"></span><span class="l"></span></div>
 
   <!-- STILLS -->
   <section class="wrap">
@@ -343,6 +350,8 @@
     </div>
   </section>
 
+  <div class="slj-divider sec-sep" aria-hidden="true"><span class="l"></span><span class="s"></span><span class="l"></span></div>
+
   <!-- PROCESS -->
   <section class="wrap">
     <div class="eyebrow rise">05 · Process</div>
@@ -360,7 +369,7 @@
       <div class="tools-grid">
         <div class="tool"><span class="tool-ico"><img src="assets/img/logos/magnific.png" alt="" /></span><span class="tool-txt"><b>Magnific</b><span>generation</span></span></div>
         <div class="tool"><span class="tool-ico"><img src="assets/img/logos/deepmind.png" alt="" /></span><span class="tool-txt"><b>Nano Banana 2</b><span>Google DeepMind</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/kling.svg" alt="" /></span><span class="tool-txt"><b>Kling 3.0</b><span>motion</span></span></div>
+        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/kling.png" alt="" /></span><span class="tool-txt"><b>Kling 3.0</b><span>motion</span></span></div>
         <div class="tool"><span class="tool-ico"><img src="assets/img/logos/topaz.png" alt="" /></span><span class="tool-txt"><b>Topaz Video AI</b><span>4K finish</span></span></div>
         <div class="tool"><span class="tool-ico"><img src="assets/img/logos/after-effects.png" alt="" /></span><span class="tool-txt"><b>After Effects</b><span>edit &amp; grade</span></span></div>
         <div class="tool"><span class="tool-ico"><img src="assets/img/logos/suno.png" alt="" /></span><span class="tool-txt"><b>Suno</b><span>score</span></span></div>
@@ -369,9 +378,9 @@
       <div class="license">
         <span class="license-ico" aria-hidden="true">✓</span>
         <div class="license-txt">
-          <b>Every tool licensed for commercial use</b>
-          <p>Every tool on a paid commercial plan — full rights on every frame, no watermarks.</p>
-          <div class="license-chips"><span>Magnific · Business</span><span>Topaz · Pro</span><span>Kling · paid tier</span><span>Suno · commercial</span></div>
+          <b>Licensed, premium, private</b>
+          <p>Produced privately for rekkitz on paid professional plans — full commercial rights on every frame, no watermarks, no licensing gaps.</p>
+          <div class="license-chips"><span>Magnific · Business</span><span>Topaz · Studio Pro</span><span>Kling · paid</span><span>Suno · Premier</span></div>
         </div>
       </div>
     </div>
@@ -383,8 +392,14 @@
     <div class="cta-band rise">
       <div class="eyebrow" style="justify-content:center">Let's work</div>
       <h2 class="sec-title" style="margin-left:auto;margin-right:auto">This is one morning. Imagine a season.</h2>
-      <p>Campaign concepts, product films, brand characters — end-to-end, fast, fully licensed.</p>
+      <p>Campaign concepts, product films, brand characters — end-to-end, fast, fully licensed. Let's talk scope and pricing.</p>
       <a class="cta-btn" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a>
+      <div class="cta-links">
+        <a href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener">Upwork</a>
+        <a href="https://www.instagram.com/documenteray" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.behance.net/eraybalat" target="_blank" rel="noopener">Behance</a>
+      </div>
     </div>
   </section>
 
@@ -406,19 +421,9 @@
   // reveal on scroll
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
   [].forEach.call(document.querySelectorAll('.rise'),function(el,i){el.style.transitionDelay=(Math.min(i%5,4)*0.06)+'s';io.observe(el);});
-  // youtube click-to-embed
-  [].forEach.call(document.querySelectorAll('[data-yt]'),function(el){
-    function play(){
-      if(el.querySelector('iframe'))return;
-      var f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+el.getAttribute('data-yt')+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-      f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture; fullscreen');
-      f.setAttribute('allowfullscreen',''); f.setAttribute('title','Video player'); f.loading='lazy';
-      el.appendChild(f); el.classList.add('playing');
-    }
-    el.addEventListener('click',play);
-    el.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); play(); } });
-  });
+  // one film plays at a time
+  var vids=[].slice.call(document.querySelectorAll('.film-vid'));
+  vids.forEach(function(v){ v.addEventListener('play',function(){ vids.forEach(function(o){ if(o!==v) o.pause(); }); }); });
   // lightbox
   var lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img');
   [].forEach.call(document.querySelectorAll('.stills-grid img'),function(img){ img.addEventListener('click',function(){ lbImg.src=img.src; lbImg.alt=img.alt; lb.classList.add('on'); lb.setAttribute('aria-hidden','false'); }); });
