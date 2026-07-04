@@ -84,6 +84,7 @@
   /* catalog */
   .cat-row{display:grid;grid-template-columns:28% 1fr;gap:32px;align-items:start;padding:46px 0;border-top:1px solid var(--line)}
   .cat-row:first-of-type{border-top:none;padding-top:6px}
+  .cat-row.no-ref{grid-template-columns:1fr}
   .cat-name{font-size:1.15rem;letter-spacing:.05em;margin-bottom:16px}
   .cat-ref img{border-radius:8px;width:100%;aspect-ratio:3/4;object-fit:cover;background:#141414}
   .cat-lbl{font-size:.66rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-top:9px}
@@ -383,6 +384,19 @@
   function closeLb(){ lb.classList.remove('on'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
   lb.addEventListener('click',closeLb);
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb.classList.contains('on'))closeLb(); });
+
+  // ---- catalog: if an official-reference image is not present yet, collapse that row to rebuild-only (keeps the product name, no broken image) ----
+  [].forEach.call(document.querySelectorAll('.cat-row'),function(row){
+    var refImg=row.querySelector('.cat-ref img'); if(!refImg)return;
+    function collapse(){
+      var ref=row.querySelector('.cat-ref'), name=row.querySelector('.cat-name'), right=row.children[1];
+      if(name&&right&&right!==ref)right.insertBefore(name,right.firstChild);
+      if(ref)ref.style.display='none';
+      row.classList.add('no-ref');
+    }
+    if(refImg.complete&&refImg.naturalWidth===0)collapse();
+    refImg.addEventListener('error',collapse);
+  });
 })();
 </script>
 </body>
