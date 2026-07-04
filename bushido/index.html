@@ -12,7 +12,10 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="assets/img/citrine-white.png" fetchpriority="high" />
+<link rel="preload" as="image" href="assets/img/logo-bushido.png" fetchpriority="high" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" /></noscript>
 <style>
   :root{
     --bg:#080c16; --bg-soft:#0e1626;
@@ -32,7 +35,7 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
   /* ambient blobs */
-  .blobs{position:fixed;top:-25%;left:-25%;width:150%;height:150%;z-index:-1;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 58% 58% at 50% 50%,#000 38%,transparent 80%);mask-image:radial-gradient(ellipse 58% 58% at 50% 50%,#000 38%,transparent 80%)}
+  .blobs{position:fixed;top:-25%;left:-25%;width:150%;height:150%;z-index:-1;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 58% 58% at 50% 50%,#000 38%,transparent 80%);mask-image:radial-gradient(ellipse 58% 58% at 50% 50%,#000 38%,transparent 80%);transform:translateZ(0)}
   .blob{position:absolute;width:46vw;height:46vw;border-radius:50%;filter:blur(60px);opacity:.5}
   .blob.b1{background:#38bdf8;top:-12%;left:-8%}
   .blob.b2{background:var(--c2);top:30%;right:-12%}
@@ -40,8 +43,8 @@
   .blob.b4{background:#4cc4ff;top:8%;right:25%;width:30vw;height:30vw;opacity:.36}
   .blob.b5{background:#2e9bf0;bottom:2%;right:6%;width:28vw;height:28vw;opacity:.32}
   .cursor-glow{position:fixed;top:0;left:0;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(46,155,240,.16),rgba(46,155,240,0) 62%);pointer-events:none;z-index:1;opacity:0;transition:opacity .35s;will-change:transform}
-  .click-ring{position:fixed;border:2px solid rgba(92,200,255,.55);border-radius:50%;pointer-events:none;z-index:120;transform:translate(-50%,-50%);animation:clickring .55s ease-out forwards}
-  @keyframes clickring{from{width:10px;height:10px;opacity:.8}to{width:78px;height:78px;opacity:0}}
+  .click-ring{position:fixed;width:78px;height:78px;margin:-39px 0 0 -39px;border:2px solid rgba(92,200,255,.55);border-radius:50%;pointer-events:none;z-index:120;will-change:transform,opacity;animation:clickring .55s ease-out forwards}
+  @keyframes clickring{from{transform:scale(.128);opacity:.8}to{transform:scale(1);opacity:0}}
 
   /* intro splash — CITRINE × BUSHIDO (blue fusion) */
   #intro{position:fixed;inset:0;z-index:200;overflow:hidden;background:radial-gradient(130% 105% at 50% 40%,#14406f 0%,#0c2547 38%,#071322 72%,#050d18 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:26px;transition:opacity .8s ease,visibility .8s}
@@ -77,6 +80,13 @@
 
   /* section headers */
   section{padding:80px 0}
+  /* skip layout+paint of heavy off-screen sections until near viewport (auto = remember real height, no scrollbar drift) */
+  .cv-section{content-visibility:auto}
+  .cv-films{contain-intrinsic-size:auto 1050px}
+  .cv-cast{contain-intrinsic-size:auto 1650px}
+  .cv-catalog{contain-intrinsic-size:auto 1150px}
+  .cv-stills{contain-intrinsic-size:auto 1150px}
+  .cv-process{contain-intrinsic-size:auto 1450px}
   .sec-sep{margin:2px auto!important}
   .eyebrow{display:inline-flex;align-items:center;font-family:'Manrope';font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:16px;animation:shimmer 5s linear infinite}
   .eyebrow::before{content:"";display:inline-block;width:14px;height:14px;margin-right:9px;vertical-align:-2px;flex:0 0 auto;opacity:.92;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22eb%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2260%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2248%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M50%203%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97%2050%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50%2097%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3%2050%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23eb%29%22%20stroke%3D%22%2306142e%22%20stroke-width%3D%221.2%22/%3E%3C/svg%3E") center/contain no-repeat}
@@ -216,6 +226,8 @@
   }
   @media(max-width:600px){.private-tag{display:none}}
   @media(max-width:640px){section{padding:78px 0}.hero{padding-top:120px}.stills-grid{grid-template-columns:repeat(3,1fr)}.char-strip{grid-template-columns:1fr 1fr}}
+  /* mobile: drop the per-frame backdrop blur (expensive on phone GPUs) for a near-opaque bar — reads the same at phone size */
+  @media(max-width:820px){header.nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(180deg,rgba(20,52,100,.95),rgba(13,32,64,.92))}}
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.rise{opacity:1!important;transform:none!important}}
 </style>
 </head>
@@ -228,9 +240,9 @@
   <div class="intro-inner">
     <div class="intro-star" aria-hidden="true" style="background:url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Cdefs%3E%3CradialGradient%20id=%22i%22%20cx=%2247%25%22%20cy=%2243%25%22%20r=%2260%25%22%3E%3Cstop%20offset=%220%25%22%20stop-color=%22%232ba2d4%22/%3E%3Cstop%20offset=%2248%25%22%20stop-color=%22%230e5b90%22/%3E%3Cstop%20offset=%22100%25%22%20stop-color=%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d=%22M50%203%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97%2050%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50%2097%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3%2050%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill=%22url(%23i)%22%20stroke=%22%233a9fe0%22%20stroke-width=%221%22/%3E%3C/svg%3E') center/contain no-repeat"></div>
     <div class="intro-logos">
-      <img class="intro-citrine" src="assets/img/citrine-white.png" alt="CITRINE" />
+      <img decoding="async" class="intro-citrine" src="assets/img/citrine-white.png" alt="CITRINE" />
       <span class="intro-x">×</span>
-      <img class="intro-bushido" src="assets/img/logo-bushido.png" alt="BUSHIDO" />
+      <img decoding="async" class="intro-bushido" src="assets/img/logo-bushido.png" alt="BUSHIDO" />
     </div>
     <div class="intro-tag" data-en="Campaign Concept · Produced by Eray Balat" data-tr="Kampanya Konsepti · Yapım: Eray Balat" data-de="Kampagnenkonzept · Produziert von Eray Balat">Campaign Concept · Produced by Eray Balat</div>
   </div>
@@ -258,7 +270,7 @@
     <h1 class="rise" data-en="THE MORNING RITUAL" data-tr="SABAH RİTÜELİ" data-de="DAS MORGENRITUAL">SABAH RİTÜELİ</h1>
     <div class="h1-sub rise" data-en="KHESHIG EDITION" data-tr="KHESHIG EDİSYONU" data-de="KHESHIG EDITION">KHESHIG EDITION</div>
     <div class="collab rise">
-      <div class="collab-row"><img class="cit" src="assets/img/citrine-white.png" alt="Citrine" /><span class="x">×</span><img class="bus" src="assets/img/logo-bushido.png" alt="Bushido" /></div>
+      <div class="collab-row"><img decoding="async" class="cit" src="assets/img/citrine-white.png" alt="Citrine" /><span class="x">×</span><img decoding="async" class="bus" src="assets/img/logo-bushido.png" alt="Bushido" fetchpriority="high" /></div>
       <div class="collab-cap" data-en="Built by Citrine Studio · for Bushido — rekkitz" data-tr="Citrine Studio yapımı · Bushido için — rekkitz" data-de="Von Citrine Studio · für Bushido — rekkitz">Built by Citrine Studio · for Bushido — rekkitz</div>
     </div>
     <p class="rise" data-en="A complete AI-produced campaign — a two-character cast, a 4K catalog, three films and a custom score. Every frame directed and finished by me." data-tr="Baştan sona yapay zekâ ile üretilmiş bir kampanya — iki kişilik bir kadro, 4K ürün kataloğu, üç film ve özgün müzik. Her kare bizzat benim tarafımdan yönetildi ve tamamlandı." data-de="Eine komplett KI-produzierte Kampagne — ein Zwei-Personen-Cast, ein 4K-Katalog, drei Filme und ein eigener Score. Jedes Bild von mir inszeniert und finalisiert.">A complete AI-produced campaign — a two-character cast, a 4K catalog, three films and a custom score. Every frame directed and finished by me.</p>
@@ -267,7 +279,7 @@
   </section>
 
   <!-- FILMS -->
-  <section class="wrap">
+  <section class="wrap cv-section cv-films">
     <div class="eyebrow rise" data-en="01 · The Films" data-tr="01 · Filmler" data-de="01 · Die Filme">01 · The Films</div>
     <h2 class="sec-title rise" data-en="Three films, one morning" data-tr="Üç film, tek bir sabah" data-de="Drei Filme, ein Morgen">Three films, one morning</h2>
     <p class="intro-p rise" data-en="Vertical, 4K, 24fps. A custom score on each film; a Turkish voice-over on the men's." data-tr="Dikey, 4K, 24fps. Her filmde özgün müzik; erkek filminde Türkçe seslendirme." data-de="Vertikal, 4K, 24fps. Eigener Score pro Film; türkisches Voice-over im Männerfilm.">Vertical, 4K, 24fps. A custom score on each film; a Turkish voice-over on the men's.</p>
@@ -278,7 +290,7 @@
         <a class="yt-btn" href="https://youtube.com/shorts/CZcjyTpPM_M" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
       <div class="film rise">
-        <video class="film-vid" controls playsinline preload="metadata" poster="assets/video/poster-3.jpg"><source src="assets/video/film-3.mp4" type="video/mp4" /></video>
+        <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-3.jpg"><source src="assets/video/film-3.mp4" type="video/mp4" /></video>
         <h3 data-en="The Reel — Sabah Ritüeli" data-tr="Reel — Sabah Ritüeli" data-de="Der Reel — Sabah Ritüeli">The Reel — Sabah Ritüeli</h3><p data-en="The hero film — both rituals in one morning." data-tr="Ana film — iki ritüel tek bir sabahta." data-de="Der Hauptfilm — beide Rituale in einem Morgen.">The hero film — both rituals in one morning.</p>
         <a class="yt-btn" href="https://youtube.com/shorts/TGTcOunFfUY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
@@ -293,14 +305,14 @@
   <div class="slj-divider sec-sep" aria-hidden="true"><span class="l"></span><span class="s"></span><span class="l"></span></div>
 
   <!-- CAST -->
-  <section class="wrap">
+  <section class="wrap cv-section cv-cast">
     <div class="eyebrow rise" data-en="02 · The Cast" data-tr="02 · Kadro" data-de="02 · Der Cast">02 · The Cast</div>
     <h2 class="sec-title rise" data-en="Two people who don't exist" data-tr="Var olmayan iki insan" data-de="Zwei Menschen, die nicht existieren">Two people who don't exist</h2>
     <p class="intro-p rise" data-en="Before any scene, I built the humans — Ayla and Kaan, fully synthetic, one locked identity each." data-tr="Herhangi bir sahneden önce insanları kurdum — Ayla ve Kaan, tamamen sentetik, her biri sabit tek bir kimlik." data-de="Vor jeder Szene habe ich die Menschen erschaffen — Ayla und Kaan, vollständig synthetisch, je eine fixierte Identität.">Before any scene, I built the humans — Ayla and Kaan, fully synthetic, one locked identity each.</p>
 
     <div class="char rise">
       <div class="char-top">
-        <img class="char-portrait" src="assets/img/cast/ayla-face.jpg" alt="Ayla — face" loading="lazy" />
+        <img decoding="async" class="char-portrait" src="assets/img/cast/ayla-face.jpg" alt="Ayla — face" loading="lazy" />
         <div class="char-info">
           <span class="char-tag" data-en="Character 01" data-tr="Karakter 01" data-de="Charakter 01">Character 01</span>
           <h3 class="char-name">Ayla</h3>
@@ -309,19 +321,19 @@
         </div>
       </div>
       <div class="char-strip">
-        <img src="assets/img/cast/ayla-wear-tee.jpg" alt="Ayla in the Kheshig tee" loading="lazy" />
-        <img src="assets/img/cast/ayla-wear-buff.jpg" alt="Ayla in the Börü gaiter" loading="lazy" />
-        <img src="assets/img/cast/ayla-master.jpg" alt="Ayla full body" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-wear-tee.jpg" alt="Ayla in the Kheshig tee" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-wear-buff.jpg" alt="Ayla in the Börü gaiter" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-master.jpg" alt="Ayla full body" loading="lazy" />
       </div>
       <div class="char-sheets">
-        <img src="assets/img/cast/ayla-sheet-1.jpg" alt="Ayla character sheet" loading="lazy" />
-        <img src="assets/img/cast/ayla-sheet-2.jpg" alt="Ayla character sheet detail" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-sheet-1.jpg" alt="Ayla character sheet" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-sheet-2.jpg" alt="Ayla character sheet detail" loading="lazy" />
       </div>
     </div>
 
     <div class="char rise">
       <div class="char-top">
-        <img class="char-portrait" src="assets/img/cast/kaan-face.jpg" alt="Kaan — face" loading="lazy" />
+        <img decoding="async" class="char-portrait" src="assets/img/cast/kaan-face.jpg" alt="Kaan — face" loading="lazy" />
         <div class="char-info">
           <span class="char-tag" data-en="Character 02" data-tr="Karakter 02" data-de="Charakter 02">Character 02</span>
           <h3 class="char-name">Kaan</h3>
@@ -330,13 +342,13 @@
         </div>
       </div>
       <div class="char-strip">
-        <img src="assets/img/cast/kaan-wear-tee.jpg" alt="Kaan in the Kheshig tee" loading="lazy" />
-        <img src="assets/img/cast/kaan-wear-shorts.jpg" alt="Kaan in the Ronin short" loading="lazy" />
-        <img src="assets/img/cast/kaan-master.jpg" alt="Kaan full body" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-wear-tee.jpg" alt="Kaan in the Kheshig tee" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-wear-shorts.jpg" alt="Kaan in the Ronin short" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-master.jpg" alt="Kaan full body" loading="lazy" />
       </div>
       <div class="char-sheets">
-        <img src="assets/img/cast/kaan-sheet-1.jpg" alt="Kaan character sheet" loading="lazy" />
-        <img src="assets/img/cast/kaan-sheet-2.jpg" alt="Kaan character sheet detail" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-sheet-1.jpg" alt="Kaan character sheet" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-sheet-2.jpg" alt="Kaan character sheet detail" loading="lazy" />
       </div>
     </div>
   </section>
@@ -344,52 +356,52 @@
   <div class="slj-divider sec-sep" aria-hidden="true"><span class="l"></span><span class="s"></span><span class="l"></span></div>
 
   <!-- CATALOG -->
-  <section class="wrap">
+  <section class="wrap cv-section cv-catalog">
     <div class="eyebrow rise" data-en="03 · The Catalog" data-tr="03 · Katalog" data-de="03 · Der Katalog">03 · The Catalog</div>
     <h2 class="sec-title rise" data-en="The catalog, built in 4K" data-tr="Katalog, 4K'da yeniden inşa edildi" data-de="Der Katalog, in 4K aufgebaut">The catalog, built in 4K</h2>
     <p class="intro-p rise" data-en="Every product rebuilt from scratch as clean 4K packshots. No photography, no samples." data-tr="Her ürün sıfırdan temiz 4K stüdyo çekimi olarak yeniden üretildi. Fotoğraf yok, numune yok." data-de="Jedes Produkt von Grund auf als saubere 4K-Packshots neu erstellt. Keine Fotografie, keine Muster.">Every product rebuilt from scratch as clean 4K packshots. No photography, no samples.</p>
     <div class="cat-grid">
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">01</span><span class="cat-name">The Kheshig Tee</span><span class="cat-desc" data-en="Oversized cotton tee · front &amp; back print" data-tr="Oversize pamuklu tişört · ön &amp; arka baskı" data-de="Oversize-Baumwoll-Shirt · Front- &amp; Rückenprint">Oversized cotton tee · front &amp; back print</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/kheshig-front.jpg" alt="Kheshig tee front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/kheshig-back.jpg" alt="Kheshig tee back print" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">02</span><span class="cat-name">Börü Neck Gaiter</span><span class="cat-desc" data-en="Seamless tube bandana · beast print" data-tr="Dikişsiz boyunluk · canavar baskı" data-de="Nahtloses Schlauchtuch · Bestien-Print">Seamless tube bandana · beast print</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/buff-front.jpg" alt="Börü neck gaiter front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/buff-side.jpg" alt="Börü neck gaiter side" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">03</span><span class="cat-name">Basic Boxer</span><span class="cat-desc" data-en="Cotton-stretch trunk · woven waistband" data-tr="Pamuk-likra boxer · dokuma bel" data-de="Baumwoll-Stretch-Boxer · gewebter Bund">Cotton-stretch trunk · woven waistband</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/boxer-single.jpg" alt="Basic boxer" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/boxer-stack.jpg" alt="Basic boxer three pack" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">04</span><span class="cat-name">Nord Beard Oil</span><span class="cat-desc" data-en="50ml amber dropper · printed carton" data-tr="50ml amber damlalık · baskılı kutu" data-de="50ml Amber-Pipette · bedruckte Verpackung">50ml amber dropper · printed carton</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/nord-duo.jpg" alt="Nord beard oil bottle and box" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/nord-solo.jpg" alt="Nord beard oil bottle" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">05</span><span class="cat-name">Ronin Basketball Short</span><span class="cat-desc" data-en="Mesh performance short · side stripe" data-tr="Fileli performans şortu · yan şerit" data-de="Mesh-Performance-Short · Seitenstreifen">Mesh performance short · side stripe</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/shorts-front.jpg" alt="Ronin basketball short front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/shorts-angle.jpg" alt="Ronin basketball short angle" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">06</span><span class="cat-name">Yağ Dengesi Face Bar</span><span class="cat-desc" data-en="120g cleansing bar · kraft sleeve" data-tr="120g temizleme barı · kraft ambalaj" data-de="120g Reinigungsstück · Kraft-Hülle">120g cleansing bar · kraft sleeve</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/soap-stack.jpg" alt="Yağ Dengesi face bar and box" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/soap-solo.jpg" alt="Yağ Dengesi face bar" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">01</span><span class="cat-name">The Kheshig Tee</span><span class="cat-desc" data-en="Oversized cotton tee · front &amp; back print" data-tr="Oversize pamuklu tişört · ön &amp; arka baskı" data-de="Oversize-Baumwoll-Shirt · Front- &amp; Rückenprint">Oversized cotton tee · front &amp; back print</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/kheshig-front.jpg" alt="Kheshig tee front" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/kheshig-back.jpg" alt="Kheshig tee back print" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">02</span><span class="cat-name">Börü Neck Gaiter</span><span class="cat-desc" data-en="Seamless tube bandana · beast print" data-tr="Dikişsiz boyunluk · canavar baskı" data-de="Nahtloses Schlauchtuch · Bestien-Print">Seamless tube bandana · beast print</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/buff-front.jpg" alt="Börü neck gaiter front" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/buff-side.jpg" alt="Börü neck gaiter side" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">03</span><span class="cat-name">Basic Boxer</span><span class="cat-desc" data-en="Cotton-stretch trunk · woven waistband" data-tr="Pamuk-likra boxer · dokuma bel" data-de="Baumwoll-Stretch-Boxer · gewebter Bund">Cotton-stretch trunk · woven waistband</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/boxer-single.jpg" alt="Basic boxer" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/boxer-stack.jpg" alt="Basic boxer three pack" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">04</span><span class="cat-name">Nord Beard Oil</span><span class="cat-desc" data-en="50ml amber dropper · printed carton" data-tr="50ml amber damlalık · baskılı kutu" data-de="50ml Amber-Pipette · bedruckte Verpackung">50ml amber dropper · printed carton</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/nord-duo.jpg" alt="Nord beard oil bottle and box" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/nord-solo.jpg" alt="Nord beard oil bottle" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">05</span><span class="cat-name">Ronin Basketball Short</span><span class="cat-desc" data-en="Mesh performance short · side stripe" data-tr="Fileli performans şortu · yan şerit" data-de="Mesh-Performance-Short · Seitenstreifen">Mesh performance short · side stripe</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/shorts-front.jpg" alt="Ronin basketball short front" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/shorts-angle.jpg" alt="Ronin basketball short angle" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">06</span><span class="cat-name">Yağ Dengesi Face Bar</span><span class="cat-desc" data-en="120g cleansing bar · kraft sleeve" data-tr="120g temizleme barı · kraft ambalaj" data-de="120g Reinigungsstück · Kraft-Hülle">120g cleansing bar · kraft sleeve</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/soap-stack.jpg" alt="Yağ Dengesi face bar and box" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/soap-solo.jpg" alt="Yağ Dengesi face bar" loading="lazy" /></div></div></div>
     </div>
   </section>
 
   <div class="slj-divider sec-sep" aria-hidden="true"><span class="l"></span><span class="s"></span><span class="l"></span></div>
 
   <!-- STILLS -->
-  <section class="wrap">
+  <section class="wrap cv-section cv-stills">
     <div class="eyebrow rise" data-en="04 · Stills" data-tr="04 · Kareler" data-de="04 · Stills">04 · Stills</div>
     <h2 class="sec-title rise" data-en="Frames from the films" data-tr="Filmlerden kareler" data-de="Bilder aus den Filmen">Frames from the films</h2>
     <div class="stills-grid rise">
-      <img src="assets/img/stills/still-1.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-2.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-3.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-4.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-5.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-6.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-7.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-8.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-9.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-10.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-11.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-12.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-13.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-14.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-15.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-16.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-17.jpg" alt="Film still" loading="lazy" />
-      <img src="assets/img/stills/still-18.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-1.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-2.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-3.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-4.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-5.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-6.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-7.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-8.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-9.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-10.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-11.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-12.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-13.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-14.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-15.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-16.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-17.jpg" alt="Film still" loading="lazy" />
+      <img decoding="async" src="assets/img/stills/still-18.jpg" alt="Film still" loading="lazy" />
     </div>
   </section>
 
   <div class="slj-divider sec-sep" aria-hidden="true"><span class="l"></span><span class="s"></span><span class="l"></span></div>
 
   <!-- PROCESS -->
-  <section class="wrap">
+  <section class="wrap cv-section cv-process">
     <div class="eyebrow rise" data-en="05 · Process" data-tr="05 · Süreç" data-de="05 · Prozess">05 · Process</div>
     <h2 class="sec-title rise" data-en="How I built it" data-tr="Nasıl yaptım" data-de="Wie ich es gebaut habe">How I built it</h2>
     <div class="proc-grid">
@@ -403,13 +415,13 @@
     <div class="tools rise">
       <div class="lbl" data-en="Tool stack · every license paid" data-tr="Araç seti · tüm lisanslar ücretli" data-de="Tool-Stack · jede Lizenz bezahlt">Tool stack · every license paid</div>
       <div class="tools-grid">
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/magnific.png" alt="" /></span><span class="tool-txt"><b>Magnific</b><span data-en="generation" data-tr="üretim" data-de="Generierung">generation</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/deepmind.png" alt="" /></span><span class="tool-txt"><b>Nano Banana 2</b><span>Google DeepMind</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/kling.png" alt="" /></span><span class="tool-txt"><b>Kling 3.0</b><span data-en="motion" data-tr="hareket" data-de="Bewegung">motion</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/topaz.png" alt="" /></span><span class="tool-txt"><b>Topaz Video AI</b><span data-en="4K finish" data-tr="4K finiş" data-de="4K-Finish">4K finish</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/after-effects.png" alt="" /></span><span class="tool-txt"><b>After Effects</b><span data-en="edit &amp; grade" data-tr="kurgu &amp; renk" data-de="Schnitt &amp; Grading">edit &amp; grade</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/suno.png" alt="" /></span><span class="tool-txt"><b>Suno</b><span data-en="score" data-tr="müzik" data-de="Score">score</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/claude.png" alt="" /></span><span class="tool-txt"><b>Claude</b><span data-en="direction" data-tr="yönetim" data-de="Regie">direction</span></span></div>
+        <div class="tool"><span class="tool-ico"><img decoding="async" src="assets/img/logos/magnific.png" alt="" /></span><span class="tool-txt"><b>Magnific</b><span data-en="generation" data-tr="üretim" data-de="Generierung">generation</span></span></div>
+        <div class="tool"><span class="tool-ico"><img decoding="async" src="assets/img/logos/deepmind.png" alt="" /></span><span class="tool-txt"><b>Nano Banana 2</b><span>Google DeepMind</span></span></div>
+        <div class="tool"><span class="tool-ico"><img decoding="async" src="assets/img/logos/kling.png" alt="" /></span><span class="tool-txt"><b>Kling 3.0</b><span data-en="motion" data-tr="hareket" data-de="Bewegung">motion</span></span></div>
+        <div class="tool"><span class="tool-ico"><img decoding="async" src="assets/img/logos/topaz.png" alt="" /></span><span class="tool-txt"><b>Topaz Video AI</b><span data-en="4K finish" data-tr="4K finiş" data-de="4K-Finish">4K finish</span></span></div>
+        <div class="tool"><span class="tool-ico"><img decoding="async" src="assets/img/logos/after-effects.png" alt="" /></span><span class="tool-txt"><b>After Effects</b><span data-en="edit &amp; grade" data-tr="kurgu &amp; renk" data-de="Schnitt &amp; Grading">edit &amp; grade</span></span></div>
+        <div class="tool"><span class="tool-ico"><img decoding="async" src="assets/img/logos/suno.png" alt="" /></span><span class="tool-txt"><b>Suno</b><span data-en="score" data-tr="müzik" data-de="Score">score</span></span></div>
+        <div class="tool"><span class="tool-ico"><img decoding="async" src="assets/img/logos/claude.png" alt="" /></span><span class="tool-txt"><b>Claude</b><span data-en="direction" data-tr="yönetim" data-de="Regie">direction</span></span></div>
       </div>
       <div class="license">
         <span class="license-ico" aria-hidden="true">✓</span>
@@ -448,7 +460,7 @@
   <div class="foot-note" data-en="Private preview for the Bushido / rekkitz team." data-tr="Bushido / rekkitz ekibi için özel önizleme." data-de="Private Vorschau für das Bushido / rekkitz Team.">Private preview for the Bushido / rekkitz team.</div>
 </footer>
 
-<div class="lightbox" id="lightbox" aria-hidden="true"><img src="" alt="" /></div>
+<div class="lightbox" id="lightbox" aria-hidden="true"><img decoding="async" src="" alt="" /></div>
 
 <script>
 (function(){
