@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<script>(function(){try{var ok=['en','tr','de'],l;var p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p}else{try{l=localStorage.getItem('lang')}catch(e){}}if(!ok.includes(l)){var n=(navigator.language||'en').slice(0,2).toLowerCase();l=n==='de'?'de':n==='tr'?'tr':'en';}document.documentElement.lang=l;}catch(e){}})();</script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'; object-src 'none'" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,7 +51,7 @@
   .intro-citrine{height:clamp(30px,4.8vw,50px)}
   .intro-x{font-family:'Manrope';font-weight:600;font-size:clamp(1.2rem,2.6vw,1.9rem);color:var(--c1)}
   .intro-bushido{height:clamp(46px,7vw,80px)}
-  .intro-tag{font-family:'Manrope';font-size:.62rem;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:#7ea6d8;opacity:0;animation:introtag 1.4s ease .5s forwards}
+  .intro-tag{font-family:'Manrope';font-size:.62rem;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:#7ea6d8;opacity:0;animation:introtag 1.4s ease .5s forwards;text-align:center;padding:0 20px}
   @keyframes introtag{to{opacity:1}}
   .intro-star{width:34px;height:34px;animation:sljpulse 3.2s ease-in-out infinite}
 
@@ -62,7 +63,12 @@
   @keyframes brandglow{0%,100%{filter:drop-shadow(0 0 4px rgba(46,155,240,.5))}50%{filter:drop-shadow(0 0 13px rgba(92,200,255,.95))}}
   .brand b{font-family:'Manrope';font-weight:700;font-size:.9rem;letter-spacing:.05em;color:var(--muted);transition:color .2s}
   .brand:hover b{color:var(--text)}
-  .private-tag{display:inline-flex;align-items:center;gap:7px;font-family:'Manrope';font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c3);border:1px solid rgba(245,197,66,.3);border-radius:999px;padding:5px 12px}
+  .nav-right{display:flex;align-items:center;gap:11px}
+  .lang-switch{display:flex;gap:2px;background:rgba(120,210,255,.08);border:1px solid var(--card-brd);border-radius:999px;padding:2px}
+  .lang-btn{background:none;border:none;color:var(--muted);font-family:'Manrope';font-weight:700;font-size:.7rem;letter-spacing:.04em;padding:5px 9px;border-radius:999px;cursor:pointer;transition:.2s}
+  .lang-btn.active{background:linear-gradient(135deg,#2e9bf0,#1f7ccf);color:#fff;box-shadow:0 0 14px -4px rgba(46,155,240,.7)}
+  .lang-btn:hover:not(.active){color:var(--text)}
+  .private-tag{display:inline-flex;align-items:center;gap:7px;font-family:'Manrope';font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c3);border:1px solid rgba(245,197,66,.3);border-radius:999px;padding:5px 12px;white-space:nowrap}
   .private-tag .d{width:6px;height:6px;border-radius:50%;background:var(--c3);box-shadow:0 0 8px var(--c3)}
   @keyframes sljpulse{0%,100%{filter:drop-shadow(0 0 6px rgba(245,197,66,.4));transform:scale(1)}50%{filter:drop-shadow(0 0 15px rgba(245,197,66,.8));transform:scale(1.07)}}
 
@@ -92,7 +98,7 @@
   /* collab lockup */
   .collab{display:flex;flex-direction:column;align-items:center;gap:12px;margin:44px auto 0}
   .collab-row{display:flex;align-items:center;gap:clamp(20px,4vw,42px)}
-  .collab-row img{filter:brightness(0) invert(1);opacity:.96;filter:brightness(0) invert(1) drop-shadow(0 6px 22px rgba(46,155,240,.3))}
+  .collab-row img{filter:brightness(0) invert(1) drop-shadow(0 6px 22px rgba(46,155,240,.3));opacity:.96}
   .collab-row .cit{height:clamp(24px,3.4vw,38px)}
   .collab-row .bus{height:clamp(40px,5.4vw,64px)}
   .collab-row .x{font-family:'Manrope';font-weight:600;color:var(--c1);font-size:clamp(1rem,2vw,1.5rem);filter:none}
@@ -107,14 +113,6 @@
   .film h3{font-family:'Manrope';font-size:1.12rem;font-weight:600;margin:16px 0 5px}
   .film p{color:var(--muted);font-size:.9rem}
   .film-vid{width:100%;aspect-ratio:9/16;border-radius:var(--radius);border:1px solid var(--card-brd);background:#04070e;box-shadow:0 30px 80px -40px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.12);display:block;object-fit:cover}
-  .yt{position:relative;aspect-ratio:9/16;border-radius:var(--radius);overflow:hidden;border:1px solid var(--card-brd);background:#04070e;box-shadow:0 30px 80px -40px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.12);cursor:pointer}
-  .yt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
-  .yt:hover img{transform:scale(1.05)}
-  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
-  .yt .pb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:62px;height:62px;border-radius:50%;border:1.5px solid rgba(255,255,255,.7);background:rgba(8,16,34,.34);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;transition:transform .22s,background .22s,box-shadow .22s}
-  .yt .pb::after{content:"";border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff;margin-left:4px}
-  .yt:hover .pb{transform:translate(-50%,-50%) scale(1.1);background:rgba(46,155,240,.62);box-shadow:0 0 30px -2px rgba(46,155,240,.85);border-color:#fff}
-  .yt.playing .pb{opacity:0;pointer-events:none}
 
   /* cast — character intros */
   .char{padding:44px 0;border-top:1px solid var(--card-brd)}
@@ -129,7 +127,6 @@
   .char-strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:13px;background:#0b1524;border:1px solid var(--card-brd)}
   .char-sheets{display:grid;grid-template-columns:1fr;gap:13px;margin-top:13px}
   .char-sheets img{width:100%;border-radius:13px;background:#eef2f6;border:1px solid var(--card-brd)}
-  .char-sheets figcaption{color:#9fd2f8;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
 
   /* catalog */
   .cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
@@ -198,6 +195,7 @@
     .char-strip{grid-template-columns:repeat(3,1fr)}
     .cat-grid{grid-template-columns:1fr}
   }
+  @media(max-width:600px){.private-tag{display:none}}
   @media(max-width:640px){section{padding:78px 0}.hero{padding-top:120px}.stills-grid{grid-template-columns:repeat(2,1fr)}.char-strip{grid-template-columns:1fr 1fr}}
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.rise{opacity:1!important;transform:none!important}}
 </style>
@@ -215,14 +213,21 @@
       <span class="intro-x">×</span>
       <img class="intro-bushido" src="assets/img/logo-bushido.png" alt="BUSHIDO" />
     </div>
-    <div class="intro-tag">Campaign Concept · Produced by Eray Balat</div>
+    <div class="intro-tag" data-en="Campaign Concept · Produced by Eray Balat" data-tr="Kampanya Konsepti · Yapım: Eray Balat" data-de="Kampagnenkonzept · Produziert von Eray Balat">Campaign Concept · Produced by Eray Balat</div>
   </div>
 </div>
 
 <header class="nav">
   <div class="nav-inner">
     <a class="brand" href="/" aria-label="Back to eraybalat.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="bs" cx="47%" cy="43%" r="60%"><stop offset="0%" stop-color="#2ba2d4"/><stop offset="48%" stop-color="#0e5b90"/><stop offset="100%" stop-color="#06142e"/></radialGradient></defs><path d="M50 3 L63.77 16.77 L83.23 16.77 L83.23 36.23 L97 50 L83.23 63.77 L83.23 83.23 L63.77 83.23 L50 97 L36.23 83.23 L16.77 83.23 L16.77 63.77 L3 50 L16.77 36.23 L16.77 16.77 L36.23 16.77 Z" fill="url(#bs)" stroke="#06142e" stroke-width="1.2"/></svg><b>← eraybalat.com</b></a>
-    <span class="private-tag"><span class="d"></span>Private Preview</span>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang="tr" aria-pressed="false" aria-label="Türkçe">TR</button>
+        <button class="lang-btn" data-lang="de" aria-pressed="false" aria-label="Deutsch">DE</button>
+      </div>
+      <span class="private-tag"><span class="d"></span><span data-en="Private Preview" data-tr="Özel Önizleme" data-de="Private Vorschau">Private Preview</span></span>
+    </div>
   </div>
 </header>
 
@@ -230,35 +235,35 @@
 
   <!-- HERO -->
   <section class="hero wrap">
-    <div class="eyebrow rise">Citrine Studio × Bushido · campaign concept</div>
+    <div class="eyebrow rise" data-en="Citrine Studio × Bushido · campaign concept" data-tr="Citrine Studio × Bushido · kampanya konsepti" data-de="Citrine Studio × Bushido · Kampagnenkonzept">Citrine Studio × Bushido · campaign concept</div>
     <h1 class="rise">SABAH RİTÜELİ</h1>
-    <div class="h1-sub rise">THE MORNING RITUAL · KHESHIG EDITION</div>
+    <div class="h1-sub rise" data-en="THE MORNING RITUAL · KHESHIG EDITION" data-tr="SABAH RİTÜELİ · KHESHIG EDİSYONU" data-de="DAS MORGENRITUAL · KHESHIG EDITION">THE MORNING RITUAL · KHESHIG EDITION</div>
     <div class="collab rise">
       <div class="collab-row"><img class="cit" src="assets/img/citrine-white.png" alt="Citrine" /><span class="x">×</span><img class="bus" src="assets/img/logo-bushido.png" alt="Bushido" /></div>
-      <div class="collab-cap">Built by Citrine Studio · for Bushido — rekkitz</div>
+      <div class="collab-cap" data-en="Built by Citrine Studio · for Bushido — rekkitz" data-tr="Citrine Studio yapımı · Bushido için — rekkitz" data-de="Von Citrine Studio · für Bushido — rekkitz">Built by Citrine Studio · for Bushido — rekkitz</div>
     </div>
-    <p class="rise">A complete AI-produced campaign — a two-character cast, a 4K catalog, three films and a custom score. Every frame directed and finished by me.</p>
-    <div class="meta rise">3 FILMS · 2 CHARACTERS · 6 PRODUCTS · 4K MASTERS · FULLY LICENSED</div>
+    <p class="rise" data-en="A complete AI-produced campaign — a two-character cast, a 4K catalog, three films and a custom score. Every frame directed and finished by me." data-tr="Baştan sona yapay zekâ ile üretilmiş bir kampanya — iki kişilik bir kadro, 4K ürün kataloğu, üç film ve özgün müzik. Her kare bizzat benim tarafımdan yönetildi ve tamamlandı." data-de="Eine komplett KI-produzierte Kampagne — ein Zwei-Personen-Cast, ein 4K-Katalog, drei Filme und ein eigener Score. Jedes Bild von mir inszeniert und finalisiert.">A complete AI-produced campaign — a two-character cast, a 4K catalog, three films and a custom score. Every frame directed and finished by me.</p>
+    <div class="meta rise" data-en="3 FILMS · 2 CHARACTERS · 6 PRODUCTS · 4K MASTERS · FULLY LICENSED" data-tr="3 FİLM · 2 KARAKTER · 6 ÜRÜN · 4K MASTER · TAM LİSANSLI" data-de="3 FILME · 2 CHARAKTERE · 6 PRODUKTE · 4K-MASTER · VOLL LIZENZIERT">3 FILMS · 2 CHARACTERS · 6 PRODUCTS · 4K MASTERS · FULLY LICENSED</div>
     <div class="slj-divider rise" aria-hidden="true"><span class="l"></span><span class="s"></span><span class="l"></span></div>
   </section>
 
   <!-- FILMS -->
   <section class="wrap">
-    <div class="eyebrow rise">01 · The Films</div>
-    <h2 class="sec-title rise">Three films, one morning</h2>
-    <p class="intro-p rise">Vertical, 4K, 24fps. A custom score on each film; a Turkish voice-over on the men's.</p>
+    <div class="eyebrow rise" data-en="01 · The Films" data-tr="01 · Filmler" data-de="01 · Die Filme">01 · The Films</div>
+    <h2 class="sec-title rise" data-en="Three films, one morning" data-tr="Üç film, tek bir sabah" data-de="Drei Filme, ein Morgen">Three films, one morning</h2>
+    <p class="intro-p rise" data-en="Vertical, 4K, 24fps. A custom score on each film; a Turkish voice-over on the men's." data-tr="Dikey, 4K, 24fps. Her filmde özgün müzik; erkek filminde Türkçe seslendirme." data-de="Vertikal, 4K, 24fps. Eigener Score pro Film; türkisches Voice-over im Männerfilm.">Vertical, 4K, 24fps. A custom score on each film; a Turkish voice-over on the men's.</p>
     <div class="film-hero rise">
       <video class="film-vid" controls playsinline preload="metadata" poster="assets/video/poster-3.jpg"><source src="assets/video/film-3.mp4" type="video/mp4" />Your browser does not support the video tag.</video>
-      <div class="film-cap"><h3>The Reel — Sabah Ritüeli</h3><p>The hero film — both rituals cut into one morning.</p></div>
+      <div class="film-cap"><h3 data-en="The Reel — Sabah Ritüeli" data-tr="Reel — Sabah Ritüeli" data-de="Der Reel — Sabah Ritüeli">The Reel — Sabah Ritüeli</h3><p data-en="The hero film — both rituals cut into one morning." data-tr="Ana film — iki ritüel tek bir sabahta." data-de="Der Hauptfilm — beide Rituale in einem Morgen.">The hero film — both rituals cut into one morning.</p></div>
     </div>
     <div class="films-grid">
       <div class="film rise">
         <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-1.jpg"><source src="assets/video/film-1.mp4" type="video/mp4" /></video>
-        <h3>Her Ritual</h3><p>Yağ Dengesi face bar — water, lather, light.</p>
+        <h3 data-en="Her Ritual" data-tr="Kadının Ritüeli" data-de="Ihr Ritual">Her Ritual</h3><p data-en="Yağ Dengesi face bar — water, lather, light." data-tr="Yağ Dengesi yüz barı — su, köpük, ışık." data-de="Yağ Dengesi Gesichtsseife — Wasser, Schaum, Licht.">Yağ Dengesi face bar — water, lather, light.</p>
       </div>
       <div class="film rise">
         <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-2.jpg"><source src="assets/video/film-2.mp4" type="video/mp4" /></video>
-        <h3>His Ritual</h3><p>Nord beard oil — slow-motion drops, Turkish VO.</p>
+        <h3 data-en="His Ritual" data-tr="Erkeğin Ritüeli" data-de="Sein Ritual">His Ritual</h3><p data-en="Nord beard oil — slow-motion drops, Turkish VO." data-tr="Nord sakal yağı — ağır çekim damlalar, Türkçe seslendirme." data-de="Nord Bartöl — Zeitlupen-Tropfen, türkisches Voice-over.">Nord beard oil — slow-motion drops, Turkish VO.</p>
       </div>
     </div>
   </section>
@@ -267,18 +272,18 @@
 
   <!-- CAST -->
   <section class="wrap">
-    <div class="eyebrow rise">02 · The Cast</div>
-    <h2 class="sec-title rise">Two people who don't exist</h2>
-    <p class="intro-p rise">Before any scene, I built the humans — Ayla and Kaan, fully synthetic, one locked identity each.</p>
+    <div class="eyebrow rise" data-en="02 · The Cast" data-tr="02 · Kadro" data-de="02 · Der Cast">02 · The Cast</div>
+    <h2 class="sec-title rise" data-en="Two people who don't exist" data-tr="Var olmayan iki insan" data-de="Zwei Menschen, die nicht existieren">Two people who don't exist</h2>
+    <p class="intro-p rise" data-en="Before any scene, I built the humans — Ayla and Kaan, fully synthetic, one locked identity each." data-tr="Herhangi bir sahneden önce insanları kurdum — Ayla ve Kaan, tamamen sentetik, her biri sabit tek bir kimlik." data-de="Vor jeder Szene habe ich die Menschen erschaffen — Ayla und Kaan, vollständig synthetisch, je eine fixierte Identität.">Before any scene, I built the humans — Ayla and Kaan, fully synthetic, one locked identity each.</p>
 
     <div class="char rise">
       <div class="char-top">
         <img class="char-portrait" src="assets/img/cast/ayla-master.jpg" alt="Ayla — identity master" loading="lazy" />
         <div class="char-info">
-          <span class="char-tag">Character 01</span>
+          <span class="char-tag" data-en="Character 01" data-tr="Karakter 01" data-de="Charakter 01">Character 01</span>
           <h3 class="char-name">Ayla</h3>
-          <p class="char-role">The face of Her Ritual</p>
-          <p class="char-desc">A fully synthetic identity, locked with a base master and multi-view sheets — the same face across every scene, mask and slow-motion frame.</p>
+          <p class="char-role" data-en="The face of Her Ritual" data-tr="Kadının Ritüeli'nin yüzü" data-de="Das Gesicht von Ihr Ritual">The face of Her Ritual</p>
+          <p class="char-desc" data-en="A fully synthetic identity, locked with a base master and multi-view sheets — the same face across every scene, mask and slow-motion frame." data-tr="Tamamen sentetik bir kimlik; bir ana referans ve çok açılı karakter sayfalarıyla sabitlendi — her sahnede, maskede ve ağır çekim karede aynı yüz." data-de="Eine vollständig synthetische Identität, fixiert mit einem Basis-Master und Multi-View-Sheets — dasselbe Gesicht in jeder Szene, Maske und Zeitlupe.">A fully synthetic identity, locked with a base master and multi-view sheets — the same face across every scene, mask and slow-motion frame.</p>
         </div>
       </div>
       <div class="char-strip">
@@ -296,10 +301,10 @@
       <div class="char-top">
         <img class="char-portrait" src="assets/img/cast/kaan-master.jpg" alt="Kaan — identity master" loading="lazy" />
         <div class="char-info">
-          <span class="char-tag">Character 02</span>
+          <span class="char-tag" data-en="Character 02" data-tr="Karakter 02" data-de="Charakter 02">Character 02</span>
           <h3 class="char-name">Kaan</h3>
-          <p class="char-role">The face of His Ritual</p>
-          <p class="char-desc">Same lock, same discipline — one identity held across studio, bathroom and every beard-oil close-up.</p>
+          <p class="char-role" data-en="The face of His Ritual" data-tr="Erkeğin Ritüeli'nin yüzü" data-de="Das Gesicht von Sein Ritual">The face of His Ritual</p>
+          <p class="char-desc" data-en="Same lock, same discipline — one identity held across studio, bathroom and every beard-oil close-up." data-tr="Aynı sabitlik, aynı disiplin — stüdyoda, banyoda ve her sakal yağı yakın planında tek bir kimlik." data-de="Gleiche Fixierung, gleiche Disziplin — eine Identität durch Studio, Bad und jede Bartöl-Nahaufnahme.">Same lock, same discipline — one identity held across studio, bathroom and every beard-oil close-up.</p>
         </div>
       </div>
       <div class="char-strip">
@@ -318,16 +323,16 @@
 
   <!-- CATALOG -->
   <section class="wrap">
-    <div class="eyebrow rise">03 · The Catalog</div>
-    <h2 class="sec-title rise">The catalog, built in 4K</h2>
-    <p class="intro-p rise">Every product rebuilt from scratch as clean 4K packshots. No photography, no samples.</p>
+    <div class="eyebrow rise" data-en="03 · The Catalog" data-tr="03 · Katalog" data-de="03 · Der Katalog">03 · The Catalog</div>
+    <h2 class="sec-title rise" data-en="The catalog, built in 4K" data-tr="Katalog, 4K'da yeniden inşa edildi" data-de="Der Katalog, in 4K aufgebaut">The catalog, built in 4K</h2>
+    <p class="intro-p rise" data-en="Every product rebuilt from scratch as clean 4K packshots. No photography, no samples." data-tr="Her ürün sıfırdan temiz 4K stüdyo çekimi olarak yeniden üretildi. Fotoğraf yok, numune yok." data-de="Jedes Produkt von Grund auf als saubere 4K-Packshots neu erstellt. Keine Fotografie, keine Muster.">Every product rebuilt from scratch as clean 4K packshots. No photography, no samples.</p>
     <div class="cat-grid">
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">01</span><span class="cat-name">The Kheshig Tee</span><span class="cat-desc">Oversized cotton tee · front &amp; back print</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/kheshig-front.jpg" alt="Kheshig tee front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/kheshig-back.jpg" alt="Kheshig tee back print" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">02</span><span class="cat-name">Börü Neck Gaiter</span><span class="cat-desc">Seamless tube bandana · beast print</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/buff-front.jpg" alt="Börü neck gaiter front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/buff-side.jpg" alt="Börü neck gaiter side" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">03</span><span class="cat-name">Basic Boxer</span><span class="cat-desc">Cotton-stretch trunk · woven waistband</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/boxer-single.jpg" alt="Basic boxer" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/boxer-stack.jpg" alt="Basic boxer three pack" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">04</span><span class="cat-name">Nord Beard Oil</span><span class="cat-desc">50ml amber dropper · printed carton</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/nord-duo.jpg" alt="Nord beard oil bottle and box" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/nord-solo.jpg" alt="Nord beard oil bottle" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">05</span><span class="cat-name">Ronin Basketball Short</span><span class="cat-desc">Mesh performance short · side stripe</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/shorts-front.jpg" alt="Ronin basketball short front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/shorts-angle.jpg" alt="Ronin basketball short angle" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">06</span><span class="cat-name">Yağ Dengesi Face Bar</span><span class="cat-desc">120g cleansing bar · kraft sleeve</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/soap-stack.jpg" alt="Yağ Dengesi face bar and box" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/soap-solo.jpg" alt="Yağ Dengesi face bar" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">01</span><span class="cat-name">The Kheshig Tee</span><span class="cat-desc" data-en="Oversized cotton tee · front &amp; back print" data-tr="Oversize pamuklu tişört · ön &amp; arka baskı" data-de="Oversize-Baumwoll-Shirt · Front- &amp; Rückenprint">Oversized cotton tee · front &amp; back print</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/kheshig-front.jpg" alt="Kheshig tee front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/kheshig-back.jpg" alt="Kheshig tee back print" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">02</span><span class="cat-name">Börü Neck Gaiter</span><span class="cat-desc" data-en="Seamless tube bandana · beast print" data-tr="Dikişsiz boyunluk · canavar baskı" data-de="Nahtloses Schlauchtuch · Bestien-Print">Seamless tube bandana · beast print</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/buff-front.jpg" alt="Börü neck gaiter front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/buff-side.jpg" alt="Börü neck gaiter side" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">03</span><span class="cat-name">Basic Boxer</span><span class="cat-desc" data-en="Cotton-stretch trunk · woven waistband" data-tr="Pamuk-likra boxer · dokuma bel" data-de="Baumwoll-Stretch-Boxer · gewebter Bund">Cotton-stretch trunk · woven waistband</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/boxer-single.jpg" alt="Basic boxer" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/boxer-stack.jpg" alt="Basic boxer three pack" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">04</span><span class="cat-name">Nord Beard Oil</span><span class="cat-desc" data-en="50ml amber dropper · printed carton" data-tr="50ml amber damlalık · baskılı kutu" data-de="50ml Amber-Pipette · bedruckte Verpackung">50ml amber dropper · printed carton</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/nord-duo.jpg" alt="Nord beard oil bottle and box" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/nord-solo.jpg" alt="Nord beard oil bottle" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">05</span><span class="cat-name">Ronin Basketball Short</span><span class="cat-desc" data-en="Mesh performance short · side stripe" data-tr="Fileli performans şortu · yan şerit" data-de="Mesh-Performance-Short · Seitenstreifen">Mesh performance short · side stripe</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/shorts-front.jpg" alt="Ronin basketball short front" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/shorts-angle.jpg" alt="Ronin basketball short angle" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">06</span><span class="cat-name">Yağ Dengesi Face Bar</span><span class="cat-desc" data-en="120g cleansing bar · kraft sleeve" data-tr="120g temizleme barı · kraft ambalaj" data-de="120g Reinigungsstück · Kraft-Hülle">120g cleansing bar · kraft sleeve</span></div><div class="cat-shots"><div class="cat-shot"><img src="assets/img/catalog/soap-stack.jpg" alt="Yağ Dengesi face bar and box" loading="lazy" /></div><div class="cat-shot"><img src="assets/img/catalog/soap-solo.jpg" alt="Yağ Dengesi face bar" loading="lazy" /></div></div></div>
     </div>
   </section>
 
@@ -335,8 +340,8 @@
 
   <!-- STILLS -->
   <section class="wrap">
-    <div class="eyebrow rise">04 · Stills</div>
-    <h2 class="sec-title rise">Frames from the films</h2>
+    <div class="eyebrow rise" data-en="04 · Stills" data-tr="04 · Kareler" data-de="04 · Stills">04 · Stills</div>
+    <h2 class="sec-title rise" data-en="Frames from the films" data-tr="Filmlerden kareler" data-de="Bilder aus den Filmen">Frames from the films</h2>
     <div class="stills-grid rise">
       <img src="assets/img/stills/still-w-foam.jpg" alt="Film still" loading="lazy" />
       <img src="assets/img/stills/still-m-drops.jpg" alt="Film still" loading="lazy" />
@@ -354,45 +359,45 @@
 
   <!-- PROCESS -->
   <section class="wrap">
-    <div class="eyebrow rise">05 · Process</div>
-    <h2 class="sec-title rise">How I built it</h2>
+    <div class="eyebrow rise" data-en="05 · Process" data-tr="05 · Süreç" data-de="05 · Prozess">05 · Process</div>
+    <h2 class="sec-title rise" data-en="How I built it" data-tr="Nasıl yaptım" data-de="Wie ich es gebaut habe">How I built it</h2>
     <div class="proc-grid">
-      <div class="proc-step rise"><div class="n">01</div><h3>Product DNA</h3><p>Every product rebuilt as clean 4K packshots, line for line.</p></div>
-      <div class="proc-step rise"><div class="n">02</div><h3>Cast System</h3><p>Two synthetic characters, identity-locked across every frame.</p></div>
-      <div class="proc-step rise"><div class="n">03</div><h3>Scene System</h3><p>Magnific flows on Google's Nano Banana 2, multi-reference.</p></div>
-      <div class="proc-step rise"><div class="n">04</div><h3>Motion</h3><p>Directed into motion in Kling 3.0 with structured JSON.</p></div>
-      <div class="proc-step rise"><div class="n">05</div><h3>Finish</h3><p>4K in Topaz, edited and graded in After Effects.</p></div>
-      <div class="proc-step rise"><div class="n">06</div><h3>Sound</h3><p>Custom score in Suno, plus a Turkish voice-over.</p></div>
+      <div class="proc-step rise"><div class="n">01</div><h3 data-en="Product DNA" data-tr="Ürün DNA'sı" data-de="Produkt-DNA">Product DNA</h3><p data-en="Every product rebuilt as clean 4K packshots, line for line." data-tr="Her ürün, satır satır, temiz 4K çekim olarak yeniden üretildi." data-de="Jedes Produkt als sauberer 4K-Packshot neu aufgebaut, Zeile für Zeile.">Every product rebuilt as clean 4K packshots, line for line.</p></div>
+      <div class="proc-step rise"><div class="n">02</div><h3 data-en="Cast System" data-tr="Kadro Sistemi" data-de="Cast-System">Cast System</h3><p data-en="Two synthetic characters, identity-locked across every frame." data-tr="İki sentetik karakter, her karede kimlik sabit." data-de="Zwei synthetische Charaktere, identitätsfixiert in jedem Bild.">Two synthetic characters, identity-locked across every frame.</p></div>
+      <div class="proc-step rise"><div class="n">03</div><h3 data-en="Scene System" data-tr="Sahne Sistemi" data-de="Szenen-System">Scene System</h3><p data-en="Magnific flows on Google's Nano Banana 2, multi-reference." data-tr="Google Nano Banana 2 üzerinde Magnific akışları, çoklu referans." data-de="Magnific-Flows auf Googles Nano Banana 2, Multi-Referenz.">Magnific flows on Google's Nano Banana 2, multi-reference.</p></div>
+      <div class="proc-step rise"><div class="n">04</div><h3 data-en="Motion" data-tr="Hareket" data-de="Bewegung">Motion</h3><p data-en="Directed into motion in Kling 3.0 with structured JSON." data-tr="Kling 3.0'da yapılandırılmış JSON ile harekete yönlendirildi." data-de="In Kling 3.0 mit strukturiertem JSON in Bewegung gebracht.">Directed into motion in Kling 3.0 with structured JSON.</p></div>
+      <div class="proc-step rise"><div class="n">05</div><h3 data-en="Finish" data-tr="Finiş" data-de="Finish">Finish</h3><p data-en="4K in Topaz, edited and graded in After Effects." data-tr="Topaz'da 4K, After Effects'te kurgu ve renk." data-de="4K in Topaz, Schnitt und Grading in After Effects.">4K in Topaz, edited and graded in After Effects.</p></div>
+      <div class="proc-step rise"><div class="n">06</div><h3 data-en="Sound" data-tr="Ses" data-de="Sound">Sound</h3><p data-en="Custom score in Suno, plus a Turkish voice-over." data-tr="Suno'da özgün müzik, artı Türkçe seslendirme." data-de="Eigener Score in Suno, plus türkisches Voice-over.">Custom score in Suno, plus a Turkish voice-over.</p></div>
     </div>
     <div class="tools rise">
-      <div class="lbl">Tool stack · every license paid</div>
+      <div class="lbl" data-en="Tool stack · every license paid" data-tr="Araç seti · tüm lisanslar ücretli" data-de="Tool-Stack · jede Lizenz bezahlt">Tool stack · every license paid</div>
       <div class="tools-grid">
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/magnific.png" alt="" /></span><span class="tool-txt"><b>Magnific</b><span>generation</span></span></div>
+        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/magnific.png" alt="" /></span><span class="tool-txt"><b>Magnific</b><span data-en="generation" data-tr="üretim" data-de="Generierung">generation</span></span></div>
         <div class="tool"><span class="tool-ico"><img src="assets/img/logos/deepmind.png" alt="" /></span><span class="tool-txt"><b>Nano Banana 2</b><span>Google DeepMind</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/kling.png" alt="" /></span><span class="tool-txt"><b>Kling 3.0</b><span>motion</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/topaz.png" alt="" /></span><span class="tool-txt"><b>Topaz Video AI</b><span>4K finish</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/after-effects.png" alt="" /></span><span class="tool-txt"><b>After Effects</b><span>edit &amp; grade</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/suno.png" alt="" /></span><span class="tool-txt"><b>Suno</b><span>score</span></span></div>
-        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/claude.png" alt="" /></span><span class="tool-txt"><b>Claude</b><span>direction</span></span></div>
+        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/kling.png" alt="" /></span><span class="tool-txt"><b>Kling 3.0</b><span data-en="motion" data-tr="hareket" data-de="Bewegung">motion</span></span></div>
+        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/topaz.png" alt="" /></span><span class="tool-txt"><b>Topaz Video AI</b><span data-en="4K finish" data-tr="4K finiş" data-de="4K-Finish">4K finish</span></span></div>
+        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/after-effects.png" alt="" /></span><span class="tool-txt"><b>After Effects</b><span data-en="edit &amp; grade" data-tr="kurgu &amp; renk" data-de="Schnitt &amp; Grading">edit &amp; grade</span></span></div>
+        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/suno.png" alt="" /></span><span class="tool-txt"><b>Suno</b><span data-en="score" data-tr="müzik" data-de="Score">score</span></span></div>
+        <div class="tool"><span class="tool-ico"><img src="assets/img/logos/claude.png" alt="" /></span><span class="tool-txt"><b>Claude</b><span data-en="direction" data-tr="yönetim" data-de="Regie">direction</span></span></div>
       </div>
       <div class="license">
         <span class="license-ico" aria-hidden="true">✓</span>
         <div class="license-txt">
-          <b>Licensed, premium, private</b>
-          <p>Produced privately for rekkitz on paid professional plans — full commercial rights on every frame, no watermarks, no licensing gaps.</p>
-          <div class="license-chips"><span>Magnific · Business</span><span>Topaz · Studio Pro</span><span>Kling · paid</span><span>Suno · Premier</span></div>
+          <b data-en="Licensed, premium, private" data-tr="Lisanslı, premium, özel" data-de="Lizenziert, premium, privat">Licensed, premium, private</b>
+          <p data-en="Produced privately for rekkitz on paid professional plans — full commercial rights on every frame, no watermarks, no licensing gaps." data-tr="rekkitz için özel olarak, ücretli profesyonel planlarla üretildi — her karede tam ticari haklar, filigran yok, lisans boşluğu yok." data-de="Privat für rekkitz auf bezahlten Profi-Plänen produziert — volle kommerzielle Rechte an jedem Bild, keine Wasserzeichen, keine Lizenzlücken.">Produced privately for rekkitz on paid professional plans — full commercial rights on every frame, no watermarks, no licensing gaps.</p>
+          <div class="license-chips"><span>Magnific · Business</span><span>Topaz · Studio Pro</span><span data-en="Kling · paid" data-tr="Kling · ücretli" data-de="Kling · bezahlt">Kling · paid</span><span>Suno · Premier</span></div>
         </div>
       </div>
     </div>
-    <p class="proc-emph rise">The hard part isn't one beautiful image — it's the two-hundredth frame agreeing with the first. That consistency is the whole point.</p>
+    <p class="proc-emph rise" data-en="The hard part isn't one beautiful image — it's the two-hundredth frame agreeing with the first. That consistency is the whole point." data-tr="Zor olan tek bir güzel kare değil — ikiyüzüncü karenin birinciyle uyuşması. Bütün mesele o tutarlılık." data-de="Das Schwierige ist nicht ein schönes Bild — es ist das zweihundertste Bild, das mit dem ersten übereinstimmt. Genau diese Konsistenz ist der Punkt.">The hard part isn't one beautiful image — it's the two-hundredth frame agreeing with the first. That consistency is the whole point.</p>
   </section>
 
   <!-- CTA / FOOTER -->
   <section class="wrap">
     <div class="cta-band rise">
-      <div class="eyebrow" style="justify-content:center">Let's work</div>
-      <h2 class="sec-title" style="margin-left:auto;margin-right:auto">This is one morning. Imagine a season.</h2>
-      <p>Campaign concepts, product films, brand characters — end-to-end, fast, fully licensed. Let's talk scope and pricing.</p>
+      <div class="eyebrow" style="justify-content:center" data-en="Let's work" data-tr="Çalışalım" data-de="Arbeiten wir zusammen">Let's work</div>
+      <h2 class="sec-title" style="margin-left:auto;margin-right:auto" data-en="This is one morning. Imagine a season." data-tr="Bu tek bir sabah. Bir sezonu hayal et." data-de="Das ist ein Morgen. Stell dir eine ganze Saison vor.">This is one morning. Imagine a season.</h2>
+      <p data-en="Campaign concepts, product films, brand characters — end-to-end, fast, fully licensed. Let's talk scope and pricing." data-tr="Kampanya konseptleri, ürün filmleri, marka karakterleri — baştan sona, hızlı, tam lisanslı. Kapsam ve fiyatı konuşalım." data-de="Kampagnenkonzepte, Produktfilme, Markencharaktere — end-to-end, schnell, voll lizenziert. Sprechen wir über Umfang und Preis.">Campaign concepts, product films, brand characters — end-to-end, fast, fully licensed. Let's talk scope and pricing.</p>
       <a class="cta-btn" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a>
       <div class="cta-links">
         <a href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener">Upwork</a>
@@ -407,7 +412,7 @@
 
 <footer>
   <b>Eray Balat</b> · Citrine Studio · 2026<br />
-  A private, unlisted preview prepared for the Bushido / rekkitz team. All Bushido trademarks and product designs belong to Bushido.
+  <span data-en="A private, unlisted preview prepared for the Bushido / rekkitz team. All Bushido trademarks and product designs belong to Bushido." data-tr="Bushido / rekkitz ekibi için hazırlanmış özel, listelenmemiş bir önizleme. Tüm Bushido markaları ve ürün tasarımları Bushido'ya aittir." data-de="Eine private, nicht gelistete Vorschau für das Bushido / rekkitz Team. Alle Bushido-Marken und Produktdesigns gehören Bushido.">A private, unlisted preview prepared for the Bushido / rekkitz team. All Bushido trademarks and product designs belong to Bushido.</span>
 </footer>
 
 <div class="lightbox" id="lightbox" aria-hidden="true"><img src="" alt="" /></div>
@@ -418,6 +423,15 @@
   var intro=document.getElementById('intro');
   function dismiss(){ if(intro){intro.classList.add('gone');} }
   if(intro){ intro.addEventListener('click',dismiss); setTimeout(dismiss,2700); }
+  // i18n
+  function setLang(lang){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-en]').forEach(function(el){ if(el.dataset[lang]!==undefined) el.innerHTML=el.dataset[lang]; });
+    document.querySelectorAll('.lang-btn').forEach(function(b){ var on=b.dataset.lang===lang; b.classList.toggle('active',on); b.setAttribute('aria-pressed',on?'true':'false'); });
+    try{localStorage.setItem('lang',lang)}catch(e){}
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.addEventListener('click',function(){ setLang(b.dataset.lang); }); });
+  (function(){ var ok=['en','tr','de'],l; var p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||''; if(ok.indexOf(p)>-1){l=p} else { try{l=localStorage.getItem('lang')}catch(e){} } if(ok.indexOf(l)<0){ var n=(navigator.language||'en').slice(0,2).toLowerCase(); l=n==='de'?'de':n==='tr'?'tr':'en'; } setLang(l); })();
   // reveal on scroll
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
   [].forEach.call(document.querySelectorAll('.rise'),function(el,i){el.style.transitionDelay=(Math.min(i%5,4)*0.06)+'s';io.observe(el);});
