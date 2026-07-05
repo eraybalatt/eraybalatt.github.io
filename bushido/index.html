@@ -126,7 +126,14 @@
   .film{text-align:center}
   .film h3{font-family:'Manrope';font-size:1.12rem;font-weight:600;margin:16px 0 5px}
   .film p{color:var(--muted);font-size:.9rem}
-  .film-vid{width:100%;aspect-ratio:9/16;border-radius:var(--radius);border:1px solid var(--card-brd);background:#04070e;box-shadow:0 30px 80px -40px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.12);display:block;object-fit:cover;cursor:pointer}
+  .film-media{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 80px -40px rgba(46,155,240,.6)}
+  .film-vid{width:100%;aspect-ratio:9/16;border-radius:var(--radius);border:1px solid var(--card-brd);background:#04070e;box-shadow:inset 0 1px 0 rgba(180,228,255,.12);display:block;object-fit:cover;cursor:pointer}
+  .vtoggle{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:transparent;border:none;padding:0;cursor:pointer;border-radius:var(--radius);-webkit-tap-highlight-color:transparent}
+  .vplay{width:66px;height:66px;border-radius:50%;background:rgba(6,14,28,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(180,228,255,.6);box-shadow:0 10px 30px -8px rgba(0,0,0,.6);position:relative;transition:opacity .3s,transform .3s}
+  .vplay::after{content:"";position:absolute;top:50%;left:53%;transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #eaf2ff}
+  .vtoggle:hover .vplay{transform:scale(1.09);background:rgba(46,155,240,.6);border-color:var(--c1)}
+  .film-media.playing .vplay{opacity:0;transform:scale(.65)}
+  .vbar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--c1);box-shadow:0 0 8px var(--c1);pointer-events:none;transition:width .12s linear;border-bottom-left-radius:var(--radius)}
   .yt-btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:'Manrope';font-weight:600;font-size:.82rem;color:#fff;background:linear-gradient(135deg,#2e9bf0,#1f7ccf);border:1px solid rgba(120,210,255,.45);border-radius:11px;padding:9px 16px;box-shadow:0 10px 24px -12px rgba(46,155,240,.7);transition:transform .2s,box-shadow .2s}
   .yt-btn:hover{transform:translateY(-2px);box-shadow:0 15px 32px -12px rgba(46,155,240,.95)}
   .yt-btn svg{flex:0 0 auto}
@@ -285,17 +292,29 @@
     <p class="intro-p rise" data-en="Vertical, 4K, 24fps. A custom score on each film; a Turkish voice-over on the men's." data-tr="Dikey, 4K, 24fps. Her filmde özgün müzik; erkek filminde Türkçe seslendirme." data-de="Vertikal, 4K, 24fps. Eigener Score pro Film; türkisches Voice-over im Männerfilm.">Vertical, 4K, 24fps. A custom score on each film; a Turkish voice-over on the men's.</p>
     <div class="films-grid">
       <div class="film rise">
-        <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-1.jpg"><source src="assets/video/film-1.mp4" type="video/mp4" /></video>
+        <div class="film-media">
+          <video class="film-vid" playsinline preload="none" poster="assets/video/poster-1.jpg"><source src="assets/video/film-1.mp4" type="video/mp4" /></video>
+          <button class="vtoggle" type="button" aria-label="Play or pause"><span class="vplay" aria-hidden="true"></span></button>
+          <span class="vbar" aria-hidden="true"></span>
+        </div>
         <h3 data-en="Her Ritual" data-tr="Kadının Ritüeli" data-de="Ihr Ritual">Her Ritual</h3><p data-en="Yağ Dengesi face bar — water, lather, light." data-tr="Yağ Dengesi yüz barı — su, köpük, ışık." data-de="Yağ Dengesi Gesichtsseife — Wasser, Schaum, Licht.">Yağ Dengesi face bar — water, lather, light.</p>
         <a class="yt-btn" href="https://youtube.com/shorts/CZcjyTpPM_M" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
       <div class="film rise">
-        <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-3.jpg"><source src="assets/video/film-3.mp4" type="video/mp4" /></video>
+        <div class="film-media">
+          <video class="film-vid" playsinline preload="none" poster="assets/video/poster-3.jpg"><source src="assets/video/film-3.mp4" type="video/mp4" /></video>
+          <button class="vtoggle" type="button" aria-label="Play or pause"><span class="vplay" aria-hidden="true"></span></button>
+          <span class="vbar" aria-hidden="true"></span>
+        </div>
         <h3 data-en="The Reel — Sabah Ritüeli" data-tr="Reel — Sabah Ritüeli" data-de="Der Reel — Sabah Ritüeli">The Reel — Sabah Ritüeli</h3><p data-en="The hero film — both rituals in one morning." data-tr="Ana film — iki ritüel tek bir sabahta." data-de="Der Hauptfilm — beide Rituale in einem Morgen.">The hero film — both rituals in one morning.</p>
         <a class="yt-btn" href="https://youtube.com/shorts/TGTcOunFfUY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
       <div class="film rise">
-        <video class="film-vid" controls playsinline preload="none" poster="assets/video/poster-2.jpg"><source src="assets/video/film-2.mp4" type="video/mp4" /></video>
+        <div class="film-media">
+          <video class="film-vid" playsinline preload="none" poster="assets/video/poster-2.jpg"><source src="assets/video/film-2.mp4" type="video/mp4" /></video>
+          <button class="vtoggle" type="button" aria-label="Play or pause"><span class="vplay" aria-hidden="true"></span></button>
+          <span class="vbar" aria-hidden="true"></span>
+        </div>
         <h3 data-en="His Ritual" data-tr="Erkeğin Ritüeli" data-de="Sein Ritual">His Ritual</h3><p data-en="Nord beard oil — slow-motion drops, Turkish VO." data-tr="Nord sakal yağı — ağır çekim damlalar, Türkçe seslendirme." data-de="Nord Bartöl — Zeitlupen-Tropfen, türkisches Voice-over.">Nord beard oil — slow-motion drops, Turkish VO.</p>
         <a class="yt-btn" href="https://youtube.com/shorts/m5UfRGEmqSA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
@@ -478,12 +497,19 @@
   // reveal on scroll
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
   [].forEach.call(document.querySelectorAll('.rise'),function(el,i){el.style.transitionDelay=(Math.min(i%5,4)*0.06)+'s';io.observe(el);});
-  // one film plays at a time
+  // tap-to-play/pause films (custom controls, one at a time)
   var vids=[].slice.call(document.querySelectorAll('.film-vid'));
   vids.forEach(function(v){
-    v.addEventListener('play',function(){ vids.forEach(function(o){ if(o!==v) o.pause(); }); });
-    // tap/click anywhere on the video to play or pause; leave the bottom control-bar strip to native controls while playing
-    v.addEventListener('click',function(e){ var r=v.getBoundingClientRect(); if(!v.paused && e.clientY>r.bottom-46) return; if(v.paused){ v.play(); } else { v.pause(); } });
+    var media=v.closest('.film-media');
+    var btn=media&&media.querySelector('.vtoggle');
+    var bar=media&&media.querySelector('.vbar');
+    var lastT=0;
+    function toggle(e){ if(e){ e.preventDefault(); e.stopPropagation(); } var n=Date.now(); if(n-lastT<220) return; lastT=n; if(v.paused){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); } else { v.pause(); } }
+    if(btn) btn.addEventListener('click',toggle);
+    v.addEventListener('play',function(){ if(media)media.classList.add('playing'); vids.forEach(function(o){ if(o!==v) o.pause(); }); });
+    v.addEventListener('pause',function(){ if(media)media.classList.remove('playing'); });
+    v.addEventListener('ended',function(){ if(media)media.classList.remove('playing'); if(bar)bar.style.width='0%'; });
+    v.addEventListener('timeupdate',function(){ if(bar&&v.duration) bar.style.width=(v.currentTime/v.duration*100)+'%'; });
   });
   // lightbox
   var lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img');
