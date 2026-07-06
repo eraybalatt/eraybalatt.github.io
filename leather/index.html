@@ -161,10 +161,47 @@
     .order{justify-content:center}
   }
   @media(max-width:412px){ .nav-brand{display:none} }
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
+
+  /* ===== archery opening ===== */
+  #intro{position:fixed;inset:0;z-index:9999;background:radial-gradient(72% 62% at 50% 44%,#12294a,#0a1526 72%);display:flex;align-items:center;justify-content:center;overflow:hidden;will-change:transform;animation:introOut 2.7s .1s cubic-bezier(.76,0,.6,1) forwards}
+  #intro.skip{animation:none;transform:translateX(108%);transition:transform .42s ease}
+  @keyframes introOut{0%,62%{transform:translateX(0)}100%{transform:translateX(108%)}}
+  #intro::before{content:"";position:absolute;inset:0;opacity:.26;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20width%3D'40'%20height%3D'40'%20viewBox%3D'0%200%2040%2040'%3E%3Cpath%20d%3D'M20%205%20L24%2016%20L36%2016%20L26%2023%20L30%2035%20L20%2028%20L10%2035%20L14%2023%20L4%2016%20L16%2016%20Z'%20fill%3D'none'%20stroke%3D'%23c9a24b'%20stroke-width%3D'1'/%3E%3C/svg%3E");background-size:58px 58px;-webkit-mask-image:radial-gradient(62% 62% at 50% 46%,#000,transparent 80%);mask-image:radial-gradient(62% 62% at 50% 46%,#000,transparent 80%)}
+  #intro .bowwrap{position:relative;width:min(78vw,600px);opacity:0;animation:introFade .4s .05s ease forwards}
+  #intro svg{width:100%;height:auto;display:block;overflow:visible;filter:drop-shadow(0 0 9px rgba(201,162,75,.45))}
+  #intro .iword{position:absolute;left:50%;bottom:-16%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;letter-spacing:.36em;font-size:clamp(.82rem,2.4vw,1.18rem);color:var(--gold2);text-transform:uppercase;white-space:nowrap;opacity:0;animation:iword .55s 1.15s ease forwards}
+  @keyframes introFade{to{opacity:1}}
+  @keyframes iword{from{opacity:0;letter-spacing:.6em}to{opacity:.92;letter-spacing:.36em}}
+  body.introlock{overflow:hidden}
+
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important}html{scroll-behavior:auto}#intro{display:none!important}}
 </style>
 </head>
 <body>
+
+<div id="intro" aria-hidden="true">
+  <div class="bowwrap">
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Archer drawing a bow">
+      <path d="M188,40 C116,86 116,214 188,260" fill="none" stroke="#c9a24b" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="188" cy="40" r="4" fill="#c9a24b"/><circle cx="188" cy="260" r="4" fill="#c9a24b"/>
+      <path fill="none" stroke="#cfe0f5" stroke-width="2" stroke-linecap="round" d="M188,40 L188,150 L188,260">
+        <animate attributeName="d" dur="1.6s" fill="freeze" calcMode="linear"
+          keyTimes="0;0.5625;0.6875;0.78;1"
+          values="M188,40 L188,150 L188,260;M188,40 L138,150 L188,260;M188,40 L138,150 L188,260;M188,40 L204,150 L188,260;M188,40 L188,150 L188,260"/>
+      </path>
+      <g>
+        <line x1="188" y1="150" x2="366" y2="150" stroke="#e8cd82" stroke-width="3.4" stroke-linecap="round"/>
+        <polygon points="366,142 392,150 366,158" fill="#e8cd82"/>
+        <polygon points="188,150 212,138 212,150" fill="#c9a24b"/>
+        <polygon points="188,150 212,162 212,150" fill="#c9a24b"/>
+        <animateTransform attributeName="transform" type="translate" dur="1.6s" fill="freeze" calcMode="spline"
+          keyTimes="0;0.5625;0.6875;1" keySplines="0.4 0 0.5 1;0 0 1 1;0.5 0 1 1"
+          values="0 0;-50 0;-50 0;980 0"/>
+      </g>
+    </svg>
+    <span class="iword">ÆRAY Atelier</span>
+  </div>
+</div>
 
 <header class="nav">
   <div class="nav-inner">
@@ -197,7 +234,7 @@
     <div class="sechead reveal">
       <div class="stardiv"><svg viewBox="0 0 44 44" width="30" height="30" aria-hidden="true"><path d="M22 3 L27 17 L41 17 L29.5 26 L34 40 L22 31 L10 40 L14.5 26 L3 17 L17 17 Z" fill="none" stroke="var(--gold)" stroke-width="1.4"/><circle cx="22" cy="22" r="3.4" fill="var(--gold)"/></svg></div>
       <div class="eyebrow" data-en="The Collection" data-tr="Koleksiyon" data-de="Die Kollektion">The Collection</div>
-      <h2 class="sec" data-en="Eight pieces, ready to ship" data-tr="Gönderime hazır sekiz parça" data-de="Acht Stücke, versandbereit">Twelve pieces, ready to ship</h2>
+      <h2 class="sec" data-en="Seven pieces, ready to ship" data-tr="Gönderime hazır yedi parça" data-de="Sieben Stücke, versandbereit">Twelve pieces, ready to ship</h2>
       <p class="sec-sub" data-en="Not an online shop — each piece is one of one, reserved by getting in touch with us." data-tr="Online mağaza değil — her parça tek; bizimle iletişime geçerek ayırtılır." data-de="Kein Online-Shop — jedes Stück ist ein Unikat und wird durch Kontakt mit uns reserviert.">Tap any piece to order it directly by email.</p>
     </div>
     <div class="grid">
@@ -332,21 +369,6 @@
       </div>
     </div>
   </article>
-  <article class="card reveal">
-    <div class="media">
-      <span class="badge" data-en="One of one" data-tr="Tek parça" data-de="Unikat">One of one</span>
-      <img class="main" id="m-holster" src="holster.jpg" alt="Riveted Field Holster" loading="lazy" decoding="async" />
-    </div>
-    <div class="body">
-      <div class="cat" data-en="Holster" data-tr="Kılıf" data-de="Holster">Holster</div>
-      <h3 class="name">Riveted Field Holster</h3>
-      <p class="desc" data-en="A compact belt holster in saddle leather, closed with a brass buckle over triple copper rivets and hand-stitched throughout." data-tr="Saraç derisinden kompakt bir kemer kılıfı; üç bakır perçin üzerine pirinç toka ile kapanır, baştan sona elde dikişli." data-de="Ein kompaktes Gürtel-Holster aus Sattelleder, mit Messingschnalle über drei Kupfernieten geschlossen und durchgehend handgenäht.">A compact belt holster in saddle leather, closed with a brass buckle over triple copper rivets and hand-stitched throughout.</p>
-      <div class="foot">
-        <span class="price">$140 <em>USD</em></span>
-        <a class="order" href="mailto:eray@eraybalat.com?subject=Order%3A%20Riveted%20Field%20Holster%20%28%24140%29" data-name="Riveted Field Holster" data-price="$140" data-en="Order →" data-tr="Sipariş Ver →" data-de="Bestellen →">Order &rarr;</a>
-      </div>
-    </div>
-  </article>
     </div>
   </section>
 
@@ -425,6 +447,22 @@
       strip.querySelectorAll('.thumb').forEach(function(t){t.classList.toggle('active',t===b);});
     });
   });
+
+  // archery opening
+  (function(){
+    var intro=document.getElementById('intro'); if(!intro) return;
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ intro.parentNode&&intro.parentNode.removeChild(intro); return; }
+    document.body.classList.add('introlock');
+    var cleared=false;
+    function unlock(){ document.body.classList.remove('introlock'); }
+    function remove(){ if(intro&&intro.parentNode) intro.parentNode.removeChild(intro); }
+    var tU=setTimeout(unlock,1650), tR=setTimeout(remove,2900);
+    function skip(){ if(cleared)return; cleared=true; clearTimeout(tU); clearTimeout(tR); intro.classList.add('skip'); unlock(); setTimeout(remove,460); }
+    intro.addEventListener('click',skip);
+    window.addEventListener('keydown',skip,{once:true});
+    window.addEventListener('wheel',skip,{once:true,passive:true});
+    window.addEventListener('touchstart',skip,{once:true,passive:true});
+  })();
 
   // reveal on scroll
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
