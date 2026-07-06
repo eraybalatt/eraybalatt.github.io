@@ -96,10 +96,13 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
   .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 60px -46px rgba(0,0,0,.9);transition:transform .3s cubic-bezier(.22,.61,.36,1),box-shadow .3s,border-color .3s}
   .card:hover{transform:translateY(-4px);border-color:var(--line2);box-shadow:0 40px 74px -40px rgba(0,0,0,.95),0 0 0 1px rgba(201,162,75,.14)}
+  .card.premium{border-color:var(--gold);box-shadow:0 0 0 1px rgba(201,162,75,.5),0 34px 74px -40px rgba(201,162,75,.5)}
+  .card.premium:hover{border-color:var(--gold2);box-shadow:0 0 0 1px rgba(232,205,130,.65),0 44px 82px -38px rgba(201,162,75,.72)}
   .media{position:relative;background:#f4f1ec}
   .media .main{width:100%;aspect-ratio:1/1;object-fit:cover;transition:opacity .25s}
   .badge{position:absolute;top:12px;left:12px;z-index:2;font-family:'Inter';font-weight:600;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#231803;background:linear-gradient(135deg,var(--gold2),var(--gold));padding:5px 11px;border-radius:999px;box-shadow:0 4px 14px -4px rgba(0,0,0,.5)}
-  .thumbs{position:absolute;left:10px;right:10px;bottom:10px;display:flex;gap:7px;justify-content:center}
+  .badge.sig{background:linear-gradient(135deg,#f4df9c,#d9b25c 55%,#c9a24b);letter-spacing:.14em;box-shadow:0 4px 16px -3px rgba(201,162,75,.6)}
+  .thumbs{position:absolute;left:10px;right:10px;bottom:10px;display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
   .thumb{width:44px;height:44px;padding:0;border:1.5px solid rgba(255,255,255,.7);border-radius:9px;overflow:hidden;cursor:pointer;background:#fff;box-shadow:0 4px 12px -4px rgba(0,0,0,.5);transition:border-color .2s,transform .2s;opacity:.92}
   .thumb img{width:100%;height:100%;object-fit:cover}
   .thumb:hover{transform:translateY(-2px);opacity:1}
@@ -194,13 +197,13 @@
     <div class="sechead reveal">
       <div class="stardiv"><svg viewBox="0 0 44 44" width="30" height="30" aria-hidden="true"><path d="M22 3 L27 17 L41 17 L29.5 26 L34 40 L22 31 L10 40 L14.5 26 L3 17 L17 17 Z" fill="none" stroke="var(--gold)" stroke-width="1.4"/><circle cx="22" cy="22" r="3.4" fill="var(--gold)"/></svg></div>
       <div class="eyebrow" data-en="The Collection" data-tr="Koleksiyon" data-de="Die Kollektion">The Collection</div>
-      <h2 class="sec" data-en="Ten pieces, ready to ship" data-tr="Gönderime hazır on parça" data-de="Zehn Stücke, versandbereit">Twelve pieces, ready to ship</h2>
+      <h2 class="sec" data-en="Eight pieces, ready to ship" data-tr="Gönderime hazır sekiz parça" data-de="Acht Stücke, versandbereit">Twelve pieces, ready to ship</h2>
       <p class="sec-sub" data-en="Not an online shop — each piece is one of one, reserved by getting in touch with us." data-tr="Online mağaza değil — her parça tek; bizimle iletişime geçerek ayırtılır." data-de="Kein Online-Shop — jedes Stück ist ein Unikat und wird durch Kontakt mit uns reserviert.">Tap any piece to order it directly by email.</p>
     </div>
     <div class="grid">
-  <article class="card reveal">
+  <article class="card reveal premium">
     <div class="media">
-      <span class="badge" data-en="One of one" data-tr="Tek parça" data-de="Unikat">One of one</span>
+      <span class="badge sig" data-en="✦ Signature" data-tr="✦ İmza Parça" data-de="✦ Signature-Stück">✦ Signature</span>
       <img class="main" id="m-briefcase" src="briefcase-1.jpg" alt="Compass-Star Briefcase" loading="lazy" decoding="async" />
       <div class="thumbs" role="group" aria-label="Compass-Star Briefcase views">
         <button type="button" class="thumb active" data-target="m-briefcase" data-full="briefcase-1.jpg" aria-label="View 1"><img src="briefcase-1-t.jpg" alt="" loading="lazy" /></button>
@@ -218,24 +221,26 @@
       </div>
     </div>
   </article>
-  <article class="card reveal">
+  <article class="card reveal premium">
     <div class="media">
-      <span class="badge" data-en="One of one" data-tr="Tek parça" data-de="Unikat">One of one</span>
+      <span class="badge sig" data-en="✦ Signature" data-tr="✦ İmza Parça" data-de="✦ Signature-Stück">✦ Signature</span>
       <img class="main" id="m-archer-set" src="archer-set.jpg" alt="Seljuk Archer&#x27;s Set" loading="lazy" decoding="async" />
       <div class="thumbs" role="group" aria-label="Seljuk Archer&#x27;s Set views">
         <button type="button" class="thumb active" data-target="m-archer-set" data-full="archer-set.jpg" aria-label="View 1"><img src="archer-set-t.jpg" alt="" loading="lazy" /></button>
         <button type="button" class="thumb" data-target="m-archer-set" data-full="quiver.jpg" aria-label="View 2"><img src="quiver-t.jpg" alt="" loading="lazy" /></button>
         <button type="button" class="thumb" data-target="m-archer-set" data-full="bracers-1.jpg" aria-label="View 3"><img src="bracers-1-t.jpg" alt="" loading="lazy" /></button>
         <button type="button" class="thumb" data-target="m-archer-set" data-full="sash.jpg" aria-label="View 4"><img src="sash-t.jpg" alt="" loading="lazy" /></button>
+        <button type="button" class="thumb" data-target="m-archer-set" data-full="belt-1.jpg" aria-label="View 5"><img src="belt-1-t.jpg" alt="" loading="lazy" /></button>
+        <button type="button" class="thumb" data-target="m-archer-set" data-full="sheath.jpg" aria-label="View 6"><img src="sheath-t.jpg" alt="" loading="lazy" /></button>
       </div>
     </div>
     <div class="body">
-      <div class="cat" data-en="Archer&#x27;s Set · 3 pieces" data-tr="Okçu Seti · 3 parça" data-de="Bogenschützen-Set · 3-teilig">Archer&#x27;s Set · 3 pieces</div>
+      <div class="cat" data-en="Archer&#x27;s Set · 5 pieces" data-tr="Okçu Seti · 5 parça" data-de="Bogenschützen-Set · 5-teilig">Archer&#x27;s Set · 5 pieces</div>
       <h3 class="name">Seljuk Archer&#x27;s Set</h3>
-      <p class="desc" data-en="A matching three-piece archer&#x27;s regalia — a curved quiver, a pair of forearm bracers and a wide waist sash — all tooled in the same tan leather with eight-point Seljuk stars and brass medallions." data-tr="Uyumlu üç parçalı okçu takımı — kavisli bir tirkeş, bir çift önkol kolçağı ve geniş bir bel kuşağı — hepsi aynı taba deride, sekiz köşeli Selçuklu yıldızları ve pirinç madalyonlarla işlenmiş." data-de="Ein zusammengehöriges dreiteiliges Bogenschützen-Ensemble — ein geschwungener Köcher, ein Paar Unterarmschienen und eine breite Taillenschärpe — alle aus demselben naturbraunen Leder, mit achtzackigen seldschukischen Sternen und Messingmedaillons gearbeitet.">A matching three-piece archer&#x27;s regalia — a curved quiver, a pair of forearm bracers and a wide waist sash — all tooled in the same tan leather with eight-point Seljuk stars and brass medallions.</p>
+      <p class="desc" data-en="A complete archer&#x27;s regalia — a curved quiver, a pair of forearm bracers, a wide waist sash, a filigree openwork belt and a sculpted sheath. Five hand-tooled, hand-stitched pieces, sold together as one set." data-tr="Eksiksiz bir okçu takımı — kavisli bir tirkeş, bir çift önkol kolçağı, geniş bir bel kuşağı, ajur bir kemer ve yontulmuş bir kılıf. Elde işlenip elde dikilmiş beş parça, tek set olarak birlikte satılır." data-de="Ein vollständiges Bogenschützen-Ensemble — ein geschwungener Köcher, ein Paar Unterarmschienen, eine breite Taillenschärpe, ein durchbrochener Filigrangürtel und eine geschnitzte Scheide. Fünf von Hand gearbeitete, handgenähte Stücke, zusammen als ein Set.">A complete archer&#x27;s regalia — a curved quiver, a pair of forearm bracers, a wide waist sash, a filigree openwork belt and a sculpted sheath. Five hand-tooled, hand-stitched pieces, sold together as one set.</p>
       <div class="foot">
-        <span class="price">$780 <em>USD</em></span>
-        <a class="order" href="mailto:eray@eraybalat.com?subject=Order%3A%20Seljuk%20Archer's%20Set%20%28%24780%29" data-name="Seljuk Archer&#x27;s Set" data-price="$780" data-en="Order →" data-tr="Sipariş Ver →" data-de="Bestellen →">Order &rarr;</a>
+        <span class="price">$1,150 <em>USD</em></span>
+        <a class="order" href="mailto:eray@eraybalat.com?subject=Order%3A%20Seljuk%20Archer's%20Set%20%28%241,150%29" data-name="Seljuk Archer&#x27;s Set" data-price="$1,150" data-en="Order →" data-tr="Sipariş Ver →" data-de="Bestellen →">Order &rarr;</a>
       </div>
     </div>
   </article>
@@ -328,40 +333,6 @@
       <div class="foot">
         <span class="price">$260 <em>USD</em></span>
         <a class="order" href="mailto:eray@eraybalat.com?subject=Order%3A%20Flower-of-Life%20Crossbody%20—%20Amber%20%28%24260%29" data-name="Flower-of-Life Crossbody — Amber" data-price="$260" data-en="Order →" data-tr="Sipariş Ver →" data-de="Bestellen →">Order &rarr;</a>
-      </div>
-    </div>
-  </article>
-  <article class="card reveal">
-    <div class="media">
-      <span class="badge" data-en="One of one" data-tr="Tek parça" data-de="Unikat">One of one</span>
-      <img class="main" id="m-belt" src="belt-1.jpg" alt="Filigree Openwork Belt" loading="lazy" decoding="async" />
-      <div class="thumbs" role="group" aria-label="Filigree Openwork Belt views">
-        <button type="button" class="thumb active" data-target="m-belt" data-full="belt-1.jpg" aria-label="View 1"><img src="belt-1-t.jpg" alt="" loading="lazy" /></button>
-        <button type="button" class="thumb" data-target="m-belt" data-full="belt-2.jpg" aria-label="View 2"><img src="belt-2-t.jpg" alt="" loading="lazy" /></button>
-      </div>
-    </div>
-    <div class="body">
-      <div class="cat" data-en="Belt" data-tr="Kemer" data-de="Gürtel">Belt</div>
-      <h3 class="name">Filigree Openwork Belt</h3>
-      <p class="desc" data-en="A slim belt cut in openwork filigree, each cell hand-pierced so the leather reads like lace over the waist." data-tr="Ajur filigranla kesilmiş ince bir kemer; her göz elde delinmiş, deri belde dantel gibi görünür." data-de="Ein schmaler Gürtel in durchbrochener Filigranarbeit, jede Zelle von Hand ausgestanzt, sodass das Leder wie Spitze über der Taille wirkt.">A slim belt cut in openwork filigree, each cell hand-pierced so the leather reads like lace over the waist.</p>
-      <div class="foot">
-        <span class="price">$180 <em>USD</em></span>
-        <a class="order" href="mailto:eray@eraybalat.com?subject=Order%3A%20Filigree%20Openwork%20Belt%20%28%24180%29" data-name="Filigree Openwork Belt" data-price="$180" data-en="Order →" data-tr="Sipariş Ver →" data-de="Bestellen →">Order &rarr;</a>
-      </div>
-    </div>
-  </article>
-  <article class="card reveal">
-    <div class="media">
-      <span class="badge" data-en="One of one" data-tr="Tek parça" data-de="Unikat">One of one</span>
-      <img class="main" id="m-sheath" src="sheath.jpg" alt="Curved Leather Sheath" loading="lazy" decoding="async" />
-    </div>
-    <div class="body">
-      <div class="cat" data-en="Sheath" data-tr="Kılıf" data-de="Scheide">Sheath</div>
-      <h3 class="name">Curved Leather Sheath</h3>
-      <p class="desc" data-en="A sculpted curved sheath in oiled dark leather, whip-stitched along the spine with a swivel clip and belt loop." data-tr="Yağlı koyu deriden yontulmuş kavisli bir kılıf; sırtı boyunca sarma dikişli, döner klips ve kemer halkalı." data-de="Eine geschwungene Scheide aus geöltem dunklem Leder, entlang des Rückens umstochen, mit Drehhaken und Gürtelschlaufe.">A sculpted curved sheath in oiled dark leather, whip-stitched along the spine with a swivel clip and belt loop.</p>
-      <div class="foot">
-        <span class="price">$160 <em>USD</em></span>
-        <a class="order" href="mailto:eray@eraybalat.com?subject=Order%3A%20Curved%20Leather%20Sheath%20%28%24160%29" data-name="Curved Leather Sheath" data-price="$160" data-en="Order →" data-tr="Sipariş Ver →" data-de="Bestellen →">Order &rarr;</a>
       </div>
     </div>
   </article>
