@@ -9,7 +9,7 @@
 <title>FLAWLESS — The Antwerp Diamond Heist · A CITRINE Documentary · Eray Balat</title>
 <meta name="description" content="FLAWLESS — a 4K cinematic documentary reconstructing the 2003 Antwerp Diamond Heist, featuring an exclusive interview with the mastermind, Leonardo Notarbartolo, who personally praised the finished film. A CITRINE documentary directed, written, edited and narrated by Eray Balat." />
 <link rel="canonical" href="https://eraybalat.com/flawless/" />
-<meta name="theme-color" content="#07080c" />
+<meta name="theme-color" content="#080d18" />
 <meta property="og:type" content="video.other" />
 <meta property="og:title" content="FLAWLESS — The Antwerp Diamond Heist · A CITRINE Documentary" />
 <meta property="og:description" content="The greatest diamond heist in history — told, for the first time, alongside the man who pulled it off. Directed by Eray Balat." />
@@ -33,9 +33,10 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"FLAWLESS — The Antwerp Diamond Heist","alternateName":"The Antwerp Diamond Heist: The Greatest Robbery in History","description":"A 4K cinematic documentary reconstructing the 2003 Antwerp Diamond Heist, featuring an exclusive interview with the mastermind Leonardo Notarbartolo. A CITRINE documentary directed, written, edited and narrated by Eray Balat.","thumbnailUrl":"https://eraybalat.com/flawless/og-flawless.jpg","uploadDate":"2026-07-05","duration":"PT16M56S","embedUrl":"https://www.youtube-nocookie.com/embed/1ufJ0az67v0","contentUrl":"https://www.youtube.com/watch?v=1ufJ0az67v0","genre":"True Crime Documentary","inLanguage":["en","tr","it"],"creator":{"@type":"Person","name":"Eray Balat","url":"https://eraybalat.com/"},"productionCompany":{"@type":"Organization","name":"CITRINE"}}</script>
 <style>
   :root{
-    --bg:#07080c; --bg2:#0d0f16; --panel:#12151f; --line:#242a3a;
+    --bg:#080d18; --bg2:#0d1322; --panel:#101827; --line:#223050;
     --gold:#FCC300; --gold-soft:#ffd84a; --amber:#d99a1f;
-    --txt:#E9E6DF; --dim:#9aa2b4; --cold:#8FB0CC; --white:#ffffff;
+    --blue:#5cc8ff; --blue2:#2e9bf0;
+    --txt:#E9E6DF; --dim:#9aa7bf; --cold:#7fb6e6; --white:#ffffff;
     --maxw:1000px; --radius:16px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -52,7 +53,7 @@
   body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(120% 80% at 50% -10%,transparent 40%,rgba(0,0,0,.5) 100%);mix-blend-mode:multiply}
 
   /* nav */
-  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);background:linear-gradient(180deg,rgba(7,8,12,.85),rgba(7,8,12,.35));border-bottom:1px solid rgba(252,195,0,.14)}
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);background:linear-gradient(180deg,rgba(10,18,36,.88),rgba(8,13,24,.35));border-bottom:1px solid rgba(92,170,230,.18)}
   .nav-inner{max-width:1180px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px}
   .nav-back{display:inline-flex;align-items:center;gap:9px;color:var(--dim);font-weight:600;font-size:.86rem;letter-spacing:.02em;transition:color .2s}
   .nav-back:hover{color:var(--white)}
@@ -65,6 +66,7 @@
   .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.42;filter:saturate(1.05) contrast(1.05)}
   .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,8,12,.55) 0%,rgba(7,8,12,.2) 30%,rgba(7,8,12,.75) 72%,var(--bg) 100%)}
   .hero-glow{position:absolute;left:-10%;top:-10%;width:70%;height:70%;z-index:-1;background:radial-gradient(circle,rgba(252,195,0,.14),transparent 62%);pointer-events:none}
+  .hero-glow2{position:absolute;right:-14%;bottom:-8%;width:64%;height:64%;z-index:-1;background:radial-gradient(circle,rgba(46,155,240,.13),transparent 62%);pointer-events:none}
   .kicker{color:var(--gold);letter-spacing:.34em;font-size:.72rem;font-weight:700;text-transform:uppercase;display:flex;align-items:center;gap:12px}
   .kicker::before{content:"";width:30px;height:2px;background:var(--gold);display:inline-block}
   h1.title{font-size:clamp(4rem,17vw,10.5rem);line-height:.86;letter-spacing:.01em;font-weight:700;color:var(--gold);margin:16px 0 2px;text-shadow:0 6px 60px rgba(252,195,0,.22);text-transform:uppercase}
@@ -81,7 +83,7 @@
   /* sections */
   section{padding:64px 0}
   .eyebrow{color:var(--gold);letter-spacing:.24em;text-transform:uppercase;font-size:.74rem;font-weight:700;font-family:'Oswald';margin-bottom:16px;display:flex;align-items:center;gap:11px}
-  .eyebrow::before{content:"";width:16px;height:2px;background:var(--gold)}
+  .eyebrow::before{content:"";width:16px;height:2px;background:linear-gradient(90deg,var(--blue2),var(--gold))}
   h2{font-size:clamp(1.5rem,4vw,2.3rem);font-weight:600;color:var(--white);letter-spacing:.005em;margin-bottom:14px;line-height:1.12}
   p.lead{font-size:clamp(1.05rem,2.4vw,1.28rem);color:#fff;font-weight:400}
   p{color:#cfccc4;margin-bottom:14px;font-size:1.02rem}
@@ -116,9 +118,16 @@
 
   /* stats */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px}
-  .stat{background:linear-gradient(180deg,#141824,#0c0f16);border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center}
+  .stat{background:linear-gradient(180deg,#13203a,#0b1120);border:1px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center}
   .stat .n{font-family:'Oswald';font-size:clamp(1.8rem,5vw,2.7rem);font-weight:700;color:var(--gold);line-height:1}
   .stat .l{font-size:.76rem;color:var(--dim);margin-top:9px;letter-spacing:.03em;line-height:1.35}
+
+  /* production design gallery */
+  .pd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
+  .pd{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;background:#0b101c}
+  .pd img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+  .pd:hover img{transform:scale(1.06)}
+  .pd span{position:absolute;left:9px;bottom:8px;font-family:'Oswald';font-weight:600;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(8,13,24,.74);padding:4px 9px;border-radius:6px;border:1px solid rgba(92,200,255,.28)}
 
   /* chips */
   .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
@@ -135,7 +144,7 @@
   .credits{display:flex;flex-wrap:wrap;gap:10px 30px;margin-top:8px;font-size:.92rem;color:var(--dim)}
   .credits b{color:#fff;font-family:'Oswald';font-weight:600;letter-spacing:.02em}
 
-  .sep{height:1px;background:linear-gradient(90deg,transparent,rgba(252,195,0,.3),transparent);margin:6px 0}
+  .sep{height:1px;background:linear-gradient(90deg,transparent,rgba(92,200,255,.3),rgba(252,195,0,.45),rgba(92,200,255,.3),transparent);margin:6px 0}
 
   /* footer */
   footer{border-top:1px solid var(--line);padding:40px 0 54px;margin-top:40px;color:var(--dim);font-size:.9rem}
@@ -150,6 +159,7 @@
 
   @media(max-width:720px){
     .stats{grid-template-columns:1fr 1fr}
+    .pd-grid{grid-template-columns:1fr 1fr}
     .dgrid{grid-template-columns:1fr}
     section{padding:52px 0}
     .hero{min-height:92svh}
@@ -170,6 +180,7 @@
 <section class="hero">
   <div class="hero-bg"><img src="hero.jpg" alt="FLAWLESS — The Antwerp Diamond Heist" fetchpriority="high" /></div>
   <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-glow2" aria-hidden="true"></div>
   <div class="wrap">
     <div class="kicker">A CITRINE Documentary · True Crime</div>
     <h1 class="title">FLAWLESS</h1>
@@ -199,10 +210,10 @@
   <section>
     <div class="eyebrow">The Testimonial — In His Own Words</div>
     <div class="quote reveal">
-      <div class="it">"Grazie, molto bello… ricordati per il mio libro, se riusciamo a farlo tradurre."</div>
-      <div class="en">"Thank you, it's beautiful… keep me in mind for my book, if we manage to get it translated."</div>
+      <div class="it">"Grazie, molto bello."</div>
+      <div class="en">"Thank you, it's beautiful."</div>
       <div class="who">— Leonardo Notarbartolo, on watching FLAWLESS</div>
-      <p class="quote-note">The mastermind of the heist didn't just approve of the film — after watching, he personally reached out, praised the work, and opened a conversation about translating his own memoir. Real, verifiable engagement with a primary source, and a testimonial no brief could buy.</p>
+      <p class="quote-note">The mastermind of the heist didn't just approve of the film — after watching, he personally reached out and praised the work. Real, verifiable engagement with a primary source, and a testimonial no brief could buy.</p>
     </div>
   </section>
 
@@ -242,6 +253,22 @@
       <div class="stat"><div class="n">30+</div><div class="l">bespoke 3D scenes</div></div>
       <div class="stat"><div class="n">35</div><div class="l">custom motion graphics</div></div>
       <div class="stat"><div class="n">3→6</div><div class="l">languages (EN / TR / IT live)</div></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTION DESIGN — 3D BUILD -->
+  <section class="reveal">
+    <div class="eyebrow">Production Design — Inside the 3D Build</div>
+    <p>Every location was modeled from scratch — the Diamond Center facade, the vault, the sensors, the crew — in the film's minimalist Amber-Noir language: white maquette surfaces, amber light, forensic labels.</p>
+    <div class="pd-grid">
+      <figure class="pd"><img src="3d-building.jpg" alt="3D scene — the Diamond Center building at night" loading="lazy" decoding="async" /><span>Diamond Center</span></figure>
+      <figure class="pd"><img src="3d-vault.jpg" alt="3D scene — the vault door" loading="lazy" decoding="async" /><span>The Vault Door</span></figure>
+      <figure class="pd"><img src="3d-dial.jpg" alt="3D scene — the combination dial, macro" loading="lazy" decoding="async" /><span>100M Combinations</span></figure>
+      <figure class="pd"><img src="3d-sensor.jpg" alt="3D scene — defeating the heat sensor" loading="lazy" decoding="async" /><span>The Heat Sensor</span></figure>
+      <figure class="pd"><img src="3d-magnet.jpg" alt="3D scene — sensor versus decoy magnet" loading="lazy" decoding="async" /><span>The Decoy Magnet</span></figure>
+      <figure class="pd"><img src="3d-crew.jpg" alt="3D scene — the School of Turin crew figures" loading="lazy" decoding="async" /><span>The School of Turin</span></figure>
+      <figure class="pd"><img src="3d-loot.jpg" alt="3D scene — the loot" loading="lazy" decoding="async" /><span>The Loot</span></figure>
+      <figure class="pd"><img src="3d-aftermath.jpg" alt="3D scene — the ransacked vault room aftermath" loading="lazy" decoding="async" /><span>The Aftermath</span></figure>
     </div>
   </section>
 
