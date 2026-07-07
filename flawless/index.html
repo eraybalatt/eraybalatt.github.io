@@ -28,7 +28,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="image" href="hero.jpg" fetchpriority="high" />
+<link rel="preload" as="image" href="hero-vault.jpg" fetchpriority="high" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"FLAWLESS — The Antwerp Diamond Heist","alternateName":"The Antwerp Diamond Heist: The Greatest Robbery in History","description":"A 4K cinematic documentary reconstructing the 2003 Antwerp Diamond Heist, featuring an exclusive interview with the mastermind Leonardo Notarbartolo. A CITRINE documentary directed, written, edited and narrated by Eray Balat.","thumbnailUrl":"https://eraybalat.com/flawless/og-flawless.jpg","uploadDate":"2026-07-05","duration":"PT16M56S","embedUrl":"https://www.youtube-nocookie.com/embed/1ufJ0az67v0","contentUrl":"https://www.youtube.com/watch?v=1ufJ0az67v0","genre":"True Crime Documentary","inLanguage":["en","tr","it"],"creator":{"@type":"Person","name":"Eray Balat","url":"https://eraybalat.com/"},"productionCompany":{"@type":"Organization","name":"CITRINE"}}</script>
@@ -111,9 +111,11 @@
   .quote{position:relative;background:radial-gradient(130% 150% at 12% 0%,#2a1f0a,#0d0f16 62%);border:1px solid #3a2f13;border-left:4px solid var(--gold);border-radius:18px;padding:clamp(28px,5vw,52px);margin:8px 0;overflow:hidden}
   .quote::before{content:"\201C";position:absolute;right:22px;top:-18px;font-family:Georgia,serif;font-size:200px;color:rgba(252,195,0,.10);line-height:1;pointer-events:none}
   .quote .it{font-size:clamp(1.3rem,3.6vw,2rem);color:#fff;font-style:italic;line-height:1.36;font-weight:500;position:relative}
-  .quote .en{color:var(--cold);font-size:clamp(1rem,2.2vw,1.16rem);margin-top:16px}
-  .quote .who{color:var(--gold);font-size:.8rem;letter-spacing:.14em;margin-top:20px;text-transform:uppercase;font-weight:700;font-family:'Oswald'}
-  .quote-note{color:var(--dim);font-size:1rem;margin-top:18px;max-width:720px}
+  .quote .it{max-width:24ch}
+  .quote .en{color:var(--cold);font-size:clamp(1rem,2.2vw,1.16rem);margin-top:14px;font-style:italic;opacity:.92}
+  .quote .who{color:var(--gold);font-size:.8rem;letter-spacing:.14em;margin-top:24px;text-transform:uppercase;font-weight:700;font-family:'Oswald'}
+  .quote-note{color:var(--dim);font-size:1rem;margin-top:18px;max-width:640px;font-style:italic;line-height:1.6}
+  @media(max-width:720px){.quote .it{max-width:100%}}
 
   /* story */
   .story-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center;margin-top:4px}
@@ -148,7 +150,7 @@
   .strip-cap{color:var(--dim);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-family:'Oswald';font-weight:600;margin:2px 0 10px}
 
   /* thumbnail lab */
-  .thumb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+  .thumb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px}
 
   /* chips */
   .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:6px}
@@ -210,7 +212,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"><img src="hero.jpg" alt="FLAWLESS — The Antwerp Diamond Heist" fetchpriority="high" /></div>
+  <div class="hero-bg"><img src="hero-vault.jpg" alt="FLAWLESS — The Antwerp Diamond Heist" fetchpriority="high" /></div>
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-glow2" aria-hidden="true"></div>
   <div class="wrap">
@@ -233,7 +235,7 @@
   <section class="video-sec" id="watch">
     <div class="eyebrow" data-en="01 · The Film" data-tr="01 · Film" data-de="01 · Der Film">01 · The Film</div>
     <div class="facade reveal" id="ytFacade" role="button" tabindex="0" aria-label="Play the FLAWLESS documentary">
-      <img src="hero.jpg" alt="Play FLAWLESS — The Antwerp Diamond Heist" />
+      <img src="watch-thumb.jpg" alt="Play FLAWLESS — The Antwerp Diamond Heist" loading="lazy" decoding="async" />
       <span class="pbtn" aria-hidden="true"></span>
       <span class="flabel" data-en="▶ Watch on YouTube · 16:56 · 4K" data-tr="▶ YouTube'da izle · 16:56 · 4K" data-de="▶ Auf YouTube ansehen · 16:56 · 4K">▶ Watch on YouTube · 16:56 · 4K</span>
     </div>
@@ -243,10 +245,10 @@
   <section>
     <div class="eyebrow" data-en="The Testimonial — In His Own Words" data-tr="Referans — Kendi Sözleriyle" data-de="Das Testimonial — In seinen eigenen Worten">The Testimonial — In His Own Words</div>
     <div class="quote reveal">
-      <div class="it">"Grazie, molto bello."</div>
-      <div class="en" data-en="&quot;Thank you, it's beautiful.&quot;" data-tr="&quot;Teşekkür ederim, çok güzel.&quot;" data-de="&quot;Danke, wunderschön.&quot;">"Thank you, it's beautiful."</div>
-      <div class="who" data-en="— Leonardo Notarbartolo, on watching FLAWLESS" data-tr="— Leonardo Notarbartolo, FLAWLESS'ı izledikten sonra" data-de="— Leonardo Notarbartolo, nach dem Ansehen von FLAWLESS">— Leonardo Notarbartolo, on watching FLAWLESS</div>
-      <p class="quote-note" data-en="The mastermind of the heist didn't just approve of the film — after watching, he personally reached out and praised the work. Real, verifiable engagement with a primary source, and a testimonial no brief could buy." data-tr="Soygunun beyni filmi yalnızca onaylamakla kalmadı — izledikten sonra bizzat ulaşıp emeği övdü. Birincil kaynakla gerçek, doğrulanabilir bir bağ; hiçbir brief'in satın alamayacağı bir referans." data-de="Der Kopf des Raubs hat den Film nicht nur gebilligt — nach dem Ansehen meldete er sich persönlich und lobte die Arbeit. Echter, verifizierbarer Kontakt zu einer Primärquelle — ein Testimonial, das kein Briefing kaufen kann.">The mastermind of the heist didn't just approve of the film — after watching, he personally reached out and praised the work. Real, verifiable engagement with a primary source, and a testimonial no brief could buy.</p>
+      <div class="it" data-en="&ldquo;I am grateful to you for the documentary &mdash; I like it very much.&rdquo;" data-tr="&ldquo;Belgesel için sana minnettarım &mdash; çok beğendim.&rdquo;" data-de="&ldquo;Ich bin dir für die Dokumentation dankbar &mdash; sie gefällt mir sehr.&rdquo;">&ldquo;I am grateful to you for the documentary &mdash; I like it very much.&rdquo;</div>
+      <div class="en" lang="it">&ldquo;Ti sono grato per il documentario, mi piace molto&hellip; molto bello.&rdquo;</div>
+      <div class="who" data-en="&mdash; Leonardo Notarbartolo, subject of FLAWLESS" data-tr="&mdash; Leonardo Notarbartolo, FLAWLESS'ın konusu" data-de="&mdash; Leonardo Notarbartolo, Protagonist von FLAWLESS">&mdash; Leonardo Notarbartolo, subject of FLAWLESS</div>
+      <p class="quote-note" data-en="&ldquo;As you could see, I am simple and spontaneous &mdash; if something comes to me and I like it, I do it. That's how it was with Eray.&rdquo;" data-tr="&ldquo;Gördüğün gibi, sade ve içtenim &mdash; içimden bir şey gelir ve beğenirsem, yaparım. Eray'la da öyle oldu.&rdquo;" data-de="&ldquo;Wie du sehen konntest, bin ich einfach und spontan &mdash; wenn mir etwas in den Sinn kommt und es mir gefällt, tue ich es. So war es auch mit Eray.&rdquo;">&ldquo;As you could see, I am simple and spontaneous &mdash; if something comes to me and I like it, I do it. That's how it was with Eray.&rdquo;</p>
     </div>
   </section>
 
@@ -311,11 +313,10 @@
   <!-- 06 · THUMBNAIL LAB -->
   <section class="reveal">
     <div class="eyebrow" data-en="06 · The Thumbnail Lab" data-tr="06 · Thumbnail Lab" data-de="06 · Das Thumbnail-Lab">06 · The Thumbnail Lab</div>
-    <p data-en="Launch was treated like a product: three thumbnail directions, designed and A/B-tested with matched titles, chapters and multi-language metadata." data-tr="Lansman bir ürün gibi ele alındı: üç thumbnail yönü tasarlandı; eşleşen başlıklar, bölümler ve çok dilli metadata ile A/B test edildi." data-de="Der Launch wurde wie ein Produkt behandelt: drei Thumbnail-Richtungen, gestaltet und per A/B-Test mit passenden Titeln, Kapiteln und mehrsprachigen Metadaten erprobt.">Launch was treated like a product: three thumbnail directions, designed and A/B-tested with matched titles, chapters and multi-language metadata.</p>
+    <p data-en="Launch was treated like a product: thumbnail directions designed and A/B-tested with matched titles, chapters and multi-language metadata. The two that carried it:" data-tr="Lansman bir ürün gibi ele alındı: thumbnail yönleri tasarlandı; eşleşen başlıklar, bölümler ve çok dilli metadata ile A/B test edildi. Onu taşıyan iki tanesi:" data-de="Der Launch wurde wie ein Produkt behandelt: Thumbnail-Richtungen, gestaltet und per A/B-Test mit passenden Titeln, Kapiteln und mehrsprachigen Metadaten. Die beiden, die ihn trugen:">Launch was treated like a product: thumbnail directions designed and A/B-tested with matched titles, chapters and multi-language metadata. The two that carried it:</p>
     <div class="thumb-grid">
-      <figure class="pd"><img src="thumb-a.jpg" alt="Thumbnail direction A — $100 million gone" loading="lazy" decoding="async" /><span>A — $100M Gone</span></figure>
-      <figure class="pd"><img src="thumb-b.jpg" alt="Thumbnail direction B — undone by a sandwich" loading="lazy" decoding="async" /><span data-en="B — The Sandwich" data-tr="B — Sandviç" data-de="B — Das Sandwich">B — The Sandwich</span></figure>
-      <figure class="pd"><img src="thumb-c.jpg" alt="Thumbnail direction C — the perfect crime" loading="lazy" decoding="async" /><span data-en="C — The Perfect Crime" data-tr="C — Kusursuz Suç" data-de="C — Das perfekte Verbrechen">C — The Perfect Crime</span></figure>
+      <figure class="pd"><img src="thumb-a.jpg" alt="Thumbnail — $100 million gone" loading="lazy" decoding="async" /><span>$100M Gone</span></figure>
+      <figure class="pd"><img src="thumb-c.jpg" alt="Thumbnail — the perfect crime" loading="lazy" decoding="async" /><span data-en="The Perfect Crime" data-tr="Kusursuz Suç" data-de="Das perfekte Verbrechen">The Perfect Crime</span></figure>
     </div>
   </section>
 
