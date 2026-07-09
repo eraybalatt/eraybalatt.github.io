@@ -31,6 +31,7 @@
 <link rel="preload" as="image" href="hero-vault.jpg" fetchpriority="high" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.scroll-cue{display:none}</style></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"FLAWLESS — The Antwerp Diamond Heist","alternateName":"The Antwerp Diamond Heist: The Greatest Robbery in History","description":"A 4K cinematic documentary reconstructing the 2003 Antwerp Diamond Heist, featuring an exclusive interview with the mastermind Leonardo Notarbartolo. A CITRINE documentary directed, written, edited and narrated by Eray Balat.","thumbnailUrl":"https://eraybalat.com/flawless/og-flawless.jpg","uploadDate":"2026-07-05","duration":"PT16M56S","embedUrl":"https://www.youtube-nocookie.com/embed/1ufJ0az67v0","contentUrl":"https://www.youtube.com/watch?v=1ufJ0az67v0","genre":"True Crime Documentary","inLanguage":["en","tr","it"],"creator":{"@type":"Person","name":"Eray Balat","url":"https://eraybalat.com/"},"productionCompany":{"@type":"Organization","name":"CITRINE"}}</script>
 <style>
   :root{
@@ -45,7 +46,7 @@
   body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   h1,h2,h3,.kicker,.wordmark{font-family:'Oswald','Inter',sans-serif}
   a{color:var(--gold);text-decoration:none}
-  img{max-width:100%;display:block}
+  img{max-width:100%;height:auto;display:block}
   ::selection{background:var(--gold);color:#1a1200}
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
@@ -177,6 +178,34 @@
   .foot-cta a{border:1px solid rgba(252,195,0,.3);border-radius:10px;padding:9px 15px;font-family:'Oswald';font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.8rem;transition:.2s}
   .foot-cta a:hover{background:rgba(252,195,0,.1);border-color:var(--gold)}
 
+  /* ===== enhancements ===== */
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;background:linear-gradient(90deg,var(--amber),var(--gold));box-shadow:0 0 10px rgba(252,195,0,.5)}
+  /* hero slow ken-burns + scroll cue */
+  .hero-bg img{animation:kenburns 28s ease-in-out infinite alternate;transform-origin:52% 45%}
+  @keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.13)}}
+  .scroll-cue{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--dim);font-family:'Oswald';font-size:.58rem;letter-spacing:.24em;text-transform:uppercase}
+  .scroll-cue .mouse{width:22px;height:34px;border:2px solid rgba(252,195,0,.55);border-radius:12px;position:relative}
+  .scroll-cue .mouse::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;background:var(--gold);border-radius:2px;transform:translateX(-50%);animation:scrolldot 1.7s ease-in-out infinite}
+  @keyframes scrolldot{0%{opacity:0;transform:translate(-50%,0)}25%{opacity:1}70%{opacity:1}100%{opacity:0;transform:translate(-50%,11px)}}
+  /* social-proof strip (short testimonial, high on page) */
+  .proof{display:flex;align-items:center;gap:12px 18px;flex-wrap:wrap;background:linear-gradient(120deg,rgba(252,195,0,.09),rgba(46,155,240,.05));border:1px solid rgba(252,195,0,.24);border-radius:14px;padding:16px 22px;margin-top:6px}
+  .proof .star{color:var(--gold);font-size:.95rem;letter-spacing:2px;flex:0 0 auto}
+  .proof .pq{color:#fff;font-style:italic;font-size:clamp(1rem,2.4vw,1.22rem);font-weight:500;line-height:1.4;flex:1 1 240px}
+  .proof .pw{color:var(--gold);font-family:'Oswald';font-weight:600;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;flex:0 0 auto}
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(4,7,14,.94);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .lb.on{display:flex}
+  .lb img{max-width:94vw;max-height:90vh;border-radius:12px;box-shadow:0 40px 100px -30px rgba(0,0,0,.9);border:1px solid rgba(252,195,0,.22)}
+  .lb-close{position:absolute;top:16px;right:20px;width:42px;height:42px;border:1px solid rgba(252,195,0,.4);background:rgba(8,13,24,.7);color:var(--gold);border-radius:50%;font-size:1.25rem;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
+  .pd,.int-fig,.mt-wide,.part-strip img,.story-grid img{cursor:zoom-in}
+  /* CTA band */
+  .cta-band{position:relative;overflow:hidden;text-align:center;background:radial-gradient(120% 150% at 50% 0,rgba(252,195,0,.13),rgba(13,15,22,.55) 60%),var(--panel);border:1px solid rgba(252,195,0,.28);border-radius:20px;padding:clamp(34px,5vw,56px) 26px;box-shadow:0 30px 80px -50px rgba(252,195,0,.5)}
+  .cta-band h2{font-size:clamp(1.5rem,4.4vw,2.35rem);margin-bottom:12px}
+  .cta-band p{color:var(--dim);max-width:560px;margin:0 auto 24px}
+  .cta-band .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-ghost{border:1px solid rgba(252,195,0,.42);color:var(--gold)}
+  .btn-ghost:hover{background:rgba(252,195,0,.1);transform:translateY(-2px)}
+
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
   .reveal.in{opacity:1;transform:none}
 
@@ -189,12 +218,16 @@
     .dgrid{grid-template-columns:1fr}
     section{padding:52px 0}
     .hero{min-height:92svh}
-    .nav-cit span{display:none}
+    .nav-cit{display:none}
+    .scroll-cue{display:none}
+    .proof{flex-direction:column;align-items:stretch;gap:7px}
+    .lb-close{top:10px;right:12px}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important};html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<div class="progress" id="prog" aria-hidden="true"></div>
 
 <header class="nav">
   <div class="nav-inner">
@@ -227,15 +260,23 @@
     </div>
     <div class="hero-cta"><a class="btn btn-gold" href="#watch"><span class="tri" aria-hidden="true"></span> <span data-en="Watch the film" data-tr="Filmi izle" data-de="Film ansehen">Watch the film</span></a></div>
   </div>
+  <a class="scroll-cue" href="#watch" aria-label="Scroll down"><span class="mouse" aria-hidden="true"></span><span data-en="Scroll" data-tr="Kaydır" data-de="Scrollen">Scroll</span></a>
 </section>
 
 <main class="wrap">
+
+  <!-- SOCIAL PROOF — short testimonial, high on page -->
+  <div class="proof reveal" role="note">
+    <span class="star" aria-hidden="true">★★★★★</span>
+    <span class="pq" data-en="&ldquo;I am grateful for the documentary &mdash; I like it very much.&rdquo;" data-tr="&ldquo;Belgesel için minnettarım &mdash; çok beğendim.&rdquo;" data-de="&ldquo;Ich bin für die Dokumentation dankbar &mdash; sie gefällt mir sehr.&rdquo;">&ldquo;I am grateful for the documentary &mdash; I like it very much.&rdquo;</span>
+    <span class="pw" data-en="Leonardo Notarbartolo &middot; the man who pulled off the heist" data-tr="Leonardo Notarbartolo &middot; soygunu gerçekleştiren adam" data-de="Leonardo Notarbartolo &middot; der Mann hinter dem Raub">Leonardo Notarbartolo &middot; the man who pulled off the heist</span>
+  </div>
 
   <!-- 01 · THE FILM -->
   <section class="video-sec" id="watch">
     <div class="eyebrow" data-en="01 · The Film" data-tr="01 · Film" data-de="01 · Der Film">01 · The Film</div>
     <div class="facade reveal" id="ytFacade" role="button" tabindex="0" aria-label="Play the FLAWLESS documentary">
-      <img src="watch-thumb.jpg" alt="Play FLAWLESS — The Antwerp Diamond Heist" loading="lazy" decoding="async" />
+      <img src="watch-thumb.jpg" alt="Play FLAWLESS — The Antwerp Diamond Heist" loading="lazy" decoding="async" width="1280" height="720" />
       <span class="pbtn" aria-hidden="true"></span>
       <span class="flabel" data-en="▶ Watch on YouTube · 16:56 · 4K" data-tr="▶ YouTube'da izle · 16:56 · 4K" data-de="▶ Auf YouTube ansehen · 16:56 · 4K">▶ Watch on YouTube · 16:56 · 4K</span>
     </div>
@@ -260,7 +301,7 @@
         <p class="lead" data-en="February 2003. Over $100 million vanishes from a vault the world called impossible to breach — without a single alarm." data-tr="Şubat 2003. Dünyanın 'aşılamaz' dediği bir kasadan, tek bir alarm bile çalmadan 100 milyon doların üzerinde mücevher kayboluyor." data-de="Februar 2003. Über 100 Millionen Dollar verschwinden aus einem Tresor, der als unknackbar galt — ohne einen einzigen Alarm.">February 2003. Over $100 million vanishes from a vault the world called impossible to breach — without a single alarm.</p>
         <p data-en="FLAWLESS is the debut episode of <b>CITRINE</b>, an original true-crime documentary channel I created, wrote, directed, edited and narrated. The challenge: launch a brand-new channel with a first episode that could stand next to established true-crime studios — while securing something no documentary on this story had before: the voice of the actual thief." data-tr="FLAWLESS, kurduğum, yazdığım, yönettiğim, kurguladığım ve seslendirdiğim özgün gerçek-suç kanalı <b>CITRINE</b>'in ilk bölümü. Zorluk: yepyeni bir kanalı, yerleşik true-crime stüdyolarının yanında durabilecek bir ilk bölümle açmak — ve bu hikâyede daha önce hiçbir belgeselin yapamadığını yapmak: hırsızın kendi sesine ulaşmak." data-de="FLAWLESS ist die erste Folge von <b>CITRINE</b>, einem originalen True-Crime-Dokumentationskanal, den ich erschaffen, geschrieben, inszeniert, geschnitten und erzählt habe. Die Herausforderung: einen brandneuen Kanal mit einer ersten Folge zu starten, die neben etablierten True-Crime-Studios bestehen kann — und dabei etwas zu sichern, das keine Dokumentation zu dieser Geschichte je hatte: die Stimme des Diebes selbst.">FLAWLESS is the debut episode of <b>CITRINE</b>, an original true-crime documentary channel I created, wrote, directed, edited and narrated. The challenge: launch a brand-new channel with a first episode that could stand next to established true-crime studios — while securing something no documentary on this story had before: the voice of the actual thief.</p>
       </div>
-      <img src="story-diamond.jpg" alt="A diamond in the dark — frame from the FLAWLESS cold open" loading="lazy" decoding="async" />
+      <img src="story-diamond.jpg" alt="A diamond in the dark — frame from the FLAWLESS cold open" loading="lazy" decoding="async" width="1280" height="720" />
     </div>
   </section>
 
@@ -270,7 +311,7 @@
   <section class="reveal">
     <div class="eyebrow" data-en="03 · The Interview — The Mastermind" data-tr="03 · Röportaj — Soygunun Beyni" data-de="03 · Das Interview — Der Drahtzieher">03 · The Interview — The Mastermind</div>
     <p data-en="The heart of the film is an exclusive conversation with the man who led the heist. Rather than narrate <em>about</em> him, the documentary lets Notarbartolo speak for himself — the planning, the moment the vault opened, the single mistake, and how he sees it today — turning a reconstruction into first-person history." data-tr="Filmin kalbi, soygunu yöneten adamla yapılmış özel bir söyleşi. Belgesel onun <em>hakkında</em> anlatmak yerine sözü Notarbartolo'nun kendisine bırakıyor — plan, kasanın açıldığı an, o tek hata ve bugün nasıl gördüğü — böylece bir rekonstrüksiyon, birinci ağızdan tarihe dönüşüyor." data-de="Das Herz des Films ist ein exklusives Gespräch mit dem Mann, der den Raub anführte. Statt <em>über</em> ihn zu erzählen, lässt die Dokumentation Notarbartolo selbst sprechen — die Planung, der Moment, als der Tresor aufging, der eine Fehler und wie er es heute sieht — so wird aus einer Rekonstruktion Geschichte aus erster Hand.">The heart of the film is an exclusive conversation with the man who led the heist. Rather than narrate <em>about</em> him, the documentary lets Notarbartolo speak for himself — the planning, the moment the vault opened, the single mistake, and how he sees it today — turning a reconstruction into first-person history.</p>
-    <figure class="int-fig"><img src="int-card.jpg" alt="FLAWLESS cold open — the Notarbartolo interview card" loading="lazy" decoding="async" /></figure>
+    <figure class="int-fig"><img src="int-card.jpg" alt="FLAWLESS cold open — the Notarbartolo interview card" loading="lazy" decoding="async" width="1280" height="720" /></figure>
   </section>
 
   <!-- 04 · PRODUCTION DESIGN — 3D BUILD -->
@@ -278,14 +319,14 @@
     <div class="eyebrow" data-en="04 · Production Design — The 3D Build" data-tr="04 · Prodüksiyon Tasarımı — 3D İnşa" data-de="04 · Production Design — Der 3D-Build">04 · Production Design — The 3D Build</div>
     <p data-en="Every location was modeled from scratch — the Diamond Center facade, the vault, the sensors, the crew — in the film's minimalist Amber-Noir language: white maquette surfaces, amber light, forensic labels." data-tr="Her mekân sıfırdan modellendi — Diamond Center cephesi, kasa, sensörler, ekip — filmin minimalist Amber-Noir dilinde: beyaz maket yüzeyler, amber ışık, adli etiketler." data-de="Jeder Schauplatz wurde von Grund auf modelliert — die Fassade des Diamond Center, der Tresor, die Sensoren, die Crew — in der minimalistischen Amber-Noir-Sprache des Films: weiße Modellflächen, bernsteinfarbenes Licht, forensische Labels.">Every location was modeled from scratch — the Diamond Center facade, the vault, the sensors, the crew — in the film's minimalist Amber-Noir language: white maquette surfaces, amber light, forensic labels.</p>
     <div class="pd-grid">
-      <figure class="pd"><img src="3d-building.jpg" alt="3D scene — the Diamond Center building at night" loading="lazy" decoding="async" /><span>Diamond Center</span></figure>
-      <figure class="pd"><img src="3d-vault.jpg" alt="3D scene — the vault door" loading="lazy" decoding="async" /><span data-en="The Vault Door" data-tr="Kasa Kapısı" data-de="Die Tresortür">The Vault Door</span></figure>
-      <figure class="pd"><img src="3d-dial.jpg" alt="3D scene — the combination dial, macro" loading="lazy" decoding="async" /><span data-en="100M Combinations" data-tr="100M Kombinasyon" data-de="100 Mio. Kombinationen">100M Combinations</span></figure>
-      <figure class="pd"><img src="3d-sensor.jpg" alt="3D scene — defeating the heat sensor" loading="lazy" decoding="async" /><span data-en="The Heat Sensor" data-tr="Isı Sensörü" data-de="Der Wärmesensor">The Heat Sensor</span></figure>
-      <figure class="pd"><img src="3d-magnet.jpg" alt="3D scene — sensor versus decoy magnet" loading="lazy" decoding="async" /><span data-en="The Decoy Magnet" data-tr="Sahte Mıknatıs" data-de="Der Köder-Magnet">The Decoy Magnet</span></figure>
-      <figure class="pd"><img src="3d-crew.jpg" alt="3D scene — the School of Turin crew figures" loading="lazy" decoding="async" /><span data-en="The School of Turin" data-tr="Torino Okulu" data-de="Die Schule von Turin">The School of Turin</span></figure>
-      <figure class="pd"><img src="3d-loot.jpg" alt="3D scene — the loot" loading="lazy" decoding="async" /><span data-en="The Loot" data-tr="Ganimet" data-de="Die Beute">The Loot</span></figure>
-      <figure class="pd"><img src="3d-aftermath.jpg" alt="3D scene — the ransacked vault room aftermath" loading="lazy" decoding="async" /><span data-en="The Aftermath" data-tr="Sonrası" data-de="Danach">The Aftermath</span></figure>
+      <figure class="pd"><img src="3d-building.jpg" alt="3D scene — the Diamond Center building at night" loading="lazy" decoding="async" width="640" height="360" /><span>Diamond Center</span></figure>
+      <figure class="pd"><img src="3d-vault.jpg" alt="3D scene — the vault door" loading="lazy" decoding="async" width="640" height="360" /><span data-en="The Vault Door" data-tr="Kasa Kapısı" data-de="Die Tresortür">The Vault Door</span></figure>
+      <figure class="pd"><img src="3d-dial.jpg" alt="3D scene — the combination dial, macro" loading="lazy" decoding="async" width="640" height="360" /><span data-en="100M Combinations" data-tr="100M Kombinasyon" data-de="100 Mio. Kombinationen">100M Combinations</span></figure>
+      <figure class="pd"><img src="3d-sensor.jpg" alt="3D scene — defeating the heat sensor" loading="lazy" decoding="async" width="640" height="360" /><span data-en="The Heat Sensor" data-tr="Isı Sensörü" data-de="Der Wärmesensor">The Heat Sensor</span></figure>
+      <figure class="pd"><img src="3d-magnet.jpg" alt="3D scene — sensor versus decoy magnet" loading="lazy" decoding="async" width="640" height="360" /><span data-en="The Decoy Magnet" data-tr="Sahte Mıknatıs" data-de="Der Köder-Magnet">The Decoy Magnet</span></figure>
+      <figure class="pd"><img src="3d-crew.jpg" alt="3D scene — the School of Turin crew figures" loading="lazy" decoding="async" width="640" height="360" /><span data-en="The School of Turin" data-tr="Torino Okulu" data-de="Die Schule von Turin">The School of Turin</span></figure>
+      <figure class="pd"><img src="3d-loot.jpg" alt="3D scene — the loot" loading="lazy" decoding="async" width="640" height="360" /><span data-en="The Loot" data-tr="Ganimet" data-de="Die Beute">The Loot</span></figure>
+      <figure class="pd"><img src="3d-aftermath.jpg" alt="3D scene — the ransacked vault room aftermath" loading="lazy" decoding="async" width="640" height="360" /><span data-en="The Aftermath" data-tr="Sonrası" data-de="Danach">The Aftermath</span></figure>
     </div>
   </section>
 
@@ -293,20 +334,20 @@
   <section class="reveal">
     <div class="eyebrow" data-en="05 · Motion &amp; Identity — 35 Custom Graphics" data-tr="05 · Motion &amp; Kimlik — 35 Özel Grafik" data-de="05 · Motion &amp; Identity — 35 individuelle Grafiken">05 · Motion &amp; Identity — 35 Custom Graphics</div>
     <p data-en="The film's entire graphic language was designed from zero: an original title sequence, five act titles, security counters, forensic overlays, date stamps and the DNA reveal — all 4K, all in CITRINE gold." data-tr="Filmin tüm grafik dili sıfırdan tasarlandı: özgün jenerik, beş perde başlığı, güvenlik sayaçları, adli overlay'ler, tarih damgaları ve DNA eşleşmesi — hepsi 4K, hepsi CITRINE sarısında." data-de="Die gesamte Grafiksprache des Films wurde von null an gestaltet: eine originale Titelsequenz, fünf Akt-Titel, Sicherheits-Counter, forensische Overlays, Datumsstempel und der DNA-Match — alles in 4K, alles in CITRINE-Gold.">The film's entire graphic language was designed from zero: an original title sequence, five act titles, security counters, forensic overlays, date stamps and the DNA reveal — all 4K, all in CITRINE gold.</p>
-    <figure class="mt-wide"><img src="mt-opener.jpg" alt="FLAWLESS opening title — ten layers of security, one half-eaten sandwich, a CITRINE film" loading="lazy" decoding="async" /></figure>
+    <figure class="mt-wide"><img src="mt-opener.jpg" alt="FLAWLESS opening title — ten layers of security, one half-eaten sandwich, a CITRINE film" loading="lazy" decoding="async" width="1280" height="720" /></figure>
     <div class="strip-cap" data-en="The Five Acts" data-tr="Beş Perde" data-de="Die fünf Akte">The Five Acts</div>
     <div class="part-strip">
-      <img src="mt-part1.jpg" alt="Part 01 — The Plan" loading="lazy" decoding="async" />
-      <img src="mt-part2.jpg" alt="Part 02 — The Heist" loading="lazy" decoding="async" />
-      <img src="mt-part3.jpg" alt="Part 03 — The Escape" loading="lazy" decoding="async" />
-      <img src="mt-part4.jpg" alt="Part 04 — The Mistake" loading="lazy" decoding="async" />
-      <img src="mt-part5.jpg" alt="Part 05 — Where Is He Now" loading="lazy" decoding="async" />
+      <img src="mt-part1.jpg" alt="Part 01 — The Plan" loading="lazy" decoding="async" width="480" height="270" />
+      <img src="mt-part2.jpg" alt="Part 02 — The Heist" loading="lazy" decoding="async" width="480" height="270" />
+      <img src="mt-part3.jpg" alt="Part 03 — The Escape" loading="lazy" decoding="async" width="480" height="270" />
+      <img src="mt-part4.jpg" alt="Part 04 — The Mistake" loading="lazy" decoding="async" width="480" height="270" />
+      <img src="mt-part5.jpg" alt="Part 05 — Where Is He Now" loading="lazy" decoding="async" width="480" height="270" />
     </div>
     <div class="mt-grid">
-      <figure class="pd"><img src="mt-dna.jpg" alt="Motion graphic — forensic DNA match" loading="lazy" decoding="async" /><span data-en="DNA Match" data-tr="DNA Eşleşmesi" data-de="DNA-Match">DNA Match</span></figure>
-      <figure class="pd"><img src="mt-lock.jpg" alt="Motion graphic — the lock, 100,000,000 possible codes" loading="lazy" decoding="async" /><span data-en="The Lock" data-tr="Kilit" data-de="Das Schloss">The Lock</span></figure>
-      <figure class="pd"><img src="mt-fingerprint.jpg" alt="Motion graphic — fingerprint scan" loading="lazy" decoding="async" /><span data-en="Fingerprint" data-tr="Parmak İzi" data-de="Fingerabdruck">Fingerprint</span></figure>
-      <figure class="pd"><img src="mt-counter.jpg" alt="Motion graphic — the 10-layer security counter" loading="lazy" decoding="async" /><span data-en="Security Counter" data-tr="Güvenlik Sayacı" data-de="Sicherheits-Counter">Security Counter</span></figure>
+      <figure class="pd"><img src="mt-dna.jpg" alt="Motion graphic — forensic DNA match" loading="lazy" decoding="async" width="640" height="360" /><span data-en="DNA Match" data-tr="DNA Eşleşmesi" data-de="DNA-Match">DNA Match</span></figure>
+      <figure class="pd"><img src="mt-lock.jpg" alt="Motion graphic — the lock, 100,000,000 possible codes" loading="lazy" decoding="async" width="640" height="360" /><span data-en="The Lock" data-tr="Kilit" data-de="Das Schloss">The Lock</span></figure>
+      <figure class="pd"><img src="mt-fingerprint.jpg" alt="Motion graphic — fingerprint scan" loading="lazy" decoding="async" width="640" height="360" /><span data-en="Fingerprint" data-tr="Parmak İzi" data-de="Fingerabdruck">Fingerprint</span></figure>
+      <figure class="pd"><img src="mt-counter.jpg" alt="Motion graphic — the 10-layer security counter" loading="lazy" decoding="async" width="640" height="360" /><span data-en="Security Counter" data-tr="Güvenlik Sayacı" data-de="Sicherheits-Counter">Security Counter</span></figure>
     </div>
   </section>
 
@@ -315,8 +356,8 @@
     <div class="eyebrow" data-en="06 · The Thumbnail Lab" data-tr="06 · Thumbnail Lab" data-de="06 · Das Thumbnail-Lab">06 · The Thumbnail Lab</div>
     <p data-en="Launch was treated like a product: thumbnail directions designed and A/B-tested with matched titles, chapters and multi-language metadata. The two that carried it:" data-tr="Lansman bir ürün gibi ele alındı: thumbnail yönleri tasarlandı; eşleşen başlıklar, bölümler ve çok dilli metadata ile A/B test edildi. Onu taşıyan iki tanesi:" data-de="Der Launch wurde wie ein Produkt behandelt: Thumbnail-Richtungen, gestaltet und per A/B-Test mit passenden Titeln, Kapiteln und mehrsprachigen Metadaten. Die beiden, die ihn trugen:">Launch was treated like a product: thumbnail directions designed and A/B-tested with matched titles, chapters and multi-language metadata. The two that carried it:</p>
     <div class="thumb-grid">
-      <figure class="pd"><img src="thumb-a.jpg" alt="Thumbnail — $100 million gone" loading="lazy" decoding="async" /><span>$100M Gone</span></figure>
-      <figure class="pd"><img src="thumb-c.jpg" alt="Thumbnail — the perfect crime" loading="lazy" decoding="async" /><span data-en="The Perfect Crime" data-tr="Kusursuz Suç" data-de="Das perfekte Verbrechen">The Perfect Crime</span></figure>
+      <figure class="pd"><img src="thumb-a.jpg" alt="Thumbnail — $100 million gone" loading="lazy" decoding="async" width="960" height="540" /><span>$100M Gone</span></figure>
+      <figure class="pd"><img src="thumb-c.jpg" alt="Thumbnail — the perfect crime" loading="lazy" decoding="async" width="960" height="540" /><span data-en="The Perfect Crime" data-tr="Kusursuz Suç" data-de="Das perfekte Verbrechen">The Perfect Crime</span></figure>
     </div>
   </section>
 
@@ -353,9 +394,9 @@
   <section class="reveal">
     <div class="eyebrow" data-en="Craft &amp; Scale" data-tr="Ustalık &amp; Ölçek" data-de="Handwerk &amp; Umfang">Craft &amp; Scale</div>
     <div class="stats">
-      <div class="stat"><div class="n">~17′</div><div class="l" data-en="4K cinematic runtime" data-tr="4K sinematik süre" data-de="4K-Laufzeit, cineastisch">4K cinematic runtime</div></div>
-      <div class="stat"><div class="n">30+</div><div class="l" data-en="bespoke 3D scenes" data-tr="özel 3D sahne" data-de="maßgefertigte 3D-Szenen">bespoke 3D scenes</div></div>
-      <div class="stat"><div class="n">35</div><div class="l" data-en="custom motion graphics" data-tr="özel motion grafik" data-de="individuelle Motion-Graphics">custom motion graphics</div></div>
+      <div class="stat"><div class="n" data-count="17" data-prefix="~" data-suffix="′">~17′</div><div class="l" data-en="4K cinematic runtime" data-tr="4K sinematik süre" data-de="4K-Laufzeit, cineastisch">4K cinematic runtime</div></div>
+      <div class="stat"><div class="n" data-count="30" data-suffix="+">30+</div><div class="l" data-en="bespoke 3D scenes" data-tr="özel 3D sahne" data-de="maßgefertigte 3D-Szenen">bespoke 3D scenes</div></div>
+      <div class="stat"><div class="n" data-count="35">35</div><div class="l" data-en="custom motion graphics" data-tr="özel motion grafik" data-de="individuelle Motion-Graphics">custom motion graphics</div></div>
       <div class="stat"><div class="n">3→6</div><div class="l" data-en="languages (EN / TR / IT live)" data-tr="dil (EN / TR / IT yayında)" data-de="Sprachen (EN / TR / IT live)">languages (EN / TR / IT live)</div></div>
     </div>
   </section>
@@ -399,6 +440,19 @@
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="reveal">
+    <div class="cta-band">
+      <div class="eyebrow" style="justify-content:center" data-en="Work With Me" data-tr="Birlikte Çalışalım" data-de="Zusammenarbeiten">Work With Me</div>
+      <h2 data-en="Have a story worth telling?" data-tr="Anlatılmaya değer bir hikâyen mi var?" data-de="Hast du eine Geschichte, die es wert ist, erzählt zu werden?">Have a story worth telling?</h2>
+      <p data-en="Documentaries, brand films and cinematic AI — written, directed and finished end to end. Let's build the next one." data-tr="Belgeseller, marka filmleri ve sinematik AI — uçtan uca yazılır, yönetilir, tamamlanır. Hadi bir sonrakini yapalım." data-de="Dokumentationen, Markenfilme und cineastische KI — von A bis Z geschrieben, inszeniert und fertiggestellt. Lass uns den nächsten machen.">Documentaries, brand films and cinematic AI — written, directed and finished end to end. Let's build the next one.</p>
+      <div class="btns">
+        <a class="btn btn-gold" href="mailto:eray@eraybalat.com"><span data-en="Get in touch" data-tr="İletişime geç" data-de="Kontakt aufnehmen">Get in touch</span></a>
+        <a class="btn btn-ghost" href="/#contact"><span data-en="Start a project →" data-tr="Proje başlat →" data-de="Projekt starten →">Start a project →</span></a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -411,6 +465,8 @@
     </span>
   </div>
 </footer>
+
+<div class="lb" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer"><button class="lb-close" type="button" aria-label="Close">&#10005;</button></div>
 
 <script>
 (function(){
@@ -436,9 +492,36 @@
   }
   document.querySelectorAll('.lang-btn').forEach(function(b){ b.addEventListener('click',function(){ setLang(b.dataset.lang); }); });
   (function(){ var ok=['en','tr','de'],l; var p=(new URLSearchParams(location.search).get('lang'))||''; if(ok.indexOf(p)>-1){l=p} else { try{l=localStorage.getItem('lang')}catch(e){} } if(ok.indexOf(l)<0){ var n=(navigator.language||'en').slice(0,2).toLowerCase(); l=n==='de'?'de':n==='tr'?'tr':'en'; } setLang(l); })();
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   // reveal on scroll
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  // gallery items reveal individually, staggered within each row (added via JS so they stay visible if JS is off)
+  document.querySelectorAll('.pd-grid .pd, .mt-grid .pd, .thumb-grid .pd, .part-strip img').forEach(function(el,i){ el.classList.add('reveal'); el.style.transitionDelay=((i%4)*0.06)+'s'; io.observe(el); });
+
+  // scroll-progress bar
+  var prog=document.getElementById('prog'),ticking=false;
+  function updateProg(){ var h=document.documentElement; var max=h.scrollHeight-h.clientHeight; var y=h.scrollTop||document.body.scrollTop||0; prog.style.width=(max>0?(y/max*100):0).toFixed(2)+'%'; ticking=false; }
+  window.addEventListener('scroll',function(){ if(!ticking){ requestAnimationFrame(updateProg); ticking=true; } },{passive:true});
+  window.addEventListener('resize',updateProg,{passive:true}); updateProg();
+
+  // stats count-up when the row scrolls into view
+  function countUp(el){ var target=parseInt(el.getAttribute('data-count'),10)||0, pre=el.getAttribute('data-prefix')||'', suf=el.getAttribute('data-suffix')||''; if(reduce){ el.textContent=pre+target+suf; return; } var start=null,dur=1300; function step(t){ if(!start)start=t; var p=Math.min((t-start)/dur,1), e=1-Math.pow(1-p,3); el.textContent=pre+Math.round(e*target)+suf; if(p<1)requestAnimationFrame(step); } requestAnimationFrame(step); }
+  var statsEl=document.querySelector('.stats');
+  if(statsEl){ var so=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.querySelectorAll('[data-count]').forEach(countUp); so.unobserve(e.target); } }); },{threshold:.4}); so.observe(statsEl); }
+
+  // lightbox for gallery images
+  var lb=document.getElementById('lightbox'),lbImg=null,lastFocus=null;
+  function openLB(src,alt){ if(!lbImg){ lbImg=document.createElement('img'); lb.insertBefore(lbImg,lb.firstChild); } lbImg.src=src; lbImg.alt=alt||''; lastFocus=document.activeElement; lb.classList.add('on'); lb.setAttribute('aria-hidden','false'); var c=lb.querySelector('.lb-close'); if(c)c.focus(); }
+  function closeLB(){ lb.classList.remove('on'); lb.setAttribute('aria-hidden','true'); if(lastFocus&&lastFocus.focus)lastFocus.focus(); }
+  document.querySelectorAll('.pd img, .part-strip img, .story-grid img, .int-fig img, .mt-wide img').forEach(function(im){ im.addEventListener('click',function(){ openLB(im.getAttribute('src'),im.getAttribute('alt')); }); });
+  lb.addEventListener('click',closeLB);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb.classList.contains('on'))closeLB(); });
+
+  // warm the YouTube connection on hover/focus intent (before click)
+  var warmed=false;
+  function warm(){ if(warmed)return; warmed=true; ['https://www.youtube-nocookie.com','https://i.ytimg.com'].forEach(function(u){ var l=document.createElement('link'); l.rel='preconnect'; l.href=u; l.crossOrigin=''; document.head.appendChild(l); }); }
+  f.addEventListener('pointerenter',warm); f.addEventListener('focus',warm,true);
 })();
 </script>
 </body>
