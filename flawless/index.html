@@ -205,6 +205,14 @@
   .cta-band .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   .btn-ghost{border:1px solid rgba(252,195,0,.42);color:var(--gold)}
   .btn-ghost:hover{background:rgba(252,195,0,.1);transform:translateY(-2px)}
+  /* behind the edit — timeline */
+  .tl-figure{margin:6px 0 0}
+  .tl-frame{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(252,195,0,.24);box-shadow:0 30px 80px -40px rgba(0,0,0,.85),0 0 60px -22px rgba(252,195,0,.16);cursor:zoom-in}
+  .tl-frame img{width:100%;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+  .tl-frame:hover img{transform:scale(1.015)}
+  .tl-frame::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 100px rgba(8,13,24,.5);border-radius:var(--radius)}
+  .tl-badge{position:absolute;left:12px;bottom:12px;font-family:'Oswald';font-weight:600;font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:#fff;background:rgba(8,13,24,.74);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);padding:6px 11px;border-radius:7px;border:1px solid rgba(252,195,0,.28)}
+  .tl-cap{color:var(--dim);font-size:.95rem;line-height:1.6;margin-top:14px;font-style:italic;max-width:820px}
 
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
   .reveal.in{opacity:1;transform:none}
@@ -223,7 +231,7 @@
     .proof{flex-direction:column;align-items:stretch;gap:7px}
     .lb-close{top:10px;right:12px}
   }
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important};html{scroll-behavior:auto}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -260,7 +268,7 @@
     </div>
     <div class="hero-cta"><a class="btn btn-gold" href="#watch"><span class="tri" aria-hidden="true"></span> <span data-en="Watch the film" data-tr="Filmi izle" data-de="Film ansehen">Watch the film</span></a></div>
   </div>
-  <a class="scroll-cue" href="#watch" aria-label="Scroll down"><span class="mouse" aria-hidden="true"></span><span data-en="Scroll" data-tr="Kaydır" data-de="Scrollen">Scroll</span></a>
+  <a class="scroll-cue" href="#watch" aria-label="Scroll down" data-aria-en="Scroll down" data-aria-tr="Aşağı kaydır" data-aria-de="Nach unten scrollen"><span class="mouse" aria-hidden="true"></span><span data-en="Scroll" data-tr="Kaydır" data-de="Scrollen">Scroll</span></a>
 </section>
 
 <main class="wrap">
@@ -274,8 +282,8 @@
 
   <!-- 01 · THE FILM -->
   <section class="video-sec" id="watch">
-    <div class="eyebrow" data-en="01 · The Film" data-tr="01 · Film" data-de="01 · Der Film">01 · The Film</div>
-    <div class="facade reveal" id="ytFacade" role="button" tabindex="0" aria-label="Play the FLAWLESS documentary">
+    <h2 class="eyebrow" data-en="01 · The Film" data-tr="01 · Film" data-de="01 · Der Film">01 · The Film</h2>
+    <div class="facade reveal" id="ytFacade" role="button" tabindex="0" aria-label="Play the FLAWLESS documentary" data-aria-en="Play the FLAWLESS documentary" data-aria-tr="FLAWLESS belgeselini oynat" data-aria-de="FLAWLESS-Dokumentation abspielen">
       <img src="watch-thumb.jpg" alt="Play FLAWLESS — The Antwerp Diamond Heist" loading="lazy" decoding="async" width="1280" height="720" />
       <span class="pbtn" aria-hidden="true"></span>
       <span class="flabel" data-en="▶ Watch on YouTube · 16:56 · 4K" data-tr="▶ YouTube'da izle · 16:56 · 4K" data-de="▶ Auf YouTube ansehen · 16:56 · 4K">▶ Watch on YouTube · 16:56 · 4K</span>
@@ -284,18 +292,18 @@
 
   <!-- TESTIMONIAL CENTERPIECE -->
   <section>
-    <div class="eyebrow" data-en="The Testimonial — In His Own Words" data-tr="Referans — Kendi Sözleriyle" data-de="Das Testimonial — In seinen eigenen Worten">The Testimonial — In His Own Words</div>
+    <h2 class="eyebrow" data-en="The Testimonial — In His Own Words" data-tr="Tanıklık — Kendi Sözleriyle" data-de="Das Testimonial — In seinen eigenen Worten">The Testimonial — In His Own Words</h2>
     <div class="quote reveal">
       <div class="it" data-en="&ldquo;I am grateful to you for the documentary &mdash; I like it very much.&rdquo;" data-tr="&ldquo;Belgesel için sana minnettarım &mdash; çok beğendim.&rdquo;" data-de="&ldquo;Ich bin dir für die Dokumentation dankbar &mdash; sie gefällt mir sehr.&rdquo;">&ldquo;I am grateful to you for the documentary &mdash; I like it very much.&rdquo;</div>
       <div class="en" lang="it">&ldquo;Ti sono grato per il documentario, mi piace molto&hellip; molto bello.&rdquo;</div>
-      <div class="who" data-en="&mdash; Leonardo Notarbartolo, subject of FLAWLESS" data-tr="&mdash; Leonardo Notarbartolo, FLAWLESS'ın konusu" data-de="&mdash; Leonardo Notarbartolo, Protagonist von FLAWLESS">&mdash; Leonardo Notarbartolo, subject of FLAWLESS</div>
-      <p class="quote-note" data-en="&ldquo;As you could see, I am simple and spontaneous &mdash; if something comes to me and I like it, I do it. That's how it was with Eray.&rdquo;" data-tr="&ldquo;Gördüğün gibi, sade ve içtenim &mdash; içimden bir şey gelir ve beğenirsem, yaparım. Eray'la da öyle oldu.&rdquo;" data-de="&ldquo;Wie du sehen konntest, bin ich einfach und spontan &mdash; wenn mir etwas in den Sinn kommt und es mir gefällt, tue ich es. So war es auch mit Eray.&rdquo;">&ldquo;As you could see, I am simple and spontaneous &mdash; if something comes to me and I like it, I do it. That's how it was with Eray.&rdquo;</p>
+      <div class="who" data-en="&mdash; Leonardo Notarbartolo, subject of FLAWLESS" data-tr="&mdash; Leonardo Notarbartolo, belgeselin merkezindeki isim" data-de="&mdash; Leonardo Notarbartolo, Protagonist von FLAWLESS">&mdash; Leonardo Notarbartolo, subject of FLAWLESS</div>
+      <p class="quote-note" data-en="&ldquo;As you could see, I am simple and spontaneous &mdash; if something comes to me and I like it, I do it. That's how it was with Eray.&rdquo;" data-tr="&ldquo;Gördüğün gibi, sade ve spontane biriyim &mdash; içimden bir şey gelir ve beğenirsem, yaparım. Eray'la da öyle oldu.&rdquo;" data-de="&ldquo;Wie du sehen konntest, bin ich einfach und spontan &mdash; wenn mir etwas in den Sinn kommt und es mir gefällt, tue ich es. So war es auch mit Eray.&rdquo;">&ldquo;As you could see, I am simple and spontaneous &mdash; if something comes to me and I like it, I do it. That's how it was with Eray.&rdquo;</p>
     </div>
   </section>
 
   <!-- 02 · THE STORY -->
   <section class="reveal">
-    <div class="eyebrow" data-en="02 · The Story" data-tr="02 · Hikâye" data-de="02 · Die Geschichte">02 · The Story</div>
+    <h2 class="eyebrow" data-en="02 · The Story" data-tr="02 · Hikâye" data-de="02 · Die Geschichte">02 · The Story</h2>
     <div class="story-grid">
       <div>
         <p class="lead" data-en="February 2003. Over $100 million vanishes from a vault the world called impossible to breach — without a single alarm." data-tr="Şubat 2003. Dünyanın 'aşılamaz' dediği bir kasadan, tek bir alarm bile çalmadan 100 milyon doların üzerinde mücevher kayboluyor." data-de="Februar 2003. Über 100 Millionen Dollar verschwinden aus einem Tresor, der als unknackbar galt — ohne einen einzigen Alarm.">February 2003. Over $100 million vanishes from a vault the world called impossible to breach — without a single alarm.</p>
@@ -309,14 +317,14 @@
 
   <!-- 03 · THE INTERVIEW -->
   <section class="reveal">
-    <div class="eyebrow" data-en="03 · The Interview — The Mastermind" data-tr="03 · Röportaj — Soygunun Beyni" data-de="03 · Das Interview — Der Drahtzieher">03 · The Interview — The Mastermind</div>
+    <h2 class="eyebrow" data-en="03 · The Interview — The Mastermind" data-tr="03 · Röportaj — Soygunun Beyni" data-de="03 · Das Interview — Der Drahtzieher">03 · The Interview — The Mastermind</h2>
     <p data-en="The heart of the film is an exclusive conversation with the man who led the heist. Rather than narrate <em>about</em> him, the documentary lets Notarbartolo speak for himself — the planning, the moment the vault opened, the single mistake, and how he sees it today — turning a reconstruction into first-person history." data-tr="Filmin kalbi, soygunu yöneten adamla yapılmış özel bir söyleşi. Belgesel onun <em>hakkında</em> anlatmak yerine sözü Notarbartolo'nun kendisine bırakıyor — plan, kasanın açıldığı an, o tek hata ve bugün nasıl gördüğü — böylece bir rekonstrüksiyon, birinci ağızdan tarihe dönüşüyor." data-de="Das Herz des Films ist ein exklusives Gespräch mit dem Mann, der den Raub anführte. Statt <em>über</em> ihn zu erzählen, lässt die Dokumentation Notarbartolo selbst sprechen — die Planung, der Moment, als der Tresor aufging, der eine Fehler und wie er es heute sieht — so wird aus einer Rekonstruktion Geschichte aus erster Hand.">The heart of the film is an exclusive conversation with the man who led the heist. Rather than narrate <em>about</em> him, the documentary lets Notarbartolo speak for himself — the planning, the moment the vault opened, the single mistake, and how he sees it today — turning a reconstruction into first-person history.</p>
     <figure class="int-fig"><img src="int-card.jpg" alt="FLAWLESS cold open — the Notarbartolo interview card" loading="lazy" decoding="async" width="1280" height="720" /></figure>
   </section>
 
   <!-- 04 · PRODUCTION DESIGN — 3D BUILD -->
   <section class="reveal">
-    <div class="eyebrow" data-en="04 · Production Design — The 3D Build" data-tr="04 · Prodüksiyon Tasarımı — 3D İnşa" data-de="04 · Production Design — Der 3D-Build">04 · Production Design — The 3D Build</div>
+    <h2 class="eyebrow" data-en="04 · Production Design — The 3D Build" data-tr="04 · Prodüksiyon Tasarımı — 3D İnşa" data-de="04 · Production Design — Der 3D-Build">04 · Production Design — The 3D Build</h2>
     <p data-en="Every location was modeled from scratch — the Diamond Center facade, the vault, the sensors, the crew — in the film's minimalist Amber-Noir language: white maquette surfaces, amber light, forensic labels." data-tr="Her mekân sıfırdan modellendi — Diamond Center cephesi, kasa, sensörler, ekip — filmin minimalist Amber-Noir dilinde: beyaz maket yüzeyler, amber ışık, adli etiketler." data-de="Jeder Schauplatz wurde von Grund auf modelliert — die Fassade des Diamond Center, der Tresor, die Sensoren, die Crew — in der minimalistischen Amber-Noir-Sprache des Films: weiße Modellflächen, bernsteinfarbenes Licht, forensische Labels.">Every location was modeled from scratch — the Diamond Center facade, the vault, the sensors, the crew — in the film's minimalist Amber-Noir language: white maquette surfaces, amber light, forensic labels.</p>
     <div class="pd-grid">
       <figure class="pd"><img src="3d-building.jpg" alt="3D scene — the Diamond Center building at night" loading="lazy" decoding="async" width="640" height="360" /><span>Diamond Center</span></figure>
@@ -332,7 +340,7 @@
 
   <!-- 05 · MOTION & IDENTITY -->
   <section class="reveal">
-    <div class="eyebrow" data-en="05 · Motion &amp; Identity — 35 Custom Graphics" data-tr="05 · Motion &amp; Kimlik — 35 Özel Grafik" data-de="05 · Motion &amp; Identity — 35 individuelle Grafiken">05 · Motion &amp; Identity — 35 Custom Graphics</div>
+    <h2 class="eyebrow" data-en="05 · Motion &amp; Identity — 35 Custom Graphics" data-tr="05 · Motion &amp; Kimlik — 35 Özel Grafik" data-de="05 · Motion &amp; Identity — 35 individuelle Grafiken">05 · Motion &amp; Identity — 35 Custom Graphics</h2>
     <p data-en="The film's entire graphic language was designed from zero: an original title sequence, five act titles, security counters, forensic overlays, date stamps and the DNA reveal — all 4K, all in CITRINE gold." data-tr="Filmin tüm grafik dili sıfırdan tasarlandı: özgün jenerik, beş perde başlığı, güvenlik sayaçları, adli overlay'ler, tarih damgaları ve DNA eşleşmesi — hepsi 4K, hepsi CITRINE sarısında." data-de="Die gesamte Grafiksprache des Films wurde von null an gestaltet: eine originale Titelsequenz, fünf Akt-Titel, Sicherheits-Counter, forensische Overlays, Datumsstempel und der DNA-Match — alles in 4K, alles in CITRINE-Gold.">The film's entire graphic language was designed from zero: an original title sequence, five act titles, security counters, forensic overlays, date stamps and the DNA reveal — all 4K, all in CITRINE gold.</p>
     <figure class="mt-wide"><img src="mt-opener.jpg" alt="FLAWLESS opening title — ten layers of security, one half-eaten sandwich, a CITRINE film" loading="lazy" decoding="async" width="1280" height="720" /></figure>
     <div class="strip-cap" data-en="The Five Acts" data-tr="Beş Perde" data-de="Die fünf Akte">The Five Acts</div>
@@ -353,8 +361,8 @@
 
   <!-- 06 · THUMBNAIL LAB -->
   <section class="reveal">
-    <div class="eyebrow" data-en="06 · The Thumbnail Lab" data-tr="06 · Thumbnail Lab" data-de="06 · Das Thumbnail-Lab">06 · The Thumbnail Lab</div>
-    <p data-en="Launch was treated like a product: thumbnail directions designed and A/B-tested with matched titles, chapters and multi-language metadata. The two that carried it:" data-tr="Lansman bir ürün gibi ele alındı: thumbnail yönleri tasarlandı; eşleşen başlıklar, bölümler ve çok dilli metadata ile A/B test edildi. Onu taşıyan iki tanesi:" data-de="Der Launch wurde wie ein Produkt behandelt: Thumbnail-Richtungen, gestaltet und per A/B-Test mit passenden Titeln, Kapiteln und mehrsprachigen Metadaten. Die beiden, die ihn trugen:">Launch was treated like a product: thumbnail directions designed and A/B-tested with matched titles, chapters and multi-language metadata. The two that carried it:</p>
+    <h2 class="eyebrow" data-en="06 · The Thumbnail Lab" data-tr="06 · Thumbnail Lab" data-de="06 · Das Thumbnail-Lab">06 · The Thumbnail Lab</h2>
+    <p data-en="Launch was treated like a product: thumbnail directions designed and A/B-tested with matched titles, chapters and multi-language metadata. The two that carried it:" data-tr="Lansman bir ürün gibi ele alındı: farklı thumbnail konseptleri tasarlandı; eşleşen başlıklar, bölümler ve çok dilli metadata ile A/B test edildi. Onu taşıyan iki tanesi:" data-de="Der Launch wurde wie ein Produkt behandelt: Thumbnail-Varianten wurden gestaltet und per A/B-Test mit passenden Titeln, Kapiteln und mehrsprachigen Metadaten geprüft. Die beiden, die ihn trugen:">Launch was treated like a product: thumbnail directions designed and A/B-tested with matched titles, chapters and multi-language metadata. The two that carried it:</p>
     <div class="thumb-grid">
       <figure class="pd"><img src="thumb-a.jpg" alt="Thumbnail — $100 million gone" loading="lazy" decoding="async" width="960" height="540" /><span>$100M Gone</span></figure>
       <figure class="pd"><img src="thumb-c.jpg" alt="Thumbnail — the perfect crime" loading="lazy" decoding="async" width="960" height="540" /><span data-en="The Perfect Crime" data-tr="Kusursuz Suç" data-de="Das perfekte Verbrechen">The Perfect Crime</span></figure>
@@ -365,8 +373,8 @@
 
   <!-- 07 · LOCALIZATION -->
   <section class="reveal">
-    <div class="eyebrow" data-en="07 · Localization — One Film, Six Languages" data-tr="07 · Lokalizasyon — Tek Film, Altı Dil" data-de="07 · Lokalisierung — Ein Film, sechs Sprachen">07 · Localization — One Film, Six Languages</div>
-    <p data-en="Beyond subtitles, FLAWLESS was localized with a full <b>Italian-language dub generated in my own cloned voice</b> — fitting, since the story is Italian and Notarbartolo's original interview is already in Italian. The pipeline extends to the highest-value markets, with German, Spanish and French versions underway, and multi-language audio tracks on a single upload." data-tr="Altyazıların ötesinde, FLAWLESS <b>kendi klonlanmış sesimle üretilmiş eksiksiz bir İtalyanca dublajla</b> yerelleştirildi — hikâye İtalyan, Notarbartolo'nun orijinal röportajı da zaten İtalyanca olduğu için birebir uyumlu. Hat, en değerli pazarlara doğru genişliyor: Almanca, İspanyolca ve Fransızca sürümler yolda; tek yüklemede çok dilli ses parçaları." data-de="Über Untertitel hinaus wurde FLAWLESS mit einer vollständigen <b>italienischen Synchronfassung in meiner eigenen geklonten Stimme</b> lokalisiert — passend, denn die Geschichte ist italienisch und Notarbartolos Original-Interview ohnehin auf Italienisch. Die Pipeline erweitert sich in die wertvollsten Märkte: Deutsch, Spanisch und Französisch sind in Arbeit, mit mehrsprachigen Audiospuren in einem einzigen Upload.">Beyond subtitles, FLAWLESS was localized with a full <b>Italian-language dub generated in my own cloned voice</b> — fitting, since the story is Italian and Notarbartolo's original interview is already in Italian. The pipeline extends to the highest-value markets, with German, Spanish and French versions underway, and multi-language audio tracks on a single upload.</p>
+    <h2 class="eyebrow" data-en="07 · Localization — One Film, Six Languages" data-tr="07 · Lokalizasyon — Tek Film, Altı Dil" data-de="07 · Lokalisierung — Ein Film, sechs Sprachen">07 · Localization — One Film, Six Languages</h2>
+    <p data-en="Beyond subtitles, FLAWLESS was localized with a full <b>Italian-language dub generated in my own cloned voice</b> — fitting, since the story is Italian and Notarbartolo's original interview is already in Italian. The pipeline extends to the highest-value markets, with German, Spanish and French versions underway, and multi-language audio tracks on a single upload." data-tr="Altyazıların ötesinde, FLAWLESS <b>kendi klonlanmış sesimle üretilmiş eksiksiz bir İtalyanca dublajla</b> yerelleştirildi — hikâye İtalyan, Notarbartolo'nun orijinal röportajı da zaten İtalyanca olduğu için birebir uyumlu. Süreç, en değerli pazarlara doğru genişliyor: Almanca, İspanyolca ve Fransızca sürümler yolda; tek yüklemede çok dilli ses parçaları." data-de="Über Untertitel hinaus wurde FLAWLESS mit einer vollständigen <b>italienischen Synchronfassung in meiner eigenen geklonten Stimme</b> lokalisiert — passend, denn die Geschichte ist italienisch und Notarbartolos Original-Interview ohnehin auf Italienisch. Die Pipeline erstreckt sich auf die wertvollsten Märkte: Deutsch, Spanisch und Französisch sind in Arbeit, mit mehrsprachigen Audiospuren in einem einzigen Upload.">Beyond subtitles, FLAWLESS was localized with a full <b>Italian-language dub generated in my own cloned voice</b> — fitting, since the story is Italian and Notarbartolo's original interview is already in Italian. The pipeline extends to the highest-value markets, with German, Spanish and French versions underway, and multi-language audio tracks on a single upload.</p>
     <div class="chips">
       <span class="chip"><b>EN</b> · <span data-en="live" data-tr="yayında" data-de="live">live</span></span>
       <span class="chip"><b>TR</b> · <span data-en="live" data-tr="yayında" data-de="live">live</span></span>
@@ -379,20 +387,33 @@
 
   <!-- 08 · HOW IT WAS MADE -->
   <section class="reveal">
-    <div class="eyebrow" data-en="08 · How It Was Made" data-tr="08 · Nasıl Yapıldı" data-de="08 · Wie er entstand">08 · How It Was Made</div>
+    <h2 class="eyebrow" data-en="08 · How It Was Made" data-tr="08 · Nasıl Yapıldı" data-de="08 · Wie er entstand">08 · How It Was Made</h2>
     <ul class="approach">
-      <li data-en="<b>Story &amp; script.</b> A retention-first narrative — cold open + five acts + outro — engineered around the central irony: a perfect crime undone by an ordinary human mistake." data-tr="<b>Hikâye &amp; senaryo.</b> İzlenme odaklı bir kurgu — cold open + beş perde + kapanış — merkezdeki ironinin etrafına inşa edildi: sıradan bir insan hatasıyla çözülen kusursuz bir suç." data-de="<b>Story &amp; Drehbuch.</b> Eine auf Retention gebaute Erzählung — Cold Open + fünf Akte + Outro — konstruiert um die zentrale Ironie: ein perfektes Verbrechen, entlarvt durch einen gewöhnlichen menschlichen Fehler."><b>Story &amp; script.</b> A retention-first narrative — cold open + five acts + outro — engineered around the central irony: a perfect crime undone by an ordinary human mistake.</li>
+      <li data-en="<b>Story &amp; script.</b> A retention-first narrative — cold open + five acts + outro — engineered around the central irony: a perfect crime undone by an ordinary human mistake." data-tr="<b>Hikâye &amp; senaryo.</b> İzlenme odaklı bir kurgu — cold open + beş perde + kapanış — merkezdeki ironinin etrafına inşa edildi: sıradan bir insan hatasıyla çözülen kusursuz bir suç." data-de="<b>Story &amp; Drehbuch.</b> Eine auf Retention gebaute Erzählung — Cold Open + fünf Akte + Outro — rund um die zentrale Ironie konstruiert: ein perfektes Verbrechen, entlarvt durch einen gewöhnlichen menschlichen Fehler."><b>Story &amp; script.</b> A retention-first narrative — cold open + five acts + outro — engineered around the central irony: a perfect crime undone by an ordinary human mistake.</li>
       <li data-en="<b>Original interview.</b> Conducted and integrated an exclusive interview with Leonardo Notarbartolo (in Italian, fully subtitled) as the emotional spine of the film." data-tr="<b>Özgün röportaj.</b> Leonardo Notarbartolo ile özel bir röportaj yapıldı ve (İtalyanca, tam altyazılı) filmin duygusal omurgası olarak kurguya işlendi." data-de="<b>Original-Interview.</b> Ein exklusives Interview mit Leonardo Notarbartolo (auf Italienisch, vollständig untertitelt) geführt und als emotionales Rückgrat in den Film integriert."><b>Original interview.</b> Conducted and integrated an exclusive interview with Leonardo Notarbartolo (in Italian, fully subtitled) as the emotional spine of the film.</li>
-      <li data-en="<b>Reconstruction.</b> 30+ bespoke 3D scenes rebuilding the vault, the sensors and the escape — art-directed in a signature &quot;Amber-Noir&quot; look." data-tr="<b>Rekonstrüksiyon.</b> Kasayı, sensörleri ve kaçışı yeniden kuran 30+ özel 3D sahne — imza niteliğindeki &quot;Amber-Noir&quot; görünümüyle sanat yönetimi." data-de="<b>Rekonstruktion.</b> Über 30 maßgefertigte 3D-Szenen, die den Tresor, die Sensoren und die Flucht nachbauen — art-direktet im charakteristischen &quot;Amber-Noir&quot;-Look."><b>Reconstruction.</b> 30+ bespoke 3D scenes rebuilding the vault, the sensors and the escape — art-directed in a signature "Amber-Noir" look.</li>
+      <li data-en="<b>Reconstruction.</b> 30+ bespoke 3D scenes rebuilding the vault, the sensors and the escape — art-directed in a signature &quot;Amber-Noir&quot; look." data-tr="<b>Rekonstrüksiyon.</b> Kasayı, sensörleri ve kaçışı yeniden kuran 30+ özel 3D sahne — imza niteliğindeki &quot;Amber-Noir&quot; görünümüyle sanat yönetimi." data-de="<b>Rekonstruktion.</b> Über 30 maßgefertigte 3D-Szenen, die den Tresor, die Sensoren und die Flucht nachbauen — gestaltet im charakteristischen &quot;Amber-Noir&quot;-Look."><b>Reconstruction.</b> 30+ bespoke 3D scenes rebuilding the vault, the sensors and the escape — art-directed in a signature "Amber-Noir" look.</li>
       <li data-en="<b>Motion &amp; identity.</b> 35 custom motion graphics (security counters, forensic overlays, date stamps, the DNA reveal) plus an original title sequence, opener and outro." data-tr="<b>Motion &amp; kimlik.</b> 35 özel motion grafik (güvenlik sayaçları, adli overlay'ler, tarih damgaları, DNA eşleşmesi) artı özgün jenerik, açılış ve kapanış." data-de="<b>Motion &amp; Identity.</b> 35 individuelle Motion-Graphics (Sicherheits-Counter, forensische Overlays, Datumsstempel, der DNA-Match) plus eine originale Titelsequenz, Opener und Outro."><b>Motion &amp; identity.</b> 35 custom motion graphics (security counters, forensic overlays, date stamps, the DNA reveal) plus an original title sequence, opener and outro.</li>
       <li data-en="<b>Sound &amp; grade.</b> Professional narration, full sound design and music, mixed to broadcast loudness (−14 LUFS), finished with a cinematic color grade." data-tr="<b>Ses &amp; renk.</b> Profesyonel anlatım, eksiksiz ses tasarımı ve müzik; yayın standardında (−14 LUFS) mikslendi, sinematik renk düzenlemesiyle tamamlandı." data-de="<b>Sound &amp; Grade.</b> Professionelle Erzählung, vollständiges Sounddesign und Musik, gemischt auf Broadcast-Loudness (−14 LUFS), abgeschlossen mit einem cineastischen Color-Grade."><b>Sound &amp; grade.</b> Professional narration, full sound design and music, mixed to broadcast loudness (−14 LUFS), finished with a cinematic color grade.</li>
       <li data-en="<b>Launch strategy.</b> A/B-tested titles and thumbnails, a chaptered timeline, multi-language audio and a coordinated social rollout." data-tr="<b>Lansman stratejisi.</b> A/B testli başlıklar ve thumbnail'ler, bölümlenmiş zaman çizelgesi, çok dilli ses ve koordineli sosyal medya çıkışı." data-de="<b>Launch-Strategie.</b> A/B-getestete Titel und Thumbnails, eine Kapitel-Timeline, mehrsprachiges Audio und ein koordinierter Social-Rollout."><b>Launch strategy.</b> A/B-tested titles and thumbnails, a chaptered timeline, multi-language audio and a coordinated social rollout.</li>
     </ul>
   </section>
 
+  <!-- 09 · BEHIND THE EDIT -->
+  <section class="reveal">
+    <h2 class="eyebrow" data-en="09 · Behind the Edit" data-tr="09 · Kurgunun Arkasında" data-de="09 · Hinter dem Schnitt">09 · Behind the Edit</h2>
+    <p data-en="The part no automation can fake. Behind every second of FLAWLESS is a hand-built edit — the invisible work that turns raw 3D renders, narration and sound into a film." data-tr="Hiçbir otomasyonun taklit edemeyeceği kısım. FLAWLESS'ın her saniyesinin arkasında elle kurulmuş bir montaj var — ham 3D render'ları, anlatımı ve sesi bir filme dönüştüren görünmez emek." data-de="Der Teil, den keine Automatisierung vortäuschen kann. Hinter jeder Sekunde von FLAWLESS steht ein von Hand gebauter Schnitt — die unsichtbare Arbeit, die aus rohen 3D-Renders, Erzählung und Sound einen Film macht.">The part no automation can fake. Behind every second of FLAWLESS is a hand-built edit — the invisible work that turns raw 3D renders, narration and sound into a film.</p>
+    <figure class="tl-figure">
+      <div class="tl-frame">
+        <img src="timeline.jpg" alt="The FLAWLESS master timeline in Adobe Premiere Pro — eight video tracks and eight audio tracks of color-coded clips, subtitles, music and sound effects across the full 17-minute cut" loading="lazy" decoding="async" width="1830" height="1040" />
+        <span class="tl-badge" aria-hidden="true" data-en="⤢ Adobe Premiere Pro · Master Timeline" data-tr="⤢ Adobe Premiere Pro · Ana Zaman Çizelgesi" data-de="⤢ Adobe Premiere Pro · Master-Timeline">⤢ Adobe Premiere Pro · Master Timeline</span>
+      </div>
+      <figcaption class="tl-cap" data-en="Eight video tracks, eight audio tracks. Every 3D scene, motion graphic, subtitle, music cue and sound effect placed and color-coded by hand across the 17-minute cut — the human craft behind the flawless finish." data-tr="Sekiz video kanalı, sekiz ses kanalı. Her 3D sahne, motion grafik, altyazı, müzik ve ses efekti — 17 dakikalık kurgu boyunca tek tek elle yerleştirildi ve renk kodlandı; kusursuz sonucun ardındaki insan emeği." data-de="Acht Videospuren, acht Audiospuren. Jede 3D-Szene, jede Motion-Graphic, jeder Untertitel, jede Musik- und Soundeffekt-Spur — über den gesamten 17-minütigen Schnitt von Hand platziert und farblich codiert; die menschliche Handarbeit hinter dem makellosen Ergebnis.">Eight video tracks, eight audio tracks. Every 3D scene, motion graphic, subtitle, music cue and sound effect placed and color-coded by hand across the 17-minute cut — the human craft behind the flawless finish.</figcaption>
+    </figure>
+  </section>
+
   <!-- STATS -->
   <section class="reveal">
-    <div class="eyebrow" data-en="Craft &amp; Scale" data-tr="Ustalık &amp; Ölçek" data-de="Handwerk &amp; Umfang">Craft &amp; Scale</div>
+    <h2 class="eyebrow" data-en="Craft &amp; Scale" data-tr="Ustalık &amp; Ölçek" data-de="Handwerk &amp; Umfang">Craft &amp; Scale</h2>
     <div class="stats">
       <div class="stat"><div class="n" data-count="17" data-prefix="~" data-suffix="′">~17′</div><div class="l" data-en="4K cinematic runtime" data-tr="4K sinematik süre" data-de="4K-Laufzeit, cineastisch">4K cinematic runtime</div></div>
       <div class="stat"><div class="n" data-count="30" data-suffix="+">30+</div><div class="l" data-en="bespoke 3D scenes" data-tr="özel 3D sahne" data-de="maßgefertigte 3D-Szenen">bespoke 3D scenes</div></div>
@@ -403,7 +424,7 @@
 
   <!-- TOOLS -->
   <section class="reveal">
-    <div class="eyebrow" data-en="Tools &amp; Stack" data-tr="Araçlar" data-de="Tools &amp; Stack">Tools &amp; Stack</div>
+    <h2 class="eyebrow" data-en="Tools &amp; Stack" data-tr="Araçlar" data-de="Tools &amp; Stack">Tools &amp; Stack</h2>
     <div class="chips">
       <span class="chip">Adobe Premiere Pro</span>
       <span class="chip">After Effects</span>
@@ -419,9 +440,9 @@
 
   <!-- DEMONSTRATES -->
   <section class="reveal">
-    <div class="eyebrow" data-en="What This Project Demonstrates" data-tr="Bu Proje Neyi Kanıtlıyor" data-de="Was dieses Projekt zeigt">What This Project Demonstrates</div>
+    <h2 class="eyebrow" data-en="What This Project Demonstrates" data-tr="Bu Proje Neyi Kanıtlıyor" data-de="Was dieses Projekt zeigt">What This Project Demonstrates</h2>
     <div class="dgrid">
-      <div class="dcard"><div class="k" data-en="Directing &amp; Editorial" data-tr="Yönetim &amp; Kurgu" data-de="Regie &amp; Editorial">Directing &amp; Editorial</div><div class="v" data-en="End-to-end ownership: concept, long-form scriptwriting, edit and narration." data-tr="Uçtan uca sahiplik: konsept, uzun-format senaryo, kurgu ve anlatım." data-de="End-to-End-Verantwortung: Konzept, Langform-Drehbuch, Schnitt und Erzählung.">End-to-end ownership: concept, long-form scriptwriting, edit and narration.</div></div>
+      <div class="dcard"><div class="k" data-en="Directing &amp; Editorial" data-tr="Yönetmenlik &amp; Kurgu" data-de="Regie &amp; Editorial">Directing &amp; Editorial</div><div class="v" data-en="End-to-end ownership: concept, long-form scriptwriting, edit and narration." data-tr="Uçtan uca sahiplik: konsept, uzun-format senaryo, kurgu ve anlatım." data-de="End-to-End-Verantwortung: Konzept, Langform-Drehbuch, Schnitt und Erzählung.">End-to-end ownership: concept, long-form scriptwriting, edit and narration.</div></div>
       <div class="dcard"><div class="k" data-en="Source Access" data-tr="Kaynağa Erişim" data-de="Zugang zur Quelle">Source Access</div><div class="v" data-en="Securing and interviewing a real-world primary source — and earning their endorsement." data-tr="Gerçek bir birincil kaynağa ulaşmak, röportaj yapmak — ve onayını kazanmak." data-de="Eine reale Primärquelle gewinnen, interviewen — und ihre Anerkennung verdienen.">Securing and interviewing a real-world primary source — and earning their endorsement.</div></div>
       <div class="dcard"><div class="k" data-en="Visual Craft" data-tr="Görsel Ustalık" data-de="Visuelles Handwerk">Visual Craft</div><div class="v" data-en="3D &amp; motion art direction, a consistent cinematic identity, finished sound &amp; grade." data-tr="3D &amp; motion sanat yönetimi, tutarlı sinematik kimlik, tamamlanmış ses &amp; renk." data-de="3D- &amp; Motion-Art-Direction, eine konsistente cineastische Identität, fertiger Sound &amp; Grade.">3D &amp; motion art direction, a consistent cinematic identity, finished sound &amp; grade.</div></div>
       <div class="dcard"><div class="k" data-en="Distribution" data-tr="Dağıtım" data-de="Distribution">Distribution</div><div class="v" data-en="Multi-language localization, AI-assisted dubbing, and a data-driven launch strategy." data-tr="Çok dilli lokalizasyon, AI destekli dublaj ve veri odaklı lansman stratejisi." data-de="Mehrsprachige Lokalisierung, KI-gestütztes Dubbing und eine datengetriebene Launch-Strategie.">Multi-language localization, AI-assisted dubbing, and a data-driven launch strategy.</div></div>
@@ -430,9 +451,9 @@
 
   <!-- CREDITS -->
   <section class="reveal">
-    <div class="eyebrow" data-en="Credits" data-tr="Künye" data-de="Credits">Credits</div>
+    <h2 class="eyebrow" data-en="Credits" data-tr="Künye" data-de="Credits">Credits</h2>
     <div class="credits">
-      <span><b data-en="Direction · Writing · Edit · Narration · Interview" data-tr="Yönetim · Senaryo · Kurgu · Anlatım · Röportaj" data-de="Regie · Buch · Schnitt · Erzählung · Interview">Direction · Writing · Edit · Narration · Interview</b> — Eray Balat</span>
+      <span><b data-en="Direction · Writing · Edit · Narration · Interview" data-tr="Yönetmen · Senaryo · Kurgu · Anlatım · Röportaj" data-de="Regie · Buch · Schnitt · Erzählung · Interview">Direction · Writing · Edit · Narration · Interview</b> — Eray Balat</span>
       <span><b data-en="3D &amp; AI Visuals" data-tr="3D &amp; AI Görseller" data-de="3D- &amp; KI-Visuals">3D &amp; AI Visuals</b> — Berkay</span>
       <span><b>Motion Design</b> — Hasan</span>
       <span><b data-en="Music" data-tr="Müzik" data-de="Musik">Music</b> — Epidemic Sound</span>
@@ -466,7 +487,7 @@
   </div>
 </footer>
 
-<div class="lb" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer"><button class="lb-close" type="button" aria-label="Close">&#10005;</button></div>
+<div class="lb" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer" data-aria-en="Image viewer" data-aria-tr="Görsel görüntüleyici" data-aria-de="Bildbetrachter"><button class="lb-close" type="button" aria-label="Close" data-aria-en="Close" data-aria-tr="Kapat" data-aria-de="Schließen">&#10005;</button></div>
 
 <script>
 (function(){
@@ -480,6 +501,7 @@
     ifr.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
     ifr.allowFullscreen=true;
     f.innerHTML=''; f.appendChild(ifr);
+    f.removeAttribute('role'); f.removeAttribute('tabindex'); f.removeAttribute('aria-label'); f.removeAttribute('data-aria-en'); f.removeAttribute('data-aria-tr'); f.removeAttribute('data-aria-de'); try{ifr.focus();}catch(e){}
   }
   f.addEventListener('click',load);
   f.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(); } });
@@ -487,6 +509,8 @@
   function setLang(lang){
     document.documentElement.lang=lang;
     document.querySelectorAll('[data-en]').forEach(function(el){ if(el.dataset[lang]!==undefined) el.innerHTML=el.dataset[lang]; });
+    var ariaKey={en:'ariaEn',tr:'ariaTr',de:'ariaDe'}[lang];
+    document.querySelectorAll('[data-aria-en]').forEach(function(el){ if(el.dataset[ariaKey]!==undefined) el.setAttribute('aria-label',el.dataset[ariaKey]); });
     document.querySelectorAll('.lang-btn').forEach(function(b){ var on=b.dataset.lang===lang; b.classList.toggle('active',on); b.setAttribute('aria-pressed',on?'true':'false'); });
     try{localStorage.setItem('lang',lang)}catch(e){}
   }
@@ -514,9 +538,9 @@
   var lb=document.getElementById('lightbox'),lbImg=null,lastFocus=null;
   function openLB(src,alt){ if(!lbImg){ lbImg=document.createElement('img'); lb.insertBefore(lbImg,lb.firstChild); } lbImg.src=src; lbImg.alt=alt||''; lastFocus=document.activeElement; lb.classList.add('on'); lb.setAttribute('aria-hidden','false'); var c=lb.querySelector('.lb-close'); if(c)c.focus(); }
   function closeLB(){ lb.classList.remove('on'); lb.setAttribute('aria-hidden','true'); if(lastFocus&&lastFocus.focus)lastFocus.focus(); }
-  document.querySelectorAll('.pd img, .part-strip img, .story-grid img, .int-fig img, .mt-wide img').forEach(function(im){ im.addEventListener('click',function(){ openLB(im.getAttribute('src'),im.getAttribute('alt')); }); });
+  document.querySelectorAll('.pd img, .part-strip img, .story-grid img, .int-fig img, .mt-wide img, .tl-frame img').forEach(function(im){ im.addEventListener('click',function(){ openLB(im.getAttribute('src'),im.getAttribute('alt')); }); });
   lb.addEventListener('click',closeLB);
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb.classList.contains('on'))closeLB(); });
+  document.addEventListener('keydown',function(e){ if(!lb.classList.contains('on'))return; if(e.key==='Escape'){closeLB();} else if(e.key==='Tab'){ e.preventDefault(); var c=lb.querySelector('.lb-close'); if(c)c.focus(); } });
 
   // warm the YouTube connection on hover/focus intent (before click)
   var warmed=false;
