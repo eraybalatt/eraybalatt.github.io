@@ -97,8 +97,11 @@
   .card:hover{transform:translateY(-4px);border-color:var(--line2);box-shadow:0 40px 74px -40px rgba(0,0,0,.95),0 0 0 1px rgba(201,162,75,.14)}
   .card.premium{border-color:var(--gold);box-shadow:0 0 0 1px rgba(201,162,75,.5),0 34px 74px -40px rgba(201,162,75,.5)}
   .card.premium:hover{border-color:var(--gold2);box-shadow:0 0 0 1px rgba(232,205,130,.65),0 44px 82px -38px rgba(201,162,75,.72)}
-  .media{position:relative;background:#f4f1ec}
-  .media .main{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;transition:opacity .25s}
+  .media{position:relative;background:#f4f1ec;overflow:hidden}
+  .media .main{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;transition:opacity .25s,transform .55s cubic-bezier(.22,.61,.36,1)}
+  .card:hover .media .main{transform:scale(1.05)}
+  .skip-link{position:absolute;left:-9999px;top:0;z-index:10000;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#231803;padding:10px 16px;border-radius:0 0 10px 0;font-family:'Inter';font-weight:700;font-size:.86rem}
+  .skip-link:focus{left:0}
   .badge{position:absolute;top:12px;left:12px;z-index:2;font-family:'Inter';font-weight:600;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:#231803;background:linear-gradient(135deg,var(--gold2),var(--gold));padding:5px 11px;border-radius:999px;box-shadow:0 4px 14px -4px rgba(0,0,0,.5)}
   .badge.sig{background:linear-gradient(135deg,#f4df9c,#d9b25c 55%,#c9a24b);letter-spacing:.14em;box-shadow:0 4px 16px -3px rgba(201,162,75,.6)}
   .thumbs{position:absolute;left:10px;right:10px;bottom:10px;display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
@@ -179,6 +182,7 @@
 <noscript><style>.reveal{opacity:1!important;transform:none!important}#intro{display:none!important}</style></noscript>
 </head>
 <body>
+<a href="#collection" class="skip-link" data-en="Skip to the collection" data-tr="Koleksiyona geç" data-de="Zur Kollektion springen">Skip to the collection</a>
 <div id="bg" aria-hidden="true"></div>
 
 <div id="intro" aria-hidden="true">
@@ -254,7 +258,7 @@
 </section>
 
 <main class="wrap">
-  <section class="coll">
+  <section class="coll" id="collection">
     <div class="sechead reveal">
       <div class="stardiv"><svg viewBox="0 0 44 44" width="30" height="30" aria-hidden="true"><path d="M22 3 L27 17 L41 17 L29.5 26 L34 40 L22 31 L10 40 L14.5 26 L3 17 L17 17 Z" fill="none" stroke="var(--gold)" stroke-width="1.4"/><circle cx="22" cy="22" r="3.4" fill="var(--gold)"/></svg></div>
       <div class="eyebrow" data-en="The Collection" data-tr="Koleksiyon" data-de="Die Kollektion">The Collection</div>
