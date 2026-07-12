@@ -681,25 +681,20 @@
 }
 
   
-  /* ===== floating music player (colleague's track) ===== */
+  /* ===== floating music player (self-hosted loop, no title) ===== */
   .tune{position:fixed;top:18px;right:22px;z-index:60}
-  .tune-frame{position:fixed;left:-9999px;top:0;width:320px;height:180px;opacity:0;pointer-events:none}
-  .tune-frame iframe{width:320px;height:180px;border:0}
-  .tune-btn{display:inline-flex;align-items:center;gap:11px;padding:9px 15px 9px 13px;border-radius:999px;cursor:pointer;background:linear-gradient(180deg,rgba(24,64,122,.74),rgba(12,28,54,.66));border:1px solid rgba(120,210,255,.34);box-shadow:0 12px 30px -14px rgba(46,155,240,.7),inset 0 1px 0 rgba(180,228,255,.18);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);color:#eaf2ff;transition:transform .2s,box-shadow .2s,border-color .2s}
-  .tune-btn:hover{transform:translateY(-1px);border-color:rgba(120,210,255,.6);box-shadow:0 16px 38px -14px rgba(46,155,240,.92)}
-  .tune-btn:focus-visible{outline:2px solid #62acff;outline-offset:2px}
-  .tune-txt{display:flex;flex-direction:column;line-height:1.12;text-align:left}
-  .tune-txt b{font-family:'Poppins';font-weight:600;font-size:.82rem;letter-spacing:.01em}
-  .tune-txt small{font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:#9fd2f8;font-weight:600}
-  .eq{display:flex;align-items:flex-end;gap:2.5px;width:18px;height:15px;flex:0 0 auto}
-  .eq i{flex:1;background:linear-gradient(180deg,#5cc8ff,#2e9bf0);border-radius:2px;height:32%}
-  .tune.playing .eq i{animation:eqbar .9s ease-in-out infinite}
-  .tune.playing .eq i:nth-child(2){animation-delay:.15s}
-  .tune.playing .eq i:nth-child(3){animation-delay:.32s}
-  .tune.playing .eq i:nth-child(4){animation-delay:.48s}
-  @keyframes eqbar{0%,100%{height:22%}50%{height:100%}}
+  .tune-ctrls{display:inline-flex;align-items:center;gap:8px}
+  .tbtn{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:#eaf2ff;background:linear-gradient(180deg,rgba(24,64,122,.74),rgba(12,28,54,.66));border:1px solid rgba(120,210,255,.34);box-shadow:0 12px 30px -14px rgba(46,155,240,.7),inset 0 1px 0 rgba(180,228,255,.18);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);transition:transform .2s,box-shadow .2s,border-color .2s}
+  .tbtn:hover{transform:translateY(-1px);border-color:rgba(120,210,255,.62);box-shadow:0 16px 38px -14px rgba(46,155,240,.92)}
+  .tbtn:focus-visible{outline:2px solid #62acff;outline-offset:2px}
+  .tbtn svg{width:19px;height:19px;fill:currentColor;pointer-events:none}
+  .tune .ico-pause,.tune .ico-mute{display:none}
+  .tune.playing .ico-play{display:none}
+  .tune.playing .ico-pause{display:inline-flex}
+  .tune.muted .ico-vol{display:none}
+  .tune.muted .ico-mute{display:inline-flex}
+  .tune.playing:not(.muted) #tunePlay{border-color:rgba(120,210,255,.62);box-shadow:0 0 22px -5px rgba(46,155,240,.92),inset 0 1px 0 rgba(180,228,255,.2)}
   @media(max-width:879.98px){.tune{top:auto;bottom:18px;right:14px}}
-  @media(prefers-reduced-motion:reduce){.tune.playing .eq i{animation:none;height:64%}}
   </style>
 </head>
 <body>
@@ -751,15 +746,18 @@
   </div>
 </header>
 
-<!-- floating music player: colleague's track (AI Anime) — official YouTube embed (audio), gesture-started -->
-<div id="tune" class="tune">
-  <button id="tuneBtn" class="tune-btn" type="button" aria-pressed="false" aria-label="Play music — AI Anime">
-    <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-    <span class="tune-txt"><b>AI Anime</b><small class="tune-st">tap to play</small></span>
-  </button>
-  <div class="tune-frame" aria-hidden="true">
-    <iframe title="Music player — AI Anime" allow="autoplay; encrypted-media" loading="lazy"
-      src="https://www.youtube-nocookie.com/embed/ysAEZOwp5rM?enablejsapi=1&controls=0&playsinline=1&rel=0&loop=1&playlist=ysAEZOwp5rM&modestbranding=1"></iframe>
+<!-- floating music player: self-hosted loop clip (no title shown) -->
+<div id="tune" class="tune muted" aria-label="Background music">
+  <audio id="tuneAudio" src="bg-loop.mp3" loop preload="auto"></audio>
+  <div class="tune-ctrls">
+    <button id="tunePlay" class="tbtn" type="button" aria-pressed="false" aria-label="Play or pause background music">
+      <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.7-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg>
+      <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.2" height="14" rx="1.3"/><rect x="13.8" y="5" width="4.2" height="14" rx="1.3"/></svg>
+    </button>
+    <button id="tuneMute" class="tbtn" type="button" aria-pressed="true" aria-label="Mute or unmute music">
+      <svg class="ico-vol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h3.5L13 20V4L7.5 9H4z"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="ico-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h3.5L13 20V4L7.5 9H4z"/><path d="M17 9l4 6M21 9l-4 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </div>
 
@@ -1432,24 +1430,28 @@
 <script>
 (function(){
   var wrap=document.getElementById('tune'); if(!wrap) return;
-  var btn=document.getElementById('tuneBtn'), iframe=wrap.querySelector('iframe'), st=wrap.querySelector('.tune-st');
-  var ORIGIN='https://www.youtube-nocookie.com';
-  var playing=false, started=false;
-  var TXT={paused:{en:'tap to play',tr:'çalmak için dokun',de:'zum Abspielen tippen'},playing:{en:'now playing',tr:'şimdi çalıyor',de:'läuft gerade'}};
-  var ARIA={play:{en:'Play music — AI Anime',tr:'Müziği çal — AI Anime',de:'Musik abspielen — AI Anime'},pause:{en:'Pause music',tr:'Müziği duraklat',de:'Musik pausieren'}};
-  function lang(){var a=document.querySelector('.lang-btn.active');return (a&&a.dataset.lang)||document.documentElement.lang||'en';}
-  function cmd(f){try{iframe.contentWindow.postMessage(JSON.stringify({event:'command',func:f,args:[]}),ORIGIN);}catch(e){}}
-  function render(){var L=lang();st.textContent=(playing?TXT.playing:TXT.paused)[L]||(playing?TXT.playing:TXT.paused).en;btn.setAttribute('aria-pressed',playing?'true':'false');btn.setAttribute('aria-label',(playing?ARIA.pause:ARIA.play)[L]||(playing?ARIA.pause:ARIA.play).en);wrap.classList.toggle('playing',playing);}
-  function play(){cmd('playVideo');playing=true;started=true;render();}
-  function pause(){cmd('pauseVideo');playing=false;render();}
-  btn.addEventListener('click',function(){playing?pause():play();});
-  document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){setTimeout(render,0);});});
-  // background autostart on first real user gesture (browsers block autoplay-with-sound before a gesture)
-  var EV=['click','keydown','touchend'];
-  function first(e){ if(started){off();return;} if(e&&e.target&&wrap.contains(e.target))return; play(); off(); }
-  function off(){EV.forEach(function(ev){window.removeEventListener(ev,first,true);});}
-  EV.forEach(function(ev){window.addEventListener(ev,first,true);});
-  render();
+  var audio=document.getElementById('tuneAudio');
+  var playBtn=document.getElementById('tunePlay');
+  var muteBtn=document.getElementById('tuneMute');
+  var touched=false;
+  var EV=['pointerdown','keydown','touchend'];
+  audio.loop=true;
+  function ui(){
+    wrap.classList.toggle('playing', !audio.paused);
+    wrap.classList.toggle('muted', audio.muted);
+    playBtn.setAttribute('aria-pressed', !audio.paused ? 'true':'false');
+    muteBtn.setAttribute('aria-pressed', audio.muted ? 'true':'false');
+  }
+  function off(){ EV.forEach(function(ev){ window.removeEventListener(ev,first,true); }); }
+  function first(e){ if(touched){off();return;} if(e&&e.target&&wrap.contains(e.target)) return; audio.muted=false; if(audio.paused){ audio.play().catch(function(){}); } ui(); off(); }
+  playBtn.addEventListener('click', function(){ touched=true; off(); if(audio.paused){ audio.muted=false; audio.play().catch(function(){}); } else { audio.pause(); } ui(); });
+  muteBtn.addEventListener('click', function(){ touched=true; off(); audio.muted=!audio.muted; if(!audio.muted && audio.paused){ audio.play().catch(function(){}); } ui(); });
+  audio.addEventListener('play', ui); audio.addEventListener('pause', ui); audio.addEventListener('volumechange', ui);
+  // start on open: try with sound; if blocked, loop silently and unmute on first gesture
+  audio.muted=false;
+  audio.play().catch(function(){ audio.muted=true; audio.play().catch(function(){}); ui(); });
+  EV.forEach(function(ev){ window.addEventListener(ev,first,true); });
+  ui();
 })();
 </script>
 
