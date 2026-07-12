@@ -762,7 +762,7 @@
   </div>
 </header>
 <!-- isolated low-poly sniper accent (rembg cutout, animated webp) -->
-<img class="sniper" src="sniper.webp?v=2" alt="" aria-hidden="true" decoding="async" />
+<img class="sniper" src="sniper.webp?v=3" alt="" aria-hidden="true" decoding="async" />
 
 <!-- floating music player: self-hosted loop clip (iPod style, play only, no title) -->
 <div id="tune" class="tune muted" aria-label="Music player">
@@ -1450,7 +1450,7 @@
   var root=document.documentElement;
   var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
   var touched=false, EV=['pointerdown','keydown','touchend'];
-  var actx, analyser, dataArr, anEl, wired=false;
+  var actx, analyser, dataArr, anEl, wired=false, _bf=0, _lb=-1;
   audio.loop=true;
   function ui(){
     wrap.classList.toggle('playing', !audio.paused);
@@ -1461,11 +1461,14 @@
   function tick(){
     requestAnimationFrame(tick);
     if(!analyser){ return; }
+    if((_bf++ & 1)){ return; }
     analyser.getByteFrequencyData(dataArr);
     var n=Math.min(14,dataArr.length), sum=0;
     for(var i=1;i<n;i++){ sum+=dataArr[i]; }
     var lvl=Math.min(1,(sum/(n-1))/255*1.6);
-    root.style.setProperty('--beat', lvl.toFixed(3));
+    if(Math.abs(lvl-_lb) < 0.02){ return; }
+    _lb=lvl;
+    root.style.setProperty('--beat', lvl.toFixed(2));
   }
   function syncAn(){
     if(!anEl){ return; }
