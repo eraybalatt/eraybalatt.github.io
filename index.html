@@ -679,6 +679,26 @@
   header.nav::after{ animation:none; }
 }
 
+  
+  /* ===== floating music player (colleague's track) ===== */
+  .tune{position:fixed;top:18px;right:22px;z-index:60}
+  .tune-frame{position:fixed;left:-9999px;top:0;width:320px;height:180px;opacity:0;pointer-events:none}
+  .tune-frame iframe{width:320px;height:180px;border:0}
+  .tune-btn{display:inline-flex;align-items:center;gap:11px;padding:9px 15px 9px 13px;border-radius:999px;cursor:pointer;background:linear-gradient(180deg,rgba(24,64,122,.74),rgba(12,28,54,.66));border:1px solid rgba(120,210,255,.34);box-shadow:0 12px 30px -14px rgba(46,155,240,.7),inset 0 1px 0 rgba(180,228,255,.18);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);color:#eaf2ff;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .tune-btn:hover{transform:translateY(-1px);border-color:rgba(120,210,255,.6);box-shadow:0 16px 38px -14px rgba(46,155,240,.92)}
+  .tune-btn:focus-visible{outline:2px solid #62acff;outline-offset:2px}
+  .tune-txt{display:flex;flex-direction:column;line-height:1.12;text-align:left}
+  .tune-txt b{font-family:'Poppins';font-weight:600;font-size:.82rem;letter-spacing:.01em}
+  .tune-txt small{font-size:.58rem;letter-spacing:.09em;text-transform:uppercase;color:#9fd2f8;font-weight:600}
+  .eq{display:flex;align-items:flex-end;gap:2.5px;width:18px;height:15px;flex:0 0 auto}
+  .eq i{flex:1;background:linear-gradient(180deg,#5cc8ff,#2e9bf0);border-radius:2px;height:32%}
+  .tune.playing .eq i{animation:eqbar .9s ease-in-out infinite}
+  .tune.playing .eq i:nth-child(2){animation-delay:.15s}
+  .tune.playing .eq i:nth-child(3){animation-delay:.32s}
+  .tune.playing .eq i:nth-child(4){animation-delay:.48s}
+  @keyframes eqbar{0%,100%{height:22%}50%{height:100%}}
+  @media(max-width:879.98px){.tune{top:auto;bottom:18px;right:14px}}
+  @media(prefers-reduced-motion:reduce){.tune.playing .eq i{animation:none;height:64%}}
   </style>
 </head>
 <body>
@@ -729,6 +749,19 @@
     </div>
   </div>
 </header>
+
+<!-- floating music player: colleague's track (AI Anime) — official YouTube embed (audio), gesture-started -->
+<div id="tune" class="tune">
+  <button id="tuneBtn" class="tune-btn" type="button" aria-pressed="false" aria-label="Play music — AI Anime">
+    <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="tune-txt"><b>AI Anime</b><small class="tune-st">tap to play</small></span>
+  </button>
+  <div class="tune-frame" aria-hidden="true">
+    <iframe title="Music player — AI Anime" allow="autoplay; encrypted-media" loading="lazy"
+      src="https://www.youtube-nocookie.com/embed/ysAEZOwp5rM?enablejsapi=1&controls=0&playsinline=1&rel=0&loop=1&playlist=ysAEZOwp5rM&modestbranding=1"></iframe>
+  </div>
+</div>
+
 
 <div class="hero-wrap">
 
@@ -1394,5 +1427,30 @@
   },{passive:true});
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74"}'></script><!-- End Cloudflare Web Analytics -->
+
+<script>
+(function(){
+  var wrap=document.getElementById('tune'); if(!wrap) return;
+  var btn=document.getElementById('tuneBtn'), iframe=wrap.querySelector('iframe'), st=wrap.querySelector('.tune-st');
+  var ORIGIN='https://www.youtube-nocookie.com';
+  var playing=false, started=false;
+  var TXT={paused:{en:'tap to play',tr:'çalmak için dokun',de:'zum Abspielen tippen'},playing:{en:'now playing',tr:'şimdi çalıyor',de:'läuft gerade'}};
+  var ARIA={play:{en:'Play music — AI Anime',tr:'Müziği çal — AI Anime',de:'Musik abspielen — AI Anime'},pause:{en:'Pause music',tr:'Müziği duraklat',de:'Musik pausieren'}};
+  function lang(){var a=document.querySelector('.lang-btn.active');return (a&&a.dataset.lang)||document.documentElement.lang||'en';}
+  function cmd(f){try{iframe.contentWindow.postMessage(JSON.stringify({event:'command',func:f,args:[]}),ORIGIN);}catch(e){}}
+  function render(){var L=lang();st.textContent=(playing?TXT.playing:TXT.paused)[L]||(playing?TXT.playing:TXT.paused).en;btn.setAttribute('aria-pressed',playing?'true':'false');btn.setAttribute('aria-label',(playing?ARIA.pause:ARIA.play)[L]||(playing?ARIA.pause:ARIA.play).en);wrap.classList.toggle('playing',playing);}
+  function play(){cmd('playVideo');playing=true;started=true;render();}
+  function pause(){cmd('pauseVideo');playing=false;render();}
+  btn.addEventListener('click',function(){playing?pause():play();});
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){setTimeout(render,0);});});
+  // background autostart on first real user gesture (browsers block autoplay-with-sound before a gesture)
+  var EV=['click','keydown','touchend'];
+  function first(e){ if(started){off();return;} if(e&&e.target&&wrap.contains(e.target))return; play(); off(); }
+  function off(){EV.forEach(function(ev){window.removeEventListener(ev,first,true);});}
+  EV.forEach(function(ev){window.addEventListener(ev,first,true);});
+  render();
+})();
+</script>
+
 </body>
 </html>
