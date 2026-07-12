@@ -708,9 +708,9 @@
   
   
   /* ===== isolated low-poly sniper accent ===== */
-  .sniper{position:fixed;top:47%;right:-118px;transform:translateY(-50%);z-index:55;width:340px;height:auto;pointer-events:none;filter:drop-shadow(-8px 10px 22px rgba(0,0,0,.5)) drop-shadow(0 0 20px rgba(46,155,240,.28));-webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent 82%);mask-image:linear-gradient(to bottom,#000 50%,transparent 82%);animation:sniperIn .85s cubic-bezier(.22,.61,.36,1) .35s both}
-  @keyframes sniperIn{from{opacity:0;transform:translateY(-50%) translateX(52px)}to{opacity:1;transform:translateY(-50%)}}
-  @media(max-width:879.98px){.sniper{width:190px;right:-62px}}
+  .sniper{position:fixed;right:-86px;bottom:-30px;z-index:2;width:346px;height:auto;pointer-events:none;filter:drop-shadow(0 0 16px rgba(46,155,240,.22));-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 94%);mask-image:linear-gradient(to bottom,#000 62%,transparent 94%);animation:sniperIn .8s ease .35s both}
+  @keyframes sniperIn{from{opacity:0}to{opacity:1}}
+  @media(max-width:879.98px){.sniper{top:50%;bottom:auto;transform:translateY(-50%);right:-58px;width:180px}}
   </style>
 </head>
 <body>
@@ -762,7 +762,7 @@
   </div>
 </header>
 <!-- isolated low-poly sniper accent (rembg cutout, animated webp) -->
-<img class="sniper" src="sniper.webp" alt="" aria-hidden="true" decoding="async" />
+<img class="sniper" src="sniper.webp?v=2" alt="" aria-hidden="true" decoding="async" />
 
 <!-- floating music player: self-hosted loop clip (iPod style, play only, no title) -->
 <div id="tune" class="tune muted" aria-label="Music player">
