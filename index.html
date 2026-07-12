@@ -681,19 +681,29 @@
 }
 
   
-  /* ===== floating music player (self-hosted loop, no title) ===== */
+  /* ===== floating music player — iPod-style, play only ===== */
   .tune{position:fixed;top:18px;right:22px;z-index:60}
-  .tune-ctrls{display:inline-flex;align-items:center;gap:8px}
-  .tbtn{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:#eaf2ff;background:linear-gradient(180deg,rgba(24,64,122,.74),rgba(12,28,54,.66));border:1px solid rgba(120,210,255,.34);box-shadow:0 12px 30px -14px rgba(46,155,240,.7),inset 0 1px 0 rgba(180,228,255,.18);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);transition:transform .2s,box-shadow .2s,border-color .2s}
-  .tbtn:hover{transform:translateY(-1px);border-color:rgba(120,210,255,.62);box-shadow:0 16px 38px -14px rgba(46,155,240,.92)}
-  .tbtn:focus-visible{outline:2px solid #62acff;outline-offset:2px}
-  .tbtn svg{width:19px;height:19px;fill:currentColor;pointer-events:none}
-  .tune .ico-pause,.tune .ico-mute{display:none}
+  .ipod{display:inline-flex;align-items:center;gap:10px;padding:7px 9px 7px 11px;border-radius:19px;background:linear-gradient(160deg,rgba(34,78,146,.85),rgba(11,26,50,.82));border:1px solid rgba(120,210,255,.42);box-shadow:0 16px 42px -16px rgba(46,155,240,.78),0 0 0 1px rgba(8,16,34,.4),inset 0 1px 0 rgba(190,232,255,.32),inset 0 -9px 18px -11px rgba(0,0,0,.55);-webkit-backdrop-filter:blur(12px) saturate(1.25);backdrop-filter:blur(12px) saturate(1.25)}
+  .ipod-screen{width:56px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:radial-gradient(130% 130% at 50% 0,rgba(22,54,102,.92),rgba(5,12,26,.96));border:1px solid rgba(92,200,255,.32);box-shadow:inset 0 0 14px -4px rgba(0,0,0,.85),inset 0 1px 0 rgba(180,228,255,.16)}
+  .wave{display:flex;align-items:center;gap:2.6px;height:19px}
+  .wave i{width:2.6px;border-radius:2px;background:linear-gradient(180deg,#8fdcff,#2e9bf0);height:30%;box-shadow:0 0 6px -1px rgba(92,200,255,.7)}
+  .tune.playing:not(.muted) .wave i{animation:wv .95s ease-in-out infinite}
+  .wave i:nth-child(2){animation-delay:.12s}
+  .wave i:nth-child(3){animation-delay:.24s}
+  .wave i:nth-child(4){animation-delay:.36s}
+  .wave i:nth-child(5){animation-delay:.48s}
+  .wave i:nth-child(6){animation-delay:.6s}
+  .wave i:nth-child(7){animation-delay:.72s}
+  @keyframes wv{0%,100%{height:20%}50%{height:100%}}
+  .ipod-wheel{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:#eaf5ff;background:radial-gradient(circle at 50% 32%,rgba(150,205,255,.55),rgba(34,80,150,.95) 60%,rgba(15,38,78,.98));border:1px solid rgba(140,215,255,.6);box-shadow:0 6px 16px -6px rgba(0,0,0,.7),inset 0 1px 0 rgba(215,240,255,.55),inset 0 -7px 12px -7px rgba(0,0,0,.6);transition:transform .16s,box-shadow .2s}
+  .ipod-wheel:hover{transform:scale(1.05);box-shadow:0 8px 20px -6px rgba(46,155,240,.8),inset 0 1px 0 rgba(215,240,255,.6),inset 0 -7px 12px -7px rgba(0,0,0,.6)}
+  .ipod-wheel:active{transform:scale(.96)}
+  .ipod-wheel:focus-visible{outline:2px solid #62acff;outline-offset:3px}
+  .ipod-wheel svg{width:18px;height:18px;fill:currentColor;pointer-events:none}
+  .tune .ico-pause{display:none}
   .tune.playing .ico-play{display:none}
   .tune.playing .ico-pause{display:inline-flex}
-  .tune.muted .ico-vol{display:none}
-  .tune.muted .ico-mute{display:inline-flex}
-  .tune.playing:not(.muted) #tunePlay{border-color:rgba(120,210,255,.62);box-shadow:0 0 22px -5px rgba(46,155,240,.92),inset 0 1px 0 rgba(180,228,255,.2)}
+  @media(prefers-reduced-motion:reduce){.tune.playing:not(.muted) .wave i{animation:none;height:60%}}
   @media(max-width:879.98px){.tune{top:auto;bottom:18px;right:14px}}
   </style>
 </head>
@@ -746,17 +756,14 @@
   </div>
 </header>
 
-<!-- floating music player: self-hosted loop clip (no title shown) -->
-<div id="tune" class="tune muted" aria-label="Background music">
+<!-- floating music player: self-hosted loop clip (iPod style, play only, no title) -->
+<div id="tune" class="tune muted" aria-label="Music player">
   <audio id="tuneAudio" src="bg-loop.mp3" loop preload="auto"></audio>
-  <div class="tune-ctrls">
-    <button id="tunePlay" class="tbtn" type="button" aria-pressed="false" aria-label="Play or pause background music">
+  <div class="ipod">
+    <span class="ipod-screen" aria-hidden="true"><span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span>
+    <button id="tunePlay" class="ipod-wheel" type="button" aria-pressed="false" aria-label="Play or pause music">
       <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.54.84l10.7-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg>
       <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4.2" height="14" rx="1.3"/><rect x="13.8" y="5" width="4.2" height="14" rx="1.3"/></svg>
-    </button>
-    <button id="tuneMute" class="tbtn" type="button" aria-pressed="true" aria-label="Mute or unmute music">
-      <svg class="ico-vol" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h3.5L13 20V4L7.5 9H4z"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <svg class="ico-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h3.5L13 20V4L7.5 9H4z"/><path d="M17 9l4 6M21 9l-4 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
   </div>
 </div>
@@ -1432,7 +1439,6 @@
   var wrap=document.getElementById('tune'); if(!wrap) return;
   var audio=document.getElementById('tuneAudio');
   var playBtn=document.getElementById('tunePlay');
-  var muteBtn=document.getElementById('tuneMute');
   var touched=false;
   var EV=['pointerdown','keydown','touchend'];
   audio.loop=true;
@@ -1440,13 +1446,11 @@
     wrap.classList.toggle('playing', !audio.paused);
     wrap.classList.toggle('muted', audio.muted);
     playBtn.setAttribute('aria-pressed', !audio.paused ? 'true':'false');
-    muteBtn.setAttribute('aria-pressed', audio.muted ? 'true':'false');
   }
   function off(){ EV.forEach(function(ev){ window.removeEventListener(ev,first,true); }); }
   function first(e){ if(touched){off();return;} if(e&&e.target&&wrap.contains(e.target)) return; audio.muted=false; if(audio.paused){ audio.play().catch(function(){}); } ui(); off(); }
   playBtn.addEventListener('click', function(){ touched=true; off(); if(audio.paused){ audio.muted=false; audio.play().catch(function(){}); } else { audio.pause(); } ui(); });
-  muteBtn.addEventListener('click', function(){ touched=true; off(); audio.muted=!audio.muted; if(!audio.muted && audio.paused){ audio.play().catch(function(){}); } ui(); });
-  audio.addEventListener('play', ui); audio.addEventListener('pause', ui); audio.addEventListener('volumechange', ui);
+  audio.addEventListener('play', ui); audio.addEventListener('pause', ui);
   // start on open: try with sound; if blocked, loop silently and unmute on first gesture
   audio.muted=false;
   audio.play().catch(function(){ audio.muted=true; audio.play().catch(function(){}); ui(); });
