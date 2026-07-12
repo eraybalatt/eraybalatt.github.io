@@ -446,6 +446,22 @@
   .wel-close{position:absolute;top:13px;right:15px;width:32px;height:32px;background:none;border:none;color:var(--muted);font-size:1.05rem;cursor:pointer;line-height:1;border-radius:50%;transition:color .2s,background .2s}
   .wel-close:hover{color:#fff;background:rgba(255,255,255,.08)}
   @media(max-width:520px){.wel-grid{grid-template-columns:1fr}.wel-card{padding:30px 22px 22px}}
+  /* featured — AI anime music video · neon dual-screen */
+  .mv-feat{position:relative;display:block;border-radius:18px;overflow:hidden;margin-bottom:20px;border:1px solid rgba(120,210,255,.45);box-shadow:0 34px 90px -44px rgba(46,155,240,.85),0 0 0 1px rgba(92,200,255,.14),0 0 80px -24px rgba(120,90,255,.5);transition:transform .25s,box-shadow .25s}
+  .mv-feat:hover{transform:translateY(-3px);box-shadow:0 42px 100px -44px rgba(46,155,240,1),0 0 0 1px rgba(92,200,255,.24),0 0 110px -20px rgba(120,90,255,.7)}
+  .mv-feat .duo{display:grid;grid-template-columns:1fr 1fr;aspect-ratio:2.3/1;background:#04101f}
+  .mv-feat .duo img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+  .mv-feat:hover .duo img{transform:scale(1.045)}
+  .mv-feat .seam{position:absolute;top:0;bottom:0;left:50%;width:3px;transform:translateX(-50%);z-index:3;background:linear-gradient(180deg,#5cc8ff,#c86bff);box-shadow:0 0 20px 3px rgba(92,200,255,.75),0 0 34px 7px rgba(200,107,255,.45)}
+  .mv-feat::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(4,10,20,.12),transparent 42%,rgba(4,10,20,.86))}
+  .mv-feat .fplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;width:84px;height:84px;border-radius:50%;background:rgba(46,155,240,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(92,200,255,.16),0 14px 44px -8px rgba(46,155,240,.85);transition:transform .25s}
+  .mv-feat:hover .fplay{transform:translate(-50%,-50%) scale(1.08)}
+  .mv-feat .fplay::after{content:"";border-style:solid;border-width:14px 0 14px 23px;border-color:transparent transparent transparent #fff;margin-left:5px}
+  .mv-feat .fpill{position:absolute;top:14px;left:14px;z-index:4;font-family:'Poppins',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(8,13,24,.6);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);padding:6px 12px;border-radius:999px;border:1px solid rgba(92,200,255,.4)}
+  .mv-feat .fcap{position:absolute;left:22px;right:22px;bottom:16px;z-index:4}
+  .mv-feat .fcap h3{font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(1.1rem,2.6vw,1.65rem);color:#fff;margin:0 0 3px;text-shadow:0 2px 22px rgba(0,0,0,.65)}
+  .mv-feat .fcap p{font-size:.86rem;color:#cfe3ff;margin:0}
+  @media(max-width:600px){.mv-feat .duo{aspect-ratio:1.4/1}.mv-feat .fplay{width:64px;height:64px}}
 </style>
 </head>
 <body>
@@ -732,8 +748,20 @@
     <h2 class="sec-title reveal" data-en="AI Music Videos" data-tr="AI Müzik Videoları" data-de="AI-Musikvideos">AI Music Videos</h2>
     <p class="sec-sub reveal" data-en="Official videos for Universal Music Türkiye artists — plus my own AI-scored tracks." data-tr="Universal Music Türkiye sanatçıları için resmi klipler — ve kendi AI ile bestelediğim parçalar." data-de="Offizielle Videos für Universal Music Türkiye Artists — dazu meine eigenen, mit AI gescorten Tracks.">Official videos for Universal Music Türkiye artists — plus my own AI-scored tracks.</p>
     <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
+    <a class="mv-feat reveal" href="/anime" aria-label="AI Anime Music Video — open the case">
+      <div class="duo">
+        <img src="mv-anime-1.jpg" alt="AI anime music video — the rider" loading="lazy" decoding="async" width="900" height="380" />
+        <img src="mv-anime-2.jpg" alt="AI anime music video — neon ride" loading="lazy" decoding="async" width="900" height="380" />
+      </div>
+      <span class="seam" aria-hidden="true"></span>
+      <span class="fplay" aria-hidden="true"></span>
+      <span class="fpill">▶ AI Anime · 32K</span>
+      <div class="fcap">
+        <h3 data-en="AI Anime Music Video" data-tr="AI Anime Müzik Videosu" data-de="AI-Anime-Musikvideo">AI Anime Music Video</h3>
+        <p data-en="Animated concert visuals · a 4-era reconstruction · directed by Eray Balat" data-tr="Animasyon konser görselleri · 4 dönemlik rekonstrüksiyon · Yönetmen: Eray Balat" data-de="Animierte Konzert-Visuals · Rekonstruktion über 4 Ären · Regie: Eray Balat">Animated concert visuals · a 4-era reconstruction · directed by Eray Balat</p>
+      </div>
+    </a>
     <div class="grid g-2" style="margin-bottom:18px">
-      <a class="card reveal" href="/anime"><div class="thumb cover-c"><video src="anime-mv.mp4" poster="anime-mv-poster.jpg" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">▶ AI Anime · 32K</span></div><div class="card-body"><h3 data-en="AI Anime Music Video" data-tr="AI Anime Müzik Videosu" data-de="AI-Anime-Musikvideo">AI Anime Music Video</h3><p data-en="Animated concert visuals · a 4-era reconstruction · directed by Eray Balat" data-tr="Animasyon konser görselleri · 4 dönemlik rekonstrüksiyon · Yönetmen: Eray Balat" data-de="Animierte Konzert-Visuals · Rekonstruktion über 4 Ären · Regie: Eray Balat">Animated concert visuals · a 4-era reconstruction · directed by Eray Balat</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=BKrTmSCBO5E" target="_blank" rel="noopener"><div class="thumb cover-e"><video src="mv-reallife.mp4" poster="mv-reallife-p.jpg" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">▶ Universal Music · 47K</span></div><div class="card-body"><h3>Modd — real life</h3><p data-en="Official Music Video · AI by Eray Balat" data-tr="Resmi Klip · AI: Eray Balat" data-de="Offizielles Musikvideo · AI von Eray Balat">Official Music Video · AI by Eray Balat</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=4fKldh39zlw" target="_blank" rel="noopener"><div class="thumb cover-d"><video src="mv-yokuyku.mp4" poster="mv-yokuyku-p.jpg" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">▶ Universal Music · 39K</span></div><div class="card-body"><h3>Modd, Betül Çiçekyurt — yok uyku</h3><p data-en="Official Video · Universal Music Türkiye" data-tr="Resmi Klip · Universal Music Türkiye" data-de="Offizielles Video · Universal Music Türkiye">Official Video · Universal Music Türkiye</p></div></a>
     </div>
