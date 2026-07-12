@@ -135,6 +135,7 @@
   .hero .eyebrow{text-shadow:0 0 18px rgba(46,155,240,.55)}
   .hero p.lead{color:var(--muted);max-width:600px;margin-bottom:26px;font-size:1.02rem}
   .cta-row{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;align-items:center;margin-bottom:32px}
+  @media(min-width:880px){.hero .cta-row{position:absolute;right:46px;bottom:40px;margin-bottom:0;gap:18px;justify-content:flex-end;z-index:3}}
   .btn{display:inline-flex;align-items:center;gap:9px;padding:6px 1px;font-family:'Poppins',sans-serif;font-weight:600;font-size:1.02rem;letter-spacing:.01em;cursor:pointer;border:none;background:none;color:inherit;position:relative;transition:transform .22s,color .22s}
   .btn::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;transition:transform .3s cubic-bezier(.22,.61,.36,1);transform-origin:left}
   .btn-grad{color:#fff;text-shadow:0 0 16px rgba(46,155,240,.45)}
