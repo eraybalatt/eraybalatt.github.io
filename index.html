@@ -102,7 +102,7 @@
   @media(max-width:520px){.brand-wm{display:none}}
   .brand:hover img{filter:drop-shadow(0 0 10px var(--c2))}
   .nav-right{display:flex;align-items:center;gap:10px}
-  .nav-links{flex:1;display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap}
+  .nav-links{flex:1;display:flex;gap:4px;align-items:center;justify-content:flex-start;flex-wrap:wrap}
   .nav-links a{padding:9px 14px;border-radius:999px;font-size:.96rem;font-weight:500;color:var(--muted);transition:color .2s,text-shadow .2s,background .2s}
   .nav-links a:hover{color:#eef4fb;text-shadow:0 0 10px rgba(46,155,240,.45);background:linear-gradient(180deg,rgba(46,155,240,.16),rgba(46,155,240,.04));box-shadow:0 0 18px -4px rgba(46,155,240,.5)}
   .nav-links a.active{color:#fff;background:linear-gradient(180deg,rgba(46,155,240,.34),rgba(46,155,240,.12));box-shadow:0 0 20px -3px rgba(46,155,240,.7),inset 0 0 0 1px rgba(120,210,255,.45);text-shadow:0 0 10px rgba(92,200,255,.5)}
@@ -640,27 +640,6 @@
     @keyframes lfNudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
     @media(prefers-reduced-motion:reduce){#leather-feature .feature,#leather-feature .media::after,#leather-feature .feature .btn-grad{animation:none!important}}
   </style>
-  <section id="leather-feature">
-    <div class="eyebrow reveal" data-en="Featured · Handcrafted Goods" data-tr="Öne Çıkan · El Yapımı Ürünler" data-de="Ausgewählt · Handgefertigte Stücke">Featured · Handcrafted Goods</div>
-    <h2 class="sec-title reveal" data-en="Anatolian Leather — Tooled by Hand" data-tr="Anadolu Derisi — Elde İşlenmiş" data-de="Anatolisches Leder — von Hand gearbeitet">Anatolian Leather — Tooled by Hand</h2>
-    <p class="sec-sub reveal" data-en="A small atelier collection of Seljuk-tooled bags, bracers and belts — each one of one, hand-cut and stitched, priced in USD and shipped worldwide." data-tr="Selçuklu işlemeli çantalar, kolçaklar ve kemerlerden küçük bir atölye koleksiyonu — her biri tek parça, elde kesilip dikilmiş, USD fiyatlı ve dünya çapında gönderimli." data-de="Eine kleine Atelier-Kollektion seldschukisch gearbeiteter Taschen, Armschienen und Gürtel — jedes ein Unikat, von Hand geschnitten und genäht, in USD und mit weltweitem Versand.">A small atelier collection of Seljuk-tooled bags, bracers and belts — each one of one, hand-cut and stitched, priced in USD and shipped worldwide.</p>
-    <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
-
-    <div class="feature reveal">
-      <a class="media" href="/leather/" aria-label="Open the leather collection">
-        <img src="leather-feature.jpg" alt="ÆRAY Atelier — handcrafted Seljuk leather: saddle bag, messenger and crossbody" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0" />
-        <span class="pill">ÆRAY Atelier</span>
-        <span class="lf-new" data-en="✦ New · Shop" data-tr="✦ Yeni · Mağaza" data-de="✦ Neu · Shop">✦ New · Shop</span>
-        <span class="stat" data-en="7 pieces · one of one" data-tr="7 parça · tek parça" data-de="7 Stücke · Unikate">7 pieces · one of one</span>
-      </a>
-      <div>
-        <div class="role" data-en="ÆRAY Atelier · Handcrafted Leather" data-tr="ÆRAY Atelier · El Yapımı Deri" data-de="ÆRAY Atelier · Handgefertigtes Leder">ÆRAY Atelier · Handcrafted Leather</div>
-        <h3 data-en="The Leather Collection" data-tr="Deri Koleksiyonu" data-de="Die Lederkollektion">The Leather Collection</h3>
-        <p data-en="Seven hand-tooled pieces in Seljuk motifs — from a brass-medallion briefcase to a five-piece archer's set — cleaned, shot and priced for sale. Browse the full collection and order any piece by email." data-tr="Selçuklu motifleriyle elde işlenmiş yedi parça — pirinç madalyonlu evrak çantasından beş parçalık okçu setine — temizlenip fotoğraflanarak satışa hazırlandı. Tüm koleksiyona göz at, dilediğin parçayı e-posta ile sipariş et." data-de="Sieben von Hand gearbeitete Stücke mit seldschukischen Motiven — von der Aktentasche mit Messingmedaillon bis zum fünfteiligen Bogenschützen-Set — bereinigt, fotografiert und verkaufsfertig. Stöbere durch die Kollektion und bestelle jedes Stück per E-Mail.">Seven hand-tooled pieces in Seljuk motifs — from a brass-medallion briefcase to a five-piece archer's set — cleaned, shot and priced for sale. Browse the full collection and order any piece by email.</p>
-        <a href="/leather/" class="btn btn-grad" data-en="View the collection →" data-tr="Koleksiyonu gör →" data-de="Zur Kollektion →">View the collection →</a>
-      </div>
-    </div>
-  </section>
 
 
   <section id="ugc">
@@ -796,6 +775,28 @@
       <a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" target="_blank" rel="noopener"><div class="thumb cover-a"><video src="film-boomerang.mp4" poster="film-boomerang-p.jpg" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><img decoding="async" src="laurel-white.png" alt="Honorable Mention — Student Video Contest 2026" loading="lazy" style="position:absolute;top:9px;right:9px;left:auto;bottom:auto;width:60px;height:60px;z-index:3;opacity:.92;filter:drop-shadow(0 0 5px rgba(0,0,0,.6))" /><span class="pill">🏆 Honorable Mention</span></div><div class="card-body"><h3>Boomerang</h3><p data-en="Honorable Mention · Student Video Contest 2026 · Selected at Duemila30" data-tr="Mansiyon · Student Video Contest 2026 · Duemila30 Seçkisi" data-de="Lobende Erwähnung · Student Video Contest 2026 · Ausgewählt bei Duemila30">Honorable Mention · Student Video Contest 2026 · Selected at Duemila30</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" target="_blank" rel="noopener"><div class="thumb cover-f"><video src="film-diepost.mp4?v=2" poster="film-diepost-p.jpg?v=2" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">🍫 Cave scene</span></div><div class="card-body"><h3>Die Post</h3><p data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024" data-de="Kurzfilm · Erciyes University, 2024">Short Film · Erciyes University, 2024</p></div></a>
       <a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" target="_blank" rel="noopener"><div class="thumb cover-c"><video src="film-runorrun.mp4" poster="film-runorrun-p.jpg" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">Awakening</span></div><div class="card-body"><h3>Run or Run</h3><p data-en="Short Film · 2:34" data-tr="Kısa Film · 2:34" data-de="Kurzfilm · 2:34">Short Film · 2:34</p></div></a>
+    </div>
+  </section>
+
+  <section id="leather-feature">
+    <div class="eyebrow reveal" data-en="Featured · Handcrafted Goods" data-tr="Öne Çıkan · El Yapımı Ürünler" data-de="Ausgewählt · Handgefertigte Stücke">Featured · Handcrafted Goods</div>
+    <h2 class="sec-title reveal" data-en="Anatolian Leather — Tooled by Hand" data-tr="Anadolu Derisi — Elde İşlenmiş" data-de="Anatolisches Leder — von Hand gearbeitet">Anatolian Leather — Tooled by Hand</h2>
+    <p class="sec-sub reveal" data-en="A small atelier collection of Seljuk-tooled bags, bracers and belts — each one of one, hand-cut and stitched, priced in USD and shipped worldwide." data-tr="Selçuklu işlemeli çantalar, kolçaklar ve kemerlerden küçük bir atölye koleksiyonu — her biri tek parça, elde kesilip dikilmiş, USD fiyatlı ve dünya çapında gönderimli." data-de="Eine kleine Atelier-Kollektion seldschukisch gearbeiteter Taschen, Armschienen und Gürtel — jedes ein Unikat, von Hand geschnitten und genäht, in USD und mit weltweitem Versand.">A small atelier collection of Seljuk-tooled bags, bracers and belts — each one of one, hand-cut and stitched, priced in USD and shipped worldwide.</p>
+    <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
+
+    <div class="feature reveal">
+      <a class="media" href="/leather/" aria-label="Open the leather collection">
+        <img src="leather-feature.jpg" alt="ÆRAY Atelier — handcrafted Seljuk leather: saddle bag, messenger and crossbody" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0" />
+        <span class="pill">ÆRAY Atelier</span>
+        <span class="lf-new" data-en="✦ New · Shop" data-tr="✦ Yeni · Mağaza" data-de="✦ Neu · Shop">✦ New · Shop</span>
+        <span class="stat" data-en="7 pieces · one of one" data-tr="7 parça · tek parça" data-de="7 Stücke · Unikate">7 pieces · one of one</span>
+      </a>
+      <div>
+        <div class="role" data-en="ÆRAY Atelier · Handcrafted Leather" data-tr="ÆRAY Atelier · El Yapımı Deri" data-de="ÆRAY Atelier · Handgefertigtes Leder">ÆRAY Atelier · Handcrafted Leather</div>
+        <h3 data-en="The Leather Collection" data-tr="Deri Koleksiyonu" data-de="Die Lederkollektion">The Leather Collection</h3>
+        <p data-en="Seven hand-tooled pieces in Seljuk motifs — from a brass-medallion briefcase to a five-piece archer's set — cleaned, shot and priced for sale. Browse the full collection and order any piece by email." data-tr="Selçuklu motifleriyle elde işlenmiş yedi parça — pirinç madalyonlu evrak çantasından beş parçalık okçu setine — temizlenip fotoğraflanarak satışa hazırlandı. Tüm koleksiyona göz at, dilediğin parçayı e-posta ile sipariş et." data-de="Sieben von Hand gearbeitete Stücke mit seldschukischen Motiven — von der Aktentasche mit Messingmedaillon bis zum fünfteiligen Bogenschützen-Set — bereinigt, fotografiert und verkaufsfertig. Stöbere durch die Kollektion und bestelle jedes Stück per E-Mail.">Seven hand-tooled pieces in Seljuk motifs — from a brass-medallion briefcase to a five-piece archer's set — cleaned, shot and priced for sale. Browse the full collection and order any piece by email.</p>
+        <a href="/leather/" class="btn btn-grad" data-en="View the collection →" data-tr="Koleksiyonu gör →" data-de="Zur Kollektion →">View the collection →</a>
+      </div>
     </div>
   </section>
 
