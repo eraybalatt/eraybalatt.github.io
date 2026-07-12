@@ -82,7 +82,7 @@
   .brand-mark svg{width:32px;height:32px;display:block}
   @keyframes brandglow{0%,100%{filter:drop-shadow(0 0 4px rgba(46,155,240,.5))}50%{filter:drop-shadow(0 0 13px rgba(92,200,255,.95)) drop-shadow(0 0 5px rgba(46,155,240,.6))}}
   .brand-wm{display:flex;flex-direction:column;line-height:1.06}
-  .brand-wm b{font-family:'Poppins';font-weight:700;font-size:.98rem;letter-spacing:.05em;background:linear-gradient(110deg,#eaf6ff,#5cc8ff 38%,#f5c542 72%,#eaf6ff);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brandshine 6s linear infinite}
+  .brand-wm b{font-family:'Poppins';font-weight:700;font-size:.98rem;letter-spacing:.05em;background:linear-gradient(110deg,#eaf6ff,#5cc8ff 38%,#2e9bf0 72%,#eaf6ff);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brandshine 6s linear infinite}
   @keyframes brandshine{to{background-position:220% center}}
   .brand-wm i{font-style:normal;font-size:.55rem;letter-spacing:.17em;text-transform:uppercase;color:#8fa9cc;font-weight:600;margin-top:1px}
   @media(max-width:600px){.brand-wm i{display:none}}
@@ -500,10 +500,15 @@
 
   /* --- brand: TOP --- */
   .brand{
-    align-self:stretch; gap:11px;
-    padding:0 4px 20px; margin:0 0 2px;
+    flex-direction:column; align-items:center; text-align:center;
+    align-self:stretch; gap:12px;
+    padding:6px 4px 22px; margin:0 0 4px;
     border-bottom:1px solid rgba(120,210,255,.13);
   }
+  .brand-mark{ width:54px; height:54px; }
+  .brand-mark svg{ width:54px; height:54px; }
+  .brand-wm{ align-items:center; }
+  .brand-wm b{ font-size:1.04rem; letter-spacing:.06em; }
 
   /* --- nav links: MIDDLE (twin auto spacers center this block) --- */
   .nav-links{
