@@ -462,7 +462,218 @@
   .mv-feat .fcap h3{font-family:'Poppins',sans-serif;font-weight:700;font-size:clamp(1.1rem,2.6vw,1.65rem);color:#fff;margin:0 0 3px;text-shadow:0 2px 22px rgba(0,0,0,.65)}
   .mv-feat .fcap p{font-size:.86rem;color:#cfe3ff;margin:0}
   @media(max-width:600px){.mv-feat .duo{aspect-ratio:1.4/1}.mv-feat .fplay{width:64px;height:64px}}
-</style>
+
+/* ==== LEFT SIDEBAR NAV (Indexed Portfolio) — appended, wins by source order ==== */
+/* ============================================================
+   NAV REDESIGN — Direction C "Indexed Portfolio" left sidebar
+   Paste at the END of the existing <style> block. It overrides the
+   old top-bar rules by source order (equal specificity, later wins),
+   so nothing else needs deleting. Optional cleanup: the old
+   @media(max-width:980px){.nav-links...} block can be removed.
+   Desktop (>=880px) = fixed left rail. Mobile (<880px) = original
+   top bar + hamburger, fully restated below.
+   ============================================================ */
+
+:root{ --sb:240px; }              /* sidebar width */
+
+/* ---------------- DESKTOP: left vertical rail (>=880px) ---------------- */
+@media (min-width:880px){
+  html{ scroll-padding-top:16px; }             /* no top bar -> tiny offset */
+  body{ padding-left:var(--sb); }              /* shift ALL page content right */
+
+  header.nav{
+    top:0; bottom:0; left:0; right:auto;
+    width:var(--sb); height:100%;
+    border-bottom:none;
+    border-right:1px solid rgba(120,210,255,.20);
+    background:linear-gradient(180deg,rgba(18,44,86,.55) 0%,rgba(11,24,48,.60) 55%,rgba(8,13,26,.72) 100%);
+    box-shadow:24px 0 60px -34px rgba(46,155,240,.60),inset -1px 0 0 rgba(180,228,255,.08);
+  }
+  header.nav::after{ display:none; }           /* hide the horizontal motif strip */
+
+  .nav-inner{
+    flex-direction:column; align-items:stretch; justify-content:flex-start;
+    height:100%; max-width:none; margin:0; gap:0;
+    padding:26px 18px 22px;
+    overflow-y:auto;                            /* safety on very short viewports */
+  }
+
+  /* --- brand: TOP --- */
+  .brand{
+    align-self:stretch; gap:11px;
+    padding:0 4px 20px; margin:0 0 2px;
+    border-bottom:1px solid rgba(120,210,255,.13);
+  }
+
+  /* --- nav links: MIDDLE (twin auto spacers center this block) --- */
+  .nav-links{
+    position:relative; inset:auto; top:auto; left:auto; right:auto;
+    flex:0 0 auto; width:100%;
+    display:flex; flex-direction:column; align-items:stretch; flex-wrap:nowrap;
+    justify-content:flex-start;
+    gap:0; margin:auto 0 0; padding:0; background:none;
+    counter-reset:navi;
+  }
+  /* faint continuous base rail behind the per-item lit segments */
+  .nav-links::before{
+    content:""; position:absolute; left:16px; top:6px; bottom:6px;
+    width:2px; transform:translateX(-50%); border-radius:2px; pointer-events:none;
+    background:linear-gradient(180deg,transparent,rgba(120,210,255,.14) 10%,rgba(120,210,255,.14) 90%,transparent);
+  }
+
+  .nav-links a{
+    --nl:rgba(92,200,255,.80);    /* rail line colour  (lit)  */
+    --nd:var(--c1);               /* rail node colour  (lit)  */
+    --ndsz:3.2px;                 /* rail node radius         */
+    position:relative;
+    display:flex; align-items:center; gap:13px;
+    padding:9px 10px 9px 32px;
+    border-radius:11px;
+    font-size:.95rem; font-weight:500; letter-spacing:.005em;
+    color:var(--muted);
+    counter-increment:navi;
+    transition:color .22s ease, background .22s ease, box-shadow .22s ease;
+  }
+  /* two-digit index 01–09 (pure CSS counter — no HTML change) */
+  .nav-links a::before{
+    content:counter(navi,decimal-leading-zero);
+    font-family:'Poppins',sans-serif; font-weight:600;
+    font-size:.62rem; letter-spacing:.06em;
+    font-variant-numeric:tabular-nums;
+    min-width:16px; color:#6f86ac;
+    transition:color .22s ease, text-shadow .22s ease;
+  }
+  /* per-item rail: full-row vertical line + centred node */
+  .nav-links a::after{
+    content:""; position:absolute; left:16px; top:0; bottom:0;
+    width:11px; transform:translateX(-50%); pointer-events:none;
+    background:
+      radial-gradient(circle at 50% 50%, var(--nd) 0 var(--ndsz), rgba(0,0,0,0) calc(var(--ndsz) + 1.2px)),
+      linear-gradient(90deg, transparent calc(50% - 1px), var(--nl) calc(50% - 1px), var(--nl) calc(50% + 1px), transparent calc(50% + 1px));
+    background-repeat:no-repeat;
+    transition:filter .22s ease;
+  }
+
+  .nav-links a:hover{
+    color:#eef4fb;
+    background:linear-gradient(90deg,rgba(46,155,240,.14),rgba(46,155,240,.02));
+  }
+  .nav-links a:hover::before{ color:#a8c8ef; }
+
+  /* ACTIVE item (scrollspy sets .active here) */
+  .nav-links a.active{
+    color:#fff; --nd:var(--c3); --ndsz:4.6px;
+    background:linear-gradient(90deg,rgba(46,155,240,.22),rgba(46,155,240,.05));
+    box-shadow:inset 0 0 0 1px rgba(120,210,255,.26), 0 0 24px -12px rgba(46,155,240,.85);
+  }
+  .nav-links a.active::before{ color:var(--c3); text-shadow:0 0 10px rgba(245,197,66,.55); }
+  .nav-links a.active::after{ filter:drop-shadow(0 0 5px rgba(245,197,66,.85)); }
+
+  /* items AFTER the active one -> un-lit => rail fills top→active */
+  .nav-links a.active ~ a{
+    --nl:rgba(120,210,255,.16); --nd:rgba(120,210,255,.20); --ndsz:2.8px;
+  }
+  .nav-links a.active ~ a::before{ color:#51678d; }
+
+  /* --- language switcher + footer mark: BOTTOM --- */
+  .nav-right{
+    flex-direction:column; align-items:stretch; gap:12px;
+    width:100%; margin-top:auto;
+    padding-top:18px; border-top:1px solid rgba(120,210,255,.12);
+  }
+  .nav-right::after{                            /* small decorative footer mark */
+    content:"© ÆRAY";
+    font-family:'Poppins',sans-serif; font-weight:600;
+    font-size:.56rem; letter-spacing:.16em; text-transform:uppercase;
+    color:#5c74a0;
+  }
+  .nav-toggle{ display:none; }
+
+  /* graft (from B): full-width segmented language switcher */
+  .nav-right .lang{ width:100%; }
+  .nav-right .lang-btn{ flex:1; text-align:center; padding:7px 0; }
+  /* graft (from B): keep the focus skip-link clear of the sidebar */
+  .skip-link{ left:calc(var(--sb) + 12px); }
+
+  section{ scroll-margin-top:16px; }
+}
+
+/* keep the Products full-bleed row inside the reduced area (no overlap/overflow) */
+@media (min-width:900px){
+  #prodphoto .g-gal, #prodphoto .row-label{
+    width:min(100vw - var(--sb) - 56px, 1300px);
+  }
+}
+
+/* ---------------- MOBILE / TABLET: revert to top bar + hamburger (<880px) ---------------- */
+@media (max-width:879.98px){
+  body{ padding-left:0; }
+  .skip-link{ left:8px; }
+
+  header.nav{
+    top:0; left:0; right:0; bottom:auto;
+    width:auto; height:auto;
+    border-right:none;
+    border-bottom:1px solid rgba(120,210,255,.32);
+    background:linear-gradient(180deg,rgba(24,64,122,.82) 0%,rgba(15,40,80,.60) 58%,rgba(9,20,40,.26) 100%);
+    box-shadow:0 10px 46px -20px rgba(46,155,240,.9),inset 0 1px 0 rgba(180,228,255,.24);
+  }
+
+  .nav-inner{
+    flex-direction:row; align-items:center; justify-content:space-between;
+    height:auto; max-width:var(--maxw); margin:0 auto; gap:16px;
+    padding:15px 22px; overflow:visible;
+  }
+
+  .brand{ align-self:auto; padding:0; margin:0; border-bottom:none; }
+
+  .nav-links{
+    position:absolute; top:100%; left:0; right:0;
+    width:auto; margin:0; padding:12px; gap:4px;
+    display:none; flex-direction:column; align-items:stretch; flex-wrap:nowrap;
+    background:rgba(8,13,24,.98);
+    border-top:1px solid var(--card-brd); border-bottom:1px solid var(--card-brd);
+  }
+  .nav-links::before{ display:none; }
+  .nav-links.open{ display:flex; }             /* toggled by the hamburger JS */
+
+  .nav-links a{
+    padding:12px 16px; border-radius:8px;
+    font-size:.96rem; font-weight:500; letter-spacing:normal;
+    color:var(--muted); background:none; box-shadow:none;
+  }
+  .nav-links a::before, .nav-links a::after{ display:none; }  /* no index / rail on mobile */
+  .nav-links a:hover{
+    color:#eef4fb;
+    background:linear-gradient(180deg,rgba(46,155,240,.16),rgba(46,155,240,.04));
+    box-shadow:0 0 18px -4px rgba(46,155,240,.5);
+  }
+  .nav-links a.active{
+    color:#fff;
+    background:linear-gradient(180deg,rgba(46,155,240,.34),rgba(46,155,240,.12));
+    box-shadow:0 0 20px -3px rgba(46,155,240,.7),inset 0 0 0 1px rgba(120,210,255,.45);
+  }
+
+  .nav-right{
+    flex-direction:row; align-items:center; gap:10px;
+    width:auto; margin-top:0; padding-top:0; border-top:none;
+  }
+  .nav-right::after{ display:none; }
+  .nav-toggle{ display:block; }
+
+  html{ scroll-padding-top:90px; }
+  section{ scroll-margin-top:80px; }
+}
+
+/* ---------------- reduced motion ---------------- */
+@media (prefers-reduced-motion:reduce){
+  header.nav .nav-links a,
+  header.nav .nav-links a::before,
+  header.nav .nav-links a::after{ transition:none; }
+  header.nav::after{ animation:none; }
+}
+
+  </style>
 </head>
 <body>
 <a href="#main" class="skip-link" data-en="Skip to content" data-tr="İçeriğe geç" data-de="Zum Inhalt springen">Skip to content</a>
