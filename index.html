@@ -488,9 +488,12 @@
     width:var(--sb); height:100%;
     border-bottom:none;
     border-right:1px solid rgba(120,210,255,.20);
-    background:linear-gradient(180deg,rgba(46,98,168,.68) 0%,rgba(32,72,134,.62) 55%,rgba(24,54,104,.62) 100%);
+    background:linear-gradient(160deg,rgba(64,148,226,.9) 0%,rgba(40,100,180,.85) 26%,rgba(22,54,116,.85) 54%,rgba(52,126,210,.82) 76%,rgba(14,34,80,.9) 100%);
+    background-size:150% 200%;
+    animation:railFlow 18s ease-in-out infinite;
     box-shadow:24px 0 60px -34px rgba(46,155,240,.60),inset -1px 0 0 rgba(180,228,255,.08);
   }
+  @keyframes railFlow{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
   header.nav::after{ display:none; }           /* hide the horizontal motif strip */
 
   .nav-inner{
