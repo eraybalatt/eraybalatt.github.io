@@ -708,8 +708,8 @@
   
   
   /* ===== isolated low-poly sniper accent ===== */
-  .sniper{position:fixed;right:-74px;bottom:-26px;z-index:2;width:294px;height:auto;pointer-events:none;filter:drop-shadow(0 0 16px rgba(46,155,240,.22));-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 94%);mask-image:linear-gradient(to bottom,#000 62%,transparent 94%);animation:sniperIn .8s ease .35s both}
-  @keyframes sniperIn{from{opacity:0}to{opacity:1}}
+  .sniper{position:fixed;right:-74px;bottom:-26px;z-index:2;width:294px;height:auto;pointer-events:none;filter:drop-shadow(0 0 16px rgba(46,155,240,.22));-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 94%);mask-image:linear-gradient(to bottom,#000 62%,transparent 94%);animation:sniperShow 6.5s ease .3s both}
+  @keyframes sniperShow{0%{opacity:0}8%{opacity:1}84%{opacity:1}100%{opacity:0}}
   @media(max-width:879.98px){.sniper{display:none}}
   </style>
 </head>
