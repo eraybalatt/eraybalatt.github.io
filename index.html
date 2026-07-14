@@ -487,16 +487,18 @@
     top:0; bottom:0; left:0; right:auto;
     width:var(--sb); height:100%;
     border-bottom:none;
-    border-right:1px solid rgba(120,210,255,.20);
+    border-right:none;
     background:linear-gradient(160deg,rgba(64,148,226,.9) 0%,rgba(40,100,180,.85) 26%,rgba(22,54,116,.85) 54%,rgba(52,126,210,.82) 76%,rgba(14,34,80,.9) 100%);
     background-size:150% 200%;
     animation:railFlow 18s ease-in-out infinite;
-    box-shadow:24px 0 60px -34px rgba(46,155,240,.60),inset -1px 0 0 rgba(180,228,255,.08);
+    box-shadow:30px 0 80px -30px rgba(28,74,146,.55);
   }
+  header.nav::before{content:"";position:absolute;top:0;bottom:0;right:0;width:110px;z-index:0;pointer-events:none;background:linear-gradient(90deg,transparent 0%,rgba(11,22,44,.5) 56%,rgba(9,17,36,.94) 100%)}
   @keyframes railFlow{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
   header.nav::after{ display:none; }           /* hide the horizontal motif strip */
 
   .nav-inner{
+    position:relative; z-index:1;
     flex-direction:column; align-items:stretch; justify-content:flex-start;
     height:100%; max-width:none; margin:0; gap:0;
     padding:26px 18px 22px;
