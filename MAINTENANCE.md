@@ -116,6 +116,8 @@ Yeni bir CDN/font/API eklersen **CSP'yi de güncelle**, yoksa sessizce bloklanı
 
 ⚠️ **Font seçerken:** yeni font Google Fonts'ta olmalı ve **`latin-ext` alt kümesini** desteklemeli. Sitede Türkçe `ı` harfi **140 kez** geçiyor; `latin-ext` yoksa Türkçe sürüm bozulur.
 
+> ⚠️ Kontrol ederken **tam masaüstü User-Agent** kullan. Google Fonts tanımadığı ajana `unicode-range`'siz eski format gönderir — kısa UA ile yaptığım ilk testte Space Grotesk'te `ß` yokmuş gibi göründü, halbuki `latin` alt kümesi (`U+0000-00FF`) içinde.
+
 ---
 
 ### 6. Yeni kart videosu eklerken lazy-poster desenini uygula
@@ -197,8 +199,8 @@ Bunlar keyfi değil, ölçülerek yapıldı. Bozmadan önce oku.
 
 | Sayfa | Font | Neden |
 |---|---|---|
-| Ana sayfa | Poppins + Plus Jakarta Sans | marka fontu |
-| `/anime/` | Space Grotesk | kampanya kimliği |
+| Ana sayfa | **Space Grotesk** + Plus Jakarta Sans | marka fontu (Ağustos 2026'da Poppins'ten geçildi) |
+| `/anime/` | Space Grotesk | ana sayfayla bilerek aynı |
 | `/leather/` | Cormorant Garamond | el işi/zanaat hissi |
 | `/bushido/` | Manrope | kampanya kimliği |
 | `/flawless/` | Oswald | belgesel/sinema hissi |
