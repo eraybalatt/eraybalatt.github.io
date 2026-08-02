@@ -484,19 +484,19 @@
 /* ---------------- DESKTOP: left vertical rail (>=880px) ---------------- */
 @media (min-width:880px){
   html{ scroll-padding-top:16px; }             /* no top bar -> tiny offset */
-  body{ padding-left:var(--sb); }              /* shift ALL page content right */
+  body{ padding-right:var(--sb); }            /* tüm sayfa içeriğini sola kaydır */
 
   header.nav{
-    top:0; bottom:0; left:0; right:auto;
+    top:0; bottom:0; right:0; left:auto;
     width:var(--sb); height:100%;
     border-bottom:none;
     border-right:none;
     background:linear-gradient(160deg,rgba(72,168,240,.88) 0%,rgba(30,110,190,.84) 26%,rgba(10,45,90,.86) 54%,rgba(48,140,220,.82) 76%,rgba(5,22,44,.92) 100%);
     background-size:150% 200%;
     animation:railFlow 18s ease-in-out infinite;
-    box-shadow:30px 0 80px -30px rgba(28,74,146,.55);
+    box-shadow:-30px 0 80px -30px rgba(28,74,146,.55);
   }
-  header.nav::before{content:"";position:absolute;top:0;bottom:0;right:0;width:110px;z-index:0;pointer-events:none;background:linear-gradient(90deg,transparent 0%,rgba(11,22,44,.5) 56%,rgba(9,17,36,.94) 100%)}
+  header.nav::before{content:"";position:absolute;top:0;bottom:0;left:0;width:110px;z-index:0;pointer-events:none;background:linear-gradient(270deg,transparent 0%,rgba(6,22,44,.5) 56%,rgba(5,16,32,.94) 100%)}
   @keyframes railFlow{0%{background-position:0% 0%}50%{background-position:100% 100%}100%{background-position:0% 0%}}
   header.nav::after{ display:none; }           /* hide the horizontal motif strip */
 
@@ -545,7 +545,7 @@
     padding:9px 10px 9px 32px;
     border-radius:11px;
     font-size:.95rem; font-weight:500; letter-spacing:.005em;
-    color:#eef5ff;
+    color:#f6fbff;
     text-shadow:0 1px 2px rgba(4,10,24,.92),0 0 3px rgba(4,10,24,.8);
     counter-increment:navi;
     transition:color .22s ease, background .22s ease, box-shadow .22s ease;
@@ -556,7 +556,7 @@
     font-family:'Space Grotesk',sans-serif; font-weight:600;
     font-size:.62rem; letter-spacing:.06em;
     font-variant-numeric:tabular-nums;
-    min-width:16px; color:#cfe0f7; text-shadow:0 1px 2px rgba(4,10,24,.92),0 0 3px rgba(4,10,24,.8);
+    min-width:16px; color:#dcefff; text-shadow:0 1px 2px rgba(3,14,28,.95),0 0 4px rgba(3,14,28,.85);
     transition:color .22s ease, text-shadow .22s ease;
   }
   /* per-item rail: full-row vertical line + centred node */
@@ -574,7 +574,7 @@
     color:#eef4fb;
     background:linear-gradient(90deg,rgba(46,155,240,.14),rgba(46,155,240,.02));
   }
-  .nav-links a:hover::before{ color:#a8c8ef; }
+  .nav-links a:hover::before{ color:#dcefff; }
 
   /* ACTIVE item (scrollspy sets .active here) */
   .nav-links a.active{
@@ -589,7 +589,7 @@
   .nav-links a.active ~ a{
     --nl:rgba(120,210,255,.16); --nd:rgba(120,210,255,.20); --ndsz:2.8px;
   }
-  .nav-links a.active ~ a::before{ color:#a8c1e3; text-shadow:0 1px 2px rgba(4,10,24,.92),0 0 3px rgba(4,10,24,.8); }
+  .nav-links a.active ~ a::before{ color:#bcd6ef; text-shadow:0 1px 2px rgba(4,10,24,.92),0 0 3px rgba(4,10,24,.8); }
 
   /* --- language switcher + footer mark: BOTTOM --- */
   .nav-right{
@@ -609,7 +609,7 @@
   .nav-right .lang{ width:100%; }
   .nav-right .lang-btn{ flex:1; text-align:center; padding:7px 0; }
   /* graft (from B): keep the focus skip-link clear of the sidebar */
-  .skip-link{ left:calc(var(--sb) + 12px); }
+  .skip-link{ left:12px; }
 
   section{ scroll-margin-top:16px; }
 }
@@ -702,6 +702,8 @@
   .avail-dot{width:9px;height:9px;border-radius:50%;background:#3ee66b;flex:0 0 auto;box-shadow:0 0 0 3px rgba(62,230,107,.28),0 0 10px rgba(62,230,107,.9);animation:availPulse 2s ease-in-out infinite}
   @keyframes availPulse{0%,100%{box-shadow:0 0 0 3px rgba(62,230,107,.30),0 0 8px rgba(62,230,107,.7)}50%{box-shadow:0 0 0 6px rgba(62,230,107,.10),0 0 15px rgba(62,230,107,1)}}
   @media(max-width:879.98px){.avail{top:auto;bottom:16px;right:14px;padding:9px 15px;font-size:.82rem}}
+  /* çubuk sağda: rozet onun soluna kaysın (kaynak sırası önemli — .avail tanımından SONRA olmalı) */
+  @media(min-width:880px){.avail{right:calc(var(--sb) + 22px)}}
   
   /* ===== page loader (Seljuk motif spinner) ===== */
   #loader{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 42%,#123350,#061a2e 82%);transition:opacity .55s ease,visibility .55s ease}
