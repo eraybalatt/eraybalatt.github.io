@@ -24,7 +24,7 @@
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <style>
   :root{
-    --bg:#061a2e; --bg2:#132542; --panel:#172a45; --line:#2a3f60;
+    --bg:#030d18; --bg2:#0a1c30; --panel:#102338; --line:#22364f;
     --c1:#5ec2ff; --c2:#1a86d8; --c3:#a8dcff; --c4:#4a9fd8; --c5:#123a6e;
     --txt:#eaf2ff; --dim:#8fa3c4; --white:#ffffff;
     --grad:linear-gradient(120deg,var(--c1),var(--c2) 40%,var(--c3) 78%,var(--c4));
@@ -182,6 +182,89 @@
     .row{grid-template-columns:1fr;gap:2px;padding:8px 0}
   }
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
+</style>
+
+<style id="konser">
+/* ============ GECE / KONSER ATMOSFERİ ============ */
+
+/* --- sahne ışıkları: tepeden inen huzmeler --- */
+.beams{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;contain:strict}
+.beams i{position:absolute;top:-38vh;display:block;width:46vw;height:150vh;transform-origin:50% 0;
+  mix-blend-mode:screen;opacity:.55}
+.beams i:nth-child(1){left:-10vw;transform:rotate(15deg);
+  background:linear-gradient(180deg,rgba(94,194,255,.20),rgba(94,194,255,.06) 42%,transparent 70%);
+  animation:beamA 15s ease-in-out infinite alternate}
+.beams i:nth-child(2){right:-12vw;transform:rotate(-13deg);
+  background:linear-gradient(180deg,rgba(26,134,216,.22),rgba(26,134,216,.05) 46%,transparent 72%);
+  animation:beamB 19s ease-in-out infinite alternate}
+.beams i:nth-child(3){left:34vw;width:30vw;transform:rotate(3deg);
+  background:linear-gradient(180deg,rgba(168,220,255,.13),rgba(168,220,255,.03) 38%,transparent 66%);
+  animation:beamC 23s ease-in-out infinite alternate}
+@keyframes beamA{0%{transform:rotate(15deg) translateX(0);opacity:.42}100%{transform:rotate(9deg) translateX(3vw);opacity:.68}}
+@keyframes beamB{0%{transform:rotate(-13deg) translateX(0);opacity:.5}100%{transform:rotate(-7deg) translateX(-3vw);opacity:.34}}
+@keyframes beamC{0%{transform:rotate(3deg);opacity:.28}100%{transform:rotate(-2deg);opacity:.5}}
+
+/* --- salon dumanı / puslu hava --- */
+.haze{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(70% 46% at 50% 94%,rgba(94,194,255,.11),transparent 66%),
+             radial-gradient(46% 34% at 16% 70%,rgba(26,134,216,.08),transparent 62%);
+  animation:haze 17s ease-in-out infinite alternate}
+@keyframes haze{0%{opacity:.65;transform:translateY(0) scale(1)}100%{opacity:1;transform:translateY(-14px) scale(1.05)}}
+
+/* --- vinyet: karanlık salon hissi --- */
+.vig{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(120% 92% at 50% 42%,transparent 42%,rgba(2,8,16,.55) 82%,rgba(2,8,16,.86) 100%)}
+
+/* --- 3D derinlik: kareler sahnede duruyormuş gibi --- */
+.eras{perspective:1500px;perspective-origin:50% 34%}
+.slate{perspective:1600px;perspective-origin:50% 30%}
+/* dönem kartları da sahnede dursun */
+.era{transform-style:preserve-3d;position:relative;
+  transition:transform .55s cubic-bezier(.19,.72,.3,1), box-shadow .55s cubic-bezier(.19,.72,.3,1);
+  box-shadow:0 26px 64px -30px rgba(0,0,0,.9),
+             0 12px 38px -22px rgba(26,134,216,.5),
+             0 0 0 1px rgba(94,194,255,.16),
+             0 0 80px -34px rgba(94,194,255,.28)}
+.era:hover{transform:translateY(-7px) rotateX(2.6deg) scale(1.02);
+  box-shadow:0 38px 88px -30px rgba(0,0,0,.95),
+             0 18px 50px -20px rgba(26,134,216,.7),
+             0 0 0 1px rgba(94,194,255,.4),
+             0 0 120px -28px rgba(94,194,255,.5)}
+/* not: .era overflow:hidden olduğu için zemin yansıması ::after ile yapılamaz — glow box-shadow ile veriliyor */
+.frame{transform-style:preserve-3d;
+  transition:transform .55s cubic-bezier(.19,.72,.3,1), box-shadow .55s cubic-bezier(.19,.72,.3,1);
+  box-shadow:0 34px 90px -34px rgba(0,0,0,.92),
+             0 18px 54px -26px rgba(26,134,216,.55),
+             0 0 0 1px rgba(94,194,255,.18),
+             0 0 110px -34px rgba(94,194,255,.34),
+             inset 0 0 0 1px rgba(4,10,20,.7),
+             inset 0 -40px 70px -50px rgba(0,0,0,.9)}
+.frame:hover{transform:translateY(-8px) rotateX(3.2deg) scale(1.014);
+  box-shadow:0 46px 110px -34px rgba(0,0,0,.95),
+             0 24px 64px -24px rgba(26,134,216,.75),
+             0 0 0 1px rgba(94,194,255,.42),
+             0 0 150px -30px rgba(94,194,255,.55),
+             inset 0 0 0 1px rgba(4,10,20,.7)}
+/* sahne zemininde yansıma */
+.frame::after{content:"";position:absolute;left:8%;right:8%;bottom:-16px;height:22px;z-index:-1;
+  border-radius:50%;pointer-events:none;
+  background:radial-gradient(60% 100% at 50% 0%,rgba(94,194,255,.34),transparent 72%);
+  filter:blur(9px);opacity:.55;transition:opacity .55s,transform .55s}
+.frame:hover::after{opacity:.95;transform:translateY(5px) scaleX(1.06)}
+
+/* fare takipli hafif eğim (JS ile) */
+.frame{will-change:transform}
+
+@media(prefers-reduced-motion:reduce){
+  .beams i,.haze{animation:none!important}
+  .frame,.frame::after,.era{transition:none!important}
+  .frame:hover,.era:hover{transform:none!important}
+}
+@media(max-width:760px){
+  .beams i{opacity:.34}
+  .frame:hover,.era:hover{transform:none}
+  .frame::after{display:none}
+}
 </style>
 </head>
 <body>
@@ -360,6 +443,33 @@
     var hb=document.querySelector('.hero-bg[data-loop]');
     if(hb) mountVideo(hb,'/anime-mv.mp4');
     document.querySelectorAll('.frame video, .concert-vid video').forEach(function(fv){ var vo=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ fv.preload='auto'; var p=fv.play(); if(p&&p.catch)p.catch(function(){}); } else { fv.pause(); } });},{threshold:.25}); vo.observe(fv); });
+  }
+})();
+</script>
+
+<script>
+(function(){
+  // atmosfer katmanlarını ekle
+  ['beams','haze','vig'].forEach(function(c){
+    var d=document.createElement('div'); d.className=c; d.setAttribute('aria-hidden','true');
+    if(c==='beams') d.innerHTML='<i></i><i></i><i></i>';
+    document.body.appendChild(d);
+  });
+  // fare takipli 3D eğim — sadece masaüstü + hareket izinliyse
+  if(matchMedia('(min-width:761px)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    document.querySelectorAll('.frame,.era').forEach(function(f){
+      var raf=null;
+      f.addEventListener('mousemove',function(e){
+        if(raf)return;
+        raf=requestAnimationFrame(function(){
+          raf=null;
+          var r=f.getBoundingClientRect();
+          var px=(e.clientX-r.left)/r.width-0.5, py=(e.clientY-r.top)/r.height-0.5;
+          f.style.transform='translateY(-8px) rotateX('+(3.2-py*4.5).toFixed(2)+'deg) rotateY('+(px*5).toFixed(2)+'deg) scale(1.014)';
+        });
+      });
+      f.addEventListener('mouseleave',function(){ f.style.transform=''; });
+    });
   }
 })();
 </script>
