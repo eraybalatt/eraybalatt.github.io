@@ -1,2 +1,11 @@
 profile-orig.jpg
 .claude/
+
+# macOS Finder metadata — leaks in whenever a folder is opened in Finder
+.DS_Store
+**/.DS_Store
+
+# editor / OS scratch
+*.swp
+*~
+Thumbs.db

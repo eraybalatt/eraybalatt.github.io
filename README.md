@@ -1,38 +1,86 @@
-# eraybalat.com — AI Creative Portfolio
+# eraybalat.com
 
-Eray Balat'ın yapay zekâ işleri (müzik, görsel, video, belgesel, kısa film, shorts) için tek sayfalık portföy sitesi.
+Eray Balat'ın portfolyo sitesi — Creative AI Producer & Filmmaker.
+Müzik videoları, belgeseller, kısa filmler, UGC/ürün filmleri.
 
-- Tek dosya: `index.html` (HTML + CSS + JS hepsi içinde)
-- Bağımlılık yok, derleme yok — dosyayı açınca çalışır.
+**Canlı:** https://eraybalat.com
 
-## Önizleme (bilgisayarında)
-`index.html` dosyasına çift tıkla, tarayıcıda açılır.
+> 🔧 Dosyalara dokunmadan önce **[MAINTENANCE.md](MAINTENANCE.md)**'i oku.
+> Orada siteyi *sessizce* bozan tuzaklar yazılı — hiçbiri hata vermez, o yüzden bilmeden bulunmaz.
 
-## GitHub Pages ile yayına alma
+---
 
-1. GitHub'da yeni bir repo aç (örn. `eraybalat-portfolio` ya da kullanıcı siten için `KULLANICIADIN.github.io`).
-2. Bu klasördeki tüm dosyaları repoya yükle (`index.html`, `CNAME`, `.nojekyll`, `README.md`).
-3. Repo → **Settings → Pages** → *Branch: main / root* seç → **Save**.
-4. Birkaç dakika içinde site `https://KULLANICIADIN.github.io/...` adresinde yayında olur.
+## Yapı
 
-## eraybalat.com'u bağlama (custom domain)
-
-`CNAME` dosyası zaten `eraybalat.com` içeriyor. Domain sağlayıcının (GoDaddy, Namecheap vb.) DNS ayarlarına şunları ekle:
-
-**A kayıtları** (apex / `eraybalat.com` için):
 ```
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
+index.html          ← ana sayfa (HTML + CSS + JS hepsi içinde, derleme yok)
+anime/              ← AI Anime Music Video (vaka çalışması)
+leather/            ← ÆRAY Atelier — deri ürünler mağazası
+bushido/            ← özel kampanya önizlemesi (sitemap'te yok, bilerek)
+flawless/           ← FLAWLESS — Antwerp Elmas Soygunu belgeseli
+CNAME               ← özel alan adı
+sitemap.xml         ← /bushido/ hariç tüm public sayfalar
 ```
 
-**CNAME kaydı** (`www` için):
-```
-www  →  KULLANICIADIN.github.io
+- **Bağımlılık yok, derleme adımı yok.** `index.html`'i tarayıcıda açınca çalışır.
+- **Diller:** EN / TR / DE (`data-en` / `data-tr` / `data-de` öznitelikleri)
+
+---
+
+## Yerelde çalıştırma
+
+```bash
+python3 -m http.server 8804
 ```
 
-Sonra GitHub → Settings → Pages → *Custom domain* kısmına `eraybalat.com` yaz ve **Enforce HTTPS**'i işaretle. DNS yayılması 10 dk – birkaç saat sürebilir.
+Sonra `http://localhost:8804` aç.
 
-## İçeriği güncelleme
-`index.html` içindeki kartlarda `href="#"` olan yerlere kendi linklerini, `cover-*` gradyan kapakların yerine gerçek görsel/thumbnail'larını koyabilirsin. Renkleri en üstteki `:root` bloğundan değiştirebilirsin.
+> Dosyaya çift tıklayıp `file://` ile de açılır ama form, `fetch` ve bazı CSP davranışları farklı çalışır — gerçek testi yerel sunucuyla yap.
+
+---
+
+## Yayına alma
+
+```bash
+git add -A
+git commit -m "değişiklik açıklaması"
+git push origin main
+```
+
+GitHub Pages otomatik derler, CDN'e yayılması ~30–60 saniye.
+
+**Doğrula:**
+
+```bash
+curl -s "https://eraybalat.com/?cb=$RANDOM" | grep -c "eklediğin-yeni-şey"
+```
+
+⚠️ Bir dosyanın **içeriğini** değiştirip **adını** aynı bıraktıysan, `?v=N` numarasını artırmayı unutma — yoksa ziyaretçiler CDN'den eski halini almaya devam eder. Detay: [MAINTENANCE.md](MAINTENANCE.md) → "Tuzaklar" bölümü
+
+---
+
+## Altyapı
+
+| | |
+|---|---|
+| Barındırma | GitHub Pages + Fastly CDN |
+| Alan adı | `CNAME` dosyası → `eraybalat.com` |
+| DNS (apex A kayıtları) | `185.199.108.153` · `.109.153` · `.110.153` · `.111.153` |
+| Analitik | Cloudflare Web Analytics (sadece beacon — DNS proxy'si **kapalı**) |
+| İletişim formu | web3forms |
+| E-posta | `eray@eraybalat.com` (Hostinger, `smtp.hostinger.com:465` SSL) |
+
+---
+
+## İçerik güncelleme
+
+- **Renkler:** `index.html` içindeki `:root` bloğu
+- **Metinler:** `data-en` / `data-tr` / `data-de` — **üçünü birden** güncelle, yoksa o dil yarım kalır
+- **Yeni kart videosu:** `data-poster` desenini kullan (bkz. MAINTENANCE.md), yoksa kart boş görünür
+
+---
+
+## Güvenlik
+
+- GitHub PAT ve Cloudflare API token'ı **asla** commit'lenmez, **asla** `.git/config`'e yazılmaz
+- `web3forms access_key` ve Cloudflare **beacon** token'ı publictir — HTML'de durmaları normal
