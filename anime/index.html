@@ -317,7 +317,7 @@
           <span class="clap-rec"><i></i>REC</span>
         </div>
         <a class="frame" id="film" href="https://www.instagram.com/reel/DU6mb6XCTpQ/" target="_blank" rel="noopener" aria-label="Watch the AI anime music video on Instagram">
-          <video src="/anime-mv.mp4" poster="/anime-mv-poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+          <video id="mvVid" data-src="/anime-mv.mp4?v=2" poster="/anime-mv-poster.jpg" muted loop playsinline preload="none"></video>
           <span class="bar bar-t" aria-hidden="true"></span>
           <span class="bar bar-b" aria-hidden="true"></span>
           <span class="crop c-tl" aria-hidden="true"></span><span class="crop c-tr" aria-hidden="true"></span>
@@ -441,7 +441,11 @@
   function mountVideo(host,src){ var v=document.createElement('video'); v.src=src; v.autoplay=true; v.muted=true; v.loop=true; v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true'); v.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease'; host.appendChild(v); v.addEventListener('playing',function(){ v.style.opacity=host.classList.contains('hero-bg')?'.34':'1'; }); var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
   if(!reduce){
     var hb=document.querySelector('.hero-bg[data-loop]');
-    if(hb) mountVideo(hb,'/anime-mv.mp4');
+    // hero fonu: kart videosuyla AYNI URL (?v=2) -> tek indirme;
+    // ve sayfa yuklendikten sonra -> ilk boyamayla yarismasin
+    if(hb){ var mountHero=function(){ mountVideo(hb,'/anime-mv.mp4?v=2'); };
+      if(document.readyState==='complete') setTimeout(mountHero,250);
+      else window.addEventListener('load',function(){setTimeout(mountHero,250);},{once:true}); }
     document.querySelectorAll('.frame video, .concert-vid video').forEach(function(fv){ var vo=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ fv.preload='auto'; var p=fv.play(); if(p&&p.catch)p.catch(function(){}); } else { fv.pause(); } });},{threshold:.25}); vo.observe(fv); });
   }
 })();
@@ -471,6 +475,16 @@
       f.addEventListener('mouseleave',function(){ f.style.transform=''; });
     });
   }
+})();
+</script>
+
+<script>
+(function(){
+  var v=document.getElementById('mvVid'); if(!v||!v.dataset.src)return;
+  function start(){ if(v.src)return; v.src=v.dataset.src; v.load();
+    var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+  if(document.readyState==='complete') setTimeout(start,200);
+  else window.addEventListener('load',function(){setTimeout(start,200);},{once:true});
 })();
 </script>
 </body>
