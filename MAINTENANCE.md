@@ -193,7 +193,8 @@ Bunlar keyfi değil, ölçülerek yapıldı. Bozmadan önce oku.
 --c3:#f5c542  --c4:#d99e2b   (citrine altın — MARKA, kaldırılmaz)
 ```
 
-> `#f5c542` rastgele bir sarı değil: belgesel etiketinin adı **CITRINE** ve About metni "blue & citrine-gold palette" diyor. Temizlik yaparken silme.
+> **Altın/sarı notu (Ağustos 2026):** ana sayfa + /anime/ + /bushido/ tamamen maviye döndü ("Akdeniz" teması) — oralarda sarı görürsen kalıntıdır, temizle. **Ama `/leather/` (pirinç/zanaat) ve `/flawless/` (elmas/altın) BİLEREK altın kullanır** — tema rengi değil konu rengi. Onları "düzeltme".
+> Palet taraması yaparken `getComputedStyle` YETMEZ — box-shadow içi ve gradyan durağındaki rengi göremez. Ham kaynakta `grep -E 'rgba\(2[0-9]{2},2[0-9]{2},1[0-9]{2}'` gibi sıcak-ton araması yap.
 
 **Fontlar — her sayfa bilerek farklı:**
 
