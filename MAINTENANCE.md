@@ -233,3 +233,19 @@ curl -s "https://eraybalat.com/?cb=$RANDOM" | grep -c "yeni-eklenen-şey"
 ---
 
 *Bu dosya siteyle birlikte yaşamalı. Yeni bir tuzağa düşersen buraya yaz — bir dahakine kimse aynı yere düşmesin.*
+
+---
+
+## 🤖 GEO katmanı (AI görünürlüğü) — Ağustos 2026
+
+Site artık AI modellerine yapılandırılmış veri sunuyor. Parçaları:
+
+| Parça | Ne |
+|---|---|
+| `robots.txt` | GPTBot, ClaudeBot, PerplexityBot vb. **açık izinli** — birini engellemek = o modelde görünmemek |
+| `llms.txt` | Modellere sunulan site özeti — **içerik değişince burayı da güncelle**, yalan söylerse modeller kaynağı güvensiz sayar |
+| Ana sayfa JSON-LD | Tek `@graph`: Person `#eray` + ProfessionalService `#studio` + WebSite + ProfilePage. **`@id`'leri bozma** — tüm proje sayfaları bunlara referans verir |
+| Proje JSON-LD | flawless (Movie+Video, Rich Results ✓), anime, bushido, leather — hepsi `#eray`/`#website`'e bağlı |
+| `/sss/` `/faq/` `/faq-de/` | 3 dilli SSS. **Kural: görünen metin ile FAQPage şeması birebir aynı olmalı.** İçerik değişirse ikisini birlikte değiştir. hreflang zinciri 4'lü (tr/en/de/x-default), üç sayfada aynı |
+
+Şemaya girmeyecekler: doğrulanamayan üstünlük iddiaları ("ilk", "tek"), bilinmeyen rakamlar, sitede olmayan olgular. Bir iddia eklemeden önce sayfada gerçekten yazıyor mu bak.
