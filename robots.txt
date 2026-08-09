@@ -1,5 +1,69 @@
+# eraybalat.com — robots.txt
+# Klasik arama motorlarına ve yapay zekâ tarayıcılarına tam erişim.
+# Bir botu engellemek = o modelin cevaplarında görünmemek.
+
 User-agent: *
 Allow: /
 
-# No crawl restrictions — this is a public portfolio.
+# --- OpenAI / ChatGPT ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# --- Anthropic / Claude ---
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# --- Google (Gemini / AI Overviews) ---
+User-agent: Google-Extended
+Allow: /
+
+# --- Perplexity ---
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# --- Apple Intelligence ---
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Meta AI ---
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# --- Diğer ---
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
 Sitemap: https://eraybalat.com/sitemap.xml
