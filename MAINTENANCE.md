@@ -248,6 +248,8 @@ Site artık AI modellerine yapılandırılmış veri sunuyor. Parçaları:
 | Proje JSON-LD | flawless (Movie+Video, Rich Results ✓), anime, bushido, leather — hepsi `#eray`/`#website`'e bağlı |
 | `/sss/` `/faq/` `/faq-de/` | 3 dilli SSS. **Kural: görünen metin ile FAQPage şeması birebir aynı olmalı.** İçerik değişirse ikisini birlikte değiştir. hreflang zinciri 4'lü (tr/en/de/x-default), üç sayfada aynı |
 
+**Search Console notu (Ağustos 2026):** Ana sayfa `<head>`indeki `google-site-verification` meta etiketi **silinmemeli** — silinirse Search Console mülk doğrulaması düşer (sitemap, indeksleme istekleri, performans verisi erişimi gider). Head temizliği yaparken koru.
+
 **Cloudflare notu (Ağustos 2026):** Site şu an Cloudflare **proxy'sinden GEÇMİYOR** (DNS doğrudan GitHub Pages 185.199.x'e gidiyor, yanıtlarda `cf-ray` yok) — bu yüzden Cloudflare'in bot/AI Crawl Control ayarları siteyi **etkileyemez**, dokunmak gerekmez. ⚠️ Ama günün birinde hız için **proxy (turuncu bulut) açılırsa**, aynı gün `dash.cloudflare.com → AI Crawl Control`'a girip TÜM AI botlarını **Allow** yap — varsayılan Block kalırsa robots.txt'deki izinler anlamsızlaşır ve site tüm AI modellerinden kaybolur. Kontrol komutu: `curl -s -o /dev/null -w '%{http_code}' -A GPTBot https://eraybalat.com/` → 200 olmalı.
 
 Şemaya girmeyecekler: doğrulanamayan üstünlük iddiaları ("ilk", "tek"), bilinmeyen rakamlar, sitede olmayan olgular. Bir iddia eklemeden önce sayfada gerçekten yazıyor mu bak.
