@@ -424,6 +424,7 @@
     <span class="foot-cta">
       <a href="mailto:eray@eraybalat.com" data-en="Email" data-tr="E-posta" data-de="E-Mail">Email</a>
       <a href="https://instagram.com/documenteray" target="_blank" rel="noopener">Instagram</a>
+      <a href="/faq/" data-faq data-en="FAQ" data-tr="SSS" data-de="FAQ">FAQ</a>
       <a href="/" data-en="&amp;larr; Portfolio" data-tr="&amp;larr; Portföy" data-de="&amp;larr; Portfolio">&larr; Portfolio</a>
     </span>
   </div>
@@ -455,6 +456,7 @@
     document.documentElement.lang=lang;
     i18nEls.forEach(function(el){ if(el.dataset[lang]!==undefined) el.innerHTML=el.dataset[lang]; });
     document.querySelectorAll('.lang-btn').forEach(function(b){var on=b.dataset.lang===lang;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on?'true':'false');});
+    var f=document.querySelector('a[data-faq]'); if(f){f.setAttribute('href',({en:'/faq/',tr:'/sss/',de:'/faq-de/'})[lang]||'/faq/');}
     var m=META[lang]||META.en;
     document.title=m.t;
     setMeta('meta[name="description"]',m.d);
@@ -516,6 +518,5 @@
 })();
 </script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74"}'></script>
-<p style="max-width:1100px;margin:0 auto;padding:0 22px 34px;font-size:.85rem"><a href="/faq/" style="color:#5ec2ff;text-decoration:none">FAQ — process, timelines, rights →</a></p>
 </body>
 </html>
