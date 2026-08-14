@@ -685,6 +685,7 @@
       <a href="#films"     data-en="Short Films"  data-tr="Kısa Filmler" data-de="Kurzfilme">Short Films</a>
       <a href="/leather/"  data-en="Leather Goods" data-tr="Deri Ürünler" data-de="Lederwaren">Leather Goods</a>
       <a href="#brands"    data-en="What I Do"   data-tr="Neler Yapıyorum" data-de="Was ich mache">What I Do</a>
+      <a href="/hire/" data-hire data-en="Hire Me" data-tr="Benimle Çalış" data-de="Beauftragen">Hire Me</a>
       <a href="#contact"   data-en="Contact"     data-tr="İletişim" data-de="Kontakt">Contact</a>
     </nav>
     <div class="nav-right">
@@ -1127,7 +1128,7 @@
         </figure>
       </div>
     </div>
-    <p class="rev-proof reveal"><span data-en="★ 5.0 — every public Upwork rating" data-tr="★ 5.0 — Upwork'teki tüm herkese açık puanlar" data-de="★ 5,0 — jede öffentliche Upwork-Bewertung">★ 5.0 — every public Upwork rating</span><span data-en="6 completed jobs · 3 in progress" data-tr="6 tamamlanmış iş · 3 devam ediyor" data-de="6 abgeschlossene Jobs · 3 laufend">6 completed jobs · 3 in progress</span><a href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener" data-en="See verified reviews on Upwork →" data-tr="Doğrulanmış yorumları Upwork'te gör →" data-de="Verifizierte Bewertungen auf Upwork ansehen →">See verified reviews on Upwork →</a></p>
+    <p class="rev-proof reveal"><span data-en="★ 5.0 — every public Upwork rating" data-tr="★ 5.0 — Upwork'teki tüm herkese açık puanlar" data-de="★ 5,0 — jede öffentliche Upwork-Bewertung">★ 5.0 — every public Upwork rating</span><span data-en="6 completed jobs · 3 in progress" data-tr="6 tamamlanmış iş · 3 devam ediyor" data-de="6 abgeschlossene Jobs · 3 laufend">6 completed jobs · 3 in progress</span><a href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener" data-en="See verified reviews on Upwork →" data-tr="Doğrulanmış yorumları Upwork'te gör →" data-de="Verifizierte Bewertungen auf Upwork ansehen →">See verified reviews on Upwork →</a><a href="/hire/" data-hire data-en="Services &amp; pricing →" data-tr="Hizmetler &amp; fiyatlar →" data-de="Leistungen &amp; Preise →">Services &amp; pricing →</a></p>
   </section>
 
   <div class="slj-divider" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
@@ -1192,7 +1193,7 @@
   function setLang(lang){
     document.documentElement.lang=lang;
     i18nEls.forEach(el=>{ if(el.dataset[lang]!==undefined) el.innerHTML=el.dataset[lang]; });
-    document.querySelectorAll('a[data-faq]').forEach(a=>{a.href={en:'/faq/',tr:'/sss/',de:'/faq-de/'}[lang]||'/faq/';});document.querySelectorAll('.lang-btn').forEach(b=>{const on=b.dataset.lang===lang;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on?'true':'false');});
+    document.querySelectorAll('a[data-faq]').forEach(a=>{a.href={en:'/faq/',tr:'/sss/',de:'/faq-de/'}[lang]||'/faq/';});document.querySelectorAll('a[data-hire]').forEach(a=>{a.href={en:'/hire/',tr:'/hire/',de:'/ki-filmproduktion/'}[lang]||'/hire/';});document.querySelectorAll('.lang-btn').forEach(b=>{const on=b.dataset.lang===lang;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on?'true':'false');});
     const m=LANG_META[lang]||LANG_META.en;
     document.title=m.t;
     setMeta('meta[name="description"]',m.d);
