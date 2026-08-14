@@ -1193,7 +1193,7 @@
   function setLang(lang){
     document.documentElement.lang=lang;
     i18nEls.forEach(el=>{ if(el.dataset[lang]!==undefined) el.innerHTML=el.dataset[lang]; });
-    document.querySelectorAll('a[data-faq]').forEach(a=>{a.href={en:'/faq/',tr:'/sss/',de:'/faq-de/'}[lang]||'/faq/';});document.querySelectorAll('a[data-hire]').forEach(a=>{a.href={en:'/hire/',tr:'/hire/',de:'/ki-filmproduktion/'}[lang]||'/hire/';});document.querySelectorAll('.lang-btn').forEach(b=>{const on=b.dataset.lang===lang;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on?'true':'false');});
+    document.querySelectorAll('a[data-faq]').forEach(a=>{a.href={en:'/faq/',tr:'/sss/',de:'/faq-de/'}[lang]||'/faq/';});document.querySelectorAll('a[data-hire]').forEach(a=>{a.href={en:'/hire/',tr:'/yapay-zeka-reklam-filmi/',de:'/ki-filmproduktion/'}[lang]||'/hire/';});document.querySelectorAll('.lang-btn').forEach(b=>{const on=b.dataset.lang===lang;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on?'true':'false');});
     const m=LANG_META[lang]||LANG_META.en;
     document.title=m.t;
     setMeta('meta[name="description"]',m.d);
