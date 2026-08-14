@@ -627,6 +627,21 @@
   .loader-motif{width:114px;height:114px;animation:loaderSpin 2.6s linear infinite;filter:drop-shadow(0 0 28px rgba(46,155,240,.5))}
   @keyframes loaderSpin{to{transform:rotate(360deg)}}
   @media(prefers-reduced-motion:reduce){.loader-motif{animation:none}}
+  /* client reviews */
+  .reviews-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-top:34px;align-items:stretch}
+  .rev-card{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:24px 26px;display:flex;flex-direction:column;gap:13px;box-shadow:inset 0 1px 0 rgba(180,228,255,.08)}
+  .rev-side{display:flex;flex-direction:column;gap:18px}
+  .rev-side .rev-card{flex:1}
+  .rev-stars{color:#ffc94d;letter-spacing:3px;font-size:.82rem;filter:drop-shadow(0 0 8px rgba(255,201,77,.35))}
+  .rev-stars b{color:#fff;letter-spacing:0;margin-left:6px;font-size:.8rem}
+  .rev-quote{font-size:.96rem;line-height:1.78;color:#d7e8fa}
+  .rev-feat .rev-quote{font-size:1.04rem}
+  .rev-meta{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
+  .rev-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px}
+  .rev-proof{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:22px;font-size:.85rem;color:var(--muted)}
+  .rev-proof a{color:#7cc4f8;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(124,196,248,.4)}
+  .rev-proof a:hover{border-bottom-color:#7cc4f8}
+  @media(max-width:860px){.reviews-grid{grid-template-columns:1fr}.rev-card{padding:20px}}
   h1,h2,h3,p,li,a{overflow-wrap:break-word}
   </style>
 </head>
@@ -1086,6 +1101,33 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <div class="slj-divider" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
+  <section id="reviews">
+    <div class="eyebrow reveal" data-en="Client Reviews · Verified on Upwork" data-tr="Müşteri Yorumları · Upwork Doğrulamalı" data-de="Kundenstimmen · Auf Upwork verifiziert">Client Reviews · Verified on Upwork</div>
+    <h2 class="sec-title reveal" data-en="What Clients Say" data-tr="Müşteriler Ne Diyor" data-de="Was Kunden sagen">What Clients Say</h2>
+    <div class="reviews-grid">
+      <figure class="rev-card rev-feat reveal">
+        <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
+        <blockquote class="rev-quote" data-en="“He was outstanding from the first cut to the last. He caught continuity and pacing problems I'd missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. … The final cut came in exactly at target length and looked genuinely professional. I'd hire him again without hesitation, and I already plan to for my next film.”" data-tr="“İlk kurgudan sonuncusuna kadar olağanüstüydü. Benim gözden kaçırdığım süreklilik ve tempo sorunlarını yakaladı, defalarca plan değişikliğini ve ses düzeltmesini şikâyetsiz karşıladı, her teslim noktasına erken ya da tam zamanında ulaştı. … Final kurgu tam hedef sürede geldi ve gerçekten profesyonel görünüyordu. Onunla hiç tereddütsüz yine çalışırım — bir sonraki filmim için şimdiden planlıyorum.”" data-de="“Er war vom ersten bis zum letzten Schnitt herausragend. Er fing Kontinuitäts- und Tempoprobleme auf, die ich übersehen hatte, meisterte mehrere Runden von Shot-Wechseln und Audio-Fixes ohne Klagen und erreichte jeden Meilenstein früher oder pünktlich. … Der finale Schnitt kam exakt auf Ziellänge und wirkte wirklich professionell. Ich würde ihn ohne Zögern wieder engagieren — für meinen nächsten Film plane ich es bereits.”">“He was outstanding from the first cut to the last. He caught continuity and pacing problems I'd missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. … The final cut came in exactly at target length and looked genuinely professional. I'd hire him again without hesitation, and I already plan to for my next film.”</blockquote>
+        <div class="rev-tags"><span class="chip" data-en="Reliable" data-tr="Güvenilir" data-de="Zuverlässig">Reliable</span><span class="chip" data-en="Clear Communicator" data-tr="Net İletişim" data-de="Klare Kommunikation">Clear Communicator</span><span class="chip" data-en="Professional" data-tr="Profesyonel" data-de="Professionell">Professional</span></div>
+        <figcaption class="rev-meta" data-en="Sci-fi competition trailer · Cut from AI-generated footage · Upwork, August 2026" data-tr="Bilimkurgu yarışma fragmanı · AI üretimi görüntülerden kurgu · Upwork, Ağustos 2026" data-de="Sci-Fi-Wettbewerbstrailer · Schnitt aus AI-generiertem Material · Upwork, August 2026">Sci-fi competition trailer · Cut from AI-generated footage · Upwork, August 2026</figcaption>
+      </figure>
+      <div class="rev-side">
+        <figure class="rev-card reveal">
+          <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
+          <blockquote class="rev-quote" data-en="“Eray was great to work with. Will definitely do some more projects with him in the future.”" data-tr="“Eray'la çalışmak harikaydı. Gelecekte kesinlikle başka projeler de yapacağız.”" data-de="“Die Zusammenarbeit mit Eray war großartig. Wir werden in Zukunft definitiv weitere Projekte machen.”">“Eray was great to work with. Will definitely do some more projects with him in the future.”</blockquote>
+          <figcaption class="rev-meta" data-en="Minh P. · Repeatable AI ad recreation system" data-tr="Minh P. · Tekrarlanabilir AI reklam üretim sistemi" data-de="Minh P. · Wiederholbares AI-Ad-Recreation-System">Minh P. · Repeatable AI ad recreation system</figcaption>
+        </figure>
+        <figure class="rev-card reveal">
+          <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
+          <blockquote class="rev-quote" data-en="“Fast and quality work from Eray.”" data-tr="“Eray'dan hızlı ve kaliteli iş.”" data-de="“Schnelle und hochwertige Arbeit von Eray.”">“Fast and quality work from Eray.”</blockquote>
+          <figcaption class="rev-meta" data-en="Solovista L. · Short-form ads, editing &amp; motion design" data-tr="Solovista L. · Kısa format reklamlar, kurgu &amp; motion" data-de="Solovista L. · Short-Form-Ads, Schnitt &amp; Motion" >Solovista L. · Short-form ads, editing &amp; motion design</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p class="rev-proof reveal"><span data-en="★ 5.0 — every public Upwork rating" data-tr="★ 5.0 — Upwork'teki tüm herkese açık puanlar" data-de="★ 5,0 — jede öffentliche Upwork-Bewertung">★ 5.0 — every public Upwork rating</span><span data-en="6 completed jobs · 3 in progress" data-tr="6 tamamlanmış iş · 3 devam ediyor" data-de="6 abgeschlossene Jobs · 3 laufend">6 completed jobs · 3 in progress</span><a href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener" data-en="See verified reviews on Upwork →" data-tr="Doğrulanmış yorumları Upwork'te gör →" data-de="Verifizierte Bewertungen auf Upwork ansehen →">See verified reviews on Upwork →</a></p>
   </section>
 
   <div class="slj-divider" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
