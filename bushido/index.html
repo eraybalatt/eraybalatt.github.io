@@ -42,6 +42,9 @@
   a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
   ::selection{background:var(--c2);color:#04101f}
   :focus-visible{outline:2px solid var(--c1);outline-offset:2px;border-radius:4px}
+  h1,h2,h3,p,li,a{overflow-wrap:break-word}
+  .skip-link{position:absolute;left:-9999px;top:0;z-index:10000;background:linear-gradient(135deg,#1668ab,#125a94);color:#fff;padding:10px 16px;border-radius:0 0 10px 0;font-family:'Manrope',sans-serif;font-weight:700;font-size:.86rem}
+  .skip-link:focus{left:0}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
   /* ambient blobs */
@@ -65,9 +68,9 @@
   .intro-logos{display:flex;align-items:center;gap:clamp(20px,5vw,50px)}
   .intro-logos img{filter:brightness(0) invert(1);opacity:.97}
   .intro-citrine{height:clamp(30px,4.8vw,50px)}
-  .intro-x{font-family:'Manrope';font-weight:600;font-size:clamp(1.2rem,2.6vw,1.9rem);color:var(--c1)}
+  .intro-x{font-family:'Manrope',sans-serif;font-weight:600;font-size:clamp(1.2rem,2.6vw,1.9rem);color:var(--c1)}
   .intro-bushido{height:clamp(46px,7vw,80px)}
-  .intro-tag{font-family:'Manrope';font-size:.62rem;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:#7ea6d8;opacity:0;animation:introtag 1.4s ease .5s forwards;text-align:center;padding:0 20px}
+  .intro-tag{font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:#7ea6d8;opacity:0;animation:introtag 1.4s ease .5s forwards;text-align:center;padding:0 20px}
   @keyframes introtag{to{opacity:1}}
   .intro-star{width:34px;height:34px;animation:sljpulse 3.2s ease-in-out infinite}
 
@@ -77,14 +80,14 @@
   .brand{display:flex;align-items:center;gap:10px}
   .brand svg{width:30px;height:30px;display:block;animation:brandglow 3.4s ease-in-out infinite}
   @keyframes brandglow{0%,100%{filter:drop-shadow(0 0 4px rgba(46,155,240,.5))}50%{filter:drop-shadow(0 0 13px rgba(92,200,255,.95))}}
-  .brand b{font-family:'Manrope';font-weight:700;font-size:.9rem;letter-spacing:.05em;color:var(--muted);transition:color .2s}
+  .brand b{font-family:'Manrope',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.05em;color:var(--muted);transition:color .2s}
   .brand:hover b{color:var(--text)}
   .nav-right{display:flex;align-items:center;gap:11px}
   .lang-switch{display:flex;gap:2px;background:rgba(120,210,255,.08);border:1px solid var(--card-brd);border-radius:999px;padding:2px}
-  .lang-btn{background:none;border:none;color:var(--muted);font-family:'Manrope';font-weight:700;font-size:.7rem;letter-spacing:.04em;padding:5px 9px;border-radius:999px;cursor:pointer;transition:.2s}
-  .lang-btn.active{background:linear-gradient(135deg,#1a86d8,#1f7ccf);color:#fff;box-shadow:0 0 14px -4px rgba(46,155,240,.7)}
+  .lang-btn{background:none;border:none;color:var(--muted);font-family:'Manrope',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.04em;padding:5px 9px;border-radius:999px;cursor:pointer;transition:.2s}
+  .lang-btn.active{background:linear-gradient(135deg,#1668ab,#125a94);color:#fff;box-shadow:0 0 14px -4px rgba(46,155,240,.7)}
   .lang-btn:hover:not(.active){color:var(--text)}
-  .private-tag{display:inline-flex;align-items:center;gap:7px;font-family:'Manrope';font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c3);border:1px solid rgba(168,220,255,.3);border-radius:999px;padding:5px 12px;white-space:nowrap}
+  .private-tag{display:inline-flex;align-items:center;gap:7px;font-family:'Manrope',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c3);border:1px solid rgba(168,220,255,.3);border-radius:999px;padding:5px 12px;white-space:nowrap}
   .private-tag .d{width:6px;height:6px;border-radius:50%;background:var(--c3);box-shadow:0 0 8px var(--c3)}
   @keyframes sljpulse{0%,100%{filter:drop-shadow(0 0 6px rgba(168,220,255,.4));transform:scale(1)}50%{filter:drop-shadow(0 0 15px rgba(168,220,255,.8));transform:scale(1.07)}}
 
@@ -98,7 +101,7 @@
   .cv-stills{contain-intrinsic-size:auto 760px}
   .cv-process{contain-intrinsic-size:auto 1450px}
   .sec-sep{margin:2px auto!important}
-  .eyebrow{display:inline-flex;align-items:center;font-family:'Manrope';font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:16px;animation:shimmer 5s linear infinite}
+  .eyebrow{display:inline-flex;align-items:center;font-family:'Manrope',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;background:var(--grad);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:16px;animation:shimmer 5s linear infinite}
   .eyebrow::before{content:"";display:inline-block;width:14px;height:14px;margin-right:9px;vertical-align:-2px;flex:0 0 auto;opacity:.92;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22eb%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2260%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2248%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M50%203%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97%2050%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50%2097%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3%2050%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23eb%29%22%20stroke%3D%22%2306142e%22%20stroke-width%3D%221.2%22/%3E%3C/svg%3E") center/contain no-repeat}
   @keyframes shimmer{to{background-position:220% center}}
   .sec-title{font-size:clamp(1.9rem,5vw,3.1rem);font-weight:800;line-height:1.05;letter-spacing:-.022em;margin-bottom:14px;background:linear-gradient(180deg,#ffffff,#c3dbf7);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(46,155,240,.22))}
@@ -114,8 +117,8 @@
   /* hero */
   .hero{text-align:center;padding-top:150px;padding-bottom:20px}
   .hero .eyebrow{justify-content:center}
-  .hero h1{font-size:clamp(2.6rem,9vw,5.6rem);font-weight:800;letter-spacing:-.02em;line-height:1;background:linear-gradient(180deg,#f2f9ff,#bfe6ff 55%,#1a86d8);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 26px rgba(46,155,240,.4))}
-  .hero .h1-sub{font-family:'Manrope';font-weight:600;font-size:clamp(.8rem,2.2vw,1.15rem);letter-spacing:.24em;color:var(--muted);margin-top:14px}
+  .hero h1{font-size:clamp(2rem,8.5vw,5.6rem);font-weight:800;letter-spacing:-.02em;line-height:1;overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto;background:linear-gradient(180deg,#f2f9ff,#bfe6ff 55%,#1a86d8);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 26px rgba(46,155,240,.4))}
+  .hero .h1-sub{font-family:'Manrope',sans-serif;font-weight:600;font-size:clamp(.8rem,2.2vw,1.15rem);letter-spacing:.24em;color:var(--muted);margin-top:14px}
   .hero p{max-width:600px;margin:34px auto 0;color:var(--muted);font-size:1.05rem}
   .hero .meta{margin-top:28px;color:#9fd2f8;font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
   /* collab lockup */
@@ -124,17 +127,17 @@
   .collab-row img{filter:brightness(0) invert(1) drop-shadow(0 6px 22px rgba(46,155,240,.3));opacity:.96}
   .collab-row .cit{height:clamp(24px,3.4vw,38px)}
   .collab-row .bus{height:clamp(40px,5.4vw,64px)}
-  .collab-row .x{font-family:'Manrope';font-weight:600;color:var(--c1);font-size:clamp(1rem,2vw,1.5rem);filter:none}
-  .collab-cap{font-family:'Manrope';font-size:.64rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#7ea6d8}
+  .collab-row .x{font-family:'Manrope',sans-serif;font-weight:600;color:var(--c1);font-size:clamp(1rem,2vw,1.5rem);filter:none}
+  .collab-cap{font-family:'Manrope',sans-serif;font-size:.64rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#7ea6d8}
 
   /* films — self-hosted video */
   .film-hero{max-width:392px;margin:0 auto 46px}
   .film-cap{text-align:center;margin-top:16px}
-  .film-cap h3{font-family:'Manrope';font-size:1.35rem;font-weight:700;margin-bottom:5px}
+  .film-cap h3{font-family:'Manrope',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:5px}
   .film-cap p{color:var(--muted);font-size:.95rem}
   .films-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .film{text-align:center}
-  .film h3{font-family:'Manrope';font-size:1.12rem;font-weight:600;margin:16px 0 5px}
+  .film h3{font-family:'Manrope',sans-serif;font-size:1.12rem;font-weight:600;margin:16px 0 5px}
   .film p{color:var(--muted);font-size:.9rem}
   .film-media{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 80px -40px rgba(46,155,240,.6)}
   .film-vid{width:100%;aspect-ratio:9/16;border-radius:var(--radius);border:1px solid var(--card-brd);background:#04070e;box-shadow:inset 0 1px 0 rgba(180,228,255,.12);display:block;object-fit:cover;cursor:pointer}
@@ -149,7 +152,7 @@
   .vfill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--c1);border-radius:3px;box-shadow:0 0 8px var(--c1)}
   .vfill::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);width:10px;height:10px;border-radius:50%;background:#eaf6ff;box-shadow:0 0 8px var(--c1);opacity:0;transition:opacity .15s}
   .vseek:hover .vfill::after{opacity:1}
-  .yt-btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:'Manrope';font-weight:600;font-size:.82rem;color:#fff;background:linear-gradient(135deg,#1a86d8,#1f7ccf);border:1px solid rgba(120,210,255,.45);border-radius:11px;padding:9px 16px;box-shadow:0 10px 24px -12px rgba(46,155,240,.7);transition:transform .2s,box-shadow .2s}
+  .yt-btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:'Manrope',sans-serif;font-weight:600;font-size:.82rem;color:#fff;background:linear-gradient(135deg,#1668ab,#125a94);border:1px solid rgba(120,210,255,.45);border-radius:11px;padding:9px 16px;box-shadow:0 10px 24px -12px rgba(46,155,240,.7);transition:transform .2s,box-shadow .2s}
   .yt-btn:hover{transform:translateY(-2px);box-shadow:0 15px 32px -12px rgba(46,155,240,.95)}
   .yt-btn svg{flex:0 0 auto}
 
@@ -158,9 +161,9 @@
   .char:first-of-type{border-top:none;padding-top:4px}
   .char-top{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:center;margin-bottom:22px}
   .char-portrait{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;border:1px solid var(--card-brd);background:#0b1524;box-shadow:0 26px 60px -34px rgba(46,155,240,.6)}
-  .char-tag{font-family:'Manrope';font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c3)}
+  .char-tag{font-family:'Manrope',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c3)}
   .char-name{font-size:clamp(2.1rem,5.5vw,3.4rem);font-weight:800;line-height:1;margin:9px 0 6px;background:linear-gradient(180deg,#ffffff,#bfe0ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .char-role{font-family:'Manrope';font-weight:600;color:var(--c1);font-size:1.02rem;margin-bottom:13px}
+  .char-role{font-family:'Manrope',sans-serif;font-weight:600;color:var(--c1);font-size:1.02rem;margin-bottom:13px}
   .char-desc{color:var(--muted);font-size:.98rem;max-width:520px}
   .char-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
   .char-strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:13px;background:#0b1524;border:1px solid var(--card-brd)}
@@ -170,8 +173,8 @@
   /* catalog */
   .cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 30px}
   .cat-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-  .cat-num{font-family:'Manrope';font-weight:800;font-size:.76rem;letter-spacing:.02em;background:linear-gradient(120deg,#5ec2ff,#1a86d8 45%,#a8dcff);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .cat-name{font-family:'Manrope';font-size:1rem;font-weight:700;letter-spacing:-.01em}
+  .cat-num{font-family:'Manrope',sans-serif;font-weight:800;font-size:.76rem;letter-spacing:.02em;background:linear-gradient(120deg,#5ec2ff,#1a86d8 45%,#a8dcff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .cat-name{font-family:'Manrope',sans-serif;font-size:1rem;font-weight:700;letter-spacing:-.01em}
   .cat-desc{color:var(--muted);font-size:.78rem;width:100%}
   .cat-shots{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .cat-shot{border-radius:13px;overflow:hidden;background:#fff;border:1px solid var(--card-brd);box-shadow:0 16px 42px -28px rgba(46,155,240,.55),inset 0 1px 0 rgba(255,255,255,.5)}
@@ -181,18 +184,21 @@
   .stills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:900px;margin:0 auto}
   .stills-grid img{border-radius:12px;width:100%;aspect-ratio:2/3;object-fit:cover;cursor:zoom-in;transition:transform .3s,box-shadow .3s;background:#0b1524;border:1px solid var(--card-brd)}
   .stills-grid img:hover{transform:translateY(-4px);box-shadow:0 16px 40px -18px rgba(46,155,240,.55)}
+  .stills-grid img:focus-visible{outline:2px solid var(--c1);outline-offset:3px;transform:translateY(-4px);box-shadow:0 16px 40px -18px rgba(46,155,240,.55)}
   .lightbox{position:fixed;inset:0;z-index:100;background:rgba(4,8,16,.95);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
   .lightbox.on{display:flex}
   .lightbox img{max-width:92vw;max-height:92vh;border-radius:12px}
+  .lb-close{position:absolute;top:16px;right:16px;z-index:2;width:44px;height:44px;border-radius:50%;background:rgba(9,20,40,.72);border:1px solid var(--card-brd);color:var(--text);font-size:1.6rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .lb-close:hover{background:rgba(46,155,240,.5)}
 
   /* process */
   .proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 44px}
   .proc-step{position:relative}
-  .proc-step .n{font-family:'Manrope';font-weight:800;font-size:2.1rem;line-height:1;letter-spacing:-.02em;background:linear-gradient(120deg,#5ec2ff,#1a86d8 45%,#a8dcff);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:10px}
-  .proc-step h3{font-family:'Manrope';font-size:1.08rem;font-weight:700;margin-bottom:8px}
+  .proc-step .n{font-family:'Manrope',sans-serif;font-weight:800;font-size:2.1rem;line-height:1;letter-spacing:-.02em;background:linear-gradient(120deg,#5ec2ff,#1a86d8 45%,#a8dcff);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:10px}
+  .proc-step h3{font-family:'Manrope',sans-serif;font-size:1.08rem;font-weight:700;margin-bottom:8px}
   .proc-step p{color:var(--muted);font-size:.93rem;line-height:1.55}
   .tools{margin:58px 0 0}
-  .tools .lbl{font-family:'Manrope';font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#9fd2f8;margin-bottom:18px}
+  .tools .lbl{font-family:'Manrope',sans-serif;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#9fd2f8;margin-bottom:18px}
   .tools-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
   .tool{flex:0 1 190px}
   .tool{display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:14px;background:rgba(92,200,255,.06);border:1px solid var(--card-brd);transition:.2s}
@@ -200,14 +206,14 @@
   .tool-ico{width:46px;height:46px;flex:0 0 auto;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;overflow:hidden}
   .tool-ico img{width:36px;height:36px;object-fit:contain}
   .tool-txt{display:flex;flex-direction:column;line-height:1.25;min-width:0}
-  .tool-txt b{font-family:'Manrope';font-weight:700;font-size:.9rem;color:var(--text)}
+  .tool-txt b{font-family:'Manrope',sans-serif;font-weight:700;font-size:.9rem;color:var(--text)}
   .tool-txt span{color:var(--muted);font-size:.72rem;font-weight:500}
   .license{margin-top:20px;display:flex;align-items:flex-start;gap:16px;padding:22px 24px;border-radius:18px;background:linear-gradient(120deg,rgba(46,155,240,.14),rgba(168,220,255,.05));border:1px solid rgba(120,210,255,.3)}
   .license-ico{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#1a86d8,#5ec2ff);color:#04101f;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 0 18px -2px rgba(46,155,240,.7)}
-  .license-txt b{font-family:'Manrope';font-weight:700;font-size:1.02rem;color:var(--text);display:block;margin-bottom:5px}
+  .license-txt b{font-family:'Manrope',sans-serif;font-weight:700;font-size:1.02rem;color:var(--text);display:block;margin-bottom:5px}
   .license-txt p{color:var(--muted);font-size:.94rem;max-width:640px;margin-bottom:12px}
   .license-chips{display:flex;flex-wrap:wrap;gap:8px}
-  .license-chips span{font-family:'Manrope';font-size:.72rem;font-weight:600;color:#bfe0ff;background:rgba(46,155,240,.14);border:1px solid rgba(120,210,255,.28);border-radius:999px;padding:4px 11px}
+  .license-chips span{font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:600;color:#bfe0ff;background:rgba(46,155,240,.14);border:1px solid rgba(120,210,255,.28);border-radius:999px;padding:4px 11px}
   .proc-emph{margin-top:44px;border-left:2px solid var(--c3);padding-left:20px;color:var(--text);font-size:1.04rem;line-height:1.65;max-width:720px}
 
   /* cta / footer */
@@ -216,10 +222,10 @@
   @keyframes sheen{to{background-position:-220% 0}}
   .cta-band h2{font-size:clamp(1.8rem,5vw,3rem);margin-bottom:18px}
   .cta-band p{color:var(--muted);max-width:600px;margin:0 auto 30px;font-size:1.02rem}
-  .cta-btn{display:inline-block;font-family:'Manrope';font-weight:600;font-size:.95rem;color:#fff;background:linear-gradient(135deg,#1a86d8,#1f7ccf);border:1px solid rgba(120,210,255,.45);border-radius:13px;padding:14px 28px;box-shadow:0 13px 32px -12px rgba(46,155,240,.75);transition:transform .2s,box-shadow .2s}
+  .cta-btn{display:inline-block;font-family:'Manrope',sans-serif;font-weight:600;font-size:.95rem;color:#fff;background:linear-gradient(135deg,#1668ab,#125a94);border:1px solid rgba(120,210,255,.45);border-radius:13px;padding:14px 28px;box-shadow:0 13px 32px -12px rgba(46,155,240,.75);transition:transform .2s,box-shadow .2s}
   .cta-btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(46,155,240,.95)}
   .cta-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:24px}
-  .cta-links a{font-family:'Manrope';font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#9fd2f8;position:relative;padding:3px 2px;transition:color .2s}
+  .cta-links a{font-family:'Manrope',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#9fd2f8;position:relative;padding:3px 2px;transition:color .2s}
   .cta-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--c1);transform:scaleX(0);transition:transform .2s}
   .cta-links a:hover{color:#fff}
   .cta-links a:hover::after{transform:scaleX(1)}
@@ -229,7 +235,7 @@
   .cta-btn.hire .uw-dot{width:8px;height:8px;border-radius:50%;background:#eafff0;box-shadow:0 0 8px #baf7c9;animation:uwpulse 2.4s ease-in-out infinite}
   @keyframes uwpulse{0%,100%{opacity:.6}50%{opacity:1}}
   .foot-socials{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:14px}
-  .foot-socials a{font-family:'Manrope';font-weight:600;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:#9fd2f8;transition:color .2s}
+  .foot-socials a{font-family:'Manrope',sans-serif;font-weight:600;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:#9fd2f8;transition:color .2s}
   .foot-socials a:hover{color:#fff}
   .foot-copy{font-size:.82rem;margin-bottom:4px}
   .foot-note{font-size:.76rem;opacity:.75}
@@ -257,6 +263,8 @@
 </script>
 </head>
 <body>
+
+<a href="#main" class="skip-link" data-en="Skip to content" data-tr="İçeriğe atla" data-de="Zum Inhalt springen">Skip to content</a>
 
 <div class="blobs" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="blob b5"></div></div>
 
@@ -287,7 +295,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
   <!-- HERO -->
   <section class="hero wrap">
@@ -311,27 +319,27 @@
     <div class="films-grid">
       <div class="film rise">
         <div class="film-media">
-          <video class="film-vid" playsinline muted preload="metadata" poster="assets/video/poster-1.jpg"><source src="assets/video/film-1.mp4" type="video/mp4" /></video>
-          <button class="vtoggle" type="button" aria-label="Play or pause"><span class="vplay" aria-hidden="true"></span></button>
-          <div class="vseek" aria-hidden="true"><span class="vtrack"><span class="vfill"></span></span></div>
+          <video class="film-vid" playsinline muted preload="none" poster="assets/video/poster-1.webp"><source src="assets/video/film-1.mp4" type="video/mp4" /></video>
+          <button class="vtoggle" type="button" aria-label="Play" aria-pressed="false"><span class="vplay" aria-hidden="true"></span></button>
+          <div class="vseek" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="vtrack"><span class="vfill"></span></span></div>
         </div>
         <h3 data-en="Her Ritual" data-tr="Kadının Ritüeli" data-de="Ihr Ritual">Her Ritual</h3><p data-en="Yağ Dengesi face bar — water, lather, light." data-tr="Yağ Dengesi yüz barı — su, köpük, ışık." data-de="Yağ Dengesi Gesichtsseife — Wasser, Schaum, Licht.">Yağ Dengesi face bar — water, lather, light.</p>
         <a class="yt-btn" href="https://youtube.com/shorts/CZcjyTpPM_M" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
       <div class="film rise">
         <div class="film-media">
-          <video class="film-vid" playsinline muted preload="metadata" poster="assets/video/poster-3.jpg"><source src="assets/video/film-3.mp4" type="video/mp4" /></video>
-          <button class="vtoggle" type="button" aria-label="Play or pause"><span class="vplay" aria-hidden="true"></span></button>
-          <div class="vseek" aria-hidden="true"><span class="vtrack"><span class="vfill"></span></span></div>
+          <video class="film-vid" playsinline muted preload="none" poster="assets/video/poster-3.webp"><source src="assets/video/film-3.mp4" type="video/mp4" /></video>
+          <button class="vtoggle" type="button" aria-label="Play" aria-pressed="false"><span class="vplay" aria-hidden="true"></span></button>
+          <div class="vseek" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="vtrack"><span class="vfill"></span></span></div>
         </div>
         <h3 data-en="The Reel — Sabah Ritüeli" data-tr="Reel — Sabah Ritüeli" data-de="Der Reel — Sabah Ritüeli">The Reel — Sabah Ritüeli</h3><p data-en="The hero film — both rituals in one morning." data-tr="Ana film — iki ritüel tek bir sabahta." data-de="Der Hauptfilm — beide Rituale in einem Morgen.">The hero film — both rituals in one morning.</p>
         <a class="yt-btn" href="https://youtube.com/shorts/TGTcOunFfUY" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
       </div>
       <div class="film rise">
         <div class="film-media">
-          <video class="film-vid" playsinline muted preload="metadata" poster="assets/video/poster-2.jpg"><source src="assets/video/film-2.mp4" type="video/mp4" /></video>
-          <button class="vtoggle" type="button" aria-label="Play or pause"><span class="vplay" aria-hidden="true"></span></button>
-          <div class="vseek" aria-hidden="true"><span class="vtrack"><span class="vfill"></span></span></div>
+          <video class="film-vid" playsinline muted preload="none" poster="assets/video/poster-2.webp"><source src="assets/video/film-2.mp4" type="video/mp4" /></video>
+          <button class="vtoggle" type="button" aria-label="Play" aria-pressed="false"><span class="vplay" aria-hidden="true"></span></button>
+          <div class="vseek" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="vtrack"><span class="vfill"></span></span></div>
         </div>
         <h3 data-en="His Ritual" data-tr="Erkeğin Ritüeli" data-de="Sein Ritual">His Ritual</h3><p data-en="Nord beard oil — slow-motion drops, Turkish VO." data-tr="Nord sakal yağı — ağır çekim damlalar, Türkçe seslendirme." data-de="Nord Bartöl — Zeitlupen-Tropfen, türkisches Voice-over.">Nord beard oil — slow-motion drops, Turkish VO.</p>
         <a class="yt-btn" href="https://youtube.com/shorts/m5UfRGEmqSA" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="#ff2b2b" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></svg><span data-en="Watch in 4K" data-tr="4K izle" data-de="In 4K ansehen">Watch in 4K</span></a>
@@ -349,7 +357,7 @@
 
     <div class="char rise">
       <div class="char-top">
-        <img decoding="async" class="char-portrait" src="assets/img/cast/ayla-face.jpg" alt="Ayla — face" loading="lazy" />
+        <img decoding="async" class="char-portrait" src="assets/img/cast/ayla-face.webp" alt="Ayla — face" loading="lazy" />
         <div class="char-info">
           <span class="char-tag" data-en="Character 01" data-tr="Karakter 01" data-de="Charakter 01">Character 01</span>
           <h3 class="char-name">Ayla</h3>
@@ -358,19 +366,19 @@
         </div>
       </div>
       <div class="char-strip">
-        <img decoding="async" src="assets/img/cast/ayla-wear-tee.jpg" alt="Ayla in the Kheshig tee" loading="lazy" />
-        <img decoding="async" src="assets/img/cast/ayla-wear-buff.jpg" alt="Ayla in the Börü gaiter" loading="lazy" />
-        <img decoding="async" src="assets/img/cast/ayla-master.jpg" alt="Ayla full body" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-wear-tee.webp" alt="Ayla in the Kheshig tee" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-wear-buff.webp" alt="Ayla in the Börü gaiter" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-master.webp" alt="Ayla full body" loading="lazy" />
       </div>
       <div class="char-sheets">
-        <img decoding="async" src="assets/img/cast/ayla-sheet-1.jpg" alt="Ayla character sheet" loading="lazy" />
-        <img decoding="async" src="assets/img/cast/ayla-sheet-2.jpg" alt="Ayla character sheet detail" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-sheet-1.webp" alt="Ayla character sheet" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/ayla-sheet-2.webp" alt="Ayla character sheet detail" loading="lazy" />
       </div>
     </div>
 
     <div class="char rise">
       <div class="char-top">
-        <img decoding="async" class="char-portrait" src="assets/img/cast/kaan-face.jpg" alt="Kaan — face" loading="lazy" />
+        <img decoding="async" class="char-portrait" src="assets/img/cast/kaan-face.webp" alt="Kaan — face" loading="lazy" />
         <div class="char-info">
           <span class="char-tag" data-en="Character 02" data-tr="Karakter 02" data-de="Charakter 02">Character 02</span>
           <h3 class="char-name">Kaan</h3>
@@ -379,13 +387,13 @@
         </div>
       </div>
       <div class="char-strip">
-        <img decoding="async" src="assets/img/cast/kaan-wear-tee.jpg" alt="Kaan in the Kheshig tee" loading="lazy" />
-        <img decoding="async" src="assets/img/cast/kaan-wear-shorts.jpg" alt="Kaan in the Ronin short" loading="lazy" />
-        <img decoding="async" src="assets/img/cast/kaan-wear-boxer.jpg" alt="Kaan in the Bushido boxer" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-wear-tee.webp" alt="Kaan in the Kheshig tee" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-wear-shorts.webp" alt="Kaan in the Ronin short" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-wear-boxer.webp" alt="Kaan in the Bushido boxer" loading="lazy" />
       </div>
       <div class="char-sheets">
-        <img decoding="async" src="assets/img/cast/kaan-sheet-1.jpg" alt="Kaan character sheet" loading="lazy" />
-        <img decoding="async" src="assets/img/cast/kaan-sheet-2.jpg" alt="Kaan character sheet detail" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-sheet-1.webp" alt="Kaan character sheet" loading="lazy" />
+        <img decoding="async" src="assets/img/cast/kaan-sheet-2.webp" alt="Kaan character sheet detail" loading="lazy" />
       </div>
     </div>
   </section>
@@ -398,12 +406,12 @@
     <h2 class="sec-title rise" data-en="The capsule, built in 4K" data-tr="Kapsül, 4K'da inşa edildi" data-de="Die Capsule, in 4K aufgebaut">The capsule, built in 4K</h2>
     <p class="intro-p rise" data-en="Six products in Bushido's language — clean 4K packshots. No photography, no samples." data-tr="Bushido'nun dilinde altı ürün — temiz 4K çekimler. Fotoğraf yok, numune yok." data-de="Sechs Produkte in Bushidos Sprache — saubere 4K-Packshots. Keine Fotografie, keine Muster.">Six products in Bushido's language — clean 4K packshots. No photography, no samples.</p>
     <div class="cat-grid">
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">01</span><span class="cat-name">The Kheshig Tee</span><span class="cat-desc" data-en="Oversized cotton tee · front &amp; back print" data-tr="Oversize pamuklu tişört · ön &amp; arka baskı" data-de="Oversize-Baumwoll-Shirt · Front- &amp; Rückenprint">Oversized cotton tee · front &amp; back print</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/kheshig-front.jpg" alt="Kheshig tee front" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/kheshig-back.jpg" alt="Kheshig tee back print" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">02</span><span class="cat-name">Börü Neck Gaiter</span><span class="cat-desc" data-en="Seamless tube bandana · beast print" data-tr="Dikişsiz boyunluk · canavar baskı" data-de="Nahtloses Schlauchtuch · Bestien-Print">Seamless tube bandana · beast print</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/buff-front.jpg" alt="Börü neck gaiter front" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/buff-side.jpg" alt="Börü neck gaiter side" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">03</span><span class="cat-name">Basic Boxer</span><span class="cat-desc" data-en="Cotton-stretch trunk · woven waistband" data-tr="Pamuk-likra boxer · dokuma bel" data-de="Baumwoll-Stretch-Boxer · gewebter Bund">Cotton-stretch trunk · woven waistband</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/boxer-single.jpg" alt="Basic boxer" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/boxer-stack.jpg" alt="Basic boxer three pack" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">04</span><span class="cat-name">Nord Beard Oil</span><span class="cat-desc" data-en="50ml amber dropper · printed carton" data-tr="50ml amber damlalık · baskılı kutu" data-de="50ml Amber-Pipette · bedruckte Verpackung">50ml amber dropper · printed carton</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/nord-duo.jpg" alt="Nord beard oil bottle and box" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/nord-solo.jpg" alt="Nord beard oil bottle" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">05</span><span class="cat-name">Ronin Basketball Short</span><span class="cat-desc" data-en="Mesh performance short · side stripe" data-tr="Fileli performans şortu · yan şerit" data-de="Mesh-Performance-Short · Seitenstreifen">Mesh performance short · side stripe</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/shorts-front.jpg" alt="Ronin basketball short front" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/shorts-angle.jpg" alt="Ronin basketball short angle" loading="lazy" /></div></div></div>
-    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">06</span><span class="cat-name">Yağ Dengesi Face Bar</span><span class="cat-desc" data-en="120g cleansing bar · kraft sleeve" data-tr="120g temizleme barı · kraft ambalaj" data-de="120g Reinigungsstück · Kraft-Hülle">120g cleansing bar · kraft sleeve</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/soap-stack.jpg" alt="Yağ Dengesi face bar and box" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/soap-solo.jpg" alt="Yağ Dengesi face bar" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">01</span><span class="cat-name">The Kheshig Tee</span><span class="cat-desc" data-en="Oversized cotton tee · front &amp; back print" data-tr="Oversize pamuklu tişört · ön &amp; arka baskı" data-de="Oversize-Baumwoll-Shirt · Front- &amp; Rückenprint">Oversized cotton tee · front &amp; back print</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/kheshig-front.webp" alt="Kheshig tee front" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/kheshig-back.webp" alt="Kheshig tee back print" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">02</span><span class="cat-name">Börü Neck Gaiter</span><span class="cat-desc" data-en="Seamless tube bandana · beast print" data-tr="Dikişsiz boyunluk · canavar baskı" data-de="Nahtloses Schlauchtuch · Bestien-Print">Seamless tube bandana · beast print</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/buff-front.webp" alt="Börü neck gaiter front" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/buff-side.webp" alt="Börü neck gaiter side" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">03</span><span class="cat-name">Basic Boxer</span><span class="cat-desc" data-en="Cotton-stretch trunk · woven waistband" data-tr="Pamuk-likra boxer · dokuma bel" data-de="Baumwoll-Stretch-Boxer · gewebter Bund">Cotton-stretch trunk · woven waistband</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/boxer-single.webp" alt="Basic boxer" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/boxer-stack.webp" alt="Basic boxer three pack" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">04</span><span class="cat-name">Nord Beard Oil</span><span class="cat-desc" data-en="50ml amber dropper · printed carton" data-tr="50ml amber damlalık · baskılı kutu" data-de="50ml Amber-Pipette · bedruckte Verpackung">50ml amber dropper · printed carton</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/nord-duo.webp" alt="Nord beard oil bottle and box" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/nord-solo.webp" alt="Nord beard oil bottle" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">05</span><span class="cat-name">Ronin Basketball Short</span><span class="cat-desc" data-en="Mesh performance short · side stripe" data-tr="Fileli performans şortu · yan şerit" data-de="Mesh-Performance-Short · Seitenstreifen">Mesh performance short · side stripe</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/shorts-front.webp" alt="Ronin basketball short front" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/shorts-angle.webp" alt="Ronin basketball short angle" loading="lazy" /></div></div></div>
+    <div class="cat-item rise"><div class="cat-head"><span class="cat-num">06</span><span class="cat-name">Yağ Dengesi Face Bar</span><span class="cat-desc" data-en="120g cleansing bar · kraft sleeve" data-tr="120g temizleme barı · kraft ambalaj" data-de="120g Reinigungsstück · Kraft-Hülle">120g cleansing bar · kraft sleeve</span></div><div class="cat-shots"><div class="cat-shot"><img decoding="async" src="assets/img/catalog/soap-stack.webp" alt="Yağ Dengesi face bar and box" loading="lazy" /></div><div class="cat-shot"><img decoding="async" src="assets/img/catalog/soap-solo.webp" alt="Yağ Dengesi face bar" loading="lazy" /></div></div></div>
     </div>
   </section>
 
@@ -414,14 +422,14 @@
     <div class="eyebrow rise" data-en="04 · Stills" data-tr="04 · Kareler" data-de="04 · Stills">04 · Stills</div>
     <h2 class="sec-title rise" data-en="Frames from the films" data-tr="Filmlerden kareler" data-de="Bilder aus den Filmen">Frames from the films</h2>
     <div class="stills-grid rise">
-      <img decoding="async" src="assets/img/stills/frame-1.jpg" alt="Film still — Ayla, close-up" loading="lazy" />
-      <img decoding="async" src="assets/img/stills/frame-2.jpg" alt="Film still — Ayla &amp; Kaan" loading="lazy" />
-      <img decoding="async" src="assets/img/stills/frame-3.jpg" alt="Film still — Kaan, beard close-up" loading="lazy" />
-      <img decoding="async" src="assets/img/stills/frame-4.jpg" alt="Film still — Ayla with the face bar" loading="lazy" />
-      <img decoding="async" src="assets/img/stills/frame-5.jpg" alt="Film still — Ayla &amp; Kaan" loading="lazy" />
-      <img decoding="async" src="assets/img/stills/frame-6.jpg" alt="Film still — Ayla, cleansing" loading="lazy" />
-      <img decoding="async" src="assets/img/stills/frame-7.jpg" alt="Film still — Ayla &amp; Kaan at the mirror" loading="lazy" />
-      <img decoding="async" src="assets/img/stills/frame-8.jpg" alt="Film still — Ayla, close-up" loading="lazy" />
+      <img decoding="async" tabindex="0" src="assets/img/stills/frame-1.webp" alt="Film still — Ayla, close-up" loading="lazy" />
+      <img decoding="async" tabindex="0" src="assets/img/stills/frame-2.webp" alt="Film still — Ayla &amp; Kaan" loading="lazy" />
+      <img decoding="async" tabindex="0" src="assets/img/stills/frame-3.webp" alt="Film still — Kaan, beard close-up" loading="lazy" />
+      <img decoding="async" tabindex="0" src="assets/img/stills/frame-4.webp" alt="Film still — Ayla with the face bar" loading="lazy" />
+      <img decoding="async" tabindex="0" src="assets/img/stills/frame-5.webp" alt="Film still — Ayla &amp; Kaan" loading="lazy" />
+      <img decoding="async" tabindex="0" src="assets/img/stills/frame-6.webp" alt="Film still — Ayla, cleansing" loading="lazy" />
+      <img decoding="async" tabindex="0" src="assets/img/stills/frame-7.webp" alt="Film still — Ayla &amp; Kaan at the mirror" loading="lazy" />
+      <img decoding="async" tabindex="0" src="assets/img/stills/frame-8.webp" alt="Film still — Ayla, close-up" loading="lazy" />
     </div>
   </section>
 
@@ -453,13 +461,13 @@
       <div class="license">
         <span class="license-ico" aria-hidden="true">✓</span>
         <div class="license-txt">
-          <b data-en="An exclusive, premium production — made for rekkitz" data-tr="Özel, premium bir prodüksiyon — rekkitz için" data-de="Eine exklusive, Premium-Produktion — für rekkitz">An exclusive, premium production — made for rekkitz</b>
+          <b data-en="An exclusive, premium production — made for rekkitz" data-tr="Özel, premium bir prodüksiyon — rekkitz için" data-de="Eine exklusive Premium-Produktion — für rekkitz">An exclusive, premium production — made for rekkitz</b>
           <p data-en="Every tool runs on its top paid plan, licensed for full commercial use — no watermarks, no shortcuts, no licensing gaps. Real professional treatment, start to finish." data-tr="Her araç en üst ücretli planında, tam ticari kullanım için lisanslı — filigran yok, kestirme yok, lisans boşluğu yok. Baştan sona gerçek profesyonel muamele." data-de="Jedes Tool läuft auf seinem höchsten bezahlten Plan, für volle kommerzielle Nutzung lizenziert — keine Wasserzeichen, keine Abkürzungen, keine Lizenzlücken. Echte professionelle Behandlung, von Anfang bis Ende.">Every tool runs on its top paid plan, licensed for full commercial use — no watermarks, no shortcuts, no licensing gaps. Real professional treatment, start to finish.</p>
           <div class="license-chips"><span>Magnific · Business</span><span>Topaz · Studio Pro</span><span>Suno · Premier</span><span>Claude · Max</span></div>
         </div>
       </div>
     </div>
-    <p class="proc-emph rise" data-en="The hard part isn't one beautiful image — it's the two-hundredth frame agreeing with the first. That consistency is the whole point." data-tr="Zor olan tek bir güzel kare değil — ikiyüzüncü karenin birinciyle uyuşması. Bütün mesele o tutarlılık." data-de="Das Schwierige ist nicht ein schönes Bild — es ist das zweihundertste Bild, das mit dem ersten übereinstimmt. Genau diese Konsistenz ist der Punkt.">The hard part isn't one beautiful image — it's the two-hundredth frame agreeing with the first. That consistency is the whole point.</p>
+    <p class="proc-emph rise" data-en="The hard part isn't one beautiful image — it's the two-hundredth frame agreeing with the first. That consistency is the whole point." data-tr="Zor olan tek bir güzel kare değil — iki yüzüncü karenin birinciyle uyuşması. Bütün mesele o tutarlılık." data-de="Das Schwierige ist nicht ein schönes Bild — es ist das zweihundertste Bild, das mit dem ersten übereinstimmt. Genau diese Konsistenz ist der Punkt.">The hard part isn't one beautiful image — it's the two-hundredth frame agreeing with the first. That consistency is the whole point.</p>
   </section>
 
   <!-- CTA / FOOTER -->
@@ -486,7 +494,7 @@
   <div class="foot-note" data-en="A campaign concept for Bushido / rekkitz." data-tr="Bushido / rekkitz için özel bir kampanya çalışması." data-de="Ein Kampagnenkonzept für Bushido / rekkitz.">A campaign concept for Bushido / rekkitz.</div>
 </footer>
 
-<div class="lightbox" id="lightbox" aria-hidden="true"></div>
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" tabindex="-1"><button class="lb-close" type="button" aria-label="Close">&times;</button></div>
 
 <script>
 (function(){
@@ -516,6 +524,9 @@
   [].forEach.call(document.querySelectorAll('.rise'),function(el,i){el.style.transitionDelay=(Math.min(i%5,4)*0.06)+'s';io.observe(el);});
   // tap-to-play/pause films (custom controls, one at a time)
   var vids=[].slice.call(document.querySelectorAll('.film-vid'));
+  // films ship as preload="none" — fetch just the metadata once the section nears the viewport (same pattern as anime/index.html)
+  var mio=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ var mv=e.target; mv.preload='metadata'; mv.load(); mio.unobserve(mv); } });},{rootMargin:'600px 0px'});
+  vids.forEach(function(v){ mio.observe(v); });
   vids.forEach(function(v){
     var media=v.closest('.film-media');
     var btn=media&&media.querySelector('.vtoggle');
@@ -525,11 +536,11 @@
     var lastT=0;
     function toggle(e){ if(e){ e.preventDefault(); e.stopPropagation(); } var n=Date.now(); if(n-lastT<220) return; lastT=n; if(v.paused){ v.muted=false; var p=v.play(); if(p&&p.catch)p.catch(function(){}); } else { v.pause(); } }
     if(btn) btn.addEventListener('click',toggle);
-    v.addEventListener('play',function(){ if(media)media.classList.add('playing'); vids.forEach(function(o){ if(o!==v) o.pause(); }); });
-    v.addEventListener('pause',function(){ if(media)media.classList.remove('playing'); });
-    v.addEventListener('ended',function(){ if(media)media.classList.remove('playing'); if(fill)fill.style.width='0%'; });
-    v.addEventListener('timeupdate',function(){ if(fill&&v.duration) fill.style.width=(v.currentTime/v.duration*100)+'%'; });
-    // click / drag the bottom bar to seek (works before play too — preload=metadata)
+    v.addEventListener('play',function(){ if(media)media.classList.add('playing'); if(btn){ btn.setAttribute('aria-label','Pause'); btn.setAttribute('aria-pressed','true'); } vids.forEach(function(o){ if(o!==v) o.pause(); }); });
+    v.addEventListener('pause',function(){ if(media)media.classList.remove('playing'); if(btn){ btn.setAttribute('aria-label','Play'); btn.setAttribute('aria-pressed','false'); } });
+    v.addEventListener('ended',function(){ if(media)media.classList.remove('playing'); if(btn){ btn.setAttribute('aria-label','Play'); btn.setAttribute('aria-pressed','false'); } if(fill)fill.style.width='0%'; });
+    v.addEventListener('timeupdate',function(){ if(fill&&v.duration) fill.style.width=(v.currentTime/v.duration*100)+'%'; if(seek&&v.duration) seek.setAttribute('aria-valuenow',String(Math.round(v.currentTime/v.duration*100))); });
+    // click / drag the bottom bar to seek (works before play too — metadata is lazy-fetched as the films near the viewport)
     if(seek&&track){
       var scrub=false;
       function seekTo(x){ var r=track.getBoundingClientRect(); var ratio=(x-r.left)/r.width; ratio=Math.max(0,Math.min(1,ratio)); if(v.duration){ v.currentTime=ratio*v.duration; if(fill)fill.style.width=(ratio*100)+'%'; } }
@@ -537,12 +548,18 @@
       seek.addEventListener('pointermove',function(e){ if(scrub){ e.preventDefault(); seekTo(e.clientX); } });
       seek.addEventListener('pointerup',function(e){ scrub=false; try{seek.releasePointerCapture(e.pointerId);}catch(_){} });
       seek.addEventListener('pointercancel',function(){ scrub=false; });
+      // keyboard seek: ArrowLeft / ArrowRight = ±5s
+      seek.addEventListener('keydown',function(e){ if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight') return; e.preventDefault(); if(!v.duration) return; var t=v.currentTime+(e.key==='ArrowRight'?5:-5); v.currentTime=Math.max(0,Math.min(v.duration,t)); var ratio=v.currentTime/v.duration; if(fill)fill.style.width=(ratio*100)+'%'; seek.setAttribute('aria-valuenow',String(Math.round(ratio*100))); });
     }
   });
-  // lightbox
-  var lb=document.getElementById('lightbox'), lbImg=document.createElement('img'); lbImg.alt=''; lbImg.setAttribute('decoding','async'); lb.appendChild(lbImg);
-  [].forEach.call(document.querySelectorAll('.stills-grid img'),function(img){ img.addEventListener('click',function(){ lbImg.src=img.src; lbImg.alt=img.alt; lb.classList.add('on'); lb.setAttribute('aria-hidden','false'); }); });
-  function closeLb(){ lb.classList.remove('on'); lb.setAttribute('aria-hidden','true'); lbImg.removeAttribute('src'); }
+  // lightbox (dialog semantics + focus management)
+  var lb=document.getElementById('lightbox'), lbClose=lb.querySelector('.lb-close'), lbLast=null, lbImg=document.createElement('img'); lbImg.alt=''; lbImg.setAttribute('decoding','async'); lb.appendChild(lbImg);
+  function openLb(img){ lbImg.src=img.currentSrc||img.src; lbImg.alt=img.alt; lb.classList.add('on'); lb.setAttribute('aria-hidden','false'); lbLast=img; (lbClose||lb).focus(); }
+  [].forEach.call(document.querySelectorAll('.stills-grid img'),function(img){
+    img.addEventListener('click',function(){ openLb(img); });
+    img.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){ e.preventDefault(); openLb(img); } });
+  });
+  function closeLb(){ lb.classList.remove('on'); lb.setAttribute('aria-hidden','true'); lbImg.removeAttribute('src'); if(lbLast&&lbLast.focus){ lbLast.focus(); lbLast=null; } }
   lb.addEventListener('click',closeLb);
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&lb.classList.contains('on'))closeLb(); });
 })();
