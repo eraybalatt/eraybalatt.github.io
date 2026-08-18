@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eray Balat — for fal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#08070A;
+    --panel:#100D14;
+    --panel-2:#16121C;
+    --line:#241E2C;
+    --pink:#FF2E8B;
+    --pink-dim:#FF7ABD;
+    --text:#EFECF2;
+    --muted:#948BA0;
+    --sans:"Inter",system-ui,-apple-system,sans-serif;
+    --serif:"Fraunces",Georgia,serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--void);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{ max-width:920px; margin:0 auto; padding:0 28px; position:relative; z-index:2; }
+
+  /* ---- seljuk pattern field ---- */
+  .field{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    opacity:.72;
+    -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.34) 42%, rgba(0,0,0,.22) 100%);
+            mask-image:linear-gradient(180deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.34) 42%, rgba(0,0,0,.22) 100%);
+  }
+  .glow{
+    position:fixed; z-index:0; pointer-events:none;
+    width:120vw; height:70vh; top:-32vh; left:-10vw;
+    background:radial-gradient(ellipse at 50% 50%, rgba(255,46,139,.16), transparent 62%);
+    filter:blur(20px);
+  }
+
+  /* ---- hero ---- */
+  header{ padding:110px 0 66px; }
+  .tag{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--pink);
+    border:1px solid rgba(255,46,139,.35);
+    border-radius:100px; padding:7px 15px 7px 12px;
+    background:rgba(255,46,139,.06);
+    margin-bottom:30px;
+  }
+  .tag .dot{ width:5px; height:5px; border-radius:50%; background:var(--pink); box-shadow:0 0 10px var(--pink); }
+
+  h1{
+    font-family:var(--serif); font-weight:600;
+    font-size:clamp(48px,8.4vw,86px); line-height:.98; letter-spacing:-.035em;
+    margin-bottom:22px;
+  }
+  h1 em{ font-style:normal; color:var(--pink); }
+
+  .kicker{
+    font-family:var(--serif); font-size:clamp(19px,2.5vw,25px); line-height:1.44;
+    color:var(--text); max-width:660px; margin-bottom:26px;
+  }
+  .kicker b{ color:var(--pink); font-weight:600; }
+
+  .route{
+    font-family:var(--mono); font-size:12.5px; color:var(--muted);
+    letter-spacing:.04em; display:flex; flex-wrap:wrap; gap:9px; align-items:center;
+  }
+  .route span.a{ color:var(--pink-dim); }
+
+  /* ---- sections ---- */
+  section{ padding:56px 0; border-top:1px solid var(--line); }
+  h2{
+    font-family:var(--mono); font-size:11px; font-weight:500;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--muted);
+    margin-bottom:30px; display:flex; align-items:center; gap:12px;
+  }
+  h2::before{ content:""; width:16px; height:1px; background:var(--pink); }
+
+  .prose p{ font-size:17px; color:#CFC8D8; margin-bottom:19px; max-width:680px; }
+  .prose p:last-child{ margin-bottom:0; }
+  .prose strong{ color:var(--text); font-weight:600; }
+  .prose .hl{ color:var(--pink); font-weight:500; }
+
+  .pull{
+    font-family:var(--serif); font-size:clamp(21px,3vw,27px); line-height:1.4;
+    color:var(--text); border-left:2px solid var(--pink);
+    padding:6px 0 6px 24px; margin:34px 0; max-width:640px;
+  }
+
+  /* ---- build cards ---- */
+  .cards{ display:grid; gap:14px; }
+  .card{
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line); border-radius:14px;
+    padding:24px 26px; position:relative; overflow:hidden;
+    transition:border-color .25s, transform .25s;
+  }
+  .card::after{
+    content:""; position:absolute; left:0; top:0; bottom:0; width:2px;
+    background:var(--pink); opacity:0; transition:opacity .25s;
+  }
+  .card:hover{ border-color:rgba(255,46,139,.4); transform:translateY(-2px); }
+  .card:hover::after{ opacity:1; }
+  .card .n{
+    font-family:var(--mono); font-size:11px; color:var(--pink);
+    letter-spacing:.14em; margin-bottom:10px; display:block;
+  }
+  .card h3{
+    font-family:var(--serif); font-size:22px; font-weight:600;
+    letter-spacing:-.015em; margin-bottom:9px; line-height:1.22;
+  }
+  .card p{ font-size:15px; color:var(--muted); line-height:1.62; }
+  .card p b{ color:#CFC8D8; font-weight:500; }
+
+  /* ---- proof rows ---- */
+  .rows{ display:grid; gap:0; }
+  .row{
+    display:grid; grid-template-columns:110px 1fr; gap:22px;
+    padding:17px 0; border-bottom:1px solid var(--line);
+  }
+  .row:last-child{ border-bottom:none; }
+  .row dt{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); padding-top:3px; }
+  .row dd{ font-size:15.5px; color:#CFC8D8; }
+  .row dd b{ color:var(--text); font-weight:600; }
+
+  /* ---- links ---- */
+  .links{ display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px; }
+  a.link{
+    display:flex; align-items:center; justify-content:space-between;
+    text-decoration:none; color:var(--text);
+    border:1px solid var(--line); border-radius:11px;
+    padding:15px 18px; background:var(--panel);
+    transition:border-color .22s, background .22s;
+  }
+  a.link:hover{ border-color:rgba(255,46,139,.45); background:var(--panel-2); }
+  a.link .lbl{ font-size:14.5px; font-weight:500; }
+  a.link .val{ font-family:var(--mono); font-size:11.5px; color:var(--muted); }
+  a.link:hover .val{ color:var(--pink); }
+
+  footer{
+    padding:44px 0 70px; border-top:1px solid var(--line);
+    font-family:var(--mono); font-size:11.5px; color:var(--muted);
+    letter-spacing:.05em; display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between;
+  }
+  footer .star{ color:var(--pink); }
+
+  @media (max-width:620px){
+    header{ padding:74px 0 46px; }
+    section{ padding:44px 0; }
+    .row{ grid-template-columns:1fr; gap:5px; }
+    .prose p{ font-size:16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Seljuk eight-point star field -->
+<svg class="field" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <pattern id="seljuk" width="96" height="96" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#FF2E8B" stroke-width="0.9" opacity="0.30">
+        <rect x="31" y="31" width="34" height="34"/>
+        <rect x="31" y="31" width="34" height="34" transform="rotate(45 48 48)"/>
+        <circle cx="48" cy="48" r="3"/>
+        <rect x="-17" y="-17" width="34" height="34"/>
+        <rect x="-17" y="-17" width="34" height="34" transform="rotate(45 0 0)"/>
+        <rect x="79" y="-17" width="34" height="34"/>
+        <rect x="79" y="-17" width="34" height="34" transform="rotate(45 96 0)"/>
+        <rect x="-17" y="79" width="34" height="34"/>
+        <rect x="-17" y="79" width="34" height="34" transform="rotate(45 0 96)"/>
+        <rect x="79" y="79" width="34" height="34"/>
+        <rect x="79" y="79" width="34" height="34" transform="rotate(45 96 96)"/>
+        <path d="M17 31 L31 17 M65 17 L79 31 M79 65 L65 79 M31 79 L17 65"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#seljuk)"/>
+</svg>
+<div class="glow"></div>
+
+<div class="wrap">
+
+<header>
+  <div class="tag"><span class="dot"></span> Written for fal</div>
+  <h1>Eray <em>Balat</em></h1>
+  <p class="kicker">I make films, and I build the systems that make more of them. <b>Knowing where a model breaks is most of the work — knowing when the output is still wrong is the rest.</b></p>
+  <div class="route">
+    Kayseri <span class="a">→</span> Europe by rail <span class="a">→</span> Canggu <span class="a">→</span> Da Nang <span class="a">→</span> back to Kayseri, building
+  </div>
+</header>
+
+<section>
+  <h2>Who I am</h2>
+  <div class="prose">
+    <p>I'm twenty, from Kayseri, studying Radio, Television and Cinema at Erciyes. I write, cut, grade and score films. One of them — <em>Boomerang</em> — took an Honorable Mention from <strong>Robert F. Kennedy Human Rights</strong>. I compose my own scores, over 5,500 tracks so far. Away from the screen I hand-tool leather in Anatolian and Seljuk motifs, which is the one thing I make that no model can generate.</p>
+
+    <p>In 2025 I won a <strong>DiscoverEU</strong> rail pass and crossed Europe alone, then came back as an ambassador for the programme — my story ran on the official European Youth channel. In 2026 I worked out of <strong>Canggu and Da Nang</strong> as a nomad, delivering to US and EU clients across eight time zones. I came home, registered my own studio, and kept the clients.</p>
+
+    <p>Somewhere in there I stopped being someone who <em>uses</em> generative tools and became someone who <span class="hl">builds the machinery around them</span>. That happened because production kept breaking in the same places — consistency, throughput, and the last ten percent that makes a shot look filmed instead of generated.</p>
+
+    <p class="pull">The half of me that paints decides whether a frame is any good. The half that builds decides whether we can make a thousand of them.</p>
+
+    <p>That's why fal reads to me less like a job posting and more like the place the two halves stop arguing.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What I've already built on this stack</h2>
+  <dl class="rows">
+    <div class="row">
+      <dt>DreamScene</dt>
+      <dd><b>One sentence in, one film out.</b> Built live at the Generative Media Hackathon in Istanbul. An LLM orchestration layer expands a single line into a ~200-word multi-shot cinematic prompt — camera, lighting, audio design — then routes to a video model for a 1080p render with synced audio in two minutes. Multi-model routing across Seedance, Kling and Runway, live render queue, shipped with a working front-end and an API tier.</dd>
+    </div>
+    <div class="row">
+      <dt>Finishing</dt>
+      <dd>An <b>anti "AI-tell" chain</b> — upscale, restore, regrade, grain. The difference between output a label accepts and output that comes back.</dd>
+    </div>
+    <div class="row">
+      <dt>At scale</dt>
+      <dd>75+ assets across an 8-model furniture series. A full campaign in <b>72 hours</b>: three films, six product films, two identity-locked characters, original score. Identity holds across the whole set.</dd>
+    </div>
+    <div class="row">
+      <dt>Shipped</dt>
+      <dd>Two AI music videos for <b>Universal Music Türkiye</b>, one produced entirely inside a single model family under client restriction. Knowing what a model <em>cannot</em> do is most of the job.</dd>
+    </div>
+    <div class="row">
+      <dt>Models</dt>
+      <dd>Veo · Kling · Runway · Seedance · Higgsfield · Nano Banana · Firefly · Midjourney · Topaz · Magnific · ElevenLabs · Suno · HeyGen · Hedra · Sync — in paid production, not in demos.</dd>
+    </div>
+  </dl>
+</section>
+
+<section>
+  <h2>What we could build together</h2>
+  <div class="cards">
+
+    <div class="card">
+      <span class="n">01</span>
+      <h3>Flagship work that doesn't look generated</h3>
+      <p>Most showcase reels betray the model in the first two seconds. <b>I'd produce fal's flagship films to a broadcast bar</b> — real edit, real grade, real sound design, real score — so the platform is judged on its ceiling instead of its default output.</p>
+    </div>
+
+    <div class="card">
+      <span class="n">02</span>
+      <h3>Model evaluation from the director's chair</h3>
+      <p>Same brief, same shot, every video model — scored on prompt adherence, motion coherence, identity hold, and where each one falls apart. <b>Benchmarks written by someone who has to deliver the shot</b>, not by someone reading a spec sheet. Useful internally; even more useful published.</p>
+    </div>
+
+    <div class="card">
+      <span class="n">03</span>
+      <h3>Reference pipelines people can steal</h3>
+      <p>DreamScene as a pattern, not a one-off: <b>open, documented recipes</b> that chain prompt expansion, model routing, queueing and finishing. The gap between "I ran a model" and "I shipped a film" is where most users give up — that's the gap to close.</p>
+    </div>
+
+    <div class="card">
+      <span class="n">04</span>
+      <h3>The finishing layer nobody ships</h3>
+      <p>Generation is solved enough. <b>Post is not.</b> A documented, repeatable finishing pass — upscale, restore, grade, grain, anti-tell — turned into something a user can call instead of learning Resolve for six months.</p>
+    </div>
+
+    <div class="card">
+      <span class="n">05</span>
+      <h3>Localisation and the market I'm standing in</h3>
+      <p>Multilingual voice-over and lip-sync at scale — one film reaching several language markets. And <b>Türkiye and MENA as a creator community</b>: I'm already in the Istanbul generative-media scene, at the hackathons, in the group chats.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Elsewhere</h2>
+  <div class="links">
+    <a class="link" href="https://eraybalat.com"><span class="lbl">Portfolio</span><span class="val">eraybalat.com</span></a>
+    <a class="link" href="https://linkedin.com/in/eraybalat"><span class="lbl">LinkedIn</span><span class="val">/in/eraybalat</span></a>
+    <a class="link" href="https://x.com/documenteray"><span class="lbl">X</span><span class="val">@documenteray</span></a>
+    <a class="link" href="https://instagram.com/documenteray"><span class="lbl">Instagram</span><span class="val">@documenteray</span></a>
+    <a class="link" href="https://github.com/eraybalatt"><span class="lbl">GitHub</span><span class="val">@eraybalatt</span></a>
+    <a class="link" href="https://www.upwork.com/freelancers/eraybalat"><span class="lbl">Upwork · 100% JSS</span><span class="val">/eraybalat</span></a>
+    <a class="link" href="https://eraybalat.com/anime/"><span class="lbl">Anime</span><span class="val">/anime</span></a>
+    <a class="link" href="https://eraybalat.com/bushido/"><span class="lbl">Bushido</span><span class="val">/bushido</span></a>
+    <a class="link" href="https://eraybalat.com/leather/"><span class="lbl">Leather</span><span class="val">/leather</span></a>
+    <a class="link" href="https://eraybalat.com/flawless/"><span class="lbl">FLAWLESS — documentary</span><span class="val">/flawless</span></a>
+    <a class="link" href="mailto:eray@eraybalat.com"><span class="lbl">Email</span><span class="val">eray@eraybalat.com</span></a>
+  </div>
+</section>
+
+<footer>
+  <div><span class="star">✦</span> Kayseri, Türkiye · UTC+3 · remote, and used to it</div>
+  <div>Turkish · English · German · Arabic</div>
+</footer>
+
+</div>
+</body>
+</html>
