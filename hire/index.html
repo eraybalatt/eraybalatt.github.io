@@ -150,6 +150,11 @@
   .wcard .b{padding:16px 18px}
   .wcard h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;margin:0 0 3px;font-weight:600}
   .wcard p{margin:0;color:var(--muted);font-size:.85rem}
+  .wmore{display:flex;align-items:center;gap:14px;margin-top:14px;padding:13px 18px;text-decoration:none;background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);transition:border-color .25s}
+  .wmore:hover{border-color:rgba(94,194,255,.6)}
+  .wmore h3{font-family:'Space Grotesk',sans-serif;font-size:.95rem;margin:0;font-weight:600}
+  .wmore p{margin:0;color:var(--muted);font-size:.82rem}
+  .wmore .tag{flex-shrink:0;color:var(--muted);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
 
   /* reviews */
   .revs{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;align-items:stretch}
@@ -313,17 +318,25 @@
     <div class="wrap">
       <div class="eyebrow">Selected work</div>
       <h2>See it before you buy it</h2>
-      <p class="sec-sub">Two full case studies, both made without a single frame of live-action photography.</p>
+      <p class="sec-sub">Three live showcases of the AI production pipeline — a music video, a brand campaign and a product line.</p>
       <div class="work">
-        <a class="wcard" href="/flawless/">
-          <img src="/flawless/hero-vault.webp" alt="FLAWLESS — a 4K AI documentary on the Antwerp Diamond Heist" loading="lazy" decoding="async" />
-          <div class="b"><h3>FLAWLESS — The Antwerp Diamond Heist</h3><p>17-min 4K documentary · the heist's mastermind praised the finished film himself</p></div>
-        </a>
         <a class="wcard" href="/anime/">
           <img src="/anime-mv-poster.webp" alt="AI anime music video — a four-era career reconstruction" loading="lazy" decoding="async" />
           <div class="b"><h3>AI Anime Music Video</h3><p>Seven years of an artist's career, revisualised across four eras · ~32K plays</p></div>
         </a>
+        <a class="wcard" href="/bushido/">
+          <img src="/bushido/og-bushido.jpg" alt="SABAH RİTÜELİ — Kheshig Edition, an AI-produced concept brand campaign" loading="lazy" decoding="async" />
+          <div class="b"><h3>SABAH RİTÜELİ — Brand Campaign</h3><p>Complete AI concept campaign · two-character synthetic cast + 4K product capsule</p></div>
+        </a>
+        <a class="wcard" href="/leather/">
+          <img src="/leather/og-leather.jpg" alt="ÆRAY Atelier — Seljuk leather goods storefront" loading="lazy" decoding="async" />
+          <div class="b"><h3>ÆRAY Atelier — Product Line</h3><p>Seljuk leather goods storefront · identity, product visuals and page built end-to-end</p></div>
+        </a>
       </div>
+      <a class="wmore" href="/flawless/">
+        <span class="tag">Long-form</span>
+        <div><h3>FLAWLESS — The Antwerp Diamond Heist</h3><p>17-min 4K AI documentary · the heist's mastermind praised the finished film himself</p></div>
+      </a>
     </div>
   </section>
 
