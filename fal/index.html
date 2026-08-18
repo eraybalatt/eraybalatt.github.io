@@ -169,6 +169,18 @@
     letter-spacing:.05em; display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between;
   }
   footer .star{ color:var(--pink); }
+  .langs{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--muted); margin-top:34px; }
+  .toolstrip{ display:flex; flex-wrap:wrap; align-items:center; gap:18px 28px; }
+  .toolstrip img{
+    height:24px; width:auto; display:block;
+    filter:grayscale(1) brightness(1.6); opacity:.45;
+    transition:filter .25s, opacity .25s;
+  }
+  .toolstrip img:hover{ filter:none; opacity:1; }
+  /* koyu kaynak logolar: ters çevrilmiş beyaz siluet, aynı soluk dil */
+  .toolstrip img.dk{ filter:grayscale(1) invert(1) brightness(1.05); }
+  .toolstrip img.dk:hover{ filter:grayscale(1) invert(1) brightness(1.05); opacity:1; }
+  .toolstrip img.gm:hover{ filter:none; opacity:1; }
   .lang-switch{ position:fixed; top:16px; right:18px; z-index:5; display:flex; gap:2px; }
   .lang-btn{ background:none; border:none; cursor:pointer; color:var(--muted);
     font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.08em; padding:6px 7px; }
@@ -259,6 +271,22 @@
       <dd data-en="Veo · Kling · Runway · Seedance · Higgsfield · Nano Banana · Firefly · Midjourney · Topaz · Magnific · ElevenLabs · Suno · HeyGen · Hedra · Sync — in paid production, not in demos." data-tr="Veo · Kling · Runway · Seedance · Higgsfield · Nano Banana · Firefly · Midjourney · Topaz · Magnific · ElevenLabs · Suno · HeyGen · Hedra · Sync — demolarda değil, ücretli üretimde." data-de="Veo · Kling · Runway · Seedance · Higgsfield · Nano Banana · Firefly · Midjourney · Topaz · Magnific · ElevenLabs · Suno · HeyGen · Hedra · Sync — in bezahlter Produktion, nicht in Demos.">Veo · Kling · Runway · Seedance · Higgsfield · Nano Banana · Firefly · Midjourney · Topaz · Magnific · ElevenLabs · Suno · HeyGen · Hedra · Sync — in paid production, not in demos.</dd>
     </div>
   </dl>
+
+  <p class="langs" style="margin-bottom:12px">tools i actually open every day</p>
+  <div class="toolstrip">
+    <img class="dk" src="logos/deepmind.svg" alt="Veo" title="Veo">
+    <img src="logos/kling-color.svg" alt="Kling" title="Kling">
+    <img src="logos/higgsfield.png" alt="Higgsfield" title="Higgsfield">
+    <img class="dk gm" src="logos/googlegemini.svg" alt="Nano Banana" title="Nano Banana">
+    <img class="dk" src="logos/midjourney.png" alt="Midjourney" title="Midjourney">
+    <img class="dk" src="logos/topazlabs.png" alt="Topaz" title="Topaz">
+    <img src="logos/elevenlabs-white.png" alt="ElevenLabs" title="ElevenLabs">
+    <img class="dk" src="logos/suno.png" alt="Suno" title="Suno">
+    <img src="logos/premiere-pro.png" alt="Premiere Pro" title="Premiere Pro">
+    <img src="logos/after-effects.png" alt="After Effects" title="After Effects">
+    <img src="logos/photoshop.png" alt="Photoshop" title="Photoshop">
+    <img src="logos/n8n-color.png" alt="n8n" title="n8n">
+  </div>
 </section>
 
 <section>
