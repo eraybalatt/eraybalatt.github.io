@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Eray Balat — for fal</title>
 <meta name="robots" content="noindex, nofollow">
-<script>(function(){try{var ok=['en','tr','de'],l;var p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p}else{try{l=localStorage.getItem('lang')}catch(e){}}if(!ok.includes(l)){var n=(navigator.language||'en').slice(0,2).toLowerCase();l=n==='de'?'de':n==='tr'?'tr':'en';}document.documentElement.lang=l;}catch(e){}})();</script>
+<script>(function(){try{var ok=['en','tr','de'],l;var p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p}else{try{l=localStorage.getItem('falLang')}catch(e){}}if(!ok.includes(l)){l='en';}document.documentElement.lang=l;}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -346,8 +346,8 @@
     document.title=(LANG_META[lang]||LANG_META.en).t;
     try{const u=new URL(location.href);lang==='en'?u.searchParams.delete('lang'):u.searchParams.set('lang',lang);history.replaceState(null,'',u);}catch(e){}
   }
-  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{setLang(b.dataset.lang);try{localStorage.setItem('lang',b.dataset.lang)}catch(e){}}));
-  (function(){const ok=['en','tr','de'];let l;const p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p;try{localStorage.setItem('lang',p)}catch(e){}}if(!ok.includes(l)){try{l=localStorage.getItem('lang')}catch(e){}}if(!ok.includes(l)){const n=(navigator.language||'en').slice(0,2).toLowerCase();l=n==='de'?'de':n==='tr'?'tr':'en';}setLang(l);})();
+  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{setLang(b.dataset.lang);try{localStorage.setItem('falLang',b.dataset.lang)}catch(e){}}));
+  (function(){const ok=['en','tr','de'];let l;const p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p;try{localStorage.setItem('falLang',p)}catch(e){}}if(!ok.includes(l)){try{l=localStorage.getItem('falLang')}catch(e){}}if(!ok.includes(l)){l='en';}setLang(l);})();
 })();
 </script>
 </body>
