@@ -9,14 +9,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --void:#08070A;
-    --panel:#100D14;
-    --panel-2:#16121C;
-    --line:#241E2C;
+    --void:#070B16;
+    --panel:#0D1424;
+    --panel-2:#121B2E;
+    --line:#1E2A42;
     --pink:#FF2E8B;
     --pink-dim:#FF7ABD;
-    --text:#EFECF2;
-    --muted:#948BA0;
+    --text:#E8ECF5;
+    --muted:#8592AC;
     --sans:"Inter",system-ui,-apple-system,sans-serif;
     --serif:"Fraunces",Georgia,serif;
     --mono:"JetBrains Mono",ui-monospace,monospace;
@@ -44,7 +44,9 @@
   .glow{
     position:fixed; z-index:0; pointer-events:none;
     width:120vw; height:70vh; top:-32vh; left:-10vw;
-    background:radial-gradient(ellipse at 50% 50%, rgba(255,46,139,.16), transparent 62%);
+    background:
+      radial-gradient(ellipse at 35% 40%, rgba(255,46,139,.14), transparent 58%),
+      radial-gradient(ellipse at 70% 55%, rgba(43,92,196,.20), transparent 62%);
     filter:blur(20px);
   }
 
@@ -171,7 +173,7 @@
 <svg class="field" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs>
     <pattern id="seljuk" width="96" height="96" patternUnits="userSpaceOnUse">
-      <g fill="none" stroke="#FF2E8B" stroke-width="0.9" opacity="0.30">
+      <g fill="none" stroke="#4A7BD4" stroke-width="0.9" opacity="0.34">
         <rect x="31" y="31" width="34" height="34"/>
         <rect x="31" y="31" width="34" height="34" transform="rotate(45 48 48)"/>
         <circle cx="48" cy="48" r="3"/>
