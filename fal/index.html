@@ -84,7 +84,16 @@
   .route span.a{ color:var(--pink-dim); }
 
   /* ---- sections ---- */
-  section{ padding:56px 0; border-top:1px solid var(--line); }
+  section{ padding:56px 0; }
+  /* selçuklu yıldız ayırıcı: iki bindirilmiş kare (biri 45°), yanlarda soluk çizgiler */
+  section::before{
+    content:""; display:block; height:15px; margin:0 auto 46px;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%23FF4FA3' stroke-width='1'%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4'/%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4' transform='rotate(45 8 8)'/%3E%3C/g%3E%3C/svg%3E") center / 14px 14px no-repeat,
+      linear-gradient(var(--line),var(--line)) left center / calc(50% - 26px) 1px no-repeat,
+      linear-gradient(var(--line),var(--line)) right center / calc(50% - 26px) 1px no-repeat;
+  }
+  section:first-of-type::before{ display:none; }
   h2{
     font-family:var(--mono); font-size:11px; font-weight:500;
     letter-spacing:.22em; color:var(--muted);
