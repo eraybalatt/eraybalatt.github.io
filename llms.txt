@@ -20,6 +20,12 @@
 - **Görsel üretim / AI image & product visualization**: Ürün görselleştirme, katalog ve kampanya görselleri.
 - **Post-prodüksiyon**: Motion design, kurgu, renk düzenleme, VFX, ses klonlama ve dublaj.
 
+## Dil sürümleri / Language versions
+
+- [Türkçe ana sayfa](https://eraybalat.com/tr/) — sitenin tam Türkçe sürümü
+- [Deutsche Startseite](https://eraybalat.com/de/) — vollständige deutsche Fassung
+- [English homepage](https://eraybalat.com/) — full English version
+
 ## Hizmet sayfaları / Service pages
 
 - [Hire an AI Filmmaker (English)](https://eraybalat.com/hire/): Hizmet kapsamı, süreç, teslim süreleri ve fiyat bantları. UGC ve kısa format reklam paketleri $1,500'dan; marka ve ürün filmleri $3,000–$8,000; müzik videoları $2,500–$6,000; belgesel projeye özel. Her proje üretim başlamadan sabit fiyatla teklif edilir.
