@@ -8,17 +8,14 @@
 <script>(function(){try{var ok=['en','tr','de'],l;var p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p}else{try{l=localStorage.getItem('falLang')}catch(e){}}if(!ok.includes(l)){l='en';}document.documentElement.lang=l;}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --void:#0A1428;
-    --panel:#122140;
-    --panel-2:#18294D;
-    --line:#243A63;
-    --pink:#FF4FA3;
-    --pink-dim:#FF8CC4;
-    --text:#EEF2FA;
-    --muted:#93A3C4;
+    --bg:#FDFCFA;
+    --ink:#14213D;
+    --ink2:rgba(20,33,61,.62);
+    --line:rgba(20,33,61,.14);
+    --pink:#E8397E;
     --sans:"Inter",system-ui,-apple-system,sans-serif;
     --serif:"Fraunces",Georgia,serif;
     --mono:"JetBrains Mono",ui-monospace,monospace;
@@ -26,192 +23,121 @@
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
   body{
-    background:var(--void);
-    color:var(--text);
+    background:var(--bg);
+    color:var(--ink);
     font-family:var(--sans);
     font-size:16px;
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  .wrap{ max-width:920px; margin:0 auto; padding:0 28px; position:relative; z-index:2; }
-
-  /* ---- seljuk pattern field ---- */
-  .field{
-    position:fixed; inset:0; z-index:0; pointer-events:none;
-    opacity:.72;
-    -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.34) 42%, rgba(0,0,0,.22) 100%);
-            mask-image:linear-gradient(180deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.34) 42%, rgba(0,0,0,.22) 100%);
-  }
-  .glow{
-    position:fixed; z-index:0; pointer-events:none;
-    width:120vw; height:70vh; top:-32vh; left:-10vw;
-    background:
-      radial-gradient(ellipse at 30% 35%, rgba(255,79,163,.18), transparent 55%),
-      radial-gradient(ellipse at 72% 50%, rgba(58,110,220,.28), transparent 60%);
-    filter:blur(20px);
-  }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; animation:giris .5s ease-out; }
+  @keyframes giris{ from{ opacity:0; transform:translateY(6px); } }
+  @media (prefers-reduced-motion: reduce){ .wrap{ animation:none; } }
 
   /* ---- hero ---- */
-  header{ padding:54px 0 34px; }
+  header{ padding:72px 0 56px; }
   .tag{
-    display:inline-flex; align-items:center; gap:9px;
+    display:inline-flex; align-items:center; gap:8px;
     font-family:var(--mono); font-size:11px; letter-spacing:.16em;
-    color:var(--pink);
-    border:1px solid rgba(255,46,139,.35);
-    border-radius:100px; padding:7px 15px 7px 12px;
-    background:rgba(255,46,139,.06);
-    margin-bottom:30px;
+    color:var(--ink2);
+    margin-bottom:32px;
   }
-  .tag .dot{ width:5px; height:5px; border-radius:50%; background:var(--pink); box-shadow:0 0 10px var(--pink); }
+  .tag .dot{ width:5px; height:5px; border-radius:50%; background:var(--pink); }
 
   h1{
     font-family:var(--serif); font-weight:600;
-    font-size:clamp(44px,7vw,72px); line-height:.98; letter-spacing:-.035em;
-    margin-bottom:16px;
+    font-size:clamp(42px,6.5vw,60px); line-height:1.02; letter-spacing:-.03em;
+    margin-bottom:24px;
   }
   h1 em{ font-style:normal; color:var(--pink); }
 
   .kicker{
-    font-family:var(--serif); font-size:clamp(18px,2.2vw,22px); line-height:1.42;
-    color:var(--text); max-width:660px;
+    font-family:var(--serif); font-size:clamp(18px,2.2vw,21px); line-height:1.6;
+    color:var(--ink); max-width:34em;
   }
-  .kicker b{ color:var(--pink); font-weight:600; }
 
-  /* ---- sections ---- */
-  section{ padding:29px 0; }
-  /* selçuklu yıldız ayırıcı: iki bindirilmiş kare (biri 45°), yanlarda soluk çizgiler */
+  /* ---- sections: boşluk + ince çizgi, kutu yok ---- */
+  section{ padding:48px 0 8px; }
+  /* selçuklu yıldızı: ince ayraç, iki bindirilmiş kare */
   section::before{
-    content:""; display:block; height:15px; margin:0 auto 26px;
+    content:""; display:block; height:15px; margin:0 auto 40px;
     background:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%23FF4FA3' stroke-width='1'%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4'/%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4' transform='rotate(45 8 8)'/%3E%3C/g%3E%3C/svg%3E") center / 14px 14px no-repeat,
-      linear-gradient(var(--line),var(--line)) left center / calc(50% - 26px) 1px no-repeat,
-      linear-gradient(var(--line),var(--line)) right center / calc(50% - 26px) 1px no-repeat;
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%23E8397E' stroke-width='1'%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4'/%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4' transform='rotate(45 8 8)'/%3E%3C/g%3E%3C/svg%3E") center / 13px 13px no-repeat,
+      linear-gradient(var(--line),var(--line)) left center / calc(50% - 24px) 1px no-repeat,
+      linear-gradient(var(--line),var(--line)) right center / calc(50% - 24px) 1px no-repeat;
   }
+  section:first-of-type{ padding-top:0; }
   section:first-of-type::before{ display:none; }
   h2{
     font-family:var(--mono); font-size:11px; font-weight:500;
-    letter-spacing:.22em; color:var(--muted);
-    margin-bottom:20px; display:flex; align-items:center; gap:12px;
+    letter-spacing:.22em; color:var(--ink2);
+    margin-bottom:24px;
   }
-  h2::before{ content:""; width:16px; height:1px; background:var(--pink); }
 
-  /* ---- build cards ---- */
-  .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px; }
-  .card{
-    background:linear-gradient(180deg,var(--panel-2),var(--panel));
-    border:1px solid var(--line); border-radius:14px;
-    padding:20px 22px; position:relative; overflow:hidden;
-    transition:border-color .25s, transform .25s;
-  }
-  .card::after{
-    content:""; position:absolute; left:0; top:0; bottom:0; width:2px;
-    background:var(--pink); opacity:0; transition:opacity .25s;
-  }
-  .card:hover{ border-color:rgba(255,46,139,.4); transform:translateY(-2px); }
-  .card:hover::after{ opacity:1; }
-  .card .n{
-    font-family:var(--mono); font-size:11px; color:var(--pink);
-    letter-spacing:.14em; margin-bottom:10px; display:block;
-  }
-  .card h3{
-    font-family:var(--serif); font-size:21px; font-weight:600;
-    letter-spacing:-.015em; margin-bottom:9px; line-height:1.22;
-  }
-  .card p{ font-size:14.5px; color:var(--muted); line-height:1.58; }
-  .card p b{ color:#CFC8D8; font-weight:500; }
-
-  /* ---- proof rows ---- */
+  /* ---- kanıt satırları ---- */
   .rows{ display:grid; gap:0; }
   .row{
-    display:grid; grid-template-columns:110px 1fr; gap:18px;
-    padding:13px 0; border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:104px 1fr; gap:20px;
+    padding:16px 0; border-bottom:1px solid var(--line);
   }
   .row:last-child{ border-bottom:none; }
-  .row dt{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--muted); padding-top:3px; }
-  .row dd{ font-size:15px; line-height:1.58; color:#CFC8D8; }
-  .row dd b{ color:var(--text); font-weight:600; }
-  .row dd .crd{ display:block; margin-top:6px; font-size:13px; color:var(--muted); }
+  .row dt{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--ink2); padding-top:3px; }
+  .row dd{ font-size:16px; color:var(--ink); max-width:60ch; }
+  .row dd .crd{ display:block; margin-top:6px; font-size:13px; color:var(--ink2); }
 
-  /* ---- work + contact links ---- */
-  .links{ display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px; }
-  .links.works{ grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); }
-  a.link{
-    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
-    text-decoration:none; color:var(--text); gap:4px 16px;
-    border:1px solid var(--line); border-radius:11px;
-    padding:12px 16px; background:var(--panel);
-    transition:border-color .22s, background .22s;
+  /* ---- inşa maddeleri: kart yok, düz blok ---- */
+  .build{ display:grid; gap:32px; }
+  .build h3{
+    font-family:var(--serif); font-size:20px; font-weight:600;
+    letter-spacing:-.01em; margin-bottom:8px;
   }
-  a.link:hover{ border-color:rgba(255,46,139,.45); background:var(--panel-2); }
-  a.link .lbl{ font-size:14.5px; font-weight:500; }
-  a.link .val{ font-family:var(--mono); font-size:11.5px; color:var(--muted); text-align:left; }
-  a.link:hover .val{ color:var(--pink); }
+  .build p{ font-size:16px; color:var(--ink); max-width:62ch; }
+  .build .n{ font-family:var(--mono); font-size:11px; color:var(--ink2); letter-spacing:.14em; margin-bottom:8px; display:block; }
+
+  /* ---- işler: liste, kutu yok ---- */
+  .works a{
+    display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:2px 16px;
+    padding:14px 0; border-bottom:1px solid var(--line);
+    text-decoration:none; color:var(--ink);
+  }
+  .works a:first-child{ border-top:1px solid var(--line); }
+  .works .lbl{ font-size:16px; font-weight:500; }
+  .works .val{ font-family:var(--mono); font-size:12px; color:var(--ink2); }
+  .works a:hover .lbl{ text-decoration:underline; text-decoration-color:var(--pink); text-underline-offset:3px; }
+
+  /* ---- iletişim ---- */
+  .contact{ display:flex; flex-wrap:wrap; gap:8px 32px; font-size:16px; }
+  .contact a{ color:var(--ink); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px; }
+  .contact a:hover{ text-decoration-color:var(--pink); }
 
   footer{
-    padding:30px 0 48px; border-top:1px solid var(--line);
-    font-family:var(--mono); font-size:11.5px; color:var(--muted);
-    letter-spacing:.05em; display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between;
+    margin-top:48px; padding:20px 0 56px; border-top:1px solid var(--line);
+    font-family:var(--mono); font-size:11.5px; color:var(--ink2);
+    letter-spacing:.04em; display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-between;
   }
-  footer .star{ color:var(--pink); }
-  .langs{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--muted); margin-top:18px; }
-  .toolstrip{ display:flex; flex-wrap:wrap; align-items:center; gap:18px 28px; }
-  .toolstrip img{
-    height:24px; width:auto; display:block;
-    filter:grayscale(1) brightness(1.6); opacity:.45;
-    transition:filter .25s, opacity .25s;
-  }
-  .toolstrip img:hover{ filter:none; opacity:1; }
-  /* koyu kaynak logolar: ters çevrilmiş beyaz siluet, aynı soluk dil */
-  .toolstrip img.dk{ filter:grayscale(1) invert(1) brightness(1.05); }
-  .toolstrip img.dk:hover{ filter:grayscale(1) invert(1) brightness(1.05); opacity:1; }
-  .toolstrip img.gm:hover{ filter:none; opacity:1; }
-  .lang-switch{ position:fixed; top:16px; right:18px; z-index:5; display:flex; gap:2px; }
-  .lang-btn{ background:none; border:none; cursor:pointer; color:var(--muted);
+
+  .lang-switch{ position:fixed; top:16px; right:18px; z-index:5; display:flex; gap:2px; background:var(--bg); }
+  .lang-btn{ background:none; border:none; cursor:pointer; color:var(--ink2);
     font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.08em; padding:6px 7px; }
-  .lang-btn.active{ color:var(--pink); }
-  .lang-btn:hover{ color:var(--pink-dim); }
+  .lang-btn.active{ color:var(--ink); }
+  .lang-btn:hover{ color:var(--ink); }
 
   @media (max-width:620px){
-    header{ padding:70px 0 40px; }
-    section{ padding:38px 0; }
-    .row{ grid-template-columns:1fr; gap:5px; }
-    a.link .val{ text-align:left; }
+    header{ padding:64px 0 48px; }
+    section{ padding:44px 0 8px; }
+    .row{ grid-template-columns:1fr; gap:4px; }
   }
 </style>
 </head>
 <body>
-
-<!-- Seljuk eight-point star field -->
-<svg class="field" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <defs>
-    <pattern id="seljuk" width="96" height="96" patternUnits="userSpaceOnUse">
-      <g fill="none" stroke="#6B9BE8" stroke-width="0.9" opacity="0.38">
-        <rect x="31" y="31" width="34" height="34"/>
-        <rect x="31" y="31" width="34" height="34" transform="rotate(45 48 48)"/>
-        <circle cx="48" cy="48" r="3"/>
-        <rect x="-17" y="-17" width="34" height="34"/>
-        <rect x="-17" y="-17" width="34" height="34" transform="rotate(45 0 0)"/>
-        <rect x="79" y="-17" width="34" height="34"/>
-        <rect x="79" y="-17" width="34" height="34" transform="rotate(45 96 0)"/>
-        <rect x="-17" y="79" width="34" height="34"/>
-        <rect x="-17" y="79" width="34" height="34" transform="rotate(45 0 96)"/>
-        <rect x="79" y="79" width="34" height="34"/>
-        <rect x="79" y="79" width="34" height="34" transform="rotate(45 96 96)"/>
-        <path d="M17 31 L31 17 M65 17 L79 31 M79 65 L65 79 M31 79 L17 65"/>
-      </g>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#seljuk)"/>
-</svg>
-<div class="glow"></div>
 
 <div class="wrap">
 
 <header>
   <div class="tag"><span class="dot"></span> <span data-en="written for fal" data-tr="fal için yazıldı" data-de="für fal geschrieben">written for fal</span></div>
   <h1>Eray <em>Balat</em></h1>
-  <p class="kicker" data-en="I'm a director with my own studio, mixing real photography with generative models. I came in from code: cybersecurity, then mobile development, then film." data-tr="yönetmenim, kendi stüdyom var. gerçek çekimi generative modellerle harmanlıyorum. koddan geldim: önce siber güvenlik, sonra mobil geliştirme, sonra film." data-de="ich bin Regisseur mit eigenem Studio und mische echte Aufnahmen mit generativen Modellen. ich komme aus dem Code: erst Cybersecurity, dann Mobile-Entwicklung, dann Film.">I'm a director with my own studio, mixing real photography with generative models. I came in from code: cybersecurity, then mobile development, then film.</p>
+  <p class="kicker" data-en="I'm a director with my own studio, mixing real photography with generative models." data-tr="yönetmenim, kendi stüdyom var. gerçek çekimi generative modellerle harmanlıyorum." data-de="ich bin Regisseur mit eigenem Studio und mische echte Aufnahmen mit generativen Modellen.">I'm a director with my own studio, mixing real photography with generative models.</p>
 </header>
 
 <section>
@@ -219,30 +145,30 @@
   <dl class="rows">
     <div class="row">
       <dt>FLAWLESS</dt>
-      <dd data-en="a documentary on the 2003 Antwerp diamond heist. I wrote, directed, edited and narrated it. the interview: Leonardo Notarbartolo, the mind behind the heist. he watched the finished film and wrote that he liked it. three of us worked on sourcing and accuracy: that is the difference between a documentary and AI slop. &lt;span class=&quot;crd&quot;&gt;3D and AI visuals: Berkay. motion design: Hasan.&lt;/span&gt;" data-tr="2003 Antwerp elmas soygunu üzerine bir belgesel. yazdım, yönettim, kurguladım, anlatımını yaptım. röportaj: soygunun beyni Leonardo Notarbartolo. filmi izledi ve beğendiğini yazdı. üç kişi kaynak ve doğruluk üzerinde çalıştık: bir belgeseli AI slop'tan ayıran şey bu. &lt;span class=&quot;crd&quot;&gt;3D ve AI görseller: Berkay. motion design: Hasan.&lt;/span&gt;" data-de="ein Dokumentarfilm über den Antwerpener Diamantenraub von 2003. geschrieben, inszeniert, geschnitten und erzählt von mir. das Interview: Leonardo Notarbartolo, der Kopf hinter dem Raub. er hat den fertigen Film gesehen und geschrieben, dass er ihm gefällt. zu dritt haben wir an Quellen und Genauigkeit gearbeitet: das ist der Unterschied zwischen einem Dokumentarfilm und AI-Slop. &lt;span class=&quot;crd&quot;&gt;3D- und AI-Bilder: Berkay. Motion Design: Hasan.&lt;/span&gt;">a documentary on the 2003 Antwerp diamond heist. I wrote, directed, edited and narrated it. the interview: Leonardo Notarbartolo, the mind behind the heist. he watched the finished film and wrote that he liked it. three of us worked on sourcing and accuracy: that is the difference between a documentary and AI slop. <span class="crd">3D and AI visuals: Berkay. motion design: Hasan.</span></dd>
+      <dd data-en="a documentary on the 2003 Antwerp diamond heist. I wrote, directed, edited and narrated it. the interview: Leonardo Notarbartolo, the mind behind it. I found a way to reach him. he agreed to talk, watched the finished film, and wrote that he liked it. &lt;span class=&quot;crd&quot;&gt;3D and AI visuals: Berkay. motion design: Hasan.&lt;/span&gt;" data-tr="2003 Antwerp elmas soygunu üzerine bir belgesel. yazdım, yönettim, kurguladım, anlatımını yaptım. röportaj: soygunun beyni Leonardo Notarbartolo. ona ulaşmanın bir yolunu buldum. konuşmayı kabul etti, bitmiş filmi izledi ve beğendiğini yazdı. &lt;span class=&quot;crd&quot;&gt;3D ve AI görseller: Berkay. motion design: Hasan.&lt;/span&gt;" data-de="ein Dokumentarfilm über den Antwerpener Diamantenraub von 2003. geschrieben, inszeniert, geschnitten und erzählt von mir. das Interview: Leonardo Notarbartolo, der Kopf dahinter. ich fand einen Weg, ihn zu erreichen. er sagte zu, sah den fertigen Film und schrieb, dass er ihm gefällt. &lt;span class=&quot;crd&quot;&gt;3D- und AI-Bilder: Berkay. Motion Design: Hasan.&lt;/span&gt;">a documentary on the 2003 Antwerp diamond heist. I wrote, directed, edited and narrated it. the interview: Leonardo Notarbartolo, the mind behind it. I found a way to reach him. he agreed to talk, watched the finished film, and wrote that he liked it. <span class="crd">3D and AI visuals: Berkay. motion design: Hasan.</span></dd>
     </div>
     <div class="row">
       <dt data-en="models" data-tr="modeller" data-de="Modelle">models</dt>
-      <dd data-en="the first year these models came out, I spent twice what I earned just testing them. not for any project: to learn which one breaks where. now I can tell within a few shots whether a new model is usable." data-tr="modellerin çıktığı ilk yıl, kazandığımın iki katını sadece onları test etmeye harcadım. proje için değil: hangisi nerede çöküyor, bilmek için. artık yeni bir modelin işe yarayıp yaramadığını birkaç planda söyleyebiliyorum." data-de="im ersten Jahr dieser Modelle habe ich das Doppelte meines Einkommens nur ins Testen gesteckt. nicht für Projekte: um zu wissen, welches Modell wo bricht. heute sehe ich nach wenigen Einstellungen, ob ein neues Modell brauchbar ist.">the first year these models came out, I spent twice what I earned just testing them. not for any project: to learn which one breaks where. now I can tell within a few shots whether a new model is usable.</dd>
+      <dd data-en="the first year these models arrived, I spent twice what I earned trying them. not for a project, not for a client: to learn what each one does well and where it breaks. now a few shots tell me if a new model is usable." data-tr="bu modellerin çıktığı ilk yıl, kazandığımın iki katını onları denemeye harcadım. proje için değil, müşteri için değil: her birinin neyi iyi yaptığını ve nerede çöktüğünü öğrenmek için. artık birkaç plan, yeni bir modelin kullanılabilir olup olmadığını söylüyor." data-de="im ersten Jahr dieser Modelle habe ich das Doppelte meines Einkommens ins Ausprobieren gesteckt. nicht für ein Projekt, nicht für einen Kunden: um zu lernen, was jedes gut kann und wo es bricht. heute reichen mir wenige Einstellungen, um zu sehen, ob ein neues Modell brauchbar ist.">the first year these models arrived, I spent twice what I earned trying them. not for a project, not for a client: to learn what each one does well and where it breaks. now a few shots tell me if a new model is usable.</dd>
     </div>
     <div class="row">
-      <dt data-en="pipeline" data-tr="pipeline" data-de="Pipeline">pipeline</dt>
-      <dd data-en="every project runs through four or five models. the shot breakdown, the routing, the retries, the finishing chain: I built them all myself. the generation call is the easy part. everything around it is the work." data-tr="her proje dört beş modelden geçiyor. shot breakdown, routing, retry'lar, finishing chain: hepsini kendim kurdum. generation çağrısı işin kolay kısmı. asıl iş etrafındaki her şey." data-de="jedes Projekt läuft durch vier oder fünf Modelle. Shot-Breakdown, Routing, Retries, Finishing-Kette: alles selbst gebaut. der Generation-Call ist der einfache Teil. die Arbeit ist alles drumherum.">every project runs through four or five models. the shot breakdown, the routing, the retries, the finishing chain: I built them all myself. the generation call is the easy part. everything around it is the work.</dd>
+      <dt data-en="practice" data-tr="pratik" data-de="Praxis">practice</dt>
+      <dd data-en="every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found." data-tr="yaptığım her proje dört beş modelden geçiyor. routing ve finishing chain kendi kurduğum şeyler, hazır bulduğum değil." data-de="jedes meiner Projekte läuft durch vier oder fünf Modelle. das Routing und die Finishing-Kette habe ich selbst gebaut, nicht fertig übernommen.">every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found.</dd>
     </div>
   </dl>
 </section>
 
 <section>
   <h2 data-en="what I want to build" data-tr="ne inşa etmek istiyorum" data-de="was ich bauen will">what I want to build</h2>
-  <div class="cards">
-    <div class="card">
+  <div class="build">
+    <div>
       <span class="n">01</span>
       <h3 data-en="reference pipelines" data-tr="referans pipeline'lar" data-de="Referenz-Pipelines">reference pipelines</h3>
-      <p data-en="right now a director who wants to use these models seriously has no path: a text box and a lot of guessing. reference pipelines change that: script → shot breakdown → previz → look dev. not demos: lines a filmmaker can actually run." data-tr="bugün bu modelleri ciddi kullanmak isteyen bir yönetmenin önünde yol yok: bir metin kutusu ve bol tahmin. referans pipeline'lar bunu değiştirir: senaryo → shot breakdown → previz → look dev. demo değil: bir filmcinin gerçekten çalıştırabileceği hatlar." data-de="heute hat ein Regisseur, der diese Modelle ernsthaft nutzen will, keinen Weg: ein Textfeld und viel Raten. Referenz-Pipelines ändern das: Drehbuch → Shot-Breakdown → Previz → Look-Dev. keine Demos: Strecken, die ein Filmemacher wirklich fahren kann.">right now a director who wants to use these models seriously has no path: a text box and a lot of guessing. reference pipelines change that: script → shot breakdown → previz → look dev. not demos: lines a filmmaker can actually run.</p>
+      <p data-en="script, shot breakdown, previz, look development. not demos: lines a director can actually run. right now a director who takes these models seriously gets a text box and a lot of guessing." data-tr="senaryo, shot breakdown, previz, look development. demo değil: bir yönetmenin gerçekten çalıştırabileceği hatlar. bugün bu modelleri ciddiye alan bir yönetmenin önünde bir text box ve bol tahmin var." data-de="Drehbuch, Shot-Breakdown, Previz, Look-Development. keine Demos: Strecken, die ein Regisseur wirklich fahren kann. heute bekommt ein Regisseur, der diese Modelle ernst nimmt, ein Textfeld und viel Raterei.">script, shot breakdown, previz, look development. not demos: lines a director can actually run. right now a director who takes these models seriously gets a text box and a lot of guessing.</p>
     </div>
-    <div class="card">
+    <div>
       <span class="n">02</span>
-      <h3 data-en="model evaluation, with a director's eye" data-tr="yönetmen gözüyle model değerlendirme" data-de="Modellbewertung, mit Regisseursblick">model evaluation, with a director's eye</h3>
+      <h3 data-en="model evaluation, with a director's eye" data-tr="yönetmen gözüyle model değerlendirme" data-de="Modellbewertung mit Regisseursblick">model evaluation, with a director's eye</h3>
       <p data-en="not benchmarks: taste. a metric can't say the character's hand is wrong. an eye that has cut film sees it instantly." data-tr="benchmark değil: tat. bir metrik karakterin elinin yanlış olduğunu söyleyemez. kurgu yapmış bir göz anında görür." data-de="keine Benchmarks: Geschmack. eine Metrik kann nicht sagen, dass die Hand der Figur falsch ist. ein Auge, das geschnitten hat, sieht es sofort.">not benchmarks: taste. a metric can't say the character's hand is wrong. an eye that has cut film sees it instantly.</p>
     </div>
   </div>
@@ -250,40 +176,24 @@
 
 <section>
   <h2 data-en="work" data-tr="işler" data-de="Arbeiten">work</h2>
-  <div class="links works">
-    <a class="link" href="https://eraybalat.com/flawless/"><span class="lbl">flawless</span><span class="val" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></a>
-    <a class="link" href="https://eraybalat.com/anime/"><span class="lbl">anime</span><span class="val" data-en="made with a recording artist. built on Kling 3, delivered in three weeks" data-tr="bir kayıt sanatçısıyla yapıldı. Kling 3 üzerine, üç haftada teslim" data-de="mit einem Recording-Artist. auf Kling 3 gebaut, in drei Wochen geliefert">made with a recording artist. built on Kling 3, delivered in three weeks</span></a>
-    <a class="link" href="https://eraybalat.com/bushido/"><span class="lbl">bushido</span><span class="val" data-en="a commercial campaign, end to end" data-tr="uçtan uca bir ticari kampanya" data-de="eine kommerzielle Kampagne, von Anfang bis Ende">a commercial campaign, end to end</span></a>
-    <a class="link" href="https://eraybalat.com/hire/"><span class="lbl" data-en="commercial work" data-tr="ticari işler" data-de="kommerzielle Arbeiten">commercial work</span><span class="val" data-en="Universal Music Türkiye, plus brand and product work for US and EU clients" data-tr="Universal Music Türkiye, ayrıca ABD ve AB müşterileri için marka ve ürün işleri" data-de="Universal Music Türkiye, dazu Marken- und Produktarbeit für Kunden in den USA und der EU">Universal Music Türkiye, plus brand and product work for US and EU clients</span></a>
+  <div class="works">
+    <a href="https://eraybalat.com/flawless/"><span class="lbl">flawless</span><span class="val" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></a>
+    <a href="https://eraybalat.com/anime/"><span class="lbl">anime</span><span class="val" data-en="a music video with a recording artist. Kling 3, three weeks" data-tr="bir kayıt sanatçısıyla müzik videosu. Kling 3, üç hafta" data-de="ein Musikvideo mit einem Recording-Artist. Kling 3, drei Wochen">a music video with a recording artist. Kling 3, three weeks</span></a>
+    <a href="https://eraybalat.com/bushido/"><span class="lbl">bushido</span><span class="val" data-en="a brand campaign, end to end" data-tr="uçtan uca bir marka kampanyası" data-de="eine Markenkampagne, von Anfang bis Ende">a brand campaign, end to end</span></a>
+    <a href="https://eraybalat.com/hire/"><span class="lbl" data-en="commercial work" data-tr="ticari işler" data-de="kommerzielle Arbeiten">commercial work</span><span class="val" data-en="Universal Music Türkiye, plus product work for US and EU clients" data-tr="Universal Music Türkiye, ayrıca ABD ve AB müşterileri için ürün işleri" data-de="Universal Music Türkiye, dazu Produktarbeit für Kunden in den USA und der EU">Universal Music Türkiye, plus product work for US and EU clients</span></a>
   </div>
 </section>
 
 <section>
   <h2 data-en="contact" data-tr="iletişim" data-de="Kontakt">contact</h2>
-  <div class="links">
-    <a class="link" href="mailto:eray@eraybalat.com"><span class="lbl" data-en="email" data-tr="e-posta" data-de="E-Mail">email</span><span class="val">eray@eraybalat.com</span></a>
-    <a class="link" href="https://eraybalat.com"><span class="lbl" data-en="portfolio" data-tr="portfolyo" data-de="Portfolio">portfolio</span><span class="val">eraybalat.com</span></a>
-  </div>
-
-  <p class="langs" style="margin-bottom:12px">tools i actually open every day</p>
-  <div class="toolstrip">
-    <img src="logos/deepmind.svg" alt="Veo" title="Veo">
-    <img src="logos/kling-color.svg" alt="Kling" title="Kling">
-    <img src="logos/higgsfield.png" alt="Higgsfield" title="Higgsfield">
-    <img class="dk gm" src="logos/googlegemini.svg" alt="Nano Banana" title="Nano Banana">
-    <img class="dk" src="logos/midjourney.png" alt="Midjourney" title="Midjourney">
-    <img class="dk" src="logos/topazlabs.png" alt="Topaz" title="Topaz">
-    <img src="logos/elevenlabs-white.png" alt="ElevenLabs" title="ElevenLabs">
-    <img class="dk" src="logos/suno.png" alt="Suno" title="Suno">
-    <img src="logos/premiere-pro.png" alt="Premiere Pro" title="Premiere Pro">
-    <img src="logos/after-effects.png" alt="After Effects" title="After Effects">
-    <img src="logos/photoshop.png" alt="Photoshop" title="Photoshop">
-    <img src="logos/n8n-color.png" alt="n8n" title="n8n">
+  <div class="contact">
+    <a href="mailto:eray@eraybalat.com">eray@eraybalat.com</a>
+    <a href="https://eraybalat.com">eraybalat.com</a>
   </div>
 </section>
 
 <footer>
-  <div data-en="&lt;span class=&quot;star&quot;&gt;✦&lt;/span&gt; Kayseri, Türkiye · UTC+3 · remote now, San Francisco after six months to a year" data-tr="&lt;span class=&quot;star&quot;&gt;✦&lt;/span&gt; Kayseri, Türkiye · UTC+3 · şimdilik uzaktan, altı ay ile bir yıl içinde San Francisco" data-de="&lt;span class=&quot;star&quot;&gt;✦&lt;/span&gt; Kayseri, Türkiye · UTC+3 · jetzt remote, San Francisco nach sechs Monaten bis einem Jahr"><span class="star">✦</span> Kayseri, Türkiye · UTC+3 · remote now, San Francisco after six months to a year</div>
+  <div data-en="Kayseri, Türkiye · UTC+3 · remote now, San Francisco after six months to a year" data-tr="Kayseri, Türkiye · UTC+3 · şimdilik uzaktan, altı ay ile bir yıl içinde San Francisco" data-de="Kayseri, Türkiye · UTC+3 · jetzt remote, San Francisco nach sechs Monaten bis einem Jahr">Kayseri, Türkiye · UTC+3 · remote now, San Francisco after six months to a year</div>
   <div data-en="Turkish · English · German · Arabic" data-tr="Türkçe · İngilizce · Almanca · Arapça" data-de="Türkisch · Englisch · Deutsch · Arabisch">Turkish · English · German · Arabic</div>
 </footer>
 
