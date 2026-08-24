@@ -85,9 +85,9 @@
   }
 
   /* ---- sections: boşluk + ince çizgi, kutu yok ---- */
-  section{ padding:46px 0 8px; }
+  section{ padding:62px 0 8px; }
   section::before{
-    content:""; display:block; height:15px; margin:0 auto 36px;
+    content:""; display:block; height:15px; margin:0 auto 44px;
     background:
       var(--star-url) center / 13px 13px no-repeat,
       linear-gradient(var(--line),var(--line)) left center / calc(50% - 24px) 1px no-repeat,
@@ -121,8 +121,12 @@
   .build p{ font-size:16px; color:var(--ink); max-width:62ch; }
   .build .n{ font-family:var(--mono); font-size:11px; color:var(--ink2); letter-spacing:.14em; margin-bottom:8px; display:block; }
 
-  /* ---- işler: büyük görseller, 2'li ızgara ---- */
-  .works{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px 24px; }
+  /* ---- işler: büyük görseller, asimetrik taşan ızgara ---- */
+  .works{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:36px 24px; }
+  .work.full{ grid-column:1 / -1; }
+  @media (min-width:980px){
+    .works{ margin-inline:-92px; grid-template-columns:repeat(2,1fr); }
+  }
   .work{ display:block; text-decoration:none; color:var(--ink); }
   .work img{
     width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;
@@ -153,6 +157,19 @@
     font-weight:500; letter-spacing:.08em; padding:6px 7px; border-right:1px solid var(--line);
     margin-right:6px; padding-right:12px; }
   .home-link:hover{ color:var(--ink); }
+
+  /* ---- dreamscene: routing figürü ---- */
+  .ds-split{ display:grid; gap:20px 28px; }
+  @media (min-width:980px){ .ds-split{ grid-template-columns:1fr 400px; align-items:start; margin-inline:0 -92px; } }
+  .ds-fig img{ width:100%; height:auto; border-radius:6px; display:block; }
+  .ds-fig .crd{ display:block; margin-top:8px; font-size:13px; color:var(--ink2); max-width:60ch; }
+
+  /* ---- the stack: işlevine göre gruplar ---- */
+  .stack{ display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:28px 24px; }
+  .sg{ border-left:1px solid var(--line); padding-left:16px; }
+  .sgl{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.14em; color:var(--accent); margin-bottom:8px; }
+  .sgi{ font-family:var(--mono); font-size:12.5px; color:var(--ink); line-height:1.9; }
+  .sgi.mine{ font-weight:600; }
 
   /* ---- derinlik eşiği: buradan sonrası ilgilenen okuyucu için ---- */
   section.depth-start{ padding-top:104px; }
@@ -225,7 +242,7 @@
     <a class="work" href="https://eraybalat.com/flawless/"><img src="/flawless/hero-vault.webp" alt="FLAWLESS documentary still" width="1600" height="900"><span class="wl">flawless</span><span class="wd" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></a>
     <a class="work" href="https://eraybalat.com/anime/"><img src="/anime-mv-poster.webp" alt="anime music video poster" width="1280" height="540" loading="lazy" decoding="async"><span class="wl">anime</span><span class="wd" data-en="a music video with a recording artist. Kling 3, three weeks" data-tr="bir kayıt sanatçısıyla müzik videosu. Kling 3, üç hafta" data-de="ein Musikvideo mit einem Recording-Artist. Kling 3, drei Wochen">a music video with a recording artist. Kling 3, three weeks</span></a>
     <a class="work" href="https://eraybalat.com/bushido/"><img src="/bushido/og-bushido.jpg" alt="Bushido campaign still" width="1200" height="630" loading="lazy" decoding="async"><span class="wl">bushido</span><span class="wd" data-en="a brand campaign, end to end" data-tr="uçtan uca bir marka kampanyası" data-de="eine Markenkampagne, von Anfang bis Ende">a brand campaign, end to end</span></a>
-    <div class="work"><img src="/flawless/timeline.jpg" alt="Premiere master timeline of FLAWLESS" width="1830" height="1040" loading="lazy" decoding="async"><span class="wl" data-en="process" data-tr="süreç" data-de="Prozess">process</span><span class="wd" data-en="eight video tracks, eight audio, grain and grade. the part nobody shows." data-tr="sekiz video kanalı, sekiz ses, grain ve grade. kimsenin göstermediği kısım." data-de="acht Videospuren, acht Audiospuren, Korn und Grading. der Teil, den niemand zeigt.">eight video tracks, eight audio, grain and grade. the part nobody shows.</span></div>
+    <div class="work full"><img src="/flawless/timeline.jpg" alt="Premiere master timeline of FLAWLESS" width="1830" height="1040" loading="lazy" decoding="async"><span class="wl" data-en="process" data-tr="süreç" data-de="Prozess">process</span><span class="wd" data-en="eight video tracks, eight audio, grain and grade. the part nobody shows." data-tr="sekiz video kanalı, sekiz ses, grain ve grade. kimsenin göstermediği kısım." data-de="acht Videospuren, acht Audiospuren, Korn und Grading. der Teil, den niemand zeigt.">eight video tracks, eight audio, grain and grade. the part nobody shows.</span></div>
   </div>
 </section>
 
@@ -233,9 +250,12 @@
 <section class="depth-start">
   <h2 data-en="how I work" data-tr="nasıl çalışıyorum" data-de="wie ich arbeite">how I work</h2>
   <div class="build">
-    <div>
+    <div class="ds-split">
+      <div>
       <span class="n" data-en="routing" data-tr="routing" data-de="Routing">routing</span>
       <p data-en="no single model carries a film. every shot wants something else: one needs a face to hold for twelve frames, one needs fast camera movement, one needs a specific texture. each shot goes to the model that does that one thing best." data-tr="tek model bir filmi taşımıyor. her planın derdi ayrı: biri yüzün on iki karede sabit kalmasını istiyor, biri hızlı kamera hareketi, biri belirli bir doku. her plan, o işi en iyi yapan modele gidiyor." data-de="kein einzelnes Modell trägt einen Film. jede Einstellung will etwas anderes: eine braucht ein Gesicht, das zwölf Frames hält, eine schnelle Kamerabewegung, eine eine bestimmte Textur. jede Einstellung geht an das Modell, das genau das am besten kann.">no single model carries a film. every shot wants something else: one needs a face to hold for twelve frames, one needs fast camera movement, one needs a specific texture. each shot goes to the model that does that one thing best.</p>
+      </div>
+      <figure class="ds-fig"><img src="/fal/dreamscene-n8n.jpg" alt="DreamScene n8n workflow, Seedance node detail" width="1440" height="810" loading="lazy" decoding="async"><figcaption class="crd" data-en="DreamScene: twenty-four hours at an Istanbul hackathon. write a dream, an LLM breaks it into shots, each shot routes out. n8n, Seedance, Nano Banana. a prototype, not production." data-tr="DreamScene: İstanbul'da bir hackathon'da yirmi dört saat. rüyayı yaz, LLM shot'lara bölsün, her shot bir modele gitsin. n8n, Seedance, Nano Banana. prototip, production değil." data-de="DreamScene: vierundzwanzig Stunden bei einem Hackathon in Istanbul. schreib einen Traum, ein LLM zerlegt ihn in Shots, jeder Shot geht an ein Modell. n8n, Seedance, Nano Banana. ein Prototyp, keine Production.">DreamScene: twenty-four hours at an Istanbul hackathon. write a dream, an LLM breaks it into shots, each shot routes out. n8n, Seedance, Nano Banana. a prototype, not production.</figcaption></figure>
     </div>
     <div>
       <span class="n" data-en="finishing" data-tr="finishing" data-de="Finishing">finishing</span>
@@ -246,6 +266,17 @@
       <p data-en="a project for Universal Music Turkey required a single toolset. a licensing decision, not an aesthetic one. no routing. so I changed what I asked of the model and moved the fix into post: grade, grain, optical flaws, an edit that kept the weakest shots short. the delivery held." data-tr="bir Universal Music Turkey projesi tek toolset şart koştu. estetik değil, lisans kararı. routing yok. ben de modelden istediğimi değiştirdim ve düzeltmeyi post'a taşıdım: grade, grain, optik kusurlar, en zayıf planları kısa tutan bir kurgu. teslim tuttu." data-de="ein Projekt für Universal Music Turkey verlangte ein einziges Toolset. eine Lizenzentscheidung, keine ästhetische. kein Routing. also habe ich geändert, was ich vom Modell verlange, und die Korrektur in die Post verlegt: Grading, Korn, optische Fehler, ein Schnitt, der die schwächsten Einstellungen kurz hält. die Lieferung hielt.">a project for Universal Music Turkey required a single toolset. a licensing decision, not an aesthetic one. no routing. so I changed what I asked of the model and moved the fix into post: grade, grain, optical flaws, an edit that kept the weakest shots short. the delivery held.</p>
       <p data-en="when you can't change the model, you change what you ask of it. the constraint was legal, not technical. a better model doesn't fix that." data-tr="modeli değiştiremiyorsan ondan istediğini değiştirirsin. kısıt teknik değildi, hukukiydi. daha iyi bir model bunu çözmüyor." data-de="wenn du das Modell nicht ändern kannst, änderst du, was du von ihm verlangst. die Grenze war juristisch, nicht technisch. ein besseres Modell löst das nicht.">when you can't change the model, you change what you ask of it. the constraint was legal, not technical. a better model doesn't fix that.</p>
     </div>
+  </div>
+</section>
+
+
+<section>
+  <h2 data-en="the stack" data-tr="stack" data-de="der Stack">the stack</h2>
+  <div class="stack">
+    <div class="sg"><span class="sgl">generation</span><span class="sgi">kling<br>seedance<br>veo<br>nano banana</span></div>
+    <div class="sg"><span class="sgl">enhance</span><span class="sgi">topaz<br>magnific</span></div>
+    <div class="sg"><span class="sgl">orchestration</span><span class="sgi">n8n<br>mcp</span></div>
+    <div class="sg"><span class="sgl">finishing</span><span class="sgi mine" data-en="mine" data-tr="benim" data-de="meins">mine</span></div>
   </div>
 </section>
 
