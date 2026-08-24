@@ -149,6 +149,10 @@
   .lang-btn.active{ color:var(--ink); }
   .lang-btn:hover, .theme-btn:hover{ color:var(--ink); }
   .theme-btn{ border-left:1px solid var(--line); margin-left:6px; padding-left:12px; }
+  .home-link{ color:var(--ink2); text-decoration:none; font-family:var(--mono); font-size:11px;
+    font-weight:500; letter-spacing:.08em; padding:6px 7px; border-right:1px solid var(--line);
+    margin-right:6px; padding-right:12px; }
+  .home-link:hover{ color:var(--ink); }
 
   /* ---- derinlik eşiği: buradan sonrası ilgilenen okuyucu için ---- */
   section.depth-start{ padding-top:104px; }
@@ -158,9 +162,6 @@
   .depth-note{ font-size:16px; color:var(--ink); max-width:62ch; margin-bottom:14px; }
   .depth-close{ font-size:16px; color:var(--ink); max-width:62ch; }
 
-  @media (min-width:1120px){
-    .works{ grid-template-columns:repeat(3,1fr); margin-inline:-152px; }
-  }
   @media (max-width:620px){
     header{ padding:64px 0 48px; }
     section{ padding:44px 0 8px; }
@@ -219,27 +220,12 @@
 </section>
 
 <section>
-  <h2 data-en="what I want to build" data-tr="ne inşa etmek istiyorum" data-de="was ich bauen will">what I want to build</h2>
-  <div class="build">
-    <div>
-      <span class="n">01</span>
-      <h3 data-en="reference pipelines" data-tr="referans pipeline'lar" data-de="Referenz-Pipelines">reference pipelines</h3>
-      <p data-en="script, shot breakdown, previz, look development. not demos: lines a director can actually run. right now a director who takes these models seriously gets a text box and a lot of guessing." data-tr="senaryo, shot breakdown, previz, look development. demo değil: bir yönetmenin gerçekten çalıştırabileceği hatlar. bugün bu modelleri ciddiye alan bir yönetmenin önünde bir text box ve bol tahmin var." data-de="Drehbuch, Shot-Breakdown, Previz, Look-Development. keine Demos: Strecken, die ein Regisseur wirklich fahren kann. heute bekommt ein Regisseur, der diese Modelle ernst nimmt, ein Textfeld und viel Raterei.">script, shot breakdown, previz, look development. not demos: lines a director can actually run. right now a director who takes these models seriously gets a text box and a lot of guessing.</p>
-    </div>
-    <div>
-      <span class="n">02</span>
-      <h3 data-en="model evaluation, with a director's eye" data-tr="yönetmen gözüyle model değerlendirme" data-de="Modellbewertung mit Regisseursblick">model evaluation, with a director's eye</h3>
-      <p data-en="not benchmarks: taste. a metric can't say the character's hand is wrong. an eye that has cut film sees it instantly." data-tr="benchmark değil: tat. bir metrik karakterin elinin yanlış olduğunu söyleyemez. kurgu yapmış bir göz anında görür." data-de="keine Benchmarks: Geschmack. eine Metrik kann nicht sagen, dass die Hand der Figur falsch ist. ein Auge, das geschnitten hat, sieht es sofort.">not benchmarks: taste. a metric can't say the character's hand is wrong. an eye that has cut film sees it instantly.</p>
-    </div>
-  </div>
-</section>
-
-<section>
   <h2 data-en="work" data-tr="işler" data-de="Arbeiten">work</h2>
   <div class="works">
     <a class="work" href="https://eraybalat.com/flawless/"><img src="/flawless/hero-vault.webp" alt="FLAWLESS documentary still" width="1600" height="900"><span class="wl">flawless</span><span class="wd" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></a>
     <a class="work" href="https://eraybalat.com/anime/"><img src="/anime-mv-poster.webp" alt="anime music video poster" width="1280" height="540" loading="lazy" decoding="async"><span class="wl">anime</span><span class="wd" data-en="a music video with a recording artist. Kling 3, three weeks" data-tr="bir kayıt sanatçısıyla müzik videosu. Kling 3, üç hafta" data-de="ein Musikvideo mit einem Recording-Artist. Kling 3, drei Wochen">a music video with a recording artist. Kling 3, three weeks</span></a>
     <a class="work" href="https://eraybalat.com/bushido/"><img src="/bushido/og-bushido.jpg" alt="Bushido campaign still" width="1200" height="630" loading="lazy" decoding="async"><span class="wl">bushido</span><span class="wd" data-en="a brand campaign, end to end" data-tr="uçtan uca bir marka kampanyası" data-de="eine Markenkampagne, von Anfang bis Ende">a brand campaign, end to end</span></a>
+    <div class="work"><img src="/flawless/timeline.jpg" alt="Premiere master timeline of FLAWLESS" width="1830" height="1040" loading="lazy" decoding="async"><span class="wl" data-en="process" data-tr="süreç" data-de="Prozess">process</span><span class="wd" data-en="eight video tracks, eight audio, grain and grade. the part nobody shows." data-tr="sekiz video kanalı, sekiz ses, grain ve grade. kimsenin göstermediği kısım." data-de="acht Videospuren, acht Audiospuren, Korn und Grading. der Teil, den niemand zeigt.">eight video tracks, eight audio, grain and grade. the part nobody shows.</span></div>
   </div>
 </section>
 
@@ -257,7 +243,7 @@
     </div>
     <div>
       <span class="n" data-en="one constraint" data-tr="bir kısıt" data-de="eine Grenze">one constraint</span>
-      <p data-en="a client once required a single toolset. a licensing decision, not an aesthetic one. no routing. so I changed what I asked of the model and moved the fix into post: grade, grain, optical flaws, an edit that kept the weakest shots short. the delivery held." data-tr="bir müşteri bir keresinde tek toolset şart koştu. estetik değil, lisans kararı. routing yok. ben de modelden istediğimi değiştirdim ve düzeltmeyi post'a taşıdım: grade, grain, optik kusurlar, en zayıf planları kısa tutan bir kurgu. teslim tuttu." data-de="ein Kunde verlangte einmal ein einziges Toolset. eine Lizenzentscheidung, keine ästhetische. kein Routing. also habe ich geändert, was ich vom Modell verlange, und die Korrektur in die Post verlegt: Grading, Korn, optische Fehler, ein Schnitt, der die schwächsten Einstellungen kurz hält. die Lieferung hielt.">a client once required a single toolset. a licensing decision, not an aesthetic one. no routing. so I changed what I asked of the model and moved the fix into post: grade, grain, optical flaws, an edit that kept the weakest shots short. the delivery held.</p>
+      <p data-en="a project for Universal Music Turkey required a single toolset. a licensing decision, not an aesthetic one. no routing. so I changed what I asked of the model and moved the fix into post: grade, grain, optical flaws, an edit that kept the weakest shots short. the delivery held." data-tr="bir Universal Music Turkey projesi tek toolset şart koştu. estetik değil, lisans kararı. routing yok. ben de modelden istediğimi değiştirdim ve düzeltmeyi post'a taşıdım: grade, grain, optik kusurlar, en zayıf planları kısa tutan bir kurgu. teslim tuttu." data-de="ein Projekt für Universal Music Turkey verlangte ein einziges Toolset. eine Lizenzentscheidung, keine ästhetische. kein Routing. also habe ich geändert, was ich vom Modell verlange, und die Korrektur in die Post verlegt: Grading, Korn, optische Fehler, ein Schnitt, der die schwächsten Einstellungen kurz hält. die Lieferung hielt.">a project for Universal Music Turkey required a single toolset. a licensing decision, not an aesthetic one. no routing. so I changed what I asked of the model and moved the fix into post: grade, grain, optical flaws, an edit that kept the weakest shots short. the delivery held.</p>
       <p data-en="when you can't change the model, you change what you ask of it. the constraint was legal, not technical. a better model doesn't fix that." data-tr="modeli değiştiremiyorsan ondan istediğini değiştirirsin. kısıt teknik değildi, hukukiydi. daha iyi bir model bunu çözmüyor." data-de="wenn du das Modell nicht ändern kannst, änderst du, was du von ihm verlangst. die Grenze war juristisch, nicht technisch. ein besseres Modell löst das nicht.">when you can't change the model, you change what you ask of it. the constraint was legal, not technical. a better model doesn't fix that.</p>
     </div>
   </div>
@@ -310,7 +296,8 @@
 
 </div>
 
-<div class="lang-switch" role="group" aria-label="language and theme">
+<div class="lang-switch" role="group" aria-label="site, language and theme">
+  <a class="home-link" href="https://eraybalat.com">← eraybalat.com</a>
   <button class="lang-btn active" data-lang="en" aria-pressed="true">en</button>
   <button class="lang-btn" data-lang="tr" aria-pressed="false">tr</button>
   <button class="lang-btn" data-lang="de" aria-pressed="false">de</button>
