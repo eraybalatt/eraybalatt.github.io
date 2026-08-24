@@ -150,6 +150,14 @@
   .lang-btn:hover, .theme-btn:hover{ color:var(--ink); }
   .theme-btn{ border-left:1px solid var(--line); margin-left:6px; padding-left:12px; }
 
+  /* ---- derinlik eşiği: buradan sonrası ilgilenen okuyucu için ---- */
+  section.depth-start{ padding-top:104px; }
+  .breaks{ list-style:none; margin:0 0 18px; }
+  .breaks li{ padding:9px 0; border-bottom:1px solid var(--line); font-size:15.5px; max-width:60ch; }
+  .breaks li:first-child{ border-top:1px solid var(--line); }
+  .depth-note{ font-size:16px; color:var(--ink); max-width:62ch; margin-bottom:14px; }
+  .depth-close{ font-size:16px; color:var(--ink); max-width:62ch; }
+
   @media (min-width:1120px){
     .works{ grid-template-columns:repeat(3,1fr); margin-inline:-152px; }
   }
@@ -232,6 +240,58 @@
     <a class="work" href="https://eraybalat.com/flawless/"><img src="/flawless/hero-vault.webp" alt="FLAWLESS documentary still" width="1600" height="900"><span class="wl">flawless</span><span class="wd" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></a>
     <a class="work" href="https://eraybalat.com/anime/"><img src="/anime-mv-poster.webp" alt="anime music video poster" width="1280" height="540" loading="lazy" decoding="async"><span class="wl">anime</span><span class="wd" data-en="a music video with a recording artist. Kling 3, three weeks" data-tr="bir kayıt sanatçısıyla müzik videosu. Kling 3, üç hafta" data-de="ein Musikvideo mit einem Recording-Artist. Kling 3, drei Wochen">a music video with a recording artist. Kling 3, three weeks</span></a>
     <a class="work" href="https://eraybalat.com/bushido/"><img src="/bushido/og-bushido.jpg" alt="Bushido campaign still" width="1200" height="630" loading="lazy" decoding="async"><span class="wl">bushido</span><span class="wd" data-en="a brand campaign, end to end" data-tr="uçtan uca bir marka kampanyası" data-de="eine Markenkampagne, von Anfang bis Ende">a brand campaign, end to end</span></a>
+  </div>
+</section>
+
+
+<section class="depth-start">
+  <h2 data-en="how I work" data-tr="nasıl çalışıyorum" data-de="wie ich arbeite">how I work</h2>
+  <div class="build">
+    <div>
+      <span class="n" data-en="routing" data-tr="routing" data-de="Routing">routing</span>
+      <p data-en="no single model carries a film. every shot wants something else: one needs a face to hold for twelve frames, one needs fast camera movement, one needs a specific texture. each shot goes to the model that does that one thing best." data-tr="tek model bir filmi taşımıyor. her planın derdi ayrı: biri yüzün on iki karede sabit kalmasını istiyor, biri hızlı kamera hareketi, biri belirli bir doku. her plan, o işi en iyi yapan modele gidiyor." data-de="kein einzelnes Modell trägt einen Film. jede Einstellung will etwas anderes: eine braucht ein Gesicht, das zwölf Frames hält, eine schnelle Kamerabewegung, eine eine bestimmte Textur. jede Einstellung geht an das Modell, das genau das am besten kann.">no single model carries a film. every shot wants something else: one needs a face to hold for twelve frames, one needs fast camera movement, one needs a specific texture. each shot goes to the model that does that one thing best.</p>
+    </div>
+    <div>
+      <span class="n" data-en="finishing" data-tr="finishing" data-de="Finishing">finishing</span>
+      <p data-en="generated footage comes out too clean. no lens breathing, no sensor noise, light that is too even. so: grain matching, optical imperfection, a grade that behaves like film. the model gives you correct. correct is not real." data-tr="üretilen görüntü fazla temiz geliyor. lens breathing yok, sensor noise yok, ışık fazla eşit. o yüzden: grain eşleme, optik kusur, film gibi davranan bir grade. model sana doğruyu veriyor. doğru, gerçek değil." data-de="generiertes Material kommt zu sauber heraus. kein Lens Breathing, kein Sensorrauschen, zu gleichmäßiges Licht. also: Grain-Matching, optische Fehler, ein Grading, das sich wie Film verhält. das Modell liefert korrekt. korrekt ist nicht echt.">generated footage comes out too clean. no lens breathing, no sensor noise, light that is too even. so: grain matching, optical imperfection, a grade that behaves like film. the model gives you correct. correct is not real.</p>
+    </div>
+    <div>
+      <span class="n" data-en="one constraint" data-tr="bir kısıt" data-de="eine Grenze">one constraint</span>
+      <p data-en="a client once required a single toolset. a licensing decision, not an aesthetic one. no routing. so I changed what I asked of the model and moved the fix into post: grade, grain, optical flaws, an edit that kept the weakest shots short. the delivery held." data-tr="bir müşteri bir keresinde tek toolset şart koştu. estetik değil, lisans kararı. routing yok. ben de modelden istediğimi değiştirdim ve düzeltmeyi post'a taşıdım: grade, grain, optik kusurlar, en zayıf planları kısa tutan bir kurgu. teslim tuttu." data-de="ein Kunde verlangte einmal ein einziges Toolset. eine Lizenzentscheidung, keine ästhetische. kein Routing. also habe ich geändert, was ich vom Modell verlange, und die Korrektur in die Post verlegt: Grading, Korn, optische Fehler, ein Schnitt, der die schwächsten Einstellungen kurz hält. die Lieferung hielt.">a client once required a single toolset. a licensing decision, not an aesthetic one. no routing. so I changed what I asked of the model and moved the fix into post: grade, grain, optical flaws, an edit that kept the weakest shots short. the delivery held.</p>
+      <p data-en="when you can't change the model, you change what you ask of it. the constraint was legal, not technical. a better model doesn't fix that." data-tr="modeli değiştiremiyorsan ondan istediğini değiştirirsin. kısıt teknik değildi, hukukiydi. daha iyi bir model bunu çözmüyor." data-de="wenn du das Modell nicht ändern kannst, änderst du, was du von ihm verlangst. die Grenze war juristisch, nicht technisch. ein besseres Modell löst das nicht.">when you can't change the model, you change what you ask of it. the constraint was legal, not technical. a better model doesn't fix that.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 data-en="what breaks where" data-tr="ne nerede kırılıyor" data-de="was wo bricht">what breaks where</h2>
+  <p class="depth-note" data-en="two years of testing, condensed: where these models still break." data-tr="iki yılın testi, özet: bu modeller hâlâ nerede kırılıyor." data-de="zwei Jahre Testen, verdichtet: wo diese Modelle noch brechen.">two years of testing, condensed: where these models still break.</p>
+  <ul class="breaks">
+    <li data-en="the same face drifting across twelve shots" data-tr="aynı yüzün on iki planda kayması" data-de="dasselbe Gesicht, das über zwölf Einstellungen driftet">the same face drifting across twelve shots</li>
+    <li data-en="hands. still the weakest place." data-tr="eller. hâlâ en zayıf yer." data-de="Hände. immer noch die schwächste Stelle.">hands. still the weakest place.</li>
+    <li data-en="motion falling apart when the camera speeds up" data-tr="kamera hızlanınca çözülen hareket" data-de="Bewegung, die zerfällt, wenn die Kamera schneller wird">motion falling apart when the camera speeds up</li>
+    <li data-en="light that shifts direction and temperature between cuts" data-tr="kesmeden kesmeye yön ve sıcaklık değiştiren ışık" data-de="Licht, das zwischen Schnitten Richtung und Temperatur wechselt">light that shifts direction and temperature between cuts</li>
+    <li data-en="physics: fabric, water, hair" data-tr="fizik: kumaş, su, saç" data-de="Physik: Stoff, Wasser, Haar">physics: fabric, water, hair</li>
+    <li data-en="temporal flicker, backgrounds that boil" data-tr="zamansal titreme, kaynayan arka planlar" data-de="zeitliches Flackern, Hintergründe, die kochen">temporal flicker, backgrounds that boil</li>
+    <li data-en="the opposite problem: footage so clean it reads as fake" data-tr="tersi problem: fazla temiz olduğu için sahte duran görüntü" data-de="das Gegenteil: Material, das so sauber ist, dass es falsch wirkt">the opposite problem: footage so clean it reads as fake</li>
+  </ul>
+  <p class="depth-close" data-en="version numbers rot. these patterns don't. a metric can't say the character's hand is wrong. an eye that has cut film sees it instantly." data-tr="sürüm numaraları eskir. bu kalıplar eskimez. bir metrik karakterin elinin yanlış olduğunu söyleyemez. kurgu yapmış bir göz anında görür." data-de="Versionsnummern veralten. diese Muster nicht. eine Metrik kann nicht sagen, dass die Hand der Figur falsch ist. ein Auge, das geschnitten hat, sieht es sofort.">version numbers rot. these patterns don't. a metric can't say the character's hand is wrong. an eye that has cut film sees it instantly.</p>
+</section>
+
+<section>
+  <h2 data-en="what I'd build here" data-tr="burada ne kurardım" data-de="was ich hier bauen würde">what I'd build here</h2>
+  <div class="build">
+    <div>
+      <span class="n">01</span>
+      <h3 data-en="reference pipelines" data-tr="referans pipeline'lar" data-de="Referenz-Pipelines">reference pipelines</h3>
+      <p data-en="every line I run today I built myself, from scratch, on every project: the shot breakdown, the routing, the retry logic, the finishing chain. that should be infrastructure, not private workarounds every director rebuilds alone." data-tr="bugün çalıştırdığım her hattı kendim kurdum, sıfırdan, her projede: shot breakdown, routing, retry mantığı, finishing chain. bunlar altyapı olmalı, her yönetmenin tek başına yeniden kurduğu özel çözümler değil." data-de="jede Strecke, die ich heute fahre, habe ich selbst gebaut, von Grund auf, in jedem Projekt: Shot-Breakdown, Routing, Retry-Logik, Finishing-Kette. das sollte Infrastruktur sein, nicht private Lösungen, die jeder Regisseur allein neu baut.">every line I run today I built myself, from scratch, on every project: the shot breakdown, the routing, the retry logic, the finishing chain. that should be infrastructure, not private workarounds every director rebuilds alone.</p>
+    </div>
+    <div>
+      <span class="n">02</span>
+      <h3 data-en="model evaluation, with a director's eye" data-tr="yönetmen gözüyle model değerlendirme" data-de="Modellbewertung mit Regisseursblick">model evaluation, with a director's eye</h3>
+      <p data-en="a benchmark tells you how fast a model renders. it doesn't tell you whether the light holds when the cut comes, or whether the motion blur feels organic. for that you need a film person in the loop." data-tr="benchmark bir modelin ne kadar hızlı render ettiğini söyler. kesme geldiğinde ışığın tutup tutmadığını söylemez, motion blur'ün organik hissedilip hissedilmediğini de. bunun için döngüde gerçek bir film insanı gerekir." data-de="ein Benchmark sagt dir, wie schnell ein Modell rendert. er sagt dir nicht, ob das Licht hält, wenn der Schnitt kommt, oder ob der Motion Blur organisch wirkt. dafür braucht es einen Filmmenschen in der Schleife.">a benchmark tells you how fast a model renders. it doesn't tell you whether the light holds when the cut comes, or whether the motion blur feels organic. for that you need a film person in the loop.</p>
+    </div>
+    <p class="depth-close" data-en="both come back to the same sentence: the generation call is the easy part. everything around it is the work." data-tr="ikisi de aynı cümleye çıkıyor: generation çağrısı işin kolay kısmı. asıl iş etrafındaki her şey." data-de="beides läuft auf denselben Satz hinaus: der Generation-Call ist der einfache Teil. die Arbeit ist alles drumherum.">both come back to the same sentence: the generation call is the easy part. everything around it is the work.</p>
   </div>
 </section>
 
