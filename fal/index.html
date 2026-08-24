@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eray Balat — for fal</title>
+<title>Eray Balat, for fal</title>
 <meta name="robots" content="noindex, nofollow">
 <script>(function(){try{var ok=['en','tr','de'],l;var p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p}else{try{l=localStorage.getItem('falLang')}catch(e){}}if(!ok.includes(l)){l='en';}document.documentElement.lang=l;}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,7 @@
   }
 
   /* ---- hero ---- */
-  header{ padding:110px 0 66px; }
+  header{ padding:54px 0 34px; }
   .tag{
     display:inline-flex; align-items:center; gap:9px;
     font-family:var(--mono); font-size:11px; letter-spacing:.16em;
@@ -67,28 +67,22 @@
 
   h1{
     font-family:var(--serif); font-weight:600;
-    font-size:clamp(48px,8.4vw,86px); line-height:.98; letter-spacing:-.035em;
-    margin-bottom:22px;
+    font-size:clamp(44px,7vw,72px); line-height:.98; letter-spacing:-.035em;
+    margin-bottom:16px;
   }
   h1 em{ font-style:normal; color:var(--pink); }
 
   .kicker{
-    font-family:var(--serif); font-size:clamp(19px,2.5vw,25px); line-height:1.44;
-    color:var(--text); max-width:660px; margin-bottom:26px;
+    font-family:var(--serif); font-size:clamp(18px,2.2vw,22px); line-height:1.42;
+    color:var(--text); max-width:660px;
   }
   .kicker b{ color:var(--pink); font-weight:600; }
 
-  .route{
-    font-family:var(--mono); font-size:12.5px; color:var(--muted);
-    letter-spacing:.04em; display:flex; flex-wrap:wrap; gap:9px; align-items:center;
-  }
-  .route span.a{ color:var(--pink-dim); }
-
   /* ---- sections ---- */
-  section{ padding:56px 0; }
+  section{ padding:29px 0; }
   /* selçuklu yıldız ayırıcı: iki bindirilmiş kare (biri 45°), yanlarda soluk çizgiler */
   section::before{
-    content:""; display:block; height:15px; margin:0 auto 46px;
+    content:""; display:block; height:15px; margin:0 auto 26px;
     background:
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%23FF4FA3' stroke-width='1'%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4'/%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4' transform='rotate(45 8 8)'/%3E%3C/g%3E%3C/svg%3E") center / 14px 14px no-repeat,
       linear-gradient(var(--line),var(--line)) left center / calc(50% - 26px) 1px no-repeat,
@@ -98,27 +92,16 @@
   h2{
     font-family:var(--mono); font-size:11px; font-weight:500;
     letter-spacing:.22em; color:var(--muted);
-    margin-bottom:30px; display:flex; align-items:center; gap:12px;
+    margin-bottom:20px; display:flex; align-items:center; gap:12px;
   }
   h2::before{ content:""; width:16px; height:1px; background:var(--pink); }
 
-  .prose p{ font-size:17px; color:#CFC8D8; margin-bottom:19px; max-width:680px; }
-  .prose p:last-child{ margin-bottom:0; }
-  .prose strong{ color:var(--text); font-weight:600; }
-  .prose .hl{ color:var(--pink); font-weight:500; }
-
-  .pull{
-    font-family:var(--serif); font-size:clamp(21px,3vw,27px); line-height:1.4;
-    color:var(--text); border-left:2px solid var(--pink);
-    padding:6px 0 6px 24px; margin:34px 0; max-width:640px;
-  }
-
   /* ---- build cards ---- */
-  .cards{ display:grid; gap:14px; }
+  .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px; }
   .card{
     background:linear-gradient(180deg,var(--panel-2),var(--panel));
     border:1px solid var(--line); border-radius:14px;
-    padding:24px 26px; position:relative; overflow:hidden;
+    padding:20px 22px; position:relative; overflow:hidden;
     transition:border-color .25s, transform .25s;
   }
   .card::after{
@@ -132,44 +115,46 @@
     letter-spacing:.14em; margin-bottom:10px; display:block;
   }
   .card h3{
-    font-family:var(--serif); font-size:22px; font-weight:600;
+    font-family:var(--serif); font-size:21px; font-weight:600;
     letter-spacing:-.015em; margin-bottom:9px; line-height:1.22;
   }
-  .card p{ font-size:15px; color:var(--muted); line-height:1.62; }
+  .card p{ font-size:14.5px; color:var(--muted); line-height:1.58; }
   .card p b{ color:#CFC8D8; font-weight:500; }
 
   /* ---- proof rows ---- */
   .rows{ display:grid; gap:0; }
   .row{
-    display:grid; grid-template-columns:110px 1fr; gap:22px;
-    padding:17px 0; border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:110px 1fr; gap:18px;
+    padding:13px 0; border-bottom:1px solid var(--line);
   }
   .row:last-child{ border-bottom:none; }
   .row dt{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--muted); padding-top:3px; }
-  .row dd{ font-size:15.5px; color:#CFC8D8; }
+  .row dd{ font-size:15px; line-height:1.58; color:#CFC8D8; }
   .row dd b{ color:var(--text); font-weight:600; }
+  .row dd .crd{ display:block; margin-top:6px; font-size:13px; color:var(--muted); }
 
-  /* ---- links ---- */
+  /* ---- work + contact links ---- */
   .links{ display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px; }
+  .links.works{ grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); }
   a.link{
-    display:flex; align-items:center; justify-content:space-between;
-    text-decoration:none; color:var(--text);
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    text-decoration:none; color:var(--text); gap:4px 16px;
     border:1px solid var(--line); border-radius:11px;
-    padding:15px 18px; background:var(--panel);
+    padding:12px 16px; background:var(--panel);
     transition:border-color .22s, background .22s;
   }
   a.link:hover{ border-color:rgba(255,46,139,.45); background:var(--panel-2); }
   a.link .lbl{ font-size:14.5px; font-weight:500; }
-  a.link .val{ font-family:var(--mono); font-size:11.5px; color:var(--muted); }
+  a.link .val{ font-family:var(--mono); font-size:11.5px; color:var(--muted); text-align:left; }
   a.link:hover .val{ color:var(--pink); }
 
   footer{
-    padding:44px 0 70px; border-top:1px solid var(--line);
+    padding:30px 0 48px; border-top:1px solid var(--line);
     font-family:var(--mono); font-size:11.5px; color:var(--muted);
     letter-spacing:.05em; display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between;
   }
   footer .star{ color:var(--pink); }
-  .langs{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--muted); margin-top:34px; }
+  .langs{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--muted); margin-top:18px; }
   .toolstrip{ display:flex; flex-wrap:wrap; align-items:center; gap:18px 28px; }
   .toolstrip img{
     height:24px; width:auto; display:block;
@@ -188,10 +173,10 @@
   .lang-btn:hover{ color:var(--pink-dim); }
 
   @media (max-width:620px){
-    header{ padding:74px 0 46px; }
-    section{ padding:44px 0; }
+    header{ padding:70px 0 40px; }
+    section{ padding:38px 0; }
     .row{ grid-template-columns:1fr; gap:5px; }
-    .prose p{ font-size:16px; }
+    a.link .val{ text-align:left; }
   }
 </style>
 </head>
@@ -226,55 +211,63 @@
 <header>
   <div class="tag"><span class="dot"></span> <span data-en="written for fal" data-tr="fal için yazıldı" data-de="für fal geschrieben">written for fal</span></div>
   <h1>Eray <em>Balat</em></h1>
-  <p class="kicker" data-en="I make films, and I build the systems that make more of them. &lt;b&gt;knowing where a model breaks is most of the work — knowing when the output is still wrong is the rest.&lt;/b&gt;" data-tr="filmler yapıyorum, bir de onlardan daha fazlasını üreten sistemleri kuruyorum. &lt;b&gt;bir modelin nerede kırıldığını bilmek işin büyük kısmı — çıktının hâlâ yanlış olduğunu görebilmek kalanı.&lt;/b&gt;" data-de="ich mache Filme, und ich baue die Systeme, die mehr davon machen. &lt;b&gt;zu wissen, wo ein Modell bricht, ist der größte Teil der Arbeit — zu erkennen, wann der Output trotzdem falsch ist, der Rest.&lt;/b&gt;">I make films, and I build the systems that make more of them. <b>knowing where a model breaks is most of the work — knowing when the output is still wrong is the rest.</b></p>
-  <div class="route" data-en="Kayseri &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; Europe by rail &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; Canggu &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; Da Nang &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; back to Kayseri, building" data-tr="Kayseri &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; trenle Avrupa &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; Canggu &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; Da Nang &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; Kayseri'ye dönüş, inşa halinde" data-de="Kayseri &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; mit dem Zug durch Europa &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; Canggu &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; Da Nang &lt;span class=&quot;a&quot;&gt;→&lt;/span&gt; zurück in Kayseri, am Bauen">Kayseri <span class="a">→</span> Europe by rail <span class="a">→</span> Canggu <span class="a">→</span> Da Nang <span class="a">→</span> back to Kayseri, building</div>
+  <p class="kicker" data-en="I'm a director with my own studio, mixing real photography with generative models. I came in from code: cybersecurity, then mobile development, then film." data-tr="yönetmenim, kendi stüdyom var. gerçek çekimi generative modellerle harmanlıyorum. koddan geldim: önce siber güvenlik, sonra mobil geliştirme, sonra film." data-de="ich bin Regisseur mit eigenem Studio und mische echte Aufnahmen mit generativen Modellen. ich komme aus dem Code: erst Cybersecurity, dann Mobile-Entwicklung, dann Film.">I'm a director with my own studio, mixing real photography with generative models. I came in from code: cybersecurity, then mobile development, then film.</p>
 </header>
 
 <section>
-  <h2 data-en="who I am" data-tr="ben kimim" data-de="wer ich bin">who I am</h2>
-  <div class="prose">
-    <p data-en="I'm twenty, from Kayseri, studying Radio, Television and Cinema at Erciyes. I write, cut, grade and score films. I cut &lt;em&gt;Boomerang&lt;/em&gt; — edit only, no writing or directing credit — and it took an Honorable Mention from &lt;strong&gt;Robert F. Kennedy Human Rights&lt;/strong&gt;. I compose my own scores, over 5,500 tracks so far. away from the screen I hand-tool leather in Anatolian and Seljuk motifs, which is the one thing I make that no model can generate." data-tr="yirmi yaşındayım, Kayseri'denim, Erciyes'te Radyo, Televizyon ve Sinema okuyorum. yazıyorum, kurguluyorum, renk ve müzik yapıyorum. &lt;em&gt;Boomerang&lt;/em&gt;'ı kurguladım — yalnızca kurgu, senaryo ya da yönetmenlik kredim yok — ve film &lt;strong&gt;Robert F. Kennedy Human Rights&lt;/strong&gt;'tan Mansiyon aldı. müziklerimi kendim besteliyorum, şimdiye dek 5.500'ün üzerinde parça. ekran dışında Anadolu ve Selçuklu motifleriyle elde deri işliyorum — ürettiklerim içinde hiçbir modelin üretemeyeceği tek şey bu." data-de="ich bin zwanzig, aus Kayseri, studiere Radio, Fernsehen und Kino an der Erciyes. ich schreibe, schneide, grade und vertone Filme. &lt;em&gt;Boomerang&lt;/em&gt; habe ich geschnitten — nur Schnitt, kein Drehbuch-, kein Regie-Credit — und der Film bekam eine Honorable Mention von &lt;strong&gt;Robert F. Kennedy Human Rights&lt;/strong&gt;. meine Musik komponiere ich selbst, bisher über 5.500 Tracks. abseits des Bildschirms punziere ich Leder von Hand, in anatolischen und seldschukischen Motiven — das Einzige, was ich mache und kein Modell erzeugen kann.">I'm twenty, from Kayseri, studying Radio, Television and Cinema at Erciyes. I write, cut, grade and score films. I cut <em>Boomerang</em> — edit only, no writing or directing credit — and it took an Honorable Mention from <strong>Robert F. Kennedy Human Rights</strong>. I compose my own scores, over 5,500 tracks so far. away from the screen I hand-tool leather in Anatolian and Seljuk motifs, which is the one thing I make that no model can generate.</p>
+  <h2 data-en="proof" data-tr="kanıt" data-de="Beweise">proof</h2>
+  <dl class="rows">
+    <div class="row">
+      <dt>FLAWLESS</dt>
+      <dd data-en="a documentary on the 2003 Antwerp diamond heist. I wrote, directed, edited and narrated it. the interview: Leonardo Notarbartolo, the mind behind the heist. he watched the finished film and wrote that he liked it. three of us worked on sourcing and accuracy: that is the difference between a documentary and AI slop. &lt;span class=&quot;crd&quot;&gt;3D and AI visuals: Berkay. motion design: Hasan.&lt;/span&gt;" data-tr="2003 Antwerp elmas soygunu üzerine bir belgesel. yazdım, yönettim, kurguladım, anlatımını yaptım. röportaj: soygunun beyni Leonardo Notarbartolo. filmi izledi ve beğendiğini yazdı. üç kişi kaynak ve doğruluk üzerinde çalıştık: bir belgeseli AI slop'tan ayıran şey bu. &lt;span class=&quot;crd&quot;&gt;3D ve AI görseller: Berkay. motion design: Hasan.&lt;/span&gt;" data-de="ein Dokumentarfilm über den Antwerpener Diamantenraub von 2003. geschrieben, inszeniert, geschnitten und erzählt von mir. das Interview: Leonardo Notarbartolo, der Kopf hinter dem Raub. er hat den fertigen Film gesehen und geschrieben, dass er ihm gefällt. zu dritt haben wir an Quellen und Genauigkeit gearbeitet: das ist der Unterschied zwischen einem Dokumentarfilm und AI-Slop. &lt;span class=&quot;crd&quot;&gt;3D- und AI-Bilder: Berkay. Motion Design: Hasan.&lt;/span&gt;">a documentary on the 2003 Antwerp diamond heist. I wrote, directed, edited and narrated it. the interview: Leonardo Notarbartolo, the mind behind the heist. he watched the finished film and wrote that he liked it. three of us worked on sourcing and accuracy: that is the difference between a documentary and AI slop. <span class="crd">3D and AI visuals: Berkay. motion design: Hasan.</span></dd>
+    </div>
+    <div class="row">
+      <dt data-en="models" data-tr="modeller" data-de="Modelle">models</dt>
+      <dd data-en="the first year these models came out, I spent twice what I earned just testing them. not for any project: to learn which one breaks where. now I can tell within a few shots whether a new model is usable." data-tr="modellerin çıktığı ilk yıl, kazandığımın iki katını sadece onları test etmeye harcadım. proje için değil: hangisi nerede çöküyor, bilmek için. artık yeni bir modelin işe yarayıp yaramadığını birkaç planda söyleyebiliyorum." data-de="im ersten Jahr dieser Modelle habe ich das Doppelte meines Einkommens nur ins Testen gesteckt. nicht für Projekte: um zu wissen, welches Modell wo bricht. heute sehe ich nach wenigen Einstellungen, ob ein neues Modell brauchbar ist.">the first year these models came out, I spent twice what I earned just testing them. not for any project: to learn which one breaks where. now I can tell within a few shots whether a new model is usable.</dd>
+    </div>
+    <div class="row">
+      <dt data-en="pipeline" data-tr="pipeline" data-de="Pipeline">pipeline</dt>
+      <dd data-en="every project runs through four or five models. the shot breakdown, the routing, the retries, the finishing chain: I built them all myself. the generation call is the easy part. everything around it is the work." data-tr="her proje dört beş modelden geçiyor. shot breakdown, routing, retry'lar, finishing chain: hepsini kendim kurdum. generation çağrısı işin kolay kısmı. asıl iş etrafındaki her şey." data-de="jedes Projekt läuft durch vier oder fünf Modelle. Shot-Breakdown, Routing, Retries, Finishing-Kette: alles selbst gebaut. der Generation-Call ist der einfache Teil. die Arbeit ist alles drumherum.">every project runs through four or five models. the shot breakdown, the routing, the retries, the finishing chain: I built them all myself. the generation call is the easy part. everything around it is the work.</dd>
+    </div>
+  </dl>
+</section>
 
-    <p data-en="my own shorts live on my channel. &lt;em&gt;Die Post&lt;/em&gt; was the first — a story about a Turkish–German friendship, shot in Turkish and subtitled in German, which I wrote, directed and produced. I also wrote, directed and acted in &lt;em&gt;Run or Run&lt;/em&gt;. three student films went out across twenty festival entries." data-tr="kendi kısa filmlerim kanalımda. ilki &lt;em&gt;Die Post&lt;/em&gt;'tu — Türk–Alman dostluğunu anlatan, Türkçe çekilip Almanca altyazılanan bir hikâye; yazdım, yönettim ve yapımcılığını üstlendim. &lt;em&gt;Run or Run&lt;/em&gt;'ı da yazdım, yönettim ve oynadım. üç öğrenci filmi toplam yirmi festival başvurusuna çıktı." data-de="meine eigenen Kurzfilme liegen auf meinem Kanal. &lt;em&gt;Die Post&lt;/em&gt; war der erste — eine Geschichte über eine türkisch-deutsche Freundschaft, auf Türkisch gedreht und Deutsch untertitelt; geschrieben, inszeniert und produziert von mir. bei &lt;em&gt;Run or Run&lt;/em&gt; habe ich geschrieben, Regie geführt und gespielt. drei Studentenfilme gingen in zwanzig Festival-Einreichungen raus.">my own shorts live on my channel. <em>Die Post</em> was the first — a story about a Turkish–German friendship, shot in Turkish and subtitled in German, which I wrote, directed and produced. I also wrote, directed and acted in <em>Run or Run</em>. three student films went out across twenty festival entries.</p>
-
-    <p data-en="in 2025 I won a &lt;strong&gt;DiscoverEU&lt;/strong&gt; rail pass and crossed Europe alone, then came back as an ambassador for the programme — my story ran on the official European Youth channel. in 2026 I worked out of &lt;strong&gt;Canggu and Da Nang&lt;/strong&gt; as a nomad, delivering to US and EU clients across eight time zones. I came home, registered my own studio, and kept the clients." data-tr="2025'te &lt;strong&gt;DiscoverEU&lt;/strong&gt; tren bileti kazandım ve Avrupa'yı tek başıma geçtim, sonra programın elçisi olarak döndüm — hikâyem resmî European Youth kanalında yayımlandı. 2026'da göçebe olarak &lt;strong&gt;Canggu ve Da Nang&lt;/strong&gt;'dan çalıştım; sekiz saat dilimi ötedeki ABD ve AB müşterilerine teslimat yaptım. eve döndüm, kendi stüdyomu tescil ettirdim, müşterileri de yanımda getirdim." data-de="2025 habe ich einen &lt;strong&gt;DiscoverEU&lt;/strong&gt;-Railpass gewonnen und Europa allein durchquert, danach kam ich als Botschafter des Programms zurück — meine Geschichte lief auf dem offiziellen European-Youth-Kanal. 2026 habe ich als Nomade aus &lt;strong&gt;Canggu und Da Nang&lt;/strong&gt; gearbeitet, für Kunden in den USA und der EU über acht Zeitzonen hinweg. ich kam heim, meldete mein eigenes Studio an und behielt die Kunden.">in 2025 I won a <strong>DiscoverEU</strong> rail pass and crossed Europe alone, then came back as an ambassador for the programme — my story ran on the official European Youth channel. in 2026 I worked out of <strong>Canggu and Da Nang</strong> as a nomad, delivering to US and EU clients across eight time zones. I came home, registered my own studio, and kept the clients.</p>
-
-    <p data-en="somewhere in there I stopped being someone who &lt;em&gt;uses&lt;/em&gt; generative tools and became someone who &lt;span class=&quot;hl&quot;&gt;builds the machinery around them&lt;/span&gt;. that happened because production kept breaking in the same places — consistency, throughput, and the last ten percent that makes a shot look filmed instead of generated." data-tr="bu sürecin bir yerinde üretken araçları &lt;em&gt;kullanan&lt;/em&gt; biri olmaktan çıkıp &lt;span class=&quot;hl&quot;&gt;etraflarındaki makineyi kuran&lt;/span&gt; birine dönüştüm. çünkü üretim hep aynı yerlerde kırılıyordu — tutarlılık, hız, ve bir planı üretilmiş değil çekilmiş gösteren son yüzde on." data-de="irgendwo dazwischen habe ich aufgehört, jemand zu sein, der generative Tools &lt;em&gt;benutzt&lt;/em&gt;, und wurde jemand, der &lt;span class=&quot;hl&quot;&gt;die Maschinerie darum herum baut&lt;/span&gt;. das passierte, weil die Produktion immer an denselben Stellen brach — Konsistenz, Durchsatz, und die letzten zehn Prozent, die eine Einstellung gefilmt statt generiert aussehen lassen.">somewhere in there I stopped being someone who <em>uses</em> generative tools and became someone who <span class="hl">builds the machinery around them</span>. that happened because production kept breaking in the same places — consistency, throughput, and the last ten percent that makes a shot look filmed instead of generated.</p>
-
-    <p class="pull" data-en="the half of me that paints decides whether a frame is any good. the half that builds decides whether we can make a thousand of them." data-tr="içimdeki resim yapan yarı, bir karenin iyi olup olmadığına karar veriyor. inşa eden yarı ise ondan bin tane yapıp yapamayacağımıza." data-de="die Hälfte von mir, die malt, entscheidet, ob ein Einzelbild etwas taugt. die Hälfte, die baut, entscheidet, ob wir tausend davon machen können.">the half of me that paints decides whether a frame is any good. the half that builds decides whether we can make a thousand of them.</p>
-
-    <p data-en="that's why fal reads to me less like a job posting and more like the place the two halves stop arguing." data-tr="fal bu yüzden bana bir iş ilanından çok, iki yarının tartışmayı bıraktığı yer gibi okunuyor." data-de="deshalb liest sich fal für mich weniger wie eine Stellenanzeige und mehr wie der Ort, an dem die beiden Hälften aufhören zu streiten.">that's why fal reads to me less like a job posting and more like the place the two halves stop arguing.</p>
+<section>
+  <h2 data-en="what I want to build" data-tr="ne inşa etmek istiyorum" data-de="was ich bauen will">what I want to build</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="n">01</span>
+      <h3 data-en="reference pipelines" data-tr="referans pipeline'lar" data-de="Referenz-Pipelines">reference pipelines</h3>
+      <p data-en="right now a director who wants to use these models seriously has no path: a text box and a lot of guessing. reference pipelines change that: script → shot breakdown → previz → look dev. not demos: lines a filmmaker can actually run." data-tr="bugün bu modelleri ciddi kullanmak isteyen bir yönetmenin önünde yol yok: bir metin kutusu ve bol tahmin. referans pipeline'lar bunu değiştirir: senaryo → shot breakdown → previz → look dev. demo değil: bir filmcinin gerçekten çalıştırabileceği hatlar." data-de="heute hat ein Regisseur, der diese Modelle ernsthaft nutzen will, keinen Weg: ein Textfeld und viel Raten. Referenz-Pipelines ändern das: Drehbuch → Shot-Breakdown → Previz → Look-Dev. keine Demos: Strecken, die ein Filmemacher wirklich fahren kann.">right now a director who wants to use these models seriously has no path: a text box and a lot of guessing. reference pipelines change that: script → shot breakdown → previz → look dev. not demos: lines a filmmaker can actually run.</p>
+    </div>
+    <div class="card">
+      <span class="n">02</span>
+      <h3 data-en="model evaluation, with a director's eye" data-tr="yönetmen gözüyle model değerlendirme" data-de="Modellbewertung, mit Regisseursblick">model evaluation, with a director's eye</h3>
+      <p data-en="not benchmarks: taste. a metric can't say the character's hand is wrong. an eye that has cut film sees it instantly." data-tr="benchmark değil: tat. bir metrik karakterin elinin yanlış olduğunu söyleyemez. kurgu yapmış bir göz anında görür." data-de="keine Benchmarks: Geschmack. eine Metrik kann nicht sagen, dass die Hand der Figur falsch ist. ein Auge, das geschnitten hat, sieht es sofort.">not benchmarks: taste. a metric can't say the character's hand is wrong. an eye that has cut film sees it instantly.</p>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2 data-en="what I've already built on this stack" data-tr="bu stack üzerinde şimdiden ne kurdum" data-de="was ich auf diesem Stack schon gebaut habe">what I've already built on this stack</h2>
-  <dl class="rows">
-    <div class="row">
-      <dt>DreamScene</dt>
-      <dd data-en="&lt;b&gt;one sentence in, one film out.&lt;/b&gt; built live at the Generative Media Hackathon in Istanbul. an LLM orchestration layer expands a single line into a ~200-word multi-shot cinematic prompt — camera, lighting, audio design — then routes to a video model for a 1080p render with synced audio in two minutes. multi-model routing across Seedance, Kling and Runway, live render queue, working front-end — built in 24 hours. a prototype, but the idea holds and I want to take it further." data-tr="&lt;b&gt;tek cümle girer, bir film çıkar.&lt;/b&gt; İstanbul'daki Generative Media Hackathon'da canlı kuruldu. bir LLM orkestrasyon katmanı tek satırı ~200 kelimelik çok planlı sinematik bir prompt'a genişletiyor — kamera, ışık, ses tasarımı — sonra bir video modeline yönlendirip iki dakikada senkron sesli 1080p render alıyor. Seedance, Kling ve Runway arasında çoklu model yönlendirme, canlı render kuyruğu, çalışan bir arayüz — 24 saatte kuruldu. bir prototip, ama fikir ayakta ve daha ileri götürmek istiyorum." data-de="&lt;b&gt;ein Satz rein, ein Film raus.&lt;/b&gt; live gebaut beim Generative Media Hackathon in Istanbul. eine LLM-Orchestrierungsschicht erweitert eine einzelne Zeile zu einem ~200-Wort-Prompt über mehrere Einstellungen — Kamera, Licht, Sounddesign — und routet dann zu einem Videomodell: 1080p-Render mit synchronem Ton in zwei Minuten. Multi-Model-Routing über Seedance, Kling und Runway, Live-Render-Queue, funktionierendes Front-End — in 24 Stunden gebaut. ein Prototyp, aber die Idee trägt, und ich will sie weitertreiben."><b>one sentence in, one film out.</b> built live at the Generative Media Hackathon in Istanbul. an LLM orchestration layer expands a single line into a ~200-word multi-shot cinematic prompt — camera, lighting, audio design — then routes to a video model for a 1080p render with synced audio in two minutes. multi-model routing across Seedance, Kling and Runway, live render queue, working front-end — built in 24 hours. a prototype, but the idea holds and I want to take it further.</dd>
-    </div>
-    <div class="row">
-      <dt data-en="finishing" data-tr="bitiriş" data-de="Finishing">finishing</dt>
-      <dd data-en="an &lt;b&gt;anti &quot;AI-tell&quot; chain&lt;/b&gt; — upscale, restore, regrade, grain. the difference between output a label accepts and output that comes back." data-tr="bir &lt;b&gt;anti &quot;AI-tell&quot; zinciri&lt;/b&gt; — upscale, restorasyon, yeniden renk, grain. bir müzik şirketinin kabul ettiği çıktıyla geri gönderdiği çıktı arasındaki fark." data-de="eine &lt;b&gt;Anti-&quot;AI-Tell&quot;-Kette&lt;/b&gt; — Upscale, Restaurierung, neues Grading, Korn. der Unterschied zwischen Output, den ein Label annimmt, und Output, der zurückkommt.">an <b>anti "AI-tell" chain</b> — upscale, restore, regrade, grain. the difference between output a label accepts and output that comes back.</dd>
-    </div>
-    <div class="row">
-      <dt data-en="at scale" data-tr="ölçekte" data-de="skaliert">at scale</dt>
-      <dd data-en="75+ assets across an 8-model furniture series. a full campaign in &lt;b&gt;72 hours&lt;/b&gt;: three films, six product films, two identity-locked characters, original score. identity holds across the whole set." data-tr="8 modellik bir mobilya serisinde 75+ asset. &lt;b&gt;72 saatte&lt;/b&gt; komple bir kampanya: üç film, altı ürün filmi, kimliği kilitli iki karakter, özgün müzik. kimlik bütün sette tutuyor." data-de="75+ Assets über eine Möbelserie mit 8 Modellen. eine komplette Kampagne in &lt;b&gt;72 Stunden&lt;/b&gt;: drei Filme, sechs Produktfilme, zwei identitätsfeste Charaktere, eigene Musik. die Identität hält über das ganze Set.">75+ assets across an 8-model furniture series. a full campaign in <b>72 hours</b>: three films, six product films, two identity-locked characters, original score. identity holds across the whole set.</dd>
-    </div>
-    <div class="row">
-      <dt data-en="shipped" data-tr="teslim edildi" data-de="ausgeliefert">shipped</dt>
-      <dd data-en="two AI music videos for &lt;b&gt;Universal Music Türkiye&lt;/b&gt;, one produced entirely inside a single model family under client restriction. knowing what a model &lt;em&gt;cannot&lt;/em&gt; do is most of the job." data-tr="&lt;b&gt;Universal Music Türkiye&lt;/b&gt; için iki AI müzik videosu; biri müşteri kısıtı gereği tamamen tek bir model ailesinin içinde üretildi. bir modelin neyi &lt;em&gt;yapamadığını&lt;/em&gt; bilmek işin büyük kısmı." data-de="zwei AI-Musikvideos für &lt;b&gt;Universal Music Türkiye&lt;/b&gt;, eines davon auf Kundenwunsch komplett innerhalb einer einzigen Modellfamilie produziert. zu wissen, was ein Modell &lt;em&gt;nicht&lt;/em&gt; kann, ist der größte Teil des Jobs.">two AI music videos for <b>Universal Music Türkiye</b>, one produced entirely inside a single model family under client restriction. knowing what a model <em>cannot</em> do is most of the job.</dd>
-    </div>
-    <div class="row">
-      <dt data-en="models" data-tr="modeller" data-de="Modelle">models</dt>
-      <dd data-en="Veo · Kling · Runway · Seedance · Higgsfield · Nano Banana · Firefly · Midjourney · Topaz · Magnific · ElevenLabs · Suno · HeyGen · Hedra · Sync — in paid production, not in demos." data-tr="Veo · Kling · Runway · Seedance · Higgsfield · Nano Banana · Firefly · Midjourney · Topaz · Magnific · ElevenLabs · Suno · HeyGen · Hedra · Sync — demolarda değil, ücretli üretimde." data-de="Veo · Kling · Runway · Seedance · Higgsfield · Nano Banana · Firefly · Midjourney · Topaz · Magnific · ElevenLabs · Suno · HeyGen · Hedra · Sync — in bezahlter Produktion, nicht in Demos.">Veo · Kling · Runway · Seedance · Higgsfield · Nano Banana · Firefly · Midjourney · Topaz · Magnific · ElevenLabs · Suno · HeyGen · Hedra · Sync — in paid production, not in demos.</dd>
-    </div>
-  </dl>
+  <h2 data-en="work" data-tr="işler" data-de="Arbeiten">work</h2>
+  <div class="links works">
+    <a class="link" href="https://eraybalat.com/flawless/"><span class="lbl">flawless</span><span class="val" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></a>
+    <a class="link" href="https://eraybalat.com/anime/"><span class="lbl">anime</span><span class="val" data-en="made with a recording artist. built on Kling 3, delivered in three weeks" data-tr="bir kayıt sanatçısıyla yapıldı. Kling 3 üzerine, üç haftada teslim" data-de="mit einem Recording-Artist. auf Kling 3 gebaut, in drei Wochen geliefert">made with a recording artist. built on Kling 3, delivered in three weeks</span></a>
+    <a class="link" href="https://eraybalat.com/bushido/"><span class="lbl">bushido</span><span class="val" data-en="a commercial campaign, end to end" data-tr="uçtan uca bir ticari kampanya" data-de="eine kommerzielle Kampagne, von Anfang bis Ende">a commercial campaign, end to end</span></a>
+    <a class="link" href="https://eraybalat.com/hire/"><span class="lbl" data-en="commercial work" data-tr="ticari işler" data-de="kommerzielle Arbeiten">commercial work</span><span class="val" data-en="Universal Music Türkiye, plus brand and product work for US and EU clients" data-tr="Universal Music Türkiye, ayrıca ABD ve AB müşterileri için marka ve ürün işleri" data-de="Universal Music Türkiye, dazu Marken- und Produktarbeit für Kunden in den USA und der EU">Universal Music Türkiye, plus brand and product work for US and EU clients</span></a>
+  </div>
+</section>
+
+<section>
+  <h2 data-en="contact" data-tr="iletişim" data-de="Kontakt">contact</h2>
+  <div class="links">
+    <a class="link" href="mailto:eray@eraybalat.com"><span class="lbl" data-en="email" data-tr="e-posta" data-de="E-Mail">email</span><span class="val">eray@eraybalat.com</span></a>
+    <a class="link" href="https://eraybalat.com"><span class="lbl" data-en="portfolio" data-tr="portfolyo" data-de="Portfolio">portfolio</span><span class="val">eraybalat.com</span></a>
+  </div>
 
   <p class="langs" style="margin-bottom:12px">tools i actually open every day</p>
   <div class="toolstrip">
-    <img class="dk" src="logos/deepmind.svg" alt="Veo" title="Veo">
+    <img src="logos/deepmind.svg" alt="Veo" title="Veo">
     <img src="logos/kling-color.svg" alt="Kling" title="Kling">
     <img src="logos/higgsfield.png" alt="Higgsfield" title="Higgsfield">
     <img class="dk gm" src="logos/googlegemini.svg" alt="Nano Banana" title="Nano Banana">
@@ -289,69 +282,8 @@
   </div>
 </section>
 
-<section>
-  <h2 data-en="what we could build together" data-tr="birlikte ne kurabiliriz" data-de="was wir zusammen bauen könnten">what we could build together</h2>
-  <div class="cards">
-
-    <div class="card">
-      <span class="n">01</span>
-      <h3 data-en="flagship work that doesn't look generated" data-tr="üretilmiş gibi durmayan vitrin işler" data-de="Flaggschiff-Arbeiten, die nicht generiert aussehen">flagship work that doesn't look generated</h3>
-      <p data-en="most showcase reels betray the model in the first two seconds. &lt;b&gt;I'd produce fal's flagship films to a broadcast bar&lt;/b&gt; — real edit, real grade, real sound design, real score — so the platform is judged on its ceiling instead of its default output." data-tr="çoğu vitrin videosu modeli ilk iki saniyede ele veriyor. &lt;b&gt;fal'ın vitrin filmlerini yayın kalitesinde üretirdim&lt;/b&gt; — gerçek kurgu, gerçek renk, gerçek ses tasarımı, gerçek müzik — platform varsayılan çıktısıyla değil, tavanıyla değerlendirilsin diye." data-de="die meisten Showcase-Reels verraten das Modell in den ersten zwei Sekunden. &lt;b&gt;ich würde die Flaggschiff-Filme von fal auf Sendeniveau produzieren&lt;/b&gt; — echter Schnitt, echtes Grading, echtes Sounddesign, echte Musik — damit die Plattform an ihrer Obergrenze gemessen wird, nicht an ihrem Standard-Output.">most showcase reels betray the model in the first two seconds. <b>I'd produce fal's flagship films to a broadcast bar</b> — real edit, real grade, real sound design, real score — so the platform is judged on its ceiling instead of its default output.</p>
-    </div>
-
-    <div class="card">
-      <span class="n">02</span>
-      <h3 data-en="model evaluation from the director's chair" data-tr="yönetmen koltuğundan model değerlendirmesi" data-de="Modellbewertung vom Regiestuhl aus">model evaluation from the director's chair</h3>
-      <p data-en="same brief, same shot, every video model — scored on prompt adherence, motion coherence, identity hold, and where each one falls apart. &lt;b&gt;benchmarks written by someone who has to deliver the shot&lt;/b&gt;, not by someone reading a spec sheet. useful internally; even more useful published." data-tr="aynı brief, aynı plan, bütün video modelleri — prompt'a sadakat, hareket tutarlılığı, kimlik koruması ve her birinin nerede dağıldığı üzerinden puanlanır. &lt;b&gt;spec okuyan biri değil, planı teslim etmek zorunda olan biri tarafından yazılmış benchmark'lar.&lt;/b&gt; içeride işe yarar; yayımlanınca daha da çok." data-de="gleiches Briefing, gleiche Einstellung, jedes Videomodell — bewertet nach Prompt-Treue, Bewegungskohärenz, Identitätshaltung und der Stelle, an der jedes auseinanderfällt. &lt;b&gt;Benchmarks, geschrieben von jemandem, der die Einstellung liefern muss&lt;/b&gt;, nicht von jemandem, der ein Datenblatt liest. intern nützlich; veröffentlicht noch nützlicher.">same brief, same shot, every video model — scored on prompt adherence, motion coherence, identity hold, and where each one falls apart. <b>benchmarks written by someone who has to deliver the shot</b>, not by someone reading a spec sheet. useful internally; even more useful published.</p>
-    </div>
-
-    <div class="card">
-      <span class="n">03</span>
-      <h3 data-en="reference pipelines people can steal" data-tr="insanların çalabileceği referans pipeline'lar" data-de="Referenz-Pipelines zum Klauen">reference pipelines people can steal</h3>
-      <p data-en="DreamScene as a pattern, not a one-off: &lt;b&gt;open, documented recipes&lt;/b&gt; that chain prompt expansion, model routing, queueing and finishing. the gap between &quot;I ran a model&quot; and &quot;I shipped a film&quot; is where most users give up — that's the gap to close." data-tr="DreamScene tek seferlik değil, bir şablon olarak: prompt genişletme, model yönlendirme, kuyruk ve bitirişi zincirleyen &lt;b&gt;açık, belgelenmiş tarifler&lt;/b&gt;. &quot;bir model çalıştırdım&quot; ile &quot;bir film teslim ettim&quot; arasındaki boşluk çoğu kullanıcının vazgeçtiği yer — kapatılacak boşluk orası." data-de="DreamScene als Muster, nicht als Einzelstück: &lt;b&gt;offene, dokumentierte Rezepte&lt;/b&gt;, die Prompt-Erweiterung, Model-Routing, Queueing und Finishing verketten. die Lücke zwischen &quot;ich habe ein Modell laufen lassen&quot; und &quot;ich habe einen Film abgeliefert&quot; ist der Punkt, an dem die meisten aufgeben — genau die Lücke gilt es zu schließen.">DreamScene as a pattern, not a one-off: <b>open, documented recipes</b> that chain prompt expansion, model routing, queueing and finishing. the gap between "I ran a model" and "I shipped a film" is where most users give up — that's the gap to close.</p>
-    </div>
-
-    <div class="card">
-      <span class="n">04</span>
-      <h3 data-en="the finishing layer nobody ships" data-tr="kimsenin paketleyip sunmadığı bitiriş katmanı" data-de="die Finishing-Schicht, die niemand ausliefert">the finishing layer nobody ships</h3>
-      <p data-en="generation is solved enough. &lt;b&gt;post is not.&lt;/b&gt; a documented, repeatable finishing pass — upscale, restore, grade, grain, anti-tell — turned into something a user can call instead of learning Resolve for six months." data-tr="üretim yeterince çözüldü. &lt;b&gt;post çözülmedi.&lt;/b&gt; belgelenmiş, tekrarlanabilir bir bitiriş geçişi — upscale, restorasyon, renk, grain, anti-tell — altı ay Resolve öğrenmek yerine kullanıcının çağırabileceği bir şeye dönüştürülür." data-de="Generierung ist weit genug gelöst. &lt;b&gt;Post nicht.&lt;/b&gt; ein dokumentierter, wiederholbarer Finishing-Durchlauf — Upscale, Restaurierung, Grading, Korn, Anti-Tell — verwandelt in etwas, das ein Nutzer aufrufen kann, statt sechs Monate Resolve zu lernen.">generation is solved enough. <b>post is not.</b> a documented, repeatable finishing pass — upscale, restore, grade, grain, anti-tell — turned into something a user can call instead of learning Resolve for six months.</p>
-    </div>
-
-    <div class="card">
-      <span class="n">05</span>
-      <h3 data-en="localisation and the market I'm standing in" data-tr="lokalizasyon ve içinde durduğum pazar" data-de="Lokalisierung und der Markt, in dem ich stehe">localisation and the market I'm standing in</h3>
-      <p data-en="multilingual voice-over and lip-sync at scale — one film reaching several language markets. and &lt;b&gt;Türkiye and MENA as a creator community&lt;/b&gt;: I'm already in the Istanbul generative-media scene, at the hackathons, in the group chats." data-tr="ölçekli çok dilli seslendirme ve lip-sync — tek film birden çok dil pazarına ulaşır. bir de &lt;b&gt;yaratıcı topluluğu olarak Türkiye ve MENA&lt;/b&gt;: İstanbul üretken medya sahnesinin, hackathonların, grup sohbetlerinin zaten içindeyim." data-de="mehrsprachiges Voice-over und Lip-Sync im Maßstab — ein Film erreicht mehrere Sprachmärkte. und &lt;b&gt;Türkiye und MENA als Creator-Community&lt;/b&gt;: ich bin schon drin in der Generative-Media-Szene von Istanbul, auf den Hackathons, in den Gruppenchats.">multilingual voice-over and lip-sync at scale — one film reaching several language markets. and <b>Türkiye and MENA as a creator community</b>: I'm already in the Istanbul generative-media scene, at the hackathons, in the group chats.</p>
-    </div>
-
-    <div class="card">
-      <span class="n">06</span>
-      <h3 data-en="and the thing I actually want to make" data-tr="ve asıl yapmak istediğim şey" data-de="und das, was ich eigentlich machen will">and the thing I actually want to make</h3>
-      <p data-en="next year I'm going after a feature. &lt;b&gt;how much of it is AI-driven and how much is fully generated is exactly the question I want to answer by making it&lt;/b&gt; — nobody has settled where the line sits at feature length. that is the problem I'd rather solve inside a company building the tools than alone on the outside." data-tr="gelecek yıl bir uzun metraja gidiyorum. &lt;b&gt;ne kadarının AI destekli, ne kadarının tamamen üretilmiş olacağı — tam da yaparak yanıtlamak istediğim soru bu&lt;/b&gt;; uzun metraj ölçeğinde çizginin nerede durduğuna henüz kimse karar vermedi. bu problemi dışarıda tek başıma değil, araçları inşa eden bir şirketin içinde çözmeyi tercih ederim." data-de="nächstes Jahr gehe ich einen Langfilm an. &lt;b&gt;wie viel davon AI-gestützt ist und wie viel voll generiert — genau diese Frage will ich durchs Machen beantworten&lt;/b&gt;; wo die Linie bei Spielfilmlänge liegt, hat noch niemand geklärt. dieses Problem löse ich lieber in einer Firma, die die Werkzeuge baut, als allein draußen.">next year I'm going after a feature. <b>how much of it is AI-driven and how much is fully generated is exactly the question I want to answer by making it</b> — nobody has settled where the line sits at feature length. that is the problem I'd rather solve inside a company building the tools than alone on the outside.</p>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <h2 data-en="elsewhere" data-tr="başka yerlerde" data-de="anderswo">elsewhere</h2>
-  <div class="links">
-    <a class="link" href="https://eraybalat.com"><span class="lbl" data-en="portfolio" data-tr="portfolyo" data-de="Portfolio">portfolio</span><span class="val">eraybalat.com</span></a>
-    <a class="link" href="https://www.youtube.com/@eraybalat"><span class="lbl" data-en="films — youtube" data-tr="filmler — youtube" data-de="Filme — youtube">films — youtube</span><span class="val">@eraybalat</span></a>
-    <a class="link" href="https://linkedin.com/in/eraybalat"><span class="lbl">linkedin</span><span class="val">/in/eraybalat</span></a>
-    <a class="link" href="https://x.com/documenteray"><span class="lbl">X</span><span class="val">@documenteray</span></a>
-    <a class="link" href="https://instagram.com/documenteray"><span class="lbl">instagram</span><span class="val">@documenteray</span></a>
-    <a class="link" href="https://github.com/eraybalatt"><span class="lbl">github</span><span class="val">@eraybalatt</span></a>
-    <a class="link" href="https://www.upwork.com/freelancers/eraybalat"><span class="lbl">upwork · 100% jss</span><span class="val">/eraybalat</span></a>
-    <a class="link" href="https://eraybalat.com/anime/"><span class="lbl">anime</span><span class="val">/anime</span></a>
-    <a class="link" href="https://eraybalat.com/bushido/"><span class="lbl">bushido</span><span class="val">/bushido</span></a>
-    <a class="link" href="https://eraybalat.com/leather/"><span class="lbl" data-en="leather" data-tr="deri" data-de="Leder">leather</span><span class="val">/leather</span></a>
-    <a class="link" href="https://eraybalat.com/flawless/"><span class="lbl" data-en="flawless — documentary" data-tr="flawless — belgesel" data-de="flawless — Doku">flawless — documentary</span><span class="val">/flawless</span></a>
-    <a class="link" href="mailto:eray@eraybalat.com"><span class="lbl" data-en="email" data-tr="e-posta" data-de="E-Mail">email</span><span class="val">eray@eraybalat.com</span></a>
-  </div>
-</section>
-
 <footer>
-  <div data-en="&lt;span class=&quot;star&quot;&gt;✦&lt;/span&gt; Kayseri, Türkiye · UTC+3 · remote, and used to it" data-tr="&lt;span class=&quot;star&quot;&gt;✦&lt;/span&gt; Kayseri, Türkiye · UTC+3 · uzaktan, ve buna alışkın" data-de="&lt;span class=&quot;star&quot;&gt;✦&lt;/span&gt; Kayseri, Türkiye · UTC+3 · remote, und daran gewöhnt"><span class="star">✦</span> Kayseri, Türkiye · UTC+3 · remote, and used to it</div>
+  <div data-en="&lt;span class=&quot;star&quot;&gt;✦&lt;/span&gt; Kayseri, Türkiye · UTC+3 · remote now, San Francisco after six months to a year" data-tr="&lt;span class=&quot;star&quot;&gt;✦&lt;/span&gt; Kayseri, Türkiye · UTC+3 · şimdilik uzaktan, altı ay ile bir yıl içinde San Francisco" data-de="&lt;span class=&quot;star&quot;&gt;✦&lt;/span&gt; Kayseri, Türkiye · UTC+3 · jetzt remote, San Francisco nach sechs Monaten bis einem Jahr"><span class="star">✦</span> Kayseri, Türkiye · UTC+3 · remote now, San Francisco after six months to a year</div>
   <div data-en="Turkish · English · German · Arabic" data-tr="Türkçe · İngilizce · Almanca · Arapça" data-de="Türkisch · Englisch · Deutsch · Arabisch">Turkish · English · German · Arabic</div>
 </footer>
 
@@ -366,7 +298,7 @@
 <script>
 (function(){
   const i18nEls=document.querySelectorAll('[data-en]');
-  const LANG_META={en:{t:'Eray Balat — for fal'},tr:{t:'Eray Balat — fal için'},de:{t:'Eray Balat — für fal'}};
+  const LANG_META={en:{t:'Eray Balat, for fal'},tr:{t:'Eray Balat, fal için'},de:{t:'Eray Balat, für fal'}};
   function setLang(lang){
     document.documentElement.lang=lang;
     i18nEls.forEach(el=>{ if(el.dataset[lang]!==undefined) el.innerHTML=el.dataset[lang]; });
