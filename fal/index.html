@@ -6,6 +6,7 @@
 <title>Eray Balat, for fal</title>
 <meta name="robots" content="noindex, nofollow">
 <script>(function(){try{var ok=['en','tr','de'],l;var p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p}else{try{l=localStorage.getItem('falLang')}catch(e){}}if(!ok.includes(l)){l='en';}document.documentElement.lang=l;}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('falTheme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,14 +15,37 @@
     --bg:#FDFCFA;
     --ink:#14213D;
     --ink2:rgba(20,33,61,.62);
-    --line:rgba(20,33,61,.14);
-    --pink:#E8397E;
+    --line:rgba(45,111,224,.16);
+    --accent:#2D6FE0;
+    --accent-soft:#E8F0FC;
+    --star-url:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%232D6FE0' stroke-width='1'%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4'/%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4' transform='rotate(45 8 8)'/%3E%3C/g%3E%3C/svg%3E");
     --sans:"Inter",system-ui,-apple-system,sans-serif;
     --serif:"Fraunces",Georgia,serif;
     --mono:"JetBrains Mono",ui-monospace,monospace;
   }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0D1526;
+      --ink:#EDF1F8;
+      --ink2:rgba(237,241,248,.62);
+      --line:rgba(91,147,240,.22);
+      --accent:#5B93F0;
+      --accent-soft:#16233F;
+      --star-url:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%235B93F0' stroke-width='1'%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4'/%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4' transform='rotate(45 8 8)'/%3E%3C/g%3E%3C/svg%3E");
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0D1526;
+    --ink:#EDF1F8;
+    --ink2:rgba(237,241,248,.62);
+    --line:rgba(91,147,240,.22);
+    --accent:#5B93F0;
+    --accent-soft:#16233F;
+    --star-url:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%235B93F0' stroke-width='1'%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4'/%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4' transform='rotate(45 8 8)'/%3E%3C/g%3E%3C/svg%3E");
+  }
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
+  ::selection{ background:var(--accent-soft); }
   body{
     background:var(--bg);
     color:var(--ink);
@@ -31,39 +55,41 @@
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; animation:giris .5s ease-out; }
+  /* selçuklu geçme motifi: hissedilsin, fark edilmesin */
+  .field{ position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.04; }
+  .field g{ stroke:var(--accent); }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 24px; position:relative; z-index:1; animation:giris .5s ease-out; }
   @keyframes giris{ from{ opacity:0; transform:translateY(6px); } }
   @media (prefers-reduced-motion: reduce){ .wrap{ animation:none; } }
 
   /* ---- hero ---- */
-  header{ padding:60px 0 48px; }
+  header{ padding:76px 0 56px; }
   .tag{
     display:inline-flex; align-items:center; gap:8px;
     font-family:var(--mono); font-size:11px; letter-spacing:.16em;
     color:var(--ink2);
-    margin-bottom:32px;
+    margin-bottom:40px;
   }
-  .tag .dot{ width:5px; height:5px; border-radius:50%; background:var(--pink); }
+  .tag .dot{ width:5px; height:5px; border-radius:50%; background:var(--accent); }
 
   h1{
     font-family:var(--serif); font-weight:600;
-    font-size:clamp(42px,6.5vw,60px); line-height:1.02; letter-spacing:-.03em;
-    margin-bottom:24px;
+    font-size:clamp(46px,7vw,70px); line-height:1.0; letter-spacing:-.03em;
+    margin-bottom:20px;
   }
-  h1 em{ font-style:normal; color:var(--pink); }
+  h1 em{ font-style:normal; color:var(--accent); }
 
   .kicker{
     font-family:var(--serif); font-size:clamp(18px,2.2vw,21px); line-height:1.6;
-    color:var(--ink); max-width:34em;
+    color:var(--ink); max-width:32em;
   }
 
   /* ---- sections: boşluk + ince çizgi, kutu yok ---- */
-  section{ padding:38px 0 8px; }
-  /* selçuklu yıldızı: ince ayraç, iki bindirilmiş kare */
+  section{ padding:46px 0 8px; }
   section::before{
-    content:""; display:block; height:15px; margin:0 auto 34px;
+    content:""; display:block; height:15px; margin:0 auto 36px;
     background:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%23E8397E' stroke-width='1'%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4'/%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4' transform='rotate(45 8 8)'/%3E%3C/g%3E%3C/svg%3E") center / 13px 13px no-repeat,
+      var(--star-url) center / 13px 13px no-repeat,
       linear-gradient(var(--line),var(--line)) left center / calc(50% - 24px) 1px no-repeat,
       linear-gradient(var(--line),var(--line)) right center / calc(50% - 24px) 1px no-repeat;
   }
@@ -71,8 +97,8 @@
   section:first-of-type::before{ display:none; }
   h2{
     font-family:var(--mono); font-size:11px; font-weight:500;
-    letter-spacing:.22em; color:var(--ink2);
-    margin-bottom:24px;
+    letter-spacing:.22em; color:var(--accent);
+    margin-bottom:26px;
   }
 
   /* ---- kanıt satırları ---- */
@@ -87,44 +113,46 @@
   .row dd .crd{ display:block; margin-top:6px; font-size:13px; color:var(--ink2); }
 
   /* ---- inşa maddeleri: kart yok, düz blok ---- */
-  .build{ display:grid; gap:32px; }
+  .build{ display:grid; gap:36px; }
   .build h3{
-    font-family:var(--serif); font-size:20px; font-weight:600;
+    font-family:var(--serif); font-size:21px; font-weight:600;
     letter-spacing:-.01em; margin-bottom:8px;
   }
   .build p{ font-size:16px; color:var(--ink); max-width:62ch; }
   .build .n{ font-family:var(--mono); font-size:11px; color:var(--ink2); letter-spacing:.14em; margin-bottom:8px; display:block; }
 
-  /* ---- işler: liste, kutu yok ---- */
-  .works a{
-    display:grid; grid-template-columns:72px 1fr; gap:0 16px; align-items:center;
-    padding:12px 0; border-bottom:1px solid var(--line);
-    text-decoration:none; color:var(--ink);
+  /* ---- işler: büyük görseller, 2'li ızgara ---- */
+  .works{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:32px 24px; }
+  .work{ display:block; text-decoration:none; color:var(--ink); }
+  .work img{
+    width:100%; height:auto; aspect-ratio:16/9; object-fit:cover;
+    border-radius:6px; display:block; margin-bottom:12px;
   }
-  .works img{ width:72px; height:45px; object-fit:cover; border-radius:5px; display:block; }
-  .wtxt{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:2px 16px; min-width:0; }
-  .works a:first-child{ border-top:1px solid var(--line); }
-  .works .lbl{ font-size:16px; font-weight:500; }
-  .works .val{ font-family:var(--mono); font-size:12px; color:var(--ink2); }
-  .works a:hover .lbl{ text-decoration:underline; text-decoration-color:var(--pink); text-underline-offset:3px; }
+  .work .wl{ font-size:16px; font-weight:500; }
+  .work .wd{ display:block; font-family:var(--mono); font-size:12px; color:var(--ink2); margin-top:3px; }
+  .work:hover .wl{ text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:3px; }
 
   /* ---- iletişim ---- */
   .contact{ display:flex; flex-wrap:wrap; gap:8px 32px; font-size:16px; }
   .contact a{ color:var(--ink); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px; }
-  .contact a:hover{ text-decoration-color:var(--pink); }
+  .contact a:hover{ text-decoration-color:var(--accent); }
 
   footer{
-    margin-top:40px; padding:18px 0 48px; border-top:1px solid var(--line);
+    margin-top:48px; padding:20px 0 56px; border-top:1px solid var(--line);
     font-family:var(--mono); font-size:11.5px; color:var(--ink2);
     letter-spacing:.04em; display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-between;
   }
 
-  .lang-switch{ position:fixed; top:16px; right:18px; z-index:5; display:flex; gap:2px; background:var(--bg); }
-  .lang-btn{ background:none; border:none; cursor:pointer; color:var(--ink2);
+  .lang-switch{ position:fixed; top:16px; right:18px; z-index:5; display:flex; align-items:center; gap:2px; background:var(--bg); }
+  .lang-btn, .theme-btn{ background:none; border:none; cursor:pointer; color:var(--ink2);
     font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.08em; padding:6px 7px; }
   .lang-btn.active{ color:var(--ink); }
-  .lang-btn:hover{ color:var(--ink); }
+  .lang-btn:hover, .theme-btn:hover{ color:var(--ink); }
+  .theme-btn{ border-left:1px solid var(--line); margin-left:6px; padding-left:12px; }
 
+  @media (min-width:1120px){
+    .works{ grid-template-columns:repeat(3,1fr); margin-inline:-152px; }
+  }
   @media (max-width:620px){
     header{ padding:64px 0 48px; }
     section{ padding:44px 0 8px; }
@@ -133,6 +161,28 @@
 </style>
 </head>
 <body>
+
+<svg class="field" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <pattern id="seljuk" width="96" height="96" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke-width="0.9">
+        <rect x="31" y="31" width="34" height="34"/>
+        <rect x="31" y="31" width="34" height="34" transform="rotate(45 48 48)"/>
+        <circle cx="48" cy="48" r="3"/>
+        <rect x="-17" y="-17" width="34" height="34"/>
+        <rect x="-17" y="-17" width="34" height="34" transform="rotate(45 0 0)"/>
+        <rect x="79" y="-17" width="34" height="34"/>
+        <rect x="79" y="-17" width="34" height="34" transform="rotate(45 96 0)"/>
+        <rect x="-17" y="79" width="34" height="34"/>
+        <rect x="-17" y="79" width="34" height="34" transform="rotate(45 0 96)"/>
+        <rect x="79" y="79" width="34" height="34"/>
+        <rect x="79" y="79" width="34" height="34" transform="rotate(45 96 96)"/>
+        <path d="M17 31 L31 17 M65 17 L79 31 M79 65 L65 79 M31 79 L17 65"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#seljuk)"/>
+</svg>
 
 <div class="wrap">
 
@@ -155,7 +205,7 @@
     </div>
     <div class="row">
       <dt data-en="practice" data-tr="pratik" data-de="Praxis">practice</dt>
-      <dd data-en="every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found. the generation call is the easy part. everything around it is the work." data-tr="yaptığım her proje dört beş modelden geçiyor. routing ve finishing chain kendi kurduğum şeyler, hazır bulduğum değil. generation çağrısı işin kolay kısmı. asıl iş etrafındaki her şey." data-de="jedes meiner Projekte läuft durch vier oder fünf Modelle. das Routing und die Finishing-Kette habe ich selbst gebaut, nicht fertig übernommen. der Generation-Call ist der einfache Teil. die Arbeit ist alles drumherum.">every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found. the generation call is the easy part. everything around it is the work.</dd>
+      <dd data-en="every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found. the generation call is the easy part. everything around it is the work. &lt;span class=&quot;crd&quot;&gt;kling, seedance, nano banana, veo. each one for what it's good at.&lt;/span&gt;" data-tr="yaptığım her proje dört beş modelden geçiyor. routing ve finishing chain kendi kurduğum şeyler, hazır bulduğum değil. generation çağrısı işin kolay kısmı. asıl iş etrafındaki her şey. &lt;span class=&quot;crd&quot;&gt;kling, seedance, nano banana, veo. her biri iyi olduğu şey için.&lt;/span&gt;" data-de="jedes meiner Projekte läuft durch vier oder fünf Modelle. das Routing und die Finishing-Kette habe ich selbst gebaut, nicht fertig übernommen. der Generation-Call ist der einfache Teil. die Arbeit ist alles drumherum. &lt;span class=&quot;crd&quot;&gt;kling, seedance, nano banana, veo. jedes für das, was es gut kann.&lt;/span&gt;">every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found. the generation call is the easy part. everything around it is the work. <span class="crd">kling, seedance, nano banana, veo. each one for what it's good at.</span></dd>
     </div>
   </dl>
 </section>
@@ -179,10 +229,9 @@
 <section>
   <h2 data-en="work" data-tr="işler" data-de="Arbeiten">work</h2>
   <div class="works">
-    <a href="https://eraybalat.com/flawless/"><img src="/flawless/hero-vault.webp" alt="FLAWLESS documentary still" width="72" height="45"><span class="wtxt"><span class="lbl">flawless</span><span class="val" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></span></a>
-    <a href="https://eraybalat.com/anime/"><img src="/anime-mv-poster.webp" alt="anime music video poster" width="72" height="45"><span class="wtxt"><span class="lbl">anime</span><span class="val" data-en="a music video with a recording artist. Kling 3, three weeks" data-tr="bir kayıt sanatçısıyla müzik videosu. Kling 3, üç hafta" data-de="ein Musikvideo mit einem Recording-Artist. Kling 3, drei Wochen">a music video with a recording artist. Kling 3, three weeks</span></span></a>
-    <a href="https://eraybalat.com/bushido/"><img src="/bushido/og-bushido.jpg" alt="Bushido campaign still" width="72" height="45"><span class="wtxt"><span class="lbl">bushido</span><span class="val" data-en="a brand campaign, end to end" data-tr="uçtan uca bir marka kampanyası" data-de="eine Markenkampagne, von Anfang bis Ende">a brand campaign, end to end</span></span></a>
-    <a href="https://eraybalat.com/hire/"><img src="/leather/og-leather.jpg" alt="product visual" width="72" height="45"><span class="wtxt"><span class="lbl" data-en="commercial work" data-tr="ticari işler" data-de="kommerzielle Arbeiten">commercial work</span><span class="val" data-en="Universal Music Türkiye, plus product work for US and EU clients" data-tr="Universal Music Türkiye, ayrıca ABD ve AB müşterileri için ürün işleri" data-de="Universal Music Türkiye, dazu Produktarbeit für Kunden in den USA und der EU">Universal Music Türkiye, plus product work for US and EU clients</span></span></a>
+    <a class="work" href="https://eraybalat.com/flawless/"><img src="/flawless/hero-vault.webp" alt="FLAWLESS documentary still" width="1600" height="900"><span class="wl">flawless</span><span class="wd" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></a>
+    <a class="work" href="https://eraybalat.com/anime/"><img src="/anime-mv-poster.webp" alt="anime music video poster" width="1280" height="540" loading="lazy" decoding="async"><span class="wl">anime</span><span class="wd" data-en="a music video with a recording artist. Kling 3, three weeks" data-tr="bir kayıt sanatçısıyla müzik videosu. Kling 3, üç hafta" data-de="ein Musikvideo mit einem Recording-Artist. Kling 3, drei Wochen">a music video with a recording artist. Kling 3, three weeks</span></a>
+    <a class="work" href="https://eraybalat.com/bushido/"><img src="/bushido/og-bushido.jpg" alt="Bushido campaign still" width="1200" height="630" loading="lazy" decoding="async"><span class="wl">bushido</span><span class="wd" data-en="a brand campaign, end to end" data-tr="uçtan uca bir marka kampanyası" data-de="eine Markenkampagne, von Anfang bis Ende">a brand campaign, end to end</span></a>
   </div>
 </section>
 
@@ -201,10 +250,11 @@
 
 </div>
 
-<div class="lang-switch" role="group" aria-label="language">
+<div class="lang-switch" role="group" aria-label="language and theme">
   <button class="lang-btn active" data-lang="en" aria-pressed="true">en</button>
   <button class="lang-btn" data-lang="tr" aria-pressed="false">tr</button>
   <button class="lang-btn" data-lang="de" aria-pressed="false">de</button>
+  <button class="theme-btn" type="button" aria-label="theme">auto</button>
 </div>
 
 <script>
@@ -220,6 +270,22 @@
   }
   document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{setLang(b.dataset.lang);try{localStorage.setItem('falLang',b.dataset.lang)}catch(e){}}));
   (function(){const ok=['en','tr','de'];let l;const p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p;try{localStorage.setItem('falLang',p)}catch(e){}}if(!ok.includes(l)){try{l=localStorage.getItem('falLang')}catch(e){}}if(!ok.includes(l)){l='en';}setLang(l);})();
+
+  /* tema: light / dark / system, FOUC yok (head'de erken script) */
+  const tb=document.querySelector('.theme-btn');
+  const ORDER=['system','light','dark'];
+  function getTheme(){ try{const t=localStorage.getItem('falTheme');return ORDER.includes(t)?t:'system';}catch(e){return 'system';} }
+  function applyTheme(t){
+    if(t==='light'||t==='dark'){ document.documentElement.setAttribute('data-theme',t); }
+    else{ document.documentElement.removeAttribute('data-theme'); }
+    tb.textContent = t==='system' ? 'auto' : t;
+  }
+  tb.addEventListener('click',()=>{
+    const next=ORDER[(ORDER.indexOf(getTheme())+1)%ORDER.length];
+    try{localStorage.setItem('falTheme',next)}catch(e){}
+    applyTheme(next);
+  });
+  applyTheme(getTheme());
 })();
 </script>
 </body>
