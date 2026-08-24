@@ -36,7 +36,7 @@
   @media (prefers-reduced-motion: reduce){ .wrap{ animation:none; } }
 
   /* ---- hero ---- */
-  header{ padding:72px 0 56px; }
+  header{ padding:60px 0 48px; }
   .tag{
     display:inline-flex; align-items:center; gap:8px;
     font-family:var(--mono); font-size:11px; letter-spacing:.16em;
@@ -58,10 +58,10 @@
   }
 
   /* ---- sections: boşluk + ince çizgi, kutu yok ---- */
-  section{ padding:48px 0 8px; }
+  section{ padding:38px 0 8px; }
   /* selçuklu yıldızı: ince ayraç, iki bindirilmiş kare */
   section::before{
-    content:""; display:block; height:15px; margin:0 auto 40px;
+    content:""; display:block; height:15px; margin:0 auto 34px;
     background:
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='none' stroke='%23E8397E' stroke-width='1'%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4'/%3E%3Crect x='3.8' y='3.8' width='8.4' height='8.4' transform='rotate(45 8 8)'/%3E%3C/g%3E%3C/svg%3E") center / 13px 13px no-repeat,
       linear-gradient(var(--line),var(--line)) left center / calc(50% - 24px) 1px no-repeat,
@@ -97,10 +97,12 @@
 
   /* ---- işler: liste, kutu yok ---- */
   .works a{
-    display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:2px 16px;
-    padding:14px 0; border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:72px 1fr; gap:0 16px; align-items:center;
+    padding:12px 0; border-bottom:1px solid var(--line);
     text-decoration:none; color:var(--ink);
   }
+  .works img{ width:72px; height:45px; object-fit:cover; border-radius:5px; display:block; }
+  .wtxt{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:2px 16px; min-width:0; }
   .works a:first-child{ border-top:1px solid var(--line); }
   .works .lbl{ font-size:16px; font-weight:500; }
   .works .val{ font-family:var(--mono); font-size:12px; color:var(--ink2); }
@@ -112,7 +114,7 @@
   .contact a:hover{ text-decoration-color:var(--pink); }
 
   footer{
-    margin-top:48px; padding:20px 0 56px; border-top:1px solid var(--line);
+    margin-top:40px; padding:18px 0 48px; border-top:1px solid var(--line);
     font-family:var(--mono); font-size:11.5px; color:var(--ink2);
     letter-spacing:.04em; display:flex; flex-wrap:wrap; gap:8px 20px; justify-content:space-between;
   }
@@ -149,11 +151,11 @@
     </div>
     <div class="row">
       <dt data-en="models" data-tr="modeller" data-de="Modelle">models</dt>
-      <dd data-en="the first year these models arrived, I spent twice what I earned trying them. not for a project, not for a client: to learn what each one does well and where it breaks. now a few shots tell me if a new model is usable." data-tr="bu modellerin çıktığı ilk yıl, kazandığımın iki katını onları denemeye harcadım. proje için değil, müşteri için değil: her birinin neyi iyi yaptığını ve nerede çöktüğünü öğrenmek için. artık birkaç plan, yeni bir modelin kullanılabilir olup olmadığını söylüyor." data-de="im ersten Jahr dieser Modelle habe ich das Doppelte meines Einkommens ins Ausprobieren gesteckt. nicht für ein Projekt, nicht für einen Kunden: um zu lernen, was jedes gut kann und wo es bricht. heute reichen mir wenige Einstellungen, um zu sehen, ob ein neues Modell brauchbar ist.">the first year these models arrived, I spent twice what I earned trying them. not for a project, not for a client: to learn what each one does well and where it breaks. now a few shots tell me if a new model is usable.</dd>
+      <dd data-en="the first year these models arrived, I spent twice what I earned just testing them. not for a project, not for a client: to learn what each one does well and where it breaks. now a few shots tell me if a new model is usable." data-tr="bu modellerin çıktığı ilk yıl, kazandığımın iki katını sadece onları test etmeye harcadım. proje için değil, müşteri için değil: her birinin neyi iyi yaptığını ve nerede çöktüğünü öğrenmek için. artık birkaç plan, yeni bir modelin kullanılabilir olup olmadığını söylüyor." data-de="im ersten Jahr dieser Modelle habe ich das Doppelte meines Einkommens nur ins Testen gesteckt. nicht für ein Projekt, nicht für einen Kunden: um zu lernen, was jedes gut kann und wo es bricht. heute reichen mir wenige Einstellungen, um zu sehen, ob ein neues Modell brauchbar ist.">the first year these models arrived, I spent twice what I earned just testing them. not for a project, not for a client: to learn what each one does well and where it breaks. now a few shots tell me if a new model is usable.</dd>
     </div>
     <div class="row">
       <dt data-en="practice" data-tr="pratik" data-de="Praxis">practice</dt>
-      <dd data-en="every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found." data-tr="yaptığım her proje dört beş modelden geçiyor. routing ve finishing chain kendi kurduğum şeyler, hazır bulduğum değil." data-de="jedes meiner Projekte läuft durch vier oder fünf Modelle. das Routing und die Finishing-Kette habe ich selbst gebaut, nicht fertig übernommen.">every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found.</dd>
+      <dd data-en="every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found. the generation call is the easy part. everything around it is the work." data-tr="yaptığım her proje dört beş modelden geçiyor. routing ve finishing chain kendi kurduğum şeyler, hazır bulduğum değil. generation çağrısı işin kolay kısmı. asıl iş etrafındaki her şey." data-de="jedes meiner Projekte läuft durch vier oder fünf Modelle. das Routing und die Finishing-Kette habe ich selbst gebaut, nicht fertig übernommen. der Generation-Call ist der einfache Teil. die Arbeit ist alles drumherum.">every project I make runs through four or five models. the routing and the finishing chain are things I built, not things I found. the generation call is the easy part. everything around it is the work.</dd>
     </div>
   </dl>
 </section>
@@ -177,10 +179,10 @@
 <section>
   <h2 data-en="work" data-tr="işler" data-de="Arbeiten">work</h2>
   <div class="works">
-    <a href="https://eraybalat.com/flawless/"><span class="lbl">flawless</span><span class="val" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></a>
-    <a href="https://eraybalat.com/anime/"><span class="lbl">anime</span><span class="val" data-en="a music video with a recording artist. Kling 3, three weeks" data-tr="bir kayıt sanatçısıyla müzik videosu. Kling 3, üç hafta" data-de="ein Musikvideo mit einem Recording-Artist. Kling 3, drei Wochen">a music video with a recording artist. Kling 3, three weeks</span></a>
-    <a href="https://eraybalat.com/bushido/"><span class="lbl">bushido</span><span class="val" data-en="a brand campaign, end to end" data-tr="uçtan uca bir marka kampanyası" data-de="eine Markenkampagne, von Anfang bis Ende">a brand campaign, end to end</span></a>
-    <a href="https://eraybalat.com/hire/"><span class="lbl" data-en="commercial work" data-tr="ticari işler" data-de="kommerzielle Arbeiten">commercial work</span><span class="val" data-en="Universal Music Türkiye, plus product work for US and EU clients" data-tr="Universal Music Türkiye, ayrıca ABD ve AB müşterileri için ürün işleri" data-de="Universal Music Türkiye, dazu Produktarbeit für Kunden in den USA und der EU">Universal Music Türkiye, plus product work for US and EU clients</span></a>
+    <a href="https://eraybalat.com/flawless/"><img src="/flawless/hero-vault.webp" alt="FLAWLESS documentary still" width="72" height="45"><span class="wtxt"><span class="lbl">flawless</span><span class="val" data-en="17 minutes, 4K. the Antwerp diamond heist" data-tr="17 dakika, 4K. Antwerp elmas soygunu" data-de="17 Minuten, 4K. der Antwerpener Diamantenraub">17 minutes, 4K. the Antwerp diamond heist</span></span></a>
+    <a href="https://eraybalat.com/anime/"><img src="/anime-mv-poster.webp" alt="anime music video poster" width="72" height="45"><span class="wtxt"><span class="lbl">anime</span><span class="val" data-en="a music video with a recording artist. Kling 3, three weeks" data-tr="bir kayıt sanatçısıyla müzik videosu. Kling 3, üç hafta" data-de="ein Musikvideo mit einem Recording-Artist. Kling 3, drei Wochen">a music video with a recording artist. Kling 3, three weeks</span></span></a>
+    <a href="https://eraybalat.com/bushido/"><img src="/bushido/og-bushido.jpg" alt="Bushido campaign still" width="72" height="45"><span class="wtxt"><span class="lbl">bushido</span><span class="val" data-en="a brand campaign, end to end" data-tr="uçtan uca bir marka kampanyası" data-de="eine Markenkampagne, von Anfang bis Ende">a brand campaign, end to end</span></span></a>
+    <a href="https://eraybalat.com/hire/"><img src="/leather/og-leather.jpg" alt="product visual" width="72" height="45"><span class="wtxt"><span class="lbl" data-en="commercial work" data-tr="ticari işler" data-de="kommerzielle Arbeiten">commercial work</span><span class="val" data-en="Universal Music Türkiye, plus product work for US and EU clients" data-tr="Universal Music Türkiye, ayrıca ABD ve AB müşterileri için ürün işleri" data-de="Universal Music Türkiye, dazu Produktarbeit für Kunden in den USA und der EU">Universal Music Türkiye, plus product work for US and EU clients</span></span></a>
   </div>
 </section>
 
