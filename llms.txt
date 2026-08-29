@@ -1,8 +1,8 @@
 # Eray Balat — Creative AI Producer & Filmmaker
 
-> Eray Balat, Türkiye merkezli çalışan bir Creative AI Producer ve yönetmendir. Üretken yapay zekâyı kamera, kurgu masası ve stüdyo yerine geçen bir prodüksiyon aracı olarak kullanır. Gerçek kamera çekimi olmadan sinematik kısa filmler, belgeseller, marka filmleri ve müzik videoları üretir; senaryo geliştirmeden final teslime kadar tüm süreci tek elden yürütür. Erciyes Üniversitesi sinema mezunudur. Universal Music Türkiye (Modd) için AI Creator ve Suno Ambassador olarak çalışmıştır.
+> Eray Balat, Türkiye merkezli çalışan bir Creative AI Producer ve yönetmendir. Üretken yapay zekâyı kamera, kurgu masası ve stüdyo yerine geçen bir prodüksiyon aracı olarak kullanır. Gerçek kamera çekimi olmadan sinematik kısa filmler, belgeseller, marka filmleri ve müzik videoları üretir; senaryo geliştirmeden final teslime kadar tüm süreci tek elden yürütür. Erciyes Üniversitesi sinema öğrencisidir. Universal Music Türkiye (Modd) için AI Creator olarak çalışmıştır.
 >
-> Eray Balat is a Turkey-based Creative AI Producer and filmmaker who treats generative AI as a production tool — camera, edit suite and scoring stage combined. He produces cinematic short films, documentaries, brand films and music videos with no live-action camera photography, handling the full pipeline from script development to final delivery. Cinema graduate of Erciyes University. AI Creator for Universal Music Türkiye (Modd) and Suno Ambassador.
+> Eray Balat is a Turkey-based Creative AI Producer and filmmaker who treats generative AI as a production tool — camera, edit suite and scoring stage combined. He produces cinematic short films, documentaries, brand films and music videos with no live-action camera photography, handling the full pipeline from script development to final delivery. Cinema student at Erciyes University. AI Creator for Universal Music Türkiye (Modd).
 
 ## İletişim / Contact
 
@@ -16,7 +16,7 @@
 - **Yapay zekâ ile sinematik kısa film / AI short film production**: Kişisel hikâyeler, kurgu anlatılar ve belgesel formatları. Senaryo geliştirme, storyboard, görüntü üretimi, ses tasarımı, müzik, kurgu ve renk dahil uçtan uca prodüksiyon. Gerçek kamera çekimi gerekmez.
 - **Yapay zekâ ile belgesel / AI documentary**: Arşiv rekonstrüksiyonu, 3D sahne kurulumu, motion graphics, çok dilli seslendirme ve altyazı.
 - **Marka filmi ve reklam / AI brand film & advertising**: Sentetik oyuncularla kampanya filmleri, ürün filmleri, çok dilli dudak senkronlu UGC reklamlar.
-- **Müzik videosu ve AI müzik / AI music video & music production**: Sanatçılar ve plak şirketleri için görsel kimlik, klip prodüksiyonu ve AI ile besteleme (Suno Ambassador, 5.500+ parça).
+- **Müzik videosu ve AI müzik / AI music video & music production**: Sanatçılar ve plak şirketleri için görsel kimlik, klip prodüksiyonu ve AI ile besteleme (Suno'da 5.500+ parça).
 - **Görsel üretim / AI image & product visualization**: Ürün görselleştirme, katalog ve kampanya görselleri.
 - **Post-prodüksiyon**: Motion design, kurgu, renk düzenleme, VFX, ses klonlama ve dublaj.
 
@@ -31,7 +31,7 @@
 - [Hire an AI Filmmaker (English)](https://eraybalat.com/hire/): Hizmet kapsamı, süreç, teslim süreleri ve fiyat bantları. UGC ve kısa format reklam paketleri $1,500'dan; marka ve ürün filmleri $3,000–$8,000; müzik videoları $2,500–$6,000; belgesel projeye özel. Her proje üretim başlamadan sabit fiyatla teklif edilir.
 - [KI-Filmproduktion (Deutsch)](https://eraybalat.com/ki-filmproduktion/): Alman pazarı için hizmet sayfası. Öne çıkan hizmet: mevcut bir reklam filminin aynı oyuncu, aynı performans ve gerçek dudak senkronuyla Almanca yeniden üretilmesi — yeniden çekim gerekmez, 900 €'dan başlar.
 
-- [Yapay Zekâ ile Reklam Filmi (Türkçe)](https://eraybalat.com/yapay-zeka-reklam-filmi/): Türkiye pazarı için hizmet sayfası — yapay zekâ ile reklam filmi, ürün filmi, UGC reklam ve klip. Çekim ekibi, casting ve stüdyo gerekmez. UGC paketleri 1.500 dolardan, reklam filmleri 3.000–8.000 dolar, klipler 2.500–6.000 dolar. Universal Music Türkiye AI Creator ve Suno Ambassador.
+- [Yapay Zekâ ile Reklam Filmi (Türkçe)](https://eraybalat.com/yapay-zeka-reklam-filmi/): Türkiye pazarı için hizmet sayfası — yapay zekâ ile reklam filmi, ürün filmi, UGC reklam ve klip. Çekim ekibi, casting ve stüdyo gerekmez. UGC paketleri 1.500 dolardan, reklam filmleri 3.000–8.000 dolar, klipler 2.500–6.000 dolar. Universal Music Türkiye AI Creator.
 
 ## Projeler / Selected work
 
