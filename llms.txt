@@ -51,6 +51,14 @@
 - [FilmFreeway](https://filmfreeway.com/ErayBalat)
 - [Medium](https://medium.com/@eraybalat)
 - [Upwork](https://www.upwork.com/freelancers/eraybalat)
+- [GitHub](https://github.com/eraybalatt)
+- [Hugging Face](https://huggingface.co/ErayBalat)
+- [Letterboxd](https://letterboxd.com/eraybalat/)
+
+## Yazılar / Writing
+
+- [A 17-minute heist documentary with nothing filmed in it](https://medium.com/@eraybalat/a-17-minute-heist-documentary-with-nothing-filmed-in-it-5a314806373b): FLAWLESS prodüksiyon günlüğü — kamerasız belgesel nasıl kuruldu, 30+ 3D sahne, kendi klonlanmış sesiyle İtalyanca dublaj.
+- [A brand campaign in three days](https://medium.com/@eraybalat/a-brand-campaign-in-three-days-b5763b937767): İki sentetik oyuncu, altı ürün, üç film — tek board üzerinde üç günde; bağımlılık sırası ve seçim disiplini.
 
 ## Sık sorulanlar / FAQ
 
