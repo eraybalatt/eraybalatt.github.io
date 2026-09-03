@@ -27,6 +27,7 @@ JOBS = [
 # dile göre yönlendirilecek linkler (ana sayfadaki setLang mantığının aynısı)
 FAQ_HREF  = {"en": "/faq/", "tr": "/sss/", "de": "/faq-de/"}
 HIRE_HREF = {"en": "/hire/", "tr": "/yapay-zeka-reklam-filmi/", "de": "/ki-filmproduktion/"}
+BLOG_HREF = {"en": "/blog/", "tr": "/yazilar/", "de": "/blog/"}
 HOME_HREF = {"en": "/", "tr": "/tr/", "de": "/de/"}
 
 REL_ATTRS = ["src", "poster", "href", "data-poster", "data-src", "data-full", "data-image"]
@@ -120,6 +121,8 @@ def build(src_rel, lang, cfg, meta_all):
         a["href"] = FAQ_HREF[lang]
     for a in soup.select("a[data-hire]"):
         a["href"] = HIRE_HREF[lang]
+    for a in soup.select("a[data-blog]"):
+        a["href"] = BLOG_HREF[lang]
 
     # 7) JSON-LD: sayfa düğümünü bu dile bağla
     for s in soup.find_all("script", type="application/ld+json"):
