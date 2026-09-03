@@ -59,6 +59,8 @@
 
 - [A 17-minute heist documentary with nothing filmed in it](https://medium.com/@eraybalat/a-17-minute-heist-documentary-with-nothing-filmed-in-it-5a314806373b): FLAWLESS prodüksiyon günlüğü — kamerasız belgesel nasıl kuruldu, 30+ 3D sahne, kendi klonlanmış sesiyle İtalyanca dublaj.
 - [A brand campaign in three days](https://medium.com/@eraybalat/a-brand-campaign-in-three-days-b5763b937767): İki sentetik oyuncu, altı ürün, üç film — tek board üzerinde üç günde; bağımlılık sırası ve seçim disiplini.
+- [Character sheet first](https://medium.com/@eraybalat/character-sheet-first-986e97ac3295): Sentetik oyuncu kadrosunun tutarlılığı ilk kahraman kareden önce belirlenir — karakter sayfası yöntemi, kilitli referans kare ve kıyafet varyantları.
+- [Your image-to-video tool might be ignoring your image](https://medium.com/@eraybalat/your-image-to-video-tool-might-be-ignoring-your-image-955f9b9cfb1c): Aynı isimle satılan iki farklı ürün — gerçek başlangıç karesi ile stil referansı arasındaki fark, ve tek üretimlik test.
 
 ## Sık sorulanlar / FAQ
 
