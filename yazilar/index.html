@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://eraybalat.com/yazilar/" />
+<link rel="alternate" hreflang="tr" href="https://eraybalat.com/yazilar/" />
+<link rel="alternate" hreflang="en" href="https://eraybalat.com/blog/" />
+<link rel="alternate" hreflang="x-default" href="https://eraybalat.com/blog/" />
+<title>Yazılar — Yapay Zekâ ile Film Üretimi | Eray Balat</title>
+<meta name="description" content="Yapay zekâ ile film üretiminin prompt yazmakla ilgili olmayan kısımları: karakter tutarlılığı, başlangıç karesi, yasak listeleri ve kurgu kararları." />
+<meta name="theme-color" content="#061a2e" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Eray Balat" />
+<meta property="og:title" content="Yazılar — Yapay zekâ ile film üretimi" />
+<meta property="og:description" content="Yapay zekâ ile film üretiminin prompt yazmakla ilgili olmayan kısımları: karakter tutarlılığı, başlangıç karesi, yasak listeleri ve kurgu kararları." />
+<meta property="og:url" content="https://eraybalat.com/yazilar/" />
+<meta property="og:image" content="https://eraybalat.com/og-card.jpg" />
+<meta property="og:locale" content="tr_TR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@documenteray" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" /></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Blog","@id":"https://eraybalat.com/yazilar/#blog","name":"Yazılar — Eray Balat","description":"Yapay zekâ ile film üretiminin prompt yazmakla ilgili olmayan kısımları.","inLanguage":"tr","url":"https://eraybalat.com/yazilar/","author":{"@id":"https://eraybalat.com/#eray"},"publisher":{"@id":"https://eraybalat.com/#eray"},"isPartOf":{"@id":"https://eraybalat.com/#website"},"blogPost":[{"@type":"BlogPosting","@id":"https://eraybalat.com/yazilar/yapay-zeka-karakter-tutarliligi/#post","headline":"Karakter tutarlılığı: kahraman kareden önce karakter sayfası","url":"https://eraybalat.com/yazilar/yapay-zeka-karakter-tutarliligi/","datePublished":"2026-09-03","author":{"@id":"https://eraybalat.com/#eray"}},{"@type":"BlogPosting","@id":"https://eraybalat.com/yazilar/image-to-video-baslangic-karesi/#post","headline":"Image-to-video aracınız görselinizi görmüyor olabilir","url":"https://eraybalat.com/yazilar/image-to-video-baslangic-karesi/","datePublished":"2026-09-03","author":{"@id":"https://eraybalat.com/#eray"}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana sayfa","item":"https://eraybalat.com/"},{"@type":"ListItem","position":2,"name":"Yazılar","item":"https://eraybalat.com/yazilar/"}]}]}
+</script>
+<style>
+:root{--bg:#061a2e;--bg-soft:#0c2a44;--text:#e9f3ff;--muted:#9fc0dd;--c1:#5ec2ff;--c2:#1a86d8;--c3:#a8dcff;
+--card:rgba(94,194,255,.09);--card-brd:rgba(94,194,255,.30);--maxw:760px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(46% 40% at 84% 4%,rgba(26,134,216,.16),transparent 62%),radial-gradient(42% 46% at 4% 30%,rgba(94,194,255,.10),transparent 60%)}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-.015em;overflow-wrap:break-word}
+p,li,a,figcaption{overflow-wrap:break-word}
+a{color:var(--c1);text-decoration:none;border-bottom:1px solid rgba(94,194,255,.32);transition:color .2s,border-color .2s}
+a:hover{color:#bfe4ff;border-color:rgba(94,194,255,.75)}
+img{max-width:100%;display:block;height:auto}
+:focus-visible{outline:2px solid var(--c1);outline-offset:3px;border-radius:4px}
+.topbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 22px;background:rgba(6,26,46,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(94,194,255,.16)}
+.topbar a{color:var(--muted);text-decoration:none;border:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.02em}
+.topbar a:hover{color:#fff}
+.tb-langs{display:flex;gap:6px}
+.tb-langs a{padding:5px 11px;border-radius:999px;border:1px solid transparent;font-size:.74rem;letter-spacing:.08em}
+.tb-langs a.on{color:#fff;border-color:var(--card-brd);background:var(--card)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:60px 22px 90px}
+.eyebrow{display:inline-flex;align-items:center;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--c1);margin:0 0 16px}
+.eyebrow::before{content:"";display:inline-block;width:15px;height:15px;margin-right:9px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22eb%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2260%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2248%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M50.00%203.00%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97.00%2050.00%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50.00%2097.00%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3.00%2050.00%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23eb%29%22%20stroke%3D%22%2306142e%22%20stroke-width%3D%221.2%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") center/contain no-repeat}
+h1{font-weight:700;font-size:clamp(1.75rem,4.6vw,2.5rem);line-height:1.16;margin:0 0 18px;
+background:linear-gradient(120deg,#e9f3ff,#5ec2ff 60%,#a8dcff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lede{font-size:1.08rem;color:var(--muted);max-width:62ch;margin:0 0 22px}
+.meta{font-family:'Space Grotesk',sans-serif;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:#7ba4c8}
+hr{border:0;border-top:1px solid rgba(94,194,255,.16);margin:38px 0}
+article h2{font-size:clamp(1.18rem,2.8vw,1.42rem);font-weight:600;color:#eef6ff;margin:44px 0 14px;line-height:1.35}
+article p{margin:0 0 20px;font-size:1.035rem}
+article ul{margin:0 0 22px;padding-left:20px}
+article li{margin:0 0 9px}
+article strong{color:#fff;font-weight:600}
+article em{color:#cfe6fb}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:rgba(94,194,255,.12);border:1px solid rgba(94,194,255,.2);border-radius:5px;padding:1px 6px}
+figure{margin:30px 0 26px}
+figure img{border-radius:12px;border:1px solid var(--card-brd)}
+figcaption{margin-top:11px;font-size:.87rem;color:var(--muted);line-height:1.6}
+.callout{border-left:3px solid var(--c2);background:var(--card);border-radius:0 12px 12px 0;padding:18px 20px;margin:0 0 24px}
+.callout p:last-child{margin-bottom:0}
+.cards{display:grid;gap:18px;margin:0 0 12px}
+.pcard{display:block;border:1px solid var(--card-brd);background:var(--card);border-radius:16px;padding:22px 24px;transition:border-color .2s,transform .2s}
+.pcard:hover{border-color:rgba(94,194,255,.6);transform:translateY(-2px)}
+.pcard h2{font-size:1.14rem;margin:0 0 8px;color:#eef6ff;line-height:1.4}
+.pcard p{margin:0;color:var(--muted);font-size:.97rem;line-height:1.65}
+.pcard .meta{display:block;margin:0 0 10px}
+.tail{margin-top:52px;padding-top:26px;border-top:1px solid rgba(94,194,255,.16);color:var(--muted);font-size:.96rem}
+.tail p{margin:0 0 12px}
+@media(max-width:620px){.wrap{padding:44px 18px 72px}}
+</style>
+</head>
+<body>
+<nav class="topbar" aria-label="Site">
+  <a href="/">← eraybalat.com</a>
+  <div class="tb-langs"><a href="https://eraybalat.com/blog/">EN</a><a href="https://eraybalat.com/yazilar/" class="on" aria-current="page">TR</a></div>
+</nav>
+<main class="wrap">
+  <p class="eyebrow">Yazılar</p>
+  <h1>Prompt yazmakla ilgili olmayan kısımlar</h1>
+  <p class="lede">Yapay zekâ ile film üretirken asıl zaman kaybettiren şeyler prompt'ta değil, ondan önceki ve sonraki kararlarda. Bir yüzü, bir kostümü ve bir ışığı bütün bir sekans boyunca tutmak; başlangıç karesi ile stil referansı arasındaki fark; modelden istemeyi bırakıp riskli anı kurguya almanın ne zaman doğru olduğu.</p>
+  <p class="lede">Bu yazılar üretim sırasında tuttuğum notlardan çıkıyor. Hepsi gerçek işlerden, gerçek sayılarla.</p>
+  <hr />
+  <div class="cards">
+<a class="pcard" href="/yazilar/yapay-zeka-karakter-tutarliligi/"><span class="meta">3 Eylül 2026 · 6 dakika</span><h2>Karakter tutarlılığı: kahraman kareden önce karakter sayfası</h2><p>Bir yapay zekâ kadrosunun sahneler arasında dağılıp dağılmayacağı, ilk etkileyici kare üretilmeden önce belli olur.</p></a>
+<a class="pcard" href="/yazilar/image-to-video-baslangic-karesi/"><span class="meta">3 Eylül 2026 · 7 dakika</span><h2>Image-to-video aracınız görselinizi görmüyor olabilir</h2><p>Aynı isimle satılan iki farklı ürün var, ve biri yaptığınız tüm karakter çalışmasını sessizce çöpe atıyor.</p></a>
+  </div>
+  <div class="tail">
+    <p>İngilizce yazılar <a href="/blog/">Writing</a> sayfasında.</p>
+    <p><a href="/">Ana sayfa</a> · <a href="/yapay-zeka-reklam-filmi/">Yapay zekâ ile reklam filmi</a> · <a href="/flawless/">FLAWLESS</a> · <a href="/sss/">SSS</a> · <a href="mailto:eray@eraybalat.com">eray@eraybalat.com</a></p>
+  </div>
+</main>
+</body>
+</html>

@@ -692,6 +692,7 @@
       <a href="/leather/"  data-en="Leather Goods" data-tr="Deri Ürünler" data-de="Lederwaren">Leather Goods</a>
       <a href="#brands"    data-en="What I Do"   data-tr="Neler Yapıyorum" data-de="Was ich mache">What I Do</a>
       <a href="/hire/" data-hire data-en="Hire Me" data-tr="Benimle Çalış" data-de="Beauftragen">Hire Me</a>
+      <a href="/blog/" data-blog data-en="Writing" data-tr="Yazılar" data-de="Artikel">Writing</a>
       <a href="#contact"   data-en="Contact"     data-tr="İletişim" data-de="Kontakt">Contact</a>
     </nav>
     <div class="nav-right">
@@ -1206,7 +1207,7 @@
   function setLang(lang){
     document.documentElement.lang=lang;
     i18nEls.forEach(el=>{ if(el.dataset[lang]!==undefined) el.innerHTML=el.dataset[lang]; });
-    document.querySelectorAll('a[data-faq]').forEach(a=>{a.href={en:'/faq/',tr:'/sss/',de:'/faq-de/'}[lang]||'/faq/';});document.querySelectorAll('a[data-hire]').forEach(a=>{a.href={en:'/hire/',tr:'/yapay-zeka-reklam-filmi/',de:'/ki-filmproduktion/'}[lang]||'/hire/';});document.querySelectorAll('.lang-btn').forEach(b=>{const on=b.dataset.lang===lang;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on?'true':'false');});
+    document.querySelectorAll('a[data-faq]').forEach(a=>{a.href={en:'/faq/',tr:'/sss/',de:'/faq-de/'}[lang]||'/faq/';});document.querySelectorAll('a[data-hire]').forEach(a=>{a.href={en:'/hire/',tr:'/yapay-zeka-reklam-filmi/',de:'/ki-filmproduktion/'}[lang]||'/hire/';});document.querySelectorAll('a[data-blog]').forEach(a=>{a.href={en:'/blog/',tr:'/yazilar/',de:'/blog/'}[lang]||'/blog/';});document.querySelectorAll('.lang-btn').forEach(b=>{const on=b.dataset.lang===lang;b.classList.toggle('active',on);b.setAttribute('aria-pressed',on?'true':'false');});
     const m=LANG_META[lang]||LANG_META.en;
     document.title=m.t;
     setMeta('meta[name="description"]',m.d);

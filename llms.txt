@@ -62,6 +62,13 @@
 - [Character sheet first](https://medium.com/@eraybalat/character-sheet-first-986e97ac3295): Sentetik oyuncu kadrosunun tutarlılığı ilk kahraman kareden önce belirlenir — karakter sayfası yöntemi, kilitli referans kare ve kıyafet varyantları.
 - [Your image-to-video tool might be ignoring your image](https://medium.com/@eraybalat/your-image-to-video-tool-might-be-ignoring-your-image-955f9b9cfb1c): Aynı isimle satılan iki farklı ürün — gerçek başlangıç karesi ile stil referansı arasındaki fark, ve tek üretimlik test.
 
+## Blog
+
+- [Yazılar (Türkçe)](https://eraybalat.com/yazilar/): Yapay zekâ ile film üretiminin prompt yazmakla ilgili olmayan kısımları.
+  - [Karakter tutarlılığı: kahraman kareden önce karakter sayfası](https://eraybalat.com/yazilar/yapay-zeka-karakter-tutarliligi/): Kadronun sahneler arasında neden dağıldığı ve karakter sayfası yöntemiyle nasıl sabitlendiği.
+  - [Image-to-video aracınız görselinizi görmüyor olabilir](https://eraybalat.com/yazilar/image-to-video-baslangic-karesi/): Gerçek başlangıç karesi ile stil referansı arasındaki fark ve tek üretimlik test.
+- [Writing (English)](https://eraybalat.com/blog/): Index of articles on AI filmmaking craft.
+
 ## Sık sorulanlar / FAQ
 
 - [Sık Sorulan Sorular (Türkçe)](https://eraybalat.com/sss/)
