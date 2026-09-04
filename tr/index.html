@@ -65,7 +65,7 @@
     --radius:20px; --maxw:1180px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:auto;scroll-padding-top:96px}
+  html{scroll-behavior:smooth;scroll-padding-top:96px}
   body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
   h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
   a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
@@ -259,6 +259,15 @@
   .card:hover{box-shadow:0 26px 60px -28px rgba(46,155,240,.45),inset 0 1px 0 rgba(180,228,255,.16)}
   .feature{box-shadow:0 26px 70px -34px rgba(0,0,0,.8),inset 0 1px 0 rgba(180,228,255,.10)}
   section{position:relative}
+  section[id]{scroll-margin-top:96px}
+  @media(max-width:879.98px){section[id]{scroll-margin-top:74px}}
+  .fp-main{max-width:none}
+  .fp-side{margin-top:20px;max-width:210px}
+  .fp-side .fp-play{border-radius:9px}
+  .fp-side .fp-head{font-size:.6rem}
+  .fp-side .play{width:38px;height:38px}
+  .fp-side .play::after{border-left-width:11px;border-top-width:7px;border-bottom-width:7px}
+  @media(max-width:900px){.fp-side{max-width:none}}
   .vsplit{display:grid;grid-template-columns:0.95fr 1.15fr;gap:32px;align-items:center;margin-top:18px}
   .vsplit .filmpair{margin:0}
   @media(max-width:900px){.vsplit{grid-template-columns:1fr;gap:20px}}
@@ -450,7 +459,7 @@
   /* ===== Selçuklu (Seljuk) motif identity ===== */
   .eyebrow{display:inline-flex;align-items:center}
   .eyebrow::before{content:"";display:inline-block;width:15px;height:15px;margin-right:9px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22eb%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2260%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2248%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath%20d%3D%22M50.00%203.00%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97.00%2050.00%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50.00%2097.00%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3.00%2050.00%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23eb%29%22%20stroke%3D%22%2306142e%22%20stroke-width%3D%221.2%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E") center/contain no-repeat;opacity:.92;flex:0 0 auto}
-  .slj-divider{display:flex;align-items:center;justify-content:center;gap:16px;max-width:360px;margin:6px auto 30px}
+  .slj-divider{display:flex;align-items:center;justify-content:center;gap:16px;max-width:360px;margin:6px auto 30px}@keyframes sljsweep{0%,100%{opacity:.45}50%{opacity:1}}.slj-divider .slj-line{animation:sljsweep 3.2s ease-in-out infinite}.slj-divider .slj-line:last-child{animation-delay:-1.6s}
   .slj-divider .slj-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(92,200,255,.45),rgba(168,220,255,.65))}
   .slj-divider .slj-line:last-child{background:linear-gradient(90deg,rgba(168,220,255,.65),rgba(92,200,255,.45),transparent)}
   .slj-divider .slj-star{width:30px;height:30px;flex:0 0 auto;animation:sljpulse 3.2s ease-in-out infinite,brandspin 22s linear infinite;transform-origin:50% 50%;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%20width%3D%2230%22%20height%3D%2230%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22ds%22%20cx%3D%2247%%22%20cy%3D%2243%%22%20r%3D%2260%%22%3E%3Cstop%20offset%3D%220%%22%20stop-color%3D%22%232ba2d4%22%2F%3E%3Cstop%20offset%3D%2248%%22%20stop-color%3D%22%230e5b90%22%2F%3E%3Cstop%20offset%3D%22100%%22%20stop-color%3D%22%23072038%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M50%203%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97%2050%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50%2097%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3%2050%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23ds%29%22%20stroke%3D%22%23072038%22%20stroke-width%3D%221.2%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;filter:drop-shadow(0 0 7px rgba(168,220,255,.45))}
@@ -846,7 +855,7 @@
 </div>
 </div>
 </div>
-<div aria-hidden="true" class="slj-divider" style="margin:34px auto 30px"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
+<div aria-hidden="true" class="slj-divider" style="margin:22px auto 26px"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <!-- TOOLS MARQUEE -->
 <div aria-hidden="true" class="tools">
 <div class="tools-track">
@@ -993,10 +1002,10 @@
 <div class="who" data-de="Der Kunde, auf Upwork · USA · August 2026" data-en="The client, on Upwork · United States · August 2026" data-tr="Müşteri, Upwork üzerinden · ABD · Ağustos 2026">Müşteri, Upwork üzerinden · ABD · Ağustos 2026</div>
 </div>
 </div>
-<div class="reveal blk">
-<div class="vsplit">
-<div>
-<div class="role" data-de="Werbefilm · Regie: Eray Balat" data-en="Brand film · Directed by Eray Balat" data-tr="Reklam filmi · Yönetmen: Eray Balat">Reklam filmi · Yönetmen: Eray Balat</div>
+<div aria-hidden="true" class="slj-divider reveal" style="margin:36px auto 30px"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
+<div class="feature reveal" style="grid-template-columns:1.55fr 1fr;gap:34px">
+<div><a aria-label="Novora brand film — English version" class="fp-play fp-main" data-yt="GAGlpIw3Q2Y" href="https://youtu.be/GAGlpIw3Q2Y" rel="noopener" target="_blank"><img alt="Novora brand film — English version" decoding="async" height="720" loading="lazy" src="/novora-en-p.webp" width="1280"/><span class="play"></span></a><div class="fp-head" style="margin:10px 0 0"><span class="fl">🇬🇧</span> ENGLISH</div></div>
+<div><div class="role" data-de="Werbefilm · Regie: Eray Balat" data-en="Brand film · Directed by Eray Balat" data-tr="Reklam filmi · Yönetmen: Eray Balat">Reklam filmi · Yönetmen: Eray Balat</div>
 <h3>Novora — Sağlık Köklerinde</h3>
 <div class="labels"><span class="lb lb-med" data-de="KI-Animation" data-en="AI animation" data-tr="Yapay zekâ animasyon">Yapay zekâ animasyon</span><span class="lb lb-role" data-de="Regie · Schnitt · Ton · Musik" data-en="Direction · Edit · Sound · Score" data-tr="Yönetmenlik · Kurgu · Ses · Müzik">Yönetmenlik · Kurgu · Ses · Müzik</span></div>
 <p data-de="Ein Olivenhain, vom ersten Licht bis auf den Tisch. Durchgehend mit generativer KI gebaut." data-en="One olive grove, from first light to the table. Built end to end with generative AI." data-tr="Tek bir zeytinlik, ilk ışıktan sofraya. Baştan sona üretken yapay zekâ ile kuruldu.">Tek bir zeytinlik, ilk ışıktan sofraya. Baştan sona üretken yapay zekâ ile kuruldu.</p>
@@ -1005,14 +1014,12 @@
 <li data-de="Zwei Sprachen aus einer Produktion — kein zweiter Dreh" data-en="Two languages from one production — no second shoot" data-tr="Tek prodüksiyondan iki dil — ikinci çekim yok">Tek prodüksiyondan iki dil — ikinci çekim yok</li>
 <li data-de="Eigene Sprachaufnahme und Musik" data-en="Original voice-over and score" data-tr="Özgün seslendirme ve müzik">Özgün seslendirme ve müzik</li>
 </ul></div>
-<div class="filmpair">
-<figure><div class="fp-head"><span class="fl">🇬🇧</span> ENGLISH</div><a aria-label="Novora brand film — English version" class="fp-play" data-yt="GAGlpIw3Q2Y" href="https://youtu.be/GAGlpIw3Q2Y" rel="noopener" target="_blank"><img alt="Novora brand film — English version" decoding="async" height="720" loading="lazy" src="/novora-en-p.webp" width="1280"/><span class="play"></span></a></figure>
-<figure><div class="fp-head"><span class="fl">🇹🇷</span> TÜRKÇE</div><a aria-label="Novora brand film — Turkish version" class="fp-play" data-yt="S9hG_Ga7wIg" href="https://youtu.be/S9hG_Ga7wIg" rel="noopener" target="_blank"><img alt="Novora brand film — Turkish version" decoding="async" height="720" loading="lazy" src="/novora-tr-p.webp" width="1280"/><span class="play"></span></a></figure>
-</div>
-</div>
-</div>
-<div class="reveal blk">
-<div class="role" data-de="Narrativer Kurzfilm · Schnitt und Finish: Eray Balat" data-en="Narrative short · Edited and finished by Eray Balat" data-tr="Anlatı kısa filmi · Kurgu ve finish: Eray Balat">Anlatı kısa filmi · Kurgu ve finish: Eray Balat</div>
+<div class="fp-side"><a aria-label="Novora brand film — Turkish version" class="fp-play" data-yt="S9hG_Ga7wIg" href="https://youtu.be/S9hG_Ga7wIg" rel="noopener" target="_blank"><img alt="Novora brand film — Turkish version" decoding="async" height="720" loading="lazy" src="/novora-tr-p.webp" width="1280"/><span class="play"></span></a><div class="fp-head" style="margin:8px 0 0"><span class="fl">🇹🇷</span> TÜRKÇE</div></div></div>
+
+<div aria-hidden="true" class="slj-divider reveal" style="margin:36px auto 30px"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
+<div class="feature reveal" style="grid-template-columns:1.55fr 1fr;gap:34px">
+<div><a aria-label="Play the film — 10 minutes" class="fp-play" data-yt="Lej8UCpChcQ" href="https://youtu.be/Lej8UCpChcQ" rel="noopener" style="max-width:none" target="_blank"><img alt="A frame from the film: a backgammon board on a lamplit table." decoding="async" height="720" loading="lazy" src="/td-p.webp" width="1280"/><span class="play"></span><span class="pill" style="max-width:none">10:00</span></a></div>
+<div><div class="role" data-de="Narrativer Kurzfilm · Schnitt und Finish: Eray Balat" data-en="Narrative short · Edited and finished by Eray Balat" data-tr="Anlatı kısa filmi · Kurgu ve finish: Eray Balat">Anlatı kısa filmi · Kurgu ve finish: Eray Balat</div>
 <h3 data-de="Ein 10-minütiger Kurzfilm" data-en="A 10-minute narrative short" data-tr="10 dakikalık anlatı kısa filmi">10 dakikalık anlatı kısa filmi</h3>
 <div class="labels"><span class="lb lb-med" data-de="KI-Material" data-en="AI footage" data-tr="Yapay zekâ görüntü">Yapay zekâ görüntü</span><span class="lb lb-role" data-de="Videoproduktion · Schnitt · Ton · Musik" data-en="Video production · Edit · Sound · Score" data-tr="Video prodüksiyon · Kurgu · Ses · Müzik">Video prodüksiyon · Kurgu · Ses · Müzik</span></div>
 <p data-de="Ein privater Auftrag. 106 freigegebene Bilder in Bewegung überführt und auf eine vorhandene Sprachaufnahme geschnitten — sieben Kapitel, ein fertiger Film." data-en="A private commission. 106 approved stills turned into motion and cut to an existing voice-over — seven chapters, one finished film." data-tr="Özel bir sipariş. Onaylanmış 106 kare harekete çevrildi ve hazır bir seslendirmeye göre kurgulandı — yedi bölüm, bitmiş bir film.">Özel bir sipariş. Onaylanmış 106 kare harekete çevrildi ve hazır bir seslendirmeye göre kurgulandı — yedi bölüm, bitmiş bir film.</p>
@@ -1021,13 +1028,13 @@
 <li data-de="110 Clips für 88 Dollar erzeugt" data-en="110 clips generated for $88" data-tr="110 klip, 88 dolara üretildi">110 klip, 88 dolara üretildi</li>
 <li data-de="Mit schnittfertigem Premiere-Projekt geliefert" data-en="Delivered with an edit-ready Premiere project" data-tr="Kurguya hazır Premiere projesiyle teslim">Kurguya hazır Premiere projesiyle teslim</li>
 </ul>
-<a aria-label="Play the film — 10 minutes" class="fp-play" data-yt="Lej8UCpChcQ" href="https://youtu.be/Lej8UCpChcQ" rel="noopener" style="margin-top:20px;max-width:660px" target="_blank"><img alt="A frame from the film: a backgammon board on a lamplit table." decoding="async" height="720" loading="lazy" src="/td-p.webp" width="1280"/><span class="play"></span><span class="pill" style="z-index:3">10:00</span></a>
+</div>
 </div>
 <div class="grid g-3">
-<a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" rel="noopener" target="_blank"><div class="thumb cover-a"><video data-poster="/film-boomerang-p.webp" loop="" muted="" playsinline="" preload="none" src="/film-boomerang.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><img alt="Honorable Mention — Student Video Contest 2026" decoding="async" loading="lazy" src="/laurel-white-sm.webp" style="position:absolute;top:9px;right:9px;left:auto;bottom:auto;width:60px;height:60px;z-index:3;opacity:.92;filter:drop-shadow(0 0 5px rgba(0,0,0,.6))"/><span class="pill">🏆 Honorable Mention</span></div><div class="card-body"><h3>Boomerang</h3><div class="labels"><span class="lb lb-med" data-de="Realfilm" data-en="Live-action" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Schnitt" data-en="Editor" data-tr="Kurgu">Kurgu</span></div><p data-de="Lobende Erwähnung · Student Video Contest 2026 · Ausgewählt bei Duemila30" data-en="Honorable Mention · Student Video Contest 2026 · Selected at Duemila30" data-tr="Mansiyon · Student Video Contest 2026 · Duemila30 Seçkisi">Mansiyon · Student Video Contest 2026 · Duemila30 Seçkisi</p></div></a>
-<a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" rel="noopener" target="_blank"><div class="thumb cover-f"><video data-poster="/film-diepost-p.webp?v=2" loop="" muted="" playsinline="" preload="none" src="/film-diepost.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">🍫 Cave scene</span></div><div class="card-body"><h3>Die Post</h3><div class="labels"><span class="lb lb-med" data-de="Realfilm" data-en="Live-action" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Buch · Regie · Produktion" data-en="Writer · Director · Producer" data-tr="Senaryo · Yönetmen · Yapımcı">Senaryo · Yönetmen · Yapımcı</span></div><p data-de="Kurzfilm · Erciyes University, 2024" data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024">Kısa Film · Erciyes Üni., 2024</p></div></a>
-<a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" rel="noopener" target="_blank"><div class="thumb cover-c"><video data-poster="/film-runorrun-p.webp" loop="" muted="" playsinline="" preload="none" src="/film-runorrun.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Awakening</span></div><div class="card-body"><h3>Run or Run</h3><div class="labels"><span class="lb lb-med" data-de="Realfilm" data-en="Live-action" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Buch · Regie · Darsteller" data-en="Writer · Director · Actor" data-tr="Senaryo · Yönetmen · Oyuncu">Senaryo · Yönetmen · Oyuncu</span></div><p data-de="Kurzfilm · 2:34" data-en="Short Film · 2:34" data-tr="Kısa Film · 2:34">Kısa Film · 2:34</p></div></a>
-<a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" rel="noopener" target="_blank"><div class="thumb cover-b"><img alt="Switzerland in One Hour — live-action short shot in a single hour" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/rYHPU-_RqOc/hqdefault.jpg"/><span class="play"></span><span class="pill" data-de="🎥 Realdreh" data-en="🎥 Live-action" data-tr="🎥 Gerçek çekim">🎥 Gerçek çekim</span></div><div class="card-body"><h3>Switzerland in One Hour 🇨🇭</h3><div class="labels"><span class="lb lb-med" data-de="Realfilm" data-en="Live-action" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Regie" data-en="Director" data-tr="Yönetmen">Yönetmen</span></div><p data-de="Realdreh · 0:45 · eine Ein-Stunden-Challenge, an meinem ersten Drehtag gefilmt — kein AI" data-en="0:45 · a one-hour challenge, shot on my first day behind the camera — no AI" data-tr="0:45 · bir saatlik meydan okuma, ilk çekim günümde çekildi — AI yok">0:45 · bir saatlik meydan okuma, ilk çekim günümde çekildi — AI yok</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" rel="noopener" target="_blank"><div class="thumb cover-a"><video data-poster="/film-boomerang-p.webp" loop="" muted="" playsinline="" preload="none" src="/film-boomerang.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><img alt="Honorable Mention — Student Video Contest 2026" decoding="async" loading="lazy" src="/laurel-white-sm.webp" style="position:absolute;top:9px;right:9px;left:auto;bottom:auto;width:60px;height:60px;z-index:3;opacity:.92;filter:drop-shadow(0 0 5px rgba(0,0,0,.6))"/><span class="pill">🏆 Honorable Mention</span></div><div class="card-body"><h3>Boomerang</h3><div class="labels"><span class="lb lb-med" data-de="Echtes Material" data-en="Real footage" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Schnitt" data-en="Editor" data-tr="Kurgu">Kurgu</span></div><p data-de="Lobende Erwähnung · Student Video Contest 2026 · Ausgewählt bei Duemila30" data-en="Honorable Mention · Student Video Contest 2026 · Selected at Duemila30" data-tr="Mansiyon · Student Video Contest 2026 · Duemila30 Seçkisi">Mansiyon · Student Video Contest 2026 · Duemila30 Seçkisi</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" rel="noopener" target="_blank"><div class="thumb cover-f"><video data-poster="/film-diepost-p.webp?v=2" loop="" muted="" playsinline="" preload="none" src="/film-diepost.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">🍫 Cave scene</span></div><div class="card-body"><h3>Die Post</h3><div class="labels"><span class="lb lb-med" data-de="Echtes Material" data-en="Real footage" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Buch · Regie · Produktion" data-en="Writer · Director · Producer" data-tr="Senaryo · Yönetmen · Yapımcı">Senaryo · Yönetmen · Yapımcı</span></div><p data-de="Kurzfilm · Erciyes University, 2024" data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024">Kısa Film · Erciyes Üni., 2024</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" rel="noopener" target="_blank"><div class="thumb cover-c"><video data-poster="/film-runorrun-p.webp" loop="" muted="" playsinline="" preload="none" src="/film-runorrun.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Awakening</span></div><div class="card-body"><h3>Run or Run</h3><div class="labels"><span class="lb lb-med" data-de="Echtes Material" data-en="Real footage" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Buch · Regie · Darsteller" data-en="Writer · Director · Actor" data-tr="Senaryo · Yönetmen · Oyuncu">Senaryo · Yönetmen · Oyuncu</span></div><p data-de="Kurzfilm · 2:34" data-en="Short Film · 2:34" data-tr="Kısa Film · 2:34">Kısa Film · 2:34</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" rel="noopener" target="_blank"><div class="thumb cover-b"><img alt="Switzerland in One Hour — live-action short shot in a single hour" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/rYHPU-_RqOc/hqdefault.jpg"/><span class="play"></span><span class="pill" data-de="🎥 Realdreh" data-en="🎥 Live-action" data-tr="🎥 Gerçek çekim">🎥 Gerçek çekim</span></div><div class="card-body"><h3>Switzerland in One Hour 🇨🇭</h3><div class="labels"><span class="lb lb-med" data-de="Echtes Material" data-en="Real footage" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Regie" data-en="Director" data-tr="Yönetmen">Yönetmen</span></div><p data-de="Realdreh · 0:45 · eine Ein-Stunden-Challenge, an meinem ersten Drehtag gefilmt — kein AI" data-en="0:45 · a one-hour challenge, shot on my first day behind the camera — no AI" data-tr="0:45 · bir saatlik meydan okuma, ilk çekim günümde çekildi — AI yok">0:45 · bir saatlik meydan okuma, ilk çekim günümde çekildi — AI yok</p></div></a>
 </div>
 </section>
 <section id="music">
@@ -1376,42 +1383,37 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   const navA=[...document.querySelectorAll('.nav-links a')];
   const navIds=new Set(navA.map(a=>a.getAttribute('href')).filter(h=>h&&h.startsWith('#')).map(h=>h.slice(1)));
-  const navTargets=navA.map(a=>({a:a,id:(a.getAttribute('href')||'').startsWith('#')?a.getAttribute('href').slice(1):null}))
-  .filter(t=>t.id&&document.getElementById(t.id));
-function scrollerOf(el){let p=el.parentElement;
-  while(p&&p!==document.body){const st=getComputedStyle(p);
-    if(/(auto|scroll)/.test(st.overflowY)&&p.scrollHeight>p.clientHeight+40)return p;p=p.parentElement;}
-  return document.scrollingElement||document.documentElement;}
-const SC=navTargets.length?scrollerOf(document.getElementById(navTargets[0].id)):document.scrollingElement;
-const OFFSET=96;
+  const navTargets=navA
+  .map(function(a){var h=a.getAttribute('href')||'';return {a:a,id:h.charAt(0)==='#'?h.slice(1):null};})
+  .filter(function(t){return t.id && document.getElementById(t.id);});
+// aktif bolum: viewport'a gore hesaplanir -> hangi elemanin kaydigi onemli degil
 function markActive(){
-  const line=(SC.scrollTop||0)+OFFSET+40;
-  let cur=null;
-  for(const t of navTargets){
-    const el=document.getElementById(t.id);
-    const top=el.getBoundingClientRect().top-SC.getBoundingClientRect().top+(SC.scrollTop||0);
-    if(top<=line)cur=t; else break;
+  var line=140, cur=null;
+  for(var i=0;i<navTargets.length;i++){
+    var el=document.getElementById(navTargets[i].id);
+    if(el.getBoundingClientRect().top<=line) cur=navTargets[i]; else break;
   }
-  navA.forEach(a=>a.classList.remove('active'));
-  if(cur)cur.a.classList.add('active');
+  navA.forEach(function(a){a.classList.remove('active');});
+  if(cur) cur.a.classList.add('active');
 }
-let tick=false;
-(SC===document.scrollingElement?window:SC).addEventListener('scroll',function(){
-  if(tick)return; tick=true; requestAnimationFrame(function(){markActive();tick=false;});
-},{passive:true});
+var tick=false;
+function onScroll(){ if(tick)return; tick=true;
+  requestAnimationFrame(function(){markActive();tick=false;}); }
+window.addEventListener('scroll',onScroll,{passive:true,capture:true});
+document.addEventListener('scroll',onScroll,{passive:true,capture:true});
 markActive();
 navTargets.forEach(function(t){
   t.a.addEventListener('click',function(e){
     var el=document.getElementById(t.id); if(!el)return;
     e.preventDefault();
-    // hedefin ustundeki gizli bloklari acarak hedefi sabitle
+    // hedefin ustundeki gizli bloklari ac ki hedef kaymasin
     document.querySelectorAll('.reveal').forEach(function(r){
       if(r.getBoundingClientRect().top < el.getBoundingClientRect().top) r.classList.add('show');
     });
-    var top=el.getBoundingClientRect().top-SC.getBoundingClientRect().top+(SC.scrollTop||0)-OFFSET;
-    SC.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    // tarayici dogru kaydiriciyi kendi bulur (scroll-margin-top CSS'te)
+    el.scrollIntoView({behavior:'smooth',block:'start'});
     history.replaceState(null,'','#'+t.id);
-    setTimeout(markActive,650);
+    setTimeout(markActive,700);
   });
 });
 
