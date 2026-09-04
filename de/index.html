@@ -199,7 +199,7 @@
   .g-feat{grid-template-columns:repeat(4,1fr)}
   @media(max-width:760px){.g-natcol{flex-direction:column}}
   .g-gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-  .g-gal .mcard{aspect-ratio:1/1;border-radius:14px;overflow:hidden;border:1px solid var(--card-brd);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:inset 0 1px 0 rgba(180,228,255,.08)}
+  .g-gal .mcard{aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--card-brd);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:inset 0 1px 0 rgba(180,228,255,.08)}
   .g-gal .mcard:hover{transform:translateY(-4px);border-color:rgba(120,210,255,.55);box-shadow:0 16px 40px -18px rgba(46,155,240,.55),inset 0 1px 0 rgba(180,228,255,.14);z-index:2}
   .g-gal .mcard img,.g-gal .mcard video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
   .g-gal .mcard:hover img{transform:scale(1.06)}
@@ -243,13 +243,18 @@
   #films > .feature + .cspair{margin-top:30px}
   @media(max-width:760px){#films > .blk,#films > .cspair,#films > .grid.g-3{margin-top:26px}}
 
-  @media(min-width:880px){
-    header.nav .brand svg,header.nav .brand img,header.nav .brand .logo,header.nav .brand [class*=star]{
-      animation:kstarSpin 26s linear infinite;transform-origin:50% 50%}
-    @keyframes kstarSpin{to{transform:rotate(360deg)}}
-    @media(prefers-reduced-motion:reduce){header.nav .brand svg,header.nav .brand img,
-      header.nav .brand .logo,header.nav .brand [class*=star]{animation:none}}
+  
   }
+  /* --- Novora: metin solda, filmler sagda ve kucuk --- */
+  .filmpair figure:nth-child(2){padding:12px 14px 14px}
+  .filmpair figure:nth-child(2) .fp-play{width:74%;margin-left:0}
+  .filmpair figure:nth-child(2) .fp-head{opacity:.9}
+  @media(max-width:900px){.filmpair figure:nth-child(2) .fp-play{width:100%}}
+  #films .csheet img{max-width:660px}
+  #films .csheet figcaption{max-width:660px}
+  .vsplit{display:grid;grid-template-columns:1fr 0.92fr;gap:30px;align-items:start;margin-top:18px}
+  .vsplit .filmpair{margin:0}
+  @media(max-width:900px){.vsplit{grid-template-columns:1fr;gap:20px}}
   .filmpair{display:grid;grid-template-columns:1fr;gap:0;margin:20px 0 0;border:1px solid rgba(120,210,255,.28);border-radius:18px;overflow:hidden;background:linear-gradient(165deg,rgba(18,40,74,.5),rgba(10,20,40,.5));box-shadow:0 20px 54px -30px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.1)}
   .filmpair figure{margin:0;padding:14px}
   .filmpair figure+figure{border-top:1px solid rgba(120,210,255,.18)}
@@ -440,7 +445,7 @@
   .slj-divider{display:flex;align-items:center;justify-content:center;gap:16px;max-width:360px;margin:6px auto 30px}
   .slj-divider .slj-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(92,200,255,.45),rgba(168,220,255,.65))}
   .slj-divider .slj-line:last-child{background:linear-gradient(90deg,rgba(168,220,255,.65),rgba(92,200,255,.45),transparent)}
-  .slj-divider .slj-star{width:30px;height:30px;flex:0 0 auto;animation:sljpulse 3.2s ease-in-out infinite;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%235cc8ff%22%20stroke-width%3D%229.5%22%20stroke-linecap%3D%22butt%22%20stroke-linejoin%3D%22miter%22%3E%3Cpath%20d%3D%22M93.94%2093.94L53.89%2093.94%22%2F%3E%3Cpath%20d%3D%22M37.99%2093.94L26.06%2093.94%22%2F%3E%3Cpath%20d%3D%22M26.06%2093.94L26.06%2053.89%22%2F%3E%3Cpath%20d%3D%22M26.06%2037.99L26.06%2026.06%22%2F%3E%3Cpath%20d%3D%22M26.06%2026.06L66.11%2026.06%22%2F%3E%3Cpath%20d%3D%22M82.01%2026.06L93.94%2026.06%22%2F%3E%3Cpath%20d%3D%22M93.94%2026.06L93.94%2037.99%22%2F%3E%3Cpath%20d%3D%22M93.94%2053.89L93.94%2093.94%22%2F%3E%3Cpath%20d%3D%22M108%2060L99.56%2068.44%22%2F%3E%3Cpath%20d%3D%22M88.32%2079.68L79.68%2088.32%22%2F%3E%3Cpath%20d%3D%22M68.44%2099.56L60%20108%22%2F%3E%3Cpath%20d%3D%22M60%20108L31.68%2079.68%22%2F%3E%3Cpath%20d%3D%22M20.44%2068.44L12%2060%22%2F%3E%3Cpath%20d%3D%22M12%2060L40.32%2031.68%22%2F%3E%3Cpath%20d%3D%22M51.56%2020.44L60%2012%22%2F%3E%3Cpath%20d%3D%22M60%2012L108%2060%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center/contain no-repeat;filter:drop-shadow(0 0 7px rgba(168,220,255,.45))}
+  .slj-divider .slj-star{width:30px;height:30px;flex:0 0 auto;animation:sljpulse 3.2s ease-in-out infinite,brandspin 22s linear infinite;transform-origin:50% 50%;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%20width%3D%2230%22%20height%3D%2230%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22ds%22%20cx%3D%2247%%22%20cy%3D%2243%%22%20r%3D%2260%%22%3E%3Cstop%20offset%3D%220%%22%20stop-color%3D%22%232ba2d4%22%2F%3E%3Cstop%20offset%3D%2248%%22%20stop-color%3D%22%230e5b90%22%2F%3E%3Cstop%20offset%3D%22100%%22%20stop-color%3D%22%23072038%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M50%203%20L63.77%2016.77%20L83.23%2016.77%20L83.23%2036.23%20L97%2050%20L83.23%2063.77%20L83.23%2083.23%20L63.77%2083.23%20L50%2097%20L36.23%2083.23%20L16.77%2083.23%20L16.77%2063.77%20L3%2050%20L16.77%2036.23%20L16.77%2016.77%20L36.23%2016.77%20Z%22%20fill%3D%22url%28%23ds%29%22%20stroke%3D%22%23072038%22%20stroke-width%3D%221.2%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") center/contain no-repeat;filter:drop-shadow(0 0 7px rgba(168,220,255,.45))}
   footer{position:relative}
   footer::before{content:"";position:absolute;top:0;left:0;right:0;height:22px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2226%22%20height%3D%2226%22%20viewBox%3D%220%200%2026%2026%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22b%22%20cx%3D%2247%25%22%20cy%3D%2243%25%22%20r%3D%2262%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232ba2d4%22/%3E%3Cstop%20offset%3D%2250%25%22%20stop-color%3D%22%230e5b90%22/%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2306142e%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cline%20x1%3D%220%22%20y1%3D%2213%22%20x2%3D%2226%22%20y2%3D%2213%22%20stroke%3D%22%233a9fe0%22%20stroke-width%3D%220.8%22%20opacity%3D%220.5%22/%3E%3Cpath%20d%3D%22M13.0%204.0%20L15.6%206.6%20L19.4%206.6%20L19.4%2010.4%20L22.0%2013.0%20L19.4%2015.6%20L19.4%2019.4%20L15.6%2019.4%20L13.0%2022.0%20L10.4%2019.4%20L6.6%2019.4%20L6.6%2015.6%20L4.0%2013.0%20L6.6%2010.4%20L6.6%206.6%20L10.4%206.6%20Z%22%20fill%3D%22url%28%23b%29%22%20stroke%3D%22%232e9bf0%22%20stroke-width%3D%220.7%22/%3E%3C/svg%3E") repeat-x center;background-size:auto 20px;opacity:.4;-webkit-mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);pointer-events:none}
   @media(max-width:600px){
@@ -981,6 +986,8 @@
 </div>
 </div>
 <div class="reveal blk">
+<div class="vsplit">
+<div>
 <div class="role" data-de="Werbefilm · Regie: Eray Balat" data-en="Brand film · Directed by Eray Balat" data-tr="Reklam filmi · Yönetmen: Eray Balat">Werbefilm · Regie: Eray Balat</div>
 <h3>Novora — Sağlık Köklerinde</h3>
 <div class="labels"><span class="lb lb-med" data-de="KI-Animation" data-en="AI animation" data-tr="Yapay zekâ animasyon">KI-Animation</span><span class="lb lb-role" data-de="Regie · Schnitt · Ton · Musik" data-en="Direction · Edit · Sound · Score" data-tr="Yönetmenlik · Kurgu · Ses · Müzik">Regie · Schnitt · Ton · Musik</span></div>
@@ -989,10 +996,11 @@
 <li data-de="27 Sekunden · sechs Szenen · 4K und 1080p" data-en="27 seconds · six scenes · 4K and 1080p" data-tr="27 saniye · altı sahne · 4K ve 1080p">27 Sekunden · sechs Szenen · 4K und 1080p</li>
 <li data-de="Zwei Sprachen aus einer Produktion — kein zweiter Dreh" data-en="Two languages from one production — no second shoot" data-tr="Tek prodüksiyondan iki dil — ikinci çekim yok">Zwei Sprachen aus einer Produktion — kein zweiter Dreh</li>
 <li data-de="Eigene Sprachaufnahme und Musik" data-en="Original voice-over and score" data-tr="Özgün seslendirme ve müzik">Eigene Sprachaufnahme und Musik</li>
-</ul>
+</ul></div>
 <div class="filmpair">
 <figure><div class="fp-head"><span class="fl">🇬🇧</span> ENGLISH</div><a aria-label="Novora brand film — English version" class="fp-play" data-yt="GAGlpIw3Q2Y" href="https://youtu.be/GAGlpIw3Q2Y" rel="noopener" target="_blank"><img alt="Novora brand film — English version" decoding="async" height="720" loading="lazy" src="/novora-en-p.webp" width="1280"/><span class="play"></span></a></figure>
 <figure><div class="fp-head"><span class="fl">🇹🇷</span> TÜRKÇE</div><a aria-label="Novora brand film — Turkish version" class="fp-play" data-yt="S9hG_Ga7wIg" href="https://youtu.be/S9hG_Ga7wIg" rel="noopener" target="_blank"><img alt="Novora brand film — Turkish version" decoding="async" height="720" loading="lazy" src="/novora-tr-p.webp" width="1280"/><span class="play"></span></a></figure>
+</div>
 </div>
 </div>
 <div class="reveal blk">
@@ -1005,6 +1013,7 @@
 <li data-de="110 Clips für 88 Dollar erzeugt" data-en="110 clips generated for $88" data-tr="110 klip, 88 dolara üretildi">110 Clips für 88 Dollar erzeugt</li>
 <li data-de="Mit schnittfertigem Premiere-Projekt geliefert" data-en="Delivered with an edit-ready Premiere project" data-tr="Kurguya hazır Premiere projesiyle teslim">Mit schnittfertigem Premiere-Projekt geliefert</li>
 </ul>
+<figure class="csheet" style="margin-top:20px"><img alt="A frame from the film: a backgammon board on a lamplit table." decoding="async" height="720" loading="lazy" src="/td-p.webp" width="1280"/><figcaption data-de="Sieben Kapitel, auf eine bereits vorhandene Sprachaufnahme geschnitten." data-en="Seven chapters, cut to a voice-over that already existed." data-tr="Yedi bölüm, hazır bir seslendirmeye göre kurgulandı.">Sieben Kapitel, auf eine bereits vorhandene Sprachaufnahme geschnitten.</figcaption></figure>
 </div>
 <div class="grid g-3">
 <a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" rel="noopener" target="_blank"><div class="thumb cover-a"><video data-poster="/film-boomerang-p.webp" loop="" muted="" playsinline="" preload="none" src="/film-boomerang.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><img alt="Honorable Mention — Student Video Contest 2026" decoding="async" loading="lazy" src="/laurel-white-sm.webp" style="position:absolute;top:9px;right:9px;left:auto;bottom:auto;width:60px;height:60px;z-index:3;opacity:.92;filter:drop-shadow(0 0 5px rgba(0,0,0,.6))"/><span class="pill">🏆 Honorable Mention</span></div><div class="card-body"><h3>Boomerang</h3><div class="labels"><span class="lb lb-med" data-de="Realfilm" data-en="Live-action" data-tr="Gerçek çekim">Realfilm</span><span class="lb lb-role" data-de="Schnitt" data-en="Editor" data-tr="Kurgu">Schnitt</span></div><p data-de="Lobende Erwähnung · Student Video Contest 2026 · Ausgewählt bei Duemila30" data-en="Honorable Mention · Student Video Contest 2026 · Selected at Duemila30" data-tr="Mansiyon · Student Video Contest 2026 · Duemila30 Seçkisi">Lobende Erwähnung · Student Video Contest 2026 · Ausgewählt bei Duemila30</p></div></a>
