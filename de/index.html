@@ -840,7 +840,7 @@
 </div>
 <header class="nav">
 <div class="nav-inner">
-<a aria-label="Eray Balat — Creative AI Producer, back to top" class="brand" href="#home" id="brandTop"><span aria-hidden="true" class="brand-mark"><svg height="32" viewbox="0 0 120 120" width="32" xmlns="http://www.w3.org/2000/svg"><defs><filter height="180%" id="kstarng" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="3.2"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter></defs><g fill="none" filter="url(#kstarng)" opacity=".95" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="8.5"><path d="M95.36 95.36L52.41 95.36"></path><path d="M38.31 95.36L24.64 95.36"></path><path d="M24.64 95.36L24.64 52.41"></path><path d="M24.64 38.31L24.64 24.64"></path><path d="M24.64 24.64L67.59 24.64"></path><path d="M81.69 24.64L95.36 24.64"></path><path d="M95.36 24.64L95.36 38.31"></path><path d="M95.36 52.41L95.36 95.36"></path><path d="M110 60L100.34 69.66"></path><path d="M90.37 79.63L79.63 90.37"></path><path d="M69.66 100.34L60 110"></path><path d="M60 110L29.63 79.63"></path><path d="M19.66 69.66L10 60"></path><path d="M10 60L40.37 29.63"></path><path d="M50.34 19.66L60 10"></path><path d="M60 10L110 60"></path></g></svg></span><span class="brand-wm"><b>ERAY BALAT</b><i>Creative AI Producer</i></span></a>
+<a aria-label="Eray Balat — Creative AI Producer, back to top" class="brand" href="#home" id="brandTop"><span aria-hidden="true" class="brand-mark"><svg height="32" viewbox="0 0 120 120" width="32" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="7"><path d="M95.36 95.36L52.41 95.36"></path><path d="M38.31 95.36L24.64 95.36"></path><path d="M24.64 95.36L24.64 52.41"></path><path d="M24.64 38.31L24.64 24.64"></path><path d="M24.64 24.64L67.59 24.64"></path><path d="M81.69 24.64L95.36 24.64"></path><path d="M95.36 24.64L95.36 38.31"></path><path d="M95.36 52.41L95.36 95.36"></path><path d="M110 60L100.34 69.66"></path><path d="M90.37 79.63L79.63 90.37"></path><path d="M69.66 100.34L60 110"></path><path d="M60 110L29.63 79.63"></path><path d="M19.66 69.66L10 60"></path><path d="M10 60L40.37 29.63"></path><path d="M50.34 19.66L60 10"></path><path d="M60 10L110 60"></path></g></svg></span><span class="brand-wm"><b>ERAY BALAT</b><i>Creative AI Producer</i></span></a>
 <nav class="nav-links" id="navlinks">
 <a data-de="Über mich" data-en="About Me" data-tr="Hakkımda" href="#about">Über mich</a>
 <a data-de="UGC-Ads" data-en="UGC Ads" data-tr="UGC Reklam" href="#ugc">UGC-Ads</a>
@@ -1063,9 +1063,11 @@
     box-shadow:0 14px 38px -18px rgba(0,0,0,.7),inset 0 1px 0 rgba(200,238,255,.26)}
   .avail:hover{background:linear-gradient(135deg,rgba(150,225,255,.26),rgba(22,58,104,.58));
     border-color:rgba(180,235,255,.6)}
-    /* marka isareti: dokumali Karatay yildizi */
-  .brand-mark{color:#7fd0ff}
-  header.nav .brand-mark{filter:drop-shadow(0 0 10px rgba(92,200,255,.5))}
+    /* marka isareti: dokumali Karatay yildizi — tek katman parilti */
+  .brand-mark{color:#9ddcff;animation:none}
+  .brand-mark svg{filter:drop-shadow(0 0 6px rgba(120,205,255,.45))}
+  @media(min-width:880px){
+    header.nav .brand-mark,header.nav .brand-mark svg{width:68px;height:68px}}
     /* urun galerisi: kartlar gorselin kendi oranini korusun — dolaplar kirpilmasin */
   #prodphoto .g-gal{display:block;column-gap:12px;column-count:2}
   #prodphoto .g-gal>*{display:block;width:100%;margin:0 0 12px;aspect-ratio:auto;
