@@ -262,6 +262,45 @@
   section[id]{scroll-margin-top:96px}
   @media(max-width:879.98px){section[id]{scroll-margin-top:74px}}
   .fp-main{max-width:none}
+  /* eksik son satirlar ortalansin — 5 kart 3 sutunda saga bosluk birakmasin */
+  @media(min-width:880px){
+    #shorts .grid.g-3{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch}
+    #shorts .grid.g-3>*{flex:0 0 calc((100% - 44px)/3)}
+    #prodphoto .g-gal{display:flex;flex-wrap:wrap;justify-content:center;align-content:flex-start}
+    #prodphoto .g-gal>*{flex:0 0 calc((100% - 36px)/4)}
+  }
+  /* Turkce versiyon butonu */
+  .watch-alt{display:inline-flex;align-items:center;gap:10px;margin-top:16px;padding:9px 16px 9px 14px;
+    border:1px solid rgba(120,210,255,.34);border-radius:999px;background:rgba(120,205,255,.07);
+    font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.03em;
+    color:#cfe9ff;text-decoration:none;cursor:pointer;
+    transition:background .18s ease,border-color .18s ease,transform .18s ease}
+  .watch-alt::before{content:"";flex:0 0 auto;width:0;height:0;
+    border-left:9px solid #6fd0ff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+  .watch-alt:hover{background:rgba(120,205,255,.16);border-color:rgba(150,225,255,.6);transform:translateY(-1px)}
+  .watch-alt:focus-visible{outline:2px solid #7fd4ff;outline-offset:3px}
+  /* video lightbox */
+  .lbx{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:26px}
+  .lbx.open{display:flex}
+  .lbx-bg{position:absolute;inset:0;background:rgba(3,12,24,.88);
+    backdrop-filter:blur(12px) saturate(1.1);-webkit-backdrop-filter:blur(12px) saturate(1.1);
+    animation:lbxfade .22s ease}
+  .lbx-box{position:relative;width:min(1080px,100%);animation:lbxrise .3s cubic-bezier(.2,.8,.3,1)}
+  .lbx-frame{position:relative;aspect-ratio:16/9;width:100%;border-radius:15px;overflow:hidden;background:#05121f;
+    border:1px solid rgba(120,210,255,.3);
+    box-shadow:0 44px 120px -44px rgba(0,0,0,.92),0 0 0 1px rgba(120,210,255,.08)}
+  .lbx-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .lbx-cap{margin:13px 3px 0;font-family:'Space Grotesk',sans-serif;font-size:.72rem;
+    letter-spacing:.15em;text-transform:uppercase;color:#bfe4ff}
+  .lbx-x{position:absolute;top:-15px;right:-15px;width:38px;height:38px;border-radius:50%;cursor:pointer;
+    border:1px solid rgba(150,225,255,.45);background:#0a2136;color:#dff0ff;font-size:1.05rem;line-height:1;
+    display:grid;place-items:center;transition:background .18s ease,transform .18s ease}
+  .lbx-x:hover{background:#12365a;transform:scale(1.08)}
+  .lbx-x:focus-visible{outline:2px solid #7fd4ff;outline-offset:3px}
+  @keyframes lbxfade{from{opacity:0}to{opacity:1}}
+  @keyframes lbxrise{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+  @media(max-width:620px){.lbx{padding:15px}.lbx-x{top:-12px;right:-4px;width:34px;height:34px}}
+  @media(prefers-reduced-motion:reduce){.lbx-bg,.lbx-box{animation:none}}
   .fp-side{margin-top:20px;max-width:210px}
   .fp-side .fp-play{border-radius:9px}
   .fp-side .fp-head{font-size:.6rem}
@@ -1013,8 +1052,8 @@
 <li data-de="27 Sekunden · sechs Szenen · 4K und 1080p" data-en="27 seconds · six scenes · 4K and 1080p" data-tr="27 saniye · altı sahne · 4K ve 1080p">27 Sekunden · sechs Szenen · 4K und 1080p</li>
 <li data-de="Zwei Sprachen aus einer Produktion — kein zweiter Dreh" data-en="Two languages from one production — no second shoot" data-tr="Tek prodüksiyondan iki dil — ikinci çekim yok">Zwei Sprachen aus einer Produktion — kein zweiter Dreh</li>
 <li data-de="Eigene Sprachaufnahme und Musik" data-en="Original voice-over and score" data-tr="Özgün seslendirme ve müzik">Eigene Sprachaufnahme und Musik</li>
-</ul></div>
-<div class="fp-side"><a aria-label="Novora brand film — Turkish version" class="fp-play" data-yt="S9hG_Ga7wIg" href="https://youtu.be/S9hG_Ga7wIg" rel="noopener" target="_blank"><img alt="Novora brand film — Turkish version" decoding="async" height="720" loading="lazy" src="/novora-tr-p.webp" width="1280"/><span class="play"></span></a><div class="fp-head" style="margin:8px 0 0"><span class="fl">🇹🇷</span> TÜRKÇE</div></div></div>
+</ul>
+<a class="watch-alt" data-de="Türkische Fassung ansehen" data-en="Watch the Turkish version" data-lbx-title="Novora — Sağlık Köklerinde · Türkçe" data-lightbox="S9hG_Ga7wIg" data-tr="Türkçe versiyonunu izle" href="https://youtu.be/S9hG_Ga7wIg">Türkische Fassung ansehen</a></div></div>
 
 <div aria-hidden="true" class="slj-divider reveal" style="margin:36px auto 30px"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <div class="feature reveal" style="grid-template-columns:1.55fr 1fr;gap:34px">
@@ -1309,6 +1348,14 @@
 <span data-de="— Inszeniert mit AI · eraybalat.com" data-en="— Directed with AI · eraybalat.com" data-tr="— AI ile yönetildi · eraybalat.com">— Inszeniert mit AI · eraybalat.com</span>
 <p style="margin:10px 0 0"><a data-de="FAQ — AI-Film: Ablauf, Dauer, Budget →" data-en="AI film FAQ — how it works, timelines, pricing →" data-faq="" data-tr="SSS — yapay zekâ ile film: süreç, süre, bütçe →" href="/faq-de/" style="color:var(--c1);text-decoration:none;font-size:.85rem">FAQ — AI-Film: Ablauf, Dauer, Budget →</a></p>
 <div class="foot-rights" data-de="Alle Rechte vorbehalten." data-en="All rights reserved." data-tr="Tüm hakları saklıdır.">Alle Rechte vorbehalten.</div></div><div class="foot-right"><span><span class="dot"></span><span data-de="Offen für Projekte" data-en="Available for work" data-tr="Yeni işlere açık">Offen für Projekte</span></span><a class="foot-link" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a></div></div></footer>
+<div aria-label="Video" aria-modal="true" class="lbx" id="lbx" role="dialog">
+<div class="lbx-bg" data-lbx-close=""></div>
+<div class="lbx-box">
+<button aria-label="Close video" class="lbx-x" data-lbx-close="" type="button">✕</button>
+<div class="lbx-frame"></div>
+<div class="lbx-cap"></div>
+</div>
+</div>
 <script>
   const toggle=document.querySelector('.nav-toggle');
   const links=document.getElementById('navlinks');
@@ -1483,6 +1530,40 @@ navTargets.forEach(function(t){
     }),{rootMargin:'150px 0px'});
     cfo.observe(cFrame);
   }
+
+  // video lightbox — [data-lightbox] klibi sayfanin uzerinde acar, otomatik oynatir
+  (function(){
+    var lb=document.getElementById('lbx'); if(!lb) return;
+    var frame=lb.querySelector('.lbx-frame'), cap=lb.querySelector('.lbx-cap'), xb=lb.querySelector('.lbx-x');
+    var opener=null, prevOv='';
+    function open(id,title){
+      frame.innerHTML='';
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      f.title=title||'Video'; f.setAttribute('frameborder','0');
+      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true;
+      frame.appendChild(f);
+      cap.textContent=title||'';
+      lb.classList.add('open');
+      prevOv=document.body.style.overflow; document.body.style.overflow='hidden';
+      xb.focus();
+    }
+    function close(){
+      if(!lb.classList.contains('open')) return;
+      lb.classList.remove('open'); frame.innerHTML='';
+      document.body.style.overflow=prevOv;
+      if(opener && opener.focus) opener.focus();
+      opener=null;
+    }
+    document.querySelectorAll('a[data-lightbox]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        e.preventDefault(); opener=a;
+        open(a.getAttribute('data-lightbox'), a.getAttribute('data-lbx-title')||'');
+      });
+    });
+    lb.querySelectorAll('[data-lbx-close]').forEach(function(el){ el.addEventListener('click',close); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  })();
 
   // inline YouTube play — click a [data-yt] card to swap its thumbnail for an embedded player (stays on-site)
   document.querySelectorAll('a[data-yt]').forEach(el=>{
