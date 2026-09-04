@@ -242,12 +242,9 @@
   #films > .blk, #films > .cspair, #films > .grid.g-3{margin-top:34px}
   #films > .feature + .cspair{margin-top:30px}
   @media(max-width:760px){#films > .blk,#films > .cspair,#films > .grid.g-3{margin-top:26px}}
-  .filmpair{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:22px 0 0;
-    border:1px solid rgba(120,210,255,.28);border-radius:18px;overflow:hidden;
-    background:linear-gradient(165deg,rgba(18,40,74,.5),rgba(10,20,40,.5));
-    box-shadow:0 20px 54px -30px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.1)}
+  .filmpair{display:grid;grid-template-columns:1fr;gap:0;margin:20px 0 0;border:1px solid rgba(120,210,255,.28);border-radius:18px;overflow:hidden;background:linear-gradient(165deg,rgba(18,40,74,.5),rgba(10,20,40,.5));box-shadow:0 20px 54px -30px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.1)}
   .filmpair figure{margin:0;padding:14px}
-  .filmpair figure+figure{border-left:1px solid rgba(120,210,255,.18)}
+  .filmpair figure+figure{border-top:1px solid rgba(120,210,255,.18)}
   .fp-head{display:flex;align-items:center;gap:9px;margin:0 0 11px;font-family:'Space Grotesk',sans-serif;
     font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#bfe4ff}
   .fp-head .fl{font-size:1.05rem;line-height:1}
@@ -256,8 +253,7 @@
   .fbul li{position:relative;padding-left:17px;font-size:.9rem;color:#cfe2f5;line-height:1.6}
   .fbul li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;
     background:#5cc8ff;box-shadow:0 0 7px rgba(92,200,255,.75)}
-  @media(max-width:760px){.filmpair{grid-template-columns:1fr}
-    .filmpair figure+figure{border-left:0;border-top:1px solid rgba(120,210,255,.18)}}
+  
   .sico-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
   .sico-row1{margin-top:20px}.sico-row2{margin-top:10px;gap:8px}
   .sico{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;
@@ -781,8 +777,8 @@
 <nav class="nav-links" id="navlinks">
 <a data-de="Über mich" data-en="About Me" data-tr="Hakkımda" href="#about">Hakkımda</a>
 <a data-de="UGC-Ads" data-en="UGC Ads" data-tr="UGC Reklam" href="#ugc">UGC Reklam</a>
-<a data-de="Musikvideos" data-en="Music Videos" data-tr="Müzik Videoları" href="#music">Müzik Videoları</a>
-<a data-de="Kurzfilme" data-en="Short Films" data-tr="Kısa Filmler" href="#films">Kısa Filmler</a><a data-de="Dokumentation" data-en="Documentary" data-tr="Belgesel" href="#docs">Belgesel</a>
+<a data-de="Kurzfilme" data-en="Short Films" data-tr="Kısa Filmler" href="#films">Kısa Filmler</a>
+<a data-de="Musikvideos" data-en="Music Videos" data-tr="Müzik Videoları" href="#music">Müzik Videoları</a><a data-de="Dokumentation" data-en="Documentary" data-tr="Belgesel" href="#docs">Belgesel</a>
 <a data-de="Produktfotos" data-en="Product Shots" data-tr="Ürün Çekimi" href="#prodphoto">Ürün Çekimi</a>
 <a data-de="Was ich mache" data-en="What I Do" data-tr="Neler Yapıyorum" href="#brands">Neler Yapıyorum</a>
 <a data-de="Beauftragen" data-en="Hire Me" data-hire="" data-tr="Benimle Çalış" href="/yapay-zeka-reklam-filmi/">Benimle Çalış</a>
@@ -945,33 +941,6 @@
 <div class="card reveal"><div class="thumb v cover-e"><video data-poster="/dtc-3-p.webp" loop="" muted="" playsinline="" preload="none" src="/dtc-3.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">DTC</span></div><div class="card-body"><h3 data-de="DTC Beauty — Problem &amp; Lösung" data-en="DTC Beauty — Problem &amp; Solution" data-tr="DTC Güzellik — Sorun &amp; Çözüm">DTC Güzellik — Sorun &amp; Çözüm</h3><p data-de="Problem-Lösung · 90 Sek." data-en="Problem-solution · 90 sec" data-tr="Sorun-çözüm · 90 saniye">Sorun-çözüm · 90 saniye</p></div></div>
 </div>
 </section>
-<section id="music">
-<div class="eyebrow reveal" data-de="Musikvideos" data-en="Music Videos" data-tr="Müzik Videoları">Müzik Videoları</div>
-<h2 class="sec-title reveal" data-de="AI-Musikvideos" data-en="AI Music Videos" data-tr="AI Müzik Videoları">AI Müzik Videoları</h2>
-<p class="sec-sub reveal" data-de="Offizielle Videos für Universal Music Türkiye Artists — dazu meine eigenen, mit AI gescorten Tracks." data-en="Official videos for Universal Music Türkiye artists — plus my own AI-scored tracks." data-tr="Universal Music Türkiye sanatçıları için resmi klipler — ve kendi AI ile bestelediğim parçalar.">Universal Music Türkiye sanatçıları için resmi klipler — ve kendi AI ile bestelediğim parçalar.</p>
-<div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
-<a aria-label="AI Anime Music Video — open the case" class="mv-feat reveal" href="/anime/">
-<div class="duo">
-<img alt="AI anime music video — the rider" decoding="async" height="380" loading="lazy" src="/mv-anime-1.webp" width="900"/>
-<img alt="AI anime music video — the neon-grid ride" decoding="async" height="380" loading="lazy" src="/mv-anime-2b.webp" width="900"/>
-</div>
-<span aria-hidden="true" class="seam"></span>
-<span aria-hidden="true" class="fplay"></span>
-<span class="fpill">▶ AI Anime · 32K</span>
-<div class="fcap">
-<h3 data-de="AI-Anime-Musikvideo" data-en="AI Anime Music Video" data-tr="AI Anime Müzik Videosu">AI Anime Müzik Videosu</h3>
-<p data-de="Animierte Konzert-Visuals · Rekonstruktion über 4 Ären · Regie: Eray Balat" data-en="Animated concert visuals · a 4-era reconstruction · directed by Eray Balat" data-tr="Animasyon konser görselleri · 4 dönemlik rekonstrüksiyon · Yönetmen: Eray Balat">Animasyon konser görselleri · 4 dönemlik rekonstrüksiyon · Yönetmen: Eray Balat</p>
-</div>
-</a>
-<div class="grid g-2" style="margin-bottom:18px">
-<a class="card reveal" href="https://www.youtube.com/watch?v=BKrTmSCBO5E" rel="noopener" target="_blank"><div class="thumb cover-e"><video data-poster="/mv-reallife-p.webp" loop="" muted="" playsinline="" preload="none" src="/mv-reallife.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">▶ Universal Music · 47K</span></div><div class="card-body"><h3>Modd — real life</h3><p data-de="Offizielles Musikvideo · AI von Eray Balat" data-en="Official Music Video · AI by Eray Balat" data-tr="Resmi Klip · AI: Eray Balat">Resmi Klip · AI: Eray Balat</p></div></a>
-<a class="card reveal" href="https://www.youtube.com/watch?v=4fKldh39zlw" rel="noopener" target="_blank"><div class="thumb cover-d"><video data-poster="/mv-yokuyku-p.webp" loop="" muted="" playsinline="" preload="none" src="/mv-yokuyku.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">▶ Universal Music · 39K</span></div><div class="card-body"><h3>Modd, Betül Çiçekyurt — yok uyku</h3><p data-de="Offizielles Video · Universal Music Türkiye" data-en="Official Video · Universal Music Türkiye" data-tr="Resmi Klip · Universal Music Türkiye">Resmi Klip · Universal Music Türkiye</p></div></a>
-</div>
-<div class="grid g-3">
-<a class="card reveal" href="https://www.youtube.com/watch?v=8mvHYSP0Mdg" rel="noopener" target="_blank"><div class="thumb cover-a"><img alt="Modd - tarih" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/8mvHYSP0Mdg/hqdefault.jpg"/><span class="play"></span><span class="pill">Universal Music</span></div><div class="card-body"><h3>Modd — tarih</h3><p data-de="Offizielles Lyric-Video · Universal Music Türkiye" data-en="Official Lyric Video · Universal Music Türkiye" data-tr="Resmi Lyric Video · Universal Music Türkiye">Resmi Lyric Video · Universal Music Türkiye</p></div></a> <a class="card reveal" href="https://www.youtube.com/watch?v=GCPRUwIEH4o" rel="noopener" target="_blank"><div class="thumb cover-c"><img alt="Last Stop: Paris" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/GCPRUwIEH4o/hqdefault.jpg"/><span class="play"></span><span class="pill">AI Music Video</span></div><div class="card-body"><h3>Last Stop: Paris</h3><p data-de="AI-Musikvideo · 2026" data-en="AI Music Video · 2026" data-tr="AI Müzik Videosu · 2026">AI Müzik Videosu · 2026</p></div></a>
-<a class="card reveal" href="https://www.youtube.com/watch?v=JBihKmSdyDI" rel="noopener" target="_blank"><div class="thumb cover-f"><img alt="Polémique — Paris" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/JBihKmSdyDI/hqdefault.jpg"/><span class="play"></span><span class="pill">Visual</span></div><div class="card-body"><h3>Polémique — Paris</h3><p data-de="AI-Visual-Szene · 2026" data-en="AI Visual Scene · 2026" data-tr="AI Görsel Sahne · 2026">AI Görsel Sahne · 2026</p></div></a>
-</div>
-</section>
 <section id="films">
 <div class="eyebrow reveal" data-de="Kino" data-en="Cinema" data-tr="Sinema">Sinema</div>
 <h2 class="sec-title reveal" data-de="Kurzfilme" data-en="Short Films" data-tr="Kısa Filmler">Kısa Filmler</h2>
@@ -1009,14 +978,13 @@
 <div class="labels"><span class="lb lb-med" data-de="KI-Animation" data-en="AI animation" data-tr="Yapay zekâ animasyon">Yapay zekâ animasyon</span><span class="lb lb-role" data-de="Regie · Schnitt · Ton · Musik" data-en="Direction · Edit · Sound · Score" data-tr="Yönetmenlik · Kurgu · Ses · Müzik">Yönetmenlik · Kurgu · Ses · Müzik</span></div>
 <p data-de="Ein Olivenhain, vom ersten Licht bis auf den Tisch. Durchgehend mit generativer KI gebaut." data-en="One olive grove, from first light to the table. Built end to end with generative AI." data-tr="Tek bir zeytinlik, ilk ışıktan sofraya. Baştan sona üretken yapay zekâ ile kuruldu.">Tek bir zeytinlik, ilk ışıktan sofraya. Baştan sona üretken yapay zekâ ile kuruldu.</p>
 <ul class="fbul">
-<li data-de="27 Sekunden · sechs Szenen · 4K- und 1080p-Master" data-en="27 seconds · six scenes · 4K and 1080p masters" data-tr="27 saniye · altı sahne · 4K ve 1080p master">27 saniye · altı sahne · 4K ve 1080p master</li>
+<li data-de="27 Sekunden · sechs Szenen · 4K und 1080p" data-en="27 seconds · six scenes · 4K and 1080p" data-tr="27 saniye · altı sahne · 4K ve 1080p">27 saniye · altı sahne · 4K ve 1080p</li>
 <li data-de="Zwei Sprachen aus einer Produktion — kein zweiter Dreh" data-en="Two languages from one production — no second shoot" data-tr="Tek prodüksiyondan iki dil — ikinci çekim yok">Tek prodüksiyondan iki dil — ikinci çekim yok</li>
 <li data-de="Eigene Sprachaufnahme und Musik" data-en="Original voice-over and score" data-tr="Özgün seslendirme ve müzik">Özgün seslendirme ve müzik</li>
-<li data-de="−14 LUFS · einen Tag früher geliefert" data-en="−14 LUFS · delivered a day early" data-tr="−14 LUFS · bir gün erken teslim">−14 LUFS · bir gün erken teslim</li>
 </ul>
 <div class="filmpair">
-<figure><div class="fp-head"><span class="fl">🇹🇷</span> TÜRKÇE</div><a aria-label="Novora brand film — Turkish version" class="fp-play" data-yt="S9hG_Ga7wIg" href="https://youtu.be/S9hG_Ga7wIg" rel="noopener" target="_blank"><img alt="Novora brand film — Turkish version" decoding="async" height="720" loading="lazy" src="/novora-tr-p.webp" width="1280"/><span class="play"></span></a></figure>
 <figure><div class="fp-head"><span class="fl">🇬🇧</span> ENGLISH</div><a aria-label="Novora brand film — English version" class="fp-play" data-yt="GAGlpIw3Q2Y" href="https://youtu.be/GAGlpIw3Q2Y" rel="noopener" target="_blank"><img alt="Novora brand film — English version" decoding="async" height="720" loading="lazy" src="/novora-en-p.webp" width="1280"/><span class="play"></span></a></figure>
+<figure><div class="fp-head"><span class="fl">🇹🇷</span> TÜRKÇE</div><a aria-label="Novora brand film — Turkish version" class="fp-play" data-yt="S9hG_Ga7wIg" href="https://youtu.be/S9hG_Ga7wIg" rel="noopener" target="_blank"><img alt="Novora brand film — Turkish version" decoding="async" height="720" loading="lazy" src="/novora-tr-p.webp" width="1280"/><span class="play"></span></a></figure>
 </div>
 </div>
 <div class="reveal blk">
@@ -1027,7 +995,6 @@
 <ul class="fbul">
 <li data-de="Fünf Modelle, pro Einstellung gewählt" data-en="Five models, routed per shot — not one tool for everything" data-tr="Beş model, plan bazlı seçildi — her şeye tek araç değil">Beş model, plan bazlı seçildi — her şeye tek araç değil</li>
 <li data-de="110 Clips für 88 Dollar erzeugt" data-en="110 clips generated for $88" data-tr="110 klip, 88 dolara üretildi">110 klip, 88 dolara üretildi</li>
-<li data-de="Raumhall vor der Mischung um 6–9 dB reduziert" data-en="Room echo cut 6–9 dB before the mix" data-tr="Miksten önce oda yankısı 6–9 dB düşürüldü">Miksten önce oda yankısı 6–9 dB düşürüldü</li>
 <li data-de="Mit schnittfertigem Premiere-Projekt geliefert" data-en="Delivered with an edit-ready Premiere project" data-tr="Kurguya hazır Premiere projesiyle teslim">Kurguya hazır Premiere projesiyle teslim</li>
 </ul>
 </div>
@@ -1036,6 +1003,33 @@
 <a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" rel="noopener" target="_blank"><div class="thumb cover-f"><video data-poster="/film-diepost-p.webp?v=2" loop="" muted="" playsinline="" preload="none" src="/film-diepost.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">🍫 Cave scene</span></div><div class="card-body"><h3>Die Post</h3><div class="labels"><span class="lb lb-med" data-de="Realfilm" data-en="Live-action" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Buch · Regie · Produktion" data-en="Writer · Director · Producer" data-tr="Senaryo · Yönetmen · Yapımcı">Senaryo · Yönetmen · Yapımcı</span></div><p data-de="Kurzfilm · Erciyes University, 2024" data-en="Short Film · Erciyes University, 2024" data-tr="Kısa Film · Erciyes Üni., 2024">Kısa Film · Erciyes Üni., 2024</p></div></a>
 <a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" rel="noopener" target="_blank"><div class="thumb cover-c"><video data-poster="/film-runorrun-p.webp" loop="" muted="" playsinline="" preload="none" src="/film-runorrun.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Awakening</span></div><div class="card-body"><h3>Run or Run</h3><div class="labels"><span class="lb lb-med" data-de="Realfilm" data-en="Live-action" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Buch · Regie · Darsteller" data-en="Writer · Director · Actor" data-tr="Senaryo · Yönetmen · Oyuncu">Senaryo · Yönetmen · Oyuncu</span></div><p data-de="Kurzfilm · 2:34" data-en="Short Film · 2:34" data-tr="Kısa Film · 2:34">Kısa Film · 2:34</p></div></a>
 <a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" rel="noopener" target="_blank"><div class="thumb cover-b"><img alt="Switzerland in One Hour — live-action short shot in a single hour" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/rYHPU-_RqOc/hqdefault.jpg"/><span class="play"></span><span class="pill" data-de="🎥 Realdreh" data-en="🎥 Live-action" data-tr="🎥 Gerçek çekim">🎥 Gerçek çekim</span></div><div class="card-body"><h3>Switzerland in One Hour 🇨🇭</h3><div class="labels"><span class="lb lb-med" data-de="Realfilm" data-en="Live-action" data-tr="Gerçek çekim">Gerçek çekim</span><span class="lb lb-role" data-de="Regie" data-en="Director" data-tr="Yönetmen">Yönetmen</span></div><p data-de="Realdreh · 0:45 · eine Ein-Stunden-Challenge, an meinem ersten Drehtag gefilmt — kein AI" data-en="0:45 · a one-hour challenge, shot on my first day behind the camera — no AI" data-tr="0:45 · bir saatlik meydan okuma, ilk çekim günümde çekildi — AI yok">0:45 · bir saatlik meydan okuma, ilk çekim günümde çekildi — AI yok</p></div></a>
+</div>
+</section>
+<section id="music">
+<div class="eyebrow reveal" data-de="Musikvideos" data-en="Music Videos" data-tr="Müzik Videoları">Müzik Videoları</div>
+<h2 class="sec-title reveal" data-de="AI-Musikvideos" data-en="AI Music Videos" data-tr="AI Müzik Videoları">AI Müzik Videoları</h2>
+<p class="sec-sub reveal" data-de="Offizielle Videos für Universal Music Türkiye Artists — dazu meine eigenen, mit AI gescorten Tracks." data-en="Official videos for Universal Music Türkiye artists — plus my own AI-scored tracks." data-tr="Universal Music Türkiye sanatçıları için resmi klipler — ve kendi AI ile bestelediğim parçalar.">Universal Music Türkiye sanatçıları için resmi klipler — ve kendi AI ile bestelediğim parçalar.</p>
+<div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
+<a aria-label="AI Anime Music Video — open the case" class="mv-feat reveal" href="/anime/">
+<div class="duo">
+<img alt="AI anime music video — the rider" decoding="async" height="380" loading="lazy" src="/mv-anime-1.webp" width="900"/>
+<img alt="AI anime music video — the neon-grid ride" decoding="async" height="380" loading="lazy" src="/mv-anime-2b.webp" width="900"/>
+</div>
+<span aria-hidden="true" class="seam"></span>
+<span aria-hidden="true" class="fplay"></span>
+<span class="fpill">▶ AI Anime · 32K</span>
+<div class="fcap">
+<h3 data-de="AI-Anime-Musikvideo" data-en="AI Anime Music Video" data-tr="AI Anime Müzik Videosu">AI Anime Müzik Videosu</h3>
+<p data-de="Animierte Konzert-Visuals · Rekonstruktion über 4 Ären · Regie: Eray Balat" data-en="Animated concert visuals · a 4-era reconstruction · directed by Eray Balat" data-tr="Animasyon konser görselleri · 4 dönemlik rekonstrüksiyon · Yönetmen: Eray Balat">Animasyon konser görselleri · 4 dönemlik rekonstrüksiyon · Yönetmen: Eray Balat</p>
+</div>
+</a>
+<div class="grid g-2" style="margin-bottom:18px">
+<a class="card reveal" href="https://www.youtube.com/watch?v=BKrTmSCBO5E" rel="noopener" target="_blank"><div class="thumb cover-e"><video data-poster="/mv-reallife-p.webp" loop="" muted="" playsinline="" preload="none" src="/mv-reallife.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">▶ Universal Music · 47K</span></div><div class="card-body"><h3>Modd — real life</h3><p data-de="Offizielles Musikvideo · AI von Eray Balat" data-en="Official Music Video · AI by Eray Balat" data-tr="Resmi Klip · AI: Eray Balat">Resmi Klip · AI: Eray Balat</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=4fKldh39zlw" rel="noopener" target="_blank"><div class="thumb cover-d"><video data-poster="/mv-yokuyku-p.webp" loop="" muted="" playsinline="" preload="none" src="/mv-yokuyku.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">▶ Universal Music · 39K</span></div><div class="card-body"><h3>Modd, Betül Çiçekyurt — yok uyku</h3><p data-de="Offizielles Video · Universal Music Türkiye" data-en="Official Video · Universal Music Türkiye" data-tr="Resmi Klip · Universal Music Türkiye">Resmi Klip · Universal Music Türkiye</p></div></a>
+</div>
+<div class="grid g-3">
+<a class="card reveal" href="https://www.youtube.com/watch?v=8mvHYSP0Mdg" rel="noopener" target="_blank"><div class="thumb cover-a"><img alt="Modd - tarih" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/8mvHYSP0Mdg/hqdefault.jpg"/><span class="play"></span><span class="pill">Universal Music</span></div><div class="card-body"><h3>Modd — tarih</h3><p data-de="Offizielles Lyric-Video · Universal Music Türkiye" data-en="Official Lyric Video · Universal Music Türkiye" data-tr="Resmi Lyric Video · Universal Music Türkiye">Resmi Lyric Video · Universal Music Türkiye</p></div></a> <a class="card reveal" href="https://www.youtube.com/watch?v=GCPRUwIEH4o" rel="noopener" target="_blank"><div class="thumb cover-c"><img alt="Last Stop: Paris" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/GCPRUwIEH4o/hqdefault.jpg"/><span class="play"></span><span class="pill">AI Music Video</span></div><div class="card-body"><h3>Last Stop: Paris</h3><p data-de="AI-Musikvideo · 2026" data-en="AI Music Video · 2026" data-tr="AI Müzik Videosu · 2026">AI Müzik Videosu · 2026</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=JBihKmSdyDI" rel="noopener" target="_blank"><div class="thumb cover-f"><img alt="Polémique — Paris" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/JBihKmSdyDI/hqdefault.jpg"/><span class="play"></span><span class="pill">Visual</span></div><div class="card-body"><h3>Polémique — Paris</h3><p data-de="AI-Visual-Szene · 2026" data-en="AI Visual Scene · 2026" data-tr="AI Görsel Sahne · 2026">AI Görsel Sahne · 2026</p></div></a>
 </div>
 </section>
 <section id="docs">
