@@ -57,8 +57,8 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/></noscript>
 <style>
   :root{
-    --bg:#061a2e; --bg-soft:#0c2a44;
-    --card:rgba(94,194,255,.09); --card-brd:rgba(94,194,255,.30);
+    --bg:#03101f; --bg-soft:#072033;
+    --card:rgba(120,205,255,.055); --card-brd:rgba(120,205,255,.22);
     --text:#e9f3ff; --muted:#9fc0dd;
     --c1:#5ec2ff; --c2:#1a86d8; --c3:#a8dcff; --c4:#4a9fd8; --c5:#0d3560;
     --grad:linear-gradient(120deg,#8ad4ff 0%,var(--c2) 28%,#d4ecff 52%,var(--c1) 76%,var(--c4) 100%);
@@ -247,17 +247,25 @@
   }
   /* --- Novora: metin solda, filmler sagda ve kucuk --- */
   .filmpair figure:nth-child(2){padding:12px 14px 14px}
-  .filmpair figure:nth-child(2) .fp-play{width:74%;margin-left:0}
+  .filmpair figure:nth-child(2) .fp-play{width:100%}
   .filmpair figure:nth-child(2) .fp-head{opacity:.9}
-  @media(max-width:900px){.filmpair figure:nth-child(2) .fp-play{width:100%}}
+  
   #films .csheet img{max-width:660px}
   #films .csheet figcaption{max-width:660px}
-  .vsplit{display:grid;grid-template-columns:1fr 0.92fr;gap:30px;align-items:start;margin-top:18px}
+  /* --- cam yuzeyler: koyu zemin uzerinde derinlik --- */
+  .card,.feature,.rev-card,.cspair .csquote,.specpanel div,.filmpair{
+    backdrop-filter:blur(14px) saturate(1.15);-webkit-backdrop-filter:blur(14px) saturate(1.15)}
+  .card{box-shadow:0 18px 46px -26px rgba(0,0,0,.75),inset 0 1px 0 rgba(180,228,255,.10)}
+  .card:hover{box-shadow:0 26px 60px -28px rgba(46,155,240,.45),inset 0 1px 0 rgba(180,228,255,.16)}
+  .feature{box-shadow:0 26px 70px -34px rgba(0,0,0,.8),inset 0 1px 0 rgba(180,228,255,.10)}
+  section{position:relative}
+  .vsplit{display:grid;grid-template-columns:0.95fr 1.15fr;gap:32px;align-items:center;margin-top:18px}
   .vsplit .filmpair{margin:0}
   @media(max-width:900px){.vsplit{grid-template-columns:1fr;gap:20px}}
-  .filmpair{display:grid;grid-template-columns:1fr;gap:0;margin:20px 0 0;border:1px solid rgba(120,210,255,.28);border-radius:18px;overflow:hidden;background:linear-gradient(165deg,rgba(18,40,74,.5),rgba(10,20,40,.5));box-shadow:0 20px 54px -30px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.1)}
+  .filmpair{display:grid;grid-template-columns:1.3fr 1fr;gap:0;margin:20px 0 0;border:1px solid rgba(120,210,255,.28);border-radius:18px;overflow:hidden;background:linear-gradient(165deg,rgba(18,40,74,.5),rgba(10,20,40,.5));box-shadow:0 20px 54px -30px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.1)}
   .filmpair figure{margin:0;padding:14px}
-  .filmpair figure+figure{border-top:1px solid rgba(120,210,255,.18)}
+  .filmpair figure+figure{border-left:1px solid rgba(120,210,255,.18)}
+  @media(max-width:900px){.filmpair{grid-template-columns:1fr}.filmpair figure+figure{border-left:0;border-top:1px solid rgba(120,210,255,.18)}}
   .fp-head{display:flex;align-items:center;gap:9px;margin:0 0 11px;font-family:'Space Grotesk',sans-serif;
     font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#bfe4ff}
   .fp-head .fl{font-size:1.05rem;line-height:1}
@@ -970,18 +978,18 @@
 <div class="role" data-de="Sci-Fi-Trailer · Schnitt: Eray Balat" data-en="Sci-fi trailer · Edited by Eray Balat" data-tr="Bilimkurgu fragmanı · Kurgu: Eray Balat">Sci-Fi-Trailer · Schnitt: Eray Balat</div>
 <h3>COLD START</h3>
 <div class="labels"><span class="lb lb-med" data-de="KI-Material" data-en="AI footage" data-tr="Yapay zekâ görüntü">KI-Material</span><span class="lb lb-role" data-de="Schnitt · Ton · Farbe" data-en="Editing · Sound · Colour" data-tr="Kurgu · Ses · Renk">Schnitt · Ton · Farbe</span></div>
-<p data-de="Ein US-Kunde brachte mir sein KI-Material und seine Sprachaufnahmen für einen XPRIZE-Future-Vision-Beitrag. Ich habe geschnitten, das Sounddesign und die Mischung gemacht, auf eine einzige kalte Bildidentität gegradet, die Musik produziert und die Lizenzdokumentation geliefert. Neun Tage, vier Fassungen, jede Änderung per Messung statt nach Gehör geprüft." data-en="A US client brought me his AI-generated footage and his voice recordings for an XPRIZE Future Vision entry. I cut it, designed and mixed the sound, graded it to a single cold identity, wrote the score and delivered the licence documentation. Nine days, four versions, every change verified by measurement rather than by ear." data-tr="ABD'li bir müşteri, XPRIZE Future Vision başvurusu için yapay zekâ ile ürettiği görüntüleri ve seslendirme kayıtlarını getirdi. Ben kurguladım, ses tasarımını ve miksini yaptım, tek bir soğuk kimliğe renklendirdim, müziği ürettim ve lisans dokümantasyonunu teslim ettim. Dokuz gün, dört sürüm, her değişiklik kulakla değil ölçümle doğrulandı.">Ein US-Kunde brachte mir sein KI-Material und seine Sprachaufnahmen für einen XPRIZE-Future-Vision-Beitrag. Ich habe geschnitten, das Sounddesign und die Mischung gemacht, auf eine einzige kalte Bildidentität gegradet, die Musik produziert und die Lizenzdokumentation geliefert. Neun Tage, vier Fassungen, jede Änderung per Messung statt nach Gehör geprüft.</p>
+<p data-de="Ein US-Kunde kam mit KI-Material und Sprachaufnahmen. Ich habe geschnitten, Sounddesign und Mischung gemacht, auf eine kalte Bildidentität gegradet und die Musik geschrieben. Neun Tage, vier Fassungen." data-en="A US client arrived with AI-generated footage and voice recordings. I cut it, designed and mixed the sound, graded it to one cold identity and wrote the score. Nine days, four versions." data-tr="ABD'li bir müşteri yapay zekâ görüntüleri ve seslendirme kayıtlarıyla geldi. Kurguladım, ses tasarımını ve miksini yaptım, tek bir soğuk kimliğe renklendirdim, müziği yazdım. Dokuz gün, dört sürüm.">Ein US-Kunde kam mit KI-Material und Sprachaufnahmen. Ich habe geschnitten, Sounddesign und Mischung gemacht, auf eine kalte Bildidentität gegradet und die Musik geschrieben. Neun Tage, vier Fassungen.</p>
 <p data-de="−15,7 LUFS · LRA 16,0 · eine gestaltete Zwei-Sekunden-Stille im dramatischen Zentrum · alle Einstellungen zwischen U 130–149, damit der Film als eine Familie liest." data-en="−15.7 LUFS · LRA 16.0 · a designed two-second silence at the dramatic centre · every shot held between U 130–149 so the film reads as one family." data-tr="−15,7 LUFS · LRA 16,0 · dramatik merkezde tasarlanmış iki saniyelik sessizlik · bütün planlar U ekseninde 130–149 arasında, film tek bir aile gibi okunsun diye." style="font-size:.86rem;color:var(--muted);margin-bottom:0">−15,7 LUFS · LRA 16,0 · eine gestaltete Zwei-Sekunden-Stille im dramatischen Zentrum · alle Einstellungen zwischen U 130–149, damit der Film als eine Familie liest.</p>
 </div>
 </div>
 <div class="cspair reveal">
 <figure class="csheet">
 <img alt="Nine frames from COLD START: arctic dawn, a street at golden hour, a kitchen at night, a lit facade, a laboratory portrait, a workshop, snowmobiles on ice, a gloved hand on a notebook, a hospital bedside." decoding="async" height="1092" loading="lazy" src="/coldstart-grid.webp" width="1932"/>
-<figcaption data-de="Neun Bilder aus dem Schnitt. Durchgehend eine kalte Identität; die warmen Akzente — die Straße bei Sonnenuntergang, die Küchenlampe, die erleuchteten Fenster — blieben bewusst erhalten, denn ein Film ganz ohne Wärme liest sich nicht mehr als Ort." data-en="Nine frames across the cut. One cold identity throughout; the warm accents — the street at sunset, the kitchen lamp, the lit windows — were kept on purpose, because a film with no warmth anywhere stops reading as a place." data-tr="Kurgudan dokuz kare. Baştan sona tek bir soğuk kimlik; sıcak vurgular — gün batımındaki sokak, mutfak lambası, yanan pencereler — kasten korundu, çünkü hiç sıcaklığı olmayan bir film mekân olmaktan çıkıyor.">Neun Bilder aus dem Schnitt. Durchgehend eine kalte Identität; die warmen Akzente — die Straße bei Sonnenuntergang, die Küchenlampe, die erleuchteten Fenster — blieben bewusst erhalten, denn ein Film ganz ohne Wärme liest sich nicht mehr als Ort.</figcaption>
+<figcaption data-de="Neun Bilder aus dem Schnitt. Durchgehend eine kalte Identität — die wenigen warmen Akzente blieben bewusst." data-en="Nine frames across the cut. One cold identity throughout — the few warm accents were kept on purpose." data-tr="Kurgudan dokuz kare. Baştan sona tek bir soğuk kimlik — az sayıdaki sıcak vurgu bilerek korundu.">Neun Bilder aus dem Schnitt. Durchgehend eine kalte Identität — die wenigen warmen Akzente blieben bewusst.</figcaption>
 </figure>
 <div class="csquote">
 <div aria-label="5 out of 5" class="stars">★★★★★<b>5.0</b></div>
-<blockquote data-de="“Er war vom ersten bis zum letzten Schnitt herausragend. Er fing Kontinuitäts- und Tempoprobleme auf, die ich übersehen hatte, meisterte mehrere Runden von Shot-Wechseln und Audio-Fixes ohne Klagen und erreichte jeden Meilenstein früher oder pünktlich. Der finale Schnitt kam exakt auf Ziellänge und wirkte wirklich professionell. Ich würde ihn ohne Zögern wieder engagieren — für meinen nächsten Film plane ich es bereits.”" data-en="“He was outstanding from the first cut to the last. He caught continuity and pacing problems I'd missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. The final cut came in exactly at target length and looked genuinely professional. I'd hire him again without hesitation, and I already plan to for my next film.”" data-tr="“İlk kurgudan sonuncusuna kadar olağanüstüydü. Benim gözden kaçırdığım süreklilik ve tempo sorunlarını yakaladı, defalarca plan değişikliğini ve ses düzeltmesini şikâyetsiz karşıladı, her teslim noktasına erken ya da tam zamanında ulaştı. Final kurgu tam hedef sürede geldi ve gerçekten profesyonel görünüyordu. Onunla hiç tereddütsüz yine çalışırım — bir sonraki filmim için şimdiden planlıyorum.”">“Er war vom ersten bis zum letzten Schnitt herausragend. Er fing Kontinuitäts- und Tempoprobleme auf, die ich übersehen hatte, meisterte mehrere Runden von Shot-Wechseln und Audio-Fixes ohne Klagen und erreichte jeden Meilenstein früher oder pünktlich. Der finale Schnitt kam exakt auf Ziellänge und wirkte wirklich professionell. Ich würde ihn ohne Zögern wieder engagieren — für meinen nächsten Film plane ich es bereits.”</blockquote>
+<blockquote data-de="“Er fand Kontinuitäts- und Tempoprobleme, die ich übersehen hatte. Ich würde ihn ohne Zögern wieder engagieren.”" data-en="“He caught continuity and pacing problems I’d missed. I’d hire him again without hesitation.”" data-tr="“Benim gözden kaçırdığım süreklilik ve tempo sorunlarını yakaladı. Hiç tereddütsüz yine çalışırım.”">“Er fand Kontinuitäts- und Tempoprobleme, die ich übersehen hatte. Ich würde ihn ohne Zögern wieder engagieren.”</blockquote>
 <div class="who" data-de="Der Kunde, auf Upwork · USA · August 2026" data-en="The client, on Upwork · United States · August 2026" data-tr="Müşteri, Upwork üzerinden · ABD · Ağustos 2026">Der Kunde, auf Upwork · USA · August 2026</div>
 </div>
 </div>
@@ -1013,7 +1021,7 @@
 <li data-de="110 Clips für 88 Dollar erzeugt" data-en="110 clips generated for $88" data-tr="110 klip, 88 dolara üretildi">110 Clips für 88 Dollar erzeugt</li>
 <li data-de="Mit schnittfertigem Premiere-Projekt geliefert" data-en="Delivered with an edit-ready Premiere project" data-tr="Kurguya hazır Premiere projesiyle teslim">Mit schnittfertigem Premiere-Projekt geliefert</li>
 </ul>
-<figure class="csheet" style="margin-top:20px"><img alt="A frame from the film: a backgammon board on a lamplit table." decoding="async" height="720" loading="lazy" src="/td-p.webp" width="1280"/><figcaption data-de="Sieben Kapitel, auf eine bereits vorhandene Sprachaufnahme geschnitten." data-en="Seven chapters, cut to a voice-over that already existed." data-tr="Yedi bölüm, hazır bir seslendirmeye göre kurgulandı.">Sieben Kapitel, auf eine bereits vorhandene Sprachaufnahme geschnitten.</figcaption></figure>
+<a aria-label="Play the film — 10 minutes" class="fp-play" data-yt="Lej8UCpChcQ" href="https://youtu.be/Lej8UCpChcQ" rel="noopener" style="margin-top:20px;max-width:660px" target="_blank"><img alt="A frame from the film: a backgammon board on a lamplit table." decoding="async" height="720" loading="lazy" src="/td-p.webp" width="1280"/><span class="play"></span><span class="pill" style="z-index:3">10:00</span></a>
 </div>
 <div class="grid g-3">
 <a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" rel="noopener" target="_blank"><div class="thumb cover-a"><video data-poster="/film-boomerang-p.webp" loop="" muted="" playsinline="" preload="none" src="/film-boomerang.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><img alt="Honorable Mention — Student Video Contest 2026" decoding="async" loading="lazy" src="/laurel-white-sm.webp" style="position:absolute;top:9px;right:9px;left:auto;bottom:auto;width:60px;height:60px;z-index:3;opacity:.92;filter:drop-shadow(0 0 5px rgba(0,0,0,.6))"/><span class="pill">🏆 Honorable Mention</span></div><div class="card-body"><h3>Boomerang</h3><div class="labels"><span class="lb lb-med" data-de="Realfilm" data-en="Live-action" data-tr="Gerçek çekim">Realfilm</span><span class="lb lb-role" data-de="Schnitt" data-en="Editor" data-tr="Kurgu">Schnitt</span></div><p data-de="Lobende Erwähnung · Student Video Contest 2026 · Ausgewählt bei Duemila30" data-en="Honorable Mention · Student Video Contest 2026 · Selected at Duemila30" data-tr="Mansiyon · Student Video Contest 2026 · Duemila30 Seçkisi">Lobende Erwähnung · Student Video Contest 2026 · Ausgewählt bei Duemila30</p></div></a>
