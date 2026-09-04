@@ -849,9 +849,8 @@
 </div>
 
 <header class="nav">
-  <span class="rail-stars" aria-hidden="true"></span>
   <div class="nav-inner">
-    <a href="#home" class="brand" id="brandTop" aria-label="Eray Balat — Creative AI Producer, back to top"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="32" height="32"><defs><radialGradient id="brandstar" cx="47%" cy="43%" r="60%"><stop offset="0%" stop-color="#2ba2d4"/><stop offset="48%" stop-color="#0e5b90"/><stop offset="100%" stop-color="#072038"/></radialGradient></defs><path d="M50.00 3.00 L63.77 16.77 L83.23 16.77 L83.23 36.23 L97.00 50.00 L83.23 63.77 L83.23 83.23 L63.77 83.23 L50.00 97.00 L36.23 83.23 L16.77 83.23 L16.77 63.77 L3.00 50.00 L16.77 36.23 L16.77 16.77 L36.23 16.77 Z" fill="url(#brandstar)" stroke="#072038" stroke-width="1.2" stroke-linejoin="round"/></svg></span><span class="brand-wm"><b>ERAY BALAT</b><i>Creative AI Producer</i></span></a>
+    <a href="#home" class="brand" id="brandTop" aria-label="Eray Balat — Creative AI Producer, back to top"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="32" height="32"><defs><filter id="kstarng" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g fill="none" stroke="currentColor" stroke-width="8.5" stroke-linecap="butt" stroke-linejoin="miter" filter="url(#kstarng)" opacity=".95"><path d="M95.36 95.36L52.41 95.36"/><path d="M38.31 95.36L24.64 95.36"/><path d="M24.64 95.36L24.64 52.41"/><path d="M24.64 38.31L24.64 24.64"/><path d="M24.64 24.64L67.59 24.64"/><path d="M81.69 24.64L95.36 24.64"/><path d="M95.36 24.64L95.36 38.31"/><path d="M95.36 52.41L95.36 95.36"/><path d="M110 60L100.34 69.66"/><path d="M90.37 79.63L79.63 90.37"/><path d="M69.66 100.34L60 110"/><path d="M60 110L29.63 79.63"/><path d="M19.66 69.66L10 60"/><path d="M10 60L40.37 29.63"/><path d="M50.34 19.66L60 10"/><path d="M60 10L110 60"/></g></svg></span><span class="brand-wm"><b>ERAY BALAT</b><i>Creative AI Producer</i></span></a>
     <nav class="nav-links" id="navlinks">
       <a href="#about"     data-en="About Me"     data-tr="Hakkımda" data-de="Über mich">About Me</a>
       <a href="#ugc"       data-en="UGC Ads"      data-tr="UGC Reklam" data-de="UGC-Ads">UGC Ads</a>
@@ -1075,19 +1074,11 @@
       display:block;content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
       background:radial-gradient(170px 150px at 50% 92px, rgba(52,168,224,.20), transparent 72%);
       animation:railglow 9s ease-in-out infinite}
-    header.nav .rail-stars{
-      position:absolute;left:0;right:0;top:0;height:46%;z-index:0;pointer-events:none;
-      background:linear-gradient(180deg,
-        transparent 0%, rgba(120,205,255,.055) 38%, rgba(160,225,255,.10) 50%,
-        rgba(120,205,255,.055) 62%, transparent 100%);
-      animation:railsheen 14s ease-in-out infinite}
     header.nav .nav-inner{position:relative;z-index:1}
   }
   @keyframes railglow{0%,100%{opacity:.7}50%{opacity:1}}
-  @keyframes railsheen{0%{transform:translateY(-115%)}55%,100%{transform:translateY(215%)}}
   @media(prefers-reduced-motion:reduce){
-    header.nav::after,header.nav .rail-stars{animation:none}
-    header.nav .rail-stars{opacity:0}}
+    header.nav::after{animation:none}}
     /* ikonlar ve musaitlik rozeti: cam yuzey */
   .sico{backdrop-filter:blur(12px) saturate(1.25);-webkit-backdrop-filter:blur(12px) saturate(1.25)}
   .sico-lg{background:linear-gradient(160deg,rgba(120,205,255,.14),rgba(20,48,90,.42));
@@ -1100,6 +1091,9 @@
     box-shadow:0 14px 38px -18px rgba(0,0,0,.7),inset 0 1px 0 rgba(200,238,255,.26)}
   .avail:hover{background:linear-gradient(135deg,rgba(150,225,255,.26),rgba(22,58,104,.58));
     border-color:rgba(180,235,255,.6)}
+    /* marka isareti: dokumali Karatay yildizi */
+  .brand-mark{color:#7fd0ff}
+  header.nav .brand-mark{filter:drop-shadow(0 0 10px rgba(92,200,255,.5))}
   </style>
 
 
