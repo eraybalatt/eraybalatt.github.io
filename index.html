@@ -69,7 +69,7 @@
     --radius:20px; --maxw:1180px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  html{scroll-behavior:auto;scroll-padding-top:96px}
   body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
   h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
   a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
@@ -202,7 +202,7 @@
   .g-gallery{grid-template-columns:repeat(3,1fr)}
   .g-feat{grid-template-columns:repeat(4,1fr)}
   @media(max-width:760px){.g-natcol{flex-direction:column}}
-  .g-gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+  .g-gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
   .g-gal .mcard{aspect-ratio:1/1;border-radius:14px;overflow:hidden;border:1px solid var(--card-brd);position:relative;transition:transform .25s,box-shadow .25s,border-color .25s;box-shadow:inset 0 1px 0 rgba(180,228,255,.08)}
   .g-gal .mcard:hover{transform:translateY(-4px);border-color:rgba(120,210,255,.55);box-shadow:0 16px 40px -18px rgba(46,155,240,.55),inset 0 1px 0 rgba(180,228,255,.14);z-index:2}
   .g-gal .mcard img,.g-gal .mcard video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
@@ -228,6 +228,81 @@
   .thumb .play::after{content:"";border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff;margin-left:3px}
 
 
+
+
+
+
+  .fp-play{display:block;position:relative;border-radius:11px;overflow:hidden;
+    border:1px solid rgba(120,210,255,.16);background:#050c18;aspect-ratio:16/9}
+  .fp-play img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+  .fp-play:hover img{transform:scale(1.04)}
+  .fp-play .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;
+    border-radius:50%;background:rgba(8,16,30,.62);border:1px solid rgba(180,228,255,.5);z-index:3;
+    backdrop-filter:blur(3px);transition:background .22s,transform .22s}
+  .fp-play .play::after{content:"";position:absolute;left:53%;top:50%;transform:translate(-50%,-50%);
+    border-left:15px solid #eaf6ff;border-top:9px solid transparent;border-bottom:9px solid transparent}
+  .fp-play:hover .play{background:rgba(46,155,240,.55);transform:translate(-50%,-50%) scale(1.07)}
+  .filmpair{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:22px 0 0;
+    border:1px solid rgba(120,210,255,.28);border-radius:18px;overflow:hidden;
+    background:linear-gradient(165deg,rgba(18,40,74,.5),rgba(10,20,40,.5));
+    box-shadow:0 20px 54px -30px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.1)}
+  .filmpair figure{margin:0;padding:14px}
+  .filmpair figure+figure{border-left:1px solid rgba(120,210,255,.18)}
+  .fp-head{display:flex;align-items:center;gap:9px;margin:0 0 11px;font-family:'Space Grotesk',sans-serif;
+    font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#bfe4ff}
+  .fp-head .fl{font-size:1.05rem;line-height:1}
+  .filmpair video{width:100%;height:auto;display:block;border-radius:11px;background:#050c18;border:1px solid rgba(120,210,255,.16)}
+  .fbul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:7px}
+  .fbul li{position:relative;padding-left:17px;font-size:.9rem;color:#cfe2f5;line-height:1.6}
+  .fbul li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;
+    background:#5cc8ff;box-shadow:0 0 7px rgba(92,200,255,.75)}
+  @media(max-width:760px){.filmpair{grid-template-columns:1fr}
+    .filmpair figure+figure{border-left:0;border-top:1px solid rgba(120,210,255,.18)}}
+  .sico-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .sico-row1{margin-top:20px}.sico-row2{margin-top:10px;gap:8px}
+  .sico{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;
+    color:#9fd4ff;border:1px solid rgba(120,210,255,.24);background:linear-gradient(160deg,rgba(20,44,80,.55),rgba(11,24,48,.55));
+    transition:color .22s,border-color .22s,transform .22s,box-shadow .22s}
+  .sico-lg{width:48px;height:48px;border-radius:14px;color:#dff1ff;border-color:rgba(120,210,255,.42);
+    background:linear-gradient(160deg,rgba(30,74,132,.62),rgba(14,32,62,.62))}
+  .sico:hover{color:#fff;border-color:rgba(120,210,255,.75);transform:translateY(-3px);box-shadow:0 12px 28px -14px rgba(46,155,240,.75)}
+  .rev-feat{border-color:rgba(120,210,255,.5)!important;
+    background:linear-gradient(165deg,rgba(24,58,110,.5),rgba(11,24,48,.5))!important;
+    box-shadow:0 22px 60px -28px rgba(46,155,240,.6),inset 0 1px 0 rgba(180,228,255,.16)!important}
+  .rev-pull{font-family:'Space Grotesk',sans-serif;font-size:1.12rem;line-height:1.45;color:#8fd6ff;
+    margin:0 0 12px;padding-left:14px;border-left:3px solid rgba(120,210,255,.65)}
+  .rev-clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+  .rev-more{margin-top:11px;background:none;border:0;padding:0;cursor:pointer;font-family:'Space Grotesk',sans-serif;
+    font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#8fd6ff;border-bottom:1px solid rgba(143,214,255,.45)}
+  .foot-row{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+  .foot-right{display:flex;align-items:center;gap:16px;font-size:.82rem;color:var(--muted)}
+  .foot-right .dot{width:7px;height:7px;border-radius:50%;background:#43d67d;box-shadow:0 0 8px rgba(67,214,125,.8);display:inline-block;margin-right:7px}
+  @media(max-width:640px){.foot-row{justify-content:center;text-align:center}}
+  /* --- Karatay yildizi: neon sekizgen ornament --- */
+  .kstar{width:100%;height:100%;display:block;color:var(--accent,#5cc8ff);
+    filter:drop-shadow(0 0 6px rgba(92,200,255,.55)) drop-shadow(0 0 16px rgba(46,155,240,.30))}
+  .kstar-s{width:15px;height:15px;flex:0 0 15px;display:inline-block;vertical-align:-2px;
+    color:var(--accent,#5cc8ff);filter:drop-shadow(0 0 5px rgba(92,200,255,.5));margin-right:9px}
+  #brands .cap-ico{width:46px;height:46px;padding:8px;margin-bottom:14px;border-radius:13px;
+    background:linear-gradient(150deg,rgba(46,155,240,.14),rgba(46,155,240,.06));
+    border:1px solid rgba(92,200,255,.24)}
+  #brands .card.cap{padding-top:22px;padding-bottom:22px}
+  #brands .svc-group h4{display:flex;align-items:center;gap:0}
+  /* --- teknik künye paneli (yüzsüz vaka) --- */
+  .specpanel{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin:22px 0 0;
+    background:rgba(120,210,255,.16);border:1px solid rgba(120,210,255,.22);border-radius:16px;overflow:hidden}
+  .specpanel div{background:linear-gradient(165deg,rgba(16,34,64,.92),rgba(10,20,40,.92));padding:16px 18px}
+  .specpanel b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.42rem;color:#dff1ff;line-height:1.15}
+  .specpanel span{display:block;margin-top:5px;font-size:.72rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+  @media(max-width:760px){.specpanel{grid-template-columns:repeat(2,1fr)}}
+  /* --- Novora: iki dil yan yana --- */
+  .twoup{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0 0}
+  .twoup figure{margin:0}
+  .twoup video{width:100%;height:auto;display:block;border-radius:14px;
+    border:1px solid rgba(120,210,255,.22);background:#050c18}
+  .twoup figcaption{margin-top:9px;font-family:'Space Grotesk',sans-serif;font-size:.62rem;
+    font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#bfe4ff}
+  @media(max-width:760px){.twoup{grid-template-columns:1fr;gap:16px}}
   /* --- COLD START feature: contact sheet + client quote --- */
   .csheet{margin:26px 0 0;position:relative}
   .csheet img{width:100%;height:auto;display:block;border-radius:16px;border:1px solid rgba(120,210,255,.22)}
@@ -235,6 +310,10 @@
   .csquote{margin:26px 0 0;padding:22px 26px;border-radius:18px;
     background:linear-gradient(165deg,rgba(22,54,104,.42),rgba(11,24,48,.46));
     border:1px solid rgba(120,210,255,.24);box-shadow:inset 0 1px 0 rgba(180,228,255,.12)}
+
+  .cspair{display:grid;grid-template-columns:1.45fr 1fr;gap:24px;align-items:start;margin:26px 0 0}
+  .cspair .csheet,.cspair .csquote{margin:0}
+  @media(max-width:900px){.cspair{grid-template-columns:1fr;gap:18px}}
   .csquote .stars{font-size:.9rem;letter-spacing:.14em;color:#ffd479;margin-bottom:9px}
   .csquote .stars b{font-family:'Space Grotesk',sans-serif;color:var(--text);margin-left:8px;letter-spacing:0}
   .csquote blockquote{font-size:1.02rem;line-height:1.7;color:var(--text);margin:0 0 12px}
@@ -426,7 +505,7 @@
 
 /* ---------------- DESKTOP: left vertical rail (>=880px) ---------------- */
 @media (min-width:880px){
-  html{ scroll-padding-top:16px; }             /* no top bar -> tiny offset */
+               /* no top bar -> tiny offset */
   body{ padding-right:var(--sb); }            /* tüm sayfa içeriğini sola kaydır */
 
   header.nav{
@@ -620,7 +699,7 @@
   .nav-right::after{ display:none; }
   .nav-toggle{ display:block; }
 
-  html{ scroll-padding-top:90px; }
+  
   section{ scroll-margin-top:80px; }
 }
 
@@ -707,10 +786,9 @@
       <a href="#about"     data-en="About Me"     data-tr="Hakkımda" data-de="Über mich">About Me</a>
       <a href="#ugc"       data-en="UGC Ads"      data-tr="UGC Reklam" data-de="UGC-Ads">UGC Ads</a>
       <a href="#music"     data-en="Music Videos" data-tr="Müzik Videoları" data-de="Musikvideos">Music Videos</a>
-      <a href="#docs"      data-en="Documentary" data-tr="Belgesel" data-de="Dokumentation">Documentary</a>
-      <a href="#films"     data-en="Short Films"  data-tr="Kısa Filmler" data-de="Kurzfilme">Short Films</a>
+      
+      <a href="#films"     data-en="Short Films"  data-tr="Kısa Filmler" data-de="Kurzfilme">Short Films</a><a href="#docs"      data-en="Documentary" data-tr="Belgesel" data-de="Dokumentation">Documentary</a>
       <a href="#prodphoto" data-en="Product Shots" data-tr="Ürün Çekimi" data-de="Produktfotos">Product Shots</a>
-      <a href="/leather/"  data-en="Leather Goods" data-tr="Deri Ürünler" data-de="Lederwaren">Leather Goods</a>
       <a href="#brands"    data-en="What I Do"   data-tr="Neler Yapıyorum" data-de="Was ich mache">What I Do</a>
       <a href="/hire/" data-hire data-en="Hire Me" data-tr="Benimle Çalış" data-de="Beauftragen">Hire Me</a>
       <a href="/blog/" data-blog data-en="Writing" data-tr="Yazılar" data-de="Artikel">Writing</a>
@@ -920,21 +998,7 @@
     </div>
   </section>
 
-  <section id="docs">
-    <div class="eyebrow reveal" data-en="Documentary · CITRINE" data-tr="Belgesel · CITRINE" data-de="Dokumentarfilm · CITRINE">Documentary · CITRINE</div>
-    <h2 class="sec-title reveal" data-en="Animated Documentaries" data-tr="Animasyon Belgeseller" data-de="Animierte Dokumentarfilme">Animated Documentaries</h2>
-    <p class="sec-sub reveal" data-en="Research-driven documentaries under my CITRINE label, built with 3D, motion graphics and AI." data-tr="CITRINE etiketim altında araştırmaya dayalı belgeseller, 3D, motion graphics ve AI ile üretiliyor." data-de="Recherchegetriebene Dokumentarfilme unter meinem Label CITRINE, gestaltet mit 3D, Motion Graphics und AI.">Research-driven documentaries under my CITRINE label, built with 3D, motion graphics and AI.</p>
-    <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
-    <a class="card reveal" href="/flawless/" style="display:block;margin-bottom:18px"><div class="thumb" style="aspect-ratio:16/9"><img decoding="async" src="/flawless/hero-vault.webp" alt="FLAWLESS — The Antwerp Diamond Heist" loading="lazy" /><span class="play"></span><span class="pill">★ Featuring the mastermind himself · 16:56 · 4K</span></div><div class="card-body"><h3>FLAWLESS — The Antwerp Diamond Heist</h3><p data-en="The mastermind of the heist praised the film himself · CITRINE" data-tr="Soygunun beyni filmi bizzat övdü · CITRINE" data-de="Der Drahtzieher lobte den Film selbst · CITRINE">The mastermind of the heist praised the film himself · CITRINE</p></div></a>
-    <div class="grid g-3">
-      <a class="card reveal" href="https://www.youtube.com/watch?v=-0h3XlqPibo" target="_blank" rel="noopener"><div class="thumb" style="aspect-ratio:16/9"><img decoding="async" src="https://i.ytimg.com/vi/-0h3XlqPibo/hqdefault.jpg" alt="The Charlie Kirk Shooting" loading="lazy" /><span class="play"></span><span class="pill">17K views · Most-watched</span></div><div class="card-body"><h3>The Charlie Kirk Shooting</h3><p data-en="Explained by a former FBI Special Agent · CITRINE" data-tr="Eski bir FBI Özel Ajanı anlatıyor · CITRINE" data-de="Erklärt von einem ehemaligen FBI Special Agent · CITRINE">Explained by a former FBI Special Agent · CITRINE</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=Xchn8HuKOeI" target="_blank" rel="noopener"><div class="thumb cover-c"><img decoding="async" src="https://i.ytimg.com/vi/Xchn8HuKOeI/hqdefault.jpg" alt="Trump vs Elon Musk" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Meltdown: Trump vs Elon Musk</h3><p data-en="Animated documentary · CITRINE" data-tr="Animasyonlu belgesel · CITRINE" data-de="Animierter Dokumentarfilm · CITRINE">Animated documentary · CITRINE</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=1DqgCLC9EFY" target="_blank" rel="noopener"><div class="thumb cover-a"><img decoding="async" src="https://i.ytimg.com/vi/1DqgCLC9EFY/hqdefault.jpg" alt="The Louvre Heist" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Louvre Heist Explained</h3><p data-en="7 minutes that changed everything · CITRINE" data-tr="Her şeyi değiştiren 7 dakika · CITRINE" data-de="7 Minuten, die alles veränderten · CITRINE">7 minutes that changed everything · CITRINE</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=d9xmp74iJyQ" target="_blank" rel="noopener"><div class="thumb cover-b"><img decoding="async" src="https://i.ytimg.com/vi/d9xmp74iJyQ/hqdefault.jpg" alt="Milei Argentina" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>How Milei Transformed Argentina</h3><p data-en="Economy, explained in 12 months · CITRINE" data-tr="12 ayda ekonomi · CITRINE" data-de="Die Wirtschaft, erklärt in 12 Monaten · CITRINE">Economy, explained in 12 months · CITRINE</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=bSI3UbHurQQ" target="_blank" rel="noopener"><div class="thumb cover-d"><img decoding="async" src="https://i.ytimg.com/vi/bSI3UbHurQQ/hqdefault.jpg" alt="Iran vs Israel" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Secret Nuclear War: Iran vs Israel</h3><p data-en="Geopolitics, explained · CITRINE" data-tr="Jeopolitik analiz · CITRINE" data-de="Geopolitik, erklärt · CITRINE">Geopolitics, explained · CITRINE</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/@citrinevideos" target="_blank" rel="noopener"><div class="thumb" style="aspect-ratio:16/9;background:radial-gradient(circle at 50% 42%,#15294c,#05182b)"><img decoding="async" src="citrine-blue.png" alt="CITRINE Documentary" loading="lazy" style="position:static;width:74%;height:auto;filter:drop-shadow(0 0 22px rgba(168,220,255,.45))" /></div><div class="card-body"><h3>CITRINE — Documentary Channel</h3><p data-en="In-depth animated documentaries →" data-tr="Derinlemesine animasyon belgeseller →" data-de="Tiefgründige animierte Dokumentarfilme →">In-depth animated documentaries →</p></div></a>
-    </div>
-  </section>
+  
 
   <section id="films">
     <div class="eyebrow reveal" data-en="Cinema" data-tr="Sinema" data-de="Kino">Cinema</div>
@@ -957,15 +1021,48 @@
       </div>
     </div>
 
-    <figure class="csheet reveal">
+    <div class="cspair reveal">
+    <figure class="csheet">
       <img src="coldstart-grid.webp" width="1932" height="1092" alt="Nine frames from COLD START: arctic dawn, a street at golden hour, a kitchen at night, a lit facade, a laboratory portrait, a workshop, snowmobiles on ice, a gloved hand on a notebook, a hospital bedside." loading="lazy" decoding="async" />
       <figcaption data-en="Nine frames across the cut. One cold identity throughout; the warm accents — the street at sunset, the kitchen lamp, the lit windows — were kept on purpose, because a film with no warmth anywhere stops reading as a place." data-tr="Kurgudan dokuz kare. Baştan sona tek bir soğuk kimlik; sıcak vurgular — gün batımındaki sokak, mutfak lambası, yanan pencereler — kasten korundu, çünkü hiç sıcaklığı olmayan bir film mekân olmaktan çıkıyor." data-de="Neun Bilder aus dem Schnitt. Durchgehend eine kalte Identität; die warmen Akzente — die Straße bei Sonnenuntergang, die Küchenlampe, die erleuchteten Fenster — blieben bewusst erhalten, denn ein Film ganz ohne Wärme liest sich nicht mehr als Ort.">Nine frames across the cut. One cold identity throughout; the warm accents — the street at sunset, the kitchen lamp, the lit windows — were kept on purpose, because a film with no warmth anywhere stops reading as a place.</figcaption>
     </figure>
 
-    <div class="csquote reveal">
+    <div class="csquote">
       <div class="stars" aria-label="5 out of 5">★★★★★<b>5.0</b></div>
       <blockquote data-en="“He was outstanding from the first cut to the last. He caught continuity and pacing problems I&#39;d missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. The final cut came in exactly at target length and looked genuinely professional. I&#39;d hire him again without hesitation, and I already plan to for my next film.”" data-tr="“İlk kurgudan sonuncusuna kadar olağanüstüydü. Benim gözden kaçırdığım süreklilik ve tempo sorunlarını yakaladı, defalarca plan değişikliğini ve ses düzeltmesini şikâyetsiz karşıladı, her teslim noktasına erken ya da tam zamanında ulaştı. Final kurgu tam hedef sürede geldi ve gerçekten profesyonel görünüyordu. Onunla hiç tereddütsüz yine çalışırım — bir sonraki filmim için şimdiden planlıyorum.”" data-de="“Er war vom ersten bis zum letzten Schnitt herausragend. Er fing Kontinuitäts- und Tempoprobleme auf, die ich übersehen hatte, meisterte mehrere Runden von Shot-Wechseln und Audio-Fixes ohne Klagen und erreichte jeden Meilenstein früher oder pünktlich. Der finale Schnitt kam exakt auf Ziellänge und wirkte wirklich professionell. Ich würde ihn ohne Zögern wieder engagieren — für meinen nächsten Film plane ich es bereits.”">“He was outstanding from the first cut to the last. He caught continuity and pacing problems I&#39;d missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. The final cut came in exactly at target length and looked genuinely professional. I&#39;d hire him again without hesitation, and I already plan to for my next film.”</blockquote>
       <div class="who" data-en="The client, on Upwork · United States · August 2026" data-tr="Müşteri, Upwork üzerinden · ABD · Ağustos 2026" data-de="Der Kunde, auf Upwork · USA · August 2026">The client, on Upwork · United States · August 2026</div>
+    </div>
+    </div>
+
+    <div class="reveal" style="margin-top:40px">
+      <div class="role" data-en="Brand film · Directed by Eray Balat" data-tr="Reklam filmi · Yönetmen: Eray Balat" data-de="Werbefilm · Regie: Eray Balat">Brand film · Directed by Eray Balat</div>
+      <h3>Novora — Sağlık Köklerinde</h3>
+      <div class="labels"><span class="lb lb-med" data-en="AI animation" data-tr="Yapay zekâ animasyon" data-de="KI-Animation">AI animation</span><span class="lb lb-role" data-en="Direction · Edit · Sound · Score" data-tr="Yönetmenlik · Kurgu · Ses · Müzik" data-de="Regie · Schnitt · Ton · Musik">Direction · Edit · Sound · Score</span></div>
+      <p data-en="One olive grove, from first light to the table. Built end to end with generative AI." data-tr="Tek bir zeytinlik, ilk ışıktan sofraya. Baştan sona üretken yapay zekâ ile kuruldu." data-de="Ein Olivenhain, vom ersten Licht bis auf den Tisch. Durchgehend mit generativer KI gebaut.">One olive grove, from first light to the table. Built end to end with generative AI.</p>
+      <ul class="fbul">
+        <li data-en="27 seconds · six scenes · 4K and 1080p masters" data-tr="27 saniye · altı sahne · 4K ve 1080p master" data-de="27 Sekunden · sechs Szenen · 4K- und 1080p-Master">27 seconds · six scenes · 4K and 1080p masters</li>
+        <li data-en="Two languages from one production — no second shoot" data-tr="Tek prodüksiyondan iki dil — ikinci çekim yok" data-de="Zwei Sprachen aus einer Produktion — kein zweiter Dreh">Two languages from one production — no second shoot</li>
+        <li data-en="Original voice-over and score" data-tr="Özgün seslendirme ve müzik" data-de="Eigene Sprachaufnahme und Musik">Original voice-over and score</li>
+        <li data-en="−14 LUFS · delivered a day early" data-tr="−14 LUFS · bir gün erken teslim" data-de="−14 LUFS · einen Tag früher geliefert">−14 LUFS · delivered a day early</li>
+      </ul>
+
+      <div class="filmpair">
+        <figure><div class="fp-head"><span class="fl">🇹🇷</span> TÜRKÇE</div><a class="fp-play" data-yt="S9hG_Ga7wIg" href="https://youtu.be/S9hG_Ga7wIg" target="_blank" rel="noopener" aria-label="Novora brand film — Turkish version"><img src="novora-tr-p.webp" alt="Novora brand film — Turkish version" width="1280" height="720" loading="lazy" decoding="async" /><span class="play"></span></a></figure>
+        <figure><div class="fp-head"><span class="fl">🇬🇧</span> ENGLISH</div><a class="fp-play" data-yt="GAGlpIw3Q2Y" href="https://youtu.be/GAGlpIw3Q2Y" target="_blank" rel="noopener" aria-label="Novora brand film — English version"><img src="novora-en-p.webp" alt="Novora brand film — English version" width="1280" height="720" loading="lazy" decoding="async" /><span class="play"></span></a></figure>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:40px">
+      <div class="role" data-en="Narrative short · Edited and finished by Eray Balat" data-tr="Anlatı kısa filmi · Kurgu ve finish: Eray Balat" data-de="Narrativer Kurzfilm · Schnitt und Finish: Eray Balat">Narrative short · Edited and finished by Eray Balat</div>
+      <h3 data-en="A 10-minute narrative short" data-tr="10 dakikalık anlatı kısa filmi" data-de="Ein 10-minütiger Kurzfilm">A 10-minute narrative short</h3>
+      <div class="labels"><span class="lb lb-med" data-en="AI footage" data-tr="Yapay zekâ görüntü" data-de="KI-Material">AI footage</span><span class="lb lb-role" data-en="Video production · Edit · Sound · Score" data-tr="Video prodüksiyon · Kurgu · Ses · Müzik" data-de="Videoproduktion · Schnitt · Ton · Musik">Video production · Edit · Sound · Score</span></div>
+      <p data-en="A private commission. 106 approved stills turned into motion and cut to an existing voice-over — seven chapters, one finished film." data-tr="Özel bir sipariş. Onaylanmış 106 kare harekete çevrildi ve hazır bir seslendirmeye göre kurgulandı — yedi bölüm, bitmiş bir film." data-de="Ein privater Auftrag. 106 freigegebene Bilder in Bewegung überführt und auf eine vorhandene Sprachaufnahme geschnitten — sieben Kapitel, ein fertiger Film.">A private commission. 106 approved stills turned into motion and cut to an existing voice-over — seven chapters, one finished film.</p>
+      <ul class="fbul">
+        <li data-en="Five models, routed per shot — not one tool for everything" data-tr="Beş model, plan bazlı seçildi — her şeye tek araç değil" data-de="Fünf Modelle, pro Einstellung gewählt">Five models, routed per shot — not one tool for everything</li>
+        <li data-en="110 clips generated for $88" data-tr="110 klip, 88 dolara üretildi" data-de="110 Clips für 88 Dollar erzeugt">110 clips generated for $88</li>
+        <li data-en="Room echo cut 6–9 dB before the mix" data-tr="Miksten önce oda yankısı 6–9 dB düşürüldü" data-de="Raumhall vor der Mischung um 6–9 dB reduziert">Room echo cut 6–9 dB before the mix</li>
+        <li data-en="Delivered with an edit-ready Premiere project" data-tr="Kurguya hazır Premiere projesiyle teslim" data-de="Mit schnittfertigem Premiere-Projekt geliefert">Delivered with an edit-ready Premiere project</li>
+      </ul>
     </div>
 
     <div class="grid g-3">
@@ -975,46 +1072,21 @@
       <a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" target="_blank" rel="noopener"><div class="thumb cover-b"><img decoding="async" src="https://i.ytimg.com/vi/rYHPU-_RqOc/hqdefault.jpg" alt="Switzerland in One Hour — live-action short shot in a single hour" loading="lazy" /><span class="play"></span><span class="pill" data-en="🎥 Live-action" data-tr="🎥 Gerçek çekim" data-de="🎥 Realdreh">🎥 Live-action</span></div><div class="card-body"><h3>Switzerland in One Hour 🇨🇭</h3><div class="labels"><span class="lb lb-med" data-en="Live-action" data-tr="Gerçek çekim" data-de="Realfilm">Live-action</span><span class="lb lb-role" data-en="Director" data-tr="Yönetmen" data-de="Regie">Director</span></div><p data-en="0:45 · a one-hour challenge, shot on my first day behind the camera — no AI" data-tr="0:45 · bir saatlik meydan okuma, ilk çekim günümde çekildi — AI yok" data-de="Realdreh · 0:45 · eine Ein-Stunden-Challenge, an meinem ersten Drehtag gefilmt — kein AI">0:45 · a one-hour challenge, shot on my first day behind the camera — no AI</p></div></a>
     </div>
   </section>
-  <section id="prodphoto">
-    <div class="eyebrow reveal" data-en="Product Photography" data-tr="Ürün Fotoğrafçılığı" data-de="Produktfotografie">Product Photography</div>
-    <h2 class="sec-title reveal" data-en="AI Product Photography" data-tr="AI Ürün Fotoğrafçılığı" data-de="AI-Produktfotografie">AI Product Photography</h2>
-    <p class="sec-sub reveal" data-en="E-commerce imagery — every product shown from multiple angles and in every colorway, from clean studio packshots to lifestyle interiors. Studio quality, at scale for stores and brands." data-tr="E-ticaret görselleri — her ürün farklı açılardan ve her renk seçeneğiyle, temiz stüdyo packshot'larından yaşam alanı sahnelerine. Stüdyo kalitesinde, mağazalar ve markalar için ölçekte." data-de="E-Commerce-Visuals — jedes Produkt aus mehreren Blickwinkeln und in jeder Farbvariante, vom cleanen Studio-Packshot bis zum Lifestyle-Interieur. Studioqualität, skalierbar für Shops und Marken.">E-commerce imagery — every product shown from multiple angles and in every colorway, from clean studio packshots to lifestyle interiors. Studio quality, at scale for stores and brands.</p>
+  
+
+    <section id="docs">
+    <div class="eyebrow reveal" data-en="Documentary · CITRINE" data-tr="Belgesel · CITRINE" data-de="Dokumentarfilm · CITRINE">Documentary · CITRINE</div>
+    <h2 class="sec-title reveal" data-en="Animated Documentaries" data-tr="Animasyon Belgeseller" data-de="Animierte Dokumentarfilme">Animated Documentaries</h2>
+    <p class="sec-sub reveal" data-en="Research-driven documentaries under my CITRINE label, built with 3D, motion graphics and AI." data-tr="CITRINE etiketim altında araştırmaya dayalı belgeseller, 3D, motion graphics ve AI ile üretiliyor." data-de="Recherchegetriebene Dokumentarfilme unter meinem Label CITRINE, gestaltet mit 3D, Motion Graphics und AI.">Research-driven documentaries under my CITRINE label, built with 3D, motion graphics and AI.</p>
     <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
-
-
-
-    <div class="row-label reveal" data-en="Modular Sofas" data-tr="Modüler Koltuklar" data-de="Modulare Sofas">Modular Sofas</div>
-    <div class="grid g-gal">
-      <div class="mcard reveal t-wide"><img decoding="async" src="atelia-1.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img decoding="async" src="atelia-2.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img decoding="async" src="atelia-3.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img decoding="async" src="atelia-4.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-wide"><img decoding="async" src="atelia-5.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img decoding="async" src="atelia-6.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal"><img decoding="async" src="atelia-7.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
-    </div>
-
-    <div class="row-label reveal" data-en="Seating &amp; Armchairs" data-tr="Koltuk &amp; Berjer" data-de="Sitzmöbel &amp; Sessel">Seating &amp; Armchairs</div>
-    <div class="grid g-gal">
-      <div class="mcard reveal t-bigsq"><img decoding="async" src="argimo-1.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-sq"><img decoding="async" src="argimo-2.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-sq"><img decoding="async" src="argimo-3.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-sq"><img decoding="async" src="argimo-4.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-bigsq"><img decoding="async" src="argimo-5.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-sq"><img decoding="async" src="argimo-6.jpg?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal"><img decoding="async" src="argimo-7.webp?v=5" alt="Seating dimensions sheet — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal"><img decoding="async" src="argimo-8.webp?v=5" alt="Recliner armchair — AI product visualization" loading="lazy" /></div>
-    </div>
-    <div class="row-label reveal" data-en="Wardrobes &amp; Storage" data-tr="Gardırop &amp; Dolap" data-de="Kleiderschränke &amp; Stauraum">Wardrobes &amp; Storage</div>
-    <div class="grid g-gal">
-      <div class="mcard reveal t-land"><img decoding="async" src="furn-2.webp?v=4" alt="Furniture — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-tall"><img decoding="async" src="mira-1.webp" alt="Wardrobe — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-sq"><img decoding="async" src="furn-22.webp?v=4" alt="Anthracite wardrobe — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img decoding="async" src="mira-3.webp" alt="Wardrobe — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img decoding="async" src="furn-3.webp?v=4" alt="Furniture — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img decoding="async" src="mira-5.webp" alt="Wardrobe — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-land"><img decoding="async" src="furn-7.webp?v=4" alt="Furniture — AI product visualization" loading="lazy" /></div>
-      <div class="mcard reveal t-sq"><img decoding="async" src="mira-8.webp" alt="Chest of drawers — AI product visualization" loading="lazy" /></div>
+    <a class="card reveal" href="/flawless/" style="display:block;margin-bottom:18px"><div class="thumb" style="aspect-ratio:16/9"><img decoding="async" src="/flawless/hero-vault.webp" alt="FLAWLESS — The Antwerp Diamond Heist" loading="lazy" /><span class="play"></span><span class="pill">★ Featuring the mastermind himself · 16:56 · 4K</span></div><div class="card-body"><h3>FLAWLESS — The Antwerp Diamond Heist</h3><p data-en="The mastermind of the heist praised the film himself · CITRINE" data-tr="Soygunun beyni filmi bizzat övdü · CITRINE" data-de="Der Drahtzieher lobte den Film selbst · CITRINE">The mastermind of the heist praised the film himself · CITRINE</p></div></a>
+    <div class="grid g-3">
+      <a class="card reveal" href="https://www.youtube.com/watch?v=-0h3XlqPibo" target="_blank" rel="noopener"><div class="thumb" style="aspect-ratio:16/9"><img decoding="async" src="https://i.ytimg.com/vi/-0h3XlqPibo/hqdefault.jpg" alt="The Charlie Kirk Shooting" loading="lazy" /><span class="play"></span><span class="pill">17K views · Most-watched</span></div><div class="card-body"><h3>The Charlie Kirk Shooting</h3><p data-en="Explained by a former FBI Special Agent · CITRINE" data-tr="Eski bir FBI Özel Ajanı anlatıyor · CITRINE" data-de="Erklärt von einem ehemaligen FBI Special Agent · CITRINE">Explained by a former FBI Special Agent · CITRINE</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=Xchn8HuKOeI" target="_blank" rel="noopener"><div class="thumb cover-c"><img decoding="async" src="https://i.ytimg.com/vi/Xchn8HuKOeI/hqdefault.jpg" alt="Trump vs Elon Musk" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Meltdown: Trump vs Elon Musk</h3><p data-en="Animated documentary · CITRINE" data-tr="Animasyonlu belgesel · CITRINE" data-de="Animierter Dokumentarfilm · CITRINE">Animated documentary · CITRINE</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=1DqgCLC9EFY" target="_blank" rel="noopener"><div class="thumb cover-a"><img decoding="async" src="https://i.ytimg.com/vi/1DqgCLC9EFY/hqdefault.jpg" alt="The Louvre Heist" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Louvre Heist Explained</h3><p data-en="7 minutes that changed everything · CITRINE" data-tr="Her şeyi değiştiren 7 dakika · CITRINE" data-de="7 Minuten, die alles veränderten · CITRINE">7 minutes that changed everything · CITRINE</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=d9xmp74iJyQ" target="_blank" rel="noopener"><div class="thumb cover-b"><img decoding="async" src="https://i.ytimg.com/vi/d9xmp74iJyQ/hqdefault.jpg" alt="Milei Argentina" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>How Milei Transformed Argentina</h3><p data-en="Economy, explained in 12 months · CITRINE" data-tr="12 ayda ekonomi · CITRINE" data-de="Die Wirtschaft, erklärt in 12 Monaten · CITRINE">Economy, explained in 12 months · CITRINE</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=bSI3UbHurQQ" target="_blank" rel="noopener"><div class="thumb cover-d"><img decoding="async" src="https://i.ytimg.com/vi/bSI3UbHurQQ/hqdefault.jpg" alt="Iran vs Israel" loading="lazy" /><span class="play"></span><span class="pill">Documentary</span></div><div class="card-body"><h3>The Secret Nuclear War: Iran vs Israel</h3><p data-en="Geopolitics, explained · CITRINE" data-tr="Jeopolitik analiz · CITRINE" data-de="Geopolitik, erklärt · CITRINE">Geopolitics, explained · CITRINE</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/@citrinevideos" target="_blank" rel="noopener"><div class="thumb" style="aspect-ratio:16/9;background:radial-gradient(circle at 50% 42%,#15294c,#05182b)"><img decoding="async" src="citrine-blue.png" alt="CITRINE Documentary" loading="lazy" style="position:static;width:74%;height:auto;filter:drop-shadow(0 0 22px rgba(168,220,255,.45))" /></div><div class="card-body"><h3>CITRINE — Documentary Channel</h3><p data-en="In-depth animated documentaries →" data-tr="Derinlemesine animasyon belgeseller →" data-de="Tiefgründige animierte Dokumentarfilme →">In-depth animated documentaries →</p></div></a>
     </div>
   </section>
 
@@ -1100,6 +1172,41 @@
     </div>
   </section>
 
+    <section id="prodphoto">
+    <div class="eyebrow reveal" data-en="Product Photography" data-tr="Ürün Fotoğrafçılığı" data-de="Produktfotografie">Product Photography</div>
+    <h2 class="sec-title reveal" data-en="AI Product Photography" data-tr="AI Ürün Fotoğrafçılığı" data-de="AI-Produktfotografie">AI Product Photography</h2>
+    <p class="sec-sub reveal" data-en="E-commerce imagery — every product shown from multiple angles and in every colorway, from clean studio packshots to lifestyle interiors. Studio quality, at scale for stores and brands." data-tr="E-ticaret görselleri — her ürün farklı açılardan ve her renk seçeneğiyle, temiz stüdyo packshot'larından yaşam alanı sahnelerine. Stüdyo kalitesinde, mağazalar ve markalar için ölçekte." data-de="E-Commerce-Visuals — jedes Produkt aus mehreren Blickwinkeln und in jeder Farbvariante, vom cleanen Studio-Packshot bis zum Lifestyle-Interieur. Studioqualität, skalierbar für Shops und Marken.">E-commerce imagery — every product shown from multiple angles and in every colorway, from clean studio packshots to lifestyle interiors. Studio quality, at scale for stores and brands.</p>
+    <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
+
+
+
+    <div class="grid g-gal reveal">
+        <div class="mcard reveal t-wide"><img decoding="async" src="atelia-1.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-land"><img decoding="async" src="atelia-2.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-land"><img decoding="async" src="atelia-3.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-land"><img decoding="async" src="atelia-4.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-wide"><img decoding="async" src="atelia-5.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-land"><img decoding="async" src="atelia-6.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal"><img decoding="async" src="atelia-7.webp?v=5" alt="Modular sofa — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-bigsq"><img decoding="async" src="argimo-1.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-sq"><img decoding="async" src="argimo-2.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-sq"><img decoding="async" src="argimo-3.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-sq"><img decoding="async" src="argimo-4.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-bigsq"><img decoding="async" src="argimo-5.webp?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-sq"><img decoding="async" src="argimo-6.jpg?v=5" alt="Armchair — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal"><img decoding="async" src="argimo-7.webp?v=5" alt="Seating dimensions sheet — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal"><img decoding="async" src="argimo-8.webp?v=5" alt="Recliner armchair — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-land"><img decoding="async" src="furn-2.webp?v=4" alt="Furniture — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-tall"><img decoding="async" src="mira-1.webp" alt="Wardrobe — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-sq"><img decoding="async" src="furn-22.webp?v=4" alt="Anthracite wardrobe — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-land"><img decoding="async" src="mira-3.webp" alt="Wardrobe — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-land"><img decoding="async" src="furn-3.webp?v=4" alt="Furniture — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-land"><img decoding="async" src="mira-5.webp" alt="Wardrobe — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-land"><img decoding="async" src="furn-7.webp?v=4" alt="Furniture — AI product visualization" loading="lazy" /></div>
+        <div class="mcard reveal t-sq"><img decoding="async" src="mira-8.webp" alt="Chest of drawers — AI product visualization" loading="lazy" /></div>
+      </div>
+    </section>
+
   <section id="brands">
     <div class="eyebrow reveal" data-en="What I Do" data-tr="Neler Yapıyorum" data-de="Was ich mache">What I Do</div>
     <h2 class="sec-title reveal" data-en="AI Images · AI Videos · AI Music" data-tr="AI Görsel · AI Video · AI Müzik" data-de="AI-Bilder · AI-Videos · AI-Musik">AI Images · AI Videos · AI Music</h2>
@@ -1107,21 +1214,21 @@
     <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
     <div class="grid g-3">
       <div class="card cap reveal">
-        <div class="cap-ico">🖼️</div>
+        <div class="cap-ico"><svg class="kstar" viewBox="0 0 120 120" aria-hidden="true" style="transform:rotate(0deg)"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="butt" stroke-linejoin="miter"><path d="M94.65 94.65L53.15 94.65"/><path d="M38.15 94.65L25.35 94.65"/><path d="M25.35 94.65L25.35 53.15"/><path d="M25.35 38.15L25.35 25.35"/><path d="M25.35 25.35L66.85 25.35"/><path d="M81.85 25.35L94.65 25.35"/><path d="M94.65 25.35L94.65 38.15"/><path d="M94.65 53.15L94.65 94.65"/><path d="M109 60L99.95 69.05"/><path d="M89.34 79.66L79.66 89.34"/><path d="M69.05 99.95L60 109"/><path d="M60 109L30.66 79.66"/><path d="M20.05 69.05L11 60"/><path d="M11 60L40.34 30.66"/><path d="M50.95 20.05L60 11"/><path d="M60 11L109 60"/></g></svg></div>
         <h3 data-en="AI Images" data-tr="AI Görsel" data-de="AI-Bilder">AI Images</h3>
         <p data-en="Cinematic stills, key art and product visuals — concepted in Midjourney, Seedream &amp; Nano Banana, then upscaled and finished with Magnific and Topaz Photo AI." data-tr="Sinematik kareler, key-art ve ürün görselleri — Midjourney, Seedream &amp; Nano Banana ile kurgulanıp Magnific ve Topaz Photo AI ile büyütülüp bitiriliyor." data-de="Cineastische Stills, Key Art und Produkt-Visuals — konzipiert in Midjourney, Seedream &amp; Nano Banana, anschließend hochskaliert und finalisiert mit Magnific und Topaz Photo AI.">Cinematic stills, key art and product visuals — concepted in Midjourney, Seedream &amp; Nano Banana, then upscaled and finished with Magnific and Topaz Photo AI.</p>
         <div class="cap-tools">Midjourney · Seedream · Nano Banana · Magnific</div>
         <span class="cap-stat" data-en="Stills · Key art · Product viz" data-tr="Kare · Key-art · Ürün görseli" data-de="Stills · Key Art · Produkt-Viz">Stills · Key art · Product viz</span>
       </div>
       <div class="card cap reveal">
-        <div class="cap-ico">🎬</div>
+        <div class="cap-ico"><svg class="kstar" viewBox="0 0 120 120" aria-hidden="true" style="transform:rotate(22.5deg)"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="butt" stroke-linejoin="miter"><path d="M94.65 94.65L53.15 94.65"/><path d="M38.15 94.65L25.35 94.65"/><path d="M25.35 94.65L25.35 53.15"/><path d="M25.35 38.15L25.35 25.35"/><path d="M25.35 25.35L66.85 25.35"/><path d="M81.85 25.35L94.65 25.35"/><path d="M94.65 25.35L94.65 38.15"/><path d="M94.65 53.15L94.65 94.65"/><path d="M109 60L99.95 69.05"/><path d="M89.34 79.66L79.66 89.34"/><path d="M69.05 99.95L60 109"/><path d="M60 109L30.66 79.66"/><path d="M20.05 69.05L11 60"/><path d="M11 60L40.34 30.66"/><path d="M50.95 20.05L60 11"/><path d="M60 11L109 60"/></g></svg></div>
         <h3 data-en="AI Videos" data-tr="AI Video" data-de="AI-Videos">AI Videos</h3>
         <p data-en="Documentaries, music videos and brand films — directed with Kling, Veo and Minimax Hailuo, edited and graded in Premiere Pro &amp; After Effects." data-tr="Belgesel, müzik videosu ve marka filmleri — Kling, Veo ve Minimax Hailuo ile yönetiliyor, Premiere Pro &amp; After Effects'te kurgulanıp renklendiriliyor." data-de="Dokumentationen, Musikvideos und Markenfilme — inszeniert mit Kling, Veo und Minimax Hailuo, geschnitten und gegradet in Premiere Pro &amp; After Effects.">Documentaries, music videos and brand films — directed with Kling, Veo and Minimax Hailuo, edited and graded in Premiere Pro &amp; After Effects.</p>
         <div class="cap-tools">Kling · Veo · Hailuo · Premiere · After Effects</div>
         <span class="cap-stat" data-en="Modd × Universal Music · CITRINE docs" data-tr="Modd × Universal Music · CITRINE belgeselleri" data-de="Modd × Universal Music · CITRINE-Dokus">Modd × Universal Music · CITRINE docs</span>
       </div>
       <div class="card cap reveal">
-        <div class="cap-ico">🎵</div>
+        <div class="cap-ico"><svg class="kstar" viewBox="0 0 120 120" aria-hidden="true" style="transform:rotate(45deg)"><g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="butt" stroke-linejoin="miter"><path d="M94.65 94.65L53.15 94.65"/><path d="M38.15 94.65L25.35 94.65"/><path d="M25.35 94.65L25.35 53.15"/><path d="M25.35 38.15L25.35 25.35"/><path d="M25.35 25.35L66.85 25.35"/><path d="M81.85 25.35L94.65 25.35"/><path d="M94.65 25.35L94.65 38.15"/><path d="M94.65 53.15L94.65 94.65"/><path d="M109 60L99.95 69.05"/><path d="M89.34 79.66L79.66 89.34"/><path d="M69.05 99.95L60 109"/><path d="M60 109L30.66 79.66"/><path d="M20.05 69.05L11 60"/><path d="M11 60L40.34 30.66"/><path d="M50.95 20.05L60 11"/><path d="M60 11L109 60"/></g></svg></div>
         <h3 data-en="AI Music" data-tr="AI Müzik" data-de="AI-Musik">AI Music</h3>
         <p data-en="Original songs and scores built in Suno — from full tracks for music videos to brand soundbeds. I've produced 5,500+ tracks in Suno." data-tr="Suno ile üretilen özgün şarkılar ve müzikler — müzik videoları için tam parçalardan marka müziklerine. Suno'da 5.500'den fazla parça ürettim." data-de="Eigene Songs und Scores, produziert in Suno — von kompletten Tracks für Musikvideos bis zu Brand-Soundbeds. Ich habe über 5.500 Tracks in Suno produziert.">Original songs and scores built in Suno — from full tracks for music videos to brand soundbeds. I've produced 5,500+ tracks in Suno.</p>
         <div class="cap-tools">Suno · Sound design · Scoring</div>
@@ -1132,7 +1239,7 @@
     <div class="row-label reveal" data-en="Services I Offer" data-tr="Verdiğim Hizmetler" data-de="Meine Leistungen">Services I Offer</div>
     <div class="svc-groups">
       <div class="svc-group reveal">
-        <h4>🎨 <span data-en="Visuals &amp; Images" data-tr="Görsel &amp; İmaj" data-de="Visuals &amp; Bilder">Visuals &amp; Images</span></h4>
+        <h4><svg class="kstar-s" viewBox="0 0 120 120" aria-hidden="true" style="transform:rotate(0deg)"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="butt" stroke-linejoin="miter"><path d="M94.65 94.65L53.15 94.65"/><path d="M38.15 94.65L25.35 94.65"/><path d="M25.35 94.65L25.35 53.15"/><path d="M25.35 38.15L25.35 25.35"/><path d="M25.35 25.35L66.85 25.35"/><path d="M81.85 25.35L94.65 25.35"/><path d="M94.65 25.35L94.65 38.15"/><path d="M94.65 53.15L94.65 94.65"/><path d="M109 60L99.95 69.05"/><path d="M89.34 79.66L79.66 89.34"/><path d="M69.05 99.95L60 109"/><path d="M60 109L30.66 79.66"/><path d="M20.05 69.05L11 60"/><path d="M11 60L40.34 30.66"/><path d="M50.95 20.05L60 11"/><path d="M60 11L109 60"/></g></svg><span data-en="Visuals &amp; Images" data-tr="Görsel &amp; İmaj" data-de="Visuals &amp; Bilder">Visuals &amp; Images</span></h4>
         <div class="chips">
           <span class="chip" data-en="AI Image Generation" data-tr="AI Görsel Üretimi" data-de="AI-Bildgenerierung">AI Image Generation</span>
           <span class="chip" data-en="Product Visualization" data-tr="Ürün Görselleştirme" data-de="Produktvisualisierung">Product Visualization</span>
@@ -1140,7 +1247,7 @@
         </div>
       </div>
       <div class="svc-group reveal">
-        <h4>🎬 <span data-en="Video &amp; Film" data-tr="Video &amp; Film" data-de="Video &amp; Film">Video &amp; Film</span></h4>
+        <h4><svg class="kstar-s" viewBox="0 0 120 120" aria-hidden="true" style="transform:rotate(0deg)"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="butt" stroke-linejoin="miter"><path d="M94.65 94.65L53.15 94.65"/><path d="M38.15 94.65L25.35 94.65"/><path d="M25.35 94.65L25.35 53.15"/><path d="M25.35 38.15L25.35 25.35"/><path d="M25.35 25.35L66.85 25.35"/><path d="M81.85 25.35L94.65 25.35"/><path d="M94.65 25.35L94.65 38.15"/><path d="M94.65 53.15L94.65 94.65"/><path d="M109 60L99.95 69.05"/><path d="M89.34 79.66L79.66 89.34"/><path d="M69.05 99.95L60 109"/><path d="M60 109L30.66 79.66"/><path d="M20.05 69.05L11 60"/><path d="M11 60L40.34 30.66"/><path d="M50.95 20.05L60 11"/><path d="M60 11L109 60"/></g></svg><span data-en="Video &amp; Film" data-tr="Video &amp; Film" data-de="Video &amp; Film">Video &amp; Film</span></h4>
         <div class="chips">
           <span class="chip" data-en="AI Video Production" data-tr="AI Video Prodüksiyon" data-de="AI-Videoproduktion">AI Video Production</span>
           <span class="chip" data-en="Brand &amp; Product Films" data-tr="Marka &amp; Ürün Filmleri" data-de="Marken- &amp; Produktfilme">Brand &amp; Product Films</span>
@@ -1148,7 +1255,7 @@
         </div>
       </div>
       <div class="svc-group reveal">
-        <h4>✨ <span data-en="Motion &amp; Post" data-tr="Motion &amp; Post" data-de="Motion &amp; Post">Motion &amp; Post</span></h4>
+        <h4><svg class="kstar-s" viewBox="0 0 120 120" aria-hidden="true" style="transform:rotate(0deg)"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="butt" stroke-linejoin="miter"><path d="M94.65 94.65L53.15 94.65"/><path d="M38.15 94.65L25.35 94.65"/><path d="M25.35 94.65L25.35 53.15"/><path d="M25.35 38.15L25.35 25.35"/><path d="M25.35 25.35L66.85 25.35"/><path d="M81.85 25.35L94.65 25.35"/><path d="M94.65 25.35L94.65 38.15"/><path d="M94.65 53.15L94.65 94.65"/><path d="M109 60L99.95 69.05"/><path d="M89.34 79.66L79.66 89.34"/><path d="M69.05 99.95L60 109"/><path d="M60 109L30.66 79.66"/><path d="M20.05 69.05L11 60"/><path d="M11 60L40.34 30.66"/><path d="M50.95 20.05L60 11"/><path d="M60 11L109 60"/></g></svg><span data-en="Motion &amp; Post" data-tr="Motion &amp; Post" data-de="Motion &amp; Post">Motion &amp; Post</span></h4>
         <div class="chips">
           <span class="chip" data-en="Motion Design" data-tr="Motion Design" data-de="Motion Design">Motion Design</span>
           <span class="chip" data-en="Editing &amp; Color" data-tr="Kurgu &amp; Renk" data-de="Schnitt &amp; Color">Editing &amp; Color</span>
@@ -1156,7 +1263,7 @@
         </div>
       </div>
       <div class="svc-group reveal">
-        <h4>🎵 <span data-en="Music, Ads &amp; Content" data-tr="Müzik, Reklam &amp; İçerik" data-de="Musik, Ads &amp; Content">Music, Ads &amp; Content</span></h4>
+        <h4><svg class="kstar-s" viewBox="0 0 120 120" aria-hidden="true" style="transform:rotate(0deg)"><g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="butt" stroke-linejoin="miter"><path d="M94.65 94.65L53.15 94.65"/><path d="M38.15 94.65L25.35 94.65"/><path d="M25.35 94.65L25.35 53.15"/><path d="M25.35 38.15L25.35 25.35"/><path d="M25.35 25.35L66.85 25.35"/><path d="M81.85 25.35L94.65 25.35"/><path d="M94.65 25.35L94.65 38.15"/><path d="M94.65 53.15L94.65 94.65"/><path d="M109 60L99.95 69.05"/><path d="M89.34 79.66L79.66 89.34"/><path d="M69.05 99.95L60 109"/><path d="M60 109L30.66 79.66"/><path d="M20.05 69.05L11 60"/><path d="M11 60L40.34 30.66"/><path d="M50.95 20.05L60 11"/><path d="M60 11L109 60"/></g></svg><span data-en="Music, Ads &amp; Content" data-tr="Müzik, Reklam &amp; İçerik" data-de="Musik, Ads &amp; Content">Music, Ads &amp; Content</span></h4>
         <div class="chips">
           <span class="chip" data-en="AI Music &amp; Scoring" data-tr="AI Müzik &amp; Besteleme" data-de="AI-Musik &amp; Scoring">AI Music &amp; Scoring</span>
           <span class="chip" data-en="UGC &amp; Social Ads" data-tr="UGC &amp; Sosyal Reklam" data-de="UGC &amp; Social Ads">UGC &amp; Social Ads</span>
@@ -1173,7 +1280,7 @@
     <div class="reviews-grid">
       <figure class="rev-card rev-feat reveal">
         <div class="rev-stars" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
-        <blockquote class="rev-quote" data-en="“He was outstanding from the first cut to the last. He caught continuity and pacing problems I'd missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. … The final cut came in exactly at target length and looked genuinely professional. I'd hire him again without hesitation, and I already plan to for my next film.”" data-tr="“İlk kurgudan sonuncusuna kadar olağanüstüydü. Benim gözden kaçırdığım süreklilik ve tempo sorunlarını yakaladı, defalarca plan değişikliğini ve ses düzeltmesini şikâyetsiz karşıladı, her teslim noktasına erken ya da tam zamanında ulaştı. … Final kurgu tam hedef sürede geldi ve gerçekten profesyonel görünüyordu. Onunla hiç tereddütsüz yine çalışırım — bir sonraki filmim için şimdiden planlıyorum.”" data-de="“Er war vom ersten bis zum letzten Schnitt herausragend. Er fing Kontinuitäts- und Tempoprobleme auf, die ich übersehen hatte, meisterte mehrere Runden von Shot-Wechseln und Audio-Fixes ohne Klagen und erreichte jeden Meilenstein früher oder pünktlich. … Der finale Schnitt kam exakt auf Ziellänge und wirkte wirklich professionell. Ich würde ihn ohne Zögern wieder engagieren — für meinen nächsten Film plane ich es bereits.”">“He was outstanding from the first cut to the last. He caught continuity and pacing problems I'd missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. … The final cut came in exactly at target length and looked genuinely professional. I'd hire him again without hesitation, and I already plan to for my next film.”</blockquote>
+        <p class="rev-pull" data-en="&ldquo;I&rsquo;d hire him again without hesitation.&rdquo;" data-tr="&ldquo;Onunla hiç tereddütsüz yine çalışırım.&rdquo;" data-de="&ldquo;Ich würde ihn ohne Zögern wieder engagieren.&rdquo;">&ldquo;I&rsquo;d hire him again without hesitation.&rdquo;</p><blockquote class="rev-quote rev-clamp" data-en="“He was outstanding from the first cut to the last. He caught continuity and pacing problems I'd missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. … The final cut came in exactly at target length and looked genuinely professional. I'd hire him again without hesitation, and I already plan to for my next film.”" data-tr="“İlk kurgudan sonuncusuna kadar olağanüstüydü. Benim gözden kaçırdığım süreklilik ve tempo sorunlarını yakaladı, defalarca plan değişikliğini ve ses düzeltmesini şikâyetsiz karşıladı, her teslim noktasına erken ya da tam zamanında ulaştı. … Final kurgu tam hedef sürede geldi ve gerçekten profesyonel görünüyordu. Onunla hiç tereddütsüz yine çalışırım — bir sonraki filmim için şimdiden planlıyorum.”" data-de="“Er war vom ersten bis zum letzten Schnitt herausragend. Er fing Kontinuitäts- und Tempoprobleme auf, die ich übersehen hatte, meisterte mehrere Runden von Shot-Wechseln und Audio-Fixes ohne Klagen und erreichte jeden Meilenstein früher oder pünktlich. … Der finale Schnitt kam exakt auf Ziellänge und wirkte wirklich professionell. Ich würde ihn ohne Zögern wieder engagieren — für meinen nächsten Film plane ich es bereits.”">“He was outstanding from the first cut to the last. He caught continuity and pacing problems I'd missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. … The final cut came in exactly at target length and looked genuinely professional. I'd hire him again without hesitation, and I already plan to for my next film.”</blockquote><button class="rev-more" type="button" data-en="Read the full review" data-tr="Yorumun tamamını oku" data-de="Ganze Bewertung lesen">Read the full review</button>
         <div class="rev-tags"><span class="chip" data-en="Reliable" data-tr="Güvenilir" data-de="Zuverlässig">Reliable</span><span class="chip" data-en="Clear Communicator" data-tr="Net İletişim" data-de="Klare Kommunikation">Clear Communicator</span><span class="chip" data-en="Professional" data-tr="Profesyonel" data-de="Professionell">Professional</span></div>
         <figcaption class="rev-meta" data-en="Sci-fi competition trailer · Cut from AI-generated footage · 🇺🇸 United States · Upwork, August 2026" data-tr="Bilimkurgu yarışma fragmanı · AI üretimi görüntülerden kurgu · 🇺🇸 ABD · Upwork, Ağustos 2026" data-de="Sci-Fi-Wettbewerbstrailer · Schnitt aus AI-generiertem Material · 🇺🇸 USA · Upwork, August 2026">Sci-fi competition trailer · Cut from AI-generated footage · 🇺🇸 United States · Upwork, August 2026</figcaption>
       </figure>
@@ -1216,13 +1323,7 @@
         <a class="social-cta" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener"><span class="uw-dot" aria-hidden="true"></span><span data-en="Hire me on Upwork →" data-tr="Upwork'te benimle çalış →" data-de="Auf Upwork beauftragen →">Hire me on Upwork →</span></a>
       </div>
       <div class="socials">
-        <a class="social" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener">Instagram</a>
-        <a class="social" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener">YouTube</a>
-        <a class="social" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="social" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener">Behance</a>
-        <a class="social" href="https://x.com/documenteray" target="_blank" rel="noopener">Twitter / X</a>
-        <a class="social" href="https://filmfreeway.com/ErayBalat" target="_blank" rel="noopener">FilmFreeway</a>
-        <a class="social" href="https://medium.com/@eraybalat" target="_blank" rel="noopener">Medium</a>
+        <div class="sico-row sico-row1"><a class="sico sico-lg" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener me" aria-label="Upwork" title="Upwork"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.4 8.6v4a3.1 3.1 0 0 0 6.2 0v-4M9.6 11.8c.9 2 2 3.7 3.9 3.7a3.4 3.4 0 1 0-3.3-4.2"/></svg></a><a class="sico sico-lg" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a><a class="sico sico-lg" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4.2"/><path d="M10.2 9.3v5.4L15 12z" fill="currentColor" stroke="none"/></svg></a><a class="sico sico-lg" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener me" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3.2"/><path d="M7.3 10.6v6M7.3 7.5v.02M11 16.6v-6M11 12.8c0-1.3 1-2.2 2.2-2.2s2.2.9 2.2 2.2v3.8"/></svg></a></div><div class="sico-row sico-row2"><a class="sico" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener me" aria-label="Behance" title="Behance"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.8 6.8h4.6c1.4 0 2.3.7 2.3 1.9s-.9 1.9-2.3 1.9H2.8zM2.8 10.6h5c1.6 0 2.6.8 2.6 2.1s-1 2.1-2.6 2.1h-5zM14.4 8.4h5.2M20.8 13.6h-6.6c0 1.5 1 2.4 2.5 2.4 1 0 1.7-.4 2.1-1.1M14.2 13.6c0-1.8 1.2-3 2.8-3s2.8 1.2 2.8 3"/></svg></a><a class="sico" href="https://x.com/documenteray" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.4 4l7.3 9.1L4.8 20M19.6 4l-7.2 8.3L19.6 20"/></svg></a><a class="sico" href="https://medium.com/@eraybalat" target="_blank" rel="noopener me" aria-label="Medium" title="Medium"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.3" cy="12" r="4.3"/><ellipse cx="14.8" cy="12" rx="2" ry="4.3"/><ellipse cx="20.4" cy="12" rx=".85" ry="4.3"/></svg></a><a class="sico" href="https://filmfreeway.com/ErayBalat" target="_blank" rel="noopener me" aria-label="FilmFreeway" title="FilmFreeway"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.2" width="18" height="13.6" rx="2.4"/><path d="M7.2 5.2v13.6M16.8 5.2v13.6M3 9.6h4.2M3 14.4h4.2M16.8 9.6H21M16.8 14.4H21"/></svg></a><a class="sico" href="https://huggingface.co/ErayBalat" target="_blank" rel="noopener me" aria-label="Hugging Face" title="Hugging Face"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="11.6" r="7.2"/><path d="M9.4 10.4v.02M14.6 10.4v.02M9.1 13.7c.8 1.4 1.9 2.1 2.9 2.1s2.1-.7 2.9-2.1"/></svg></a><a class="sico" href="https://github.com/eraybalatt" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.4 20.2c-3.8 1.1-3.8-2-5.3-2.4m11 4.6v-3c0-.9.1-1.2-.5-1.7 2.5-.3 4.8-1.3 4.8-5.3a4.1 4.1 0 0 0-1.2-2.9 3.8 3.8 0 0 0-.1-2.9s-.9-.3-3 1.2a10.4 10.4 0 0 0-5.4 0C7.5 6.3 6.6 6.6 6.6 6.6a3.8 3.8 0 0 0-.1 2.9 4.1 4.1 0 0 0-1.2 2.9c0 4 2.3 5 4.8 5.3-.6.5-.6 1-.5 1.7v3"/></svg></a><a class="sico" href="https://letterboxd.com/eraybalat/" target="_blank" rel="noopener me" aria-label="Letterboxd" title="Letterboxd"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.6" cy="12" r="4.1"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="12" r="4.1"/></svg></a><a class="sico" href="https://www.freelancer.com/u/eraybalat" target="_blank" rel="noopener me" aria-label="Freelancer" title="Freelancer"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.4h6.2L8.9 8.6H4zM11.6 5.4H20l-8.3 13.2 1.4-8.2H8.3z"/></svg></a></div>
       </div>
       </div>
     </div>
@@ -1230,12 +1331,10 @@
 
 </main>
 
-<footer>
-  © <span id="year"></span> <span class="brand-sm">Eray Balat</span> · <a class="foot-link" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener">documenteray</a>
+<footer><div class="foot-row"><div>© <span id="year"></span> <span class="brand-sm">Eray Balat</span> · <a class="foot-link" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener">documenteray</a>
   <span data-en="— Directed with AI · eraybalat.com" data-tr="— AI ile yönetildi · eraybalat.com" data-de="— Inszeniert mit AI · eraybalat.com">— Directed with AI · eraybalat.com</span>
   <p style="margin:10px 0 0"><a data-faq href="/faq/" style="color:var(--c1);text-decoration:none;font-size:.85rem" data-en="AI film FAQ — how it works, timelines, pricing →" data-tr="SSS — yapay zekâ ile film: süreç, süre, bütçe →" data-de="FAQ — AI-Film: Ablauf, Dauer, Budget →">AI film FAQ — how it works, timelines, pricing →</a></p>
-  <div class="foot-rights" data-en="All rights reserved." data-tr="Tüm hakları saklıdır." data-de="Alle Rechte vorbehalten.">All rights reserved.</div>
-</footer>
+  <div class="foot-rights" data-en="All rights reserved." data-tr="Tüm hakları saklıdır." data-de="Alle Rechte vorbehalten.">All rights reserved.</div></div><div class="foot-right"><span><span class="dot"></span><span data-en="Available for work" data-tr="Yeni işlere açık" data-de="Offen für Projekte">Available for work</span></span><a class="foot-link" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a></div></div></footer>
 
 <script>
   const toggle=document.querySelector('.nav-toggle');
@@ -1311,8 +1410,44 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   const navA=[...document.querySelectorAll('.nav-links a')];
   const navIds=new Set(navA.map(a=>a.getAttribute('href')).filter(h=>h&&h.startsWith('#')).map(h=>h.slice(1)));
-  const spy=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;if(!navIds.has(id))return;navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));}}),{rootMargin:'-45% 0px -50% 0px'});
-  document.querySelectorAll('section[id]').forEach(s=>spy.observe(s));
+  const navTargets=navA.map(a=>({a:a,id:(a.getAttribute('href')||'').startsWith('#')?a.getAttribute('href').slice(1):null}))
+  .filter(t=>t.id&&document.getElementById(t.id));
+function scrollerOf(el){let p=el.parentElement;
+  while(p&&p!==document.body){const st=getComputedStyle(p);
+    if(/(auto|scroll)/.test(st.overflowY)&&p.scrollHeight>p.clientHeight+40)return p;p=p.parentElement;}
+  return document.scrollingElement||document.documentElement;}
+const SC=navTargets.length?scrollerOf(document.getElementById(navTargets[0].id)):document.scrollingElement;
+const OFFSET=96;
+function markActive(){
+  const line=(SC.scrollTop||0)+OFFSET+40;
+  let cur=null;
+  for(const t of navTargets){
+    const el=document.getElementById(t.id);
+    const top=el.getBoundingClientRect().top-SC.getBoundingClientRect().top+(SC.scrollTop||0);
+    if(top<=line)cur=t; else break;
+  }
+  navA.forEach(a=>a.classList.remove('active'));
+  if(cur)cur.a.classList.add('active');
+}
+let tick=false;
+(SC===document.scrollingElement?window:SC).addEventListener('scroll',function(){
+  if(tick)return; tick=true; requestAnimationFrame(function(){markActive();tick=false;});
+},{passive:true});
+markActive();
+navTargets.forEach(function(t){
+  t.a.addEventListener('click',function(e){
+    var el=document.getElementById(t.id); if(!el)return;
+    e.preventDefault();
+    // hedefin ustundeki gizli bloklari acarak hedefi sabitle
+    document.querySelectorAll('.reveal').forEach(function(r){
+      if(r.getBoundingClientRect().top < el.getBoundingClientRect().top) r.classList.add('show');
+    });
+    var top=el.getBoundingClientRect().top-SC.getBoundingClientRect().top+(SC.scrollTop||0)-OFFSET;
+    SC.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    history.replaceState(null,'','#'+t.id);
+    setTimeout(markActive,650);
+  });
+});
 
   // keep hero bg video playing/looping (some browsers pause autoplay)
   const hv=document.getElementById('heroVid');
@@ -1462,5 +1597,9 @@
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74"}'></script><!-- End Cloudflare Web Analytics -->
 
 
-</body>
+<script>document.querySelectorAll('.rev-more').forEach(function(b){b.addEventListener('click',function(){
+var q=b.parentElement.querySelector('.rev-quote');var open=!q.classList.toggle('rev-clamp');
+var L=document.documentElement.lang||'en';
+b.textContent=open?(L==='tr'?'Kısalt':L==='de'?'Weniger anzeigen':'Show less')
+:(L==='tr'?'Yorumun tamamını oku':L==='de'?'Ganze Bewertung lesen':'Read the full review');});});</script></body>
 </html>
