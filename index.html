@@ -1128,29 +1128,20 @@
     header.nav .brand-mark,header.nav .brand-mark svg{width:112px;height:112px}
     header.nav .brand-mark svg g{stroke-width:6}
 
-    /* 5) yildizin arkasina duz koyu madalyon.
-       Sebep: header.nav::before karartma perdesi x=130'da basliyor, yildiz 64-176
-       arasinda -> sag %41'i perdenin ustunde kaliyordu; isaret ici bos oldugu icin
-       bu kayma deliklerinden goruluyordu. Madalyon zemini esitler. */
-    header.nav .brand-mark{position:relative}
-    header.nav .brand-mark::before{
-      content:"";position:absolute;z-index:0;left:50%;top:50%;
-      width:128%;height:128%;transform:translate(-50%,-50%);border-radius:50%;
-      pointer-events:none;
-      background:radial-gradient(circle at 50% 46%,#0a2740 0%,#061a2e 62%,rgba(6,26,46,0) 100%);
-      box-shadow:inset 0 0 0 1px rgba(120,210,255,.10)}
-    header.nav .brand-mark svg{position:relative;z-index:1}
+    /* 5) Karartma perdesi marka bolgesine hic girmesin.
+       header.nav::before x=130'da basliyor, yildiz ise 64-176 arasinda: sag %41'i
+       perdenin uzerine dusuyor ve isaret ici bos oldugu icin bu kayma deliklerinden
+       goruluyordu. Cozum madalyonla ortmek degil, perdeyi marka blogunun altindan
+       baslatmak — sebebi kesiyor, yeni katman eklemiyor. */
+    header.nav::before{
+      -webkit-mask:linear-gradient(180deg,transparent 0,transparent 150px,#000 240px,#000 100%);
+      mask:linear-gradient(180deg,transparent 0,transparent 150px,#000 240px,#000 100%)}
 
-    /* 6) ray dugumu: nokta yerine marka yildizi. Renk --nd'den gelir, boylece
-       "aktife kadar dolan ray" davranisi (.active ~ a) aynen korunur. */
-    .nav-links a::after{
-      background-image:none;
-      left:16px;width:19px;
-      -webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%2211%22%20stroke-linejoin%3D%22miter%22%3E%3Cpath%20d%3D%22M51.971%2018.029L60%2010L88.749%2038.749%22%2F%3E%3Cpath%20d%3D%22M101.971%2051.971L110%2060L81.251%2088.749%22%2F%3E%3Cpath%20d%3D%22M68.029%20101.971L60%20110L31.251%2081.251%22%2F%3E%3Cpath%20d%3D%22M18.029%2068.029L10%2060L38.749%2031.251%22%2F%3E%3Cpath%20d%3D%22M24.64%2036.01L24.64%2024.64L65.29%2024.64%22%2F%3E%3Cpath%20d%3D%22M83.99%2024.64L95.36%2024.64L95.36%2065.29%22%2F%3E%3Cpath%20d%3D%22M95.36%2083.99L95.36%2095.36L54.71%2095.36%22%2F%3E%3Cpath%20d%3D%22M36.01%2095.36L24.64%2095.36L24.64%2054.71%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center/17px 17px no-repeat,linear-gradient(90deg,transparent calc(50% - 1px),#000 calc(50% - 1px),#000 calc(50% + 1px),transparent calc(50% + 1px));
-      mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20width%3D%22120%22%20height%3D%22120%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%2211%22%20stroke-linejoin%3D%22miter%22%3E%3Cpath%20d%3D%22M51.971%2018.029L60%2010L88.749%2038.749%22%2F%3E%3Cpath%20d%3D%22M101.971%2051.971L110%2060L81.251%2088.749%22%2F%3E%3Cpath%20d%3D%22M68.029%20101.971L60%20110L31.251%2081.251%22%2F%3E%3Cpath%20d%3D%22M18.029%2068.029L10%2060L38.749%2031.251%22%2F%3E%3Cpath%20d%3D%22M24.64%2036.01L24.64%2024.64L65.29%2024.64%22%2F%3E%3Cpath%20d%3D%22M83.99%2024.64L95.36%2024.64L95.36%2065.29%22%2F%3E%3Cpath%20d%3D%22M95.36%2083.99L95.36%2095.36L54.71%2095.36%22%2F%3E%3Cpath%20d%3D%22M36.01%2095.36L24.64%2095.36L24.64%2054.71%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") center/17px 17px no-repeat,linear-gradient(90deg,transparent calc(50% - 1px),#000 calc(50% - 1px),#000 calc(50% + 1px),transparent calc(50% + 1px));
-      background-color:var(--nd)}
-    .nav-links a.active::after{
-      background-color:#3fd8ea;filter:drop-shadow(0 0 7px rgba(0,200,221,.95))}
+    /* 6) ray dugumu noktadir. Dokumali yildiz 17px'te cozunmuyor —
+       olcum: cizgi S*w/120, dokuma boslugu (18.7-1.414w)/2*S/120; ikisi 25.5px'te
+       kesisiyor. Altinda disli gibi okunuyor. Aktif nokta cininin turkuazi. */
+    .nav-links a.active{--nd:#3fd8ea}
+    .nav-links a.active::after{filter:drop-shadow(0 0 6px rgba(0,200,221,.85))}
 
     /* 7) kullanici dostu: daha buyuk hedef, net aktif durum */
     .nav-links a{padding:11px 11px 11px 34px}
