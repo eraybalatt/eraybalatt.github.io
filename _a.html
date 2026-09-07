@@ -569,117 +569,324 @@
 /* ==== RAIL NAV ("Indexed Portfolio") — overrides the top-bar rules by source order ====
    Desktop (>=880px): fixed vertical rail on the RIGHT.  Mobile (<880px): top bar + hamburger. */
 
-:root{ --sb:0px; --barT:72px; --barB:54px; }              /* sidebar width */
+:root{ --sb:0px; }              /* sidebar width */
 
 /* ---------------- DESKTOP: left vertical rail (>=880px) ---------------- */
-@media (min-width:880px){
-  /* ===== SESSIZ SALON — MAVI PERDE: ust ve alt sinematik bant, sol ray yok ===== */
-  body{ padding-left:0; padding-top:var(--barT); padding-bottom:var(--barB); }
+/* ===== KUNYE VE FIHRIST ===== */
+/* ============================================================
+   CHROME — "Künye ve Fihrist" (masthead + index)
 
-  /* --- ust bant --- */
-  header.nav{
-    position:fixed; top:0; left:0; right:0; bottom:auto; width:auto; height:var(--barT);
-    border-right:none; border-bottom:none;
-    background:linear-gradient(180deg,#061c37 0%,#04152a 46%,#010916 100%);
-    box-shadow:inset 0 1px 0 rgba(168,220,255,.08),0 22px 42px -12px rgba(0,1,8,.95);
-    -webkit-backdrop-filter:none; backdrop-filter:none;
-  }
-  header.nav::before{ display:none; }
-  /* isik dudagi: bandin altinda tek hairline, %62'de tepe yapar (altin oran, merkez degil) */
-  header.nav::after{
-    display:block; content:""; position:absolute; left:0; right:0; top:100%; height:1px;
-    z-index:22; pointer-events:none; animation:none; background:linear-gradient(90deg,
-      rgba(94,194,255,0) 0%,rgba(94,194,255,.10) 13%,rgba(94,194,255,.36) 40%,
-      rgba(234,246,255,1) 62%,rgba(94,194,255,.32) 79%,rgba(94,194,255,.05) 93%,rgba(94,194,255,0) 100%);
-  }
-  header.nav .nav-inner{
-    max-width:none; height:var(--barT); padding:0 32px;
-    display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:24px;
-  }
+   WHERE THIS GOES — this is load-bearing, not a note.
+   Paste at the very END of the SECOND style block in index.html: the one
+   that opens at ~line 996 and closes at ~line 1156, as the last thing
+   before that closing tag. NOT in the head block. If it goes in the head
+   block, six rules in the "6 Eylul 2026 gecisi" section beat it and you
+   get the rail back with a broken bar on top of it.
+   (And never write the literal style-close string inside a CSS comment —
+   the HTML parser ends the element there and the rest becomes body text.)
 
-  /* --- kimlik kilidi: ad + rol, optik olarak ayni sag kenarda biter --- */
-  .brand{
-    flex:0 0 auto; flex-direction:column; align-items:flex-start; gap:0;
-    align-self:auto; padding:0; margin:0; border-bottom:none; text-align:left;
-  }
-  .brand-mark{ display:none; }
-  .brand-wm{ display:flex; }
-  .brand-wm b{
-    font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:1.32rem;
-    letter-spacing:.2173em; line-height:1; text-transform:uppercase;
-    color:#eaf6ff; background:none; -webkit-text-fill-color:#eaf6ff;
-    animation:none; margin-right:-.2173em;
-  }
-  .brand-wm i{
-    margin-top:11px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.5rem;
-    letter-spacing:.62em; line-height:1; text-transform:uppercase;
-    color:rgba(168,220,255,.74); margin-right:-.62em;
-  }
+   OPTIONAL CLEANUP — this block is written to win without any of it:
+     · the whole "RAIL NAV (Indexed Portfolio)" block (~568-778) incl.
+       :root{--sb:240px}, body{padding-left:var(--sb)}, @keyframes railFlow
+     · header.nav::after (line 89, the 14px tiled star strip) + @keyframes navmotif
+     · footer::before (the 20px tiled star strip)
+     · @keyframes brandglow / brandspin / brandshine
+     · the .avail fixed-pill rulesets (781-789, 1085-1090) + @keyframes availPulse
+     · the min-width:880 header.nav overrides at 1068-1075 and 1136-1153
+     · @media(min-width:900px){#prodphoto ... var(--sb) ...} at ~707-711
+   ============================================================ */
 
-  /* --- ust bant baglantilari --- */
-  .nav-links{
-    position:static; flex:1 1 auto; display:flex; flex-direction:row; align-items:center;
-    justify-content:flex-end; gap:20px; padding:0; margin:0; background:none; border:none;
-    counter-reset:none; width:auto;
-  }
-  .nav-links::before{ display:none; }
-  .nav-links a{
-    position:relative; flex:none; white-space:nowrap; display:inline-flex; align-items:center;
-    padding:8px 0; border-radius:0; background:none; box-shadow:none; text-shadow:none;
-    font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:.66rem;
-    letter-spacing:.17em; line-height:1; text-transform:uppercase;
-    color:rgba(168,220,255,.74); counter-increment:none;
-    transition:color .5s cubic-bezier(.4,0,.2,1);
-  }
-  .nav-links a::before,.nav-links a::after{ content:none; display:none; }
-  .nav-links a:hover{ color:#eaf6ff; background:none; }
-  .nav-links a.active{ color:#eaf6ff; background:none; box-shadow:none; }
-  /* Hire Me: kutu yok, hap yok — sadece deger ve bosluk */
-  .nav-links a[data-hire]{ color:#eaf6ff; font-weight:600; margin-left:22px; }
+:root{
+  --gutter:22px;
+  --mark:34px;          /* his measured mud floor is 26px */
+  --mark-pull:1.5px;    /* 34 * 4.21% miter-inclusive ink padding */
+  --mark-gap:16px;
+  --txtcol:calc(var(--mark) + var(--mark-gap) - var(--mark-pull)); /* 48.5 */
+  --row1:56px; --row2:40px;                                        /* 96px  */
+  --ink:#d7e7f7;        /* row 1 links     14.96:1 on plate */
+  --ink-2:#c8e0f5;      /* row 2 index     13.86:1 */
+  --ink-3:#9fbdd8;      /* role + avail     9.65:1 */
+  --rule:rgba(140,205,250,.12);
+  --rule-2:rgba(140,205,250,.20);
+  --nav-ease:cubic-bezier(.2,.7,.2,1);
+  --plate:rgba(5,17,31,.985);  /* .94 measured: hero type readable THROUGH the bar */
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+}
 
-  /* --- alt bant: makara --- */
-  .reel{
-    position:fixed; left:0; right:0; bottom:0; height:var(--barB); z-index:55;
-    display:flex; align-items:center; gap:20px; padding:0 32px;
-    /* sagda dil secicisine yer birak — Contact onun uzerine binmesin */
-    padding-right:172px;
-    background:linear-gradient(180deg,#061c37 0%,#04152a 54%,#010916 100%);
-    box-shadow:inset 0 -1px 0 rgba(168,220,255,.07),0 -18px 36px -12px rgba(0,1,8,.9);
-  }
-  .reel-label{
-    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.44rem;
-    letter-spacing:.62em; text-transform:uppercase; color:rgba(168,220,255,.74);
-    margin-right:-.62em; flex:0 0 auto;
-  }
-  .reel a{
-    flex:none; white-space:nowrap; padding:6px 0; text-decoration:none;
-    font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:.62rem;
-    letter-spacing:.17em; text-transform:uppercase; color:rgba(168,220,255,.74);
-    transition:color .5s cubic-bezier(.4,0,.2,1);
-  }
-  .reel a i{ display:none; }
-  .reel a:hover{ color:#eaf6ff; }
-  .reel a.active{ color:#eaf6ff; }
-  .reel a.active::after{
-    content:""; position:absolute; left:0; right:0; bottom:-6px; height:1px;
-    background:rgba(234,246,255,.85);
-  }
-  .reel a{ position:relative; }
-  .reel-tick{ display:none; }
-  .reel-gap{ flex:1 1 auto; }
+/* ---- ONE anchor offset in the file. section[id] is required: the bare
+   section selector loses to section[id]{20px} at line 1112 on specificity. */
+html{scroll-padding-top:0}
+section[id]{scroll-margin-top:120px}
+body{padding-left:0}
+.skip-link{left:8px}
+@media(min-width:900px){
+  #prodphoto .g-gal,#prodphoto .row-label{
+    width:min(100vw - 56px,1300px);
+    margin-left:calc(50% - min(100vw - 56px,1300px)/2);transform:none}
+}
 
-  .nav-right{
-    position:fixed; right:32px; bottom:0; height:var(--barB); z-index:56;
-    flex-direction:row; align-items:center; gap:0; width:auto; margin:0; padding:0; border-top:none;
+/* ---- shell ---- */
+header.nav{
+  position:fixed;top:0;left:0;right:0;bottom:auto;
+  width:auto;height:auto;z-index:50;overflow:visible;
+  background:none;border:0;animation:none;
+  box-shadow:0 1px 0 rgba(140,205,250,0);
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+  transition:box-shadow .32s var(--nav-ease);
+}
+header.nav.stuck,header.nav.open{box-shadow:0 1px 0 var(--rule-2)}
+
+/* scrim over the hero: the fade reaches zero 28px BELOW the last row of type */
+header.nav::before{
+  content:"";position:absolute;left:0;right:0;top:0;bottom:-28px;
+  width:auto;height:auto;z-index:0;pointer-events:none;opacity:1;
+  -webkit-mask:none;mask:none;animation:none;filter:none;
+  background:linear-gradient(180deg,rgba(3,12,24,.80) 0%,rgba(3,12,24,.66) 62%,
+                                    rgba(3,12,24,.60) 78%,rgba(3,12,24,0) 100%);
+  transition:opacity .32s var(--nav-ease);
+}
+header.nav.stuck::before,header.nav.open::before{opacity:0}
+
+/* the plate: flat colour + the flawless/ film grain. No blur, by choice. */
+header.nav::after{
+  content:"";display:block;position:absolute;inset:0;
+  width:auto;height:auto;z-index:1;pointer-events:none;
+  -webkit-mask:none;mask:none;animation:none;filter:none;
+  background:var(--grain) 0 0/140px repeat,var(--plate);
+  opacity:0;transition:opacity .32s var(--nav-ease);
+}
+header.nav.stuck::after,header.nav.open::after{opacity:1}
+
+/* progress hairline — lives ON the bottom rule, costs zero height */
+header.nav .nav-prog{
+  position:absolute;left:0;bottom:0;height:1px;width:var(--p,0%);
+  z-index:3;background:var(--c1);opacity:0;
+  transition:opacity .32s var(--nav-ease);
+}
+header.nav.stuck .nav-prog{opacity:.75}
+
+/* ---- one flex container, both rows ---- */
+header.nav .nav-inner{
+  position:relative;z-index:2;
+  max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);
+  display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;
+  justify-content:flex-start;column-gap:24px;row-gap:0;
+  height:auto;overflow:visible;
+}
+
+/* ---- row 1: masthead ---- */
+header.nav .brand{
+  order:1;flex:0 0 auto;align-self:auto;
+  height:var(--row1);display:flex;flex-direction:row;align-items:center;
+  gap:0;padding:0;margin:0;border:0;text-align:left;
+}
+header.nav .brand-mark{
+  flex:0 0 auto;width:var(--mark);height:var(--mark);line-height:0;
+  color:#9ddcff;animation:none;
+  margin-left:calc(var(--mark-pull) * -1);   /* ink on the gutter, not the box */
+  margin-right:var(--mark-gap);
+  transition:color .18s var(--nav-ease);
+}
+header.nav .brand-mark svg{width:100%;height:100%;display:block;animation:none;filter:none}
+header.nav .brand-mark svg g{stroke-width:7}   /* line 1137 forces 6; the pull math assumes 7 */
+header.nav .brand:hover .brand-mark{color:#d7f0ff}
+header.nav .brand-wm{
+  display:flex;flex-direction:column;align-items:flex-start;gap:4px;line-height:1;
+}
+header.nav .brand-wm b{
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;
+  line-height:1;letter-spacing:.085em;color:#fff;
+  background:none;-webkit-background-clip:border-box;background-clip:border-box;
+  -webkit-text-fill-color:#fff;animation:none;
+}
+header.nav .brand-wm i{
+  display:block;font-style:normal;font-family:'Space Grotesk',sans-serif;
+  font-weight:500;font-size:10.5px;line-height:1;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-3);margin:0;
+}
+
+header.nav .nav-links{
+  order:2;margin:0 0 0 auto;flex:0 0 auto;width:auto;
+  height:var(--row1);display:flex;flex-direction:row;flex-wrap:nowrap;
+  align-items:center;justify-content:flex-start;gap:26px;
+  position:static;inset:auto;background:none;border:0;padding:0;counter-reset:none;
+}
+header.nav .nav-links::before{display:none;content:none}   /* kills the rail's base line */
+header.nav .nav-links a{
+  position:relative;display:block;font-size:14px;font-weight:500;line-height:1;
+  color:var(--ink);padding:20px 0;white-space:nowrap;letter-spacing:normal;
+  background:none;box-shadow:none;border-radius:0;text-shadow:none;
+  counter-increment:none;transition:color .18s var(--nav-ease);
+}
+header.nav .nav-links a::before{content:none}   /* kills the rail's 01-05 counters */
+header.nav .nav-links a::after{
+  content:"";display:block;position:absolute;left:0;right:0;bottom:15px;
+  width:auto;height:2px;top:auto;background:var(--c1);opacity:1;filter:none;
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .22s var(--nav-ease);
+}
+header.nav .nav-links a:hover{color:#fff;background:none;box-shadow:none;text-shadow:none}
+header.nav .nav-links a:hover::after{transform:scaleX(1);opacity:.5}
+header.nav .nav-links a.active{color:#fff;background:none;box-shadow:none;text-shadow:none}
+header.nav .nav-links a.active::after{transform:scaleX(1);opacity:1}
+/* .ext stays in the markup but carries NO mark: a second underline in a bar
+   whose only signal is an underline reads as a second active item.
+   Rendered and checked at .34 and at .20 — both still read as "selected". */
+header.nav .nav-links a.ext::before{content:none}
+
+header.nav .nav-right{display:contents}
+header.nav .nav-right::after{content:none;display:none}   /* kills the rail's "© ÆRAY" */
+header.nav .lang{
+  order:3;flex:0 0 auto;width:auto;height:var(--row1);
+  display:flex;align-items:center;gap:0;position:relative;
+  margin:0 0 0 26px;padding:0 0 0 26px;
+  background:none;border:0;border-radius:0;overflow:visible;
+}
+header.nav .lang::before{      /* tick sized to the cap-height, not the row */
+  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:1px;height:14px;background:var(--rule-2);
+}
+header.nav .lang-btn{
+  flex:0 0 auto;text-align:left;background:none;border:0;cursor:pointer;box-shadow:none;
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:11px;
+  line-height:1;letter-spacing:.12em;color:#8fb6d6;padding:8px 9px;
+  transition:color .18s var(--nav-ease);
+}
+header.nav .lang-btn:hover{color:var(--ink)}
+header.nav .lang-btn.active{background:none;color:#fff;box-shadow:none}
+@media(min-width:880px){       /* letters meet the gutter, not boxes */
+  header.nav .lang-btn:first-child{padding-left:0}
+  header.nav .lang-btn:last-child{padding-right:0}
+}
+
+/* ---- row 2: the index ---- */
+header.nav .nav-index{
+  order:4;flex:0 0 100%;position:relative;height:var(--row2);
+  display:flex;align-items:center;padding-left:var(--txtcol);
+}
+header.nav .nav-index::before{     /* hairline starts under the E of ERAY */
+  content:"";position:absolute;left:var(--txtcol);right:0;top:0;
+  height:1px;background:var(--rule);
+}
+header.nav .nav-work{
+  display:flex;flex-direction:row;align-items:center;gap:28px;
+  background:none;border:0;padding:0;margin:0;
+}
+header.nav .nav-work a{
+  position:relative;display:block;font-family:'Space Grotesk',sans-serif;
+  font-weight:600;font-size:12px;line-height:12px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-2);padding:14px 0;white-space:nowrap;
+  background:none;box-shadow:none;text-shadow:none;
+  transition:color .18s var(--nav-ease);
+}
+header.nav .nav-work a::after{
+  content:"";display:block;position:absolute;left:0;right:0;bottom:9px;
+  width:auto;height:2px;top:auto;background:var(--c1);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .22s var(--nav-ease);
+}
+header.nav .nav-work a:hover{color:#fff}
+header.nav .nav-work a:hover::after{transform:scaleX(1);opacity:.5}
+header.nav .nav-work a.active{color:#fff}
+header.nav .nav-work a.active::after{transform:scaleX(1);opacity:1}
+
+header.nav .avail{                 /* was a fixed glowing pill; now a status line */
+  position:static;top:auto;right:auto;bottom:auto;left:auto;
+  margin:0 0 0 auto;display:flex;align-items:center;gap:9px;
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:11px;
+  line-height:1;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);white-space:nowrap;
+  background:none;border:0;border-radius:0;box-shadow:none;padding:0;
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+  transition:color .18s var(--nav-ease);
+}
+header.nav .avail:hover{color:var(--ink);transform:none;background:none;border:0;box-shadow:none}
+header.nav .avail-dot{
+  width:7px;height:7px;border-radius:50%;background:#3ee66b;flex:0 0 auto;
+  box-shadow:0 0 0 3px rgba(62,230,107,.16);animation:none;
+}
+
+header.nav .nav-toggle{display:none;order:3}
+header.nav :focus-visible{outline:2px solid var(--c1);outline-offset:2px;border-radius:3px}
+
+/* ---- tightening steps: no type shrinks, only air ---- */
+@media(max-width:1099.98px){
+  header.nav .nav-links{gap:20px}
+  header.nav .nav-work{gap:22px}
+  header.nav .lang{margin-left:20px;padding-left:20px}
+}
+@media(max-width:959.98px){
+  header.nav .nav-links{gap:17px}
+  header.nav .nav-work{gap:19px}
+  header.nav .lang{margin-left:17px;padding-left:17px}
+}
+
+/* ---- < 880px: one row + panel ---- */
+@media(max-width:879.98px){
+  :root{--gutter:16px;--mark:28px;--mark-gap:12px;--row1:54px;--txtcol:0px}
+  section[id]{scroll-margin-top:74px}
+  header.nav .nav-inner{column-gap:10px}
+  header.nav .brand-wm{display:flex}          /* line 117 hides it below 520px */
+  header.nav .brand-wm b{font-size:13.5px;letter-spacing:.06em}
+  header.nav .brand-wm i{display:none}
+
+  header.nav .nav-right{display:flex;order:2;margin-left:auto;
+    align-items:center;gap:4px;height:var(--row1)}
+  header.nav .lang{order:0;margin:0;padding:0;height:auto}
+  header.nav .lang::before{display:none}
+  header.nav .lang-btn{padding:8px 6px;font-size:10.5px}
+  header.nav .nav-toggle{
+    display:flex;order:1;align-items:center;justify-content:center;
+    width:40px;height:40px;background:none;
+    border:1px solid var(--rule-2);border-radius:8px;
+    color:var(--ink);cursor:pointer;padding:0;font-size:0;line-height:0;
   }
-  .nav-right::after{ content:none; }
-  .nav-right .lang{ width:auto; border-color:rgba(168,220,255,.22); }
-  .nav-right .lang-btn{
-    flex:0 0 auto; padding:5px 10px; font-family:'Space Grotesk',sans-serif;
-    font-size:.56rem; letter-spacing:.17em;
+  header.nav .nav-toggle svg{width:16px;height:16px;display:block}
+
+  /* promotes .nav-work and .avail to flex children of .nav-inner,
+     which is what lets the WORK group come first on a phone */
+  header.nav .nav-index{display:contents}
+  header.nav .nav-index::before{content:none;display:none}  /* display:contents still
+     generates the pseudo — without this the hairline appears as a stray flex item */
+  header.nav .nav-work{
+    order:3;flex:0 0 100%;display:none;flex-direction:column;
+    align-items:stretch;gap:0;padding-top:6px;border-top:1px solid var(--rule);
   }
-  .nav-toggle{ display:none; }
-  .skip-link{ left:12px; }
+  header.nav .nav-links{
+    order:4;flex:0 0 100%;display:none;flex-direction:column;
+    align-items:stretch;gap:0;height:auto;margin:0;
+    padding:6px 0 4px;border-top:1px solid var(--rule);background:none;
+  }
+  header.nav .avail{order:5;flex:0 0 100%;display:none;height:48px;margin:0}
+  header.nav.open .nav-work,
+  header.nav.open .nav-links,
+  header.nav.open .avail{display:flex}
+  header.nav.open .nav-inner{max-height:100dvh;overflow-y:auto}
+
+  header.nav .nav-work a{font-size:13px;padding:0;height:46px;display:flex;align-items:center}
+  header.nav .nav-links a{font-size:15px;padding:0;height:46px;display:flex;align-items:center}
+  header.nav .nav-work a::after,
+  header.nav .nav-links a::after{
+    left:calc(var(--gutter) * -1);right:auto;top:0;bottom:0;
+    width:2px;height:auto;transform:none;opacity:0;
+  }
+  header.nav .nav-work a.active::after,
+  header.nav .nav-links a.active::after{opacity:1}
+  header.nav .nav-work a:hover::after,
+  header.nav .nav-links a:hover::after{opacity:0}
+  header.nav .nav-links a.ext::before{content:none;display:none}
+}
+
+/* the mark stops spinning everywhere it is used, and the mud strip goes */
+.foot-star,.slj-divider .slj-star,.wel-star{animation:none}
+footer::before{display:none}
+
+@media(prefers-reduced-motion:reduce){
+  header.nav,header.nav::before,header.nav::after,header.nav .nav-prog,
+  header.nav .nav-links a,header.nav .nav-links a::after,
+  header.nav .nav-work a,header.nav .nav-work a::after,
+  header.nav .brand-mark,header.nav .lang-btn,header.nav .avail{
+    transition-duration:.01ms !important}
 }
 
 /* keep the Products full-bleed row inside the reduced area (no overlap/overflow) */
@@ -798,7 +1005,7 @@
   </style>
 </head>
 <body>
-<div id="intro" aria-hidden="true"><div class="ss-cur ss-cur-l"><span class="ss-veil"></span><span class="ss-edge"></span></div><div class="ss-cur ss-cur-r"><span class="ss-veil"></span><span class="ss-edge"></span></div><span class="ss-seam"></span><span class="ss-flare"></span></div><span class="ss-grain" aria-hidden="true"></span><span class="ss-frame" aria-hidden="true"></span>
+<div id="loader" aria-hidden="true"><svg class="loader-motif" viewBox="0 0 120 120" width="114" height="114" aria-hidden="true"><g fill="none" stroke="#a8dcff" stroke-width="6" stroke-linecap="butt" stroke-linejoin="miter"><path d="M51.971 18.029L60 10L88.749 38.749"/><path d="M101.971 51.971L110 60L81.251 88.749"/><path d="M68.029 101.971L60 110L31.251 81.251"/><path d="M18.029 68.029L10 60L38.749 31.251"/><path d="M24.64 36.01L24.64 24.64L65.29 24.64"/><path d="M83.99 24.64L95.36 24.64L95.36 65.29"/><path d="M95.36 83.99L95.36 95.36L54.71 95.36"/><path d="M36.01 95.36L24.64 95.36L24.64 54.71"/></g></svg></div>
 <noscript><style>#loader{display:none!important}</style></noscript>
 <script>(function(){var l=document.getElementById("loader");if(!l)return;var t0=Date.now();function fin(){var w=Math.max(0,120-(Date.now()-t0));setTimeout(function(){l.classList.add("done");setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l);},350);},w);}if(document.readyState!=="loading")fin();else document.addEventListener("DOMContentLoaded",fin);setTimeout(fin,2500);})();</script>
 
@@ -827,38 +1034,48 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#home" class="brand" id="brandTop" aria-label="Eray Balat — Creative AI Producer, back to top"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="36" height="36"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="butt" stroke-linejoin="miter"><path d="M51.971 18.029L60 10L88.749 38.749"/><path d="M101.971 51.971L110 60L81.251 88.749"/><path d="M68.029 101.971L60 110L31.251 81.251"/><path d="M18.029 68.029L10 60L38.749 31.251"/><path d="M24.64 36.01L24.64 24.64L65.29 24.64"/><path d="M83.99 24.64L95.36 24.64L95.36 65.29"/><path d="M95.36 83.99L95.36 95.36L54.71 95.36"/><path d="M36.01 95.36L24.64 95.36L24.64 54.71"/></g></svg></span><span class="brand-wm"><b>ERAY BALAT</b><i>Creative AI Producer</i></span></a>
-    <nav class="nav-links" id="navlinks">
-      <a href="#about" data-en="About Me" data-tr="Hakkımda" data-de="Über mich">About Me</a>
-      <a href="#brands" data-en="What I Do" data-tr="Neler Yapıyorum" data-de="Was ich mache">What I Do</a>
-      <a href="/blog/" data-blog data-en="Writing" data-tr="Yazılar" data-de="Artikel">Writing</a>
-      <a href="/hire/" data-hire data-en="Hire Me" data-tr="Benimle Çalış" data-de="Beauftragen">Hire Me</a>
-      <span class="reel">
-        <span class="reel-label" data-en="Work" data-tr="İşler" data-de="Arbeiten">Work</span>
-        <a href="#ugc"><i>01</i><span data-en="UGC Ads" data-tr="UGC Reklam" data-de="UGC-Ads">UGC Ads</span></a>
-        <a href="#films"><i>02</i><span data-en="Short Films" data-tr="Kısa Filmler" data-de="Kurzfilme">Short Films</span></a>
-        <a href="#music"><i>03</i><span data-en="Music Videos" data-tr="Müzik Videoları" data-de="Musikvideos">Music Videos</span></a>
-        <a href="#docs"><i>04</i><span data-en="Documentary" data-tr="Belgesel" data-de="Dokumentation">Documentary</span></a>
-        <a href="#prodphoto"><i>05</i><span data-en="Product Shots" data-tr="Ürün Çekimi" data-de="Produktfotos">Product Shots</span></a>
-        <span class="reel-gap"></span>
-        <a href="#contact" data-en="Contact" data-tr="İletişim" data-de="Kontakt">Contact</a>
-      </span>
+
+    <a href="#home" class="brand" id="brandTop" aria-label="Eray Balat — Creative AI Producer, back to top">
+      <span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="butt" stroke-linejoin="miter"><path d="M51.971 18.029L60 10L88.749 38.749"/><path d="M101.971 51.971L110 60L81.251 88.749"/><path d="M68.029 101.971L60 110L31.251 81.251"/><path d="M18.029 68.029L10 60L38.749 31.251"/><path d="M24.64 36.01L24.64 24.64L65.29 24.64"/><path d="M83.99 24.64L95.36 24.64L95.36 65.29"/><path d="M95.36 83.99L95.36 95.36L54.71 95.36"/><path d="M36.01 95.36L24.64 95.36L24.64 54.71"/></g></svg></span>
+      <span class="brand-wm"><b>ERAY BALAT</b><i>Creative AI Producer</i></span>
+    </a>
+
+    <nav class="nav-links" id="navlinks" aria-label="Studio">
+      <a href="#about"   data-en="About Me"  data-tr="Hakkımda"        data-de="Über mich">About Me</a>
+      <a href="#brands"  data-en="What I Do" data-tr="Neler Yapıyorum" data-de="Was ich mache">What I Do</a>
+      <a href="/blog/" class="ext" data-blog data-en="Writing" data-tr="Yazılar"       data-de="Artikel">Writing</a>
+      <a href="/hire/" class="ext" data-hire data-en="Hire Me" data-tr="Benimle Çalış" data-de="Beauftragen">Hire Me</a>
+      <a href="#contact" data-en="Contact"   data-tr="İletişim"        data-de="Kontakt">Contact</a>
     </nav>
+
     <div class="nav-right">
       <div class="lang" role="group" aria-label="Language">
         <button class="lang-btn active" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
         <button class="lang-btn" data-lang="de" aria-pressed="false" aria-label="Deutsch">DE</button>
         <button class="lang-btn" data-lang="tr" aria-pressed="false" aria-label="Türkçe">TR</button>
       </div>
-      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">☰</button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M1 4h14M1 8h14M1 12h14"/></svg>
+      </button>
     </div>
+
+    <div class="nav-index">
+      <nav class="nav-work" aria-label="Work">
+        <a href="#ugc"       data-en="UGC Ads"       data-tr="UGC Reklam"      data-de="UGC-Ads">UGC Ads</a>
+        <a href="#films"     data-en="Short Films"   data-tr="Kısa Filmler"    data-de="Kurzfilme">Short Films</a>
+        <a href="#music"     data-en="Music Videos"  data-tr="Müzik Videoları" data-de="Musikvideos">Music Videos</a>
+        <a href="#docs"      data-en="Documentary"   data-tr="Belgesel"        data-de="Dokumentation">Documentary</a>
+        <a href="#prodphoto" data-en="Product Shots" data-tr="Ürün Çekimi"     data-de="Produktfotos">Product Shots</a>
+      </nav>
+      <a class="avail" href="#contact">
+        <span class="avail-dot" aria-hidden="true"></span>
+        <span class="avail-txt" data-en="Available for work" data-tr="İş için müsait" data-de="Offen für Projekte">Available for work</span>
+      </a>
+    </div>
+
   </div>
+  <span class="nav-prog" aria-hidden="true"></span>
 </header>
-<!-- available-for-work badge -->
-<a class="avail" href="#contact">
-  <span class="avail-dot" aria-hidden="true"></span>
-  <span class="avail-txt" data-en="Available for work →" data-tr="İş için müsait →" data-de="Offen für Projekte →">Available for work →</span>
-</a>
 
 
 <div class="hero-wrap">
@@ -1136,83 +1353,10 @@
   }
   /* klavye odagi her boyutta gorunur */
   .nav-links a:focus-visible{outline:2px solid #79f5ff;outline-offset:2px}
-
-  /* ===== SESSIZ SALON: gren, cerceve, perde ===== */
-  /* film greni — Eray'in ozellikle begendigi doku. Ekranin ustunde sabit durur. */
-  .ss-grain{position:fixed;inset:-40px;z-index:9990;pointer-events:none;opacity:.115;
-    mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='ss-n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23ss-n)'/%3E%3C/svg%3E");background-size:150px 150px;
-    animation:ssGrain .88s steps(1,end) infinite}
-  @keyframes ssGrain{
-    0%{transform:translate3d(0,0,0)}10%{transform:translate3d(-2%,-3%,0)}20%{transform:translate3d(-4%,2%,0)}
-    30%{transform:translate3d(2%,-4%,0)}40%{transform:translate3d(-2%,3%,0)}50%{transform:translate3d(-4%,2%,0)}
-    60%{transform:translate3d(3%,0,0)}70%{transform:translate3d(0,3%,0)}80%{transform:translate3d(-3%,1%,0)}
-    90%{transform:translate3d(2%,2%,0)}100%{transform:translate3d(1%,0,0)}}
-  .ss-frame{position:fixed;inset:0;z-index:9991;pointer-events:none;
-    background:radial-gradient(122% 98% at 50% 46%,rgba(1,6,13,0) 60%,rgba(1,6,13,.38) 100%)}
-
-  /* girisin perdeleri: bantlarla ayni malzeme, mavi */
-  #intro{position:fixed;inset:0;z-index:9995;pointer-events:none}
-  #intro.bitti{display:none}
-  .ss-cur{position:absolute;top:-18px;bottom:-18px;width:51%;will-change:transform}
-  .ss-cur-l{left:0}.ss-cur-r{right:0}
-  .ss-veil{position:absolute;inset:0}
-  .ss-cur-l .ss-veil{background:linear-gradient(180deg,#061c37 0%,#061c37 3.88%,#04152a 11.02%,rgba(1,9,22,.985) 19.4%,rgba(2,12,28,.5) 24.5%,rgba(3,14,32,0) 35%,rgba(3,14,32,0) 66%,rgba(4,21,42,.55) 79%,rgba(6,28,55,.985) 84.48%,#04152a 90.77%,#010916 96.12%,#010916 100%),
-    repeating-linear-gradient(90deg,rgba(234,246,255,.038) 0 1px,rgba(2,10,26,.045) 1px 2px,rgba(0,0,0,0) 2px 11px),
-    repeating-linear-gradient(90deg,rgba(234,246,255,.032) 0px,rgba(2,10,30,.05) 27px,rgba(234,246,255,.032) 54px),
-    radial-gradient(58% 130% at 0% 48%,rgba(94,194,255,.13),rgba(3,16,31,0) 62%)}
-  .ss-cur-r .ss-veil{background:linear-gradient(180deg,#061c37 0%,#061c37 3.88%,#04152a 11.02%,rgba(1,9,22,.985) 19.4%,rgba(2,12,28,.5) 24.5%,rgba(3,14,32,0) 35%,rgba(3,14,32,0) 66%,rgba(4,21,42,.55) 79%,rgba(6,28,55,.985) 84.48%,#04152a 90.77%,#010916 96.12%,#010916 100%),
-    repeating-linear-gradient(270deg,rgba(234,246,255,.038) 0 1px,rgba(2,10,26,.045) 1px 2px,rgba(0,0,0,0) 2px 11px),
-    repeating-linear-gradient(270deg,rgba(234,246,255,.032) 0px,rgba(2,10,30,.05) 27px,rgba(234,246,255,.032) 54px),
-    radial-gradient(58% 130% at 100% 48%,rgba(94,194,255,.13),rgba(3,16,31,0) 62%)}
-  .ss-edge{position:absolute;top:0;bottom:0;width:1px;z-index:2;
-    background:linear-gradient(180deg,rgba(234,246,255,.06) 0%,rgba(234,246,255,.62) 20%,
-      rgba(246,251,255,.98) 50%,rgba(234,246,255,.62) 80%,rgba(234,246,255,.06) 100%)}
-  .ss-cur-l .ss-edge{right:0;box-shadow:0 0 8px 0 rgba(94,194,255,.38)}
-  .ss-cur-r .ss-edge{left:0;box-shadow:0 0 8px 0 rgba(94,194,255,.38)}
-  .ss-seam{position:absolute;left:50%;top:0;bottom:0;width:190px;margin-left:-95px;z-index:3;
-    transform-origin:50% 50%;background:linear-gradient(90deg,rgba(94,194,255,0) 0%,rgba(26,134,216,.05) 28%,
-      rgba(94,194,255,.16) 44%,rgba(168,220,255,.4) 49.4%,rgba(234,246,255,.6) 50%,rgba(168,220,255,.4) 50.6%,
-      rgba(94,194,255,.16) 56%,rgba(26,134,216,.05) 72%,rgba(94,194,255,0) 100%);
-    -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 15%,#000 85%,rgba(0,0,0,0) 100%);
-    mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 15%,#000 85%,rgba(0,0,0,0) 100%)}
-  .ss-flare{position:absolute;left:0;right:0;top:52%;height:2px;z-index:4;filter:blur(1.3px);
-    background:linear-gradient(90deg,rgba(94,194,255,0) 0%,rgba(94,194,255,.26) 26%,rgba(168,220,255,.7) 44%,
-      rgba(234,246,255,1) 50%,rgba(168,220,255,.7) 56%,rgba(94,194,255,.26) 74%,rgba(94,194,255,0) 100%)}
-
-  /* Eray'in notu: ortadaki beyaz isik cok kalmasin, hemen sonsun.
-     Bicak ve alev perde hareket etmeden once %56'si gitmis oluyor. */
-  html.ss-oynat .ss-cur-l{animation:ssPartL 4.2s cubic-bezier(.58,.02,.16,1) .5s both}
-  html.ss-oynat .ss-cur-r{animation:ssPartR 4.2s cubic-bezier(.58,.02,.16,1) .5s both}
-  html.ss-oynat .ss-edge{animation:ssBlade 1.5s ease-out .2s both}
-  html.ss-oynat .ss-seam{animation:ssSeam 1.6s ease-out .2s both}
-  html.ss-oynat .ss-flare{animation:ssFlare 1.3s ease-out .2s both}
-  html.ss-oynat header.nav,html.ss-oynat .reel,html.ss-oynat .nav-right,
-  html.ss-oynat .avail{animation:ssBarIn 1s ease-out 3.4s both}
-  @keyframes ssPartL{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-106%,0,0)}}
-  @keyframes ssPartR{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(106%,0,0)}}
-  @keyframes ssBlade{0%{opacity:1}40%{opacity:.44}70%{opacity:.14}100%{opacity:0}}
-  @keyframes ssSeam{0%{opacity:.9;transform:scaleX(1)}45%{opacity:.4;transform:scaleX(2.1)}100%{opacity:0;transform:scaleX(4.2)}}
-  @keyframes ssFlare{0%{opacity:1}35%{opacity:.4}100%{opacity:0}}
-  @keyframes ssBarIn{from{opacity:0}to{opacity:1}}
-  @media(prefers-reduced-motion:reduce){
-    html.ss-oynat #intro *{animation-duration:.01ms!important;animation-delay:0s!important}
-    html.ss-oynat header.nav,html.ss-oynat .reel,html.ss-oynat .nav-right,html.ss-oynat .avail{animation:none}
-    .ss-grain{animation:none}}
-
-  @media(min-width:880px){
-    /* capa: bolum sabit ust bandin altina dusmesin */
-    html{scroll-padding-top:0}
-    section[id]{scroll-margin-top:calc(var(--barT) + 20px)}
-    .avail{top:calc(var(--barT) + 16px);right:32px}
-  }
-  @media(max-width:879.98px){
-    .ss-grain,.ss-frame{display:none}
-    .reel{display:flex;flex-direction:column;align-items:stretch;gap:2px;margin-top:10px;
-      padding-top:10px;border-top:1px solid rgba(120,210,255,.14)}
-    .reel-label{font-size:.55rem;letter-spacing:.3em;color:rgba(94,194,255,.55);padding:0 16px 4px}
-    .reel a{padding:12px 16px;color:var(--muted);font-size:.9rem;letter-spacing:.02em;text-transform:none}
-    .reel a i{display:inline;margin-right:9px;color:rgba(94,194,255,.5)}
-    .reel-tick,.reel-gap{display:none}}
+  /* capa: 96px sabit bandin altina dusmesin — tek kaynak, en sonda */
+  html{scroll-padding-top:0}
+  section[id]{scroll-margin-top:120px}
+  @media(max-width:879.98px){section[id]{scroll-margin-top:78px}}
   </style>
 
 
@@ -1637,9 +1781,10 @@
 </div>
 <script>
   const toggle=document.querySelector('.nav-toggle');
+  const hdr=document.querySelector('header.nav');
   const links=document.getElementById('navlinks');
-  toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false');});
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
+  toggle.addEventListener('click',()=>{const open=hdr.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false');});
+  hdr.querySelectorAll('.nav-links a, .nav-work a, .avail').forEach(a=>a.addEventListener('click',()=>{hdr.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
   document.getElementById('year').textContent=new Date().getFullYear();
 
   const i18nEls=document.querySelectorAll('[data-en]');
@@ -1707,13 +1852,16 @@
 
   const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');}),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  const navA=[...document.querySelectorAll('.nav-links a')];
+  const navA=[...document.querySelectorAll('.nav-links a, .nav-work a')];
   const navIds=new Set(navA.map(a=>a.getAttribute('href')).filter(h=>h&&h.startsWith('#')).map(h=>h.slice(1)));
   const navTargets=navA
   .map(function(a){var h=a.getAttribute('href')||'';return {a:a,id:h.charAt(0)==='#'?h.slice(1):null};})
-  .filter(function(t){return t.id && document.getElementById(t.id);})
-  .sort(function(x,y){var a=document.getElementById(x.id),b=document.getElementById(y.id);
-    return (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING) ? -1 : 1;});
+  .filter(function(t){return t.id && document.getElementById(t.id);});
+navTargets.sort(function(x,y){var ex=document.getElementById(x.id),ey=document.getElementById(y.id);
+  return (ex.compareDocumentPosition(ey)&Node.DOCUMENT_POSITION_FOLLOWING)?-1:1;});
+function chromeState(){var d=document.documentElement,y=window.scrollY||d.scrollTop;
+  hdr.classList.toggle('stuck',y>8);
+  hdr.style.setProperty('--p',(y/((d.scrollHeight-innerHeight)||1)*100).toFixed(2)+'%');}
 // aktif bolum: viewport'a gore hesaplanir -> hangi elemanin kaydigi onemli degil
 function markActive(){
   var line=140, cur=null;
@@ -1726,10 +1874,10 @@ function markActive(){
 }
 var tick=false;
 function onScroll(){ if(tick)return; tick=true;
-  requestAnimationFrame(function(){markActive();tick=false;}); }
+  requestAnimationFrame(function(){markActive();chromeState();tick=false;}); }
 window.addEventListener('scroll',onScroll,{passive:true,capture:true});
 document.addEventListener('scroll',onScroll,{passive:true,capture:true});
-markActive();
+markActive();chromeState();
 navTargets.forEach(function(t){
   t.a.addEventListener('click',function(e){
     var el=document.getElementById(t.id); if(!el)return;
@@ -1931,30 +2079,5 @@ navTargets.forEach(function(t){
 var q=b.parentElement.querySelector('.rev-quote');var open=!q.classList.toggle('rev-clamp');
 var L=document.documentElement.lang||'en';
 b.textContent=open?(L==='tr'?'Kısalt':L==='de'?'Weniger anzeigen':'Show less')
-:(L==='tr'?'Yorumun tamamını oku':L==='de'?'Ganze Bewertung lesen':'Read the full review');});});</script>
-<script>
-(function(){
-  var kok=document.documentElement, intro=document.getElementById('intro');
-  if(intro){
-    var g=false; try{ g=sessionStorage.getItem('eb_perde2')==='1'; }catch(e){}
-    if(g){ intro.classList.add('bitti'); }
-    else{
-      kok.classList.add('ss-oynat');
-      try{ sessionStorage.setItem('eb_perde2','1'); }catch(e){}
-      setTimeout(function(){ intro.classList.add('bitti'); kok.classList.remove('ss-oynat'); }, 5000);
-    }
-  }
-  var yildiz=document.querySelector('.hero .ss-mark svg');
-  if(yildiz && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-    var bekle=false;
-    addEventListener('scroll',function(){
-      if(bekle) return; bekle=true;
-      requestAnimationFrame(function(){
-        yildiz.style.transform='rotate('+(scrollY*0.12).toFixed(1)+'deg)'; bekle=false;
-      });
-    },{passive:true});
-  }
-})();
-</script>
-</body>
+:(L==='tr'?'Yorumun tamamını oku':L==='de'?'Ganze Bewertung lesen':'Read the full review');});});</script></body>
 </html>
