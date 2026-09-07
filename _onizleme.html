@@ -569,117 +569,116 @@
 /* ==== RAIL NAV ("Indexed Portfolio") — overrides the top-bar rules by source order ====
    Desktop (>=880px): fixed vertical rail on the RIGHT.  Mobile (<880px): top bar + hamburger. */
 
-:root{ --sb:0px; --barT:64px; --barB:46px; }              /* sidebar width */
+:root{ --sb:0px; --barT:72px; --barB:54px; }              /* sidebar width */
 
 /* ---------------- DESKTOP: left vertical rail (>=880px) ---------------- */
 @media (min-width:880px){
-  /* ===== JENERIK KARTI: ust ve alt sinematik bantlar, sol ray yok ===== */
+  /* ===== SESSIZ SALON — MAVI PERDE: ust ve alt sinematik bant, sol ray yok ===== */
   body{ padding-left:0; padding-top:var(--barT); padding-bottom:var(--barB); }
 
+  /* --- ust bant --- */
   header.nav{
-    position:fixed; top:0; left:0; right:0; bottom:auto;
-    width:auto; height:var(--barT); border-right:none;
-    border-bottom:1px solid rgba(120,210,255,.16);
-    background:linear-gradient(180deg,#01070e 0%,#03101f 62%,#04182b 100%);
-    box-shadow:0 14px 40px -28px rgba(0,0,0,.95);
-    /* backdrop-filter position:fixed cocuklar icin kapsayici blok yaratiyor;
-       alt bant ve dil secici bandin icine cakiliyordu. Bantta zaten duz gradyan var. */
+    position:fixed; top:0; left:0; right:0; bottom:auto; width:auto; height:var(--barT);
+    border-right:none; border-bottom:none;
+    background:linear-gradient(180deg,#061c37 0%,#04152a 46%,#010916 100%);
+    box-shadow:inset 0 1px 0 rgba(168,220,255,.08),0 22px 42px -12px rgba(0,1,8,.95);
     -webkit-backdrop-filter:none; backdrop-filter:none;
   }
-  header.nav::before,header.nav::after{ display:none; }
+  header.nav::before{ display:none; }
+  /* isik dudagi: bandin altinda tek hairline, %62'de tepe yapar (altin oran, merkez degil) */
+  header.nav::after{
+    display:block; content:""; position:absolute; left:0; right:0; top:100%; height:1px;
+    z-index:22; pointer-events:none; animation:none; background:linear-gradient(90deg,
+      rgba(94,194,255,0) 0%,rgba(94,194,255,.10) 13%,rgba(94,194,255,.36) 40%,
+      rgba(234,246,255,1) 62%,rgba(94,194,255,.32) 79%,rgba(94,194,255,.05) 93%,rgba(94,194,255,0) 100%);
+  }
   header.nav .nav-inner{
-    max-width:none; height:var(--barT); padding:0 26px;
-    display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:20px;
+    max-width:none; height:var(--barT); padding:0 32px;
+    display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:24px;
   }
 
-  /* --- sol: isaret + kisi baglantilari --- */
+  /* --- kimlik kilidi: ad + rol, optik olarak ayni sag kenarda biter --- */
   .brand{
-    flex:0 0 auto; flex-direction:row; align-items:center; gap:11px;
+    flex:0 0 auto; flex-direction:column; align-items:flex-start; gap:0;
     align-self:auto; padding:0; margin:0; border-bottom:none; text-align:left;
   }
-  .brand-mark,.brand-mark svg{ width:30px; height:30px; }
-  .brand-mark svg g{ stroke-width:8; }
-  .brand-mark{ animation:none; }
-  .brand-wm{ display:none; }              /* ortadaki jenerik yazisi devralir */
-
-  /* --- ortada: jenerik yazisi (ana basligin inecegi yer) --- */
-  .filmmark{
-    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
-    display:flex; flex-direction:column; align-items:center; gap:2px;
-    text-decoration:none; white-space:nowrap; pointer-events:auto;
+  .brand-mark{ display:none; }
+  .brand-wm{ display:flex; }
+  .brand-wm b{
+    font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:1.32rem;
+    letter-spacing:.2173em; line-height:1; text-transform:uppercase;
+    color:#eaf6ff; background:none; -webkit-text-fill-color:#eaf6ff;
+    animation:none; margin-right:-.2173em;
   }
-  .filmmark b{
-    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:.95rem;
-    letter-spacing:.34em; text-indent:.34em; color:#eaf6ff; line-height:1;
-  }
-  .filmmark i{
-    font-style:normal; font-size:.5rem; letter-spacing:.28em; text-indent:.28em;
-    text-transform:uppercase; color:rgba(94,194,255,.62); font-weight:600; line-height:1;
+  .brand-wm i{
+    margin-top:11px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.5rem;
+    letter-spacing:.62em; line-height:1; text-transform:uppercase;
+    color:rgba(168,220,255,.74); margin-right:-.62em;
   }
 
   /* --- ust bant baglantilari --- */
   .nav-links{
     position:static; flex:1 1 auto; display:flex; flex-direction:row; align-items:center;
-    justify-content:flex-end; gap:20px; padding:0; margin:0; background:none;
-    border:none; counter-reset:none; width:auto;
+    justify-content:flex-end; gap:20px; padding:0; margin:0; background:none; border:none;
+    counter-reset:none; width:auto;
   }
   .nav-links::before{ display:none; }
   .nav-links a{
-    position:relative; display:inline-flex; align-items:center; gap:0;
-    padding:8px 2px; border-radius:0; background:none; box-shadow:none;
-    font-family:'Space Grotesk',sans-serif; font-weight:600;
-    font-size:.66rem; letter-spacing:.15em; text-transform:uppercase;
-    color:rgba(168,220,255,.62); text-shadow:none;
-    border-bottom:1px solid transparent; counter-increment:none;
-    transition:color .22s ease,border-color .22s ease;
+    position:relative; flex:none; white-space:nowrap; display:inline-flex; align-items:center;
+    padding:8px 0; border-radius:0; background:none; box-shadow:none; text-shadow:none;
+    font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:.66rem;
+    letter-spacing:.17em; line-height:1; text-transform:uppercase;
+    color:rgba(168,220,255,.74); counter-increment:none;
+    transition:color .5s cubic-bezier(.4,0,.2,1);
   }
   .nav-links a::before,.nav-links a::after{ content:none; display:none; }
-  .nav-links a:hover{ color:#eaf6ff; background:none; border-bottom-color:rgba(94,194,255,.45); }
-  .nav-links a.active{ color:#eaf6ff; background:none; box-shadow:none; border-bottom-color:#5ec2ff; }
-  .nav-links a[data-hire]{
-    padding:7px 15px; border:1px solid rgba(94,194,255,.55); border-radius:999px;
-    color:#eaf6ff; margin-left:4px;
-  }
-  .nav-links a[data-hire]:hover{ background:rgba(94,194,255,.14); border-color:#5ec2ff; }
+  .nav-links a:hover{ color:#eaf6ff; background:none; }
+  .nav-links a.active{ color:#eaf6ff; background:none; box-shadow:none; }
+  /* Hire Me: kutu yok, hap yok — sadece deger ve bosluk */
+  .nav-links a[data-hire]{ color:#eaf6ff; font-weight:600; margin-left:22px; }
 
-  /* --- alt bant: makara / bolum seridi --- */
+  /* --- alt bant: makara --- */
   .reel{
     position:fixed; left:0; right:0; bottom:0; height:var(--barB); z-index:55;
-    display:flex; align-items:center; gap:16px; padding:0 26px;
-    background:linear-gradient(0deg,#01070e 0%,#03101f 62%,#04182b 100%);
-    border-top:1px solid rgba(120,210,255,.16);
-    box-shadow:0 -14px 40px -28px rgba(0,0,0,.95);
+    display:flex; align-items:center; gap:20px; padding:0 32px;
+    /* sagda dil secicisine yer birak — Contact onun uzerine binmesin */
+    padding-right:172px;
+    background:linear-gradient(180deg,#061c37 0%,#04152a 54%,#010916 100%);
+    box-shadow:inset 0 -1px 0 rgba(168,220,255,.07),0 -18px 36px -12px rgba(0,1,8,.9);
   }
   .reel-label{
-    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.5rem;
-    letter-spacing:.4em; text-indent:.4em; text-transform:uppercase;
-    color:rgba(94,194,255,.5); flex:0 0 auto;
+    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.44rem;
+    letter-spacing:.62em; text-transform:uppercase; color:rgba(168,220,255,.74);
+    margin-right:-.62em; flex:0 0 auto;
   }
   .reel a{
-    display:inline-flex; align-items:baseline; gap:7px; padding:6px 0;
-    font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:.64rem;
-    letter-spacing:.13em; text-transform:uppercase; color:rgba(168,220,255,.6);
-    text-decoration:none; border-bottom:1px solid transparent;
-    transition:color .22s ease,border-color .22s ease;
+    flex:none; white-space:nowrap; padding:6px 0; text-decoration:none;
+    font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:.62rem;
+    letter-spacing:.17em; text-transform:uppercase; color:rgba(168,220,255,.74);
+    transition:color .5s cubic-bezier(.4,0,.2,1);
   }
-  .reel a i{ font-style:normal; font-size:.52rem; letter-spacing:.06em; color:rgba(94,194,255,.45); }
-  .reel a:hover{ color:#eaf6ff; border-bottom-color:rgba(94,194,255,.45); }
-  .reel a.active{ color:#eaf6ff; border-bottom-color:#3fd8ea; }
-  .reel a.active i{ color:#3fd8ea; }
-  .reel-tick{ width:1px; height:10px; background:rgba(94,194,255,.18); flex:0 0 auto; }
+  .reel a i{ display:none; }
+  .reel a:hover{ color:#eaf6ff; }
+  .reel a.active{ color:#eaf6ff; }
+  .reel a.active::after{
+    content:""; position:absolute; left:0; right:0; bottom:-6px; height:1px;
+    background:rgba(234,246,255,.85);
+  }
+  .reel a{ position:relative; }
+  .reel-tick{ display:none; }
   .reel-gap{ flex:1 1 auto; }
 
-  /* --- dil secici alt bantta --- */
   .nav-right{
-    position:fixed; right:26px; bottom:0; height:var(--barB); z-index:56;
-    flex-direction:row; align-items:center; gap:0; width:auto; margin:0;
-    padding:0; border-top:none;
+    position:fixed; right:32px; bottom:0; height:var(--barB); z-index:56;
+    flex-direction:row; align-items:center; gap:0; width:auto; margin:0; padding:0; border-top:none;
   }
   .nav-right::after{ content:none; }
-  .nav-right .lang{ width:auto; }
-  .nav-right .lang-btn{ flex:0 0 auto; padding:5px 9px; font-size:.6rem; }
+  .nav-right .lang{ width:auto; border-color:rgba(168,220,255,.22); }
+  .nav-right .lang-btn{
+    flex:0 0 auto; padding:5px 10px; font-family:'Space Grotesk',sans-serif;
+    font-size:.56rem; letter-spacing:.17em;
+  }
   .nav-toggle{ display:none; }
-
   .skip-link{ left:12px; }
 }
 
@@ -799,7 +798,7 @@
   </style>
 </head>
 <body>
-<div id="intro" aria-hidden="true"><div class="cur cur-l"></div><div class="cur cur-r"></div><div class="cur-seam"></div><div class="cur-star"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="190" height="190"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="butt" stroke-linejoin="miter"><path d="M51.971 18.029L60 10L88.749 38.749"/><path d="M101.971 51.971L110 60L81.251 88.749"/><path d="M68.029 101.971L60 110L31.251 81.251"/><path d="M18.029 68.029L10 60L38.749 31.251"/><path d="M24.64 36.01L24.64 24.64L65.29 24.64"/><path d="M83.99 24.64L95.36 24.64L95.36 65.29"/><path d="M95.36 83.99L95.36 95.36L54.71 95.36"/><path d="M36.01 95.36L24.64 95.36L24.64 54.71"/></g></svg></div><div class="titlecard"><b>ERAY BALAT</b><i>Creative AI Producer</i></div></div>
+<div id="intro" aria-hidden="true"><div class="ss-cur ss-cur-l"><span class="ss-veil"></span><span class="ss-edge"></span></div><div class="ss-cur ss-cur-r"><span class="ss-veil"></span><span class="ss-edge"></span></div><span class="ss-seam"></span><span class="ss-flare"></span></div><span class="ss-grain" aria-hidden="true"></span><span class="ss-frame" aria-hidden="true"></span>
 <noscript><style>#loader{display:none!important}</style></noscript>
 <script>(function(){var l=document.getElementById("loader");if(!l)return;var t0=Date.now();function fin(){var w=Math.max(0,120-(Date.now()-t0));setTimeout(function(){l.classList.add("done");setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l);},350);},w);}if(document.readyState!=="loading")fin();else document.addEventListener("DOMContentLoaded",fin);setTimeout(fin,2500);})();</script>
 
@@ -833,19 +832,18 @@
       <a href="#about" data-en="About Me" data-tr="Hakkımda" data-de="Über mich">About Me</a>
       <a href="#brands" data-en="What I Do" data-tr="Neler Yapıyorum" data-de="Was ich mache">What I Do</a>
       <a href="/blog/" data-blog data-en="Writing" data-tr="Yazılar" data-de="Artikel">Writing</a>
-      <a href="#contact" data-en="Contact" data-tr="İletişim" data-de="Kontakt">Contact</a>
       <a href="/hire/" data-hire data-en="Hire Me" data-tr="Benimle Çalış" data-de="Beauftragen">Hire Me</a>
       <span class="reel">
-        <span class="reel-label" data-en="Reel" data-tr="Makara" data-de="Reel">Reel</span>
-        <a href="#ugc"><i>01</i><span data-en="UGC Ads" data-tr="UGC Reklam" data-de="UGC-Ads">UGC Ads</span></a><span class="reel-tick"></span>
-        <a href="#films"><i>02</i><span data-en="Short Films" data-tr="Kısa Filmler" data-de="Kurzfilme">Short Films</span></a><span class="reel-tick"></span>
-        <a href="#music"><i>03</i><span data-en="Music Videos" data-tr="Müzik Videoları" data-de="Musikvideos">Music Videos</span></a><span class="reel-tick"></span>
-        <a href="#docs"><i>04</i><span data-en="Documentary" data-tr="Belgesel" data-de="Dokumentation">Documentary</span></a><span class="reel-tick"></span>
+        <span class="reel-label" data-en="Work" data-tr="İşler" data-de="Arbeiten">Work</span>
+        <a href="#ugc"><i>01</i><span data-en="UGC Ads" data-tr="UGC Reklam" data-de="UGC-Ads">UGC Ads</span></a>
+        <a href="#films"><i>02</i><span data-en="Short Films" data-tr="Kısa Filmler" data-de="Kurzfilme">Short Films</span></a>
+        <a href="#music"><i>03</i><span data-en="Music Videos" data-tr="Müzik Videoları" data-de="Musikvideos">Music Videos</span></a>
+        <a href="#docs"><i>04</i><span data-en="Documentary" data-tr="Belgesel" data-de="Dokumentation">Documentary</span></a>
         <a href="#prodphoto"><i>05</i><span data-en="Product Shots" data-tr="Ürün Çekimi" data-de="Produktfotos">Product Shots</span></a>
         <span class="reel-gap"></span>
+        <a href="#contact" data-en="Contact" data-tr="İletişim" data-de="Kontakt">Contact</a>
       </span>
     </nav>
-    <a class="filmmark" href="#home" aria-label="Eray Balat"><b>ERAY BALAT</b><i data-en="Creative AI Producer" data-tr="Kreatif Yapay Zekâ Prodüktörü" data-de="Kreativer KI-Produzent">Creative AI Producer</i></a>
     <div class="nav-right">
       <div class="lang" role="group" aria-label="Language">
         <button class="lang-btn active" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
@@ -1139,71 +1137,82 @@
   /* klavye odagi her boyutta gorunur */
   .nav-links a:focus-visible{outline:2px solid #79f5ff;outline-offset:2px}
 
-  /* ===== perdeler + jenerik girisi ===== */
-  #intro{position:fixed;inset:0;z-index:9998;pointer-events:none}
+  /* ===== SESSIZ SALON: gren, cerceve, perde ===== */
+  /* film greni — Eray'in ozellikle begendigi doku. Ekranin ustunde sabit durur. */
+  .ss-grain{position:fixed;inset:-40px;z-index:9990;pointer-events:none;opacity:.115;
+    mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='ss-n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='150' height='150' filter='url(%23ss-n)'/%3E%3C/svg%3E");background-size:150px 150px;
+    animation:ssGrain .88s steps(1,end) infinite}
+  @keyframes ssGrain{
+    0%{transform:translate3d(0,0,0)}10%{transform:translate3d(-2%,-3%,0)}20%{transform:translate3d(-4%,2%,0)}
+    30%{transform:translate3d(2%,-4%,0)}40%{transform:translate3d(-2%,3%,0)}50%{transform:translate3d(-4%,2%,0)}
+    60%{transform:translate3d(3%,0,0)}70%{transform:translate3d(0,3%,0)}80%{transform:translate3d(-3%,1%,0)}
+    90%{transform:translate3d(2%,2%,0)}100%{transform:translate3d(1%,0,0)}}
+  .ss-frame{position:fixed;inset:0;z-index:9991;pointer-events:none;
+    background:radial-gradient(122% 98% at 50% 46%,rgba(1,6,13,0) 60%,rgba(1,6,13,.38) 100%)}
+
+  /* girisin perdeleri: bantlarla ayni malzeme, mavi */
+  #intro{position:fixed;inset:0;z-index:9995;pointer-events:none}
   #intro.bitti{display:none}
-  .cur{position:absolute;top:-2%;bottom:-2%;width:51%;will-change:transform}
-  .cur-l{left:0;background:
-    linear-gradient(90deg,rgba(1,7,14,.72) 0%,rgba(1,7,14,.14) 26%,rgba(1,7,14,0) 60%,rgba(94,194,255,.10) 92%,rgba(168,220,255,.26) 100%),
-    linear-gradient(180deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 16%,rgba(0,0,0,0) 74%,rgba(0,0,0,.7) 100%),
-    repeating-linear-gradient(90deg,#03121f 0px,#0a3660 7px,#1668aa 12px,#0c477e 17px,#062845 24px,#020d18 30px,#03121f 38px)}
-  .cur-r{right:0;background:
-    linear-gradient(270deg,rgba(1,7,14,.72) 0%,rgba(1,7,14,.14) 26%,rgba(1,7,14,0) 60%,rgba(94,194,255,.10) 92%,rgba(168,220,255,.26) 100%),
-    linear-gradient(180deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 16%,rgba(0,0,0,0) 74%,rgba(0,0,0,.7) 100%),
-    repeating-linear-gradient(270deg,#03121f 0px,#0a3660 7px,#1668aa 12px,#0c477e 17px,#062845 24px,#020d18 30px,#03121f 38px)}
-  .cur-seam{position:absolute;top:0;bottom:0;left:50%;width:96px;margin-left:-48px;
-    background:linear-gradient(90deg,rgba(94,194,255,0),rgba(94,194,255,.22) 34%,rgba(234,246,255,.9) 50%,rgba(94,194,255,.22) 66%,rgba(94,194,255,0));
-    -webkit-mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent);
-    mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
-  .cur-star{position:absolute;left:50%;top:50%;width:190px;height:190px;margin:-95px 0 0 -95px;
-    color:#a8dcff;opacity:.9;filter:drop-shadow(0 0 18px rgba(120,205,255,.5))}
-  .cur-star svg{width:190px;height:190px;display:block}
-  .titlecard{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;opacity:0}
-  .titlecard b{display:block;font-family:'Space Grotesk',sans-serif;font-weight:700;
-    font-size:clamp(2rem,5.2vw,3.4rem);letter-spacing:.2em;text-indent:.2em;color:#eaf6ff;line-height:1;
-    text-shadow:0 0 40px rgba(94,194,255,.45)}
-  .titlecard i{display:block;margin-top:14px;font-style:normal;font-family:'Space Grotesk',sans-serif;
-    font-weight:600;font-size:.62rem;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;
-    color:rgba(168,220,255,.72)}
+  .ss-cur{position:absolute;top:-18px;bottom:-18px;width:51%;will-change:transform}
+  .ss-cur-l{left:0}.ss-cur-r{right:0}
+  .ss-veil{position:absolute;inset:0}
+  .ss-cur-l .ss-veil{background:linear-gradient(180deg,#061c37 0%,#061c37 3.88%,#04152a 11.02%,rgba(1,9,22,.985) 19.4%,rgba(2,12,28,.5) 24.5%,rgba(3,14,32,0) 35%,rgba(3,14,32,0) 66%,rgba(4,21,42,.55) 79%,rgba(6,28,55,.985) 84.48%,#04152a 90.77%,#010916 96.12%,#010916 100%),
+    repeating-linear-gradient(90deg,rgba(234,246,255,.038) 0 1px,rgba(2,10,26,.045) 1px 2px,rgba(0,0,0,0) 2px 11px),
+    repeating-linear-gradient(90deg,rgba(234,246,255,.032) 0px,rgba(2,10,30,.05) 27px,rgba(234,246,255,.032) 54px),
+    radial-gradient(58% 130% at 0% 48%,rgba(94,194,255,.13),rgba(3,16,31,0) 62%)}
+  .ss-cur-r .ss-veil{background:linear-gradient(180deg,#061c37 0%,#061c37 3.88%,#04152a 11.02%,rgba(1,9,22,.985) 19.4%,rgba(2,12,28,.5) 24.5%,rgba(3,14,32,0) 35%,rgba(3,14,32,0) 66%,rgba(4,21,42,.55) 79%,rgba(6,28,55,.985) 84.48%,#04152a 90.77%,#010916 96.12%,#010916 100%),
+    repeating-linear-gradient(270deg,rgba(234,246,255,.038) 0 1px,rgba(2,10,26,.045) 1px 2px,rgba(0,0,0,0) 2px 11px),
+    repeating-linear-gradient(270deg,rgba(234,246,255,.032) 0px,rgba(2,10,30,.05) 27px,rgba(234,246,255,.032) 54px),
+    radial-gradient(58% 130% at 100% 48%,rgba(94,194,255,.13),rgba(3,16,31,0) 62%)}
+  .ss-edge{position:absolute;top:0;bottom:0;width:1px;z-index:2;
+    background:linear-gradient(180deg,rgba(234,246,255,.06) 0%,rgba(234,246,255,.62) 20%,
+      rgba(246,251,255,.98) 50%,rgba(234,246,255,.62) 80%,rgba(234,246,255,.06) 100%)}
+  .ss-cur-l .ss-edge{right:0;box-shadow:0 0 8px 0 rgba(94,194,255,.38)}
+  .ss-cur-r .ss-edge{left:0;box-shadow:0 0 8px 0 rgba(94,194,255,.38)}
+  .ss-seam{position:absolute;left:50%;top:0;bottom:0;width:190px;margin-left:-95px;z-index:3;
+    transform-origin:50% 50%;background:linear-gradient(90deg,rgba(94,194,255,0) 0%,rgba(26,134,216,.05) 28%,
+      rgba(94,194,255,.16) 44%,rgba(168,220,255,.4) 49.4%,rgba(234,246,255,.6) 50%,rgba(168,220,255,.4) 50.6%,
+      rgba(94,194,255,.16) 56%,rgba(26,134,216,.05) 72%,rgba(94,194,255,0) 100%);
+    -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 15%,#000 85%,rgba(0,0,0,0) 100%);
+    mask-image:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 15%,#000 85%,rgba(0,0,0,0) 100%)}
+  .ss-flare{position:absolute;left:0;right:0;top:52%;height:2px;z-index:4;filter:blur(1.3px);
+    background:linear-gradient(90deg,rgba(94,194,255,0) 0%,rgba(94,194,255,.26) 26%,rgba(168,220,255,.7) 44%,
+      rgba(234,246,255,1) 50%,rgba(168,220,255,.7) 56%,rgba(94,194,255,.26) 74%,rgba(94,194,255,0) 100%)}
 
-  html.perde-oynat #intro .cur-l{animation:curL 3s cubic-bezier(.62,.02,.16,1) .55s both}
-  html.perde-oynat #intro .cur-r{animation:curR 3s cubic-bezier(.62,.02,.16,1) .55s both}
-  html.perde-oynat #intro .cur-seam{animation:curSeam 1.9s ease-out .55s both}
-  html.perde-oynat #intro .cur-star{animation:curStar 1.5s ease-out .35s both}
-  html.perde-oynat #intro .titlecard{animation:cardIn 3.1s cubic-bezier(.4,0,.2,1) 1.55s both}
-  html.perde-oynat header.nav,html.perde-oynat .reel,html.perde-oynat .nav-right,
-  html.perde-oynat .avail{animation:barIn .8s ease-out 3.9s both}
-
-  @keyframes curL{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-102%,0,0)}}
-  @keyframes curR{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(102%,0,0)}}
-  @keyframes curSeam{0%{opacity:.7;transform:scaleX(1)}55%{opacity:1;transform:scaleX(2.4)}100%{opacity:0;transform:scaleX(5)}}
-  @keyframes curStar{0%{opacity:0;transform:scale(.86)}45%{opacity:.95;transform:scale(1)}100%{opacity:0;transform:scale(1.5)}}
-  @keyframes cardIn{0%{opacity:0;transform:translateY(calc(-50% + 16px)) scale(1)}
-    16%{opacity:1;transform:translateY(-50%) scale(1)}
-    58%{opacity:1;transform:translateY(-50%) scale(1)}
-    100%{opacity:0;transform:translateY(calc(-50% - 42vh)) scale(.24)}}
-  @keyframes barIn{from{opacity:0}to{opacity:1}}
+  /* Eray'in notu: ortadaki beyaz isik cok kalmasin, hemen sonsun.
+     Bicak ve alev perde hareket etmeden once %56'si gitmis oluyor. */
+  html.ss-oynat .ss-cur-l{animation:ssPartL 4.2s cubic-bezier(.58,.02,.16,1) .5s both}
+  html.ss-oynat .ss-cur-r{animation:ssPartR 4.2s cubic-bezier(.58,.02,.16,1) .5s both}
+  html.ss-oynat .ss-edge{animation:ssBlade 1.5s ease-out .2s both}
+  html.ss-oynat .ss-seam{animation:ssSeam 1.6s ease-out .2s both}
+  html.ss-oynat .ss-flare{animation:ssFlare 1.3s ease-out .2s both}
+  html.ss-oynat header.nav,html.ss-oynat .reel,html.ss-oynat .nav-right,
+  html.ss-oynat .avail{animation:ssBarIn 1s ease-out 3.4s both}
+  @keyframes ssPartL{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-106%,0,0)}}
+  @keyframes ssPartR{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(106%,0,0)}}
+  @keyframes ssBlade{0%{opacity:1}40%{opacity:.44}70%{opacity:.14}100%{opacity:0}}
+  @keyframes ssSeam{0%{opacity:.9;transform:scaleX(1)}45%{opacity:.4;transform:scaleX(2.1)}100%{opacity:0;transform:scaleX(4.2)}}
+  @keyframes ssFlare{0%{opacity:1}35%{opacity:.4}100%{opacity:0}}
+  @keyframes ssBarIn{from{opacity:0}to{opacity:1}}
   @media(prefers-reduced-motion:reduce){
-    html.perde-oynat #intro *{animation-duration:.01ms!important;animation-delay:0s!important}
-    html.perde-oynat header.nav,html.perde-oynat .reel,html.perde-oynat .nav-right,
-    html.perde-oynat .avail{animation:none}}
+    html.ss-oynat #intro *{animation-duration:.01ms!important;animation-delay:0s!important}
+    html.ss-oynat header.nav,html.ss-oynat .reel,html.ss-oynat .nav-right,html.ss-oynat .avail{animation:none}
+    .ss-grain{animation:none}}
+
   @media(min-width:880px){
-    /* capa hizasi: bolum sabit ust bandin altina dusmesin (64 + 20 pay).
-       Bu kurallar EN SONDA olmak zorunda — daha erken yazilanlari onceki blok eziyordu. */
+    /* capa: bolum sabit ust bandin altina dusmesin */
     html{scroll-padding-top:0}
     section[id]{scroll-margin-top:calc(var(--barT) + 20px)}
-    /* musaitlik rozeti bandin altina insin; ust bantta zaten Hire Me var */
-    .avail{top:calc(var(--barT) + 14px);right:22px}
+    .avail{top:calc(var(--barT) + 16px);right:32px}
   }
   @media(max-width:879.98px){
-    .filmmark{display:none}          /* mobilde marka yazisi .brand-wm'de zaten var */
+    .ss-grain,.ss-frame{display:none}
     .reel{display:flex;flex-direction:column;align-items:stretch;gap:2px;margin-top:10px;
       padding-top:10px;border-top:1px solid rgba(120,210,255,.14)}
-    .reel-label{font-size:.55rem;letter-spacing:.3em;color:rgba(94,194,255,.5);padding:0 16px 4px}
-    .reel a{padding:12px 16px;color:var(--muted);text-decoration:none;font-size:.9rem;letter-spacing:.02em;text-transform:none}
-    .reel a i{margin-right:9px;color:rgba(94,194,255,.5)}
-    .reel-tick,.reel-gap{display:none}
-    .titlecard b{font-size:2rem;letter-spacing:.14em}}
+    .reel-label{font-size:.55rem;letter-spacing:.3em;color:rgba(94,194,255,.55);padding:0 16px 4px}
+    .reel a{padding:12px 16px;color:var(--muted);font-size:.9rem;letter-spacing:.02em;text-transform:none}
+    .reel a i{display:inline;margin-right:9px;color:rgba(94,194,255,.5)}
+    .reel-tick,.reel-gap{display:none}}
   </style>
 
 
@@ -1926,24 +1935,22 @@ b.textContent=open?(L==='tr'?'Kısalt':L==='de'?'Weniger anzeigen':'Show less')
 <script>
 (function(){
   var kok=document.documentElement, intro=document.getElementById('intro');
-  if(!intro) return;
-  var gosterildi=false;
-  try{ gosterildi = sessionStorage.getItem('eb_perde')==='1'; }catch(e){}
-  if(gosterildi){ intro.classList.add('bitti'); }
-  else{
-    kok.classList.add('perde-oynat');
-    try{ sessionStorage.setItem('eb_perde','1'); }catch(e){}
-    setTimeout(function(){ intro.classList.add('bitti'); kok.classList.remove('perde-oynat'); }, 5200);
+  if(intro){
+    var g=false; try{ g=sessionStorage.getItem('eb_perde2')==='1'; }catch(e){}
+    if(g){ intro.classList.add('bitti'); }
+    else{
+      kok.classList.add('ss-oynat');
+      try{ sessionStorage.setItem('eb_perde2','1'); }catch(e){}
+      setTimeout(function(){ intro.classList.add('bitti'); kok.classList.remove('ss-oynat'); }, 5000);
+    }
   }
-  var mark=document.querySelector('.brand-mark svg');
-  if(mark && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-    mark.style.animation='none';
+  var yildiz=document.querySelector('.hero .ss-mark svg');
+  if(yildiz && !matchMedia('(prefers-reduced-motion: reduce)').matches){
     var bekle=false;
     addEventListener('scroll',function(){
       if(bekle) return; bekle=true;
       requestAnimationFrame(function(){
-        mark.style.transform='rotate('+(scrollY*0.14).toFixed(1)+'deg)';
-        bekle=false;
+        yildiz.style.transform='rotate('+(scrollY*0.12).toFixed(1)+'deg)'; bekle=false;
       });
     },{passive:true});
   }
