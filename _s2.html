@@ -1169,16 +1169,23 @@
   
 /* ===== SATIS: TEKLIF — ne aldigin ve kacadan ===== */
 
-/* ===================== SOL RAY -> UST CUBUK ===================== */
-:root{ --sb:0px; --bar:58px }
+/* ===================== SOL RAY -> UST CUBUK =====================
+   Ray, 880px ustunde header.nav'i 240px kenar cubuguna ceviriyordu.
+   Yatay cubuga cevirirken rayin SUSLERI de olculup tek tek kapatildi:
+     .brand-mark           1141. satirda 112px'e cikiyordu -> 28px
+     .nav-links::before    2px dikey ray cizgisi           -> kapali
+     .nav-links a::after   11x34 radyal nokta              -> yatay alt cizgi
+     .nav-right::after     content:"© ÆRAY" ray dipnotu    -> kapali
+*/
+:root{ --sb:0px; --bar:60px }
 @media (min-width:880px){
-  body{ padding-left:0; padding-top:0 }
+  body{ padding-left:0 }
+
   header.nav{
     top:0; left:0; right:0; bottom:auto;
     width:auto; height:var(--bar); min-height:var(--bar);
-    border-right:none;
-    border-bottom:1px solid rgba(120,210,255,.22);
-    background:linear-gradient(180deg,rgba(18,52,100,.94) 0%,rgba(9,28,56,.88) 100%);
+    border-right:none; border-bottom:1px solid rgba(120,210,255,.22);
+    background:linear-gradient(180deg,rgba(18,52,100,.94),rgba(9,28,56,.9));
     background-size:auto; animation:none; overflow:visible;
     box-shadow:0 12px 40px -26px rgba(28,74,146,.8);
   }
@@ -1186,27 +1193,42 @@
 
   .nav-inner{
     flex-direction:row; align-items:center; justify-content:flex-start;
-    height:var(--bar); max-width:1440px; margin:0 auto; gap:0 26px;
-    padding:0 max(20px,3vw); overflow:visible;
+    height:var(--bar); max-width:1500px; margin:0 auto; gap:0 clamp(14px,1.8vw,26px);
+    padding:0 max(18px,2.4vw); overflow:visible;
   }
 
-  /* marka: yatay ve kompakt */
-  .brand{ flex:0 0 auto; flex-direction:row; align-items:center; gap:10px;
-          margin:0; padding:0; border:0 }
-  .brand-mark,.brand-mark svg{ width:30px; height:30px }
-  .brand-wm{ flex-direction:column; align-items:flex-start; gap:2px }
-  .brand-wm b{ font-size:13px; letter-spacing:.08em }
-  .brand-wm i{ font-size:8.5px; letter-spacing:.16em }
+  /* marka — gec media query'yi kesin kuralla ez */
+  header.nav .brand{ flex:0 0 auto; flex-direction:row; align-items:center;
+                     gap:10px; margin:0; padding:0; border:0 }
+  header.nav .brand-mark,
+  header.nav .brand-mark svg{ width:28px !important; height:28px !important;
+                              animation:none !important; filter:none }
+  header.nav .brand-mark svg g{ stroke-width:8 }
+  header.nav .brand-wm{ flex-direction:column; align-items:flex-start; gap:1px }
+  header.nav .brand-wm b{ font-size:12.5px !important; letter-spacing:.07em !important }
+  header.nav .brand-wm i{ font-size:8px !important; letter-spacing:.15em !important }
 
-  /* menu: yatay, numarasiz, tek satir */
-  .nav-links{ flex:1 1 auto; flex-direction:row; align-items:center;
-              gap:0 clamp(12px,1.5vw,22px); margin:0; padding:0; border:0;
-              overflow:visible; flex-wrap:nowrap }
-  .nav-links a{ padding:6px 0; margin:0; border:0; font-size:12.5px; white-space:nowrap }
-  .nav-links a::before,.nav-links a::marker{ display:none; content:none }
-  .nav-links a::after{ bottom:-2px }
+  /* menu — rayin dikey cizgisi ve noktalari kapali */
+  .nav-links{ flex:1 1 auto; flex-direction:row; align-items:center; flex-wrap:nowrap;
+              gap:0 clamp(10px,1.3vw,20px); margin:0; padding:0; border:0; overflow:visible }
+  .nav-links::before,.nav-links::after{ content:none !important; display:none !important }
+  .nav-links a{ padding:5px 0; margin:0; border:0; font-size:12.5px; white-space:nowrap }
+  .nav-links a::before{ content:none !important; display:none !important }
+  .nav-links a::after{
+    content:"" !important; position:absolute !important;
+    left:0 !important; right:0 !important; top:auto !important; bottom:-3px !important;
+    width:auto !important; height:2px !important; border-radius:2px;
+    background:#5ec2ff !important;
+    transform:scaleX(0); transform-origin:left; transition:transform .26s ease;
+  }
+  .nav-links a:hover::after,.nav-links a.active::after{ transform:scaleX(1) }
 
-  .lang-switch,.lang-wrap,.lang-row{ flex:0 0 auto; margin:0; padding:0; border:0 }
+  /* sag blok — ray dipnotu kalksin, dikeyden yataya */
+  .nav-right{ flex:0 0 auto; flex-direction:row; align-items:center; gap:12px;
+              width:auto !important; height:auto !important;
+              margin:0 0 0 auto !important; padding:0 !important; border:0 !important }
+  .nav-right::after{ content:none !important; display:none !important }
+  .lang{ margin:0 }
   .avail{ flex:0 0 auto; margin:0 }
 }
 /* ===================== SATIS BLOGU (en ust) ===================== */
