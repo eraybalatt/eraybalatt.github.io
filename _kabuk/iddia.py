@@ -82,7 +82,7 @@ def hero():
       '<div class="hz">%s%s</div>' % (i18n('h3','', a), i18n('p','', b))
       for a, b in HIZMET)
     return '''id="home">
-    <video class="id-bg" autoplay muted loop playsinline preload="auto" poster="coldstart-grid.webp" src="coldstart-film.mp4"></video>
+    <video class="id-bg" autoplay muted loop playsinline preload="auto" poster="hero-coldstart-poster.webp" src="hero-coldstart.mp4"></video>
     <div class="id-ov"></div>
 
     <div class="id-in">
@@ -133,7 +133,7 @@ html,body{opacity:1!important;visibility:visible!important}
 .id-ov{position:absolute;left:0;top:0;right:0;height:82vh;min-height:460px;z-index:1;pointer-events:none;
        background:linear-gradient(180deg,rgba(10,11,13,.78) 0%,rgba(10,11,13,.42) 34%,rgba(10,11,13,.97) 100%)}
 .id-in{position:relative;z-index:2;padding:calc(var(--row1,56px) + 16vh) max(22px,5vw) 10vh;max-width:1180px}
-.id-h{font-family:'Space Grotesk',sans-serif;font-weight:700;
+.hero h1.id-h,.id-h{font-family:'Space Grotesk',sans-serif;font-weight:700;
       font-size:clamp(2.1rem,6.2vw,4.6rem);line-height:1.02;letter-spacing:-.025em;
       margin:0 0 22px;max-width:17ch;color:var(--text);
       background:none;-webkit-text-fill-color:currentColor;filter:none;text-wrap:balance}
