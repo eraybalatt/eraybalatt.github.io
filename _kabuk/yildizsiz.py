@@ -165,8 +165,48 @@ def label_dividers(s):
     return ''.join(out), n, skipped
 
 
+
+# ---------------------------------------------------------------- hero sadelestirme
+def minimal_hero(s):
+    """Hero'da tekrar eden katmanlari keser, kalan iki satiri kisaltir.
+
+    Cikan : eyebrow 'Creative AI Producer · Filmmaker' — header'da zaten yaziyor.
+    Kisalan: h1 ve lead. Lead'deki kategori listesi header'in ikinci nav
+             satirinda (UGC ADS / SHORT FILMS / MUSIC VIDEOS / ...) zaten var.
+    """
+    # 1) hero eyebrow'u kaldir (data-en degeriyle tekil)
+    old_eb = ('<div class="eyebrow rin" data-en="Creative AI Producer · Filmmaker" '
+              'data-tr="Creative AI Producer · Yönetmen" '
+              'data-de="Creative AI Producer · Filmemacher">Creative AI Producer · Filmmaker</div>')
+    assert s.count(old_eb) == 1, 'hero eyebrow tekil degil: %d' % s.count(old_eb)
+    s = s.replace(old_eb, '', 1)
+
+    # 2) h1 — 8 kelimeden 5'e
+    old_h1 = ('<h1 class="rin" data-en="Cinematic stories, rebuilt frame by frame with AI." '
+              'data-tr="Sinematik hikâyeler, kare kare yapay zekâ ile yeniden kurgulandı." '
+              'data-de="Filmische Geschichten, Bild für Bild mit AI neu erschaffen.">'
+              'Cinematic stories, rebuilt frame by frame with AI.</h1>')
+    new_h1 = ('<h1 class="rin" data-en="Cinematic stories, rebuilt with AI." '
+              'data-tr="Sinematik hikâyeler, yapay zekâyla yeniden kuruldu." '
+              'data-de="Filmische Geschichten, mit AI neu erschaffen.">'
+              'Cinematic stories, rebuilt with AI.</h1>')
+    assert s.count(old_h1) == 1, 'h1 tekil degil: %d' % s.count(old_h1)
+    s = s.replace(old_h1, new_h1, 1)
+
+    # 3) lead — kategori listesi header'da var, tekrar etmesin
+    import re as _re
+    m = _re.search(r'<p class="lead rin" data-en="I direct music videos[\s\S]*?</p>', s)
+    assert m, 'hero lead bulunamadi'
+    new_lead = ('<p class="lead rin" data-en="For brands and artists worldwide." '
+                'data-tr="Markalar ve sanatçılar için." '
+                'data-de="Für Marken und Künstler weltweit.">'
+                'For brands and artists worldwide.</p>')
+    s = s[:m.start()] + new_lead + s[m.end():]
+    return s
+
+
 # ---------------------------------------------------------------- uret
-base = strip_star(s0)
+base = minimal_hero(strip_star(s0))
 
 a1 = add_css(base, CSS_A1, 'A1 — SADE KUNYE')
 a1 = noindex_title(a1, 'A1 Sade Kunye')
