@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<base href="/">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://eraybalat.com/files/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Eray Balat">
+<meta property="og:title" content="The Eray Balat files">
+<meta property="og:description" content="Every film pinned to the wall, with the evidence of how it was made. TennisCut, Novora, FLAWLESS, COLD START and more.">
+<meta property="og:url" content="https://eraybalat.com/files/">
+<meta property="og:image" content="https://eraybalat.com/files/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Eray Balat files">
+<meta name="twitter:description" content="Every film pinned to the wall, with the evidence of how it was made.">
+<meta name="twitter:image" content="https://eraybalat.com/files/og.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>The files — Eray Balat</title>
+<meta name="theme-color" content="#0d2742">
+<meta name="description" content="The Eray Balat files: every film pinned to the wall, with the evidence of how it was made.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Special+Elite&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="_board/chrome.css">
+<style>
+  /* Seljuk palette, lifted: sky-blue glaze, cobalt pins, a blue night, cream paper */
+  :root{--wall:#0d2742;--tx:#eaf5ff;--mut:#9dbcd8;--acc:#7cc8ff;--acc-hi:#bfe6ff;--cobalt:#2447a8;--acctx:#062238;
+    --ui:rgba(12,38,64,.9);--uil:#2f5f8c;--uitx:#eaf5ff;--hov:#1b4a75;--sel:#21598c;--pal:#0f2d4c;--cta:#bfe6ff;--ctatx:#062238;
+    --paper:#f1ecdf;--ink:#122130;--mm-bg:#0b2743;--mm-fr:#23537f;--mm-ln:#7cc8ff;--mm-vw:#f2faff;
+    --glaze:linear-gradient(180deg,#e2f4ff 0%,#a9dcff 45%,#63b5ec 100%)}
+  html,body{background:var(--wall);color:var(--tx);font:400 14px/1.45 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  #vp{background:radial-gradient(1700px 1050px at 50% 34%,#22598b 0,#15406a 40%,var(--wall) 80%)}
+
+  /* tile boards: blue ground, a faint lattice of the star, a sky-blue inlay line */
+  .fr{position:absolute;border-radius:6px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><path d='M51.971 18.029L60 10L88.749 38.749M24.64 36.01L24.64 24.64L65.29 24.64M101.971 51.971L110 60L81.251 88.749M83.99 24.64L95.36 24.64L95.36 65.29M68.029 101.971L60 110L31.251 81.251M95.36 83.99L95.36 95.36L54.71 95.36M18.029 68.029L10 60L38.749 31.251M36.01 95.36L24.64 95.36L24.64 54.71' fill='none' stroke='%23a9deff' stroke-opacity='.13' stroke-width='2.4' stroke-linecap='butt' stroke-linejoin='miter'/></svg>") 0 0/150px 150px,url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .55  0 0 0 0 .8  0 0 0 .22 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>") 0 0/220px 220px,#17446f;
+    box-shadow:inset 0 0 0 12px #113760,inset 0 0 0 14px rgba(169,222,255,.72),inset 0 0 0 18px #113760,inset 0 0 120px rgba(4,18,34,.4),0 30px 70px rgba(2,12,26,.45)}
+  .fr.bare{background:none;box-shadow:none}
+  .fl{display:none}
+  .tag{position:absolute;left:44px;top:34px;z-index:2;background:var(--glaze);color:#062238;padding:14px 22px 12px;border-radius:3px;border:2px solid #2f78b0;transform:rotate(-1.6deg);
+    box-shadow:0 8px 18px rgba(2,12,26,.45),inset 0 1px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.12);font:22px/1.2 "Special Elite",monospace;white-space:nowrap}
+  .tag small{display:block;font-size:15px;opacity:.72;letter-spacing:.08em}
+  .tag b{display:block;font-weight:400;font-size:34px;letter-spacing:.02em}
+  .tag::before{content:"";position:absolute;left:50%;top:-9px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#b5c6ff,#2447a8 58%,#0a1846);box-shadow:0 3px 5px rgba(0,0,0,.5)}
+  .stamp{position:absolute;right:48px;top:40px;z-index:2;color:#cdeaff;border:4px solid #cdeaff;border-radius:8px;padding:6px 16px 4px;font:30px/1 "Special Elite",monospace;letter-spacing:.12em;transform:rotate(6deg);opacity:.78;mix-blend-mode:screen;text-transform:uppercase}
+  .cv{position:absolute;container-type:size;display:flex;flex-direction:column;justify-content:flex-end;padding:min(calc(26px / var(--s)),5cqw,7cqh);background:linear-gradient(180deg,rgba(11,34,58,.3),rgba(11,34,58,.84) 55%,rgba(9,28,48,.96));opacity:0;pointer-events:none;transition:opacity .3s;border-radius:6px}
+  .cv small{font:min(calc(14px / var(--s)),4.2cqw,7cqh) "Special Elite",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--acc-hi)}
+  .cv b{font:400 min(calc(46px / var(--s)),12cqw,28cqh)/1 "Special Elite",monospace;margin-top:min(calc(8px / var(--s)),2cqh);color:#f2faff}
+  .cv em{font-style:normal;font-size:min(calc(15px / var(--s)),4.6cqw,8cqh);color:#b3d0ea;margin-top:min(calc(8px / var(--s)),2cqh)}
+  [data-lod=far] .cv{opacity:1}
+  [data-lod=far] svg.links .ln.local,[data-lod=far] .mk{opacity:0}
+  svg.links .ln,.mk{transition:opacity .25s}
+
+  /* prints (polaroid) */
+  .print{position:absolute;background:#f4f3ee;padding:12px 12px 0;box-shadow:0 14px 26px rgba(2,12,26,.55),0 2px 4px rgba(2,12,26,.4);transform:rotate(var(--r));cursor:zoom-in;transition:transform .25s,box-shadow .25s}
+  .print:hover,.print:focus-visible{transform:rotate(0) scale(1.03);box-shadow:0 26px 50px rgba(2,12,26,.6),0 0 0 3px rgba(124,200,255,.7);z-index:4;outline:0}
+  .print .ph{position:relative;width:100%;overflow:hidden;background:#0b1622}
+  .print .ph img,.print .ph video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;user-select:none;-webkit-user-drag:none}
+  .print .ph video{opacity:0;transition:opacity .3s}.print.pl .ph video{opacity:1}
+  .print .ph .play{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:rgba(6,24,40,.6);transition:opacity .25s}
+  .print .ph .play::before{content:"";position:absolute;left:13px;top:10px;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent}
+  .print.pl .ph .play{opacity:0}
+  .print figcaption{font:19px/1.25 "Permanent Marker",cursive;color:#0f2130;padding:10px 4px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .print figcaption small{font:14px "Special Elite",monospace;color:#587080;margin-left:6px}
+  .pinhead{position:absolute;left:50%;top:-6px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#eef9ff,#7cc8ff 55%,#1d5f93);box-shadow:0 4px 6px rgba(0,0,0,.5);z-index:2}
+  .pinhead.y{background:radial-gradient(circle at 35% 35%,#b5c6ff,#2447a8 58%,#0a1846)}
+  .tape{position:absolute;top:-14px;width:110px;height:30px;background:rgba(220,238,250,.58);box-shadow:0 2px 4px rgba(0,0,0,.22);z-index:2}
+  .tape.l{left:-26px;transform:rotate(-32deg)}.tape.r{right:-26px;transform:rotate(30deg)}
+
+  /* index cards */
+  .card{position:absolute;background:var(--paper) repeating-linear-gradient(180deg,transparent 0 33px,rgba(36,110,170,.2) 33px 34px);background-position:0 44px;padding:16px 20px 18px;color:var(--ink);font:20px/34px "Special Elite",monospace;box-shadow:0 12px 22px rgba(2,12,26,.5);transform:rotate(var(--r))}
+  .card::before{content:"";position:absolute;left:0;right:0;top:43px;height:2px;background:rgba(36,71,168,.5)}
+  .card .ch{display:block;font-size:14px;line-height:1;letter-spacing:.14em;text-transform:uppercase;color:#2447a8;height:28px;padding-top:6px}
+  .card b{font-weight:400;background:linear-gradient(transparent 56%,rgba(124,200,255,.55) 56%)}
+  .card a{color:#2447a8;text-decoration:underline}
+  .card.dark{background:#0f2d4c;color:#e6f2fb;border:1px solid #2f5f8c}.card.dark::before{display:none}.card.dark .ch{color:var(--acc-hi)}.card.dark b{background:none;color:#fff}
+  .mk{position:absolute;font:40px/1.1 "Permanent Marker",cursive;color:#f2faff;opacity:.94;transform:rotate(var(--r));text-shadow:0 2px 0 rgba(4,18,34,.45);white-space:nowrap}
+  .mk.red{color:var(--acc-hi)}
+  .ttl{position:absolute;font:88px/1 "Special Elite",monospace;color:#f2faff;letter-spacing:.02em;white-space:nowrap}
+  .ttl em{font-style:normal;color:var(--acc)}
+  .sub{position:absolute;font:26px/1.4 Inter,sans-serif;color:#b8d2ea}
+  .blank{position:absolute;border:3px dashed rgba(191,230,255,.5);display:grid;place-items:center;font:30px "Special Elite",monospace;color:rgba(191,230,255,.78);transform:rotate(var(--r))}
+  .star{position:absolute;color:var(--acc-hi);filter:drop-shadow(0 0 18px rgba(124,200,255,.45))}.star svg{width:100%;height:100%}
+
+  svg.links .ln{fill:none;stroke:#a9deff;stroke-width:2.6;filter:drop-shadow(0 3px 2px rgba(2,12,26,.55))}
+  svg.links .ln.far{stroke-width:5}
+  svg.links .head{fill:#cdeaff;stroke:#1d5f93;stroke-width:1.5}
+
+  /* profile cards: known addresses */
+  .idc{position:absolute;background:#f7f4ec;color:#122130;box-shadow:0 16px 30px rgba(2,12,26,.5);transform:rotate(var(--r));font:400 16px/1.45 Inter,sans-serif}
+  .idc-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px 11px;background:var(--pc);color:#fff;font:400 20px "Special Elite",monospace;letter-spacing:.06em}
+  .idc-bar .idc-kind{font:600 11px Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+  .p-upwork{--pc:#14a800;--pc0:#14a800}.p-linkedin{--pc:#0a66c2;--pc0:#0a66c2}.p-ig{--pc:linear-gradient(90deg,#f58529,#dd2a7b 55%,#8134af);--pc0:#dd2a7b}
+  .p-x{--pc:#0f1419;--pc0:#0f1419}.p-yt{--pc:#ff0033;--pc0:#ff0033}.p-be{--pc:#1769ff;--pc0:#1769ff}
+  .idc-body{display:flex;gap:18px;padding:18px 18px 6px}
+  .idc-ph{flex:none;width:132px;height:132px;background:#fff;padding:6px;box-shadow:0 4px 10px rgba(0,0,0,.18);transform:rotate(-1.5deg)}
+  .idc-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .idc-name{display:block;font:700 30px/1.05 Inter,sans-serif;letter-spacing:-.015em}
+  .idc-title{display:block;margin-top:8px;font-size:17px;line-height:1.35;color:#2d4458}
+  .idc-stats{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px}
+  .idc-stats span{font:600 11.5px Inter,sans-serif;color:#5b7189;text-transform:uppercase;letter-spacing:.1em}
+  .idc-stats b{display:block;font:700 26px/1.1 Inter,sans-serif;color:#122130;letter-spacing:-.01em;text-transform:none}
+  .idc-meta{margin-top:12px;font-size:14px;color:#5b7189}
+  .idc-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 18px 0}
+  .idc-chips i{font-style:normal;font-size:13px;padding:4px 10px;border-radius:999px;background:#e2ebf4;color:#1f3d5a}
+  .idc blockquote{margin:14px 18px 0;padding:12px 14px;background:#fff;border-left:4px solid var(--pc0);font:400 16px/1.5 "Special Elite",monospace;color:#122130}
+  .idc blockquote cite{display:block;font:600 12px Inter,sans-serif;font-style:normal;color:#5b7189;margin-top:6px;letter-spacing:.06em}
+  .idc-go{display:inline-block;margin:16px 18px 18px;padding:11px 16px;background:#122130;color:#fff!important;text-decoration:none;font:600 15px Inter,sans-serif;border-radius:4px}
+  .idc-go:hover{background:var(--pc0)}
+  .idc.sm .idc-handle{display:block;padding:18px 18px 0;font:700 27px/1.1 Inter,sans-serif;letter-spacing:-.01em}
+  .idc.sm .idc-line{display:block;padding:6px 18px 0;color:#5b7189}
+  .idc .pinhead{top:-8px}
+
+  /* the lamp */
+  #lamp{position:fixed;inset:0;z-index:6;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,45%),rgba(0,0,0,0) 0,rgba(0,0,0,0) 220px,rgba(3,14,28,.78) 620px);transition:opacity .5s}
+  #lamp::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,45%),rgba(170,220,255,.07) 0,transparent 360px)}
+  body.lights #lamp{opacity:0}
+  [data-lod=far]~#lamp{opacity:.5}
+  [data-lod=near] svg.links .ln.far,[data-lod=mid] svg.links .ln.far{opacity:.16}
+  [data-lod=near] svg.links .head,[data-lod=mid] svg.links .head{opacity:.3}
+
+  /* ---- chrome, cut for the wall ---- */
+  .ui{box-shadow:0 14px 34px rgba(2,12,26,.4)}
+  /* top left: an enamel plaque */
+  #file{height:auto;padding:10px 20px 10px 12px;gap:12px;border:0;border-radius:6px;background:linear-gradient(180deg,#1f5588,#143d66);
+    box-shadow:inset 0 0 0 2px #0e2f51,inset 0 0 0 4px rgba(169,222,255,.7),inset 0 0 0 6px #0e2f51,0 14px 34px rgba(2,12,26,.45)}
+  #logo{display:block;width:34px;height:34px;color:#cdeaff;flex:none}#logo svg{width:100%;height:100%;display:block}
+  #file .pl{display:flex;flex-direction:column;line-height:1.05}
+  #file .pl b{font:400 19px "Special Elite",monospace;letter-spacing:.16em;color:#f4faff}
+  #file .pl small{font:600 10.5px Inter,sans-serif;letter-spacing:.24em;color:#a9d5f7;margin-top:6px}
+  /* top centre: a slim enamel strip */
+  #tools{background:rgba(14,44,74,.88);border:1px solid rgba(169,222,255,.4);border-radius:10px}
+  #tools button{font:500 13px Inter,sans-serif;color:#e0f1ff}
+  #tools .pri,#tools #lampb.on{background:var(--glaze);color:#062238;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.12)}
+  /* top right: a pin and a case tag */
+  #right{background:none;border:0;box-shadow:none;gap:14px;padding:0;height:auto;-webkit-backdrop-filter:none;backdrop-filter:none}
+  #right #share{width:46px;height:46px;padding:0;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#2d6ca6,#133c66);color:#e6f5ff;
+    box-shadow:inset 0 0 0 2px rgba(169,222,255,.6),0 10px 24px rgba(2,12,26,.45)}
+  #right #share:hover{background:radial-gradient(circle at 35% 30%,#3a7fbd,#174777)}
+  #right #share svg{width:20px;height:20px}
+  #right .cta{position:relative;height:auto;padding:13px 22px 11px;border-radius:3px;background:var(--glaze);color:#062238;border:2px solid #2f78b0;
+    font:400 19px "Special Elite",monospace;letter-spacing:.05em;transform:rotate(-1.2deg);box-shadow:0 10px 22px rgba(2,12,26,.45),inset 0 1px 0 rgba(255,255,255,.6);transition:transform .2s}
+  #right .cta::before{content:"";position:absolute;left:50%;top:-9px;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#b5c6ff,#2447a8 58%,#0a1846);box-shadow:0 3px 5px rgba(0,0,0,.5)}
+  #right .cta:hover{transform:rotate(0) translateY(-1px)}
+  /* left: the index card */
+  #frames{top:100px;left:18px;width:236px;max-height:calc(100vh - 290px);padding:14px 14px 14px 18px;border:0;border-radius:2px;color:#122130;overflow:visible;
+    background:#f1ecdf repeating-linear-gradient(180deg,transparent 0 31px,rgba(36,110,170,.18) 31px 32px);background-position:0 52px;transform:rotate(-.6deg);
+    box-shadow:0 16px 34px rgba(2,12,26,.5);-webkit-backdrop-filter:none;backdrop-filter:none}
+  #frames h4{font:400 13px "Special Elite",monospace;letter-spacing:.18em;color:#2447a8;padding:4px 0 11px;border-bottom:2px solid rgba(36,71,168,.5);margin:0 0 4px}
+  #frames .pinhead{top:-8px}
+  #frames-list{counter-reset:c -1;max-height:calc(100vh - 360px);overflow:auto}
+  #frames button{counter-increment:c;font:400 15px/32px "Special Elite",monospace;padding:0 6px;height:32px;border-radius:0;color:#122130;gap:10px}
+  #frames button::before{content:counter(c,decimal-leading-zero);color:#7890aa;font-size:13px;min-width:22px}
+  #frames button i{display:none}
+  #frames button:hover{background:rgba(124,200,255,.2)}
+  #frames button.on{background:linear-gradient(transparent 18%,rgba(124,200,255,.6) 18%,rgba(124,200,255,.6) 84%,transparent 84%);color:#062238}
+  /* bottom right: the wall map */
+  #mini{overflow:visible;border:0;border-radius:6px;padding:9px;background:#11365c;
+    box-shadow:inset 0 0 0 2px #0b2847,inset 0 0 0 4px rgba(169,222,255,.65),inset 0 0 0 6px #0b2847,0 14px 34px rgba(2,12,26,.45)}
+  #mini canvas{border-radius:2px}
+  #mini .mm-tab{position:absolute;left:14px;top:-16px;font:400 12px "Special Elite",monospace;letter-spacing:.16em;background:var(--glaze);color:#062238;padding:5px 10px 4px;border:1.5px solid #2f78b0;border-radius:2px;transform:rotate(-2deg);box-shadow:0 4px 10px rgba(2,12,26,.4)}
+  #hint{font:400 13px "Special Elite",monospace;background:rgba(14,44,74,.82);border:1px solid rgba(169,222,255,.32);color:#d4eafc;transition:opacity .8s}
+  #hint.gone{opacity:0;pointer-events:none}
+  #cap{background:#f1ecdf;color:#122130;border:0;border-radius:2px;font:400 15px "Special Elite",monospace;box-shadow:0 14px 30px rgba(2,12,26,.5)}
+  #cap b{font-weight:400}#cap span{color:#6d86a3}
+  #cap button:hover{background:rgba(124,200,255,.25)}
+  #pal .box{background:#0f2d4c;border-color:#2f5f8c}
+  #pal-list button.on{background:#21598c}
+  #toast{background:#f1ecdf;color:#122130;border:0;font:400 15px "Special Elite",monospace}
+  @media (max-width:860px){
+    #file{padding:8px 14px 8px 10px}#file .pl small{display:none}#logo{width:28px;height:28px}
+    #frames{top:auto;bottom:76px;left:12px;right:12px;width:auto;max-height:52vh;transform:none}
+    #frames-list{max-height:40vh}
+    #right .cta{font-size:16px;padding:10px 14px 8px}
+  }
+</style>
+</head>
+<body>
+<noscript><main style="max-width:760px;margin:40px auto;padding:0 20px;font:16px/1.6 Inter,system-ui,sans-serif;color:#eaf5ff">
+<h1>The Eray Balat files</h1>
+<p>Director and editor in Kayseri, Türkiye. Every film on this wall is shown with the evidence of how it was made. This page needs JavaScript; here is the short version.</p>
+<ol>
+<li><b>TennisCut</b>: three launch ads for a tennis app. An emotion film, a proof film, a story film.</li>
+<li><b>Novora</b>: a 28-second animated pilot for an olive producer in Sölöz, Bursa. Turkish and English.</li>
+<li><b>The Duffel</b>: a fashion film for an embroidered leather duffel.</li>
+<li><b><a href="/flawless/">FLAWLESS</a></b>: a 16:56 documentary on the 2003 Antwerp diamond heist, with Leonardo Notarbartolo.</li>
+<li><b>COLD START</b>: a 2:04 sci-fi trailer for an XPRIZE submission, cut from 35 generated clips.</li>
+<li><b><a href="/bushido/">Bushido</a></b>: a campaign concept with a synthetic cast of two.</li>
+<li><b>Music videos</b> for Modd, released by Universal Music Türkiye.</li>
+<li><b>Real footage</b>: short films shot on a camera, including Boomerang (Honorable Mention, Student Video Contest 2026).</li>
+</ol>
+<p><a href="/hire/">Rates</a> · <a href="https://www.upwork.com/freelancers/eraybalat">Upwork</a> · <a href="https://www.linkedin.com/in/eraybalat/">LinkedIn</a> · <a href="mailto:eray@eraybalat.com">eray@eraybalat.com</a></p>
+</main></noscript>
+<div id="vp"><div id="world"></div></div>
+<div id="lamp"></div>
+<header class="ui" id="file"><span id="logo"></span><span class="pl"><b>ERAY BALAT</b><small>THE FILES · KAYSERI</small></span></header>
+<div class="ui" id="tools">
+  <button id="ftog" aria-label="Index">☰</button><button id="zo" aria-label="Zoom out">−</button><button id="zl" title="Reset to 100%">100%</button><button id="zi" aria-label="Zoom in">+</button><span class="sep"></span>
+  <button id="fit">Fit</button><button id="search" title="Search (⌘K)">⌘K</button><button id="lampb" title="Lights (L)">💡 Lights</button><button class="pri" id="tour">▶ Tour</button>
+</div>
+<div class="ui" id="right"><button id="share" title="Copy link" aria-label="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button><a class="cta" href="mailto:eray@eraybalat.com">Open a case →</a></div>
+<nav class="ui" id="frames" aria-label="Index of cases"><i class="pinhead"></i><h4>INDEX OF CASES</h4><div id="frames-list"></div></nav>
+<div class="ui" id="mini" title="Wall map"><span class="mm-tab">WALL MAP</span><canvas id="mc" width="440" height="300"></canvas></div>
+<div class="ui" id="hint">Drag to move · <kbd>⌘</kbd>+scroll to zoom · click a print to look closer · <kbd>L</kbd> lights</div>
+<div class="ui" id="cap"><button id="cap-prev" aria-label="Previous">←</button><span id="cap-n"></span><b id="cap-t"></b><button id="cap-next" aria-label="Next">→</button><button id="cap-x" aria-label="Stop tour">✕</button></div>
+<div id="pal"><div class="box"><input id="pal-in" placeholder="Search the files…" autocomplete="off"><div id="pal-list"></div></div></div>
+<div id="focus"><button id="focus-x" aria-label="Close">✕</button><button id="focus-prev" aria-label="Previous">←</button><div class="fbox"><div id="focus-media"></div><div class="fmeta"><b id="focus-t"></b><span id="focus-s"></span><span id="focus-n"></span><a id="focus-a"></a></div></div><button id="focus-next" aria-label="Next">→</button></div>
+<div id="toast"></div>
+
+<script src="_board/content.js"></script>
+<script src="_board/engine.js"></script>
+<script>
+(function(){
+  var T=EB.T,P=EB.P,seed=7;
+  function rnd(){seed=(seed*9301+49297)%233280;return seed/233280}
+  function rot(k){return ((rnd()*2-1)*(k||1.8)).toFixed(2)+"deg"}
+  /* item makers */
+  function pr(src,w,ar,cap,o){var r={k:"print",src:src,w:w,ar:ar||9/16,label:cap||"",title:(cap||"").replace(/<small>.*<\/small>/,"").replace(/<[^>]+>/g,"").trim(),r:rot()};for(var k in o)r[k]=o[k];r.hold=r.hold||(rnd()<.62?"pin":"tape");return r}
+  function vd(src,poster,w,ar,cap,o){var r=pr(poster,w,ar,cap,o);r.vsrc=src;r.poster=poster;return r}
+  function cd(key,w,head,o){var r={k:"card",html:T[key]||key,w:w,head:head||"",r:rot(1.3)};for(var k in o)r[k]=o[k];r.q=(r.html||"").replace(/<[^>]+>/g,"");return r}
+  function mk(text,o){var r={k:"marker",html:text,r:rot(2.5)};for(var k in o)r[k]=o[k];return r}
+
+  function el(n){
+    var e;
+    if(n.k==="print"){
+      e=document.createElement("figure");e.className="print";e.style.setProperty("--r",n.r);e.style.width=n.w+"px";
+      var ph=Math.round((n.w-24)*n.ar);
+      e.innerHTML="<div class='ph' style='height:"+ph+"px'><img src='"+n.src+"' alt='' loading='lazy' decoding='async' draggable='false'>"+(n.vsrc?"<video muted loop playsinline preload='none'></video><span class='play'></span>":"")+"</div><figcaption>"+n.label+"</figcaption>"+
+        (n.hold==="pin"?"<i class='pinhead"+(rnd()<.3?" y":"")+"'></i>":"<i class='tape l'></i><i class='tape r'></i>");
+      if(n.pos)e.querySelector("img").style.objectPosition=n.pos;
+    }else if(n.k==="card"){
+      e=document.createElement("div");e.className="card"+(n.dark?" dark":"");e.style.setProperty("--r",n.r);e.style.width=n.w+"px";
+      e.innerHTML=(n.head?"<span class='ch'>"+n.head+"</span>":"<span class='ch'>&nbsp;</span>")+"<div>"+n.html+"</div><i class='pinhead"+(rnd()<.4?" y":"")+"'></i>";
+    }else if(n.k==="marker"){
+      e=document.createElement("div");e.className="mk"+(n.red?" red":"");e.style.setProperty("--r",n.r);e.innerHTML=n.html;if(n.size)e.style.fontSize=n.size+"px";
+    }else if(n.k==="blank"){
+      e=document.createElement("div");e.className="blank";e.style.setProperty("--r",n.r||"-1deg");e.style.width=n.w+"px";e.style.height=n.h+"px";e.innerHTML=n.html;
+    }else if(n.k==="ttl"){e=document.createElement("div");e.className="ttl";e.innerHTML=n.html}
+    else if(n.k==="sub"){e=document.createElement("div");e.className="sub";e.innerHTML=n.html;e.style.width=n.w+"px"}
+    else if(n.k==="star"){e=document.createElement("div");e.className="star";e.innerHTML=EB.star(5)}
+    else if(n.k==="idc"){e=document.createElement("div");e.className="idc p-"+n.p+(n.sm?" sm":"");e.style.setProperty("--r",n.r||"0deg");e.style.width=n.w+"px";e.innerHTML=n.html+"<i class='pinhead"+(rnd()<.4?" y":"")+"'></i>"}
+    return e}
+
+  /* cases: rows of items; the layout is measured, then packed */
+  /* known addresses: the public numbers, read from each profile on 23 Sep 2026 */
+  var HEAD="<div class='idc-ph'><img src='_board/img/eray-headshot.webp' alt='Eray Balat' loading='lazy' decoding='async' draggable='false'></div>";
+  function idcSmall(p,plat,handle,line,go,href){return {k:"idc",p:p,sm:1,w:380,r:rot(1.4),q:plat+" "+handle,html:"<div class='idc-bar'><span class='idc-plat'>"+plat+"</span></div><b class='idc-handle'>"+handle+"</b><span class='idc-line'>"+line+"</span><a class='idc-go' href='"+href+"' target='_blank' rel='noopener'>"+go+" ↗</a>"}}
+  var UPW={k:"idc",p:"upwork",w:800,id:"a-up",r:"-.8deg",q:"Upwork freelancer profile hire Eray Balat job success",html:
+    "<div class='idc-bar'><span class='idc-plat'>Upwork</span><span class='idc-kind'>Freelancer profile</span></div>"+
+    "<div class='idc-body'>"+HEAD+"<div class='idc-main'><b class='idc-name'>Eray Balat</b><span class='idc-title'>AI Video Director: Documentary, Trailer &amp; Music Video Editing</span>"+
+    "<div class='idc-stats'><span><b>100%</b>Job Success</span><span><b>9</b>Jobs</span><span><b>0–4 h</b>Reply time</span></div>"+
+    "<div class='idc-meta'>Kayseri, Türkiye · UTC+3 · ID verified · English, Turkish, German</div></div></div>"+
+    "<div class='idc-chips'><i>Video Editing</i><i>Documentary</i><i>Movie Trailer</i><i>Music Video</i><i>Color Grading</i><i>Sound Design</i><i>AI Video Generation</i></div>"+
+    "<blockquote>“He caught continuity and pacing problems I’d missed. I’d hire him again without hesitation.”<cite>★★★★★ 5.0 · CLIENT, COLD START</cite></blockquote>"+
+    "<a class='idc-go' href='https://www.upwork.com/freelancers/eraybalat' target='_blank' rel='noopener'>Hire on Upwork ↗</a>"};
+  var LNK={k:"idc",p:"linkedin",w:680,id:"a-li",r:".9deg",q:"LinkedIn profile Eray Balat Citrine Studio",html:
+    "<div class='idc-bar'><span class='idc-plat'>LinkedIn</span><span class='idc-kind'>Profile</span></div>"+
+    "<div class='idc-body'>"+HEAD+"<div class='idc-main'><b class='idc-name'>Eray Balat</b><span class='idc-title'>AI Video Director &amp; Founder at Citrine Studio · UGC &amp; Product Ads · Music Videos · Brand Films</span>"+
+    "<div class='idc-stats'><span><b>3,900+</b>Followers</span><span><b>500+</b>Connections</span></div>"+
+    "<div class='idc-meta'>Türkiye</div></div></div>"+
+    "<a class='idc-go' href='https://www.linkedin.com/in/eraybalat/' target='_blank' rel='noopener'>Connect on LinkedIn ↗</a>"};
+
+  var C=[
+    {id:"tenniscut",no:"01",t:"TennisCut",s:"three launch ads for a tennis app · director",st:"Featured",w:1200,
+     subs:[["tenniscut-moment","TennisCut · The Moment",["t-hook","t-face","t-serve","t-hookc","t-servec"]],
+           ["tenniscut-proof","TennisCut · Dead Time Remover",["t2-hook","t-counter","t2-rallies","t-proofc","t-screensc"]],
+           ["tenniscut-story","TennisCut · Best of Us",["t-ref","t-ref2","t-lock","t3-laugh","t3-found","t3-keep"]]],rows:[
+      [cd("tc.brief",560,"The brief"),cd("tc.study",560,"Before a single frame"),cd("tc.grades",520,"Three grades"),cd("tc.credits",520,"Credits")],
+      [{k:"stack",g:86,rows:[
+          [{k:"marker",html:"an emotion film",size:60,r:"-2deg"}],
+          [vd("_board/media/tc-the-moment.mp4","_board/img/tc1-poster.webp",640,16/9,"The Moment <small>0:15</small>",{id:"t-v1",title:"TennisCut · The Moment"})],
+          [pr("_board/img/tc1-hook.webp",330,16/9,"the hook",{id:"t-hook"}),pr("_board/img/tc1-face.webp",330,16/9,"every match has a moment",{id:"t-face"}),pr("_board/img/tc1-serve.webp",330,16/9,"the serve",{id:"t-serve"})],
+          [cd("tc.hook",520,"The hook",{id:"t-hookc"}),cd("tc.serve",520,"The serve",{id:"t-servec"})]]},
+       {k:"space",w:90,h:10},
+       {k:"stack",g:86,rows:[
+          [{k:"marker",html:"a proof film",size:60,r:"1.5deg"}],
+          [vd("_board/media/tc-dead-time-remover.mp4","_board/img/tc2-poster.webp",640,16/9,"Dead Time Remover <small>0:21</small>",{id:"t-v2",title:"TennisCut · Dead Time Remover"})],
+          [pr("_board/img/tc2-hook.webp",330,16/9,"the question",{id:"t2-hook"}),pr("_board/img/tc2-counter.webp",330,16/9,"the counter drops",{id:"t-counter"}),pr("_board/img/tc2-rallies.webp",330,16/9,"164 rallies, a real app screen",{id:"t2-rallies"})],
+          [cd("tc.proof",520,"The proof",{id:"t-proofc"}),cd("tc.screens",520,"The screens",{id:"t-screensc"})]]},
+       {k:"space",w:90,h:10},
+       {k:"stack",g:86,rows:[
+          [{k:"marker",html:"a story film",size:60,r:"-1deg"}],
+          [vd("_board/media/tc-best-of-us.mp4","_board/img/tc3-poster.webp",640,16/9,"Best of Us <small>0:57</small>",{id:"t-v3",title:"TennisCut · Best of Us"})],
+          [pr("_board/img/tc3-ref-her.webp",250,931/520,"her, locked first",{id:"t-ref"}),pr("_board/img/tc3-ref-him.webp",250,931/520,"him",{id:"t-ref2"}),cd("tc.lock",500,"Still first",{id:"t-lock"})],
+          [pr("_board/img/tc3-laugh.webp",330,16/9,"the first watch",{id:"t3-laugh"}),pr("_board/img/tc3-found.webp",330,16/9,"20 rallies found",{id:"t3-found"}),pr("_board/img/tc3-keep.webp",330,16/9,"the last line",{id:"t3-keep"})]]}]
+    ],marks:[["sound off. first second.","t-hook",-10,-70,{red:1}],["2:04:18 → 27:09","t-counter",-20,-70,{red:1}]],
+     strings:[["t-ref","t-lock"]]},
+
+    {id:"novora",no:"02",t:"Novora",s:"animated brand film · TR / EN · director",st:"Delivered",w:1200,rows:[
+      [vd("_board/media/novora-en.mp4","novora-en-p.webp",600,9/16,"English <small>0:28</small>",{id:"n-en",title:"Novora · English",href:"https://youtu.be/GAGlpIw3Q2Y",hrefLabel:"Watch on YouTube"}),
+       vd("_board/media/novora-tr.mp4","novora-tr-p.webp",600,9/16,"Turkish <small>0:28</small>",{title:"Novora · Turkish",href:"https://youtu.be/S9hG_Ga7wIg",hrefLabel:"Watch on YouTube"}),
+       cd("nv.what",440,"The job",{id:"n-job"})],
+      [pr("_board/img/nv-hero.webp",300,1,"Nova",{id:"n-hero"}),pr("_board/img/nv-turn.webp",560,502/900,"the turnaround",{id:"n-turn"}),cd("nv.nova",440,"The character"),cd("nv.open",440,"The first line")],
+      [pr("_board/img/nv-sb-01-safak.webp",300,357/640,"storyboard · dawn",{id:"n-sb1"}),pr("_board/img/nv-1-safak.webp",300,9/16,"film · dawn",{id:"n-f1"}),pr("_board/img/nv-sb-02-kokler.webp",300,357/640,"storyboard · roots",{id:"n-sb2"}),pr("_board/img/nv-2-kokler.webp",300,9/16,"film · roots",{id:"n-f2"}),cd("nv.sb",400,"Storyboard first")],
+      [pr("_board/img/nv-3-olgunlasma.webp",300,9/16,"ripening"),pr("_board/img/nv-4-hasat.webp",300,9/16,"harvest"),pr("_board/img/nv-5-urun.webp",300,9/16,"the jar"),pr("_board/img/nv-6-sofra.webp",300,9/16,"the table"),cd("nv.end",400,"The last line")]
+    ],marks:[["a day early","n-job",30,-70,{red:1}],["one bird, every scene","n-turn",0,-72,{}]],strings:[["n-sb1","n-f1"],["n-sb2","n-f2"],["n-hero","n-turn"]]},
+
+    {id:"duffel",no:"03",t:"The Duffel",s:"fashion film · leather · director",st:"Fashion",w:1200,rows:[
+      [vd("_board/media/fashion-duffel.mp4","_board/img/fd-poster.webp",400,16/9,"The Duffel <small>fashion film</small>",{id:"d-film",title:"The Duffel · fashion film"}),
+       pr("_board/img/fd-look1.webp",260,16/9,"look 01"),pr("_board/img/kf-bag.jpg",260,1.445,"look 02 · the bag"),pr("_board/img/fd-rear.webp",260,16/9,"look 03")],
+      [pr("_board/img/kf-detail.jpg",260,1.445,"detail · the embroidery",{id:"d-det"}),pr("_board/img/kf-men.jpg",260,1.445,"detail · the story on the leather"),cd("fd.what",420,"The film"),cd("fd.world",420,"One world",{id:"d-world"})]
+    ],marks:[["the landscape, on the leather","d-det",0,-72,{red:1}]],strings:[["d-det","d-world"]]},
+
+    {id:"flawless",no:"04",t:"FLAWLESS",s:"documentary · 16:56 · 4K",st:"Published",w:1200,rows:[
+      [pr("flawless/hero-vault.webp",620,9/16,"The vault door <small>final frame</small>",{id:"w-vault",href:"/flawless/",hrefLabel:"Read the case study"}),cd("fl.interview",420,"Interview",{id:"w-quote"}),pr("flawless/int-card.webp",460,9/16,"The man who led the heist",{id:"w-int"})],
+      [pr("flawless/3d-vault.webp",300,9/16,"Vault door <small>3D</small>"),pr("flawless/3d-dial.webp",300,9/16,"100M combinations <small>3D</small>"),pr("flawless/3d-crew.webp",300,9/16,"School of Turin <small>3D</small>",{id:"w-3d"}),cd("fl.3d",380,"Reconstruction",{id:"w-3dc"}),cd("fl.motion",300,"Motion")],
+      [pr("flawless/timeline.jpg",640,9/16,"Master timeline <small>Premiere Pro</small>",{id:"w-tl"}),cd("fl.voice",400,"Voices"),pr("flawless/mt-part4.webp",300,9/16,"Part 04 · The Mistake"),cd("fl.credits",360,"Credits")]
+    ],marks:[["He led the heist. He watched the film.","w-quote",0,-70,{red:1}]],strings:[["w-int","w-quote"],["w-3d","w-3dc"],["w-tl","w-vault"]]},,
+
+    {id:"coldstart",no:"05",t:"COLD START",s:"sci-fi trailer · XPRIZE submission · editor",st:"Delivered",w:1200,rows:[
+      [vd("film-coldstart.mp4","film-coldstart-p.webp",560,9/16,"The corridor <small>trailer · 2:04</small>",{id:"w-cs",href:"coldstart-film.mp4",hrefLabel:"Watch the trailer"}),pr("coldstart-grid.webp",540,9/16,"Nine frames, one grade",{id:"w-grid"}),cd("★★★★★ <b>5.0</b><br>"+T["cs.review"]+"<br><span style='opacity:.7'>The client, on Upwork · US</span>",420,"Client review",{id:"w-rev"})],
+      [cd("cs.in",320,"Evidence in",{id:"w-in"}),cd("cs.out",340,"Evidence out",{id:"w-out"}),cd("cs.silence",320,"Silence",{id:"w-sil"}),cd("cs.upscale",340,"Topaz"),cd("cs.master",360,"Master")],
+      [pr("_board/img/cs-snow.jpg",280,9/16,"shot"),pr("_board/img/cs-street.jpg",280,9/16,"shot"),pr("_board/img/cs-office.jpg",280,9/16,"shot"),pr("_board/img/cs-lab.jpg",280,9/16,"shot"),cd("cs.licence",440,"Before sign-off",{dark:1})]
+    ],marks:[["35 clips in → 2:04 out","w-in",-10,-66,{}]],strings:[["w-in","w-out"],["w-cs","w-rev"],["w-sil","w-cs"]]},,
+
+    {id:"bushido",no:"06",t:"Bushido",s:"campaign concept · synthetic cast · director",st:"Concept",w:1500,rows:[
+      [pr("bushido/assets/img/cast/ayla-face.webp",230,16/9,"Ayla",{id:"w-ay"}),pr("bushido/assets/img/cast/kaan-face.webp",260,1,"Kaan",{id:"w-ka"}),vd("bushido/assets/video/film-1.mp4","bushido/assets/video/poster-1.webp",210,16/9,"Her Ritual",{id:"w-hr"}),vd("bushido/assets/video/film-2.mp4","bushido/assets/video/poster-2.webp",210,16/9,"His Ritual",{id:"w-hi"}),vd("bushido/assets/video/film-3.mp4","bushido/assets/video/poster-3.webp",210,16/9,"The Reel",{href:"/bushido/",hrefLabel:"See the campaign"})],
+      [cd("bu.what",420,"The campaign"),cd("bu.cast",420,"The cast"),pr("bushido/assets/img/catalog/kheshig-front.webp",240,1,"capsule · 4K")]
+    ],strings:[["w-ay","w-hr"],["w-ka","w-hi"]]},,
+
+    {id:"music",no:"07",t:"Music videos",s:"Universal Music Türkiye · AI creator",st:"Released",w:1500,rows:[
+      [vd("mv-reallife.mp4","mv-reallife-p.webp",560,9/16,"Modd · real life",{href:"https://www.youtube.com/watch?v=BKrTmSCBO5E",hrefLabel:"Watch on YouTube"}),vd("mv-yokuyku.mp4","mv-yokuyku-p.webp",560,9/16,"Modd, Betül Çiçekyurt · yok uyku",{href:"https://www.youtube.com/watch?v=4fKldh39zlw",hrefLabel:"Watch on YouTube"})],
+      [cd("mv.what",520,"Label")]
+    ]},,
+
+    {id:"commission",no:"08",t:"A 10-minute short",s:"narrative short · private commission",st:"Private",w:1300,rows:[
+      [{k:"marker",html:"106 → 110 → 7",size:92,r:"-2deg"}],
+      [cd("cm.what",520,"The job"),cd("cm.models",380,"Method")]
+    ]},,
+
+    {id:"real",no:"09",t:"Real footage",s:"short films · shot on a camera",st:"No AI",w:1900,rows:[
+      [pr("_board/img/r-swiss.webp",400,9/16,"Switzerland in One Hour",{href:"https://www.youtube.com/watch?v=rYHPU-_RqOc",hrefLabel:"Watch on YouTube"}),pr("film-runorrun-p.webp",400,9/16,"Run or Run",{href:"https://www.youtube.com/watch?v=-XgWX9IR5xE",hrefLabel:"Watch on YouTube"}),pr("_board/img/r-diepost.jpg",400,9/16,"Die Post",{href:"https://www.youtube.com/watch?v=kvaQqoMVsVA",hrefLabel:"Watch on YouTube"}),pr("_board/img/r-boomerang.jpg",400,9/16,"Boomerang",{href:"https://www.youtube.com/watch?v=oH3zKef9h0Q",hrefLabel:"Watch on YouTube"})],
+      [cd("rf.swiss",420,""),cd("rf.run",340,""),cd("rf.post",380,""),cd("rf.boom",420,"")],
+      [cd("rf.what",620,"Note")]
+    ]},,
+
+    {id:"addresses",no:"10",t:"Known addresses",s:"where else to find me",st:"On file",w:1200,rows:[
+      [UPW,LNK],
+      [idcSmall("ig","Instagram","@documenteray","More vertical reels.","Open Instagram","https://www.instagram.com/documenteray/"),
+       idcSmall("x","X","@documenteray","Follow on X.","Open X","https://x.com/documenteray"),
+       idcSmall("yt","YouTube","@eraybalat","The films in full.","Open YouTube","https://www.youtube.com/@eraybalat"),
+       idcSmall("be","Behance","eraybalat","Projects on Behance.","Open Behance","https://www.behance.net/eraybalat")]
+    ],marks:[["hire me here","a-up",60,-78,{red:1}]]},
+
+    {id:"contact",no:"11",t:"Your film",s:"open case · send a brief",st:"Open",w:1900,rows:[
+      [{k:"marker",html:"Send the deadline and the runtime.",size:96,r:"-1.2deg"}],
+      [{k:"blank",w:520,h:300,html:"your film here"},cd("<a href='mailto:eray@eraybalat.com'>eray@eraybalat.com</a><br>"+T["ct.what"],480,"Contact",{id:"w-ct"}),cd("tz",420,"Time zones"),cd("ct.links",360,"Elsewhere")]
+    ]}
+  ];
+
+  var items=[],frames=[],links=[];
+  function build(){
+    var probe=document.createElement("div");probe.style.cssText="position:absolute;left:-99999px;top:0;visibility:hidden";document.body.appendChild(probe);
+    function measure(n){
+      if(n.k==="space"){n.mw=n.w;n.mh=n.h||1;return}
+      if(n.k==="stack"){var g=n.g||46;n.rows.forEach(function(r){r.forEach(measure);r.rh=Math.max.apply(null,r.map(function(c){return c.mh}));r.rw=r.reduce(function(a,c){return a+c.mw},0)+g*(r.length-1)});
+        n.mw=Math.max.apply(null,n.rows.map(function(r){return r.rw}));n.mh=n.rows.reduce(function(a,r){return a+r.rh},0)+g*(n.rows.length-1);return}
+      var e=el(n);probe.appendChild(e);n.mw=e.offsetWidth;n.mh=e.offsetHeight}
+    C.forEach(function(c){c.rows.forEach(function(r){r.forEach(measure)})});
+    probe.remove();
+    var GAP=46,RG=64,PADT=150,PADB=70;
+    C.forEach(function(c){
+      var rg=c.rg||RG,y=0;c.rows.forEach(function(r){var rh=Math.max.apply(null,r.map(function(n){return n.mh}));r.rh=rh;r.rw=r.reduce(function(a,n){return a+n.mw},0)+GAP*(r.length-1);r.y=y;y+=rh+rg});
+      c.h=PADT+y-rg+PADB;c.w=Math.max(c.w,Math.max.apply(null,c.rows.map(function(r){return r.rw}))+160);
+    });
+    var ROWS=[["tenniscut"],["novora","duffel"],["flawless","coldstart"],["bushido","music","commission"],["real","addresses"],["contact"]],by={},GX=150,y=900;
+    C.forEach(function(c){by[c.id]=c});
+    var MAXW=Math.max.apply(null,ROWS.map(function(r){return r.reduce(function(a,id){return a+by[id].w},0)+GX*(r.length-1)}));
+    ROWS.forEach(function(r){var cs=r.map(function(id){return by[id]}),sum=cs.reduce(function(a,c){return a+c.w},0),extra=MAXW-sum-GX*(cs.length-1),x=100,h=Math.max.apply(null,cs.map(function(c){return c.h}));
+      cs.forEach(function(c){c.w=c.w+extra*c.w/sum;c.x=x;c.y=y;c.h=h;x+=c.w+GX});y+=h+170});
+    var ids={};
+    C.forEach(function(c){
+      frames.push({id:c.id,t:c.t,s:" · "+c.s,x:c.x,y:c.y,w:c.w,h:c.h,cover:{k:"Case "+c.no,t:c.t,s:c.s},no:c.no,st:c.st});
+      var rg=c.rg||RG,inner=c.h-PADT-PADB,used=c.rows.reduce(function(a,r){return a+r.rh},0)+rg*(c.rows.length-1),y0=c.y+PADT+Math.max(0,(inner-used)/2);
+      function place(n,x,y){
+        if(n.k==="space")return;
+        if(n.k==="stack"){var g=n.g||46,yy=y;n.rows.forEach(function(r){var xx=x+(n.mw-r.rw)/2;r.forEach(function(k){place(k,xx,yy+(r.rh-k.mh)/2);xx+=k.mw+g});yy+=r.rh+g});return}
+        n.x=Math.round(x);n.y=Math.round(y+(n.k==="marker"?0:(rnd()*2-1)*10));n.w=n.mw;n.h=n.mh;
+        if(n.vsrc)n.media={k:"vid",src:n.vsrc,poster:n.poster};else if(n.k==="print")n.media={k:"img",src:n.src};
+        items.push(n);if(n.id)ids[n.id]=n}
+      c.rows.forEach(function(r){var x=c.x+(c.w-r.rw)/2;
+        r.forEach(function(n){place(n,x,y0+r.y+(r.rh-n.mh)/2);x+=n.mw+GAP})});
+      (c.subs||[]).forEach(function(sb){var its=sb[2].map(function(i){return ids[i]}).filter(Boolean);if(!its.length)return;
+        var x0=Math.min.apply(null,its.map(function(i){return i.x})),y1=Math.min.apply(null,its.map(function(i){return i.y})),
+            x2=Math.max.apply(null,its.map(function(i){return i.x+i.w})),y2=Math.max.apply(null,its.map(function(i){return i.y+i.h}));
+        frames.push({id:sb[0],t:sb[1],x:x0-40,y:y1-100,w:x2-x0+80,h:y2-y1+140,bare:1,sub:1})});
+      (c.strings||[]).forEach(function(s){var a=ids[s[0]],b=ids[s[1]];if(a&&b)links.push({a:[a.x+a.w/2,a.y+2],b:[b.x+b.w/2,b.y+2],shape:"sag",sag:.1,heads:0,c:"local"})});
+      (c.marks||[]).forEach(function(m){var t=ids[m[1]];var o=m[4]||{},x=t?t.x+m[2]:c.x+c.w-560,yy=t?t.y+m[3]:c.y+c.h-120;items.push(mk(m[0],{x:x,y:yy,red:o.red,size:o.size||40}))});
+    });
+    return MAXW;
+  }
+
+  function start(){
+    var W=build();
+    /* the dossier: title, subject card, the photo, the mark, and strings out to every case */
+    frames.unshift({id:"start",t:"The files",x:100,y:40,w:3140,h:620,bare:1});
+    var photo={k:"print",src:"about-1.webp",w:300,ar:1.25,label:"The subject <small>Amsterdam</small>",title:"Eray Balat, on location in Amsterdam",pos:"58% 40%",r:"-3deg",hold:"tape",x:1500,y:170};
+    photo.media={k:"img",src:"about-1.webp"};
+    items.push({k:"ttl",x:100,y:60,html:"THE ERAY BALAT <em>FILES</em>"});
+    items.push({k:"sub",x:104,y:170,w:1300,html:"Every film pinned to the wall, with the evidence of how it was made. Director, editor. Kayseri, Türkiye."});
+    items.push({k:"card",x:104,y:280,w:620,head:"Subject",r:"-.8deg",html:"<b>Eray Balat</b>. Director and editor, Kayseri, Türkiye. Cinema, Erciyes University. Clients in Türkiye and the US.<br>Known to use: Kling, Seedance, Nano Banana, Topaz, ElevenLabs, Suno, Premiere Pro, After Effects.",q:"Eray Balat subject dossier tools"});
+    items.push({k:"card",x:770,y:300,w:560,head:"How to read this wall",r:"1deg",html:"Drag to move, <b>⌘ + scroll</b> to zoom. Click a print to look closer. Press <b>L</b> for the lights, <b>▶ Tour</b> to be walked through.",q:"how to read"});
+    items.push(photo);
+    items.push({k:"star",x:1880,y:230,w:190,h:190});
+    items.push({k:"card",x:2120,y:250,w:520,head:"Note",r:"-1.2deg",html:"The calls a model can’t make are the ones on this wall: what to cut, how long to hold, what to leave out.",q:"note decisions"});
+    items.push({k:"marker",x:2700,y:260,html:"follow the thread →",r:"-3deg",red:1,size:42});
+    var pinA=[photo.x+photo.w/2,photo.y+4];
+    frames.forEach(function(f){if(f.bare)return;links.push({a:pinA,b:[f.x+140,f.y+34],shape:"sag",sag:.05,heads:9,c:"far"})});
+
+    var TOUR=[["start","The files. Follow the thread."],["tenniscut","Case 01 · TennisCut: three launch ads for a tennis app. An emotion film, a proof film, a story film."],["tenniscut-moment","The Moment: the hook has to work with the sound off."],["tenniscut-proof","Dead Time Remover: a two-hour match drops to 27:09."],["tenniscut-story","Best of Us: the couple was locked in stills before any motion."],["novora","Case 02 · Novora: a small black bird, two languages, a day early."],["duffel","Case 03 · The Duffel: a fashion film, one world in every shot."],["flawless","Case 04 · FLAWLESS: the man who led the heist watched the film."],["coldstart","Case 05 · COLD START: 35 clips in, 2:04 out, 5.0 from the client."],["bushido","Case 06 · Bushido: two synthetic faces, three films."],["music","Case 07 · Music videos for Universal Music Türkiye."],["commission","Case 08 · A 10-minute short, private."],["real","Case 09 · Real footage. No AI."],["addresses","Case 10 · Known addresses: Upwork, LinkedIn and the rest."],["contact","Case 11 · Open. Send the deadline and the runtime."]];
+    document.getElementById("logo").innerHTML=EB.star(8);
+    var board=new Board({vp:document.getElementById("vp"),world:document.getElementById("world"),frames:frames,items:items,links:links,tour:TOUR,ports:false,lod:[.24,.55],
+      inset:function(){return innerWidth<860?{l:0,t:70,r:0,b:70}:{l:272,t:80,r:0,b:0}},
+      onNav:function(){document.getElementById("frames").classList.remove("open")},
+      decorFrame:function(f,e){if(f.bare)return;var t=document.createElement("div");t.className="tag";t.innerHTML="<small>CASE "+f.no+"</small><b>"+f.t+"</b>";e.appendChild(t);
+        var s=document.createElement("div");s.className="stamp";s.textContent=f.st;e.appendChild(s)},
+      render:function(n){var e=el(n);if(!e)return null;if(n.vsrc){var v=e.querySelector("video");v.dataset.src=n.vsrc;n.v=v}return e}});
+    EB.tz();
+    document.getElementById("ftog").onclick=function(){document.getElementById("frames").classList.toggle("open")};
+    var hint=document.getElementById("hint"),hid=false,vpE=document.getElementById("vp");
+    function hideHint(){if(hid)return;hid=true;setTimeout(function(){hint.classList.add("gone")},4000)}
+    vpE.addEventListener("pointerdown",hideHint,{once:true});vpE.addEventListener("wheel",hideHint,{once:true,passive:true});
+
+    /* lights and the torch */
+    var lamp=document.getElementById("lamp"),lb=document.getElementById("lampb"),fine=matchMedia("(pointer:fine)").matches;
+    function lights(on){document.body.classList.toggle("lights",on);lb.classList.toggle("on",!on);lb.textContent=on?"🔦 Torch":"💡 Lights"}
+    lights(!fine||/[?&]lights=1/.test(location.search));
+    lb.onclick=function(){lights(!document.body.classList.contains("lights"))};
+    document.getElementById("tour").addEventListener("click",function(){lights(true)});
+    addEventListener("keydown",function(e){if((e.key==="l"||e.key==="L")&&!e.metaKey&&!e.ctrlKey&&!e.target.closest("input"))lb.click()});
+    var mx=innerWidth/2,my=innerHeight*.45,raf=0;
+    addEventListener("pointermove",function(e){mx=e.clientX;my=e.clientY;if(!raf)raf=requestAnimationFrame(function(){raf=0;lamp.style.setProperty("--mx",mx+"px");lamp.style.setProperty("--my",my+"px")})},{passive:true});
+    document.getElementById("vp").addEventListener("pointerleave",function(){lamp.style.setProperty("--mx","50%");lamp.style.setProperty("--my","45%")});
+  }
+  var go=false;function once(){if(go)return;go=true;start()}
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(once);setTimeout(once,2500);
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
