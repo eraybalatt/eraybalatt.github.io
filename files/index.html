@@ -133,7 +133,7 @@
   #file .pl small{font:600 10.5px Inter,sans-serif;letter-spacing:.24em;color:#a9d5f7;margin-top:6px}
   /* top centre: a slim enamel strip */
   #tools{background:rgba(14,44,74,.88);border:1px solid rgba(169,222,255,.4);border-radius:10px}
-  #tools button{font:500 13px Inter,sans-serif;color:#e0f1ff}
+  #tools button{font:500 13px Inter,sans-serif;color:#e0f1ff;white-space:nowrap}
   #tools .pri,#tools #lampb.on{background:var(--glaze);color:#062238;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.12)}
   /* top right: a pin and a case tag */
   #right{background:none;border:0;box-shadow:none;gap:14px;padding:0;height:auto;-webkit-backdrop-filter:none;backdrop-filter:none}
@@ -175,7 +175,11 @@
     #frames{top:auto;bottom:76px;left:12px;right:12px;width:auto;max-height:52vh;transform:none}
     #frames-list{max-height:40vh}
     #right .cta{font-size:16px;padding:10px 14px 8px}
+    #right #share{display:none}
   }
+  @media (max-width:860px){#file #logo{display:block}}
+  @media (max-width:350px){#file .pl{display:none}#file{padding:8px}#right .cta{font-size:14px;padding:8px 10px 6px}}
+  @media (max-width:440px){#file{padding:8px 12px 8px 8px;gap:8px}#file #logo{width:24px;height:24px}#file .pl b{font-size:15px;letter-spacing:.1em}#right .cta{font-size:15px;padding:9px 12px 7px}}
 </style>
 </head>
 <body>
@@ -343,7 +347,7 @@
        idcSmall("x","X","@documenteray","Follow on X.","Open X","https://x.com/documenteray"),
        idcSmall("yt","YouTube","@eraybalat","The films in full.","Open YouTube","https://www.youtube.com/@eraybalat"),
        idcSmall("be","Behance","eraybalat","Projects on Behance.","Open Behance","https://www.behance.net/eraybalat")]
-    ],marks:[["hire me here","a-up",60,-78,{red:1}]]},
+    ],marks:[["hire me here","a-up",330,-78,{red:1}]]},
 
     {id:"contact",no:"11",t:"Your film",s:"open case · send a brief",st:"Open",w:1900,rows:[
       [{k:"marker",html:"Send the deadline and the runtime.",size:96,r:"-1.2deg"}],
