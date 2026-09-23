@@ -99,24 +99,31 @@
     /* ---------------- camera ---------------- */
     function lodName() { return s < LOD[0] ? "far" : s < LOD[1] ? "mid" : "near"; }
     var gBase = cfg.grid || 24;
-    var mvOn = false, mvT = 0;
+    var mvOn = false, mvT = 0, lodNow = vp.dataset.lod, zlEl = null, zlTxt = null;
     function apply() {
       world.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + s + ")";
       /* performance: an inherited custom property set on the world restyles every node in it, every frame.
          cfg.scaleVar "covers" keeps --s on the covers layer only, and only while covers are on screen. */
       var L = lodName();
-      if (cfg.scaleVar === "covers") { if (L === "far" || vp.dataset.lod !== L) cvLayer.style.setProperty("--s", s); }
+      if (cfg.scaleVar === "covers") { if (L === "far" || lodNow !== L) cvLayer.style.setProperty("--s", s); }
       else world.style.setProperty("--s", s);
       if (cfg.grid !== false) {
         var g = gBase * s; while (g < 10) g *= 5; while (g > 60) g /= 5;
         vp.style.setProperty("--gs", g + "px"); vp.style.setProperty("--gS", g * 5 + "px");
         vp.style.setProperty("--gx", tx + "px"); vp.style.setProperty("--gy", ty + "px");
       }
-      if (vp.dataset.lod !== L) vp.dataset.lod = L;
+      if (lodNow !== L) { lodNow = L; vp.dataset.lod = L; }
       /* while moving, the world is its own GPU layer (cheap pan/zoom); at rest it re-rasters sharp */
       if (!mvOn) { mvOn = true; world.classList.add("mv"); }
       clearTimeout(mvT); mvT = setTimeout(function () { mvOn = false; world.classList.remove("mv"); }, 240);
-      var zl = $("zl"); if (zl) zl.textContent = Math.round(s * 100) + "%";
+      /* performance: the zoom label is only rewritten when the number changes (a pan never changes it). Rewriting it
+         every frame forced a layout, a repaint and slower hit tests on every pan frame. */
+      var z = Math.round(s * 100) + "%";
+      if (z !== zlTxt && (zlEl || (zlEl = $("zl")))) {
+        var t = zlEl.firstChild;
+        if (t && t.nodeType === 3 && !t.nextSibling) t.data = z; else zlEl.textContent = z;
+        zlTxt = z;
+      }
       drawMini(); schedule();
     }
     function zoomAt(px, py, k) { var ns = clamp(s * k, MIN, MAX); tx = px - (px - tx) * ns / s; ty = py - (py - ty) * ns / s; s = ns; apply(); }

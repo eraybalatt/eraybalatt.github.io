@@ -19,11 +19,10 @@
 <meta name="twitter:image" content="https://eraybalat.com/files/og.jpg">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>The files — Eray Balat</title>
-<meta name="theme-color" content="#333d4b">
+<meta name="theme-color" content="#32465e">
 <meta name="description" content="The Eray Balat files: every film pinned to the wall, with the evidence of how it was made.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="preload" href="/fonts/instrument-sans-latin-e190a6.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <link rel="stylesheet" href="_board/chrome.css">
 <style>
   /* Dark luxury: a blue stage, black boards, one metal (platinum), serif titles */
@@ -400,6 +399,37 @@
   .fr{box-shadow:0 0 0 1px rgba(255,255,255,.08)}
   .print,.card,.idc{transform:none;box-shadow:0 0 0 1px rgba(255,255,255,.09)}
   .print:hover,.print:focus-visible{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(214,191,143,.55)}
+
+  /* ===== LOOK (23 Eyl akşam) · ana sayfayla aynı: Instrument Sans, çelik mavi-gri, tek vurgu gök mavisi; yazı tipleri /fonts/ ===== */
+  :root{--tx:#f6f8fa;--tx2:#e3eaf1;--mut:#d3dde7;--mut2:#aebccb;--acc:#8cc8ff;--acc-hi:#c2e1ff;--acctx:#10233a;
+    --ui:#2c3e53;--uil:rgba(236,242,248,.12);--uitx:#f6f8fa;--pal:#2c3e53;--cta:#8cc8ff;--ctatx:#10233a;
+    --serif:"Instrument Sans","Inter",system-ui,sans-serif}
+  html,body,#vp{background:#32465e}
+  .fr{background:#3a5069;border-radius:16px}
+  .cv{background:linear-gradient(180deg,rgba(58,80,105,0) 64%,rgba(58,80,105,.9) 84%,#3a5069);border-radius:16px}
+  .tag b{font-weight:600;letter-spacing:-.02em}
+  .ttl{font-weight:600;letter-spacing:-.03em}
+  .stamp{border-radius:999px;letter-spacing:.08em}
+  .print{background:#43607c;border-radius:10px}
+  .print .ph{background:#2c3e53;border-radius:6px}
+  .print figcaption,.mk,.blank,#cap,.idc blockquote{font-style:normal}
+  .print figcaption,.mk{font-weight:500}
+  .card,.idc{background:#43607c;border-radius:14px}
+  .card.dark{background:#3a5069}
+  .idc-go{background:#8cc8ff;color:#10233a!important;border-radius:999px}
+  .idc-go:hover{background:#a9d6ff;color:#10233a!important}
+  #file,#tools,#frames,#hint,#cap,#pal .box{background:#2c3e53;border-radius:14px}
+  #file .pl b{letter-spacing:.04em;font-weight:600}
+  #frames button{font-family:var(--serif);font-weight:500}
+  #tools .pri,#tools .pri.on{background:#8cc8ff;color:#10233a;border-radius:999px}
+  #tools .pri:hover{background:#a9d6ff;color:#10233a}
+  #right .cta{background:#8cc8ff;color:#10233a;border-radius:999px;font:600 13.5px Inter,sans-serif;letter-spacing:.01em;text-transform:none}
+  #right .cta:hover{background:#a9d6ff;color:#10233a}
+  .in-card,.vd-card{background:#3a5069}
+  .in-send,.vd-go{background:#8cc8ff;color:#10233a;border-radius:999px}
+  .in-send:hover,.vd-go:hover{background:#a9d6ff}
+  .in-chips input:checked+span{background:#8cc8ff;border-color:#8cc8ff;color:#10233a}
+  #toast{background:#8cc8ff;color:#10233a}
 </style>
 </head>
 <body>
@@ -707,8 +737,11 @@
     document.getElementById("tour").addEventListener("click",function(){lights(true)});
     addEventListener("keydown",function(e){if((e.key==="l"||e.key==="L")&&!e.metaKey&&!e.ctrlKey&&!e.target.closest("input,textarea"))lb.click()});
     var mx=innerWidth/2,my=innerHeight*.45,raf=0;
+    /* performance: the slate theme hides the lamp (display:none), so don't restyle it on every pointer move */
+    if(getComputedStyle(lamp).display!=="none"){
     addEventListener("pointermove",function(e){mx=e.clientX;my=e.clientY;if(!raf)raf=requestAnimationFrame(function(){raf=0;lamp.style.setProperty("--mx",mx+"px");lamp.style.setProperty("--my",my+"px")})},{passive:true});
     document.getElementById("vp").addEventListener("pointerleave",function(){lamp.style.setProperty("--mx","50%");lamp.style.setProperty("--my","45%")});
+    }
     /* open a case: an intake form that mails eray@eraybalat.com through Web3Forms (same key as the site's contact form) */
     var KEY="b77ff153-998f-4550-aaff-2e1c474df49d",MAIL="eray@eraybalat.com";
     var ik=document.getElementById("intake"),ikCard=ik.querySelector(".in-card"),form=document.getElementById("in-form"),done=ik.querySelector(".in-done"),
@@ -751,7 +784,7 @@
     if(location.hash==="#new-case")setTimeout(openCase,300);
   }
   var go=false;function once(){if(go)return;go=true;start()}
-  var FACES=['500 40px "Cormorant Garamond"','italic 500 40px "Cormorant Garamond"','600 40px "Cormorant Garamond"','400 20px Inter','500 20px Inter'];
+  var FACES=['500 40px "Instrument Sans"','600 40px "Instrument Sans"','400 20px Inter','500 20px Inter'];
   (document.fonts&&document.fonts.load?Promise.all(FACES.map(function(f){return document.fonts.load(f)})):Promise.resolve()).then(once,once);setTimeout(once,2500);
 })();
 </script>
