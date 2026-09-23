@@ -30,7 +30,7 @@ HIRE_HREF = {"en": "/hire/", "tr": "/yapay-zeka-reklam-filmi/", "de": "/ki-filmp
 BLOG_HREF = {"en": "/blog/", "tr": "/yazilar/", "de": "/blog/"}
 HOME_HREF = {"en": "/", "tr": "/tr/", "de": "/de/"}
 
-REL_ATTRS = ["src", "poster", "href", "data-poster", "data-src", "data-full", "data-image"]
+REL_ATTRS = ["src", "poster", "href", "data-poster", "data-src", "data-full", "data-image", "data-vid", "data-vid-poster"]
 
 
 def lang_meta(html_text):
