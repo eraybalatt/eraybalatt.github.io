@@ -134,6 +134,7 @@
     function setCurrent(f, push) {
       if (f && f.sub) { var par = frames.filter(function (p) { return !p.sub && !p.bare && f.x >= p.x && f.x <= p.x + p.w && f.y >= p.y - 80 && f.y <= p.y + p.h; })[0]; if (par) f = par; }
       current = f;
+      if (cfg.onCurrent) cfg.onCurrent(f, !!push);
       document.querySelectorAll("[data-goto]").forEach(function (b) { b.classList.toggle("on", !!f && b.dataset.goto === f.id); });
       if (push && f && !f.bare) history.replaceState(null, "", location.pathname + location.search + "#" + f.id);
     }
