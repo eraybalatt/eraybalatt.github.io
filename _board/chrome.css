@@ -65,3 +65,4 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   #tools{top:auto;bottom:12px}#tools #zl,#tools .sep,#tools #zo,#tools #zi,#tools #search{display:none}#tools #ftog{display:block}
   #hint,#mini,#file span,#right button{display:none}#cap{bottom:66px}
 }
+#world.mv{will-change:transform}
