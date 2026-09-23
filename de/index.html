@@ -2437,6 +2437,8 @@ navTargets.forEach(function(t){
     const btn=document.createElement('button');
     btn.className='playbtn'; btn.type='button'; btn.setAttribute('aria-label',(window.__aria||{}).play||'Play video'); btn.setAttribute('aria-pressed','false');
     wrap.appendChild(btn);
+    // one play button everywhere: the static icon gives way to the working one (no :has() needed, older Safari/Firefox too)
+    wrap.querySelectorAll('.play').forEach(function(p){ if(p.parentNode===wrap) p.style.display='none'; });
     btn.addEventListener('click',e=>{
       e.preventDefault(); e.stopPropagation();
       if(v.paused){ const p=v.play(); if(p&&p.catch)p.catch(()=>{}); } else { v.pause(); }
