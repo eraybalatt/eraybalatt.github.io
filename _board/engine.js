@@ -56,7 +56,8 @@
       return it.media || null;
     }
 
-    covers.forEach(function (c) { world.appendChild(c); }); // covers sit above the items, for the far zoom level
+    var cvLayer = el("div", "cvs"); cvLayer.style.cssText = "position:absolute;left:0;top:0;width:0;height:0";
+    covers.forEach(function (c) { cvLayer.appendChild(c); }); world.appendChild(cvLayer); // covers sit above the items, for the far zoom level
 
     function render(it) {
       var e;
@@ -98,13 +99,23 @@
     /* ---------------- camera ---------------- */
     function lodName() { return s < LOD[0] ? "far" : s < LOD[1] ? "mid" : "near"; }
     var gBase = cfg.grid || 24;
+    var mvOn = false, mvT = 0;
     function apply() {
       world.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + s + ")";
-      world.style.setProperty("--s", s);
-      var g = gBase * s; while (g < 10) g *= 5; while (g > 60) g /= 5;
-      vp.style.setProperty("--gs", g + "px"); vp.style.setProperty("--gS", g * 5 + "px");
-      vp.style.setProperty("--gx", tx + "px"); vp.style.setProperty("--gy", ty + "px");
-      var L = lodName(); if (vp.dataset.lod !== L) vp.dataset.lod = L;
+      /* performance: an inherited custom property set on the world restyles every node in it, every frame.
+         cfg.scaleVar "covers" keeps --s on the covers layer only, and only while covers are on screen. */
+      var L = lodName();
+      if (cfg.scaleVar === "covers") { if (L === "far" || vp.dataset.lod !== L) cvLayer.style.setProperty("--s", s); }
+      else world.style.setProperty("--s", s);
+      if (cfg.grid !== false) {
+        var g = gBase * s; while (g < 10) g *= 5; while (g > 60) g /= 5;
+        vp.style.setProperty("--gs", g + "px"); vp.style.setProperty("--gS", g * 5 + "px");
+        vp.style.setProperty("--gx", tx + "px"); vp.style.setProperty("--gy", ty + "px");
+      }
+      if (vp.dataset.lod !== L) vp.dataset.lod = L;
+      /* while moving, the world is its own GPU layer (cheap pan/zoom); at rest it re-rasters sharp */
+      if (!mvOn) { mvOn = true; world.classList.add("mv"); }
+      clearTimeout(mvT); mvT = setTimeout(function () { mvOn = false; world.classList.remove("mv"); }, 240);
       var zl = $("zl"); if (zl) zl.textContent = Math.round(s * 100) + "%";
       drawMini(); schedule();
     }
@@ -163,7 +174,7 @@
           else stopV(it);
         });
         cand.sort(function (a, b) { return a.d - b.d; });
-        cand.forEach(function (c, i) { if (i < 4) playV(c.it); else stopV(c.it); });
+        cand.forEach(function (c, i) { if (i < (cfg.maxPlay || 4)) playV(c.it); else stopV(c.it); });
       }, 180);
     }
     function playV(it) { var v = it.v; if (!v.src) v.src = v.dataset.src; if (v.paused) v.play().then(function () { it.el.classList.add("pl"); }).catch(function () { }); }
@@ -260,7 +271,7 @@
     var mc = $("mc"), mx = mc && mc.getContext("2d"), css = getComputedStyle(document.documentElement);
     var MM = { bg: css.getPropertyValue("--mm-bg").trim() || "#111", fr: css.getPropertyValue("--mm-fr").trim() || "#2a2a2a", ln: css.getPropertyValue("--mm-ln").trim() || "#3a3a3a", vw: css.getPropertyValue("--mm-vw").trim() || "#7cc4ff" };
     function drawMini() {
-      if (!mx) return; var W = mc.width, H = mc.height, k = Math.min(W / BOUNDS.w, H / BOUNDS.h) * .9, ox = (W - BOUNDS.w * k) / 2 - BOUNDS.x * k, oy = (H - BOUNDS.h * k) / 2 - BOUNDS.y * k;
+      if (!mx || cfg.mini === false) return; var W = mc.width, H = mc.height, k = Math.min(W / BOUNDS.w, H / BOUNDS.h) * .9, ox = (W - BOUNDS.w * k) / 2 - BOUNDS.x * k, oy = (H - BOUNDS.h * k) / 2 - BOUNDS.y * k;
       mx.fillStyle = MM.bg; mx.fillRect(0, 0, W, H);
       frames.forEach(function (f) { if (f.bare || f.sub) return; mx.fillStyle = current === f ? MM.ln : MM.fr; mx.fillRect(ox + f.x * k, oy + f.y * k, f.w * k, f.h * k); });
       var a = toWorld(0, 0), b = toWorld(innerWidth, innerHeight); mx.strokeStyle = MM.vw; mx.lineWidth = 3; mx.strokeRect(ox + a.x * k, oy + a.y * k, (b.x - a.x) * k, (b.y - a.y) * k);

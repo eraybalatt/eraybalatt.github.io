@@ -285,7 +285,7 @@
   .tag b{color:var(--tx)}
   .tag::after{background:rgba(255,255,255,.18)}
   .stamp{color:var(--acc);border:1px solid rgba(214,191,143,.35);border-radius:999px;letter-spacing:.12em;padding:8px 14px}
-  .cv{background:linear-gradient(180deg,rgba(52,73,94,0) 52%,rgba(52,73,94,.92) 76%,#34495e);border-radius:4px}
+  .cv{background:linear-gradient(180deg,rgba(52,73,94,0) 64%,rgba(52,73,94,.9) 84%,#34495e);border-radius:4px}
   .cv small{color:var(--acc);letter-spacing:.14em}.cv b{color:var(--tx)}.cv em{color:var(--tx2)}
   .print{background:#40576f;border-radius:2px;padding:8px 8px 0;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 14px 28px -18px rgba(8,12,18,.6)}
   .print:hover,.print:focus-visible{box-shadow:0 0 0 1px rgba(255,255,255,.22),0 20px 36px -18px rgba(8,12,18,.7)}
@@ -395,6 +395,11 @@
   @media (max-width:440px){#file::after{content:"\2190"}}
   #frames{top:100px;max-height:calc(100vh - 290px)}
   #frames-list{max-height:calc(100vh - 360px)}
+
+  /* performance (23 Eyl 2026 · "files kasıyor"): rings instead of large blurred shadows, prints and cards sit straight */
+  .fr{box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+  .print,.card,.idc{transform:none;box-shadow:0 0 0 1px rgba(255,255,255,.09)}
+  .print:hover,.print:focus-visible{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(214,191,143,.55)}
 </style>
 </head>
 <body>
@@ -671,7 +676,7 @@
       var c=document.getElementById("casecount");if(c)c.textContent=n+"/"+FILES.length}
     function onCase(f,push){if(!push||!f||FILES.indexOf(f.id)<0||SEEN[f.id])return;SEEN[f.id]=Date.now();try{localStorage.setItem(SK,JSON.stringify(SEEN))}catch(e){}
       var n=nSeen();paintSeen();if(n===FILES.length)setTimeout(verdict,900);else board.toast(n+" of "+FILES.length+" files reviewed")}
-    var board=new Board({onCurrent:onCase,vp:document.getElementById("vp"),world:document.getElementById("world"),frames:frames,items:items,links:links,tour:TOUR,ports:false,lod:[.24,.55],
+    var board=new Board({onCurrent:onCase,scaleVar:"covers",grid:false,mini:false,maxPlay:1,autoplayW:260,vp:document.getElementById("vp"),world:document.getElementById("world"),frames:frames,items:items,links:links,tour:TOUR,ports:false,lod:[.24,.55],
       min:.03,inset:function(){var sh=innerHeight<520&&innerWidth>innerHeight;return innerWidth<860?(sh?{l:0,t:52,r:0,b:58}:{l:0,t:70,r:0,b:70}):(sh?{l:272,t:64,r:0,b:0}:{l:272,t:80,r:0,b:0})},
       onNav:function(){document.getElementById("frames").classList.remove("open")},
       decorFrame:function(f,e){if(f.bare)return;var t=document.createElement("div");t.className="tag";t.innerHTML="<small>CASE "+f.no+"</small><b>"+f.t+"</b>";e.appendChild(t);
