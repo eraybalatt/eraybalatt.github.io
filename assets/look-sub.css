@@ -1,0 +1,66 @@
+/* eraybalat.com alt sayfaları, ana sayfayla aynı görünüm (24 Eyl 2026).
+   Instrument Sans başlık, Inter gövde, IBM Plex Mono etiket; çelik mavi-gri zemin, tek vurgu gök mavisi.
+   Her sayfanın kendi <style> bloğundan SONRA yüklenir, o yüzden eşit seçicilerde kazanır. */
+:root{
+  --bg:#3a5069; --bg-soft:#32465e; --card:#43607c; --card-brd:rgba(236,242,248,.14);
+  --text:#f6f8fa; --muted:#d3dde7; --c1:#8cc8ff; --c2:#8cc8ff; --c3:#b4dbff; --c5:#2c3e53; --radius:14px;
+  --display:'Instrument Sans','Inter',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+html,body{background:#3a5069}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:#f6f8fa}
+body::before{background:none!important}
+#bg{background:#3a5069!important}
+::selection{background:#cfe3f8;color:#10233a}
+
+/* type */
+h1{font-family:var(--display);font-weight:600;letter-spacing:-.022em;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;-webkit-text-fill-color:#f6f8fa!important;color:#f6f8fa!important;filter:none!important}
+h2,h3,summary,.mail,.price .amt{font-family:var(--display)}
+h2{font-weight:600;letter-spacing:-.015em}
+.eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;color:#8cc8ff}
+.eyebrow::before{width:6px!important;height:6px!important;margin-right:10px;vertical-align:.14em;border-radius:50%;background:#8cc8ff!important;box-shadow:none!important;flex:0 0 auto}
+.meta,.card .tag,.wmore .tag,.tb-langs a{font-family:var(--mono)}
+.meta{color:#c9d6e2}
+.lead b,.proof b{color:#b4dbff}
+
+/* bars */
+.top,.topbar{background:rgba(50,70,94,.97)!important;border-bottom:1px solid rgba(236,242,248,.1)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.back,.topbar a{font-family:'Inter',sans-serif}
+.langsw{border-color:rgba(236,242,248,.3);color:#f6f8fa;font-family:'Inter',sans-serif}
+.langsw:hover{background:rgba(236,242,248,.08)}
+.tb-langs a.on{background:#f6f8fa;color:#1c2632;border-color:#f6f8fa}
+.skip-link{background:#8cc8ff;color:#10233a}
+
+/* buttons */
+.btn,.cta a{border-radius:999px;font-family:'Inter',sans-serif;font-weight:600;box-shadow:none!important}
+.btn-p,.cta a{background:#8cc8ff!important;color:#10233a!important;border-color:transparent!important}
+.btn-p:hover,.cta a:hover{background:#a9d6ff!important}
+.btn-s{border-color:rgba(236,242,248,.32);color:#f6f8fa}
+.btn-s:hover{background:rgba(236,242,248,.08)}
+
+/* surfaces */
+.card,.price,.steps li,.wcard,.wmore,.rev,.pcard,.callout{background:#43607c;border-color:rgba(236,242,248,.14);box-shadow:none}
+.price.feat,.wcard:hover,.wmore:hover,.pcard:hover{border-color:rgba(140,200,255,.55)}
+.steps li::before{background:#8cc8ff!important;color:#10233a!important;box-shadow:none!important}
+.stars{color:#b4dbff}
+/* sky #8cc8ff is 3.7:1 on a card; blue text sitting on cards uses the lighter #b4dbff (4.6:1), grey meta #d3dde7 */
+.card .tag,.steps .when,.card a,.price a,.rev a{color:#b4dbff}
+.pcard .meta,.card .meta{color:#d3dde7}
+.rev q{color:#e3eaf1}
+.final,.cta{background:#32465e!important;border-color:rgba(236,242,248,.14)!important}
+.mail{color:#b4dbff;border-bottom-color:rgba(180,219,255,.45)}
+.callout{border-left-color:#8cc8ff}
+hr,.proof,footer{border-color:rgba(236,242,248,.12)!important}
+footer a{color:#b4dbff}
+code{background:rgba(255,255,255,.06);border-color:rgba(236,242,248,.14)}
+figure img{border-color:rgba(236,242,248,.14)}
+
+/* brand star (the woven Karatay star, same as the homepage) */
+.mk,.star{color:#8cc8ff}
+
+/* 404 */
+.star{animation:none!important;filter:none!important}
+.sub{color:#c9d6e2}
+
+/* calm: nothing blurs or glows */
+*{text-shadow:none}
