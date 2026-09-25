@@ -214,7 +214,7 @@
   .in-back{margin-top:30px;border:1px solid rgba(214,221,230,.5);color:#fff;font:500 11.5px Inter,sans-serif;letter-spacing:.22em;text-transform:uppercase;padding:15px 24px}
   .in-back:hover{background:#e9ecef;color:#07090c}
 
-  /* view switch (Portfolio | Detective mode) and the game layer: review ten files, the eleventh is yours */
+  /* view switch (Portfolio | Detective mode) and the game layer: review nine files, the tenth is yours */
   @view-transition{navigation:auto}
   ::view-transition-old(root){animation:vt-out .42s cubic-bezier(.4,0,.2,1) both}
   ::view-transition-new(root){animation:vt-in .62s cubic-bezier(.2,.7,.2,1) both}
@@ -457,14 +457,14 @@
   <button id="fit">Fit</button><button id="search" title="Search (⌘K)">⌘K</button><button id="lampb" title="Lights (L)">Lights</button><button class="pri" id="tour">Tour</button>
 </div>
 <div class="ui" id="right"><button id="share" title="Copy link" aria-label="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg></button><a class="cta" href="#new-case" data-open-case>Open a case →</a></div>
-<nav class="ui" id="frames" aria-label="Index of cases"><i class="pinhead"></i><h4>Index of cases <b class="mode-n" id="casecount" title="Files reviewed">0/10</b></h4><div id="frames-list"></div></nav>
+<nav class="ui" id="frames" aria-label="Index of cases"><i class="pinhead"></i><h4>Index of cases <b class="mode-n" id="casecount" title="Files reviewed">0/9</b></h4><div id="frames-list"></div></nav>
 <div class="ui" id="mini" title="Wall map"><span class="mm-tab">WALL MAP</span><canvas id="mc" width="440" height="300"></canvas></div>
 <div class="ui" id="hint">Drag to move · <kbd>⌘</kbd>+scroll to zoom · click a print to look closer</div>
 <div class="ui" id="cap"><button id="cap-prev" aria-label="Previous">←</button><span id="cap-n"></span><b id="cap-t"></b><button id="cap-next" aria-label="Next">→</button><button id="cap-x" aria-label="Stop tour">✕</button></div>
 <div id="pal"><div class="box"><input id="pal-in" placeholder="Search the files…" autocomplete="off"><div id="pal-list"></div></div></div>
 <div id="focus"><button id="focus-x" aria-label="Close">✕</button><button id="focus-prev" aria-label="Previous">←</button><div class="fbox"><div id="focus-media"></div><div class="fmeta"><b id="focus-t"></b><span id="focus-s"></span><span id="focus-n"></span><a id="focus-a"></a></div></div><button id="focus-next" aria-label="Next">→</button></div>
 <div id="toast"></div>
-<div id="verdict" role="dialog" aria-modal="true" aria-labelledby="vd-h" hidden><div class="vd-card"><span class="vd-stamp">Case closed</span><h3 id="vd-h">Ten files reviewed.</h3><p>You have seen every case on the wall. The eleventh one is yours.</p><div class="vd-act"><button type="button" class="vd-go" data-open-case>Open a case &rarr;</button><button type="button" class="vd-x">Keep looking</button></div></div></div>
+<div id="verdict" role="dialog" aria-modal="true" aria-labelledby="vd-h" hidden><div class="vd-card"><span class="vd-stamp">Case closed</span><h3 id="vd-h">Nine files reviewed.</h3><p>You have seen every case on the wall. The tenth one is yours.</p><div class="vd-act"><button type="button" class="vd-go" data-open-case>Open a case &rarr;</button><button type="button" class="vd-x">Keep looking</button></div></div></div>
 <div id="intake" role="dialog" aria-modal="true" aria-labelledby="in-title" aria-hidden="true">
   <div class="in-card">
     <button class="in-x" type="button" aria-label="Close">✕</button>
@@ -612,18 +612,13 @@
       [cd("mv.what",520,"Label")]
     ]},,
 
-    {id:"commission",no:"08",t:"A 10-minute short",s:"narrative short · private commission",st:"Private",w:1300,rows:[
-      [{k:"marker",html:"106 → 110 → 7",size:92,r:"-2deg"}],
-      [cd("cm.what",520,"The job"),cd("cm.models",380,"Method")]
-    ]},,
-
-    {id:"real",no:"09",t:"Real footage",s:"short films · shot on a camera",st:"No AI",w:1900,rows:[
+    {id:"real",no:"08",t:"Real footage",s:"short films · shot on a camera",st:"No AI",w:1900,rows:[
       [pr("_board/img/r-swiss.webp",400,9/16,"Switzerland in One Hour",{href:"https://www.youtube.com/watch?v=rYHPU-_RqOc",hrefLabel:"Watch on YouTube"}),pr("film-runorrun-p.webp",400,9/16,"Run or Run",{href:"https://www.youtube.com/watch?v=-XgWX9IR5xE",hrefLabel:"Watch on YouTube"}),pr("_board/img/r-diepost.jpg",400,9/16,"Die Post",{href:"https://www.youtube.com/watch?v=kvaQqoMVsVA",hrefLabel:"Watch on YouTube"}),pr("_board/img/r-boomerang.jpg",400,9/16,"Boomerang",{href:"https://www.youtube.com/watch?v=oH3zKef9h0Q",hrefLabel:"Watch on YouTube"})],
       [cd("rf.swiss",420,""),cd("rf.run",340,""),cd("rf.post",380,""),cd("rf.boom",420,"")],
       [cd("rf.what",620,"Note")]
     ]},,
 
-    {id:"addresses",no:"10",t:"Known addresses",s:"where else to find me",st:"On file",w:1200,rows:[
+    {id:"addresses",no:"09",t:"Known addresses",s:"where else to find me",st:"On file",w:1200,rows:[
       [UPW,LNK],
       [idcSmall("ig","Instagram","@documenteray","More vertical reels.","Open Instagram","https://www.instagram.com/documenteray/"),
        idcSmall("x","X","@documenteray","Follow on X.","Open X","https://x.com/documenteray"),
@@ -652,7 +647,7 @@
       var rg=c.rg||RG,y=0;c.rows.forEach(function(r){var rh=Math.max.apply(null,r.map(function(n){return n.mh}));r.rh=rh;r.rw=r.reduce(function(a,n){return a+n.mw},0)+GAP*(r.length-1);r.y=y;y+=rh+rg});
       c.h=PADT+y-rg+PADB;c.w=Math.max(c.w,Math.max.apply(null,c.rows.map(function(r){return r.rw}))+160);
     });
-    var ROWS=[["tenniscut"],["novora","duffel"],["flawless","coldstart"],["bushido","music","commission"],["real","addresses"],["contact"]],by={},GX=150,y=900;
+    var ROWS=[["tenniscut"],["novora","duffel"],["flawless","coldstart"],["bushido","music"],["real","addresses"],["contact"]],by={},GX=150,y=900;
     C.forEach(function(c){by[c.id]=c});
     var MAXW=Math.max.apply(null,ROWS.map(function(r){return r.reduce(function(a,id){return a+by[id].w},0)+GX*(r.length-1)}));
     ROWS.forEach(function(r){var cs=r.map(function(id){return by[id]}),sum=cs.reduce(function(a,c){return a+c.w},0),extra=MAXW-sum-GX*(cs.length-1),x=100,h=Math.max.apply(null,cs.map(function(c){return c.h}));
@@ -696,10 +691,10 @@
     var pinA=[photo.x+photo.w/2,photo.y+4];
     frames.forEach(function(f){if(f.bare)return;links.push({a:pinA,b:[f.x+140,f.y+34],shape:"sag",sag:.05,heads:9,c:"far"})});
 
-    var TOUR=[["start","The files. Follow the thread."],["tenniscut","Case 01 · TennisCut: three launch ads for a tennis app. An emotion film, a proof film, a story film."],["tenniscut-moment","The Moment: the hook has to work with the sound off."],["tenniscut-proof","Dead Time Remover: a two-hour match drops to 27:09."],["tenniscut-story","Best of Us: the couple was locked in stills before any motion."],["novora","Case 02 · Novora: a small black bird, two languages, a day early."],["duffel","Case 03 · The Duffel: a fashion film, one world in every shot."],["flawless","Case 04 · FLAWLESS: the man who led the heist watched the film."],["coldstart","Case 05 · COLD START: 35 clips in, 2:04 out, 5.0 from the client."],["bushido","Case 06 · Bushido: two synthetic faces, three films."],["music","Case 07 · Music videos for Universal Music Türkiye."],["commission","Case 08 · A 10-minute short, private."],["real","Case 09 · Real footage. No AI."],["addresses","Case 10 · Known addresses: Upwork, LinkedIn and the rest."],["contact","Case 11 · Open. Send the deadline and the runtime."]];
+    var TOUR=[["start","The files. Follow the thread."],["tenniscut","Case 01 · TennisCut: three launch ads for a tennis app. An emotion film, a proof film, a story film."],["tenniscut-moment","The Moment: the hook has to work with the sound off."],["tenniscut-proof","Dead Time Remover: a two-hour match drops to 27:09."],["tenniscut-story","Best of Us: the couple was locked in stills before any motion."],["novora","Case 02 · Novora: a small black bird, two languages, a day early."],["duffel","Case 03 · The Duffel: a fashion film, one world in every shot."],["flawless","Case 04 · FLAWLESS: the man who led the heist watched the film."],["coldstart","Case 05 · COLD START: 35 clips in, 2:04 out, 5.0 from the client."],["bushido","Case 06 · Bushido: two synthetic faces, three films."],["music","Case 07 · Music videos for Universal Music Türkiye."],["real","Case 08 · Real footage. No AI."],["addresses","Case 09 · Known addresses: Upwork, LinkedIn and the rest."],["contact","Case 10 · Open. Send the deadline and the runtime."]];
     document.getElementById("logo").innerHTML=EB.star(8);
-    /* detective mode: review the ten files; the eleventh is yours */
-    var FILES=["tenniscut","novora","duffel","flawless","coldstart","bushido","music","commission","real","addresses"],SK="eb_files_seen",SEEN={};
+    /* detective mode: review the nine files; the tenth is yours */
+    var FILES=["tenniscut","novora","duffel","flawless","coldstart","bushido","music","real","addresses"],SK="eb_files_seen",SEEN={};
     try{SEEN=JSON.parse(localStorage.getItem(SK)||"{}")||{}}catch(e){SEEN={}}
     function nSeen(){return FILES.filter(function(id){return SEEN[id]}).length}
     function paintSeen(){var n=nSeen();document.querySelectorAll("#frames-list [data-goto]").forEach(function(b){b.classList.toggle("seen",!!SEEN[b.dataset.goto])});
@@ -721,7 +716,7 @@
     vd.querySelector(".vd-go").addEventListener("click",function(){closeVerdict(false)});
     vd.addEventListener("click",function(e){if(e.target===vd)closeVerdict(true)});
     vd.addEventListener("keydown",function(e){e.stopPropagation();if(e.key==="Escape")closeVerdict(true)});
-    if(!nSeen()){try{if(!sessionStorage.getItem("eb_dm")){sessionStorage.setItem("eb_dm","1");setTimeout(function(){board.toast("Detective mode: review all ten files")},1800)}}catch(e){}}
+    if(!nSeen()){try{if(!sessionStorage.getItem("eb_dm")){sessionStorage.setItem("eb_dm","1");setTimeout(function(){board.toast("Detective mode: review all nine files")},1800)}}catch(e){}}
     /* the way back goes to the language the visitor came from */
     try{var ref=document.referrer&&new URL(document.referrer);if(ref&&ref.origin===location.origin&&/^\/(tr\/|de\/)?$/.test(ref.pathname)){document.getElementById("back").href=ref.pathname;document.getElementById("file").href=ref.pathname}}catch(e){}
     document.getElementById("ftog").onclick=function(){document.getElementById("frames").classList.toggle("open")};
