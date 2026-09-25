@@ -1,6 +1,8 @@
 /* Eray Balat — board engine.
    One infinite canvas, shared by every board theme. Themes supply the data
    (frames, items, links) and the look; this file does the camera and the UI. */
+var EBUI = Object.assign({ open: "Open", copied: "Copied", linkCopied: "Link copied", none: "Nothing found" }, window.EB_UI || {});
+
 (function () {
   "use strict";
   var RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -47,7 +49,7 @@
       if (it.h && it.k !== "text" && it.k !== "cap") e.style.height = it.h + "px";
       if (it.id) { byId[it.id] = it; e.dataset.id = it.id; }
       it.el = e; world.appendChild(e);
-      if (media(it)) { e.dataset.focus = "1"; e.tabIndex = 0; e.setAttribute("role", "button"); e.setAttribute("aria-label", it.title || it.chip || "Open"); }
+      if (media(it)) { e.dataset.focus = "1"; e.tabIndex = 0; e.setAttribute("role", "button"); e.setAttribute("aria-label", it.title || it.chip || EBUI.open); }
     });
     items.forEach(function (it) { if (it.el && !it.h) it.h = it.el.offsetHeight; if (it.el && !it.w) it.w = it.el.offsetWidth; });
     function media(it) {
@@ -262,7 +264,7 @@
     on("zo", function () { zoomAt(innerWidth / 2, innerHeight / 2, 1 / 1.4); });
     on("zl", function () { zoomAt(innerWidth / 2, innerHeight / 2, 1 / s); });
     on("fit", function () { stopTour(); fitAll(); });
-    on("share", function () { var u = location.href.split("#")[0] + (current && !current.bare ? "#" + current.id : ""); copy(u, "Link copied" + (current && !current.bare ? ": " + current.t : "")); });
+    on("share", function () { var u = location.href.split("#")[0] + (current && !current.bare ? "#" + current.id : ""); copy(u, EBUI.linkCopied + (current && !current.bare ? ": " + current.t : "")); });
     var list = $("frames-list");
     if (list) frames.forEach(function (f) {
       if (f.sub) return;
@@ -270,7 +272,7 @@
       b.onclick = function () { stopTour(); userMoved = true; goFrame(f.id); if (cfg.onNav) cfg.onNav(); };
       list.appendChild(b);
     });
-    function copy(t, msg) { (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { toast(msg || "Copied"); }, function () { toast(t); }); }
+    function copy(t, msg) { (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { toast(msg || EBUI.copied); }, function () { toast(t); }); }
     function toast(m) { var t = $("toast"); if (!t) return; t.textContent = m; t.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(function () { t.classList.remove("on"); }, 1900); }
     B.toast = toast;
 
@@ -305,7 +307,7 @@
       if (!q) palRes = INDEX.filter(function (r) { return r.f; });
       palSel = 0; palList.innerHTML = "";
       palRes.forEach(function (r, i) { var b = el("button", i === 0 ? "on" : "", "<b>" + r.t + "</b><span>" + r.s + "</span>"); b.onmouseenter = function () { palSel = i; mark(); }; b.onclick = function () { palGo(i); }; palList.appendChild(b); });
-      if (!palRes.length) palList.innerHTML = "<div class='none'>Nothing found</div>";
+      if (!palRes.length) palList.innerHTML = "<div class='none'>" + EBUI.none + "</div>";
     }
     function mark() { [].forEach.call(palList.children, function (b, i) { b.classList.toggle("on", i === palSel); }); }
     function palGo(i) {
@@ -339,7 +341,7 @@
       else { var im = new Image(); im.src = md.src; im.alt = it.title || ""; m.appendChild(im); }
       $("focus-t").innerHTML = it.title || it.chip || (f ? f.t : "");
       $("focus-s").innerHTML = it.cap || (f ? (f.cover && f.cover.k) || f.s || "" : "");
-      var a = $("focus-a"); if (it.href) { a.style.display = ""; a.href = it.href; a.textContent = (it.hrefLabel || "Open") + " ↗"; if (ext(it.href)) { a.target = "_blank"; a.rel = "noopener"; } else { a.removeAttribute("target"); } } else a.style.display = "none";
+      var a = $("focus-a"); if (it.href) { a.style.display = ""; a.href = it.href; a.textContent = (it.hrefLabel || EBUI.open) + " ↗"; if (ext(it.href)) { a.target = "_blank"; a.rel = "noopener"; } else { a.removeAttribute("target"); } } else a.style.display = "none";
       $("focus-n").textContent = fList.length > 1 ? (fIdx + 1) + " / " + fList.length : "";
     }
     function stepFocus(d) { if (fList.length < 2) return; fIdx = (fIdx + d + fList.length) % fList.length; showFocus(); }

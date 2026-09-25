@@ -27,7 +27,7 @@ JOBS = [
 FAQ_HREF  = {"en": "/faq/", "tr": "/sss/"}
 HIRE_HREF = {"en": "/hire/", "tr": "/yapay-zeka-reklam-filmi/"}
 BLOG_HREF = {"en": "/blog/", "tr": "/yazilar/"}
-FILES_HREF = {"en": "/files/", "tr": "/files/"}  # -> "/tr/files/" once the Turkish board is published
+FILES_HREF = {"en": "/files/", "tr": "/tr/files/"}
 HOME_HREF = {"en": "/", "tr": "/tr/"}
 
 REL_ATTRS = ["src", "poster", "href", "data-poster", "data-src", "data-full", "data-image", "data-vid", "data-vid-poster"]
