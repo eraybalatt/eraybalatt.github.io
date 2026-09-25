@@ -1842,12 +1842,128 @@ section>.spots{margin:-4px 0 26px}
 #films .row-label{margin-top:44px}
 #films .card-body h3{margin-bottom:6px}
 .rf-meta{margin:0;font-size:.84rem;line-height:1.5;color:#d3dde7}
-@media(min-width:880px){.g-ugc{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:16px!important;max-width:none!important;margin:0!important;justify-content:start!important}.g-ugc>*{flex:none!important;width:auto!important}}
 .csstrip img{border:0!important;border-radius:0!important;box-shadow:none!important}
 .csstrip picture{display:block}
 #films .csstrip{margin:22px 0 0}
 #films .csstrip figcaption{margin-top:10px}
 #films .csstrip+.slj-divider+.feature{margin-top:48px}
+
+/* 25 Eyl (b): UGC filter, centred last row */
+.ugc-filter{display:flex;flex-wrap:wrap;gap:8px;margin:-4px 0 26px}
+.ugc-filter[hidden]{display:none}
+.uf{display:inline-flex;align-items:center;gap:9px;height:40px;padding:0 16px;border-radius:999px;border:1px solid rgba(236,242,248,.24);background:transparent;color:#eef4fa;font:500 .9rem var(--sans);cursor:pointer}
+.uf i{font-style:normal;font:500 .72rem var(--mono);color:#b4dbff}
+.uf:hover{border-color:rgba(140,200,255,.6)}
+.uf.on{background:#8cc8ff;border-color:#8cc8ff;color:#10233a}
+.uf.on i{color:#10233a}
+.uf:focus-visible{outline:2px solid #8cc8ff;outline-offset:2px}
+.g-ugc{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:14px!important;max-width:none!important;margin:0!important}
+.g-ugc>*{flex:0 0 calc((100% - 14px)/2)!important;width:auto!important;min-width:0}
+.g-ugc>[hidden]{display:none!important}
+@media(min-width:880px){.g-ugc{gap:16px!important}.g-ugc>*{flex-basis:calc((100% - 48px)/4)!important}}
+/* contact */
+.ct2{display:block!important;text-align:left!important;padding:clamp(22px,4vw,48px)!important}
+.ct2 .eyebrow{text-align:left!important;margin-left:0!important;margin-right:0!important}
+.ct-head{max-width:780px;margin:0 0 30px}
+.ct-head .sec-sub{margin:10px 0 0!important}
+.ct-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,4vw,56px);align-items:start}
+.ct-form{background:#32465e;border:1px solid rgba(236,242,248,.14);border-radius:18px;padding:clamp(18px,2.4vw,28px)!important;margin:0!important;max-width:none!important;gap:12px!important}
+.ct-form .form-send{align-self:stretch;width:100%;height:52px;font-size:1rem!important;margin-top:4px}
+.ct-note{margin:0;font-size:.82rem;color:#d3dde7;text-align:center}
+.ct-label{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#b4dbff;margin:0 0 14px}
+.ct-steps{list-style:none;margin:0;padding:0;counter-reset:st;display:grid;gap:16px}
+.ct-steps li{counter-increment:st;display:grid;grid-template-columns:30px 1fr;column-gap:12px;row-gap:2px}
+.ct-steps li::before{content:counter(st);grid-row:span 2;width:28px;height:28px;border-radius:50%;background:#8cc8ff;color:#10233a;font:600 .82rem var(--mono);display:grid;place-items:center}
+.ct-steps b{color:#f6f8fa;font-weight:600;font-size:.95rem}
+.ct-steps span{color:#d3dde7;font-size:.86rem;line-height:1.5}
+.ct2 .cv-trust{width:auto!important;margin:24px 0 0!important;padding-top:20px;border-top:1px solid rgba(236,242,248,.14)}
+.ct-direct{margin-top:24px;padding-top:20px;border-top:1px solid rgba(236,242,248,.14);display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.ct-direct .ct-label{margin:0}
+.ct-direct .contact-email{margin:0!important;font-size:clamp(1.3rem,2.2vw,1.7rem)!important}
+.ct-direct .social-cta{margin:0!important}
+@media(max-width:900px){.ct-grid{grid-template-columns:1fr}.ct-side{order:2}}
+@media(max-width:560px){.ct-form .cf-row{grid-template-columns:1fr!important}}
+/* footer */
+footer.ft2{background:#32465e;color:#d3dde7;text-align:left;padding:56px clamp(16px,4vw,48px) 26px;margin-top:0;border-top:0}
+footer.ft2::before{display:none}
+.ft-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:36px}
+.ft-logo{display:inline-flex;align-items:center;gap:12px;color:#f6f8fa;text-decoration:none;font:600 1.15rem/1 var(--serif);letter-spacing:-.01em}
+.ft-logo svg{width:34px;height:34px;color:#8cc8ff;flex:none}
+.ft-brand p{margin:16px 0 20px;font-size:.9rem;line-height:1.6;color:#d3dde7;max-width:36ch}
+.ft-cta{display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:999px;background:#8cc8ff;color:#10233a;font-weight:600;font-size:.9rem;text-decoration:none}
+.ft-cta:hover{background:#a8d6ff}
+.ft-h{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#b4dbff;margin:4px 0 12px}
+.ft-col>a{display:block;width:max-content;max-width:100%;color:#eef4fa;text-decoration:none;font-size:.92rem;padding:5px 0;overflow-wrap:anywhere}
+.ft-col>a:hover{color:#8cc8ff}
+.ft-icons{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;max-width:260px}
+.ft-icons a{width:36px;height:36px;display:inline-grid;place-items:center;border-radius:10px;border:1px solid rgba(236,242,248,.2);color:#d3dde7;text-decoration:none}
+.ft-icons a:hover{color:#8cc8ff;border-color:rgba(140,200,255,.6)}
+.ft-icons svg{width:18px;height:18px}
+.ft-bottom{max-width:1180px;margin:40px auto 0;padding-top:18px;border-top:1px solid rgba(236,242,248,.14);display:flex;justify-content:space-between;align-items:center;gap:10px 20px;flex-wrap:wrap;font-size:.8rem;color:#d3dde7}
+.ft-bottom a{color:#d3dde7;text-decoration:none}
+.ft-bottom a:hover{color:#8cc8ff}
+@media(max-width:900px){.ft-grid{grid-template-columns:1fr 1fr}.ft-brand{grid-column:1/-1}}
+@media(max-width:520px){.ft-contact{grid-column:1/-1}}
+
+/* EB player */
+.ebp{position:absolute;inset:0;z-index:6;background:#000;border-radius:inherit;overflow:hidden;outline:none;color:#fff;cursor:default;-webkit-user-select:none;user-select:none}
+.ebp-v{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.ebp-big{position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;border:0;background:#8cc8ff;color:#10233a;display:grid;place-items:center;cursor:pointer;transition:opacity .2s,transform .2s;box-shadow:0 12px 30px -10px rgba(0,0,0,.6)}
+.ebp-big svg{width:32px;height:32px;margin-left:4px}
+.ebp.on .ebp-big{opacity:0;transform:scale(.9);pointer-events:none}
+.ebp.scrub .ebp-big{opacity:0;pointer-events:none}
+.ebp-bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:8px;padding:36px 12px 10px;background:linear-gradient(rgba(8,14,22,0),rgba(8,14,22,.7) 45%,rgba(8,14,22,.94));transition:opacity .25s}
+.ebp.on.idle .ebp-bar{opacity:0}
+.ebp.on.idle{cursor:none}
+.ebp-b{flex:none;width:38px;height:38px;border-radius:50%;border:0;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;padding:0}
+.ebp-b:hover{background:rgba(255,255,255,.14)}
+.ebp-b:focus-visible,.ebp-track:focus-visible,.ebp-big:focus-visible{outline:2px solid #8cc8ff;outline-offset:2px}
+.ebp-b svg{width:22px;height:22px}
+.ebp-t{flex:none;font:500 .76rem var(--mono);color:#eef4fa;padding:0 4px;white-space:nowrap}
+.ebp-track{position:relative;flex:1;height:26px;cursor:pointer;touch-action:none;margin:0 6px}
+.ebp-track::before,.ebp-buf,.ebp-prog{content:"";position:absolute;left:0;top:50%;height:4px;margin-top:-2px;border-radius:4px;transition:height .12s,margin .12s}
+.ebp-track::before{right:0;background:rgba(255,255,255,.24)}
+.ebp-buf{width:0;background:rgba(255,255,255,.34)}
+.ebp-prog{width:0;background:#8cc8ff}
+.ebp-track:hover::before,.ebp-track:hover .ebp-buf,.ebp-track:hover .ebp-prog,.ebp.scrub .ebp-prog,.ebp.scrub .ebp-track::before{height:6px;margin-top:-3px}
+.ebp-knob{position:absolute;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(140,200,255,.35);transform:scale(0);transition:transform .15s}
+.ebp-track:hover .ebp-knob,.ebp.scrub .ebp-knob,.ebp-track:focus-visible .ebp-knob{transform:scale(1)}
+.ebp-tip{position:absolute;bottom:28px;left:0;width:160px;margin-left:-80px;opacity:0;pointer-events:none;transition:opacity .12s;display:flex;flex-direction:column;align-items:center;gap:6px}
+.ebp.scrub .ebp-tip{opacity:1}
+.ebp-img{width:160px;height:90px;border-radius:8px;border:2px solid #fff;background:#000 no-repeat;box-shadow:0 12px 30px -8px rgba(0,0,0,.85)}
+.ebp-img[hidden]{display:none}
+.ebp-tip span{padding:3px 8px;border-radius:6px;background:rgba(8,14,22,.88);font:500 .74rem var(--mono);color:#fff}
+.ebp:fullscreen{border-radius:0}
+@media(max-width:560px){.ebp-bar{gap:2px;padding:30px 6px 4px}.ebp-t{font-size:.68rem}.ebp-b{width:34px;height:34px}.ebp-track{margin:0 4px}}
+/* Detective mode: a case file */
+.case-chip{gap:11px!important;padding:9px 16px 9px 12px!important;border-radius:4px 12px 12px 12px!important;background:#121b26!important;border:1px solid rgba(140,200,255,.5)!important;color:#eef4fa!important;box-shadow:0 12px 30px -14px rgba(0,0,0,.8)}
+.case-chip::before{content:"";position:absolute;left:-1px;top:-8px;width:58px;height:9px;background:#121b26;border:1px solid rgba(140,200,255,.5);border-bottom:0;border-radius:5px 9px 0 0}
+.hero .case-chip{overflow:visible}
+.case-chip .cc-mag{width:22px!important;height:22px!important;color:#8cc8ff;fill:none!important;stroke:currentColor!important;stroke-width:1.8!important;transition:transform .3s}
+.case-chip .cc-mag path{stroke-width:1.8!important}
+.case-chip .cc-mag path+path{stroke-width:1.3!important}
+.case-chip:hover .cc-mag{transform:rotate(-12deg) scale(1.08)}
+.case-chip:hover{background:#17222f!important;border-color:#8cc8ff!important}
+.cc-txt{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;line-height:1}
+.cc-txt small{font:500 .6rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#b4dbff}
+.cc-txt span{font:600 .9rem var(--sans)}
+.case-chip i{color:#8cc8ff}
+.nav-links .nav-cta.case-nav{gap:9px;background:#121b26;border:1px solid rgba(140,200,255,.45);color:#eef4fa;border-radius:4px 999px 999px 999px}
+.nav-links .nav-cta.case-nav:hover{background:#17222f;border-color:#8cc8ff}
+.nav-links .nav-cta.case-nav .cc-mag{width:18px;height:18px;color:#8cc8ff;flex:none}
+/* top bar */
+.topbar{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 10px;min-height:42px;margin:0 0 12px;padding:8px 16px;border-radius:12px;background:#8cc8ff;color:#10233a;text-decoration:none;font:500 .88rem/1.3 var(--sans);text-align:center}
+.topbar:hover{background:#a3d3ff}
+.tb-dot{width:8px;height:8px;border-radius:50%;background:#10233a;flex:none}
+.tb-a{font-weight:600}
+.tb-sep{opacity:.6}
+.tb-go{margin-left:6px;padding:4px 12px;border-radius:999px;background:#10233a;color:#eaf5ff;font-weight:600;font-size:.82rem;white-space:nowrap}
+@media(max-width:560px){.topbar{font-size:.8rem;gap:4px 8px;padding:8px 12px}.tb-sep{display:none}.tb-go{margin-left:0}}
+
+/* real-footage cards: a strip of four frames under the meta line */
+#films .grid.g-3 .card-body{display:flex;flex-direction:column;gap:6px}
+.rf-strip{display:block;width:100%;height:auto;margin-top:10px;border-radius:0}
+#films .grid.g-3 .card{overflow:hidden}
 </style>
 </head>
 <body>
@@ -1889,7 +2005,7 @@ section>.spots{margin:-4px 0 26px}
       <a href="/hire/" data-hire data-en="Rates" data-tr="Fiyatlar">Rates</a>
       <a href="/blog/" data-blog data-en="Writing" data-tr="Yazılar">Writing</a>
       <span class="nav-ctas">
-        <a class="nav-cta ghost" href="/files/" data-en="Detective mode" data-tr="Dedektif modu">Detective mode</a>
+        <a class="nav-cta ghost case-nav" href="/files/"><svg class="cc-mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/><path d="M8 8.4a3 3 0 0 1 2.4-1.2" stroke-width="1.4"/></svg><span data-en="Detective mode" data-tr="Dedektif modu">Detective mode</span></a>
         <a class="nav-cta" href="#contact" data-en="Get a quote" data-tr="Teklif al">Get a quote</a>
       </span>
     </nav>
@@ -1909,17 +2025,18 @@ section>.spots{margin:-4px 0 26px}
 <div class="hero-wrap">
 
   <!-- HERO -->
+  <a class="topbar" href="#contact" data-n="5"><span class="tb-dot" aria-hidden="true"></span><span class="tb-a" data-en="Open for new projects" data-tr="Yeni projelere açığım">Open for new projects</span><span class="tb-sep" aria-hidden="true">·</span><span class="tb-b" data-en="5 films in production right now" data-tr="Şu an 5 film yapımda">5 films in production right now</span><span class="tb-go" data-en="Get a quote →" data-tr="Teklif al →">Get a quote →</span></a>
   <section class="hero" id="home">
     <video class="hero-bg" id="heroVid" autoplay muted loop playsinline preload="none" poster="hero-real-poster.webp" data-src="hero-real.mp4"></video>
     <div class="hero-ov"></div>
-    <a class="mode-chip rin" href="/files/"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="2" width="5" height="5"/><rect x="9.5" y="2.5" width="5" height="5"/><rect x="5.5" y="10" width="5" height="4.5"/><path d="M4 4.5L12 5L8 12.2Z"/></svg><span data-en="Detective mode" data-tr="Dedektif modu">Detective mode</span><b class="mode-n" hidden></b><i aria-hidden="true">&rarr;</i></a>
+    <a class="mode-chip case-chip rin" href="/files/"><svg class="cc-mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/><path d="M8 8.4a3 3 0 0 1 2.4-1.2" stroke-width="1.4"/></svg><span class="cc-txt"><small data-en="Case files · 10 cases" data-tr="Dosyalar · 10 vaka">Case files · 10 cases</small><span data-en="Detective mode" data-tr="Dedektif modu">Detective mode</span></span><b class="mode-n" hidden></b><i aria-hidden="true">&rarr;</i></a>
     <div class="eyebrow rin" data-en="Creative AI Producer · Filmmaker · Citrine Studio" data-tr="<span lang=&quot;en&quot;>Creative AI Producer</span> · Yönetmen · <span lang=&quot;en&quot;>Citrine Studio</span>">Creative AI Producer · Filmmaker · Citrine Studio</div>
    
     <h1 class="rin" data-en="Cinematic stories, rebuilt frame by frame with AI." data-tr="Sinematik hikâyeler, kare kare yapay zekâ ile yeniden kurgulandı.">Cinematic stories, rebuilt frame by frame with AI.</h1>
     <p class="lead rin" data-en="I direct music videos, documentaries, short films and product films for brands and artists worldwide." data-tr="Markalar ve sanatçılar için müzik videoları, belgeseller, kısa filmler ve ürün filmleri yönetiyorum.">I direct music videos, documentaries, short films and product films for brands and artists worldwide.</p>
     <div class="cta-row rin">
       <a href="#music" class="btn btn-grad" data-en="Watch my work →" data-tr="İşlerimi İzle →">Watch my work →</a>
-      <a href="#contact" class="btn btn-ghost" data-en="Start a project →" data-tr="Proje başlat →">Start a project →</a>
+      <a href="#contact" class="btn btn-ghost" data-en="Get a quote in 24h →" data-tr="24 saatte teklif al →">Get a quote in 24h →</a>
     </div>
   </section>
 </div>
@@ -1996,7 +2113,7 @@ section>.spots{margin:-4px 0 26px}
 
     <div class="feature reveal">
       <a class="media" href="bushido/" aria-label="Open the Bushido campaign preview">
-        <img src="bushido-feature-v3.webp" alt="Bushido campaign: Ayla with the face bar and Kaan with the beard oil, close-ups from the films" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0" />
+        <img src="/bushido-feature-v4.webp" alt="Bushido campaign: close-ups of Ayla with the face bar and Kaan looking into the camera, from the films" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0" />
       </a>
       <div>
         <div class="role" data-en="Campaign concept · Citrine Studio × Bushido" data-tr="Kampanya konsepti · Citrine Studio × Bushido">Campaign concept · Citrine Studio × Bushido</div>
@@ -2016,21 +2133,21 @@ section>.spots{margin:-4px 0 26px}
     <div class="eyebrow reveal" data-en="UGC &amp; Ads" data-tr="UGC &amp; Reklam">UGC &amp; Ads</div>
     <h2 class="sec-title reveal" data-en="UGC &amp; Short-Form Ads" data-tr="UGC ve Kısa Reklamlar">UGC &amp; Short-Form Ads</h2>
     <p class="sec-sub reveal" data-en="Vertical ads built to stop the scroll." data-tr="Kaydırmayı durdurmak için dikey reklamlar.">Vertical ads built to stop the scroll.</p>
-    <div class="spots reveal"><span data-en="Hook in the first second" data-tr="İlk saniyede kanca">Hook in the first second</span><span data-en="Same face in every shot" data-tr="Her planda aynı yüz">Same face in every shot</span><span>9:16 · 4K</span></div>
+    <div class="ugc-filter reveal" role="group" aria-label="Filter the ads" hidden><button type="button" class="uf on" data-cat="all" aria-pressed="true"><span data-en="All" data-tr="Tümü">All</span><i>11</i></button><button type="button" class="uf" data-cat="app" aria-pressed="false"><span data-en="App ads" data-tr="Uygulama reklamları">App ads</span><i>5</i></button><button type="button" class="uf" data-cat="ugc" aria-pressed="false"><span>UGC</span><i>3</i></button><button type="button" class="uf" data-cat="brand" aria-pressed="false"><span data-en="Brand films" data-tr="Marka filmleri">Brand films</span><i>3</i></button></div>
     <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 
     <div class="grid g-ugc">
-      <div class="card reveal"><div class="thumb v cover-b"><video src="tenniscut-1.mp4" data-poster="tenniscut-1-p.webp?v=2" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — The Moment</h3><p data-en="Sports app campaign · hook film" data-tr="Spor uygulaması kampanyası · kanca filmi">Sports app campaign · hook film</p></div></div>
-      <div class="card reveal"><div class="thumb v cover-c"><video src="tenniscut-2.mp4" data-poster="tenniscut-2-p.webp?v=2" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Dead Time Remover</h3><p data-en="Feature spot · AI-directed" data-tr="Özellik filmi · AI yönetim">Feature spot · AI-directed</p></div></div>
-      <div class="card reveal"><div class="thumb v cover-f"><video src="tenniscut-3.mp4" data-poster="tenniscut-3-p.webp?v=2" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Best of Us</h3><p data-en="Brand film · original score" data-tr="Marka filmi · özgün müzik">Brand film · original score</p></div></div>
-      <div class="card reveal"><div class="thumb v cover-a"><video src="dtc-1.mp4" data-poster="dtc-1-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">DTC</span></div><div class="card-body"><h3 data-en="DTC Skincare — Story Ad" data-tr="DTC Cilt Bakımı — Hikâye Reklamı">DTC Skincare — Story Ad</h3><p data-en="Long-form UGC · story-driven" data-tr="Uzun format UGC · hikâye odaklı">Long-form UGC · story-driven</p></div></div>
-      <div class="card reveal"><div class="thumb v cover-d"><video src="dtc-2.mp4" data-poster="dtc-2-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">DTC</span></div><div class="card-body"><h3 data-en="DTC Haircare — Comparison Hook" data-tr="DTC Saç Bakımı — Karşılaştırma">DTC Haircare — Comparison Hook</h3><p data-en="Real vs fake · educational hook" data-tr="Gerçek vs sahte · eğitici kanca">Real vs fake · educational hook</p></div></div>
-      <div class="card reveal"><div class="thumb v cover-e"><video src="dtc-3.mp4" data-poster="dtc-3-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">DTC</span></div><div class="card-body"><h3 data-en="DTC Beauty — Problem &amp; Solution" data-tr="DTC Güzellik — Sorun &amp; Çözüm">DTC Beauty — Problem &amp; Solution</h3><p data-en="Problem-solution · 90 sec" data-tr="Sorun-çözüm · 90 saniye">Problem-solution · 90 sec</p></div></div>
-      <a class="card reveal" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="konfuse.mp4?v=2" data-poster="konfuse-poster.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">Konfuse</span></div><div class="card-body"><h3>Konfuse — Brand World Film</h3><p data-en="End-to-end brand world · original score" data-tr="Uçtan uca marka dünyası · özgün müzik">End-to-end brand world · original score</p></div></a>
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-a"><video src="esim.mp4" data-poster="esim-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">eSIM.io</span></div><div class="card-body"><h3>eSIM.io — AI UGC</h3><p data-en="Rebuilt from a real brief · 4K" data-tr="Gerçek bir brief'ten yeniden kuruldu · 4K">Rebuilt from a real brief · 4K</p></div></a>
-      <a class="card reveal" href="https://youtube.com/shorts/TGTcOunFfUY" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="bushido/assets/video/film-3.mp4" data-poster="bushido/assets/video/poster-3.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">Bushido</span></div><div class="card-body"><h3 data-en="The Reel — Sabah Ritüeli" data-tr="Reel — Sabah Ritüeli">The Reel — Sabah Ritüeli</h3><p data-en="Hero film · both rituals" data-tr="Ana film · iki ritüel">Hero film · both rituals</p></div></a>
-      <a class="card reveal" href="https://youtube.com/shorts/m5UfRGEmqSA" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="bushido/assets/video/film-2.mp4" data-poster="bushido/assets/video/poster-2.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">Bushido</span></div><div class="card-body"><h3 data-en="His Ritual" data-tr="Erkeğin Ritüeli">His Ritual</h3><p data-en="Nord beard oil · Turkish VO" data-tr="Nord sakal yağı · Türkçe seslendirme">Nord beard oil · Turkish VO</p></div></a>
-      <a class="card reveal" href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-en.mp4" data-poster="telicall-en-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">EN</span></div><div class="card-body"><h3>The Call Home · EN</h3><p data-en="Original · English" data-tr="Orijinal · İngilizce">Original · English</p><span class="vstat" data-en="Lip-synced original" data-tr="Dudak senkronlu orijinal">Lip-synced original</span></div></a>
+      <div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video src="tenniscut-1.mp4" data-poster="tenniscut-1-p.webp?v=2" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — The Moment</h3><p data-en="Sports app campaign · hook film" data-tr="Spor uygulaması kampanyası · kanca filmi">Sports app campaign · hook film</p></div></div>
+      <div class="card reveal" data-cat="app"><div class="thumb v cover-c"><video src="tenniscut-2.mp4" data-poster="tenniscut-2-p.webp?v=2" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Dead Time Remover</h3><p data-en="Feature spot · AI-directed" data-tr="Özellik filmi · AI yönetim">Feature spot · AI-directed</p></div></div>
+      <div class="card reveal" data-cat="app"><div class="thumb v cover-f"><video src="tenniscut-3.mp4" data-poster="tenniscut-3-p.webp?v=2" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Best of Us</h3><p data-en="Brand film · original score" data-tr="Marka filmi · özgün müzik">Brand film · original score</p></div></div>
+      <div class="card reveal" data-cat="ugc"><div class="thumb v cover-a"><video src="dtc-1.mp4" data-poster="dtc-1-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">DTC</span></div><div class="card-body"><h3 data-en="DTC Skincare — Story Ad" data-tr="DTC Cilt Bakımı — Hikâye Reklamı">DTC Skincare — Story Ad</h3><p data-en="Long-form UGC · story-driven" data-tr="Uzun format UGC · hikâye odaklı">Long-form UGC · story-driven</p></div></div>
+      <div class="card reveal" data-cat="ugc"><div class="thumb v cover-d"><video src="dtc-2.mp4" data-poster="dtc-2-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">DTC</span></div><div class="card-body"><h3 data-en="DTC Haircare — Comparison Hook" data-tr="DTC Saç Bakımı — Karşılaştırma">DTC Haircare — Comparison Hook</h3><p data-en="Real vs fake · educational hook" data-tr="Gerçek vs sahte · eğitici kanca">Real vs fake · educational hook</p></div></div>
+      <div class="card reveal" data-cat="ugc"><div class="thumb v cover-e"><video src="dtc-3.mp4" data-poster="dtc-3-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">DTC</span></div><div class="card-body"><h3 data-en="DTC Beauty — Problem &amp; Solution" data-tr="DTC Güzellik — Sorun &amp; Çözüm">DTC Beauty — Problem &amp; Solution</h3><p data-en="Problem-solution · 90 sec" data-tr="Sorun-çözüm · 90 saniye">Problem-solution · 90 sec</p></div></div>
+      <a class="card reveal" data-cat="brand" href="https://youtube.com/shorts/zhqaCtjbwmI" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="konfuse.mp4?v=2" data-poster="konfuse-poster.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">Konfuse</span></div><div class="card-body"><h3>Konfuse — Brand World Film</h3><p data-en="End-to-end brand world · original score" data-tr="Uçtan uca marka dünyası · özgün müzik">End-to-end brand world · original score</p></div></a>
+      <a class="card reveal" data-cat="app" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" target="_blank" rel="noopener"><div class="thumb v cover-a"><video src="esim.mp4" data-poster="esim-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">eSIM.io</span></div><div class="card-body"><h3>eSIM.io — AI UGC</h3><p data-en="Rebuilt from a real brief · 4K" data-tr="Gerçek bir brief'ten yeniden kuruldu · 4K">Rebuilt from a real brief · 4K</p></div></a>
+      <a class="card reveal" data-cat="brand" href="https://youtube.com/shorts/TGTcOunFfUY" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="bushido/assets/video/film-3.mp4" data-poster="bushido/assets/video/poster-3.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">Bushido</span></div><div class="card-body"><h3 data-en="The Reel — Sabah Ritüeli" data-tr="Reel — Sabah Ritüeli">The Reel — Sabah Ritüeli</h3><p data-en="Hero film · both rituals" data-tr="Ana film · iki ritüel">Hero film · both rituals</p></div></a>
+      <a class="card reveal" data-cat="brand" href="https://youtube.com/shorts/m5UfRGEmqSA" target="_blank" rel="noopener"><div class="thumb v cover-e"><video src="bushido/assets/video/film-2.mp4" data-poster="bushido/assets/video/poster-2.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">Bushido</span></div><div class="card-body"><h3 data-en="His Ritual" data-tr="Erkeğin Ritüeli">His Ritual</h3><p data-en="Nord beard oil · Turkish VO" data-tr="Nord sakal yağı · Türkçe seslendirme">Nord beard oil · Turkish VO</p></div></a>
+      <a class="card reveal" data-cat="app" href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" target="_blank" rel="noopener"><div class="thumb v cover-d"><video src="telicall-en.mp4" data-poster="telicall-en-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">EN</span></div><div class="card-body"><h3>The Call Home · EN</h3><p data-en="Original · English" data-tr="Orijinal · İngilizce">Original · English</p><span class="vstat" data-en="Lip-synced original" data-tr="Dudak senkronlu orijinal">Lip-synced original</span></div></a>
     </div>
   </section>
 
@@ -2044,7 +2161,7 @@ section>.spots{margin:-4px 0 26px}
     <p class="sec-sub reveal" data-en="Trailers and shorts, as director or editor." data-tr="Fragmanlar ve kısa filmler, yönetmen ya da kurgucu olarak.">Trailers and shorts, as director or editor.</p>
     <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
     <div class="feature reveal" style="grid-template-columns:1.62fr 1fr;gap:38px">
-      <a class="media" href="coldstart-film.mp4" data-vid="coldstart-film.mp4" data-vid-poster="film-coldstart-p.webp" aria-label="Play COLD START — 2 minutes 19 seconds">
+      <a class="media" href="/coldstart-film.mp4" data-vid="/coldstart-film.mp4" data-thumbs="/thumbs/coldstart-film" data-vid-poster="/film-coldstart-p.webp" aria-label="Play COLD START — 2 minutes 19 seconds">
         <video src="film-coldstart.mp4" data-poster="film-coldstart-p.webp" muted loop playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></video>
         <span class="play" style="z-index:2"></span>
         <span class="pill" style="z-index:2">2:19</span>
@@ -2064,21 +2181,32 @@ section>.spots{margin:-4px 0 26px}
     </figure>
 
     <div class="slj-divider reveal" aria-hidden="true" style="margin:36px auto 30px"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
-    <div class="feature reveal" style="grid-template-columns:1.55fr 1fr;gap:34px">
-      <div><a class="fp-play fp-main" data-yt="GAGlpIw3Q2Y" href="https://youtu.be/GAGlpIw3Q2Y" target="_blank" rel="noopener" aria-label="Novora brand film — English version"><img src="novora-sofra-p.webp" alt="Novora brand film: a breakfast table above Lake İznik, olives and tea, the Novora bird on the wall" width="1600" height="900" loading="lazy" decoding="async" /><span class="play"></span></a></div>
-      <div><div class="role" data-en="Brand film · Directed by Eray Balat" data-tr="Reklam filmi · Yönetmen: Eray Balat">Brand film · Directed by Eray Balat</div>
-      <h3 data-en="Novora — Health is in the Roots" data-tr="Novora — Sağlık Köklerinde">Novora — Health is in the Roots</h3>
-      <p data-en="One olive grove, from first light to the table, for an olive producer by Lake Iznik." data-tr="İznik Gölü kıyısındaki bir zeytin üreticisi için tek bir zeytinlik, ilk ışıktan sofraya.">One olive grove, from first light to the table, for an olive producer by Lake Iznik.</p>
-      <div class="spots"><span data-en="27 seconds · 4K" data-tr="27 saniye · 4K">27 seconds · 4K</span><span data-en="English + Turkish" data-tr="İngilizce + Türkçe">English + Turkish</span><span data-en="Original score" data-tr="Özgün müzik">Original score</span></div>
-      <a class="watch-alt" href="https://youtu.be/S9hG_Ga7wIg" data-lightbox="S9hG_Ga7wIg" data-lbx-title="Novora — Sağlık Köklerinde · Türkçe" data-en="Watch the Turkish version" data-tr="Türkçe versiyonunu izle">Watch the Turkish version</a></div>
+    <div class="feature reveal" style="grid-template-columns:1.62fr 1fr;gap:38px">
+      <a class="media" id="novoraPlayer" href="/novora-film-en.mp4" data-vid="/novora-film-en.mp4" data-thumbs="/thumbs/novora-film-en" data-vid-poster="/novora-sofra-p.webp" aria-label="Play the Novora brand film, English version, 27 seconds">
+        <img src="/novora-sofra-p.webp" alt="Novora brand film: a breakfast table above Lake Iznik, olives and tea, Nova the bird on the wall" width="1600" height="900" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0" />
+        <span class="play" style="z-index:2"></span>
+        <span class="pill" style="z-index:2">0:27</span>
+      </a>
+      <div>
+        <div class="role" data-en="Animated brand film · Olive producer, Bursa" data-tr="Animasyon marka filmi · Zeytin üreticisi, Bursa">Animated brand film · Olive producer, Bursa</div>
+        <h3 data-en="Novora — Health is in the Roots" data-tr="Novora — Sağlık Köklerinde">Novora — Health is in the Roots</h3>
+        <p data-en="One olive grove by Lake Iznik, from first light to the table. I storyboarded it first, gave Nova the bird a turnaround sheet so it stays the same in every scene, then finished edit, voice and score in two languages." data-tr="İznik Gölü kıyısında tek bir zeytinlik, ilk ışıktan sofraya. Önce storyboard'u çizdim, Nova kuşuna her sahnede aynı kalsın diye bir dönüş sayfası hazırladım, sonra kurguyu, sesi ve müziği iki dilde bitirdim.">One olive grove by Lake Iznik, from first light to the table. I storyboarded it first, gave Nova the bird a turnaround sheet so it stays the same in every scene, then finished edit, voice and score in two languages.</p>
+        <div class="spots"><span data-en="27 sec · 4K" data-tr="27 sn · 4K">27 sec · 4K</span><span data-en="English + Turkish" data-tr="İngilizce + Türkçe">English + Turkish</span><span data-en="Delivered a day early" data-tr="Bir gün erken teslim">Delivered a day early</span></div>
+        <a class="watch-alt" href="/novora-film-tr.mp4" data-vid-into="novoraPlayer" data-thumbs="/thumbs/novora-film-tr" data-en="Watch the Turkish version" data-tr="Türkçe versiyonunu izle">Watch the Turkish version</a>
+      </div>
     </div>
+
+    <figure class="csheet csheet-wide csstrip reveal">
+      <picture><source media="(max-width:700px)" srcset="/novora-quad.webp" width="1000" height="565" /><img src="/novora-strip.webp" width="1800" height="251" alt="Four frames from the Novora brand film: Nova the black bird on an olive branch above a misty lake at dawn, Nova beside an ancient olive trunk in shafts of morning light, green, purple and black olives ripening on a branch, and Nova leaning on a jar of Novora olives." loading="lazy" decoding="async" /></picture>
+      <figcaption data-en="Four scenes from the film, built from the storyboard frame for frame." data-tr="Filmden dört sahne, storyboard'a kare kare sadık.">Four scenes from the film, built from the storyboard frame for frame.</figcaption>
+    </figure>
 
     <div class="row-label reveal" data-en="Shot on camera, no AI" data-tr="Kamerayla çekildi, AI yok">Shot on camera, no AI</div>
     <div class="grid g-3">
-      <a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" target="_blank" rel="noopener"><div class="thumb cover-a"><video src="film-boomerang.mp4" data-poster="film-boomerang-p2.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><img decoding="async" src="laurel-white-sm.webp" alt="Honorable Mention — Student Video Contest 2026" loading="lazy" style="position:absolute;top:9px;right:9px;left:auto;bottom:auto;width:60px;height:60px;z-index:3;opacity:.92;filter:drop-shadow(0 0 5px rgba(0,0,0,.6))" /></div><div class="card-body"><h3>Boomerang</h3><p class="rf-meta" data-en="Editor · Honorable Mention, Student Video Contest 2026" data-tr="Kurgu · Mansiyon, Student Video Contest 2026">Editor · Honorable Mention, Student Video Contest 2026</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" target="_blank" rel="noopener"><div class="thumb cover-f"><video src="film-diepost.mp4?v=2" data-poster="film-diepost-p2.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button></div><div class="card-body"><h3>Die Post</h3><p class="rf-meta" data-en="Writer, director · Erciyes University, 2024" data-tr="Senaryo, yönetmen · Erciyes Üniversitesi, 2024">Writer, director · Erciyes University, 2024</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" target="_blank" rel="noopener"><div class="thumb cover-c"><video src="film-runorrun.mp4" data-poster="film-runorrun-p2.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button></div><div class="card-body"><h3>Run or Run</h3><p class="rf-meta" data-en="Writer, director, actor · 2:34" data-tr="Senaryo, yönetmen, oyuncu · 2:34">Writer, director, actor · 2:34</p></div></a>
-      <a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" target="_blank" rel="noopener"><div class="thumb cover-b"><img decoding="async" src="yt/rYHPU-_RqOc.webp" alt="Switzerland in One Hour — live-action short shot in a single hour" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Switzerland in One Hour</h3><p class="rf-meta" data-en="Director · shot in one hour, my first day on set" data-tr="Yönetmen · bir saatte çekildi, sette ilk günüm">Director · shot in one hour, my first day on set</p></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" target="_blank" rel="noopener"><div class="thumb cover-a"><video src="film-boomerang.mp4" data-poster="film-boomerang-p2.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><img decoding="async" src="laurel-white-sm.webp" alt="Honorable Mention — Student Video Contest 2026" loading="lazy" style="position:absolute;top:9px;right:9px;left:auto;bottom:auto;width:60px;height:60px;z-index:3;opacity:.92;filter:drop-shadow(0 0 5px rgba(0,0,0,.6))" /></div><div class="card-body"><h3>Boomerang</h3><p class="rf-meta" data-en="Editor · Honorable Mention, Student Video Contest 2026" data-tr="Kurgu · Mansiyon, Student Video Contest 2026">Editor · Honorable Mention, Student Video Contest 2026</p><img class="rf-strip" src="/strip-boomerang.webp" width="1200" height="166" alt="Four frames from Boomerang: a woman working late at her office desk, a hooded man lit by his phone at night, a woman in a red scarf on a dark street, and a close-up of the man with a cut on his face." loading="lazy" decoding="async" /></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" target="_blank" rel="noopener"><div class="thumb cover-f"><video src="film-diepost.mp4?v=2" data-poster="film-diepost-p2.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button></div><div class="card-body"><h3>Die Post</h3><p class="rf-meta" data-en="Writer, director · Erciyes University, 2024" data-tr="Senaryo, yönetmen · Erciyes Üniversitesi, 2024">Writer, director · Erciyes University, 2024</p><img class="rf-strip" src="/strip-diepost.webp" width="1200" height="166" alt="Four frames from Die Post: an Ottoman officer and a young man at a lantern-lit table, the officer in his kalpak, the officer lifting a striped parcel, and the young man's hand on the officer's shoulder beneath a Turkish flag." loading="lazy" decoding="async" /></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" target="_blank" rel="noopener"><div class="thumb cover-c"><video src="film-runorrun.mp4" data-poster="film-runorrun-p2.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button></div><div class="card-body"><h3>Run or Run</h3><p class="rf-meta" data-en="Writer, director, actor · 2:34" data-tr="Senaryo, yönetmen, oyuncu · 2:34">Writer, director, actor · 2:34</p><img class="rf-strip" src="/strip-runorrun.webp" width="1200" height="166" alt="Four frames from Run or Run: a young man asleep in a purple-lit bedroom by a glowing lamp, a runner in a blue hoodie heading toward snow-capped Mount Erciyes, the runner jogging through a pine forest, and the young man sitting up in bed with a hand on his forehead." loading="lazy" decoding="async" /></div></a>
+      <a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" target="_blank" rel="noopener"><div class="thumb cover-b"><img decoding="async" src="yt/rYHPU-_RqOc.webp" alt="Switzerland in One Hour — live-action short shot in a single hour" loading="lazy" /><span class="play"></span></div><div class="card-body"><h3>Switzerland in One Hour</h3><p class="rf-meta" data-en="Director · shot in one hour, my first day on set" data-tr="Yönetmen · bir saatte çekildi, sette ilk günüm">Director · shot in one hour, my first day on set</p><img class="rf-strip" src="/strip-switzerland.webp" width="1200" height="166" alt="Four frames from Switzerland in One Hour: a young man walking past a lit café window at night, the same man playing an upright piano in a stone-walled room, a guest on a red sofa inside, and the café's hanging Balmers sign." loading="lazy" decoding="async" /></div></a>
     </div>
   </section>
 
@@ -2264,76 +2392,96 @@ section>.spots{margin:-4px 0 26px}
   <div class="slj-divider" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
   <div class="chwrap reveal"><a class="chstrip" href="https://www.youtube.com/@citrinevideos" target="_blank" rel="noopener"><img src="citrine-blue.png" alt="CITRINE" width="296" height="80" loading="lazy" decoding="async" /><div><h3 data-en="CITRINE — Documentary Channel" data-tr="CITRINE — Belgesel Kanalı">CITRINE — Documentary Channel</h3><p data-en="In-depth animated documentaries →" data-tr="Derinlemesine animasyon belgeseller →">In-depth animated documentaries →</p></div></a></div>
   <section id="contact">
-    <div class="contact reveal contact-grid">
-      <aside class="cv-steps">
-        <div class="eyebrow" data-en="How it works" data-tr="Nasıl çalışıyoruz">How it works</div>
-        <ol>
-          <li><b data-en="You send the brief" data-tr="Brifi gönderirsin">You send the brief</b><span data-en="A script, a product or just the idea." data-tr="Bir senaryo, bir ürün ya da sadece fikir.">A script, a product or just the idea.</span></li>
-          <li><b data-en="You get a fixed quote" data-tr="Sabit fiyat teklifi alırsın">You get a fixed quote</b><span data-en="Scope, timeline and price within 24 hours." data-tr="Kapsam, süre ve fiyat 24 saat içinde.">Scope, timeline and price within 24 hours.</span></li>
-          <li><b data-en="You approve the look first" data-tr="Önce görünümü onaylarsın">You approve the look first</b><span data-en="Characters and key frames are locked before any motion." data-tr="Karakterler ve ana kareler hareketten önce kilitlenir.">Characters and key frames are locked before any motion.</span></li>
-          <li><b data-en="You get the finished film" data-tr="Bitmiş filmi alırsın">You get the finished film</b><span data-en="Edited, graded, mixed, with full commercial rights." data-tr="Kurgulanmış, renklendirilmiş, miks edilmiş; tüm ticari haklarıyla.">Edited, graded, mixed, with full commercial rights.</span></li>
-        </ol>
-      </aside>
-      <div class="contact-body">
-      <div class="eyebrow" data-en="Start a project" data-tr="Proje başlat">Start a project</div>
-      <h2 class="sec-title" data-en="Get a fixed quote in 24 hours" data-tr="24 saatte sabit fiyat teklifi al">Get a fixed quote in 24 hours</h2>
-      <p class="sec-sub" data-en="Brand films, UGC ads, documentaries and music videos for brands, agencies and labels." data-tr="Markalar, ajanslar ve plak şirketleri için marka filmleri, UGC reklamlar, belgeseller ve müzik videoları.">Brand films, UGC ads, documentaries and music videos for brands, agencies and labels.</p>
-      <ul class="cv-trust">
-        <li data-en="Fixed price, agreed before production starts" data-tr="Üretim başlamadan anlaşılan sabit fiyat">Fixed price, agreed before production starts</li>
-        <li data-en="Pay through Upwork escrow if you prefer" data-tr="İstersen ödeme Upwork güvencesiyle">Pay through Upwork escrow if you prefer</li>
-        <li data-en="Replies within hours, US business hours included" data-tr="Birkaç saat içinde dönüş, ABD mesai saatleri dahil">Replies within hours, US business hours included</li>
-      </ul>
-      <form class="contact-form reveal" id="cform" autocomplete="on">
-        <input type="hidden" name="access_key" value="b77ff153-998f-4550-aaff-2e1c474df49d" />
-        <input type="hidden" name="subject" value="New project inquiry — eraybalat.com" />
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <input type="text" name="name" autocomplete="name" placeholder="Your name" aria-label="Your name" required />
-        <input type="email" name="email" autocomplete="email" placeholder="Your email" aria-label="Your email" required />
-        <div class="cf-row">
-          <select name="project_type" aria-label="Project type">
+    <div class="contact ct2 reveal">
+      <div class="ct-head">
+        <div class="eyebrow" data-en="Start a project" data-tr="Proje başlat">Start a project</div>
+        <h2 class="sec-title" data-en="Get a fixed quote in 24 hours" data-tr="24 saatte sabit fiyat teklifi al">Get a fixed quote in 24 hours</h2>
+        <p class="sec-sub" data-en="Brand films, UGC ads, documentaries and music videos for brands, agencies and labels." data-tr="Markalar, ajanslar ve plak şirketleri için marka filmleri, UGC reklamlar, belgeseller ve müzik videoları.">Brand films, UGC ads, documentaries and music videos for brands, agencies and labels.</p>
+      </div>
+      <div class="ct-grid">
+        <form class="contact-form ct-form" id="cform" autocomplete="on">
+          <input type="hidden" name="access_key" value="b77ff153-998f-4550-aaff-2e1c474df49d" />
+          <input type="hidden" name="subject" value="New project inquiry — eraybalat.com" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="cf-row"><input type="text" name="name" autocomplete="name" placeholder="Your name" aria-label="Your name" required /><input type="email" name="email" autocomplete="email" placeholder="Your email" aria-label="Your email" required /></div>
+          <div class="cf-row"><select name="project_type" aria-label="Project type">
             <option value="" data-en="Project type" data-tr="Proje türü">Project type</option>
             <option value="Brand or product film" data-en="Brand or product film" data-tr="Marka ya da ürün filmi">Brand or product film</option>
             <option value="UGC / social ad" data-en="UGC / social ad" data-tr="UGC / sosyal medya reklamı">UGC / social ad</option>
             <option value="Documentary" data-en="Documentary" data-tr="Belgesel">Documentary</option>
             <option value="Music video" data-en="Music video" data-tr="Müzik videosu">Music video</option>
             <option value="Something else" data-en="Something else" data-tr="Başka bir şey">Something else</option>
-          </select>
-          <select name="budget" aria-label="Budget">
+          </select><select name="budget" aria-label="Budget">
             <option value="" data-en="Budget" data-tr="Bütçe">Budget</option>
             <option value="Under $1,500">Under $1,500</option>
             <option value="$1,500 – $3,000">$1,500 – $3,000</option>
             <option value="$3,000 – $8,000">$3,000 – $8,000</option>
             <option value="$8,000+">$8,000+</option>
             <option value="Not sure yet" data-en="Not sure yet" data-tr="Henüz bilmiyorum">Not sure yet</option>
-          </select>
+          </select></div>
+          <input type="text" name="deadline" placeholder="Deadline (e.g. October 30)" data-ph-en="Deadline (e.g. October 30)" data-ph-tr="Teslim tarihi (ör. 30 Ekim)" aria-label="Deadline" />
+          <textarea name="message" rows="4" placeholder="Tell me about your project…" aria-label="Tell me about your project" required></textarea>
+          <button type="submit" class="form-send" data-en="Get my quote →" data-tr="Teklifimi al →">Get my quote →</button>
+          <p class="ct-note" data-en="Free quote, no obligation." data-tr="Teklif ücretsiz, bağlayıcı değil.">Free quote, no obligation.</p>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+        <div class="ct-side">
+          <div class="ct-label" data-en="How it works" data-tr="Nasıl çalışıyoruz">How it works</div>
+          <ol class="ct-steps">
+          <li><b data-en="You send the brief" data-tr="Brifi gönderirsin">You send the brief</b><span data-en="A script, a product or just the idea." data-tr="Bir senaryo, bir ürün ya da sadece fikir.">A script, a product or just the idea.</span></li>
+          <li><b data-en="You get a fixed quote" data-tr="Sabit fiyat teklifi alırsın">You get a fixed quote</b><span data-en="Scope, timeline and price within 24 hours." data-tr="Kapsam, süre ve fiyat 24 saat içinde.">Scope, timeline and price within 24 hours.</span></li>
+          <li><b data-en="You approve the look first" data-tr="Önce görünümü onaylarsın">You approve the look first</b><span data-en="Characters and key frames are locked before any motion." data-tr="Karakterler ve ana kareler hareketten önce kilitlenir.">Characters and key frames are locked before any motion.</span></li>
+          <li><b data-en="You get the finished film" data-tr="Bitmiş filmi alırsın">You get the finished film</b><span data-en="Edited, graded, mixed, with full commercial rights." data-tr="Kurgulanmış, renklendirilmiş, miks edilmiş; tüm ticari haklarıyla.">Edited, graded, mixed, with full commercial rights.</span></li>
+        </ol>
+          <ul class="cv-trust">
+        <li data-en="Fixed price, agreed before production starts" data-tr="Üretim başlamadan anlaşılan sabit fiyat">Fixed price, agreed before production starts</li>
+        <li data-en="Pay through Upwork escrow if you prefer" data-tr="İstersen ödeme Upwork güvencesiyle">Pay through Upwork escrow if you prefer</li>
+        <li data-en="Replies within hours, US business hours included" data-tr="Birkaç saat içinde dönüş, ABD mesai saatleri dahil">Replies within hours, US business hours included</li>
+      </ul>
+          <div class="ct-direct">
+            <div class="ct-label" data-en="Prefer email?" data-tr="E-posta mı tercih edersin?">Prefer email?</div>
+            <a class="contact-email" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a>
+            <a class="social-cta" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener"><span class="uw-dot" aria-hidden="true"></span><span data-en="Hire me on Upwork →" data-tr="Upwork'te benimle çalış →">Hire me on Upwork →</span></a>
+          </div>
         </div>
-        <input type="text" name="deadline" placeholder="Deadline (e.g. October 30)" data-ph-en="Deadline (e.g. October 30)" data-ph-tr="Teslim tarihi (ör. 30 Ekim)" aria-label="Deadline" />
-        <textarea name="message" rows="4" placeholder="Tell me about your project…" aria-label="Tell me about your project" required></textarea>
-        <button type="submit" class="form-send" data-en="Get my quote →" data-tr="Teklifimi al →">Get my quote →</button>
-        <p class="form-status" aria-live="polite"></p>
-      </form>
-      <div class="contact-reach">
-        <a class="contact-email" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a>
-        <a class="social-cta" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener"><span class="uw-dot" aria-hidden="true"></span><span data-en="Hire me on Upwork →" data-tr="Upwork'te benimle çalış →">Hire me on Upwork →</span></a>
-      </div>
-      <div class="socials">
-        <div class="sico-row sico-row1"><a class="sico sico-lg" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener me" aria-label="Upwork" title="Upwork"><svg viewBox="0 0 24 24" width="23" height="23" fill="currentColor" aria-hidden="true"><path d="M17.1 8.2c-1.9 0-3.4 1.2-4 3.2-.9-1.4-1.6-3-2-4.3h-2.4v5.2a2 2 0 1 1-4 0V7.1H2.3v5.2a4.4 4.4 0 0 0 8.8.2c.5.9 1.1 1.9 1.9 2.7l-1.6 7.4h2.5l1.1-5.4c1 .6 2.1 1 3.3 1 2.7 0 4.9-2.2 4.9-5s-2.2-5-4.9-5m0 7.5c-1 0-2-.4-2.7-1.1l.2-.9v-.1c.2-1.1.8-2.9 2.5-2.9 1.3 0 2.4 1.1 2.4 2.5s-1.1 2.5-2.4 2.5"/></svg></a><a class="sico sico-lg" href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" stroke="none"/></svg></a><a class="sico sico-lg" href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.2" y="5.4" width="19.6" height="13.2" rx="4"/><path d="M10.3 9.4v5.2L14.9 12z" fill="currentColor" stroke="none"/></svg></a><a class="sico sico-lg" href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener me" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="3"/><path d="M7.4 10.5v6.1"/><circle cx="7.4" cy="7.6" r="1.05" fill="currentColor" stroke="none"/><path d="M11.2 16.6v-6.1M11.2 13c0-1.35 1-2.3 2.3-2.3s2.3.95 2.3 2.3v3.6"/></svg></a><a class="sico sico-lg" href="https://x.com/documenteray" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.1L4.7 21H1.5l7.5-8.6L1.2 3h6.6l4.5 5.6zM16.4 19.1h1.8L7.7 4.8H5.8z"/></svg></a></div><div class="sico-row sico-row2"><a class="sico" href="https://www.behance.net/eraybalat" target="_blank" rel="noopener me" aria-label="Behance" title="Behance"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M9 5.6c1.9 0 3.1 1 3.1 2.6 0 1.1-.6 1.9-1.5 2.3 1.3.4 2 1.3 2 2.7 0 1.9-1.4 3-3.5 3H2V5.6zm-.5 4.1c.8 0 1.3-.4 1.3-1.1 0-.7-.5-1.1-1.3-1.1H4.6v2.2zm.3 4.6c.9 0 1.5-.4 1.5-1.2s-.6-1.2-1.5-1.2H4.6v2.4zM15 5.9h5.6v1.5H15zM18 9.4c2.4 0 4 1.7 4 4.3v.6h-5.9c.2 1.1 1 1.7 2.1 1.7.8 0 1.4-.3 1.7-.9h2c-.5 1.6-1.9 2.6-3.8 2.6-2.5 0-4.2-1.7-4.2-4.2s1.7-4.1 4.1-4.1m-1.9 3.4h3.8c-.2-1-.9-1.6-1.9-1.6s-1.7.6-1.9 1.6"/></svg></a><a class="sico" href="https://medium.com/@eraybalat" target="_blank" rel="noopener me" aria-label="Medium" title="Medium"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><ellipse cx="6.3" cy="12" rx="6.3" ry="5.9"/><ellipse cx="16.5" cy="12" rx="3" ry="5.9"/><ellipse cx="21.9" cy="12" rx="1.1" ry="5.9"/></svg></a><a class="sico" href="https://filmfreeway.com/ErayBalat" target="_blank" rel="noopener me" aria-label="FilmFreeway" title="FilmFreeway"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="4.6" width="18.8" height="14.8" rx="2.4"/><path d="M7.4 4.6v14.8M16.6 4.6v14.8M2.6 9.3h4.8M2.6 14.7h4.8M16.6 9.3h4.8M16.6 14.7h4.8"/></svg></a><a class="sico" href="https://huggingface.co/ErayBalat" target="_blank" rel="noopener me" aria-label="Hugging Face" title="Hugging Face"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2.6a9 9 0 1 0 0 18 9 9 0 0 0 0-18m-3 6.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4m6 0a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4m-6.6 4.6h7.2c.4 0 .7.4.6.8-.5 1.7-2 2.8-4.2 2.8s-3.7-1.1-4.2-2.8c-.1-.4.2-.8.6-.8"/></svg></a><a class="sico" href="https://github.com/eraybalatt" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 0 0-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0 0 12 1.8"/></svg></a><a class="sico" href="https://letterboxd.com/eraybalat/" target="_blank" rel="noopener me" aria-label="Letterboxd" title="Letterboxd"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><circle cx="5.9" cy="12" r="4.6"/><circle cx="12" cy="12" r="4.6"/><circle cx="18.1" cy="12" r="4.6"/></svg></a><a class="sico" href="https://www.freelancer.com/u/eraybalat" target="_blank" rel="noopener me" aria-label="Freelancer" title="Freelancer"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M14.6 3.2 12 9.7h6.6zM11.2 3.2H4.6l2 3.5zM3.4 5.6l-1.6 3.9 3.6-1.4zM10 11.3H2.2l9.5 9.5zM20.6 11.3h-9l-1.9 7.6z"/></svg></a></div>
-      </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="foot-row">
-    <div class="foot-left">© <span id="year"></span> <span class="brand-sm">Eray Balat</span> · Citrine Studio · <a class="foot-link" href="https://www.instagram.com/documenteray" target="_blank" rel="noopener">documenteray</a><br><span data-en="Directed with AI · eraybalat.com" data-tr="AI ile yönetildi · eraybalat.com">Directed with AI · eraybalat.com</span></div>
-    <a class="foot-mark" href="#home" aria-label="Eray Balat"><span class="foot-star" aria-hidden="true"></span><span class="foot-wordmark">ÆRAY</span></a>
-    <div class="foot-right"><span><span class="dot"></span><span data-en="Available for work" data-tr="Yeni işlere açık">Available for work</span></span><a class="foot-link" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a></div>
+<footer class="ft2">
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <a class="ft-logo" href="#home" aria-label="Eray Balat, back to top"><svg viewBox="0 0 120 120" width="34" height="34" fill="none" stroke="currentColor" stroke-width="9" aria-hidden="true"><path d="M51.971 18.029L60 10L88.749 38.749"/><path d="M101.971 51.971L110 60L81.251 88.749"/><path d="M68.029 101.971L60 110L31.251 81.251"/><path d="M18.029 68.029L10 60L38.749 31.251"/><path d="M24.64 36.01L24.64 24.64L65.29 24.64"/><path d="M83.99 24.64L95.36 24.64L95.36 65.29"/><path d="M95.36 83.99L95.36 95.36L54.71 95.36"/><path d="M36.01 95.36L24.64 95.36L24.64 54.71"/></svg><span>Eray Balat</span></a>
+      <p data-en="Director and Creative AI Producer in Kayseri, Türkiye. Brand films, ads, documentaries and music videos for clients in Türkiye and the US." data-tr="Kayseri'de yönetmen ve Creative AI Producer. Türkiye ve ABD'deki müşteriler için marka filmleri, reklamlar, belgeseller ve müzik videoları.">Director and Creative AI Producer in Kayseri, Türkiye. Brand films, ads, documentaries and music videos for clients in Türkiye and the US.</p>
+      <a class="ft-cta" href="#contact" data-en="Get a quote →" data-tr="Teklif al →">Get a quote →</a>
+    </div>
+    <nav class="ft-col" aria-label="Work">
+      <p class="ft-h" data-en="Work" data-tr="İşler">Work</p>
+      <a href="#ugc" data-en="Ads" data-tr="Reklamlar">Ads</a>
+      <a href="#films" data-en="Films" data-tr="Filmler">Films</a>
+      <a href="/flawless/" data-en="Documentary" data-tr="Belgesel">Documentary</a>
+      <a href="#music" data-en="Music videos" data-tr="Müzik videoları">Music videos</a>
+      <a href="/files/" data-en="Detective mode" data-tr="Dedektif modu">Detective mode</a>
+    </nav>
+    <nav class="ft-col" aria-label="Info">
+      <p class="ft-h" data-en="Info" data-tr="Bilgi">Info</p>
+      <a href="/hire/" data-hire data-en="Rates" data-tr="Fiyatlar">Rates</a>
+      <a href="/faq/" data-faq data-en="FAQ" data-tr="SSS">FAQ</a>
+      <a href="/blog/" data-blog data-en="Writing" data-tr="Yazılar">Writing</a>
+      <a href="/leather/" data-en="Leather atelier" data-tr="Deri atölyesi">Leather atelier</a>
+    </nav>
+    <div class="ft-col ft-contact">
+      <p class="ft-h" data-en="Contact" data-tr="İletişim">Contact</p>
+      <a href="mailto:eray@eraybalat.com">eray@eraybalat.com</a>
+      <a href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener">Upwork ↗</a>
+      <div class="ft-icons"><a href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener me" aria-label="Upwork" title="Upwork"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 8.2c-1.9 0-3.4 1.2-4 3.2-.9-1.4-1.6-3-2-4.3h-2.4v5.2a2 2 0 1 1-4 0V7.1H2.3v5.2a4.4 4.4 0 0 0 8.8.2c.5.9 1.1 1.9 1.9 2.7l-1.6 7.4h2.5l1.1-5.4c1 .6 2.1 1 3.3 1 2.7 0 4.9-2.2 4.9-5s-2.2-5-4.9-5m0 7.5c-1 0-2-.4-2.7-1.1l.2-.9v-.1c.2-1.1.8-2.9 2.5-2.9 1.3 0 2.4 1.1 2.4 2.5s-1.1 2.5-2.4 2.5"/></svg></a><a href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" stroke="none"/></svg></a><a href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener me" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.2" y="5.4" width="19.6" height="13.2" rx="4"/><path d="M10.3 9.4v5.2L14.9 12z" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener me" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="3"/><path d="M7.4 10.5v6.1"/><circle cx="7.4" cy="7.6" r="1.05" fill="currentColor" stroke="none"/><path d="M11.2 16.6v-6.1M11.2 13c0-1.35 1-2.3 2.3-2.3s2.3.95 2.3 2.3v3.6"/></svg></a><a href="https://x.com/documenteray" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.1L4.7 21H1.5l7.5-8.6L1.2 3h6.6l4.5 5.6zM16.4 19.1h1.8L7.7 4.8H5.8z"/></svg></a><a href="https://www.behance.net/eraybalat" target="_blank" rel="noopener me" aria-label="Behance" title="Behance"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 5.6c1.9 0 3.1 1 3.1 2.6 0 1.1-.6 1.9-1.5 2.3 1.3.4 2 1.3 2 2.7 0 1.9-1.4 3-3.5 3H2V5.6zm-.5 4.1c.8 0 1.3-.4 1.3-1.1 0-.7-.5-1.1-1.3-1.1H4.6v2.2zm.3 4.6c.9 0 1.5-.4 1.5-1.2s-.6-1.2-1.5-1.2H4.6v2.4zM15 5.9h5.6v1.5H15zM18 9.4c2.4 0 4 1.7 4 4.3v.6h-5.9c.2 1.1 1 1.7 2.1 1.7.8 0 1.4-.3 1.7-.9h2c-.5 1.6-1.9 2.6-3.8 2.6-2.5 0-4.2-1.7-4.2-4.2s1.7-4.1 4.1-4.1m-1.9 3.4h3.8c-.2-1-.9-1.6-1.9-1.6s-1.7.6-1.9 1.6"/></svg></a><a href="https://medium.com/@eraybalat" target="_blank" rel="noopener me" aria-label="Medium" title="Medium"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="6.3" cy="12" rx="6.3" ry="5.9"/><ellipse cx="16.5" cy="12" rx="3" ry="5.9"/><ellipse cx="21.9" cy="12" rx="1.1" ry="5.9"/></svg></a><a href="https://filmfreeway.com/ErayBalat" target="_blank" rel="noopener me" aria-label="FilmFreeway" title="FilmFreeway"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.6" y="4.6" width="18.8" height="14.8" rx="2.4"/><path d="M7.4 4.6v14.8M16.6 4.6v14.8M2.6 9.3h4.8M2.6 14.7h4.8M16.6 9.3h4.8M16.6 14.7h4.8"/></svg></a><a href="https://huggingface.co/ErayBalat" target="_blank" rel="noopener me" aria-label="Hugging Face" title="Hugging Face"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.6a9 9 0 1 0 0 18 9 9 0 0 0 0-18m-3 6.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4m6 0a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4m-6.6 4.6h7.2c.4 0 .7.4.6.8-.5 1.7-2 2.8-4.2 2.8s-3.7-1.1-4.2-2.8c-.1-.4.2-.8.6-.8"/></svg></a><a href="https://github.com/eraybalatt" target="_blank" rel="noopener me" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 0 0-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0 0 12 1.8"/></svg></a><a href="https://letterboxd.com/eraybalat/" target="_blank" rel="noopener me" aria-label="Letterboxd" title="Letterboxd"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5.9" cy="12" r="4.6"/><circle cx="12" cy="12" r="4.6"/><circle cx="18.1" cy="12" r="4.6"/></svg></a><a href="https://www.freelancer.com/u/eraybalat" target="_blank" rel="noopener me" aria-label="Freelancer" title="Freelancer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.6 3.2 12 9.7h6.6zM11.2 3.2H4.6l2 3.5zM3.4 5.6l-1.6 3.9 3.6-1.4zM10 11.3H2.2l9.5 9.5zM20.6 11.3h-9l-1.9 7.6z"/></svg></a></div>
+    </div>
   </div>
-  <div class="foot-bottom">
-    <a class="foot-link" data-faq href="/faq/" data-en="AI film FAQ — how it works, timelines, pricing →" data-tr="SSS — yapay zekâ ile film: süreç, süre, bütçe →">AI film FAQ — how it works, timelines, pricing →</a>
-    <span class="foot-rights" data-en="All rights reserved." data-tr="Tüm hakları saklıdır.">All rights reserved.</span>
+  <div class="ft-bottom">
+    <span>© <span id="year"></span> Eray Balat · Citrine Studio · <span data-en="All rights reserved." data-tr="Tüm hakları saklıdır.">All rights reserved.</span></span>
+    <a href="#home" data-en="Back to top ↑" data-tr="Başa dön ↑">Back to top ↑</a>
   </div>
 </footer>
 
@@ -2593,24 +2741,76 @@ navTargets.forEach(function(t){
   });
 
 
-  // inline local video — click a [data-vid] card to play the full film in place
-  document.querySelectorAll('a[data-vid]').forEach(el=>{
-    el.addEventListener('click',e=>{
-      e.preventDefault();
-      const thumb=el.querySelector('.thumb')||el;
-      if(thumb.querySelector('video[controls]'))return;
-      const loop=thumb.querySelector('video'); if(loop){try{loop.pause()}catch(_){ } loop.style.visibility='hidden';}
-      const btn=thumb.querySelector('.sndbtn'); if(btn)btn.style.display='none';
-      const v=document.createElement('video');
-      v.src=el.getAttribute('data-vid');
-      const ps=el.getAttribute('data-vid-poster'); if(ps)v.poster=ps;
-      v.controls=true; v.autoplay=true; v.playsInline=true; v.setAttribute('playsinline','');
-      v.preload='metadata';
-      v.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:6;border-radius:inherit';
-      thumb.appendChild(v);
-      v.play().catch(()=>{});
+  // EB player: our own controls, with the frame under the cursor shown above the timeline
+  (function(){
+    const fmt=t=>{t=Math.max(0,Math.floor(t||0));return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')};
+    const I={play:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>',
+      pause:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.6v14H7zM13.4 5H17v14h-3.6z" fill="currentColor"/></svg>',
+      vol:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z" fill="currentColor" stroke="none"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg>',
+      mute:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4z" fill="currentColor" stroke="none"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>',
+      fs:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>'};
+    const TW=160,TH=90;
+    function build(el){
+      const box=el.querySelector('.thumb')||el;
+      let w=box.querySelector('.ebp'); if(w)return w;
+      const loop=box.querySelector('video'); if(loop){try{loop.pause()}catch(_){ } loop.style.visibility='hidden';}
+      const sb=box.querySelector('.sndbtn'); if(sb)sb.style.display='none';
+      w=document.createElement('div'); w.className='ebp'; w.tabIndex=-1;
+      w.innerHTML='<video class="ebp-v" playsinline preload="metadata"></video>'+
+        '<button type="button" class="ebp-big" aria-label="Play">'+I.play+'</button>'+
+        '<div class="ebp-bar"><button type="button" class="ebp-b ebp-pp" aria-label="Play">'+I.play+'</button>'+
+        '<span class="ebp-t">0:00 / 0:00</span>'+
+        '<div class="ebp-track" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ebp-buf"></div><div class="ebp-prog"></div><div class="ebp-knob"></div><div class="ebp-tip"><div class="ebp-img"></div><span>0:00</span></div></div>'+
+        '<button type="button" class="ebp-b ebp-mu" aria-label="Mute">'+I.vol+'</button><button type="button" class="ebp-b ebp-fs" aria-label="Full screen">'+I.fs+'</button></div>';
+      box.appendChild(w);
+      const q=c=>w.querySelector(c), v=q('video'),big=q('.ebp-big'),pp=q('.ebp-pp'),tt=q('.ebp-t'),tr=q('.ebp-track'),prog=q('.ebp-prog'),buf=q('.ebp-buf'),knob=q('.ebp-knob'),tip=q('.ebp-tip'),img=q('.ebp-img'),tipt=tip.querySelector('span'),mu=q('.ebp-mu'),fsb=q('.ebp-fs');
+      let meta=null,drag=false,hideT=0;
+      w.load=function(src,thumbs,poster){
+        meta=null; img.hidden=true; if(poster)v.poster=poster; v.src=src;
+        if(thumbs)fetch(thumbs+'.json').then(r=>r.ok?r.json():null).then(m=>{if(!m)return;meta=m;img.style.backgroundImage='url('+thumbs+'.webp)';img.style.backgroundSize=(m.cols*TW)+'px auto';}).catch(()=>{});
+      };
+      const upd=()=>{const d=v.duration||0,p=d?v.currentTime/d:0;prog.style.width=(p*100)+'%';knob.style.left=(p*100)+'%';tt.textContent=fmt(v.currentTime)+' / '+fmt(d);tr.setAttribute('aria-valuenow',Math.round(p*100));tr.setAttribute('aria-valuetext',fmt(v.currentTime));};
+      const poke=()=>{w.classList.remove('idle');clearTimeout(hideT);if(!v.paused)hideT=setTimeout(()=>{if(!drag)w.classList.add('idle')},2400);};
+      const state=()=>{const on=!v.paused&&!v.ended;w.classList.toggle('on',on);pp.innerHTML=on?I.pause:I.play;pp.setAttribute('aria-label',on?'Pause':'Play');poke();};
+      const toggle=()=>{(v.paused||v.ended)?v.play().catch(()=>{}):v.pause()};
+      const frac=e=>{const r=tr.getBoundingClientRect();return Math.min(1,Math.max(0,(e.clientX-r.left)/r.width))};
+      const show=f=>{const d=v.duration||0,t=f*d,r=tr.getBoundingClientRect();tipt.textContent=fmt(t);
+        tip.style.left=Math.max(TW/2,Math.min(r.width-TW/2,f*r.width))+'px';
+        if(meta){const i=Math.max(0,Math.min(meta.count-1,Math.floor(t/meta.interval)));img.style.backgroundPosition=(-(i%meta.cols)*TW)+'px '+(-Math.floor(i/meta.cols)*TH)+'px';img.hidden=false;}
+        w.classList.add('scrub');};
+      const seek=f=>{if(v.duration){v.currentTime=f*v.duration;upd();}};
+      ['timeupdate','loadedmetadata','durationchange'].forEach(n=>v.addEventListener(n,upd));
+      v.addEventListener('progress',()=>{try{if(v.duration&&v.buffered.length)buf.style.width=(v.buffered.end(v.buffered.length-1)/v.duration*100)+'%'}catch(_){}});
+      ['play','pause','ended'].forEach(n=>v.addEventListener(n,state));
+      v.addEventListener('volumechange',()=>{mu.innerHTML=v.muted?I.mute:I.vol;mu.setAttribute('aria-label',v.muted?'Unmute':'Mute')});
+      v.addEventListener('click',toggle); big.addEventListener('click',toggle); pp.addEventListener('click',toggle);
+      mu.addEventListener('click',()=>{v.muted=!v.muted});
+      fsb.addEventListener('click',()=>{const d=document;if(d.fullscreenElement||d.webkitFullscreenElement){(d.exitFullscreen||d.webkitExitFullscreen).call(d)}else if(w.requestFullscreen){w.requestFullscreen().catch(()=>{})}else if(v.webkitEnterFullscreen){v.webkitEnterFullscreen()}});
+      tr.addEventListener('pointermove',e=>{show(frac(e));if(drag)seek(frac(e));});
+      tr.addEventListener('pointerleave',()=>{if(!drag)w.classList.remove('scrub')});
+      tr.addEventListener('pointerdown',e=>{drag=true;try{tr.setPointerCapture(e.pointerId)}catch(_){ }show(frac(e));seek(frac(e));});
+      const end=()=>{if(!drag)return;drag=false;w.classList.remove('scrub');poke();};
+      tr.addEventListener('pointerup',end); tr.addEventListener('pointercancel',end);
+      w.addEventListener('keydown',e=>{const k=e.key;
+        if(k===' '||k==='k'){e.preventDefault();toggle();}
+        else if(k==='ArrowRight'||k==='ArrowLeft'){e.preventDefault();v.currentTime=Math.max(0,Math.min(v.duration||0,v.currentTime+(k==='ArrowRight'?5:-5)));}
+        else if(k==='m'){v.muted=!v.muted}else if(k==='f'){fsb.click()}});
+      w.addEventListener('pointermove',poke);
+      w.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();});
+      return w;
+    }
+    document.querySelectorAll('a[data-vid]').forEach(el=>{
+      el.addEventListener('click',e=>{e.preventDefault();const w=build(el),v=w.querySelector('video');
+        if(!v.getAttribute('src'))w.load(el.getAttribute('data-vid'),el.getAttribute('data-thumbs'),el.getAttribute('data-vid-poster'));
+        v.play().catch(()=>{}); w.focus({preventScroll:true});});
     });
-  });
+    // another cut of the same film (e.g. the Turkish version) plays in the same player
+    document.querySelectorAll('a[data-vid-into]').forEach(b=>{
+      b.addEventListener('click',e=>{const el=document.getElementById(b.getAttribute('data-vid-into'));if(!el)return;e.preventDefault();
+        const w=build(el);w.load(b.getAttribute('href'),b.getAttribute('data-thumbs'),el.getAttribute('data-vid-poster'));
+        w.querySelector('video').play().catch(()=>{});el.scrollIntoView({behavior:'smooth',block:'center'});w.focus({preventScroll:true});});
+    });
+  })();
 
   // logo → smooth scroll to top
   const brandTop=document.getElementById('brandTop');
@@ -2657,5 +2857,11 @@ navTargets.forEach(function(t){
 var q=b.parentElement.querySelector('.rev-quote');var open=!q.classList.toggle('rev-clamp');
 var L=document.documentElement.lang||'en';
 b.textContent=open?(L==='tr'?'Kısalt':L==='de'?'Weniger anzeigen':'Show less')
-:(L==='tr'?'Yorumun tamamını oku':L==='de'?'Ganze Bewertung lesen':'Read the full review');});});</script></body>
+:(L==='tr'?'Yorumun tamamını oku':L==='de'?'Ganze Bewertung lesen':'Read the full review');});});</script><script>
+(function(){var bar=document.querySelector('.ugc-filter'),g=document.querySelector('#ugc .g-ugc');if(!bar||!g)return;bar.hidden=false;
+bar.addEventListener('click',function(e){var b=e.target.closest('.uf');if(!b)return;var c=b.getAttribute('data-cat');
+bar.querySelectorAll('.uf').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false');});
+g.querySelectorAll('.card[data-cat]').forEach(function(card){var show=c==='all'||card.getAttribute('data-cat')===c;card.hidden=!show;if(!show){var v=card.querySelector('video');if(v&&!v.paused)v.pause();}else card.classList.add('show');});});})();
+</script>
+</body>
 </html>
