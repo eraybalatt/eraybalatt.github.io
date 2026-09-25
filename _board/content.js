@@ -4,7 +4,6 @@ window.EB = {
   P: { // projects: cover lines
     flawless:  { t: "FLAWLESS", k: "Documentary · 16:56 · 4K", role: "Writer, director, editor, narrator", href: "/flawless/", hrefLabel: "Read the case study" },
     coldstart: { t: "COLD START", k: "Sci-fi trailer · 2:04", role: "Editor · sound · colour", sub: "XPRIZE submission", href: "coldstart-film.mp4", hrefLabel: "Watch the trailer" },
-    commission:{ t: "A 10-minute short", k: "Narrative short · private commission", role: "Production · edit · sound · score" },
     tenniscut: { t: "TennisCut", k: "Three brand films · 9:16", role: "Director" },
     bushido:   { t: "Bushido", k: "Campaign concept · synthetic cast", role: "Director", href: "/bushido/", hrefLabel: "See the campaign" },
     novora:    { t: "Novora", k: "Animated brand film · 0:28 · TR / EN", role: "Director", href: "https://youtu.be/GAGlpIw3Q2Y", hrefLabel: "Watch (EN)" },
@@ -38,8 +37,6 @@ window.EB = {
     "cs.licence": "<b>Before sign-off:</b> 28 stock licences audited, 7 found under other project names and re-registered. The client was told before they asked.",
     "cs.review": "“He caught continuity and pacing problems I’d missed. I’d hire him again without hesitation.”",
 
-    "cm.what": "A private commission: <b>106 approved stills</b> turned into <b>110 clips</b> and cut to an existing voice-over. Seven chapters, one film.",
-    "cm.models": "<b>Five models, routed per shot</b>, not one tool for everything.",
 
     "tc.films": "Three vertical films for a tennis app: <b>The Moment, Dead Time Remover, Best of Us.</b>",
     "tc.stills": "Best of Us was built still-first: the couple was locked in approved stills, then animated shot by shot in <b>Kling</b>.",
