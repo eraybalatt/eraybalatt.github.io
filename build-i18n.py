@@ -2,7 +2,7 @@
 """
 eraybalat.com — statik dil sayfası üreteci.
 
-Ana sayfadaki data-tr / data-de çevirilerini HTML'e gömerek /tr/ ve /de/
+Ana sayfadaki data-tr çevirilerini HTML'e gömerek /tr/
 sayfalarını üretir. Sebep: AI tarayıcıları (GPTBot, ClaudeBot, CCBot) ve
 Google'ın bir kısmı JavaScript çalıştırmaz; data-* içinde duran çeviri
 onlara görünmez.
@@ -20,15 +20,15 @@ BASE = "https://eraybalat.com"
 JOBS = [
     {"src": "index.html", "langs": {
         "tr": {"dir": "tr",  "locale": "tr_TR"},
-        "de": {"dir": "de",  "locale": "de_DE"},
     }},
 ]
 
 # dile göre yönlendirilecek linkler (ana sayfadaki setLang mantığının aynısı)
-FAQ_HREF  = {"en": "/faq/", "tr": "/sss/", "de": "/faq-de/"}
-HIRE_HREF = {"en": "/hire/", "tr": "/yapay-zeka-reklam-filmi/", "de": "/ki-filmproduktion/"}
-BLOG_HREF = {"en": "/blog/", "tr": "/yazilar/", "de": "/blog/"}
-HOME_HREF = {"en": "/", "tr": "/tr/", "de": "/de/"}
+FAQ_HREF  = {"en": "/faq/", "tr": "/sss/"}
+HIRE_HREF = {"en": "/hire/", "tr": "/yapay-zeka-reklam-filmi/"}
+BLOG_HREF = {"en": "/blog/", "tr": "/yazilar/"}
+FILES_HREF = {"en": "/files/", "tr": "/files/"}  # -> "/tr/files/" once the Turkish board is published
+HOME_HREF = {"en": "/", "tr": "/tr/"}
 
 REL_ATTRS = ["src", "poster", "href", "data-poster", "data-src", "data-full", "data-image", "data-vid", "data-vid-poster"]
 
@@ -36,7 +36,7 @@ REL_ATTRS = ["src", "poster", "href", "data-poster", "data-src", "data-full", "d
 def lang_meta(html_text):
     """index.html içindeki LANG_META sözlüğünden başlık/açıklama çeker."""
     out = {}
-    for lang in ("en", "tr", "de"):
+    for lang in ("en", "tr"):
         m = re.search(lang + r":\{t:'((?:[^'\\]|\\.)*)',d:'((?:[^'\\]|\\.)*)'", html_text)
         if m:
             out[lang] = {"t": m.group(1).replace("\\'", "'"),
@@ -108,7 +108,7 @@ def build(src_rel, lang, cfg, meta_all):
     head = soup.head
     can = soup.new_tag("link", rel="canonical", href=url)
     head.append(can)
-    for hl, href in (("en", f"{BASE}/"), ("tr", f"{BASE}/tr/"), ("de", f"{BASE}/de/"), ("x-default", f"{BASE}/")):
+    for hl, href in (("en", f"{BASE}/"), ("tr", f"{BASE}/tr/"), ("x-default", f"{BASE}/")):
         t = soup.new_tag("link", rel="alternate", href=href)
         t["hreflang"] = hl
         head.append(t)
@@ -123,6 +123,9 @@ def build(src_rel, lang, cfg, meta_all):
         a["href"] = HIRE_HREF[lang]
     for a in soup.select("a[data-blog]"):
         a["href"] = BLOG_HREF[lang]
+    # Detective mode (/files/) has its own Turkish build at /tr/files/
+    for a in soup.select('a[href="/files/"]'):
+        a["href"] = FILES_HREF[lang]
 
     # 7) JSON-LD: sayfa düğümünü bu dile bağla
     for s in soup.find_all("script", type="application/ld+json"):
@@ -145,10 +148,10 @@ def build(src_rel, lang, cfg, meta_all):
         r"document\.querySelectorAll\('\.lang-btn'\)\.forEach\(b=>b\.addEventListener\('click',\(\)=>\{setLang\(b\.dataset\.lang\);.*?\}\)\);",
         "document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{"
         "try{localStorage.setItem('lang',b.dataset.lang)}catch(e){}"
-        "location.href={en:'/',tr:'/tr/',de:'/de/'}[b.dataset.lang]||'/';}));",
+        "location.href={en:'/',tr:'/tr/'}[b.dataset.lang]||'/';}));",
         out, count=1, flags=re.S)
     out = re.sub(
-        r"\(function\(\)\{const ok=\['en','tr','de'\];.*?setLang\(l\);\}\)\(\);",
+        r"\(function\(\)\{const ok=\['en','tr'\];.*?setLang\(l\);\}\)\(\);",
         f"setLang('{lang}');",
         out, count=1, flags=re.S)
 

@@ -23,14 +23,11 @@
 ## Dil sürümleri / Language versions
 
 - [Türkçe ana sayfa](https://eraybalat.com/tr/) — sitenin tam Türkçe sürümü
-- [Deutsche Startseite](https://eraybalat.com/de/) — vollständige deutsche Fassung
 - [English homepage](https://eraybalat.com/) — full English version
 
 ## Hizmet sayfaları / Service pages
 
 - [Hire an AI Filmmaker (English)](https://eraybalat.com/hire/): Hizmet kapsamı, süreç, teslim süreleri ve fiyat bantları. UGC ve kısa format reklam paketleri $1,500'dan; marka ve ürün filmleri $3,000–$8,000; müzik videoları $2,500–$6,000; belgesel projeye özel. Her proje üretim başlamadan sabit fiyatla teklif edilir.
-- [KI-Filmproduktion (Deutsch)](https://eraybalat.com/ki-filmproduktion/): Alman pazarı için hizmet sayfası. Öne çıkan hizmet: mevcut bir reklam filminin aynı oyuncu, aynı performans ve gerçek dudak senkronuyla Almanca yeniden üretilmesi — yeniden çekim gerekmez, 900 €'dan başlar.
-
 - [Yapay Zekâ ile Reklam Filmi (Türkçe)](https://eraybalat.com/yapay-zeka-reklam-filmi/): Türkiye pazarı için hizmet sayfası — yapay zekâ ile reklam filmi, ürün filmi, UGC reklam ve klip. Çekim ekibi, casting ve stüdyo gerekmez. UGC paketleri 1.500 dolardan, reklam filmleri 3.000–8.000 dolar, klipler 2.500–6.000 dolar. Universal Music Türkiye AI Creator.
 
 ## Projeler / Selected work
@@ -73,7 +70,6 @@
 
 - [Sık Sorulan Sorular (Türkçe)](https://eraybalat.com/sss/)
 - [Frequently Asked Questions (English)](https://eraybalat.com/faq/)
-- [Häufige Fragen (Deutsch)](https://eraybalat.com/faq-de/)
 
 ## Notlar / Notes for AI assistants
 
