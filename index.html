@@ -2043,6 +2043,49 @@ footer.ft2::before{display:none}
 @media(hover:hover){.card:hover,.fcard:hover,.tf-step:hover,.cap:hover{transform:translateY(-3px);border-color:rgba(154,209,255,.38);box-shadow:0 18px 34px -22px rgba(6,12,20,.7)}}
 .btn,.nav-cta,.uf,.ft-cta,.res-row a{transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease}
 .eyebrow::before{background:#9ad1ff!important}
+
+/* 26 Eyl (b): quieter hero, About carries the role + clients, music as a cinema card, darker sidebar with a studio card */
+@media(min-width:880px){header.nav{background:#1e3450!important;border-right:1px solid rgba(154,209,255,.12)!important}
+ .nav-links>a{background:rgba(255,255,255,.04)!important}
+ .nav-studio{display:flex;flex-direction:column;gap:8px;margin:0 0 14px;padding:14px 14px 12px;border-radius:14px;background:rgba(154,209,255,.07);border:1px solid rgba(154,209,255,.18)}}
+@media(max-width:879.98px){.nav-studio{display:none}}
+.ns-row{display:flex;align-items:center;gap:8px;color:#e3eaf1;font-size:.86rem;line-height:1.35}
+.ns-row b{font-weight:600;color:#fff}
+.ns-small{font-size:.76rem;color:#d3dde7;gap:5px;flex-wrap:wrap}
+.ns-dot{width:8px;height:8px;border-radius:50%;background:#5fe0a0;box-shadow:0 0 0 3px rgba(95,224,160,.18);flex:none}
+.ns-star{color:#ffd66b}
+.ns-clock{font:500 .74rem var(--mono);color:#b4dbff}
+.ns-social{display:flex;gap:6px;margin-top:4px}
+.ns-social a{flex:1;text-align:center;padding:6px 0;border-radius:8px;border:1px solid rgba(236,242,248,.18);color:#e3eaf1;font:600 .72rem var(--mono);text-decoration:none}
+.ns-social a:hover{border-color:#9ad1ff;color:#9ad1ff}
+/* hero: headline and two buttons, nothing else */
+.hero h1{margin-bottom:0!important}
+.hero .cta-row{display:flex!important;justify-content:center;gap:12px;margin-top:22px!important}
+@media(max-width:879.98px){.hero{min-height:calc(100svh - 190px)!important;padding-bottom:22px!important}.hero .cta-row{margin-top:18px!important;flex-wrap:wrap}.hero .btn{flex:1 1 0;min-width:0;justify-content:center;padding:0 14px}}
+/* About: role line + clients */
+.about-role{margin:6px 0 0;font:500 .74rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#b4dbff}
+.about-clients{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;margin-top:26px;padding-top:20px;border-top:1px solid rgba(236,242,248,.14)}
+.about-clients .ac-label{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#b4dbff;width:100%}
+.about-clients .tlogo{font-family:var(--display);font-size:1.45rem;color:#fff;letter-spacing:0;opacity:.92}
+/* music: cinema card */
+.mvx{margin-top:10px;border-radius:18px;overflow:hidden;background:#3d5e80;border:1px solid rgba(236,242,248,.12)}
+.mvx-media{position:relative;display:block;aspect-ratio:1280/540;background:#0b0f16;overflow:hidden}
+.mvx-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.mvx-media:hover img{transform:scale(1.02)}
+.mvx-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2}
+.mvx-body{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px 40px;align-items:end;padding:24px 28px 28px}
+.mvx-body .role{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#b4dbff;margin:0 0 8px}
+.mvx-body h3{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3.2vw,2.8rem);line-height:1.04;letter-spacing:-.01em;color:#fff;margin:0 0 10px}
+.mvx-body h3 em{font-style:italic;color:#cfe8ff}
+.mvx-body p{margin:0;color:#e3eaf1;font-size:.98rem;line-height:1.6;max-width:52ch}
+.mvx-side .spots{margin:0 0 14px}
+.mvx-btns{display:flex;flex-wrap:wrap;gap:10px}
+@media(max-width:820px){.mvx-body{grid-template-columns:1fr;padding:20px 18px 22px}}
+
+.ns-small{display:block!important}
+.ns-small .ns-clock{margin-left:2px}
+@media(max-width:879.98px){.hero .btn{white-space:nowrap;font-size:.9rem!important;padding:0 12px!important;min-height:46px}}
+@media(max-width:380px){.hero .cta-row .btn{flex:1 1 100%}}
 </style>
 </head>
 <body>
@@ -2089,6 +2132,12 @@ footer.ft2::before{display:none}
       </span>
     </nav>
     <div class="nav-right">
+      <div class="nav-studio" aria-label="Studio status">
+        <div class="ns-row"><span class="ns-dot" aria-hidden="true"></span><b data-en="Taking projects" data-tr="Proje alıyorum">Taking projects</b></div>
+        <div class="ns-row ns-small"><span data-en="Kayseri, Türkiye" data-tr="Kayseri, Türkiye">Kayseri, Türkiye</span> · <time class="ns-clock" aria-live="off">--:--</time></div>
+        <div class="ns-row ns-small"><span class="ns-star" aria-hidden="true">★</span> <span data-en="5.0 on Upwork · replies in hours" data-tr="Upwork'te 5.0 · birkaç saatte dönüş">5.0 on Upwork · replies in hours</span></div>
+        <div class="ns-social"><a href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener me" aria-label="Instagram">IG</a><a href="https://www.youtube.com/@eraybalat" target="_blank" rel="noopener me" aria-label="YouTube">YT</a><a href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener me" aria-label="LinkedIn">in</a><a href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener me" aria-label="Upwork">Up</a></div>
+      </div>
       <div class="lang" role="group" aria-label="Language">
         <button class="lang-btn active" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
         <button class="lang-btn" data-lang="tr" aria-pressed="false" aria-label="Türkçe">TR</button>
@@ -2109,11 +2158,8 @@ footer.ft2::before{display:none}
     <picture class="hero-poster"><source media="(max-width:760px)" srcset="/hero-trailer-m-poster.webp" width="636" height="1280" /><img src="/hero-trailer-poster.webp" width="1920" height="1280" alt="" fetchpriority="high" decoding="async" /></picture>
     <video class="hero-bg" id="heroVid" autoplay muted loop playsinline preload="none" data-src="/hero-trailer-a.mp4" data-src-full="/hero-trailer.mp4"></video>
     <div class="hero-ov"></div>
-    <a class="mode-chip case-chip rin" href="/files/"><svg class="cc-mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/><path d="M8 8.4a3 3 0 0 1 2.4-1.2" stroke-width="1.4"/></svg><span class="cc-txt"><small data-en="Case files · 10 cases" data-tr="Dosyalar · 10 vaka">Case files · 10 cases</small><span data-en="Detective mode" data-tr="Dedektif modu">Detective mode</span></span><b class="mode-n" hidden></b><i aria-hidden="true">&rarr;</i></a>
-    <div class="eyebrow rin" data-en="Creative AI Producer · Filmmaker · Citrine Studio" data-tr="<span lang=&quot;en&quot;>Creative AI Producer</span> · Yönetmen · <span lang=&quot;en&quot;>Citrine Studio</span>">Creative AI Producer · Filmmaker · Citrine Studio</div>
    
     <h1 class="rin" data-en="Cinematic stories, rebuilt &lt;em&gt;frame by frame&lt;/em&gt; with AI." data-tr="Sinematik hikâyeler, &lt;em&gt;kare kare&lt;/em&gt; yapay zekâ ile yeniden kurgulandı.">Cinematic stories, rebuilt <em>frame by frame</em> with AI.</h1>
-    <p class="lead rin" data-en="I direct music videos, documentaries, short films and product films for brands and artists worldwide." data-tr="Markalar ve sanatçılar için müzik videoları, belgeseller, kısa filmler ve ürün filmleri yönetiyorum.">I direct music videos, documentaries, short films and product films for brands and artists worldwide.</p>
     <div class="cta-row rin">
       <a href="#featured" class="btn btn-grad" data-en="See the work ↓" data-tr="İşleri gör ↓">See the work ↓</a>
       <a href="#contact" class="btn btn-ghost" data-en="Get a quote in 24h →" data-tr="24 saatte teklif al →">Get a quote in 24h →</a>
@@ -2121,16 +2167,6 @@ footer.ft2::before{display:none}
   </section>
 </div>
 
-<div class="trust" aria-label="Selected clients and availability">
-  <div class="trust-inner">
-    <div class="trust-clients">
-      <span class="trust-label" data-en="Worked with" data-tr="Birlikte çalıştıklarım">Worked with</span>
-      <span class="tlogo">Universal Music</span>
-      <span class="tlogo">CITRINE</span>
-      <span class="tlogo">Suno</span>
-    </div>
-  </div>
-</div>
 
 <div class="slj-divider" aria-hidden="true" style="margin:22px auto 26px"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 
@@ -2147,6 +2183,7 @@ footer.ft2::before{display:none}
   <section id="about">
     <div class="eyebrow reveal" data-en="About" data-tr="Hakkımda">About</div>
     <h2 class="sec-title reveal">Eray Balat</h2>
+    <p class="about-role reveal" data-en="Creative AI Producer · Filmmaker · Citrine Studio" data-tr="&lt;span lang=&quot;en&quot;&gt;Creative AI Producer&lt;/span&gt; · Yönetmen · &lt;span lang=&quot;en&quot;&gt;Citrine Studio&lt;/span&gt;">Creative AI Producer · Filmmaker · Citrine Studio</p>
     <div class="about-wrap" style="margin-top:26px">
       <div class="about-stack reveal">
         <img decoding="async" class="as-1" src="profile.webp?v=7" alt="Eray Balat" loading="lazy" />
@@ -2160,6 +2197,7 @@ footer.ft2::before{display:none}
           <li><span>🌍</span><span data-en="Based in Kayseri, working with clients in Türkiye and the US" data-tr="Kayseri'deyim; Türkiye'deki ve ABD'deki müşterilerle çalışıyorum">Based in Kayseri, working with clients in Türkiye and the US</span></li>
           <li><span>✉️</span><span data-en="<b><a href=&quot;mailto:eray@eraybalat.com&quot; style=&quot;color:#eef1f4&quot;>eray@eraybalat.com</a></b>" data-tr="<b><a href=&quot;mailto:eray@eraybalat.com&quot; style=&quot;color:#eef1f4&quot;>eray@eraybalat.com</a></b>"><b><a href="mailto:eray@eraybalat.com" style="color:#eef1f4">eray@eraybalat.com</a></b></span></li>
         </ul>
+        <div class="about-clients"><span class="ac-label" data-en="Worked with" data-tr="Birlikte çalıştıklarım">Worked with</span><span class="tlogo">Universal Music</span><span class="tlogo">CITRINE</span><span class="tlogo">Suno</span><span class="tlogo">TennisCut</span></div>
       </div>
     </div>
   </section>
@@ -2283,19 +2321,23 @@ footer.ft2::before{display:none}
     <h2 class="sec-title reveal" data-en="AI Music Videos" data-tr="AI Müzik Videoları">AI Music Videos</h2>
     <p class="sec-sub reveal" data-en="Official videos for Universal Music Türkiye artists — plus my own AI-scored tracks." data-tr="Universal Music Türkiye sanatçıları için resmi klipler — ve kendi AI ile bestelediğim parçalar.">Official videos for Universal Music Türkiye artists — plus my own AI-scored tracks.</p>
     <div class="slj-divider reveal" aria-hidden="true"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
-    <a class="mv-feat reveal" href="/anime/" aria-label="AI Anime Music Video — open the case">
-      <div class="duo">
-        <img src="mv-anime-1.webp" alt="AI anime music video — the rider" loading="lazy" decoding="async" width="900" height="380" />
-        <img src="mv-anime-2b.webp" alt="AI anime music video — the neon-grid ride" loading="lazy" decoding="async" width="900" height="380" />
+    <article class="mvx reveal">
+      <a class="mvx-media" href="/anime-mv.mp4" data-vid="/anime-mv.mp4" data-thumbs="/thumbs/anime-mv" data-vid-poster="/mv-anime-wide.webp" aria-label="Play the AI anime music video">
+        <img src="/mv-anime-wide.webp" width="1280" height="540" alt="AI anime music video: a rider in a black suit and goggles on a motorbike through a violet galaxy" loading="lazy" decoding="async" />
+        <span class="play"></span>
+      </a>
+      <div class="mvx-body">
+        <div>
+          <div class="role" data-en="Music video · AI animation" data-tr="Müzik klibi · AI animasyon">Music video · AI animation</div>
+          <h3 data-en="AI Anime &lt;em&gt;Music Video&lt;/em&gt;" data-tr="AI Anime &lt;em&gt;Müzik Klibi&lt;/em&gt;">AI Anime <em>Music Video</em></h3>
+          <p data-en="Seven years of an artist's career in four animated eras, played on the LED wall at the live concert." data-tr="Bir sanatçının yedi yılı dört animasyon döneminde; canlı konserde LED ekranda oynatıldı.">Seven years of an artist's career in four animated eras, played on the LED wall at the live concert.</p>
+        </div>
+        <div class="mvx-side">
+          <div class="spots"><span data-en="≈32K plays" data-tr="≈32K izlenme">≈32K plays</span><span data-en="4 eras" data-tr="4 dönem">4 eras</span><span data-en="Played live" data-tr="Konserde oynatıldı">Played live</span></div>
+          <div class="mvx-btns"><a class="btn btn-grad" href="/anime/" data-en="See the case →" data-tr="Vaka çalışmasını gör →">See the case →</a><a class="btn btn-ghost" href="https://www.instagram.com/reel/DU6mb6XCTpQ/" target="_blank" rel="noopener" data-en="Watch on Instagram ↗" data-tr="Instagram'da izle ↗">Watch on Instagram ↗</a></div>
+        </div>
       </div>
-      <span class="seam" aria-hidden="true"></span>
-      <span class="fplay" aria-hidden="true"></span>
-      <span class="fpill">▶ AI Anime · 32K</span>
-      <div class="fcap">
-        <h3 data-en="AI Anime Music Video" data-tr="AI Anime Müzik Videosu">AI Anime Music Video</h3>
-        <p data-en="Animated concert visuals · a 4-era reconstruction · directed by Eray Balat" data-tr="Animasyon konser görselleri · 4 dönemlik rekonstrüksiyon · Yönetmen: Eray Balat">Animated concert visuals · a 4-era reconstruction · directed by Eray Balat</p>
-      </div>
-    </a>
+    </article>
     <img class="mv-strip reveal" src="/strip-anime.webp" width="1800" height="251" alt="Four frames from the AI anime music video: a masked figure in a red vortex room, a DJ at a synth and decks, a face with flaming hair and silver shades, and a rider on a motorbike across a neon grid." loading="lazy" decoding="async" />
     <div class="grid g-2" style="margin-bottom:18px">
       <a class="card reveal" href="https://www.youtube.com/watch?v=BKrTmSCBO5E" target="_blank" rel="noopener"><div class="thumb cover-e"><video src="mv-reallife.mp4" data-poster="mv-reallife-p.webp" muted loop playsinline preload="none"></video><button class="sndbtn" type="button" aria-pressed="false" aria-label="Unmute video">🔇</button><span class="pill">▶ Universal Music · 47K</span></div><div class="card-body"><h3>Modd — real life</h3><p data-en="Official Music Video · AI by Eray Balat" data-tr="Resmi Klip · AI: Eray Balat">Official Music Video · AI by Eray Balat</p><img class="rf-strip" src="/strip-reallife.webp" width="1200" height="166" alt="Four frames from Modd, real life: a crying anime girl in blue light, a man in a red jacket in a dark alley, a woman at a candlelit table, and the same woman smiling in a restaurant." loading="lazy" decoding="async" /></div></a>
@@ -2931,6 +2973,9 @@ b.textContent=open?(L==='tr'?'Kısalt':L==='de'?'Weniger anzeigen':'Show less')
 bar.addEventListener('click',function(e){var b=e.target.closest('.uf');if(!b)return;var c=b.getAttribute('data-cat');
 bar.querySelectorAll('.uf').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false');});
 g.querySelectorAll('.card[data-cat]').forEach(function(card){var show=c==='all'||card.getAttribute('data-cat')===c;card.hidden=!show;if(!show){var v=card.querySelector('video');if(v&&!v.paused)v.pause();}else card.classList.add('show');});});})();
+</script>
+<script>
+(function(){var c=document.querySelector('.ns-clock');if(!c)return;function t(){try{c.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Istanbul',hour:'2-digit',minute:'2-digit'}).format(new Date())+' GMT+3'}catch(e){}}t();setInterval(t,30000);})();
 </script>
 </body>
 </html>
