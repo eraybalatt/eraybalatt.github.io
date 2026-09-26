@@ -2996,5 +2996,14 @@ bar.addEventListener('click',function(e){var b=e.target.closest('.uf');if(!b)ret
 bar.querySelectorAll('.uf').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false');});
 g.querySelectorAll('.card[data-cat]').forEach(function(card){var show=c==='all'||card.getAttribute('data-cat')===c;card.hidden=!show;if(!show){var v=card.querySelector('video');if(v&&!v.paused)v.pause();}else card.classList.add('show');});});})();
 </script>
+<script>
+/* warm-up (26 Eyl): once the page is idle, fetch the card posters and below-the-fold images in the background,
+   so fast scrolling never meets an empty card. Skipped on Save-Data and 2G/3G. */
+(function(){function go(){var c=navigator.connection;if(c&&(c.saveData||/(^|-)2g|3g/.test(c.effectiveType||'')))return;
+  var seen={};document.querySelectorAll('[data-poster]').forEach(function(w){var p=w.getAttribute('data-poster');if(p&&!seen[p]){seen[p]=1;var i=new Image();i.decoding='async';i.src=p;}});
+  document.querySelectorAll('main img[loading="lazy"]').forEach(function(i){if(!i.closest('details'))i.loading='eager';});}
+ function idle(){(window.requestIdleCallback||function(f){setTimeout(f,1200)})(go,{timeout:4000});}
+ if(document.readyState==='complete')idle();else addEventListener('load',idle,{once:true});})();
+</script>
 </body>
 </html>
