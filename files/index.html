@@ -51,13 +51,22 @@
   .tag b{display:block;font:500 44px/1 var(--serif);letter-spacing:.01em;color:#f6f4ef;margin-top:10px;white-space:nowrap}
   .tag::after{content:"";display:block;width:56px;height:1px;background:rgba(214,221,230,.4);margin-top:16px}
   .stamp{position:absolute;right:48px;top:48px;z-index:2;color:#bccbdb;border:1px solid rgba(214,221,230,.34);padding:8px 13px 7px 15px;font:500 11px Inter,sans-serif;letter-spacing:.32em;text-transform:uppercase}
-  .cv{position:absolute;container-type:size;display:flex;flex-direction:column;justify-content:flex-end;padding:min(calc(28px / var(--s)),5cqw,7cqh);background:linear-gradient(180deg,rgba(14,46,84,.25),rgba(12,40,74,.86) 55%,rgba(10,34,64,.97));opacity:0;pointer-events:none;transition:opacity .3s;border-radius:2px}
+  .cv{position:absolute;container-type:size;display:flex;flex-direction:column;justify-content:flex-end;padding:min(calc(28px / var(--s)),5cqw,7cqh);background:linear-gradient(180deg,rgba(14,46,84,.25),rgba(12,40,74,.86) 55%,rgba(10,34,64,.97));pointer-events:none;border-radius:2px}
   .cv small{font:500 min(calc(13px / var(--s)),4cqw,7cqh) Inter,sans-serif;letter-spacing:.34em;text-transform:uppercase;color:#a9bdd3}
   .cv b{font:500 min(calc(54px / var(--s)),13cqw,30cqh)/1 var(--serif);margin-top:min(calc(10px / var(--s)),2cqh);color:#f6f4ef}
   .cv em{font:300 min(calc(15px / var(--s)),4.4cqw,8cqh) Inter,sans-serif;font-style:normal;letter-spacing:.02em;color:#c6d4e2;margin-top:min(calc(10px / var(--s)),2cqh)}
-  [data-lod=far] .cv{opacity:1}
-  [data-lod=far] svg.links .ln.local,[data-lod=far] .mk{opacity:0}
-  svg.links .ln,.mk{transition:opacity .25s}
+  /* performance (26 Eyl 2026 · "telefonda takılıyor"): what fades with the zoom level (covers, markers, the two kinds of
+     string) fades as a whole group that is a GPU layer of its own, so a far/mid crossing is a compositor-only fade.
+     Fading each .cv/.mk/path on its own made and dropped ~75 layers per crossing and re-rastered 700-1,000 tiles of the
+     wall mid-gesture. The two groups above the prints (covers, markers) are also hidden once faded out, so they keep no
+     layers while invisible; the strings under the prints only fade, because hiding them re-layers every print above. */
+  .cvs,.mks,svg.lk-local,svg.lk-far,svg.lk-ends{will-change:opacity}
+  .cvs{opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+  [data-lod=far] .cvs{opacity:1;visibility:visible;transition:opacity .3s,visibility 0s}
+  .mks{transition:opacity .25s,visibility 0s}
+  [data-lod=far] .mks{opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s .25s}
+  svg.lk-local,svg.lk-far{transition:opacity .25s}
+  [data-lod=far] svg.lk-local{opacity:0}
 
   /* prints: black gallery mats */
   .print{position:absolute;background:#0b0e12;padding:10px 10px 0;box-shadow:0 0 0 1px rgba(214,221,230,.13),0 22px 40px rgba(0,0,0,.5);transform:rotate(var(--r));cursor:zoom-in;transition:transform .25s,box-shadow .25s}
@@ -122,8 +131,8 @@
   #lamp::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,45%),rgba(255,255,255,.05) 0,transparent 360px)}
   body.lights #lamp{opacity:0}
   [data-lod=far]~#lamp{opacity:.5}
-  [data-lod=near] svg.links .ln.far,[data-lod=mid] svg.links .ln.far{opacity:.3}
-  [data-lod=near] svg.links .head,[data-lod=mid] svg.links .head{opacity:.4}
+  [data-lod=near] svg.lk-far,[data-lod=mid] svg.lk-far{opacity:.3}
+  [data-lod=near] svg.lk-ends,[data-lod=mid] svg.lk-ends{opacity:.4}
 
   /* ---- chrome: black, hairlines, small caps ---- */
   .ui{box-shadow:0 18px 40px rgba(0,0,0,.4)}
@@ -717,6 +726,17 @@
       decorFrame:function(f,e){if(f.bare)return;var t=document.createElement("div");t.className="tag";t.innerHTML="<small>CASE "+f.no+"</small><b>"+f.t+"</b>";e.appendChild(t);
         var s=document.createElement("div");s.className="stamp";s.textContent=f.st;e.appendChild(s)},
       render:function(n){var e=el(n);if(!e)return null;if(n.vsrc){var v=e.querySelector("video");v.dataset.src=n.vsrc;n.v=v}return e}});
+    /* what fades with the zoom level goes into groups that fade as a unit (see .mks / svg.lk-*), each at the depth it painted at:
+       the markers above the prints and under the covers; the local strings, the far strings, then their heads, under the prints.
+       The ten heads stacked on the photo pin stay in the original svg, which stays right under the prints so they all share one layer;
+       at .4 each those ten added up to 99.4% opaque, so they stay at 1 */
+    var wl=document.getElementById("world"),mks=document.createElement("div");mks.className="mks";mks.style.cssText="position:absolute;left:0;top:0;width:0;height:0";
+    [].forEach.call(wl.querySelectorAll(":scope>.mk"),function(m){mks.appendChild(m)});wl.insertBefore(mks,wl.querySelector(":scope>.cvs"));
+    var sv=wl.querySelector(":scope>svg.links");
+    ["local","far"].forEach(function(k){var g=sv.cloneNode(false);g.classList.add("lk-"+k);
+      [].forEach.call(sv.querySelectorAll(":scope>.ln."+k),function(p){g.appendChild(p)});wl.insertBefore(g,sv)});
+    var ends=sv.cloneNode(false);ends.classList.add("lk-ends");
+    [].forEach.call(sv.querySelectorAll(":scope>.head"),function(c){if(+c.getAttribute("cx")!==pinA[0]||+c.getAttribute("cy")!==pinA[1])ends.appendChild(c)});wl.insertBefore(ends,sv);
     EB.tz();
     paintSeen();
     var vd=document.getElementById("verdict");

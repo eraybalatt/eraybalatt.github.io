@@ -101,13 +101,17 @@ var EBUI = Object.assign({ open: "Open", copied: "Copied", linkCopied: "Link cop
     /* ---------------- camera ---------------- */
     function lodName() { return s < LOD[0] ? "far" : s < LOD[1] ? "mid" : "near"; }
     var gBase = cfg.grid || 24;
-    var mvOn = false, mvT = 0, lodNow = vp.dataset.lod, zlEl = null, zlTxt = null;
-    function apply() {
+    var mvOn = false, mvT = 0, lodNow = vp.dataset.lod, zlEl = null, zlTxt = null, sVar = 0;
+    function setS(v) { sVar = v; cvLayer.style.setProperty("--s", v); }
+    function apply(exact) {
       world.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + s + ")";
       /* performance: an inherited custom property set on the world restyles every node in it, every frame.
-         cfg.scaleVar "covers" keeps --s on the covers layer only, and only while covers are on screen. */
+         cfg.scaleVar "covers" keeps --s on the covers layer only, and only while covers are on screen.
+         Every --s change re-lays out the cover text and re-rasters every cover tile on screen (26 Sep 2026 trace:
+         ~60 tiles per frame, 7,800 tiles in one tour). So while moving it only follows the zoom in 4% steps
+         (never on a pan), and lands on the exact value when a flight ends or 240 ms after the last move. */
       var L = lodName();
-      if (cfg.scaleVar === "covers") { if (L === "far" || lodNow !== L) cvLayer.style.setProperty("--s", s); }
+      if (cfg.scaleVar === "covers") { if (lodNow !== L || (L === "far" && (exact ? sVar !== s : Math.abs(Math.log(s / sVar)) > .04))) setS(s); }
       else world.style.setProperty("--s", s);
       if (cfg.grid !== false) {
         var g = gBase * s; while (g < 10) g *= 5; while (g > 60) g /= 5;
@@ -115,9 +119,9 @@ var EBUI = Object.assign({ open: "Open", copied: "Copied", linkCopied: "Link cop
         vp.style.setProperty("--gx", tx + "px"); vp.style.setProperty("--gy", ty + "px");
       }
       if (lodNow !== L) { lodNow = L; vp.dataset.lod = L; }
-      /* while moving, the world is its own GPU layer (cheap pan/zoom); at rest it re-rasters sharp */
+      /* .mv marks "moving"; the world keeps will-change:transform at rest too (chrome.css), so a pan never re-rasters */
       if (!mvOn) { mvOn = true; world.classList.add("mv"); }
-      clearTimeout(mvT); mvT = setTimeout(function () { mvOn = false; world.classList.remove("mv"); }, 240);
+      clearTimeout(mvT); mvT = setTimeout(function () { mvOn = false; world.classList.remove("mv"); if (cfg.scaleVar === "covers" && lodName() === "far" && sVar !== s) setS(s); }, 240);
       /* performance: the zoom label is only rewritten when the number changes (a pan never changes it). Rewriting it
          every frame forced a layout, a repaint and slower hit tests on every pan frame. */
       var z = Math.round(s * 100) + "%";
@@ -140,7 +144,7 @@ var EBUI = Object.assign({ open: "Open", copied: "Copied", linkCopied: "Link cop
       var a = { s: s, tx: tx, ty: ty }, t0 = performance.now(), d = RM ? 1 : (ms || 750);
       (function step(n) {
         var k = Math.min(1, (n - t0) / d), e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
-        s = Math.exp(Math.log(a.s) + (Math.log(t.s) - Math.log(a.s)) * e); tx = a.tx + (t.tx - a.tx) * e; ty = a.ty + (t.ty - a.ty) * e; apply();
+        s = Math.exp(Math.log(a.s) + (Math.log(t.s) - Math.log(a.s)) * e); tx = a.tx + (t.tx - a.tx) * e; ty = a.ty + (t.ty - a.ty) * e; apply(k >= 1);
         if (k < 1) anim = requestAnimationFrame(step); else if (cb) cb();
       })(t0);
     }
