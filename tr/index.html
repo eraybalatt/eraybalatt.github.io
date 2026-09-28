@@ -2256,6 +2256,14 @@ footer.ft2{background:var(--b0)!important}
 #films .grid.lv-grid .thumb .playbtn{width:40px;height:40px}
 #films .grid.lv-grid .thumb .playbtn::after{border-width:7px 0 7px 12px;margin-left:3px}
 #films .grid.lv-grid .thumb.playing>.playbtn::after{border:none;width:4px;height:13px;margin-left:-3px;box-shadow:5px 0 0 #fff}
+/* live-action: no text under the cards, title sits on the picture */
+#films .grid.lv-grid .card{position:relative}
+#films .grid.lv-grid .card-body{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:22px 46px 9px 11px;background:linear-gradient(to top,rgba(4,14,30,.82),rgba(4,14,30,0));pointer-events:none}
+#films .grid.lv-grid .card-body h3{font-size:.88rem;line-height:1.2;color:#fff;margin:0;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+#films .grid.lv-grid .rf-meta{display:none}
+#films .grid.lv-grid .thumb .sndbtn{z-index:6}
+@media(max-width:900px){#films .grid.lv-grid .card-body{padding:18px 40px 7px 9px}#films .grid.lv-grid .card-body h3{font-size:.74rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+#films .grid.lv-grid .card:not(:has(.sndbtn)) .card-body{padding-right:9px}
 </style>
 <link href="https://eraybalat.com/tr/" rel="canonical"/><link href="https://eraybalat.com/" hreflang="en" rel="alternate"/><link href="https://eraybalat.com/tr/" hreflang="tr" rel="alternate"/><link href="https://eraybalat.com/" hreflang="x-default" rel="alternate"/></head>
 <body>
