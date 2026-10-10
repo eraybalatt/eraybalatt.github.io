@@ -2318,13 +2318,23 @@ footer.ft2{background:var(--b0)!important}
 
 
 /* Featured: three cards; Gevher Nesibe frames crossfade */
-@media(min-width:1180px){.feat2{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(min-width:821px) and (max-width:1179.98px){.feat2 #gevher-nesibe{grid-column:1/-1}}
 .gn-slides{position:relative}
 .gn-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
 .gn-slides img.on{opacity:1}
 .gn-soon{position:absolute;z-index:2;left:12px;top:12px;padding:4px 11px;border-radius:999px;background:#3fc1b4;color:#06182e;font:700 .66rem var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
 @media(prefers-reduced-motion:reduce){.gn-slides img{transition:none}}
+
+/* Gevher Nesibe: standalone wide featured card */
+.gn-feature{margin:10px 0 22px}
+@media(min-width:1000px){.gn-feature{display:grid!important;grid-template-columns:1.35fr 1fr}.gn-feature .fc-media{aspect-ratio:auto;min-height:100%}}
+.gn-feature h3 em{font-style:italic;color:#e6d3b3}
+.gn-sub{font-family:var(--display);font-style:italic;font-size:1.25rem;color:#e6d3b3;margin:-2px 0 10px}
+.gn-steps{list-style:none;counter-reset:s;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin:14px 0;padding:0}
+.gn-steps li{counter-increment:s;font-size:.84rem;color:#d3e4f5;display:flex;gap:8px;align-items:baseline}
+.gn-steps li::before{content:counter(s,decimal-leading-zero);font:600 .68rem var(--mono,monospace);color:#3fc1b4}
+.gn-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0 0 16px}
+.gn-thumbs img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:8px;display:block}
+.slj-new{margin-top:34px!important}
 </style>
 <link href="https://eraybalat.com/tr/" rel="canonical"/><link href="https://eraybalat.com/" hreflang="en" rel="alternate"/><link href="https://eraybalat.com/tr/" hreflang="tr" rel="alternate"/><link href="https://eraybalat.com/" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -2365,7 +2375,6 @@ footer.ft2{background:var(--b0)!important}
 <span class="nav-ctas">
 <a class="nav-cta ghost case-nav" href="/tr/files/"><svg aria-hidden="true" class="cc-mag" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"></circle><path d="M15 15l5.5 5.5"></path><path d="M8 8.4a3 3 0 0 1 2.4-1.2" stroke-width="1.4"></path></svg><span data-en="Detective mode" data-tr="Dedektif modu">Dedektif modu</span></a>
 </span>
-<a aria-label="New project: Seljaris, watch the films" class="np-card" href="#seljaris"><img alt="" decoding="async" height="44" src="/seljaris-logo.webp" width="44"/><span class="np-txt"><small data-en="New project" data-tr="Yeni proje">Yeni proje</small><b>Seljaris</b><i data-en="Watch the films ↓" data-tr="Filmleri izle ↓">Filmleri izle ↓</i></span></a>
 </nav>
 <div class="nav-right">
 <div aria-label="Studio status" class="nav-studio">
@@ -2427,7 +2436,19 @@ footer.ft2{background:var(--b0)!important}
 <!-- FLAWLESS — FEATURED DOCUMENTARY -->
 <section id="featured">
 <div class="eyebrow reveal" data-en="Featured" data-tr="Öne çıkanlar">Öne çıkanlar</div>
-<h2 class="sec-title reveal" data-en="A documentary, a campaign, a hospital brought back" data-tr="Bir belgesel, bir kampanya, yeniden canlanan bir şifahane">Bir belgesel, bir kampanya, yeniden canlanan bir şifahane</h2>
+<h2 class="sec-title reveal" data-en="Featured work" data-tr="Öne çıkan işler">Öne çıkan işler</h2>
+<article class="fcard gn-feature reveal" id="gevher-nesibe">
+<a aria-label="Open Gevher Nesibe, 1206" class="fc-media gn-slides" href="/gevher-nesibe/"><img alt="The hospital and medical school from the air, Mount Erciyes behind" class="on" decoding="async" height="502" loading="eager" src="/gevher-nesibe/hero-s.webp" width="900"/><img alt="The carved gate opening" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g03-tackapi-s.webp" width="900"/><img alt="The courtyard pool" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g05-havuz-s.webp" width="900"/><img alt="A master and a student over a book" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g07-hoca-talebe-s.webp" width="900"/><img alt="A physician reading a glass flask" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g11-karure-s.webp" width="900"/><img alt="The star carved on the gate" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g15-yildiz-s.webp" width="900"/><span class="gn-soon" data-en="Coming soon" data-tr="Çok yakında">Çok yakında</span></a>
+<div class="fc-body">
+<div class="role" data-en="AI production · Erciyes University Faculty of Medicine" data-tr="Yapay zekâ prodüksiyonu · Erciyes Üniversitesi Tıp Fakültesi">Yapay zekâ prodüksiyonu · Erciyes Üniversitesi Tıp Fakültesi</div>
+<h3>Gevher Nesibe, <em>1206</em></h3>
+<p class="gn-sub" data-en="An 800-year-old medical school, brought back with AI" data-tr="800 yıllık bir tıp okulu, yapay zekâyla yeniden canlandı">800 yıllık bir tıp okulu, yapay zekâyla yeniden canlandı</p>
+<p data-en="The 1206 hospital and medical school in Kayseri, rebuilt for the faculty's promotional film: the carved gate, the courtyard pool, the lessons, the cures and the farewell." data-tr="Kayseri'deki 1206 tarihli şifahane ve tıp medresesi, fakültenin tanıtım filmi için yeniden kuruldu: oymalı taçkapı, havuzlu avlu, dersler, tedaviler ve veda.">Kayseri'deki 1206 tarihli şifahane ve tıp medresesi, fakültenin tanıtım filmi için yeniden kuruldu: oymalı taçkapı, havuzlu avlu, dersler, tedaviler ve veda.</p>
+<ol class="gn-steps"><li data-en="Research &amp; survey drawings" data-tr="Araştırma ve rölöve">Araştırma ve rölöve</li><li data-en="Blender model of the complex" data-tr="Yapının Blender maketi">Yapının Blender maketi</li><li data-en="AI frames on the model" data-tr="Maket üzerine AI kareler">Maket üzerine AI kareler</li><li data-en="One palette, then video" data-tr="Tek palet, sonra video">Tek palet, sonra video</li></ol>
+<div class="gn-thumbs"><a class="gn-th" href="/gevher-nesibe/"><img alt="Master and student" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g07-hoca-talebe-s.webp" width="900"/></a><a class="gn-th" href="/gevher-nesibe/"><img alt="Eye examination" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g10-katarakt-s.webp" width="900"/></a><a class="gn-th" href="/gevher-nesibe/"><img alt="Weighing theriac" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g12-terazi-s.webp" width="900"/></a><a class="gn-th" href="/gevher-nesibe/"><img alt="Farewell" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g14-veda-s.webp" width="900"/></a></div>
+<a class="btn btn-grad" data-en="See the first frames →" data-tr="İlk kareleri gör →" href="/gevher-nesibe/">İlk kareleri gör →</a>
+</div>
+</article>
 <div class="feat2">
 <article class="fcard reveal" id="flawless-feature">
 <a aria-label="Open the FLAWLESS case study" class="fc-media" href="/flawless/"><img alt="FLAWLESS: Leonardo Notarbartolo, who led the 2003 Antwerp diamond heist, with his line from the film: the theft had gone entirely smoothly" decoding="async" height="675" loading="lazy" src="/flawless/cover-notarbartolo-s.webp" width="1200"/></a>
@@ -2449,16 +2470,6 @@ footer.ft2{background:var(--b0)!important}
 <a class="btn btn-grad" data-en="See the campaign →" data-tr="Kampanyayı gör →" href="/bushido/">Kampanyayı gör →</a>
 </div>
 </article>
-<article class="fcard reveal" id="gevher-nesibe">
-<a aria-label="Open Gevher Nesibe, 1206" class="fc-media gn-slides" href="/gevher-nesibe/"><img alt="The hospital and medical school from the air, Mount Erciyes behind" class="on" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/hero-s.webp" width="900"/><img alt="The carved gate opening" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g03-tackapi-s.webp" width="900"/><img alt="The courtyard pool" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g05-havuz-s.webp" width="900"/><img alt="A master and a student over a book" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g07-hoca-talebe-s.webp" width="900"/><img alt="A physician reading a glass flask" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g11-karure-s.webp" width="900"/><img alt="The star carved on the gate" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g15-yildiz-s.webp" width="900"/><span class="gn-soon" data-en="Coming soon" data-tr="Çok yakında">Çok yakında</span></a>
-<div class="fc-body">
-<div class="role" data-en="AI production · Medical school film" data-tr="Yapay zekâ prodüksiyonu · Tıp fakültesi filmi">Yapay zekâ prodüksiyonu · Tıp fakültesi filmi</div>
-<h3>Gevher Nesibe, 1206</h3>
-<p data-en="An 800-year-old medical school in Kayseri, brought back with AI: the gate, the courtyard, the lessons and the cures." data-tr="Kayseri'de 800 yıllık bir tıp okulu, yapay zekâyla yeniden canlandı: taçkapı, avlu, dersler ve tedaviler.">Kayseri'de 800 yıllık bir tıp okulu, yapay zekâyla yeniden canlandı: taçkapı, avlu, dersler ve tedaviler.</p>
-<div class="spots"><span data-en="Blender model + AI" data-tr="Blender maketi + AI">Blender maketi + AI</span><span data-en="Aug–Oct 2026" data-tr="Ağustos–Ekim 2026">Ağustos–Ekim 2026</span></div>
-<a class="btn btn-grad" data-en="See the first frames →" data-tr="İlk kareleri gör →" href="/gevher-nesibe/">İlk kareleri gör →</a>
-</div>
-</article>
 </div>
 </section>
 <!-- LEATHER — FEATURED COLLECTION -->
@@ -2468,13 +2479,6 @@ footer.ft2{background:var(--b0)!important}
 <p class="sec-sub reveal" data-en="Vertical ads built to stop the scroll." data-tr="Kaydırmayı durdurmak için dikey reklamlar.">Kaydırmayı durdurmak için dikey reklamlar.</p>
 <div aria-label="Filter the ads" class="ugc-filter reveal" hidden="" role="group"><button aria-pressed="true" class="uf on" data-cat="all" type="button"><span data-en="All" data-tr="Tümü">Tümü</span><i>16</i></button><button aria-pressed="false" class="uf" data-cat="app" type="button"><span data-en="App ads" data-tr="Uygulama reklamları">Uygulama reklamları</span><i>9</i></button><button aria-pressed="false" class="uf" data-cat="ugc" type="button"><span>UGC</span><i>3</i></button><button aria-pressed="false" class="uf" data-cat="brand" type="button"><span data-en="Brand films" data-tr="Marka filmleri">Marka filmleri</span><i>4</i></button></div>
 <div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
-<div class="slj-new reveal" id="seljaris">
-<div class="sn-text"><img alt="" aria-hidden="true" class="sn-mark" decoding="async" src="/seljaris-mark.webp"/><span class="sn-badge" data-en="New" data-tr="Yeni">Yeni</span><div class="sn-id"><img alt="" decoding="async" height="52" src="/seljaris-logo.webp" width="52"/><div><h3>Seljaris</h3><small data-en="AI series · Instagram" data-tr="AI serisi · Instagram">AI serisi · Instagram</small></div></div><p data-en="My new AI series: a masked Seljuk warrior on the road to Manzikert, 1071. Short cinematic films, made frame by frame." data-tr="Yeni AI serim: Malazgirt yolunda, 1071’de maskeli bir Selçuklu savaşçısı. Kare kare üretilmiş kısa sinematik filmler.">Yeni AI serim: Malazgirt yolunda, 1071’de maskeli bir Selçuklu savaşçısı. Kare kare üretilmiş kısa sinematik filmler.</p><ul class="sn-eps"><li><b>01</b><span data-en="The Arrow" data-tr="Ok">Ok</span><em data-en="2 Oct 2026" data-tr="2 Ekim 2026">2 Ekim 2026</em></li><li><b>02</b><span data-en="The Prayer" data-tr="Dua">Dua</span><em data-en="3 Oct 2026" data-tr="3 Ekim 2026">3 Ekim 2026</em></li><li class="sn-next"><b>03</b><span data-en="Coming soon" data-tr="Yakında">Yakında</span><em>…</em></li></ul><div class="sn-tags"><span data-en="9:16 short films" data-tr="9:16 kısa filmler">9:16 kısa filmler</span><span data-en="Original character" data-tr="Özgün karakter">Özgün karakter</span><span data-en="Seljuk tiles &amp; miniatures" data-tr="Selçuklu çini ve minyatürleri">Selçuklu çini ve minyatürleri</span></div><a class="sn-follow" data-en="Follow @seljaris ↗" data-tr="@seljaris’i takip et ↗" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank">@seljaris’i takip et ↗</a></div>
-<div class="sn-vids">
-<a class="card sn-card" href="https://www.instagram.com/reel/Dd9QWP_s-tl/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-1.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="Seljaris — The Arrow" data-tr="Seljaris — Ok">Seljaris — Ok</h3><p data-en="New AI series · Instagram ↗" data-tr="Yeni AI serisi · Instagram ↗">Yeni AI serisi · Instagram ↗</p></div></a>
-<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-2-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-2.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="Seljaris — The Prayer" data-tr="Seljaris — Dua">Seljaris — Dua</h3><p data-en="Manzikert, 1071 · Instagram ↗" data-tr="Malazgirt, 1071 · Instagram ↗">Malazgirt, 1071 · Instagram ↗</p></div></a>
-</div>
-</div>
 <div class="grid g-ugc">
 <div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/tenniscut-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-1.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — The Moment</h3><p data-en="Sports app campaign · hook film" data-tr="Spor uygulaması kampanyası · kanca filmi">Spor uygulaması kampanyası · kanca filmi</p></div></div>
 <div class="card reveal" data-cat="app"><div class="thumb v cover-c"><video data-poster="/tenniscut-2-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-2.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Dead Time Remover</h3><p data-en="Proof film · real app screens, animated" data-tr="Kanıt filmi · gerçek uygulama ekranları, animasyonlu">Kanıt filmi · gerçek uygulama ekranları, animasyonlu</p></div></div>
@@ -2492,6 +2496,13 @@ footer.ft2{background:var(--b0)!important}
 <a class="card reveal" data-cat="brand" href="https://youtube.com/shorts/m5UfRGEmqSA" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/bushido/assets/video/poster-2-s.webp" loop="" muted="" playsinline="" preload="none" src="/bushido/assets/video/film-2.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Bushido</span></div><div class="card-body"><h3 data-en="His Ritual" data-tr="Erkeğin Ritüeli">Erkeğin Ritüeli</h3><p data-en="Nord beard oil · Turkish VO" data-tr="Nord sakal yağı · Türkçe seslendirme">Nord sakal yağı · Türkçe seslendirme</p></div></a>
 <a class="card reveal" data-cat="brand" href="https://youtube.com/shorts/CZcjyTpPM_M" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/bushido/assets/video/poster-1-s.webp" loop="" muted="" playsinline="" preload="none" src="/bushido/assets/video/film-1.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Bushido</span></div><div class="card-body"><h3 data-en="Her Ritual" data-tr="Kadının Ritüeli">Kadının Ritüeli</h3><p data-en="Yağ Dengesi face bar · Ayla" data-tr="Yağ Dengesi yüz barı · Ayla">Yağ Dengesi yüz barı · Ayla</p></div></a>
 <a class="card reveal" data-cat="app" href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" rel="noopener" target="_blank"><div class="thumb v cover-d"><video data-poster="/telicall-en-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/telicall-en.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">EN</span></div><div class="card-body"><h3>The Call Home · EN</h3><p data-en="Original · English" data-tr="Orijinal · İngilizce">Orijinal · İngilizce</p><span class="vstat" data-en="Lip-synced original" data-tr="Dudak senkronlu orijinal">Dudak senkronlu orijinal</span></div></a>
+</div>
+<div class="slj-new reveal" id="seljaris">
+<div class="sn-text"><img alt="" aria-hidden="true" class="sn-mark" decoding="async" loading="lazy" src="/seljaris-mark.webp"/><span class="sn-badge" data-en="New" data-tr="Yeni">Yeni</span><div class="sn-id"><img alt="" decoding="async" height="52" src="/seljaris-logo.webp" width="52"/><div><h3>Seljaris</h3><small data-en="AI series · Instagram" data-tr="AI serisi · Instagram">AI serisi · Instagram</small></div></div><p data-en="My new AI series: a masked Seljuk warrior on the road to Manzikert, 1071. Short cinematic films, made frame by frame." data-tr="Yeni AI serim: Malazgirt yolunda, 1071’de maskeli bir Selçuklu savaşçısı. Kare kare üretilmiş kısa sinematik filmler.">Yeni AI serim: Malazgirt yolunda, 1071’de maskeli bir Selçuklu savaşçısı. Kare kare üretilmiş kısa sinematik filmler.</p><ul class="sn-eps"><li><b>01</b><span data-en="The Arrow" data-tr="Ok">Ok</span><em data-en="2 Oct 2026" data-tr="2 Ekim 2026">2 Ekim 2026</em></li><li><b>02</b><span data-en="The Prayer" data-tr="Dua">Dua</span><em data-en="3 Oct 2026" data-tr="3 Ekim 2026">3 Ekim 2026</em></li><li class="sn-next"><b>03</b><span data-en="Coming soon" data-tr="Yakında">Yakında</span><em>…</em></li></ul><div class="sn-tags"><span data-en="9:16 short films" data-tr="9:16 kısa filmler">9:16 kısa filmler</span><span data-en="Original character" data-tr="Özgün karakter">Özgün karakter</span><span data-en="Seljuk tiles &amp; miniatures" data-tr="Selçuklu çini ve minyatürleri">Selçuklu çini ve minyatürleri</span></div><a class="sn-follow" data-en="Follow @seljaris ↗" data-tr="@seljaris’i takip et ↗" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank">@seljaris’i takip et ↗</a></div>
+<div class="sn-vids">
+<a class="card sn-card" href="https://www.instagram.com/reel/Dd9QWP_s-tl/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-1.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="Seljaris — The Arrow" data-tr="Seljaris — Ok">Seljaris — Ok</h3><p data-en="New AI series · Instagram ↗" data-tr="Yeni AI serisi · Instagram ↗">Yeni AI serisi · Instagram ↗</p></div></a>
+<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-2-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-2.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="Seljaris — The Prayer" data-tr="Seljaris — Dua">Seljaris — Dua</h3><p data-en="Manzikert, 1071 · Instagram ↗" data-tr="Malazgirt, 1071 · Instagram ↗">Malazgirt, 1071 · Instagram ↗</p></div></a>
+</div>
 </div>
 </section>
 <section id="films">
