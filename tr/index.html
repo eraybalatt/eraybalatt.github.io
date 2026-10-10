@@ -2318,23 +2318,42 @@ footer.ft2{background:var(--b0)!important}
 
 
 /* Featured: three cards; Gevher Nesibe frames crossfade */
-.gn-slides{position:relative}
-.gn-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
-.gn-slides img.on{opacity:1}
-.gn-soon{position:absolute;z-index:2;left:12px;top:12px;padding:4px 11px;border-radius:999px;background:#3fc1b4;color:#06182e;font:700 .66rem var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
-@media(prefers-reduced-motion:reduce){.gn-slides img{transition:none}}
 
-/* Gevher Nesibe: standalone wide featured card */
-.gn-feature{margin:10px 0 22px}
-@media(min-width:1000px){.gn-feature{display:grid!important;grid-template-columns:1.35fr 1fr}.gn-feature .fc-media{aspect-ratio:auto;min-height:100%}}
-.gn-feature h3 em{font-style:italic;color:#e6d3b3}
-.gn-sub{font-family:var(--display);font-style:italic;font-size:1.25rem;color:#e6d3b3;margin:-2px 0 10px}
-.gn-steps{list-style:none;counter-reset:s;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin:14px 0;padding:0}
-.gn-steps li{counter-increment:s;font-size:.84rem;color:#d3e4f5;display:flex;gap:8px;align-items:baseline}
-.gn-steps li::before{content:counter(s,decimal-leading-zero);font:600 .68rem var(--mono,monospace);color:#3fc1b4}
-.gn-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0 0 16px}
-.gn-thumbs img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:8px;display:block}
 .slj-new{margin-top:34px!important}
+
+/* Gevher Nesibe: client feature in its own palette (navy, Seljuk turquoise, warm stone) */
+.gn-feature{--gtq:#3fc1b4;--gtq2:#8fe3da;--gst:#e6d3b3;--gbg:#0b1b33;display:grid;grid-template-columns:minmax(0,1fr);margin:10px 0 24px;border-radius:20px;overflow:hidden;background:radial-gradient(120% 90% at 100% 0%,rgba(63,193,180,.16),transparent 60%),linear-gradient(160deg,#0f2443,#081428 70%);box-shadow:inset 0 0 0 1px rgba(143,227,218,.28),0 30px 60px -36px rgba(0,0,0,.7);scroll-margin-top:24px}
+@media(min-width:1000px){.gn-feature{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.gn-stage{position:relative;overflow:hidden;min-height:260px;aspect-ratio:16/10;background:#06101f}
+@media(min-width:1000px){.gn-stage{aspect-ratio:auto}}
+.gn-slides{position:absolute;inset:0;display:block}
+.gn-sl{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.1s ease}
+.gn-sl.on{opacity:1}
+.gn-sl img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+.gn-sl.on img{animation:gnzoom 6s ease-out forwards}
+@keyframes gnzoom{to{transform:scale(1.09)}}
+.gn-sl figcaption{position:absolute;left:16px;bottom:74px;font:500 .78rem var(--mono,monospace);letter-spacing:.06em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.gn-stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(6,16,31,0) 55%,rgba(6,16,31,.75))}
+.gn-soon{position:absolute;z-index:2;left:16px;top:16px;padding:5px 12px;border-radius:999px;background:var(--gtq);color:#06182e;font:700 .66rem var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+.gn-dots{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.gn-dot{padding:0;border:0;border-radius:7px;overflow:hidden;cursor:pointer;opacity:.55;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);background:none;transition:opacity .3s,box-shadow .3s}
+.gn-dot img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}
+.gn-dot.on,.gn-dot:hover{opacity:1;box-shadow:0 0 0 2px var(--gtq)}
+.gn-body{padding:26px 26px 28px;display:flex;flex-direction:column;justify-content:center}
+.gn-client{display:flex;flex-direction:column;gap:2px;padding-left:12px;border-left:2px solid var(--gtq);margin-bottom:16px}
+.gn-client span{font:600 .64rem var(--mono,monospace);letter-spacing:.14em;text-transform:uppercase;color:var(--gtq2)}
+.gn-client b{font-weight:600;color:#fff;font-size:.95rem}
+.gn-body h3{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,3.6vw,2.9rem);line-height:1;margin:0;color:#fff}
+.gn-body h3 em{font-style:italic;color:var(--gst)}
+.gn-sub{font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--gst);margin:6px 0 12px}
+.gn-body>p:not(.gn-sub){color:#d6e3ef;font-size:.96rem;line-height:1.6;margin:0 0 16px}
+.gn-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:0 0 20px;padding:14px 0;border-top:1px solid rgba(143,227,218,.2);border-bottom:1px solid rgba(143,227,218,.2)}
+.gn-facts dt{font:600 .62rem var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:#d2e6f8;margin-bottom:2px}
+.gn-facts dd{margin:0;color:#fff;font-size:.88rem}
+.gn-btn{align-self:flex-start;padding:12px 22px;border-radius:999px;background:var(--gtq);color:#06182e;font-weight:700;text-decoration:none}
+.gn-btn:hover{background:var(--gtq2)}
+@media(max-width:600px){.gn-dots{grid-template-columns:repeat(6,1fr);gap:4px;left:10px;right:10px;bottom:10px}.gn-sl figcaption{bottom:54px;left:12px}.gn-body{padding:20px}}
+@media(prefers-reduced-motion:reduce){.gn-sl{transition:none}.gn-sl.on img{animation:none}}
 </style>
 <link href="https://eraybalat.com/tr/" rel="canonical"/><link href="https://eraybalat.com/" hreflang="en" rel="alternate"/><link href="https://eraybalat.com/tr/" hreflang="tr" rel="alternate"/><link href="https://eraybalat.com/" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -2429,7 +2448,7 @@ footer.ft2{background:var(--b0)!important}
 <p class="about-lead" data-en="I'm a creative producer and filmmaker. I combine live footage, motion design and generative media, and take a project from concept and storyboard through edit, animation, sound and finishing, for clients in the US, Europe and Türkiye." data-tr="Creative producer ve yönetmenim. Gerçek çekimi, motion tasarımı ve üretken medyayı birleştiriyor; bir projeyi konsept ve storyboard'dan kurguya, animasyona, sese ve bitişe kadar götürüyorum. ABD, Avrupa ve Türkiye'deki müşterilerle çalışıyorum.">Creative producer ve yönetmenim. Gerçek çekimi, motion tasarımı ve üretken medyayı birleştiriyor; bir projeyi konsept ve storyboard'dan kurguya, animasyona, sese ve bitişe kadar götürüyorum. ABD, Avrupa ve Türkiye'deki müşterilerle çalışıyorum.</p>
 <p class="about-lang" data-en="Turkish (native) · English (working) · German and Arabic (basic)" data-tr="Türkçe (ana dil) · İngilizce (iş düzeyi) · Almanca ve Arapça (temel)">Türkçe (ana dil) · İngilizce (iş düzeyi) · Almanca ve Arapça (temel)</p>
 <a aria-label="Upwork profile: 100% Job Success, Top Rated" class="about-badges" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener" target="_blank"><span class="ub"><svg aria-hidden="true" class="ub-ic" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="10.4" stroke="#2f6fe8" stroke-width="1.8"></circle><path d="M6.6 9.2l2.9 2.3L12 7.6l2.5 3.9 2.9-2.3-1.1 6.6H7.7z" fill="#2f6fe8"></path></svg><span data-en="100% Job Success" data-tr="%100 iş başarısı">%100 iş başarısı</span></span><span class="ub"><svg aria-hidden="true" class="ub-ic" viewbox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z" fill="#2f6fe8"></path><path d="M12 6.9l1.5 3.1 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z" fill="#fff"></path></svg><span>Top Rated</span></span><span class="ub-src">Upwork ↗</span></a>
-<div class="about-clients"><span class="ac-label" data-en="Worked with" data-tr="Birlikte çalıştıklarım">Birlikte çalıştıklarım</span><span class="tlogo">Universal Music</span><span class="tlogo">TennisCut</span><span class="tlogo">Suno</span></div>
+<div class="about-clients"><span class="ac-label" data-en="Worked with" data-tr="Birlikte çalıştıklarım">Birlikte çalıştıklarım</span><span class="tlogo" data-en="Erciyes University" data-tr="Erciyes Üniversitesi">Erciyes Üniversitesi</span><span class="tlogo">Universal Music</span><span class="tlogo">TennisCut</span><span class="tlogo">Suno</span></div>
 </div>
 </div>
 </section>
@@ -2437,16 +2456,19 @@ footer.ft2{background:var(--b0)!important}
 <section id="featured">
 <div class="eyebrow reveal" data-en="Featured" data-tr="Öne çıkanlar">Öne çıkanlar</div>
 <h2 class="sec-title reveal" data-en="Featured work" data-tr="Öne çıkan işler">Öne çıkan işler</h2>
-<article class="fcard gn-feature reveal" id="gevher-nesibe">
-<a aria-label="Open Gevher Nesibe, 1206" class="fc-media gn-slides" href="/gevher-nesibe/"><img alt="The hospital and medical school from the air, Mount Erciyes behind" class="on" decoding="async" height="502" loading="eager" src="/gevher-nesibe/hero-s.webp" width="900"/><img alt="The carved gate opening" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g03-tackapi-s.webp" width="900"/><img alt="The courtyard pool" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g05-havuz-s.webp" width="900"/><img alt="A master and a student over a book" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g07-hoca-talebe-s.webp" width="900"/><img alt="A physician reading a glass flask" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g11-karure-s.webp" width="900"/><img alt="The star carved on the gate" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g15-yildiz-s.webp" width="900"/><span class="gn-soon" data-en="Coming soon" data-tr="Çok yakında">Çok yakında</span></a>
-<div class="fc-body">
-<div class="role" data-en="AI production · Erciyes University Faculty of Medicine" data-tr="Yapay zekâ prodüksiyonu · Erciyes Üniversitesi Tıp Fakültesi">Yapay zekâ prodüksiyonu · Erciyes Üniversitesi Tıp Fakültesi</div>
+<article class="gn-feature reveal" id="gevher-nesibe">
+<div class="gn-stage">
+<a aria-label="Open Gevher Nesibe, 1206" class="gn-slides" href="/gevher-nesibe/"><figure class="gn-sl on"><img alt="The hospital and medical school from the air, Mount Erciyes behind" decoding="async" height="502" loading="eager" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/hero-s.webp" srcset="/gevher-nesibe/hero-s.webp 900w, /gevher-nesibe/hero.webp 1800w" width="900"/><figcaption data-en="Erciyes and the hospital, 1206" data-tr="Erciyes ve şifahane, 1206">Erciyes ve şifahane, 1206</figcaption></figure><figure class="gn-sl"><img alt="The carved gate opening" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g03-tackapi-s.webp" srcset="/gevher-nesibe/g03-tackapi-s.webp 900w, /gevher-nesibe/g03-tackapi.webp 1800w" width="900"/><figcaption data-en="The carved gate" data-tr="Oymalı taçkapı">Oymalı taçkapı</figcaption></figure><figure class="gn-sl"><img alt="The courtyard pool" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g05-havuz-s.webp" srcset="/gevher-nesibe/g05-havuz-s.webp 900w, /gevher-nesibe/g05-havuz.webp 1800w" width="900"/><figcaption data-en="The courtyard pool" data-tr="Havuzlu avlu">Havuzlu avlu</figcaption></figure><figure class="gn-sl"><img alt="A master and a student over a book" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g07-hoca-talebe-s.webp" srcset="/gevher-nesibe/g07-hoca-talebe-s.webp 900w, /gevher-nesibe/g07-hoca-talebe.webp 1800w" width="900"/><figcaption data-en="Master and student" data-tr="Hoca ve talebe">Hoca ve talebe</figcaption></figure><figure class="gn-sl"><img alt="A physician reading a glass flask" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g11-karure-s.webp" srcset="/gevher-nesibe/g11-karure-s.webp 900w, /gevher-nesibe/g11-karure.webp 1800w" width="900"/><figcaption data-en="Reading the flask" data-tr="Kârûre muayenesi">Kârûre muayenesi</figcaption></figure><figure class="gn-sl"><img alt="A healed patient says farewell at the door" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g14-veda-s.webp" srcset="/gevher-nesibe/g14-veda-s.webp 900w, /gevher-nesibe/g14-veda.webp 1800w" width="900"/><figcaption data-en="Farewell" data-tr="Veda">Veda</figcaption></figure></a>
+<span class="gn-soon" data-en="Film coming soon" data-tr="Film çok yakında">Film çok yakında</span>
+<div aria-label="Frames" class="gn-dots" role="group"><button aria-label="Frame 1" class="gn-dot on" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/hero-s.webp" width="900"/></button><button aria-label="Frame 2" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g03-tackapi-s.webp" width="900"/></button><button aria-label="Frame 3" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g05-havuz-s.webp" width="900"/></button><button aria-label="Frame 4" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g07-hoca-talebe-s.webp" width="900"/></button><button aria-label="Frame 5" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g11-karure-s.webp" width="900"/></button><button aria-label="Frame 6" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g14-veda-s.webp" width="900"/></button></div>
+</div>
+<div class="gn-body">
+<div class="gn-client"><span data-en="Client" data-tr="Müşteri">Müşteri</span><b data-en="Erciyes University · Faculty of Medicine" data-tr="Erciyes Üniversitesi · Tıp Fakültesi">Erciyes Üniversitesi · Tıp Fakültesi</b></div>
 <h3>Gevher Nesibe, <em>1206</em></h3>
-<p class="gn-sub" data-en="An 800-year-old medical school, brought back with AI" data-tr="800 yıllık bir tıp okulu, yapay zekâyla yeniden canlandı">800 yıllık bir tıp okulu, yapay zekâyla yeniden canlandı</p>
-<p data-en="The 1206 hospital and medical school in Kayseri, rebuilt for the faculty's promotional film: the carved gate, the courtyard pool, the lessons, the cures and the farewell." data-tr="Kayseri'deki 1206 tarihli şifahane ve tıp medresesi, fakültenin tanıtım filmi için yeniden kuruldu: oymalı taçkapı, havuzlu avlu, dersler, tedaviler ve veda.">Kayseri'deki 1206 tarihli şifahane ve tıp medresesi, fakültenin tanıtım filmi için yeniden kuruldu: oymalı taçkapı, havuzlu avlu, dersler, tedaviler ve veda.</p>
-<ol class="gn-steps"><li data-en="Research &amp; survey drawings" data-tr="Araştırma ve rölöve">Araştırma ve rölöve</li><li data-en="Blender model of the complex" data-tr="Yapının Blender maketi">Yapının Blender maketi</li><li data-en="AI frames on the model" data-tr="Maket üzerine AI kareler">Maket üzerine AI kareler</li><li data-en="One palette, then video" data-tr="Tek palet, sonra video">Tek palet, sonra video</li></ol>
-<div class="gn-thumbs"><a class="gn-th" href="/gevher-nesibe/"><img alt="Master and student" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g07-hoca-talebe-s.webp" width="900"/></a><a class="gn-th" href="/gevher-nesibe/"><img alt="Eye examination" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g10-katarakt-s.webp" width="900"/></a><a class="gn-th" href="/gevher-nesibe/"><img alt="Weighing theriac" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g12-terazi-s.webp" width="900"/></a><a class="gn-th" href="/gevher-nesibe/"><img alt="Farewell" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g14-veda-s.webp" width="900"/></a></div>
-<a class="btn btn-grad" data-en="See the first frames →" data-tr="İlk kareleri gör →" href="/gevher-nesibe/">İlk kareleri gör →</a>
+<p class="gn-sub" data-en="AI production for the faculty's promotional film" data-tr="Fakültenin tanıtım filmi için yapay zekâ prodüksiyonu">Fakültenin tanıtım filmi için yapay zekâ prodüksiyonu</p>
+<p data-en="The faculty asked us to bring its story back to the Gevher Nesibe hospital and medical school, built in Kayseri in 1206. We rebuilt the complex from survey drawings as a Blender model, then filmed it with AI: the carved gate, the courtyard, the lessons, the cures and the farewell." data-tr="Fakülte, hikâyesini 1206'da Kayseri'de kurulan Gevher Nesibe Şifahanesi'ne geri götürmemizi istedi. Yapıyı rölöve çizimlerinden Blender maketi olarak yeniden kurduk, sonra yapay zekâyla çektik: oymalı taçkapı, avlu, dersler, tedaviler ve veda.">Fakülte, hikâyesini 1206'da Kayseri'de kurulan Gevher Nesibe Şifahanesi'ne geri götürmemizi istedi. Yapıyı rölöve çizimlerinden Blender maketi olarak yeniden kurduk, sonra yapay zekâyla çektik: oymalı taçkapı, avlu, dersler, tedaviler ve veda.</p>
+<dl class="gn-facts"><div><dt data-en="Role" data-tr="Rol">Rol</dt><dd data-en="Direction, AI production, edit" data-tr="Yönetmen, AI prodüksiyon, kurgu">Yönetmen, AI prodüksiyon, kurgu</dd></div><div><dt data-en="Studio" data-tr="Stüdyo">Stüdyo</dt><dd>Citrine Studio</dd></div><div><dt data-en="Period" data-tr="Dönem">Dönem</dt><dd data-en="Aug–Oct 2026" data-tr="Ağustos–Ekim 2026">Ağustos–Ekim 2026</dd></div><div><dt data-en="Method" data-tr="Yöntem">Yöntem</dt><dd data-en="Survey → Blender → AI → grade" data-tr="Rölöve → Blender → AI → renk">Rölöve → Blender → AI → renk</dd></div></dl>
+<a class="gn-btn" data-en="See the frames →" data-tr="Kareleri gör →" href="/gevher-nesibe/">Kareleri gör →</a>
 </div>
 </article>
 <div class="feat2">
@@ -3155,8 +3177,10 @@ g.querySelectorAll('.card[data-cat]').forEach(function(card){var show=c==='all'|
    a.addEventListener('ended',function(){a.currentTime=0;bars.forEach(function(r){r.classList.remove('p')})});}
   if(a.paused){document.querySelectorAll('video').forEach(function(v){if(!v.muted&&!v.paused)v.pause()});a.play().catch(function(){})}else a.pause();});});})();
 </script>
-<script>(function(){var w=document.querySelector('.gn-slides');if(!w||matchMedia('(prefers-reduced-motion:reduce)').matches)return;var im=w.querySelectorAll('img'),i=0,t=null;
-function go(){im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on')}
-if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){im.forEach(function(x){x.loading='eager'});if(!t)t=setInterval(go,2600)}else if(t){clearInterval(t);t=null}})}).observe(w)}})();</script>
+<script>(function(){var st=document.querySelector('.gn-stage');if(!st)return;var sl=st.querySelectorAll('.gn-sl'),dt=st.querySelectorAll('.gn-dot'),i=0,t=null,calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function show(n){sl[i].classList.remove('on');dt[i].classList.remove('on');i=(n+sl.length)%sl.length;sl[i].classList.add('on');dt[i].classList.add('on')}
+function start(){if(!calm&&!t)t=setInterval(function(){show(i+1)},3800)}function stop(){clearInterval(t);t=null}
+dt.forEach(function(d,n){d.addEventListener('click',function(){stop();show(n);start()})});
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){st.querySelectorAll('img[loading=lazy]').forEach(function(x){x.loading='eager'});start()}else stop()})}).observe(st)}})();</script>
 </body>
 </html>
