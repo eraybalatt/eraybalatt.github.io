@@ -2326,7 +2326,7 @@ footer.ft2{background:var(--b0)!important}
 .slj-new{margin-top:34px!important}
 
 /* Gevher Nesibe: client feature in its own palette (navy, Seljuk turquoise, warm stone) */
-.gn-feature{--gtq:#3fc1b4;--gtq2:#8fe3da;--gst:#e6d3b3;--gbg:#0b1b33;display:grid;grid-template-columns:minmax(0,1fr);margin:10px 0 24px;border-radius:20px;overflow:hidden;background:radial-gradient(120% 90% at 100% 0%,rgba(63,193,180,.16),transparent 60%),linear-gradient(160deg,#0f2443,#081428 70%);box-shadow:inset 0 0 0 1px rgba(143,227,218,.28),0 30px 60px -36px rgba(0,0,0,.7);scroll-margin-top:24px}
+.gn-feature{--gtq:#3fc1b4;--gtq2:#8fe3da;--gst:#e6d3b3;--gbg:#0b1b33;display:grid;grid-template-columns:minmax(0,1fr);margin:10px 0 24px;border-radius:20px;overflow:hidden;background:radial-gradient(120% 90% at 100% 0%,rgba(63,193,180,.22),transparent 60%),linear-gradient(160deg,#1f4a7c,#16365f 70%);box-shadow:inset 0 0 0 1px rgba(143,227,218,.28),0 30px 60px -36px rgba(0,0,0,.7);scroll-margin-top:24px}
 @media(min-width:1000px){.gn-feature{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
 .gn-stage{position:relative;overflow:hidden;min-height:260px;aspect-ratio:16/10;background:#06101f}
 @media(min-width:1000px){.gn-stage{aspect-ratio:auto}}
@@ -2345,11 +2345,11 @@ footer.ft2{background:var(--b0)!important}
 .gn-dot.on,.gn-dot:hover{opacity:1;box-shadow:0 0 0 2px var(--gtq)}
 .gn-body{padding:26px 26px 28px;display:flex;flex-direction:column;justify-content:center}
 .gn-client{display:flex;flex-direction:column;gap:2px;padding-left:12px;border-left:2px solid var(--gtq);margin-bottom:16px}
-.gn-client span{font:600 .64rem var(--mono,monospace);letter-spacing:.14em;text-transform:uppercase;color:var(--gtq2)}
+.gn-client span{font:600 .64rem var(--mono,monospace);letter-spacing:.14em;text-transform:uppercase;color:#b6f0ea}
 .gn-client b{font-weight:600;color:#fff;font-size:.95rem}
 .gn-body h3{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,3.6vw,2.9rem);line-height:1;margin:0;color:#fff}
 .gn-body h3 em{font-style:italic;color:var(--gst)}
-.gn-sub{font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--gst);margin:6px 0 12px}
+.gn-sub{font-family:var(--display);font-style:italic;font-size:1.2rem;color:#f1e4cc;margin:6px 0 12px}
 .gn-body>p:not(.gn-sub){color:#d6e3ef;font-size:.96rem;line-height:1.6;margin:0 0 16px}
 .gn-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:0 0 20px;padding:14px 0;border-top:1px solid rgba(143,227,218,.2);border-bottom:1px solid rgba(143,227,218,.2)}
 .gn-facts dt{font:600 .62rem var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:#d2e6f8;margin-bottom:2px}
@@ -2358,6 +2358,29 @@ footer.ft2{background:var(--b0)!important}
 .gn-btn:hover{background:var(--gtq2)}
 @media(max-width:600px){.gn-dots{grid-template-columns:repeat(6,1fr);gap:4px;left:10px;right:10px;bottom:10px}.gn-sl figcaption{bottom:54px;left:12px}.gn-body{padding:20px}}
 @media(prefers-reduced-motion:reduce){.gn-sl{transition:none}.gn-sl.on img{animation:none}}
+
+/* Worked with: logo strip */
+.about-clients{flex-direction:column;align-items:flex-start!important;gap:14px!important}
+.wlogos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:14px 30px}
+.wlogos li{display:flex;align-items:center;gap:8px;height:40px;opacity:.86;transition:opacity .2s;color:#fff;white-space:nowrap}
+.wlogos li:hover{opacity:1}
+.wlogos img{display:block;height:auto}
+.wl-img img{height:38px;width:auto}
+.wl-img img[alt="Suno"]{height:20px}
+.wl-icon img{border-radius:6px}
+.wl-icon span{font-weight:700;font-size:1.08rem;letter-spacing:-.01em}
+.wl-word{flex-direction:column;align-items:flex-start!important;justify-content:center;gap:1px!important}
+.wl-erciyes span{font-family:var(--display);font-size:1.3rem;line-height:1}
+.wl-erciyes small,.wl-umg small{font:600 .56rem var(--mono,monospace);letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.wl-umg b{font-weight:800;font-size:1.05rem;letter-spacing:.22em;line-height:1}
+.wl-bahs span{font-weight:800;font-size:1.5rem;letter-spacing:-.04em;line-height:1}
+@media(max-width:600px){.wlogos{gap:12px 22px}}
+
+.wl-eru img{border-radius:0!important}
+.wl-two{display:flex;flex-direction:column;line-height:1.1}
+.wl-two b{font-family:var(--display);font-weight:400;font-size:1.2rem}
+.wl-two small{font:600 .56rem var(--mono,monospace);letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+@media(max-width:600px){.wlogos li{height:34px}.wl-two b{font-size:1.05rem}.wl-icon span{font-size:.98rem}.wl-bahs span{font-size:1.3rem}.wl-img img{height:32px}.wl-img img[alt="Suno"]{height:17px}}
 </style>
 </head>
 <body>
@@ -2467,7 +2490,7 @@ footer.ft2{background:var(--b0)!important}
         <p class="about-lead" data-en="I&#x27;m a creative producer and filmmaker. I combine live footage, motion design and generative media, and take a project from concept and storyboard through edit, animation, sound and finishing, for clients in the US, Europe and Türkiye." data-tr="Creative producer ve yönetmenim. Gerçek çekimi, motion tasarımı ve üretken medyayı birleştiriyor; bir projeyi konsept ve storyboard&#x27;dan kurguya, animasyona, sese ve bitişe kadar götürüyorum. ABD, Avrupa ve Türkiye&#x27;deki müşterilerle çalışıyorum.">I'm a creative producer and filmmaker. I combine live footage, motion design and generative media, and take a project from concept and storyboard through edit, animation, sound and finishing, for clients in the US, Europe and Türkiye.</p>
         <p class="about-lang" data-en="Turkish (native) · English (working) · German and Arabic (basic)" data-tr="Türkçe (ana dil) · İngilizce (iş düzeyi) · Almanca ve Arapça (temel)">Turkish (native) · English (working) · German and Arabic (basic)</p>
         <a class="about-badges" href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener" aria-label="Upwork profile: 100% Job Success, Top Rated"><span class="ub"><svg class="ub-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.4" fill="none" stroke="#2f6fe8" stroke-width="1.8"/><path fill="#2f6fe8" d="M6.6 9.2l2.9 2.3L12 7.6l2.5 3.9 2.9-2.3-1.1 6.6H7.7z"/></svg><span data-en="100% Job Success" data-tr="%100 iş başarısı">100% Job Success</span></span><span class="ub"><svg class="ub-ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#2f6fe8" d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><path fill="#fff" d="M12 6.9l1.5 3.1 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z"/></svg><span>Top Rated</span></span><span class="ub-src">Upwork ↗</span></a>
-        <div class="about-clients"><span class="ac-label" data-en="Worked with" data-tr="Birlikte çalıştıklarım">Worked with</span><span class="tlogo" data-en="Erciyes University" data-tr="Erciyes Üniversitesi">Erciyes University</span><span class="tlogo">Universal Music</span><span class="tlogo">TennisCut</span><span class="tlogo">Suno</span></div>
+        <div class="about-clients"><span class="ac-label" data-en="Worked with" data-tr="Birlikte çalıştıklarım">Worked with</span><ul class="wlogos"><li class="wl-icon wl-eru"><img src="/logos/erciyes-tip-en.webp" width="44" height="44" alt="" /><span class="wl-two"><b data-en="Erciyes University" data-tr="Erciyes Üniversitesi">Erciyes University</b><small data-en="Faculty of Medicine" data-tr="Tıp Fakültesi">Faculty of Medicine</small></span></li><li class="wl-word wl-umg"><b>UNIVERSAL</b><small>MUSIC TÜRKİYE</small></li><li class="wl-icon"><img src="/logos/tenniscut-icon.webp" width="34" height="24" alt="" /><span>TennisCut</span></li><li class="wl-icon"><img src="/logos/blarma-icon.webp" width="26" height="26" alt="" /><span>Blarma</span></li><li class="wl-word wl-bahs"><span>bahs.</span></li><li class="wl-img"><img src="/logos/novora.webp" width="62" height="38" alt="Novora Zeytin" /></li><li class="wl-img"><img src="/logos/suno.webp" width="86" height="21" alt="Suno" /></li></ul></div>
       </div>
     </div>
   </section>

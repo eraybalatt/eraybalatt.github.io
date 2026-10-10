@@ -158,6 +158,8 @@ def build(src_rel, lang, cfg, meta_all):
     dest_dir = os.path.join(ROOT, cfg["dir"])
     os.makedirs(dest_dir, exist_ok=True)
     dest = os.path.join(dest_dir, "index.html")
+    if lang == "tr":
+        out = out.replace("/logos/erciyes-tip-en.webp", "/logos/erciyes-tip-tr.webp")
     open(dest, "w", encoding="utf-8").write(out)
     return {"dest": os.path.relpath(dest, ROOT), "swapped": swapped,
             "paths_fixed": fixed, "size_kb": round(len(out) / 1024)}
