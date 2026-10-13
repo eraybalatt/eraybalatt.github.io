@@ -10,7 +10,7 @@ onlara görünmez.
 Kullanım:  python3 build-i18n.py
 Kaynak dosya (index.html) her değiştiğinde yeniden çalıştırılmalı.
 """
-import os, re, sys, json
+import os, re, sys, json, hashlib
 from bs4 import BeautifulSoup
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -22,6 +22,24 @@ JOBS = [
         "tr": {"dir": "tr",  "locale": "tr_TR"},
     }},
 ]
+
+# 13 Eki 2026: ek diller. Çeviriler i18n/<dil>.json içinde, anahtar = data-tr taşıyan
+# öğenin İngilizce içeriğinin sha1'inin ilk 10 hanesi (İngilizce değişirse o metin İngilizce kalır).
+# Sayfalar AI destekli çeviridir; dil menüsünde bu yazıyor.
+EXTRA = {
+    "fr": {"locale": "fr_FR", "menu": "Menu"},
+    "de": {"locale": "de_DE", "menu": "Menü"},
+    "it": {"locale": "it_IT", "menu": "Menu"},
+    "es": {"locale": "es_ES", "menu": "Menú"},
+    "pt": {"locale": "pt_BR", "menu": "Menu"},
+    "fi": {"locale": "fi_FI", "menu": "Valikko"},
+    "zh": {"locale": "zh_CN", "menu": "菜单"},
+    "ja": {"locale": "ja_JP", "menu": "メニュー"},
+    "ko": {"locale": "ko_KR", "menu": "메뉴"},
+    "ar": {"locale": "ar_AR", "menu": "القائمة", "rtl": True},
+    "hi": {"locale": "hi_IN", "menu": "मेनू"},
+}
+ALL_LANGS = ["en", "tr"] + list(EXTRA)
 
 # dile göre yönlendirilecek linkler (ana sayfadaki setLang mantığının aynısı)
 FAQ_HREF  = {"en": "/faq/", "tr": "/sss/"}
@@ -67,7 +85,16 @@ def set_meta(soup, selector_attr, key, value):
     return False
 
 
-def build(src_rel, lang, cfg, meta_all):
+def load_tmap(lang):
+    f = os.path.join(ROOT, "i18n", lang + ".json")
+    return json.load(open(f, encoding="utf-8")) if os.path.exists(f) else None
+
+
+def tkey(html):
+    return hashlib.sha1(html.strip().encode()).hexdigest()[:10]
+
+
+def build(src_rel, lang, cfg, meta_all, tmap=None):
     src_path = os.path.join(ROOT, src_rel)
     raw = open(src_path, encoding="utf-8").read()
     soup = BeautifulSoup(raw, "html.parser")
@@ -77,7 +104,32 @@ def build(src_rel, lang, cfg, meta_all):
 
     # 2) çevirileri göm
     swapped = 0
-    for el in soup.select(f"[data-{lang}]"):
+    if tmap is not None:
+        if cfg.get("rtl"):
+            soup.html["dir"] = "rtl"
+        for el in soup.select("[data-tr]"):
+            val = tmap.get(tkey(el.decode_contents()))
+            if not val:
+                continue
+            frag = BeautifulSoup(val, "html.parser")
+            el.clear()
+            for child in list(frag.contents):
+                el.append(child)
+            swapped += 1
+        meta_all = dict(meta_all)
+        meta_all[lang] = {"t": tmap.get("_meta_t", ""), "d": tmap.get("_meta_d", "")}
+        # globe shows the current language
+        g = soup.select_one(".lang-globe")
+        if g:
+            g["class"] = g.get("class", []) + ["active"]
+            g["aria-pressed"] = "true"
+            code = g.select_one(".lg-code")
+            if code:
+                code.string = lang.upper()
+        for b in soup.select(".lang-btn[data-lang]"):
+            b["class"] = [c for c in b.get("class", []) if c != "active"]
+            b["aria-pressed"] = "false"
+    for el in soup.select(f"[data-{lang}]") if tmap is None else []:
         val = el.get(f"data-{lang}")
         if val is None:
             continue
@@ -108,7 +160,7 @@ def build(src_rel, lang, cfg, meta_all):
     head = soup.head
     can = soup.new_tag("link", rel="canonical", href=url)
     head.append(can)
-    for hl, href in (("en", f"{BASE}/"), ("tr", f"{BASE}/tr/"), ("x-default", f"{BASE}/")):
+    for hl, href in [("en", f"{BASE}/"), ("tr", f"{BASE}/tr/")] + [(l, f"{BASE}/{l}/") for l in EXTRA] + [("x-default", f"{BASE}/")]:
         t = soup.new_tag("link", rel="alternate", href=href)
         t["hreflang"] = hl
         head.append(t)
@@ -118,14 +170,14 @@ def build(src_rel, lang, cfg, meta_all):
 
     # 6) dile bağlı linkler
     for a in soup.select("a[data-faq]"):
-        a["href"] = FAQ_HREF[lang]
+        a["href"] = FAQ_HREF.get(lang, FAQ_HREF["en"])
     for a in soup.select("a[data-hire]"):
-        a["href"] = HIRE_HREF[lang]
+        a["href"] = HIRE_HREF.get(lang, HIRE_HREF["en"])
     for a in soup.select("a[data-blog]"):
-        a["href"] = BLOG_HREF[lang]
+        a["href"] = BLOG_HREF.get(lang, BLOG_HREF["en"])
     # Detective mode (/files/) has its own Turkish build at /tr/files/
     for a in soup.select('a[href="/files/"]'):
-        a["href"] = FILES_HREF[lang]
+        a["href"] = FILES_HREF.get(lang, FILES_HREF["en"])
 
     # 7) JSON-LD: sayfa düğümünü bu dile bağla
     for s in soup.find_all("script", type="application/ld+json"):
@@ -145,8 +197,8 @@ def build(src_rel, lang, cfg, meta_all):
     # 8) dil kilidi — JS yüklenince sayfayı başka dile çevirmesin,
     #    dil düğmeleri de swap yerine gerçek URL'e gitsin
     out = re.sub(
-        r"document\.querySelectorAll\('\.lang-btn'\)\.forEach\(b=>b\.addEventListener\('click',\(\)=>\{setLang\(b\.dataset\.lang\);.*?\}\)\);",
-        "document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{"
+        r"document\.querySelectorAll\('\.lang-btn(?:\[data-lang\])?'\)\.forEach\(b=>b\.addEventListener\('click',\(\)=>\{setLang\(b\.dataset\.lang\);.*?\}\)\);",
+        "document.querySelectorAll('.lang-btn[data-lang]').forEach(b=>b.addEventListener('click',()=>{"
         "try{localStorage.setItem('lang',b.dataset.lang)}catch(e){}"
         "location.href={en:'/',tr:'/tr/'}[b.dataset.lang]||'/';}));",
         out, count=1, flags=re.S)
@@ -154,6 +206,13 @@ def build(src_rel, lang, cfg, meta_all):
         r"\(function\(\)\{const ok=\['en','tr'\];.*?setLang\(l\);\}\)\(\);",
         f"setLang('{lang}');",
         out, count=1, flags=re.S)
+    if tmap is not None:
+        esc = lambda v: (v or "").replace("\\", "\\\\").replace("'", "\\'")
+        meta = (f"LANG_META['{lang}']={{t:'{esc(tmap.get('_meta_t'))}',d:'{esc(tmap.get('_meta_d'))}',"
+                f"loc:'{cfg['locale']}',menu:'{esc(cfg['menu'])}'}};")
+        out = out.replace("  function setLang(lang){", "  " + meta + "\n  function setLang(lang){", 1)
+        aria = ",".join(f"{k[6:]}:'{esc(v)}'" for k, v in tmap.items() if k.startswith("_aria_"))
+        out = out.replace("window.__aria=A[lang]||A.en;", f"A['{lang}']={{{aria}}};window.__aria=A[lang]||A.en;", 1)
 
     dest_dir = os.path.join(ROOT, cfg["dir"])
     os.makedirs(dest_dir, exist_ok=True)
@@ -172,6 +231,14 @@ def main():
         meta_all = lang_meta(raw)
         for lang, cfg in job["langs"].items():
             results.append((lang, build(job["src"], lang, cfg, meta_all)))
+        if job["src"] == "index.html":
+            for lang, cfg in EXTRA.items():
+                tmap = load_tmap(lang)
+                if tmap is None:
+                    print(f"  {lang}: i18n/{lang}.json yok, atlandı")
+                    continue
+                c = dict(cfg, dir=lang)
+                results.append((lang, build(job["src"], lang, c, meta_all, tmap)))
     for lang, r in results:
         print(f"  {lang} → {r['dest']}  ({r['swapped']} çeviri gömüldü, "
               f"{r['paths_fixed']} yol düzeltildi, {r['size_kb']}KB)")
