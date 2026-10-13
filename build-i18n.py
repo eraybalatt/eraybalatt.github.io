@@ -37,7 +37,6 @@ EXTRA = {
     "ja": {"locale": "ja_JP", "menu": "メニュー"},
     "ko": {"locale": "ko_KR", "menu": "메뉴"},
     "ar": {"locale": "ar_AR", "menu": "القائمة", "rtl": True},
-    "hi": {"locale": "hi_IN", "menu": "मेनू"},
 }
 ALL_LANGS = ["en", "tr"] + list(EXTRA)
 
