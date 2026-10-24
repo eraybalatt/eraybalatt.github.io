@@ -267,6 +267,15 @@ def build_sub(job):
         el["aria-label"] = el["data-aria-tr"]
     for el in soup.select("[data-href-tr]"):
         el["href"] = el["data-href-tr"]
+    # sayfa dili kilitli: kaydedilmiş 'en' tercihi TR sayfayı İngilizceye çevirmesin
+    for s in soup.find_all("script"):
+        if s.string and "getItem('lang')" in s.string and "documentElement.lang=" in s.string:
+            s.decompose()
+    for b in soup.select(".lang button[data-l], .lang-btn[data-lang]"):
+        on = (b.get("data-l") or b.get("data-lang")) == "tr"
+        b["aria-pressed"] = "true" if on else "false"
+        if b.get("data-lang"):
+            b["class"] = [c for c in b.get("class", []) if c != "active"] + (["active"] if on else [])
 
     if soup.title:
         soup.title.string = job["t"]
