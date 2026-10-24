@@ -3,7 +3,7 @@
 window.EB = {
   P: { // projects: cover lines
     flawless:  { t: "FLAWLESS", k: "Documentary · 16:56 · 4K", role: "Writer, director, editor, narrator", href: "/flawless/", hrefLabel: "Read the case study" },
-    coldstart: { t: "COLD START", k: "Sci-fi trailer · 2:04", role: "Editor · sound · colour", sub: "XPRIZE submission", href: "coldstart-film.mp4", hrefLabel: "Watch the trailer" },
+    coldstart: { t: "COLD START", k: "Sci-fi trailer · 2:04", role: "Editor · sound · colour", sub: "XPRIZE submission", href: "coldstart-film-v2.mp4", hrefLabel: "Watch the trailer" },
     tenniscut: { t: "TennisCut", k: "Three brand films · 9:16", role: "Director" },
     bushido:   { t: "Bushido", k: "Campaign concept · synthetic cast", role: "Director", href: "/bushido/", hrefLabel: "See the campaign" },
     novora:    { t: "Novora", k: "Animated brand film · 0:28 · TR / EN", role: "Director", href: "https://youtu.be/GAGlpIw3Q2Y", hrefLabel: "Watch (EN)" },
@@ -34,7 +34,7 @@ window.EB = {
     "cs.colour": "One cold identity across the cut; the few warm accents were kept on purpose.",
     "cs.silence": "<b>2.1 seconds</b> of absolute silence at the centre. Placed on purpose.",
     "cs.master": "Master: 1920×1080, 24 fps, <b>−15.7 LUFS</b>, −1.4 dBTP. ProRes 422 HQ archive.",
-    "cs.licence": "<b>Before sign-off:</b> 28 stock licences audited, 7 found under other project names and re-registered. The client was told before they asked.",
+    "cs.licence": "<b>Before sign-off:</b> every stock licence was audited; mismatches were re-registered and the client was told first.",
     "cs.review": "“He caught continuity and pacing problems I’d missed. I’d hire him again without hesitation.”",
 
 

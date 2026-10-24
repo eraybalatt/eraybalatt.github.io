@@ -2410,6 +2410,14 @@ footer.ft2{background:var(--b0)!important}
 .lang-menu a[dir="rtl"]{text-align:left}
 .lang-menu a[aria-current="page"]{background:var(--btn);color:var(--btn-tx)}
 .lang-menu .lm-note{grid-column:1/-1;padding:6px 10px 2px;color:var(--muted);font:500 .66rem/1.3 var(--mono,monospace);letter-spacing:.04em}
+
+/* 25 Eki audit fixes (A11-A13): hero headline under the availability pill, Gevher card on phones, short-laptop sidebar */
+@media(min-width:880px) and (max-width:1279.98px){.hero h1.hero-brush{top:94px}}
+@media(min-width:880px) and (max-width:1679.98px){:lang(es) .hero h1.hero-brush,:lang(it) .hero h1.hero-brush,:lang(fr) .hero h1.hero-brush{top:94px}}
+@media(max-width:447.98px){.gn-stage{aspect-ratio:auto}}
+@media (min-width:880px) and (max-height:719.98px){.nav-inner{padding:12px 14px 10px}.nav-links{margin-top:8px}.nav-links a{padding:5px 10px}.nav-right{padding-top:8px;gap:8px}}
+@media (min-width:880px) and (max-height:619.98px){.nav-studio .ns-small{display:none!important}}
+@media (min-width:880px) and (max-height:480px){.nav-studio{display:none}.nav-links{gap:3px}.nav-links a{padding:4px 10px}}
 </style>
 <link href="https://eraybalat.com/es/" rel="canonical"/><link href="https://eraybalat.com/" hreflang="en" rel="alternate"/><link href="https://eraybalat.com/tr/" hreflang="tr" rel="alternate"/><link href="https://eraybalat.com/fr/" hreflang="fr" rel="alternate"/><link href="https://eraybalat.com/de/" hreflang="de" rel="alternate"/><link href="https://eraybalat.com/it/" hreflang="it" rel="alternate"/><link href="https://eraybalat.com/es/" hreflang="es" rel="alternate"/><link href="https://eraybalat.com/pt/" hreflang="pt" rel="alternate"/><link href="https://eraybalat.com/fi/" hreflang="fi" rel="alternate"/><link href="https://eraybalat.com/zh/" hreflang="zh" rel="alternate"/><link href="https://eraybalat.com/ja/" hreflang="ja" rel="alternate"/><link href="https://eraybalat.com/ko/" hreflang="ko" rel="alternate"/><link href="https://eraybalat.com/ar/" hreflang="ar" rel="alternate"/><link href="https://eraybalat.com/" hreflang="x-default" rel="alternate"/></head>
 <body>
@@ -2538,7 +2546,7 @@ footer.ft2{background:var(--b0)!important}
 <div class="fc-body">
 <div class="role" data-en="Documentary · CITRINE" data-tr="Belgesel · CITRINE">Documental · CITRINE</div>
 <h3>FLAWLESS</h3>
-<p data-en="The Antwerp diamond heist, told on camera by the man who led it. $100M gone from a vault called unbreakable." data-tr="Anvers elmas soygunu, onu yöneten adamın ağzından. Kırılamaz denen bir kasadan 100 milyon dolar.">El robo de diamantes de Amberes, contado ante la cámara por el hombre que lo dirigió. 100 millones de dólares desaparecidos de una cámara acorazada llamada inexpugnable.</p>
+<p data-en="The Antwerp diamond heist, with an interview from the man who led it. $100M gone from a vault called unbreakable." data-tr="Anvers elmas soygunu, onu yöneten adamla yapılmış bir röportajla. Kırılamaz denen bir kasadan 100 milyon dolar.">El robo de diamantes de Amberes, con una entrevista al hombre que lo dirigió. 100 millones de dólares desaparecidos de una cámara acorazada llamada inexpugnable.</p>
 <div class="spots"><span data-en="The mastermind on camera" data-tr="Kamerada soygunun beyni">El cerebro, ante la cámara</span><span>16:56 · 4K</span></div>
 <a class="btn btn-grad" data-en="See the case study →" data-tr="Vaka çalışmasını gör →" href="/flawless/">Ver el caso de estudio →</a>
 </div>
@@ -2560,7 +2568,7 @@ footer.ft2{background:var(--b0)!important}
 <div class="eyebrow reveal" data-en="UGC &amp; Ads" data-tr="UGC &amp; Reklam">UGC &amp; anuncios</div>
 <h2 class="sec-title reveal" data-en="UGC &amp; Short-Form Ads" data-tr="UGC ve Kısa Reklamlar">UGC &amp; anuncios de formato corto</h2>
 <p class="sec-sub reveal" data-en="Vertical ads built to stop the scroll." data-tr="Kaydırmayı durdurmak için dikey reklamlar.">Anuncios verticales hechos para detener el scroll.</p>
-<div aria-label="Filter the ads" class="ugc-filter reveal" hidden="" role="group"><button aria-pressed="true" class="uf on" data-cat="all" type="button"><span data-en="All" data-tr="Tümü">Todos</span><i>12</i></button><button aria-pressed="false" class="uf" data-cat="app" type="button"><span data-en="App ads" data-tr="Uygulama reklamları">Anuncios de apps</span><i>7</i></button><button aria-pressed="false" class="uf" data-cat="ugc" type="button"><span>UGC</span><i>1</i></button><button aria-pressed="false" class="uf" data-cat="brand" type="button"><span data-en="Brand films" data-tr="Marka filmleri">Películas de marca</span><i>4</i></button></div>
+<div aria-label="Filter the ads" class="ugc-filter reveal" hidden="" role="group"><button aria-pressed="true" class="uf on" data-cat="all" type="button"><span data-en="All" data-tr="Tümü">Todos</span><i>14</i></button><button aria-pressed="false" class="uf" data-cat="app" type="button"><span data-en="App ads" data-tr="Uygulama reklamları">Anuncios de apps</span><i>9</i></button><button aria-pressed="false" class="uf" data-cat="ugc" type="button"><span>UGC</span><i>1</i></button><button aria-pressed="false" class="uf" data-cat="brand" type="button"><span data-en="Brand films" data-tr="Marka filmleri">Películas de marca</span><i>4</i></button></div>
 <div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <div class="grid g-ugc">
 <div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/tenniscut-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-1.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — The Moment</h3><p data-en="Sports app campaign · hook film" data-tr="Spor uygulaması kampanyası · kanca filmi">Campaña de app deportiva · película gancho</p></div></div>
@@ -2596,10 +2604,10 @@ footer.ft2{background:var(--b0)!important}
 <p class="sec-sub reveal" data-en="Trailers and shorts, as director or editor." data-tr="Fragmanlar ve kısa filmler, yönetmen ya da kurgucu olarak.">Tráilers y cortos, como director o montador.</p>
 <div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <div class="feature reveal" style="grid-template-columns:1.62fr 1fr;gap:38px">
-<a aria-label="Play COLD START — 2 minutes 19 seconds" class="media" data-thumbs="/thumbs/coldstart-film" data-vid="/coldstart-film.mp4" data-vid-poster="/film-coldstart-p.webp" href="/coldstart-film.mp4">
+<a aria-label="Play COLD START — 2 minutes 4 seconds" class="media" data-thumbs="/thumbs/coldstart-film-v2" data-vid="/coldstart-film-v2.mp4" data-vid-poster="/film-coldstart-p.webp" href="/coldstart-film-v2.mp4">
 <video data-poster="/film-coldstart-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/film-coldstart.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></video>
 <span class="play" style="z-index:2"></span>
-<span class="pill" style="z-index:2">2:19</span>
+<span class="pill" style="z-index:2">2:04</span>
 </a>
 <div>
 <div class="role" data-en="Sci-fi trailer · US client" data-tr="Bilim kurgu fragmanı · ABD'li müşteri">Tráiler de ciencia ficción · cliente de EE. UU.</div>
@@ -2646,7 +2654,7 @@ footer.ft2{background:var(--b0)!important}
 <p class="sec-sub reveal" data-en="Official videos for Universal Music Türkiye artists. One was made entirely within a single model family, to meet the label's licensing rules." data-tr="Universal Music Türkiye sanatçıları için resmi klipler. Biri, plak şirketinin lisans kuralları gereği tamamen tek bir model ailesiyle üretildi.">Videos oficiales para artistas de Universal Music Türkiye. Uno se hizo íntegramente con una sola familia de modelos, para cumplir las reglas de licencia del sello.</p>
 <div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <article class="mvx reveal">
-<a aria-label="Play the AI anime music video" class="mvx-media" data-thumbs="/thumbs/anime-mv" data-vid="/anime-mv.mp4" data-vid-poster="/mv-anime-cover2.webp" href="/anime-mv.mp4">
+<a aria-label="Play the AI anime music video" class="mvx-media" data-thumbs="/thumbs/anime-mv-v3" data-vid="/anime-mv.mp4?v=3" data-vid-poster="/mv-anime-cover2.webp" href="/anime-mv.mp4?v=3">
 <img alt="AI anime music video: the artist with flaming hair and silver shades inside a glass capsule" decoding="async" height="540" loading="lazy" src="/mv-anime-cover2.webp" width="1280"/>
 <span class="play"></span>
 </a>
@@ -2954,10 +2962,11 @@ footer.ft2{background:var(--b0)!important}
 // reports when a section top crosses it; only then is the active link recomputed (same rule as before), and the
 // classes are touched only when the active link really changes (re-adding it restyled the whole nav every frame).
 function markActive(){
-  var line=140, cur=null;
+  // nav order is not page order, so pick the section whose top passed the line most recently (no early break)
+  var line=140, cur=null, best=-Infinity;
   for(var i=0;i<navTargets.length;i++){
-    var el=document.getElementById(navTargets[i].id);
-    if(el.getBoundingClientRect().top<=line) cur=navTargets[i]; else break;
+    var t=document.getElementById(navTargets[i].id).getBoundingClientRect().top;
+    if(t<=line&&t>best){best=t;cur=navTargets[i];}
   }
   var on=cur?cur.a:null;
   navA.forEach(function(a){if(a!==on&&a.classList.contains('active'))a.classList.remove('active');});
@@ -3046,6 +3055,7 @@ navTargets.forEach(function(t){
     v.removeAttribute('autoplay'); v.pause();
     const wrap=v.parentElement; if(!wrap||wrap.querySelector('.playbtn'))return;
     const pv=v.getAttribute('data-poster')||v.getAttribute('poster'); if(pv){ wrap.dataset.poster=pv; posterObs.observe(wrap); }
+    if(wrap.matches('a[data-vid]'))return; // the card opens the full film in the EB player; no inline loop button
     const btn=document.createElement('button');
     btn.className='playbtn'; btn.type='button'; btn.setAttribute('aria-label',(window.__aria||{}).play||'Play video'); btn.setAttribute('aria-pressed','false');
     wrap.appendChild(btn);
@@ -3237,13 +3247,14 @@ navTargets.forEach(function(t){
 
   // (the click ripple is gone: the calm theme hides .click-ripple, so every click built and removed an invisible span)
 </script>
-<!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74", "spa": false}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script><!-- End Cloudflare Web Analytics -->
 <script>document.querySelectorAll('.rev-more').forEach(function(b){b.addEventListener('click',function(){
 var q=b.parentElement.querySelector('.rev-quote');var open=!q.classList.toggle('rev-clamp');
 var L=document.documentElement.lang||'en';
 b.textContent=open?(L==='tr'?'Kısalt':L==='de'?'Weniger anzeigen':'Show less')
 :(L==='tr'?'Yorumun tamamını oku':L==='de'?'Ganze Bewertung lesen':'Read the full review');});});</script><script>
 (function(){var bar=document.querySelector('.ugc-filter'),g=document.querySelector('#ugc .g-ugc');if(!bar||!g)return;bar.hidden=false;
+bar.querySelectorAll('.uf').forEach(function(x){var c=x.getAttribute('data-cat'),n=g.querySelectorAll(c==='all'?':scope>[data-cat]':':scope>[data-cat="'+c+'"]').length,i=x.querySelector('i');if(i)i.textContent=n;});
 bar.addEventListener('click',function(e){var b=e.target.closest('.uf');if(!b)return;var c=b.getAttribute('data-cat');
 bar.querySelectorAll('.uf').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on?'true':'false');});
 g.querySelectorAll('.card[data-cat]').forEach(function(card){var show=c==='all'||card.getAttribute('data-cat')===c;card.hidden=!show;if(!show){var v=card.querySelector('video');if(v&&!v.paused)v.pause();}else card.classList.add('show');});});})();

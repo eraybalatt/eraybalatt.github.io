@@ -3,7 +3,7 @@
 window.EB = {
   P: { // projects: cover lines
     flawless:  { t: "FLAWLESS", k: "Belgesel · 16:56 · 4K", role: "Senarist, yönetmen, kurgucu, anlatıcı", href: "/flawless/", hrefLabel: "Vaka çalışmasını oku" },
-    coldstart: { t: "COLD START", k: "Bilim kurgu fragmanı · 2:04", role: "Kurgu · ses · renk", sub: "XPRIZE başvurusu", href: "coldstart-film.mp4", hrefLabel: "Fragmanı izle" },
+    coldstart: { t: "COLD START", k: "Bilim kurgu fragmanı · 2:04", role: "Kurgu · ses · renk", sub: "XPRIZE başvurusu", href: "coldstart-film-v2.mp4", hrefLabel: "Fragmanı izle" },
     tenniscut: { t: "TennisCut", k: "Üç marka filmi · 9:16", role: "Yönetmen" },
     bushido:   { t: "Bushido", k: "Kampanya konsepti · sentetik oyuncular", role: "Yönetmen", href: "/bushido/", hrefLabel: "Kampanyayı gör" },
     novora:    { t: "Novora", k: "Animasyon marka filmi · 0:28 · TR / EN", role: "Yönetmen", href: "https://youtu.be/S9hG_Ga7wIg", hrefLabel: "İzle (TR)" },
@@ -34,7 +34,7 @@ window.EB = {
     "cs.colour": "Kurgu boyunca tek bir soğuk renk kimliği; birkaç sıcak vurgu bilerek bırakıldı.",
     "cs.silence": "Tam ortada <b>2,1 saniyelik</b> mutlak sessizlik. Bilerek yerleştirildi.",
     "cs.master": "Master: 1920×1080, 24 fps, <b>−15,7 LUFS</b>, −1,4 dBTP. ProRes 422 HQ arşiv.",
-    "cs.licence": "<b>Onaydan önce:</b> 28 stok lisansı denetlendi, 7'si başka proje adlarıyla kayıtlı çıktı ve yeniden kaydedildi. Müşteriye o sormadan haber verildi.",
+    "cs.licence": "<b>Onaydan önce:</b> her stok lisansı denetlendi; uyuşmayanlar yeniden kaydedildi ve müşteriye önceden haber verildi.",
     "cs.review": "“Kaçırdığım devamlılık ve tempo sorunlarını yakaladı. Onunla hiç düşünmeden yeniden çalışırım.”",
 
 
