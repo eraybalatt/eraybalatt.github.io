@@ -49,6 +49,24 @@ HOME_HREF = {"en": "/", "tr": "/tr/"}
 
 REL_ATTRS = ["src", "poster", "href", "data-poster", "data-src", "data-full", "data-image", "data-vid", "data-vid-poster"]
 
+# 25 Eki 2026: vaka sayfalarının statik TR sürümleri (/tr/<dir>/). Türkçe metin bu sayfalarda
+# sadece data-tr içinde duruyordu; JS çalıştırmayan tarayıcılar sayfayı İngilizce görüyordu.
+# mode: sayfanın kendi setLang'i ne yapıyorsa o — "text" = textContent, "html" = innerHTML.
+SUBPAGES = [
+    {"src": "gevher-nesibe/index.html", "dir": "gevher-nesibe", "mode": "text",
+     "t": "Gevher Nesibe, 1206 · Yapay zekâ prodüksiyonu · Eray Balat",
+     "d": "Gevher Nesibe, 1206: Erciyes Üniversitesi Tıp Fakültesi tanıtım filmi için yapay zekâ prodüksiyonu. "
+          "Kayseri'deki 800 yıllık şifahanenin storyboard'dan son kareye 12 adımlık süreci: 23 kameralı Blender maketi, "
+          "hareket, Çini Turkuazı paleti. Eray Balat, Citrine Studio."},
+    {"src": "flawless/index.html", "dir": "flawless", "mode": "html",
+     "t": "FLAWLESS — Antwerp Elmas Soygunu · CITRINE · Eray Balat",
+     "d": "FLAWLESS: 2003 Antwerp Elmas Soygunu'nu yeniden kuran 4K yapay zekâ belgeseli; soygunun lideri "
+          "Leonardo Notarbartolo ile özel röportaj. Yönetmen: Eray Balat."},
+]
+# alt sayfaların TR sürümüne giden bağlantılar (TR ana sayfa bunlara yönlenir)
+SUB_TR_HREF = {f"/{p['dir']}/": f"/tr/{p['dir']}/" for p in SUBPAGES}
+JS_REL = re.compile(r"""(["'])(?!/|https?:|data:|#)([\w\-./]+\.(?:webp|jpe?g|png|mp4|svg|json))\1""")
+
 
 def lang_meta(html_text):
     """index.html içindeki LANG_META sözlüğünden başlık/açıklama çeker."""
@@ -149,6 +167,7 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
         set_meta(soup, "property", "og:description", m["d"])
         set_meta(soup, "name", "twitter:description", m["d"])
     set_meta(soup, "property", "og:locale", cfg["locale"])
+    set_meta(soup, "property", "og:locale:alternate", "en_US")
     url = f"{BASE}/{cfg['dir']}/"
     set_meta(soup, "property", "og:url", url)
 
@@ -177,6 +196,10 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
     # Detective mode (/files/) has its own Turkish build at /tr/files/
     for a in soup.select('a[href="/files/"]'):
         a["href"] = FILES_HREF.get(lang, FILES_HREF["en"])
+    if lang == "tr":
+        for en_href, tr_href in SUB_TR_HREF.items():
+            for a in soup.select(f'a[href="{en_href}"]'):
+                a["href"] = tr_href
 
     # 7) JSON-LD: sayfa düğümünü bu dile bağla
     for s in soup.find_all("script", type="application/ld+json"):
@@ -223,8 +246,86 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
             "paths_fixed": fixed, "size_kb": round(len(out) / 1024)}
 
 
+def build_sub(job):
+    """Vaka sayfasının statik TR sürümü: /tr/<dir>/index.html."""
+    raw = open(os.path.join(ROOT, job["src"]), encoding="utf-8").read()
+    soup = BeautifulSoup(raw, "html.parser")
+    soup.html["lang"] = "tr"
+    en_url, tr_url = f"{BASE}/{job['dir']}/", f"{BASE}/tr/{job['dir']}/"
+
+    swapped = 0
+    for el in soup.select("[data-tr]"):
+        val = el["data-tr"]
+        el.clear()
+        if job["mode"] == "text":
+            el.append(val)
+        else:
+            for child in list(BeautifulSoup(val, "html.parser").contents):
+                el.append(child)
+        swapped += 1
+    for el in soup.select("[data-aria-tr]"):
+        el["aria-label"] = el["data-aria-tr"]
+    for el in soup.select("[data-href-tr]"):
+        el["href"] = el["data-href-tr"]
+
+    if soup.title:
+        soup.title.string = job["t"]
+    for k, v in (("og:title", job["t"]), ("og:description", job["d"]), ("og:url", tr_url), ("og:locale", "tr_TR")):
+        set_meta(soup, "property", k, v)
+    for k, v in (("description", job["d"]), ("twitter:title", job["t"]), ("twitter:description", job["d"])):
+        set_meta(soup, "name", k, v)
+
+    for link in soup.find_all("link", rel=lambda r: r and ("canonical" in r or "alternate" in r)):
+        if link.get("hreflang") or "canonical" in (link.get("rel") or []):
+            link.decompose()
+    soup.head.append(soup.new_tag("link", rel="canonical", href=tr_url))
+    for hl, href in (("en", en_url), ("tr", tr_url), ("x-default", en_url)):
+        t = soup.new_tag("link", rel="alternate", href=href)
+        t["hreflang"] = hl
+        soup.head.append(t)
+
+    # göreli yollar: sayfa artık bir seviye derinde, kaynak klasörüne sabitle
+    prefix = f"/{job['dir']}/"
+    fixed = 0
+    for el in soup.find_all(True):
+        for attr in REL_ATTRS + ["srcset", "data-srcset", "imagesrcset"]:
+            v = el.get(attr)
+            if not isinstance(v, str) or not v:
+                continue
+            if attr.endswith("srcset"):
+                parts = []
+                for p in v.split(","):
+                    p = p.strip()
+                    if p and not p.startswith(("/", "http", "data:")):
+                        p = prefix + p
+                        fixed += 1
+                    parts.append(p)
+                el[attr] = ", ".join(parts)
+            elif not v.startswith(("http://", "https://", "//", "/", "#", "mailto:", "tel:", "data:", "javascript:")):
+                el[attr] = prefix + v
+                fixed += 1
+    for s in soup.find_all("script"):
+        if s.get("type") == "application/ld+json" or not s.string:
+            continue
+        s.string, n = JS_REL.subn(lambda m: m.group(1) + prefix + m.group(2) + m.group(1), s.string)
+        fixed += n
+    for s in soup.find_all("style"):
+        if s.string:
+            s.string = re.sub(r"url\((['\"]?)(?!/|https?:|data:)", lambda m: "url(" + m.group(1) + prefix, s.string)
+
+    dest_dir = os.path.join(ROOT, "tr", job["dir"])
+    os.makedirs(dest_dir, exist_ok=True)
+    dest = os.path.join(dest_dir, "index.html")
+    out = str(soup)
+    open(dest, "w", encoding="utf-8").write(out)
+    return {"dest": os.path.relpath(dest, ROOT), "swapped": swapped,
+            "paths_fixed": fixed, "size_kb": round(len(out) / 1024)}
+
+
 def main():
     results = []
+    for job in SUBPAGES:
+        results.append(("tr", build_sub(job)))
     for job in JOBS:
         raw = open(os.path.join(ROOT, job["src"]), encoding="utf-8").read()
         meta_all = lang_meta(raw)
