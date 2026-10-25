@@ -159,7 +159,7 @@
   @media(max-width:560px){section{padding:56px 0}.hero{padding:48px 0 40px}.card,.price,.rev{padding:20px}.final{padding:34px 22px}}
   @media(prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}html{scroll-behavior:auto}}
 </style>
-<link rel="stylesheet" href="/assets/look-sub.css" />
+<link rel="stylesheet" href="/assets/look-sub.css?v=2" />
 </head>
 <body>
 <a href="#main" class="skip-link">İçeriğe geç</a>
@@ -181,7 +181,7 @@
       <p class="lead">Yapay zekâ videolarının çoğu aynı yerde tökezliyor: <b>izleyici dikkatini vermeden önce "bu üretilmiş" diyor.</b> Ben marka filmi, ürün filmi, UGC reklam ve klip yönetiyorum; yüzler, ürünler ve görsel kimlik ilk plandan son plana kadar tutarlı kalıyor.</p>
       <p class="sub">Çekim ekibi yok, casting yok, stüdyo kirası yok — kendi kurduğum üretken yapay zekâ hattı, Premiere Pro ve After Effects'te finalize ediliyor. Markalar, ajanslar, plak şirketleri ve bağımsız yapımcılar için. Kayseri'den Türkiye geneline ve yurt dışına uzaktan çalışıyorum.</p>
       <div class="cta-row">
-        <a class="btn btn-p" href="mailto:eray@eraybalat.com?subject=Proje%20talebi%20%E2%80%94%20yapay%20zek%C3%A2%20ile%20reklam%20filmi">Brief'inizi gönderin →</a>
+        <a class="btn btn-p" href="#brief">Brief'inizi gönderin →</a>
         <a class="btn btn-s" href="#fiyatlar">Fiyatları gör</a>
       </div>
       <div class="proof">
@@ -189,6 +189,11 @@
         
         <span><b>17 dakikalık 4K</b> AI belgeseli — konusunun kahramanı bizzat övdü</span>
         <span><b>Top Rated</b> Upwork'te · %100 iş başarısı · her yorumda 5.0</span>
+      </div>
+      <div class="live-work" aria-label="Yayındaki müşteri işleri">
+        <a href="/tr/#ugc"><img src="/tenniscut-1-p-s.webp" alt="TennisCut uygulama reklamından kare: servis öncesi tenisçi" loading="lazy" decoding="async" /><div class="b"><h3>TennisCut</h3><p>Spor uygulaması · üç ürün filmi</p></div></a>
+        <a href="/tr/#ugc"><img src="/blarma-az_ingilis_a-test-p-s.webp" alt="Blarma Meta reklamından kare: Bakü Eski Şehir'de animasyon sunucu" loading="lazy" decoding="async" /><div class="b"><h3>Blarma</h3><p>Yayında Meta reklamları · İngilizce, Almanca, Azerice</p></div></a>
+        <a href="/tr/#ugc"><img src="/takmatakma-A-p-s.webp" alt="Takma Takma marka filminden kare" loading="lazy" decoding="async" /><div class="b"><h3>Takma Takma</h3><p>Marka filmleri · tırnak ve kirpik</p></div></a>
       </div>
     </div>
   </section>
@@ -303,7 +308,7 @@
 
   <section id="yorumlar">
     <div class="wrap">
-      <div class="eyebrow">Müşteri yorumları · Upwork doğrulamalı</div>
+      <div class="eyebrow">Müşteri yorumları</div>
       <h2>Müşteriler ne diyor</h2>
       <div class="revs">
         <figure class="rev">
@@ -321,6 +326,10 @@
             <div class="stars" aria-label="5 üzerinden 5 yıldız">★★★★★<b>5.0</b></div>
             <q>Eray'dan hızlı ve kaliteli iş.</q>
             <figcaption class="who">Solovista L. · Kısa format reklamlar · 🇨🇾 Kıbrıs</figcaption>
+          </figure>
+          <figure class="rev">
+            <q>Genel olarak production quality açısından tebrik ediyorum. Arayüz efektleri süper görünüyor; fikir çok güçlü ve app ile tam uyuyor.</q>
+            <figcaption class="who">Alper Tellioğlu · TennisCut · üç ürün filmi</figcaption>
           </figure>
         </div>
       </div>
@@ -347,10 +356,21 @@
 
   <section>
     <div class="wrap">
-      <div class="final">
+      <div class="final" id="brief">
         <h2>Brief'inizi gönderin</h2>
         <p class="sec-sub">Ürünü ve hedefi yazmanız yeterli. Neyi değiştireceğimi, bugünkü modellerin neyi güvenilir biçimde yapabildiğini ve sabit fiyatı genelde bir gün içinde geri yazıyorum.</p>
-        <a class="mail" href="mailto:eray@eraybalat.com?subject=Proje%20talebi%20%E2%80%94%20yapay%20zek%C3%A2%20ile%20reklam%20filmi">eray@eraybalat.com</a>
+        <form class="qform" id="brief-form" method="post" action="https://api.web3forms.com/submit" autocomplete="on">
+          <input type="hidden" name="access_key" value="b77ff153-998f-4550-aaff-2e1c474df49d" />
+          <input type="hidden" name="subject" value="New project inquiry — eraybalat.com [tr · /yapay-zeka-reklam-filmi/]" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <fieldset><legend>Neye ihtiyacınız var?</legend><label class="chip"><input type="radio" name="project_type" value="Brand or product film" /><span>Marka filmi</span></label><label class="chip"><input type="radio" name="project_type" value="UGC / social ad" /><span>UGC reklam</span></label><label class="chip"><input type="radio" name="project_type" value="Documentary" /><span>Belgesel</span></label><label class="chip"><input type="radio" name="project_type" value="Music video" /><span>Müzik klibi</span></label><label class="chip"><input type="radio" name="project_type" value="Something else" /><span>Başka bir şey</span></label></fieldset>
+          <div><label class="ql" for="qf-email">E-posta adresiniz</label><input id="qf-email" type="email" name="email" autocomplete="email" placeholder="ad@sirket.com" required /></div>
+          <div><label class="ql" for="qf-msg">Ne yapıyorsunuz, ne zamana lazım?</label><textarea id="qf-msg" name="message" rows="4" placeholder="Ürün, hedef, süre, teslim tarihi" required></textarea></div>
+          <button type="submit" class="form-send">Teklifimi al →</button>
+          <p class="ct-note">Ücretsiz, bağlayıcı değil. Genelde birkaç saat içinde dönüş.</p>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+        <p class="qform-alt">E-postayı mı tercih edersiniz? <a class="mail" href="mailto:eray@eraybalat.com?subject=Proje%20talebi%20%E2%80%94%20yapay%20zek%C3%A2%20ile%20reklam%20filmi">eray@eraybalat.com</a></p>
       </div>
     </div>
   </section>
@@ -365,5 +385,6 @@
 </footer>
 
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74", "spa": false}'></script>
+<script src="/assets/quote-form.js" defer></script>
 </body>
 </html>

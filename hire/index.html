@@ -188,7 +188,7 @@
   @media(max-width:560px){section{padding:56px 0}.hero{padding:48px 0 40px}.card,.price,.rev{padding:20px}.final{padding:34px 22px}}
   @media(prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}html{scroll-behavior:auto}}
 </style>
-<link rel="stylesheet" href="/assets/look-sub.css" />
+<link rel="stylesheet" href="/assets/look-sub.css?v=2" />
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
@@ -210,7 +210,7 @@
       <p class="lead">Most AI video fails for the same reason: <b>it looks generated before it earns attention.</b> I direct brand films, product films, UGC ads and music videos where faces, products and visual identity stay consistent from the first shot to the final cut.</p>
       <p class="sub">No camera crew, no casting, no studio rental — a full generative AI pipeline finished in Premiere Pro and After Effects. For DTC brands, agencies, music labels and independent filmmakers worldwide. Based in Kayseri, Türkiye, working remotely.</p>
       <div class="cta-row">
-        <a class="btn btn-p" href="mailto:eray@eraybalat.com?subject=Project%20enquiry%20%E2%80%94%20AI%20film%20production">Send me your brief →</a>
+        <a class="btn btn-p" href="#brief">Send me your brief →</a>
         <a class="btn btn-s" href="#pricing">See pricing</a>
       </div>
       <div class="proof">
@@ -218,6 +218,11 @@
         
         <span><b>17-min 4K</b> AI documentary, endorsed by its own subject</span>
         <span><b>Top Rated</b> on Upwork · 100% Job Success · 5.0 on every review</span>
+      </div>
+      <div class="live-work" aria-label="Live client work">
+        <a href="/#ugc"><img src="/tenniscut-1-p-s.webp" alt="TennisCut app ad still: a tennis player before the serve" loading="lazy" decoding="async" /><div class="b"><h3>TennisCut</h3><p>Sports app · three product films</p></div></a>
+        <a href="/#ugc"><img src="/blarma-az_ingilis_a-test-p-s.webp" alt="Blarma Meta ad still: animated presenter in Baku's Old City" loading="lazy" decoding="async" /><div class="b"><h3>Blarma</h3><p>Live Meta ads · EN, DE and AZ sets</p></div></a>
+        <a href="/#ugc"><img src="/takmatakma-A-p-s.webp" alt="Takma Takma brand film still" loading="lazy" decoding="async" /><div class="b"><h3>Takma Takma</h3><p>Brand films · nails &amp; lashes</p></div></a>
       </div>
     </div>
   </section>
@@ -316,7 +321,7 @@
     <div class="wrap">
       <div class="eyebrow">Selected work</div>
       <h2>See it before you buy it</h2>
-      <p class="sec-sub">Three live showcases of the AI production pipeline — a music video, a brand campaign and a product line.</p>
+      <p class="sec-sub">Three showcases of the AI production pipeline: a music video, a concept campaign and a product line.</p>
       <div class="work">
         <a class="wcard" href="/anime/">
           <img src="/anime-mv-poster.webp" alt="AI anime music video — a four-era career reconstruction" loading="lazy" decoding="async" />
@@ -324,7 +329,7 @@
         </a>
         <a class="wcard" href="/bushido/">
           <img src="/bushido/og-bushido.jpg" alt="SABAH RİTÜELİ — Kheshig Edition, an AI-produced concept brand campaign" loading="lazy" decoding="async" />
-          <div class="b"><h3>SABAH RİTÜELİ — Brand Campaign</h3><p>Complete AI concept campaign · two-character synthetic cast + 4K product capsule</p></div>
+          <div class="b"><h3>The Morning Ritual — Concept Campaign</h3><p>Complete AI concept campaign · two-character synthetic cast + 4K product capsule</p></div>
         </a>
         <a class="wcard" href="/leather/">
           <img src="/leather/og-leather.jpg" alt="ÆRAY Atelier — Seljuk leather goods storefront" loading="lazy" decoding="async" />
@@ -340,7 +345,7 @@
 
   <section id="reviews">
     <div class="wrap">
-      <div class="eyebrow">Client reviews · verified on Upwork</div>
+      <div class="eyebrow">Client reviews</div>
       <h2>What clients say</h2>
       <div class="revs">
         <figure class="rev">
@@ -358,6 +363,10 @@
             <div class="stars" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
             <q>Fast and quality work from Eray.</q>
             <figcaption class="who">Solovista L. · Short-form ads · 🇨🇾 Cyprus</figcaption>
+          </figure>
+          <figure class="rev">
+            <q>Congratulations on the production quality. The interface effects look great, and the idea is strong and fits the app perfectly.</q>
+            <figcaption class="who">Alper Tellioğlu · TennisCut · three product films</figcaption>
           </figure>
         </div>
       </div>
@@ -380,10 +389,21 @@
 
   <section>
     <div class="wrap">
-      <div class="final">
+      <div class="final" id="brief">
         <h2>Send me the brief</h2>
         <p class="sec-sub">Tell me the product and the goal. I'll come back with what I would change, what today's models can reliably deliver, and a fixed price — usually within a day.</p>
-        <a class="mail" href="mailto:eray@eraybalat.com?subject=Project%20enquiry%20%E2%80%94%20AI%20film%20production">eray@eraybalat.com</a>
+        <form class="qform" id="brief-form" method="post" action="https://api.web3forms.com/submit" autocomplete="on">
+          <input type="hidden" name="access_key" value="b77ff153-998f-4550-aaff-2e1c474df49d" />
+          <input type="hidden" name="subject" value="New project inquiry — eraybalat.com [en · /hire/]" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <fieldset><legend>What do you need?</legend><label class="chip"><input type="radio" name="project_type" value="Brand or product film" /><span>Brand film</span></label><label class="chip"><input type="radio" name="project_type" value="UGC / social ad" /><span>UGC ad</span></label><label class="chip"><input type="radio" name="project_type" value="Documentary" /><span>Documentary</span></label><label class="chip"><input type="radio" name="project_type" value="Music video" /><span>Music video</span></label><label class="chip"><input type="radio" name="project_type" value="Something else" /><span>Something else</span></label></fieldset>
+          <div><label class="ql" for="qf-email">Your email</label><input id="qf-email" type="email" name="email" autocomplete="email" placeholder="name@company.com" required /></div>
+          <div><label class="ql" for="qf-msg">What are you making, and by when?</label><textarea id="qf-msg" name="message" rows="4" placeholder="Product, goal, length, deadline" required></textarea></div>
+          <button type="submit" class="form-send">Get my quote →</button>
+          <p class="ct-note">Free, no obligation. Replies within hours, US time too.</p>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+        <p class="qform-alt">Prefer email? <a class="mail" href="mailto:eray@eraybalat.com?subject=Project%20enquiry%20%E2%80%94%20AI%20film%20production">eray@eraybalat.com</a></p>
       </div>
     </div>
   </section>
@@ -398,5 +418,6 @@
 </footer>
 
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74", "spa": false}'></script>
+<script src="/assets/quote-form.js" defer></script>
 </body>
 </html>

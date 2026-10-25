@@ -2422,6 +2422,12 @@ footer.ft2{background:var(--b0)!important}
 @media (min-width:880px) and (max-height:719.98px){.nav-inner{padding:12px 14px 10px}.nav-links{margin-top:8px}.nav-links a{padding:5px 10px}.nav-right{padding-top:8px;gap:8px}}
 @media (min-width:880px) and (max-height:619.98px){.nav-studio .ns-small{display:none!important}}
 @media (min-width:880px) and (max-height:480px){.nav-studio{display:none}.nav-links{gap:3px}.nav-links a{padding:4px 10px}}
+
+/* audit H2: quote link in the phone menu only; desktop rail keeps its height, the status row links to the form */
+@media(min-width:880px){.nav-links .nav-cta.quote-nav{display:none}}
+.ns-go{text-decoration:none}.ns-go:hover b{text-decoration:underline;text-underline-offset:3px}
+.ns-go .ns-arrow{margin-left:auto;color:#9ad1ff;font-size:.9rem}
+.ns-go:focus-visible{outline:2px solid #9ad1ff;outline-offset:3px;border-radius:6px}
 </style>
 </head>
 <body>
@@ -2464,12 +2470,13 @@ footer.ft2{background:var(--b0)!important}
       <a href="#about"     data-en="About" data-tr="Hakkımda">About</a>
       <a href="/hire/" data-hire data-en="Rates" data-tr="Fiyatlar">Rates</a>
       <span class="nav-ctas">
+        <a class="nav-cta quote-nav" href="#contact" data-en="Get a quote →" data-tr="Teklif al →">Get a quote →</a>
         <a class="nav-cta ghost case-nav" href="/files/"><svg class="cc-mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5.5 5.5"/><path d="M8 8.4a3 3 0 0 1 2.4-1.2" stroke-width="1.4"/></svg><span data-en="Detective mode" data-tr="Dedektif modu">Detective mode</span></a>
       </span>
     </nav>
     <div class="nav-right">
       <div class="nav-studio" aria-label="Studio status">
-        <div class="ns-row"><span class="ns-dot" aria-hidden="true"></span><b data-en="Taking projects" data-tr="Proje alıyorum">Taking projects</b></div>
+        <a class="ns-row ns-go" href="#contact"><span class="ns-dot" aria-hidden="true"></span><b data-en="Taking projects" data-tr="Proje alıyorum">Taking projects</b><span class="ns-arrow" aria-hidden="true">→</span></a>
         <div class="ns-row ns-small ns-tr"><svg class="tr-badge" viewBox="0 0 24 24" aria-hidden="true"><path fill="#2f6fe8" d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z"/><path fill="#fff" d="M12 6.9l1.5 3.1 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z"/></svg><span data-en="Top Rated on Upwork" data-tr="Upwork'te Top Rated">Top Rated on Upwork</span></div><div class="ns-row ns-small"><span class="ns-star" aria-hidden="true">★</span> <span data-en="5.0 · 100% Job Success" data-tr="5.0 · %100 iş başarısı">5.0 · 100% Job Success</span></div>
         <div class="ns-social"><a href="https://www.upwork.com/freelancers/eraybalat" target="_blank" rel="noopener me" aria-label="Upwork"><svg aria-hidden="true"><use href="#ic-upwork"/></svg></a><a href="https://www.linkedin.com/in/eraybalat/" target="_blank" rel="noopener me" aria-label="LinkedIn"><svg aria-hidden="true"><use href="#ic-linkedin"/></svg></a><a href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener me" aria-label="Instagram"><svg aria-hidden="true"><use href="#ic-instagram"/></svg></a></div>
       </div>
@@ -3263,6 +3270,11 @@ navTargets.forEach(function(t){
 
   // contact form (Web3Forms AJAX — no page reload)
   const cform=document.getElementById('cform');
+  // audit H3: every lead says where it came from (page, language, referring site, ?ref=) and the subject carries the language
+  function leadSrc(){var lg=(document.documentElement.lang||'en').slice(0,2),ref='direct',camp='';
+    try{if(document.referrer){var h=new URL(document.referrer).host;ref=h===location.host?'internal':h;}}catch(_){}
+    try{camp=new URLSearchParams(location.search).get('ref')||'';}catch(_){}
+    var o={page:location.pathname,lang:lg,ref:ref,subject:'New project inquiry — eraybalat.com ['+lg+' · '+location.pathname+']'};if(camp)o.campaign=camp;return o;}
   if(cform){
     cform.addEventListener('submit',async e=>{
       e.preventDefault();
@@ -3280,7 +3292,7 @@ navTargets.forEach(function(t){
       if(!key||key.indexOf('YOUR_')>-1){st.className='form-status err';st.textContent=T.notready[fl];return;}
       const orig=btn.textContent;btn.disabled=true;btn.textContent=T.sending[fl];
       try{
-        const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(cform)))});
+        const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.assign(Object.fromEntries(new FormData(cform)),leadSrc()))});
         const data=await res.json();
         if(data.success){st.className='form-status ok';st.textContent=T.ok[fl];cform.reset();}
         else{st.className='form-status err';st.textContent=T.fail[fl];}
