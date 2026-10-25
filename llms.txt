@@ -26,6 +26,7 @@ Son güncelleme / Last updated: 2026-10-25
 
 - [Türkçe ana sayfa](https://eraybalat.com/tr/) — sitenin tam Türkçe sürümü
 - [English homepage](https://eraybalat.com/) — full English version
+- Ana sayfa, yapay zekâ destekli çeviriyle / Homepage, AI-assisted translations: [Français](https://eraybalat.com/fr/) · [Deutsch](https://eraybalat.com/de/) · [Italiano](https://eraybalat.com/it/) · [Español](https://eraybalat.com/es/) · [Português](https://eraybalat.com/pt/) · [Suomi](https://eraybalat.com/fi/) · [中文](https://eraybalat.com/zh/) · [日本語](https://eraybalat.com/ja/) · [한국어](https://eraybalat.com/ko/) · [العربية](https://eraybalat.com/ar/)
 
 ## Hizmet sayfaları / Service pages
 
@@ -39,6 +40,13 @@ Son güncelleme / Last updated: 2026-10-25
 - [FLAWLESS — The Antwerp Diamond Heist](https://eraybalat.com/flawless/) (Türkçe: https://eraybalat.com/tr/flawless/): 16:56 süren 4K yapay zekâ belgeseli (CITRINE kanalının ilk bölümü). 2003 Antwerp Elmas Soygunu ve soygunun lideri Leonardo Notarbartolo ile röportaj. 30+ özel 3D sahne, 35 motion graphic; İngilizce anlatım + yönetmenin klonlanmış sesiyle eksiksiz İtalyanca dublaj; Türkçe altyazı yayında.
 - [AI Anime Music Video](https://eraybalat.com/anime/): Bir sanatçının yedi yıllık kariyerini dört dönemde yeniden görselleştiren, yapay zekâ ile üretilmiş anime müzik videosu (~32K izlenme).
 - [Anatolian Leather Collection](https://eraybalat.com/leather/): ÆRAY Atelier — Selçuklu motifli el işi deri koleksiyonu ve AI ürün görselleştirme.
+- Reklam ve marka işleri / Ads & brand work (ana sayfada, https://eraybalat.com/#ugc):
+  - TennisCut: spor uygulaması için üç ürün filmi (kanca, kanıt, hikâye) / three product films for a tennis app.
+  - Blarma: kelime uygulaması için Meta reklamları; İngilizce, Almanca ve Azerbaycan setleri yayında / live Meta ads for a vocabulary app in English, German and Azerbaijan sets.
+  - Takma Takma: tırnak ve kirpik markası için iki marka filmi, özgün marka şarkısı / two brand films with an original brand song.
+  - Novora: zeytinyağı markası için animasyon marka filmi (TR/EN) / animated brand film.
+  - COLD START: ABD'li bir yönetmenin bilim kurgu fragmanı; Eray Balat kurgu, ses, renk ve müzik (editor) / sci-fi trailer, Eray as editor.
+- [The Files / Dosyalar](https://eraybalat.com/files/) (Türkçe: https://eraybalat.com/tr/files/): her filmin nasıl yapıldığını kare, kart ve notlarla gösteren etkileşimli "dedektif panosu" / an interactive case board showing how each film was made.
 - Boomerang (yön. Yalda Khani): Mansiyon (Honorable Mention), Robert F. Kennedy Human Rights Student Video Contest 2026; Duemila30 seçkisi. Eray Balat bu filmde kurgu (editor) olarak yer aldı.
 
 ## Profiller / Profiles

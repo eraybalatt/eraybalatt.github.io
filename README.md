@@ -18,12 +18,16 @@ anime/              ← AI Anime Music Video (vaka çalışması)
 leather/            ← ÆRAY Atelier — deri ürünler mağazası
 bushido/            ← özel kampanya önizlemesi (sitemap'te yok, bilerek)
 flawless/           ← FLAWLESS — Antwerp Elmas Soygunu belgeseli
+gevher-nesibe/      ← Gevher Nesibe, 1206 — AI prodüksiyon vaka çalışması
+files/              ← Dedektif modu (her filmin yapım panosu)
+hire/ · yapay-zeka-reklam-filmi/ · ai-video-production-turkey/  ← hizmet sayfaları
+tr/ fr/ de/ it/ es/ pt/ fi/ zh/ ja/ ko/ ar/  ← üretilen dil sayfaları (build-i18n.py)
 CNAME               ← özel alan adı
-sitemap.xml         ← /bushido/ hariç tüm public sayfalar
+sitemap.xml         ← /bushido/ hariç tüm public sayfalar (lastmod: build-sitemap.py)
 ```
 
-- **Bağımlılık yok, derleme adımı yok.** `index.html`'i tarayıcıda açınca çalışır.
-- **Diller:** EN / TR / DE (`data-en` / `data-tr` / `data-de` öznitelikleri)
+- **Diller:** EN + TR ana dil; ana sayfa ayrıca 10 dilde yapay zekâ destekli çeviriyle (`i18n/<dil>.json`).
+- **Üreteçler:** `index.html` değişince `python3 build-i18n.py`, ardından `python3 build-sitemap.py`.
 
 ---
 

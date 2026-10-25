@@ -162,6 +162,7 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
         if soup.title:
             soup.title.string = m["t"]
         set_meta(soup, "property", "og:title", m["t"])
+        set_meta(soup, "name", "twitter:title", m["t"])
     if m.get("d"):
         set_meta(soup, "name", "description", m["d"])
         set_meta(soup, "property", "og:description", m["d"])
