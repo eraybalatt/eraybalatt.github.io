@@ -6,7 +6,7 @@ window.EB = {
     coldstart: { t: "COLD START", k: "Sci-fi trailer · 2:04", role: "Editor · sound · colour", sub: "XPRIZE submission", href: "coldstart-film-v2.mp4", hrefLabel: "Watch the trailer" },
     tenniscut: { t: "TennisCut", k: "Three brand films · 9:16", role: "Director" },
     bushido:   { t: "Bushido", k: "Campaign concept · synthetic cast", role: "Director", href: "/bushido/", hrefLabel: "See the campaign" },
-    novora:    { t: "Novora", k: "Animated brand film · 0:28 · TR / EN", role: "Director", href: "https://youtu.be/GAGlpIw3Q2Y", hrefLabel: "Watch (EN)" },
+    novora:    { t: "Novora", k: "Animated brand film · 0:27 · TR / EN", role: "Director", href: "https://youtu.be/GAGlpIw3Q2Y", hrefLabel: "Watch (EN)" },
     konfuse:   { t: "Konfuse", k: "Brand world film", role: "Director", href: "https://youtube.com/shorts/zhqaCtjbwmI", hrefLabel: "Watch on YouTube" },
     music:     { t: "Music videos", k: "Universal Music Türkiye", role: "AI creator" },
     real:      { t: "Real footage", k: "Short films, shot on a camera", role: "Writer · director · editor" },
@@ -20,7 +20,7 @@ window.EB = {
     "tz": "Clients in Türkiye and the US. Kayseri is <b data-tz>10 hours</b> ahead of San Francisco: notes you send in the evening get worked on while you sleep.",
 
     "fl.interview": "Leonardo Notarbartolo led the 2003 heist. I interviewed him in Italian over a video call. After watching the film he wrote: <b>“Ti sono grato per il documentario, mi piace molto.”</b>",
-    "fl.voice": "English narration in my voice, and a full Italian dub in my <b>cloned voice</b> (ElevenLabs). Subtitles take it to six languages.",
+    "fl.voice": "English narration in my voice, and a full Italian dub in my <b>cloned voice</b> (ElevenLabs). Turkish subtitles are live.",
     "fl.3d": "<b>30+ bespoke 3D scenes</b> rebuilding the vault, the sensors and the escape. 3D and AI images: Berkay Efe Balat.",
     "fl.motion": "<b>35 motion graphics</b>. Motion design: Hasan.",
     "fl.parts": "Five parts: <b>The Plan, The Heist, The Escape, The Mistake, Where Is He Now.</b>",
@@ -46,7 +46,7 @@ window.EB = {
     "bu.what": "A synthetic cast of two (<b>Ayla and Kaan</b>), a 4K product capsule, three vertical films and original music.",
     "bu.cast": "Each of the two was built from a master portrait and a character sheet, then carried through all three films: <b>Her Ritual, His Ritual, The Reel</b>.",
 
-    "nv.what": "A 28-second animated pilot for an olive producer in Sölöz, Bursa. Turkish and English, 4K and 1080p. <b>Delivered a day early.</b>",
+    "nv.what": "A 27-second animated pilot for an olive producer in Sölöz, Bursa. Turkish and English, 4K and 1080p. <b>Delivered a day early.</b>",
 
     "kf.what": "A brand world film for a leather duffel bag, with an <b>original score</b>.",
     "kf.world": "One world across every shot: mountains, a white horse, the landscape embroidered on the leather.",

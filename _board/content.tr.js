@@ -6,7 +6,7 @@ window.EB = {
     coldstart: { t: "COLD START", k: "Bilim kurgu fragmanı · 2:04", role: "Kurgu · ses · renk", sub: "XPRIZE başvurusu", href: "coldstart-film-v2.mp4", hrefLabel: "Fragmanı izle" },
     tenniscut: { t: "TennisCut", k: "Üç marka filmi · 9:16", role: "Yönetmen" },
     bushido:   { t: "Bushido", k: "Kampanya konsepti · sentetik oyuncular", role: "Yönetmen", href: "/bushido/", hrefLabel: "Kampanyayı gör" },
-    novora:    { t: "Novora", k: "Animasyon marka filmi · 0:28 · TR / EN", role: "Yönetmen", href: "https://youtu.be/S9hG_Ga7wIg", hrefLabel: "İzle (TR)" },
+    novora:    { t: "Novora", k: "Animasyon marka filmi · 0:27 · TR / EN", role: "Yönetmen", href: "https://youtu.be/S9hG_Ga7wIg", hrefLabel: "İzle (TR)" },
     konfuse:   { t: "Konfuse", k: "Marka dünyası filmi", role: "Yönetmen", href: "https://youtube.com/shorts/zhqaCtjbwmI", hrefLabel: "YouTube'da izle" },
     music:     { t: "Müzik videoları", k: "Universal Music Türkiye", role: "AI yapımcı" },
     real:      { t: "Gerçek çekim", k: "Kamerayla çekilmiş kısa filmler", role: "Senarist · yönetmen · kurgucu" },
@@ -20,7 +20,7 @@ window.EB = {
     "tz": "Türkiye'de ve ABD'de müşterilerim var. Kayseri, San Francisco'dan <b data-tz>10 saat</b> ileride: akşam gönderdiğin notlar sen uyurken işlenir.",
 
     "fl.interview": "2003 soygununu Leonardo Notarbartolo yönetti. Onunla görüntülü görüşmede İtalyanca röportaj yaptım. Filmi izledikten sonra şunu yazdı: <b>“Ti sono grato per il documentario, mi piace molto.”</b> (Belgesel için sana minnettarım, çok beğendim.)",
-    "fl.voice": "İngilizce anlatım benim sesimle, İtalyanca dublajın tamamı <b>klonlanmış sesimle</b> (ElevenLabs). Altyazılarla altı dile çıkıyor.",
+    "fl.voice": "İngilizce anlatım benim sesimle, İtalyanca dublajın tamamı <b>klonlanmış sesimle</b> (ElevenLabs). Türkçe altyazı yayında.",
     "fl.3d": "Kasayı, sensörleri ve kaçışı yeniden kuran <b>30'dan fazla özel 3D sahne</b>. 3D ve AI görseller: Berkay Efe Balat.",
     "fl.motion": "<b>35 hareketli grafik</b>. Motion tasarım: Hasan.",
     "fl.parts": "Beş bölüm: <b>Plan, Soygun, Kaçış, Hata, Şimdi Nerede.</b>",
@@ -46,7 +46,7 @@ window.EB = {
     "bu.what": "İki kişilik sentetik kadro (<b>Ayla ve Kaan</b>), 4K ürün kapsülü, üç dikey film ve özgün müzik.",
     "bu.cast": "İkisi de bir ana portre ve bir karakter sayfasından kuruldu, sonra üç filmin hepsinde aynı kaldı: <b>Her Ritual, His Ritual, The Reel</b>.",
 
-    "nv.what": "Bursa Sölöz'deki bir zeytin üreticisi için 28 saniyelik animasyon pilot. Türkçe ve İngilizce, 4K ve 1080p. <b>Bir gün erken teslim edildi.</b>",
+    "nv.what": "Bursa Sölöz'deki bir zeytin üreticisi için 27 saniyelik animasyon pilot. Türkçe ve İngilizce, 4K ve 1080p. <b>Bir gün erken teslim edildi.</b>",
 
     "kf.what": "Deri bir seyahat çantası için <b>özgün müzikli</b> bir marka dünyası filmi.",
     "kf.world": "Her planda tek bir dünya: dağlar, beyaz bir at, derinin üstüne işlenmiş manzara.",

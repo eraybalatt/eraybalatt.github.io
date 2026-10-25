@@ -107,6 +107,33 @@ def load_tmap(lang):
     return json.load(open(f, encoding="utf-8")) if os.path.exists(f) else None
 
 
+_ATTRS = json.load(open(os.path.join(ROOT, "i18n", "_attrs.json"), encoding="utf-8"))
+_FORMT = json.load(open(os.path.join(ROOT, "i18n", "_form.json"), encoding="utf-8"))
+
+
+def translate_attrs(soup, lang):
+    """aria-label / alt / placeholder translations from i18n/_attrs.json (keyed by the English value)."""
+    n = 0
+    for attr in ("aria-label", "alt", "placeholder"):
+        for el in soup.select(f"[{attr}]"):
+            v = _ATTRS.get(el.get(attr, ""))
+            if isinstance(v, dict) and v.get(lang):
+                el[attr] = v[lang]
+                n += 1
+    # setLang() rewrites form placeholders from data-ph-<lang>, so give it the translated text
+    for el in soup.select("#cform [data-ph-en]"):
+        v = _ATTRS.get(el.get("data-ph-en", ""))
+        if isinstance(v, dict) and v.get(lang) and not el.get(f"data-ph-{lang}"):
+            el[f"data-ph-{lang}"] = v[lang]
+    if cfg_dir_rtl.get(lang):
+        for el in soup.select("#cform input[type=email], #cform textarea"):
+            el["dir"] = "auto"
+    return n
+
+
+cfg_dir_rtl = {"ar": True}
+
+
 def tkey(html):
     return hashlib.sha1(html.strip().encode()).hexdigest()[:10]
 
@@ -202,6 +229,18 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
             for a in soup.select(f'a[href="{en_href}"]'):
                 a["href"] = tr_href
 
+    # 6b) attribute translations + (extra languages) the AI-translation note in the footer
+    if src_rel == "index.html":
+        translate_attrs(soup, lang)
+        if tmap is not None:
+            note = soup.select_one(".lang-menu .lm-note")
+            fb = soup.select_one(".ft-bottom")
+            if note and fb and not fb.select_one(".ft-ai"):
+                t = soup.new_tag("span")
+                t["class"] = ["ft-ai"]
+                t.string = note.get_text(strip=True)
+                fb.append(t)
+
     # 7) JSON-LD: sayfa düğümünü bu dile bağla
     for s in soup.find_all("script", type="application/ld+json"):
         try:
@@ -236,6 +275,9 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
         out = out.replace("  function setLang(lang){", "  " + meta + "\n  function setLang(lang){", 1)
         aria = ",".join(f"{k[6:]}:'{esc(v)}'" for k, v in tmap.items() if k.startswith("_aria_"))
         out = out.replace("window.__aria=A[lang]||A.en;", f"A['{lang}']={{{aria}}};window.__aria=A[lang]||A.en;", 1)
+        ft = _FORMT.get(lang)
+        if ft and src_rel == "index.html":
+            out = out.replace("</head>", "<script>window.__formT=" + json.dumps(ft, ensure_ascii=False) + ";</script>\n</head>", 1)
 
     dest_dir = os.path.join(ROOT, cfg["dir"])
     os.makedirs(dest_dir, exist_ok=True)
