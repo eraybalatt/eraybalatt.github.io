@@ -156,7 +156,7 @@
 
   /* reviews */
   .revs{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;align-items:stretch}
-  .rev{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:23px;display:flex;flex-direction:column;gap:11px}
+  .rev{margin:0;background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:23px;display:flex;flex-direction:column;gap:11px}
   .rev-side{display:flex;flex-direction:column;gap:16px}
   .rev-side .rev{flex:1}
   .stars{color:#8cc8ff;letter-spacing:3px;font-size:.8rem}
@@ -188,6 +188,7 @@
   @media(max-width:820px){.revs{grid-template-columns:1fr}}
   @media(max-width:560px){section{padding:56px 0}.hero{padding:48px 0 40px}.card,.price,.rev{padding:20px}.final{padding:34px 22px}}
   @media(prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}html{scroll-behavior:auto}}
+  @media(min-width:900px){#services .grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 <link rel="stylesheet" href="/assets/look-sub.css?v=2" />
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*.mp4*"}},{"not":{"href_matches":"/*.pdf"}},{"not":{"href_matches":"/*.m4a"}},{"not":{"href_matches":"/files/*"}},{"not":{"href_matches":"/tr/files/*"}},{"not":{"selector_matches":"[data-vid],[data-vid-into],[download]"}}]},"eagerness":"moderate"}]}</script>
@@ -355,18 +356,18 @@
       <h2>What clients say</h2>
       <div class="revs">
         <figure class="rev">
-          <div class="stars" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
+          <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
           <q>He was outstanding from the first cut to the last. He caught continuity and pacing problems I'd missed, handled multiple rounds of shot swaps and audio fixes without complaint, and hit every milestone early or on time. … The final cut came in exactly at target length and looked genuinely professional. I'd hire him again without hesitation, and I already plan to for my next film.</q>
           <figcaption class="who">Sci-fi competition trailer · 🇺🇸 United States · August 2026</figcaption>
         </figure>
         <div class="rev-side">
           <figure class="rev">
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
+            <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
             <q>Eray was great to work with. Will definitely do some more projects with him in the future.</q>
             <figcaption class="who">Minh P. · Repeatable AI ad system · 🇺🇸 United States</figcaption>
           </figure>
           <figure class="rev">
-            <div class="stars" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
+            <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★<b>5.0</b></div>
             <q>Fast and quality work from Eray.</q>
             <figcaption class="who">Solovista L. · Short-form ads · 🇨🇾 Cyprus</figcaption>
           </figure>

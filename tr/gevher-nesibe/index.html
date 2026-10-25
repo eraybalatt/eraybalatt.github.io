@@ -322,7 +322,7 @@ document.querySelectorAll('.cmp').forEach(function(f){var n=+f.dataset.n,b=f.que
 document.querySelectorAll('.ar').forEach(function(f){f.querySelectorAll('.art').forEach(function(b){b.addEventListener('click',function(){f.dataset.r=b.dataset.r;f.querySelectorAll('.art').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})})})});
 /* camera map */
 (function(){var cams=[].slice.call(document.querySelectorAll('.cam')),figs=document.querySelectorAll('.camf'),hint=document.querySelector('.cv0');if(!cams.length)return;
- function pick(code){cams.forEach(function(c){c.classList.toggle('on',c.dataset.cam===code)});figs.forEach(function(f){f.hidden=f.dataset.cam!==code});if(hint)hint.hidden=true}
+ function pick(code){cams.forEach(function(c){c.classList.toggle('on',c.dataset.cam===code);c.setAttribute('aria-pressed',c.dataset.cam===code?'true':'false')});figs.forEach(function(f){f.hidden=f.dataset.cam!==code});if(hint)hint.hidden=true}
  cams.forEach(function(c){c.addEventListener('click',function(){pick(c.dataset.cam)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(c.dataset.cam)}})});
  pick('P1');})();
 /* draggable strips (mouse); touch scrolls natively */

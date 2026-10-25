@@ -129,7 +129,7 @@
   .wcard p{margin:0;color:var(--muted);font-size:.85rem}
 
   .revs{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;align-items:stretch}
-  .rev{background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:23px;display:flex;flex-direction:column;gap:11px}
+  .rev{margin:0;background:var(--card);border:1px solid var(--card-brd);border-radius:var(--radius);padding:23px;display:flex;flex-direction:column;gap:11px}
   .rev-side{display:flex;flex-direction:column;gap:16px}
   .rev-side .rev{flex:1}
   .stars{color:#8cc8ff;letter-spacing:3px;font-size:.8rem}
@@ -159,6 +159,7 @@
   @media(max-width:820px){.revs{grid-template-columns:1fr}}
   @media(max-width:560px){section{padding:56px 0}.hero{padding:48px 0 40px}.card,.price,.rev{padding:20px}.final{padding:34px 22px}}
   @media(prefers-reduced-motion:reduce){*{transition-duration:.001ms!important}html{scroll-behavior:auto}}
+  @media(min-width:900px){#hizmetler .grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 <link rel="stylesheet" href="/assets/look-sub.css?v=2" />
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*.mp4*"}},{"not":{"href_matches":"/*.pdf"}},{"not":{"href_matches":"/*.m4a"}},{"not":{"href_matches":"/files/*"}},{"not":{"href_matches":"/tr/files/*"}},{"not":{"selector_matches":"[data-vid],[data-vid-into],[download]"}}]},"eagerness":"moderate"}]}</script>
@@ -318,18 +319,18 @@
       <h2>Müşteriler ne diyor</h2>
       <div class="revs">
         <figure class="rev">
-          <div class="stars" aria-label="5 üzerinden 5 yıldız">★★★★★<b>5.0</b></div>
+          <div class="stars" role="img" aria-label="5 üzerinden 5 yıldız">★★★★★<b>5.0</b></div>
           <q>İlk kurgudan sonuncusuna kadar olağanüstüydü. Benim gözden kaçırdığım süreklilik ve tempo sorunlarını yakaladı, defalarca plan değişikliğini ve ses düzeltmesini şikâyetsiz karşıladı, her teslim noktasına erken ya da tam zamanında ulaştı. … Final kurgu tam hedef sürede geldi ve gerçekten profesyonel görünüyordu. Onunla hiç tereddütsüz yine çalışırım — bir sonraki filmim için şimdiden planlıyorum.</q>
           <figcaption class="who">Bilimkurgu yarışma fragmanı · 🇺🇸 ABD · Ağustos 2026</figcaption>
         </figure>
         <div class="rev-side">
           <figure class="rev">
-            <div class="stars" aria-label="5 üzerinden 5 yıldız">★★★★★<b>5.0</b></div>
+            <div class="stars" role="img" aria-label="5 üzerinden 5 yıldız">★★★★★<b>5.0</b></div>
             <q>Eray'la çalışmak harikaydı. Gelecekte kesinlikle başka projeler de yapacağız.</q>
             <figcaption class="who">Minh P. · Tekrarlanabilir AI reklam sistemi · 🇺🇸 ABD</figcaption>
           </figure>
           <figure class="rev">
-            <div class="stars" aria-label="5 üzerinden 5 yıldız">★★★★★<b>5.0</b></div>
+            <div class="stars" role="img" aria-label="5 üzerinden 5 yıldız">★★★★★<b>5.0</b></div>
             <q>Eray'dan hızlı ve kaliteli iş.</q>
             <figcaption class="who">Solovista L. · Kısa format reklamlar · 🇨🇾 Kıbrıs</figcaption>
           </figure>

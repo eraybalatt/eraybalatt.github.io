@@ -66,3 +66,6 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   #hint,#mini,#file span,#right button{display:none}#cap{bottom:66px}
 }
 #world.mv{will-change:transform}
+
+/* a11y/phones (25 Eki): viewer arrows sit over the image instead of off-screen */
+@media (max-width:600px){#focus{padding:16px}#focus-prev,#focus-next{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(29,30,34,.78)}#focus-prev{left:8px}#focus-next{right:8px}}

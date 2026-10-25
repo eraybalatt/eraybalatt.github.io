@@ -2431,6 +2431,21 @@ footer.ft2{background:var(--b0)!important}
 :lang(de) .card-body,:lang(fi) .card-body,:lang(de) .sn-card,:lang(fi) .sn-card{-webkit-hyphens:auto;hyphens:auto}
 :lang(ja){line-break:strict}
 .ft-bottom .ft-ai{flex-basis:100%;font-size:.74rem;color:#d3dde7;opacity:.9}
+
+/* audit D (25 Eki): accessibility + small layout fixes */
+@media(max-width:879.98px){.nav-links.open{max-height:calc(100vh - 62px);max-height:calc(100dvh - 62px);overflow-y:auto;overscroll-behavior:contain}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.hero-pause{position:absolute;left:18px;bottom:18px;z-index:6;width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.45);background:rgba(6,24,46,.62);cursor:pointer;display:grid;place-items:center;padding:0}
+.hero-pause[hidden]{display:none}
+.hero-pause span{width:10px;height:12px;border-left:3px solid #fff;border-right:3px solid #fff}
+.hero-pause.is-paused span{width:0;height:0;border:0;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.hero-pause:focus-visible{outline:2px solid #9ad1ff;outline-offset:3px}
+.cf-lbl{display:block;margin:2px 0 -4px;font:500 .74rem/1.2 var(--mono,monospace);letter-spacing:.06em;text-transform:uppercase;color:#d3dde7}
+#cform input[type=email],#cform textarea{border-color:rgba(236,242,248,.45)!important}
+.thumb .spec{top:44px;right:auto;left:11px}
+.tf2{width:min(1180px,calc(100% - 32px))}@media(min-width:880px){.tf2{width:min(1180px,calc(100% - 56px))}}
+.tf2-steps li+li::before{margin-right:0;margin-inline-end:6px}
+@media(max-width:600px){.tf2-steps li+li::before{display:none}.tf2-steps{gap:6px 14px}}
 </style>
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*.mp4*"}},{"not":{"href_matches":"/*.pdf"}},{"not":{"href_matches":"/*.m4a"}},{"not":{"href_matches":"/files/*"}},{"not":{"href_matches":"/tr/files/*"}},{"not":{"selector_matches":"[data-vid],[data-vid-into],[download]"}}]},"eagerness":"moderate"}]}</script>
 <link href="https://eraybalat.com/ja/" rel="canonical"/><link href="https://eraybalat.com/" hreflang="en" rel="alternate"/><link href="https://eraybalat.com/tr/" hreflang="tr" rel="alternate"/><link href="https://eraybalat.com/fr/" hreflang="fr" rel="alternate"/><link href="https://eraybalat.com/de/" hreflang="de" rel="alternate"/><link href="https://eraybalat.com/it/" hreflang="it" rel="alternate"/><link href="https://eraybalat.com/es/" hreflang="es" rel="alternate"/><link href="https://eraybalat.com/pt/" hreflang="pt" rel="alternate"/><link href="https://eraybalat.com/fi/" hreflang="fi" rel="alternate"/><link href="https://eraybalat.com/zh/" hreflang="zh" rel="alternate"/><link href="https://eraybalat.com/ja/" hreflang="ja" rel="alternate"/><link href="https://eraybalat.com/ko/" hreflang="ko" rel="alternate"/><link href="https://eraybalat.com/ar/" hreflang="ar" rel="alternate"/><link href="https://eraybalat.com/" hreflang="x-default" rel="alternate"/><script>window.__formT={"sending": "送信中…", "ok": "✓ ありがとうございます。すぐにご連絡します。", "fail": "送信できませんでした。eray@eraybalat.com まで直接ご連絡ください。", "neterr": "ネットワークエラーです。eray@eraybalat.com まで直接ご連絡ください。", "notready": "フォームは現在利用できません。eray@eraybalat.com までご連絡ください。"};</script>
@@ -2476,7 +2491,7 @@ footer.ft2{background:var(--b0)!important}
 </span>
 </nav>
 <div class="nav-right">
-<div aria-label="スタジオの状況" class="nav-studio">
+<div aria-label="スタジオの状況" class="nav-studio" role="group">
 <a class="ns-row ns-go" href="#contact"><span aria-hidden="true" class="ns-dot"></span><b data-en="Taking projects" data-tr="Proje alıyorum">受付中</b><span aria-hidden="true" class="ns-arrow">→</span></a>
 <div class="ns-row ns-small ns-tr"><svg aria-hidden="true" class="tr-badge" viewbox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z" fill="#2f6fe8"></path><path d="M12 6.9l1.5 3.1 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z" fill="#fff"></path></svg><span data-en="Top Rated on Upwork" data-tr="Upwork'te Top Rated">Upwork Top Rated</span></div><div class="ns-row ns-small"><span aria-hidden="true" class="ns-star">★</span> <span data-en="5.0 · 100% Job Success" data-tr="5.0 · %100 iş başarısı">5.0 · 100% ジョブ成功率</span></div>
 <div class="ns-social"><a aria-label="Upwork" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener me" target="_blank"><svg aria-hidden="true"><use href="#ic-upwork"></use></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/in/eraybalat/" rel="noopener me" target="_blank"><svg aria-hidden="true"><use href="#ic-linkedin"></use></svg></a><a aria-label="Instagram" href="https://www.instagram.com/documenteray/" rel="noopener me" target="_blank"><svg aria-hidden="true"><use href="#ic-instagram"></use></svg></a></div>
@@ -2484,10 +2499,10 @@ footer.ft2{background:var(--b0)!important}
 <div aria-label="言語" class="lang" role="group">
 <button aria-label="English" aria-pressed="false" class="lang-btn" data-lang="en">EN</button>
 <button aria-label="Türkçe" aria-pressed="false" class="lang-btn" data-lang="tr">TR</button>
-<button aria-controls="langMenu" aria-expanded="false" aria-haspopup="true" aria-label="その他の言語" aria-pressed="true" class="lang-btn lang-globe active" title="More languages" type="button"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"></path></svg><span class="lg-code">JA</span></button>
+<button aria-controls="langMenu" aria-expanded="false" aria-label="その他の言語" aria-pressed="true" class="lang-btn lang-globe active" title="More languages" type="button"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"></path></svg><span class="lg-code">JA</span></button>
 </div>
-<div class="lang-menu" hidden="" id="langMenu" role="menu">
-<a href="/fr/" hreflang="fr" lang="fr" role="menuitem">Français</a><a href="/de/" hreflang="de" lang="de" role="menuitem">Deutsch</a><a href="/it/" hreflang="it" lang="it" role="menuitem">Italiano</a><a href="/es/" hreflang="es" lang="es" role="menuitem">Español</a><a href="/pt/" hreflang="pt" lang="pt" role="menuitem">Português</a><a href="/fi/" hreflang="fi" lang="fi" role="menuitem">Suomi</a><a href="/zh/" hreflang="zh" lang="zh" role="menuitem">中文</a><a href="/ja/" hreflang="ja" lang="ja" role="menuitem">日本語</a><a href="/ko/" hreflang="ko" lang="ko" role="menuitem">한국어</a><a dir="rtl" href="/ar/" hreflang="ar" lang="ar" role="menuitem">العربية</a>
+<div class="lang-menu" hidden="" id="langMenu">
+<a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/fi/" hreflang="fi" lang="fi">Suomi</a><a href="/zh/" hreflang="zh" lang="zh">中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a dir="rtl" href="/ar/" hreflang="ar" lang="ar">العربية</a>
 <span class="lm-note" data-en="AI-assisted translations" data-tr="Yapay zekâ destekli çeviriler">AI 支援翻訳</span>
 </div>
 <button aria-controls="navlinks" aria-expanded="false" aria-label="Menu" class="nav-toggle">☰</button>
@@ -2500,6 +2515,7 @@ footer.ft2{background:var(--b0)!important}
 <section class="hero" id="home">
 <picture class="hero-poster"><source height="1066" media="(max-width:760px)" srcset="/hero-trailer-m-poster.webp" width="530"/><img alt="" decoding="async" fetchpriority="high" height="1066" src="/hero-trailer-poster-s.webp" width="1600"/></picture>
 <video autoplay="" class="hero-bg" data-src="/hero-trailer-a.mp4" data-src-full="/hero-trailer.mp4" id="heroVid" loop="" muted="" playsinline="" preload="none"></video>
+<button aria-label="背景動画を一時停止" aria-pressed="false" class="hero-pause" hidden="" id="heroPause" type="button"><span aria-hidden="true"></span></button>
 <div class="hero-ov"></div>
 <a class="topbar" href="#contact"><span aria-hidden="true" class="tb-dot"></span><span class="tb-a" data-en="Open for new projects" data-tr="Yeni projelere açığım">新規案件受付中</span><span aria-hidden="true" class="tb-sep">·</span><span class="tb-b" data-en="5 films in production right now" data-tr="Şu an 5 film yapımda">現在5本の作品を制作中</span><span class="tb-go" data-en="Get a quote →" data-tr="Teklif al →">見積もりを依頼 →</span></a>
 <h1 class="rin hero-brush" data-en="&lt;em&gt;Frame by frame&lt;/em&gt;, with AI." data-tr="&lt;em&gt;Kare kare&lt;/em&gt;, yapay zekâyla."><em>1コマずつ</em>、AIとともに。</h1>
@@ -2814,8 +2830,10 @@ footer.ft2{background:var(--b0)!important}
 <input name="subject" type="hidden" value="New project inquiry — eraybalat.com"/>
 <input aria-hidden="true" autocomplete="off" name="botcheck" style="display:none" tabindex="-1" type="checkbox"/>
 <fieldset class="chips"><legend data-en="What do you need?" data-tr="Neye ihtiyacın var?">ご希望の内容は？</legend><label class="chip"><input name="project_type" type="radio" value="Brand or product film"/><span data-en="Brand film" data-tr="Marka filmi">ブランド映像</span></label><label class="chip"><input name="project_type" type="radio" value="UGC / social ad"/><span data-en="UGC ad" data-tr="UGC reklam">UGC広告</span></label><label class="chip"><input name="project_type" type="radio" value="Documentary"/><span data-en="Documentary" data-tr="Belgesel">ドキュメンタリー</span></label><label class="chip"><input name="project_type" type="radio" value="Music video"/><span data-en="Music video" data-tr="Müzik klibi">ミュージックビデオ</span></label><label class="chip"><input name="project_type" type="radio" value="Something else"/><span data-en="Something else" data-tr="Başka bir şey">その他</span></label></fieldset>
-<input aria-label="メールアドレス" autocomplete="email" data-ph-en="Your email" data-ph-ja="メールアドレス" data-ph-tr="E-posta adresin" name="email" placeholder="メールアドレス" required="" type="email"/>
-<textarea aria-label="プロジェクトについて教えてください" data-ph-en="What are you making, and by when?" data-ph-ja="何を作りたいですか？納期はいつですか？" data-ph-tr="Ne yapıyorsun, ne zamana lazım?" name="message" placeholder="何を作りたいですか？納期はいつですか？" required="" rows="3"></textarea>
+<label class="cf-lbl" data-en="Email" data-tr="E-posta" for="cf-email">メール</label>
+<input aria-label="メールアドレス" autocomplete="email" data-ph-en="Your email" data-ph-ja="メールアドレス" data-ph-tr="E-posta adresin" id="cf-email" name="email" placeholder="メールアドレス" required="" type="email"/>
+<label class="cf-lbl" data-en="Project" data-tr="Proje" for="cf-msg">プロジェクト</label>
+<textarea aria-label="プロジェクトについて教えてください" data-ph-en="What are you making, and by when?" data-ph-ja="何を作りたいですか？納期はいつですか？" data-ph-tr="Ne yapıyorsun, ne zamana lazım?" id="cf-msg" name="message" placeholder="何を作りたいですか？納期はいつですか？" required="" rows="3"></textarea>
 <button class="form-send" data-en="Get my quote →" data-tr="Teklifimi al →" type="submit">見積もりを受け取る →</button>
 <p class="ct-note" data-en="Free, no obligation. Replies within hours, US time too." data-tr="Ücretsiz, bağlayıcı değil. Birkaç saat içinde dönüş, ABD saatinde de.">無料・義務なし。数時間以内に返信します（米国時間でも対応）。</p>
 <p aria-live="polite" class="form-status"></p>
@@ -2879,8 +2897,12 @@ footer.ft2{background:var(--b0)!important}
 <script>
   const toggle=document.querySelector('.nav-toggle');
   const links=document.getElementById('navlinks');
-  toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false');});
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
+  const closeNav=(back)=>{if(!links.classList.contains('open'))return;links.classList.remove('open');toggle.setAttribute('aria-expanded','false');if(back)toggle.focus();};
+  toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',open?'true':'false');if(open){const f=links.querySelector('a');if(f)f.focus({preventScroll:true});}});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>closeNav(false)));
+  // a11y (25 Eki): Escape closes the open menu; tabbing out of the header closes it too
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open'))closeNav(true);});
+  const navHdr=document.querySelector('header.nav');if(navHdr)navHdr.addEventListener('focusout',e=>{if(!e.relatedTarget||!navHdr.contains(e.relatedTarget))closeNav(false);});
   document.getElementById('year').textContent=new Date().getFullYear();
 
   const i18nEls=document.querySelectorAll('[data-en]');
@@ -2931,6 +2953,7 @@ footer.ft2{background:var(--b0)!important}
     g.addEventListener('click',e=>{ e.stopPropagation(); m.hidden?open():close(); });
     document.addEventListener('click',e=>{ if(!m.hidden&&!m.contains(e.target))close(); });
     document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!m.hidden){ close(); g.focus(); } });
+    m.addEventListener('focusout',e=>{ if(!m.hidden&&!m.contains(e.relatedTarget)&&e.relatedTarget!==g){ close(); if(!e.relatedTarget) g.focus(); } });
     addEventListener('resize',()=>{ if(!m.hidden)place(); }); addEventListener('scroll',()=>{ if(!m.hidden)place(); },{passive:true});
     const cur=document.documentElement.lang; m.querySelectorAll('a').forEach(a=>{ if(a.getAttribute('hreflang')===cur)a.setAttribute('aria-current','page'); });
   })();
@@ -3009,7 +3032,7 @@ navTargets.forEach(function(t){
       if(r.getBoundingClientRect().top < el.getBoundingClientRect().top) r.classList.add('show');
     });
     // tarayici dogru kaydiriciyi kendi bulur (scroll-margin-top CSS'te)
-    el.scrollIntoView({behavior:'smooth',block:'start'});
+    el.scrollIntoView({behavior:(matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'),block:'start'});
     history.replaceState(null,'','#'+t.id);
     setTimeout(markActive,700);
   });
@@ -3022,7 +3045,13 @@ navTargets.forEach(function(t){
   // perf (23 Eyl 2026): both hero videos pause while they are off-screen (they kept decoding under the whole page,
   // and the 'pause' listener below restarted any pause) and play again when they scroll back in
   const heroVis=new Set([hv,heroLogo].filter(Boolean));
-  const playVid=v=>{ if(!heroVis.has(v))return; const p=v.play(); if(p&&p.catch)p.catch(()=>{}); };
+  // a11y (25 Eki, WCAG 2.2.2): a visible pause button; once the visitor pauses, nothing restarts the hero
+  let heroUserPaused=false; const hp=document.getElementById('heroPause');
+  const playVid=v=>{ if(v===hv&&heroUserPaused)return; if(!heroVis.has(v))return; const p=v.play(); if(p&&p.catch)p.catch(()=>{}); };
+  if(hp&&hv){ hv.addEventListener('playing',()=>{hp.hidden=false;},{once:true});
+    hp.addEventListener('click',()=>{ heroUserPaused=!heroUserPaused; hp.setAttribute('aria-pressed',heroUserPaused?'true':'false');
+      hp.setAttribute('aria-label',heroUserPaused?'Play background video':'Pause background video'); hp.classList.toggle('is-paused',heroUserPaused);
+      if(heroUserPaused)hv.pause(); else playVid(hv); }); }
   /* 13 Eki 2026: hero bazen hiç başlamıyordu (yavaş bağlantıda blob indirmesi takılınca poster kalıyordu). Artık indirme 6 sn'de bitmezse
      ya da hata verirse dosya doğrudan akışla açılıyor; tam sürüm de bir kez yeniden deneniyor. */
   const getBlob=(url,ms)=>{ const ac=('AbortController' in window)?new AbortController():null; const t=ac?setTimeout(()=>ac.abort(),ms):0;
@@ -3221,13 +3250,13 @@ navTargets.forEach(function(t){
     document.querySelectorAll('a[data-vid-into]').forEach(b=>{
       b.addEventListener('click',e=>{const el=document.getElementById(b.getAttribute('data-vid-into'));if(!el)return;e.preventDefault();
         const w=build(el);w.load(b.getAttribute('href'),b.getAttribute('data-thumbs'),el.getAttribute('data-vid-poster'));
-        w.querySelector('video').play().catch(()=>{});el.scrollIntoView({behavior:'smooth',block:'center'});w.focus({preventScroll:true});});
+        w.querySelector('video').play().catch(()=>{});el.scrollIntoView({behavior:(matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'),block:'center'});w.focus({preventScroll:true});});
     });
   })();
 
   // logo → smooth scroll to top
   const brandTop=document.getElementById('brandTop');
-  if(brandTop)brandTop.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'});});
+  if(brandTop)brandTop.addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:(matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth')});});
 
   // contact form (Web3Forms AJAX — no page reload)
   const cform=document.getElementById('cform');
@@ -3307,7 +3336,8 @@ g.querySelectorAll('.card[data-cat]').forEach(function(card){var show=c==='all'|
 <script>(function(){var st=document.querySelector('.gn-stage');if(!st)return;var sl=st.querySelectorAll('.gn-sl'),dt=st.querySelectorAll('.gn-dot'),i=0,t=null,calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 function show(n){sl[i].classList.remove('on');dt[i].classList.remove('on');i=(n+sl.length)%sl.length;sl[i].classList.add('on');dt[i].classList.add('on')}
 function start(){if(!calm&&!t)t=setInterval(function(){show(i+1)},3800)}function stop(){clearInterval(t);t=null}
-dt.forEach(function(d,n){d.addEventListener('click',function(){stop();show(n);start()})});
-if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){st.querySelectorAll('img[loading=lazy]').forEach(function(x){x.loading='eager'});start()}else stop()})}).observe(st)}})();</script>
+var held=false;dt.forEach(function(d,n){d.addEventListener('click',function(){held=true;stop();show(n)})});
+st.addEventListener('mouseenter',stop);st.addEventListener('mouseleave',function(){if(!held)start()});st.addEventListener('focusin',stop);st.addEventListener('focusout',function(){if(!held)start()});
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){st.querySelectorAll('img[loading=lazy]').forEach(function(x){x.loading='eager'});if(!held)start()}else stop()})}).observe(st)}})();</script>
 </body>
 </html>

@@ -353,6 +353,10 @@ var EBUI = Object.assign({ open: "Open", copied: "Copied", linkCopied: "Link cop
     if (fx) {
       fx.addEventListener("click", function (e) { if (e.target === fx || e.target.id === "focus-x") closeFocus(); });
       on("focus-prev", function () { stepFocus(-1); }); on("focus-next", function () { stepFocus(1); });
+      // phones (25 Eki): swipe left/right in the viewer to step through the case
+      var tx0 = 0, ty0 = 0;
+      fx.addEventListener("touchstart", function (e) { var t = e.touches[0]; tx0 = t.clientX; ty0 = t.clientY; }, { passive: true });
+      fx.addEventListener("touchend", function (e) { var t = e.changedTouches[0], dx = t.clientX - tx0, dy = t.clientY - ty0; if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) stepFocus(dx < 0 ? 1 : -1); }, { passive: true });
     }
 
     /* ---------------- tour ---------------- */
