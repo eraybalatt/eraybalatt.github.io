@@ -135,6 +135,24 @@ def translate_attrs(soup, lang):
 cfg_dir_rtl = {"ar": True}
 
 
+OUT_ROOT = ROOT          # --check writes here (a temp dir) instead of the repo
+MISSING = {}             # lang -> English texts with no translation
+
+
+def sub_once(pattern, repl, text, what, flags=0):
+    """re.sub that must match exactly once; a silent miss used to leave /tr/ in English (audit code-01)."""
+    out, n = re.subn(pattern, repl, text, count=1, flags=flags)
+    if n != 1:
+        sys.exit(f"build-i18n: '{what}' did not match - index.html changed? Fix the pattern before publishing.")
+    return out
+
+
+def replace_once(text, old, new, what):
+    if old not in text:
+        sys.exit(f"build-i18n: '{what}' not found - index.html changed? Fix it before publishing.")
+    return text.replace(old, new, 1)
+
+
 def tkey(html):
     return hashlib.sha1(html.strip().encode()).hexdigest()[:10]
 
@@ -155,6 +173,8 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
         for el in soup.select("[data-tr]"):
             val = tmap.get(tkey(el.decode_contents()))
             if not val:
+                if src_rel == "index.html":
+                    MISSING.setdefault(lang, []).append(el.decode_contents().strip()[:80])
                 continue
             frag = BeautifulSoup(val, "html.parser")
             el.clear()
@@ -242,6 +262,12 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
                 t.string = note.get_text(strip=True)
                 fb.append(t)
 
+    # 6c) the language is baked in, so the EN/TR swap attributes are dead weight here (~21 KB per page, audit code-08)
+    if src_rel == "index.html":
+        for el in soup.select("[data-en], [data-tr]"):
+            el.attrs.pop("data-en", None)
+            el.attrs.pop("data-tr", None)
+
     # 7) JSON-LD: sayfa düğümünü bu dile bağla
     for s in soup.find_all("script", type="application/ld+json"):
         try:
@@ -259,34 +285,35 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
 
     # 8) dil kilidi — JS yüklenince sayfayı başka dile çevirmesin,
     #    dil düğmeleri de swap yerine gerçek URL'e gitsin
-    out = re.sub(
-        r"document\.querySelectorAll\('\.lang-btn(?:\[data-lang\])?'\)\.forEach\(b=>b\.addEventListener\('click',\(\)=>\{setLang\(b\.dataset\.lang\);.*?\}\)\);",
-        "document.querySelectorAll('.lang-btn[data-lang]').forEach(b=>b.addEventListener('click',()=>{"
-        "try{localStorage.setItem('lang',b.dataset.lang)}catch(e){}"
-        "location.href={en:'/',tr:'/tr/'}[b.dataset.lang]||'/';}));",
-        out, count=1, flags=re.S)
-    out = re.sub(
-        r"\(function\(\)\{const ok=\['en','tr'\];.*?setLang\(l\);\}\)\(\);",
-        f"setLang('{lang}');",
-        out, count=1, flags=re.S)
+    if src_rel == "index.html":
+        out = sub_once(
+            r"document\.querySelectorAll\('\.lang-btn(?:\[data-lang\])?'\)\.forEach\(b=>b\.addEventListener\('click',\(\)=>\{setLang\(b\.dataset\.lang\);.*?\}\)\);",
+            "document.querySelectorAll('.lang-btn[data-lang]').forEach(b=>b.addEventListener('click',()=>{"
+            "try{localStorage.setItem('lang',b.dataset.lang)}catch(e){}"
+            "location.href={en:'/',tr:'/tr/'}[b.dataset.lang]||'/';}));",
+            out, "language buttons", flags=re.S)
+        out = sub_once(
+            r"\(function\(\)\{const ok=\['en','tr'\];.*?setLang\(l\);\}\)\(\);",
+            f"setLang('{lang}');",
+            out, "language lock", flags=re.S)
     if tmap is not None:
         esc = lambda v: (v or "").replace("\\", "\\\\").replace("'", "\\'")
         meta = (f"LANG_META['{lang}']={{t:'{esc(tmap.get('_meta_t'))}',d:'{esc(tmap.get('_meta_d'))}',"
                 f"loc:'{cfg['locale']}',menu:'{esc(cfg['menu'])}'}};")
-        out = out.replace("  function setLang(lang){", "  " + meta + "\n  function setLang(lang){", 1)
+        out = replace_once(out, "  function setLang(lang){", "  " + meta + "\n  function setLang(lang){", "LANG_META hook")
         aria = ",".join(f"{k[6:]}:'{esc(v)}'" for k, v in tmap.items() if k.startswith("_aria_"))
-        out = out.replace("window.__aria=A[lang]||A.en;", f"A['{lang}']={{{aria}}};window.__aria=A[lang]||A.en;", 1)
+        out = replace_once(out, "window.__aria=A[lang]||A.en;", f"A['{lang}']={{{aria}}};window.__aria=A[lang]||A.en;", "aria hook")
         ft = _FORMT.get(lang)
         if ft and src_rel == "index.html":
             out = out.replace("</head>", "<script>window.__formT=" + json.dumps(ft, ensure_ascii=False) + ";</script>\n</head>", 1)
 
-    dest_dir = os.path.join(ROOT, cfg["dir"])
+    dest_dir = os.path.join(OUT_ROOT, cfg["dir"])
     os.makedirs(dest_dir, exist_ok=True)
     dest = os.path.join(dest_dir, "index.html")
     if lang == "tr":
         out = out.replace("/logos/erciyes-tip-en.webp", "/logos/erciyes-tip-tr.webp")
     open(dest, "w", encoding="utf-8").write(out)
-    return {"dest": os.path.relpath(dest, ROOT), "swapped": swapped,
+    return {"dest": os.path.relpath(dest, OUT_ROOT), "swapped": swapped,
             "paths_fixed": fixed, "size_kb": round(len(out) / 1024)}
 
 
@@ -366,16 +393,21 @@ def build_sub(job):
         if s.string:
             s.string = re.sub(r"url\((['\"]?)(?!/|https?:|data:)", lambda m: "url(" + m.group(1) + prefix, s.string)
 
-    dest_dir = os.path.join(ROOT, "tr", job["dir"])
+    dest_dir = os.path.join(OUT_ROOT, "tr", job["dir"])
     os.makedirs(dest_dir, exist_ok=True)
     dest = os.path.join(dest_dir, "index.html")
     out = str(soup)
     open(dest, "w", encoding="utf-8").write(out)
-    return {"dest": os.path.relpath(dest, ROOT), "swapped": swapped,
+    return {"dest": os.path.relpath(dest, OUT_ROOT), "swapped": swapped,
             "paths_fixed": fixed, "size_kb": round(len(out) / 1024)}
 
 
 def main():
+    global OUT_ROOT
+    check = "--check" in sys.argv
+    if check:
+        import tempfile
+        OUT_ROOT = tempfile.mkdtemp(prefix="i18n-check-")
     results = []
     for job in SUBPAGES:
         results.append(("tr", build_sub(job)))
@@ -392,9 +424,28 @@ def main():
                     continue
                 c = dict(cfg, dir=lang)
                 results.append((lang, build(job["src"], lang, c, meta_all, tmap)))
-    for lang, r in results:
-        print(f"  {lang} → {r['dest']}  ({r['swapped']} çeviri gömüldü, "
-              f"{r['paths_fixed']} yol düzeltildi, {r['size_kb']}KB)")
+    if check:
+        # compare with what is staged for commit (falls back to the working tree for unstaged files)
+        import subprocess, filecmp
+        stale = []
+        for lang, r in results:
+            rel = r["dest"]
+            built = open(os.path.join(OUT_ROOT, rel), encoding="utf-8").read()
+            staged = subprocess.run(["git", "show", ":" + rel], cwd=ROOT, capture_output=True, text=True).stdout
+            if built != staged:
+                stale.append(rel)
+        if stale:
+            sys.exit("build-i18n --check: these generated pages are out of date, run python3 build-i18n.py and git add them:\n  " + "\n  ".join(stale))
+        print("build-i18n --check: all generated pages match")
+    else:
+        for lang, r in results:
+            print(f"  {lang} → {r['dest']}  ({r['swapped']} çeviri gömüldü, "
+                  f"{r['paths_fixed']} yol düzeltildi, {r['size_kb']}KB)")
+    if MISSING:
+        for lang, items in MISSING.items():
+            print(f"  ! {lang}: {len(items)} metin çevrilmemiş (İngilizce kaldı): " + " | ".join(items[:5]))
+        if "--allow-missing" not in sys.argv:
+            sys.exit("build-i18n: eksik çeviri var. i18n/<dil>.json'a ekle ya da bilerek geçmek için --allow-missing kullan.")
 
 
 if __name__ == "__main__":

@@ -262,12 +262,6 @@
   @media(max-width:760px){#films > .blk,#films > .cspair,#films > .grid.g-3{margin-top:26px}}
 
   
-  }
-  /* --- Novora: metin solda, filmler sagda ve kucuk --- */
-  .filmpair figure:nth-child(2){padding:12px 14px 14px}
-  .filmpair figure:nth-child(2) .fp-play{width:100%}
-  .filmpair figure:nth-child(2) .fp-head{opacity:.9}
-  
   #films .csheet img{max-width:660px}
   #films .csheet figcaption{max-width:660px}
   /* --- cam yuzeyler: koyu zemin uzerinde derinlik --- */
@@ -296,27 +290,6 @@
   .watch-alt:hover{background:rgba(181,187,194,.16);border-color:rgba(198,202,207,.6);transform:translateY(-1px)}
   .watch-alt:focus-visible{outline:2px solid #b9bfc5;outline-offset:3px}
   /* video lightbox */
-  .lbx{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:26px}
-  .lbx.open{display:flex}
-  .lbx-bg{position:absolute;inset:0;background:rgba(9,10,11,.88);
-    backdrop-filter:blur(12px) saturate(1.1);-webkit-backdrop-filter:blur(12px) saturate(1.1);
-    animation:lbxfade .22s ease}
-  .lbx-box{position:relative;width:min(1080px,100%);animation:lbxrise .3s cubic-bezier(.2,.8,.3,1)}
-  .lbx-frame{position:relative;aspect-ratio:16/9;width:100%;border-radius:15px;overflow:hidden;background:#0c0d0e;
-    border:1px solid rgba(181,187,194,.3);
-    box-shadow:0 44px 120px -44px rgba(0,0,0,.92), 0 0 0 1px rgba(181,187,194,.08)}
-  .lbx-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .lbx-cap{margin:13px 3px 0;font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:.72rem;
-    letter-spacing:.15em;text-transform:uppercase;color:#dcdfe2}
-  .lbx-x{position:absolute;top:-15px;right:-15px;width:38px;height:38px;border-radius:50%;cursor:pointer;
-    border:1px solid rgba(198,202,207,.45);background:#151719;color:#eeeff0;font-size:1.05rem;line-height:1;
-    display:grid;place-items:center;transition:background .18s ease,transform .18s ease}
-  .lbx-x:hover{background:#23272b;transform:scale(1.08)}
-  .lbx-x:focus-visible{outline:2px solid #b9bfc5;outline-offset:3px}
-  @keyframes lbxfade{from{opacity:0}to{opacity:1}}
-  @keyframes lbxrise{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
-  @media(max-width:620px){.lbx{padding:15px}.lbx-x{top:-12px;right:-4px;width:34px;height:34px}}
-  @media(prefers-reduced-motion:reduce){.lbx-bg,.lbx-box{animation:none}}
   .fp-side{margin-top:20px;max-width:210px}
   .fp-side .fp-play{border-radius:9px}
   .fp-side .fp-head{font-size:.6rem}
@@ -353,8 +326,6 @@
   .rev-pull{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:1.12rem;line-height:1.45;color:#c2c7cc;
     margin:0 0 12px;padding-left:14px;border-left:3px solid rgba(181,187,194,.65)}
   .rev-clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-  .rev-more{margin-top:11px;background:none;border:0;padding:0;cursor:pointer;font-family:'Inter',system-ui,-apple-system,sans-serif;
-    font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#c2c7cc;border-bottom:1px solid rgba(194,199,204,.45)}
   .foot-row{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
   .foot-right{display:flex;align-items:center;gap:16px;font-size:.82rem;color:var(--muted)}
   .foot-right .dot{width:7px;height:7px;border-radius:50%;background:#43d67d;box-shadow:0 0 8px rgba(67,214,125,.8);display:inline-block;margin-right:7px}
@@ -1140,14 +1111,7 @@ footer .brand-sm{background:none;-webkit-background-clip:border-box;background-c
 }
 @media (min-width:880px) and (max-height:820px){.hero-logo{width:min(470px,70%)}}
 /* the one way into the case wall */
-.mode-chip{z-index:3;display:inline-flex;align-items:center;gap:9px;padding:9px 15px 9px 13px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);color:#fff;font:500 .82rem/1 var(--sans);white-space:nowrap;transition:background .2s,border-color .2s}
-.mode-chip:hover{background:rgba(255,255,255,.24);border-color:rgba(255,255,255,.55)}
-.mode-chip svg{width:15px;height:15px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.2}
-.mode-chip svg path{stroke-width:.9}
-.mode-chip i{font-style:normal;opacity:.8}
 .mode-n{font:600 .7rem/1 var(--sans);padding:3px 6px;border-radius:999px;background:#fff;color:var(--on-light)}
-@media (min-width:880px){.hero .mode-chip{position:absolute;top:24px;left:24px}}
-@media (max-width:879.98px){.hero .mode-chip{position:relative;margin:0 auto 18px}}
 
 /* bands under the hero */
 .trust{background:transparent;border:0}
@@ -1262,7 +1226,6 @@ main>section:first-of-type{border-top:0}
 .rev-feat{border-color:var(--line-2)!important;background:var(--card)!important;box-shadow:var(--shadow)!important}
 .rev-pull{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;line-height:1.25;color:var(--ink);border-left:2px solid var(--accent);padding-left:16px}
 .rev-quote{color:var(--ink-2);font-weight:400}
-.rev-more{font-family:var(--sans);font-weight:500;font-size:.8rem;letter-spacing:0;text-transform:none;color:var(--accent);border-bottom:1px solid rgba(214,191,143,.35)}
 .rev-meta,.rev-proof{color:var(--muted)}
 .rev-proof a{color:var(--accent);border-bottom:1px solid rgba(214,191,143,.35)}
 
@@ -1326,11 +1289,6 @@ footer::before{display:none}
 .wel-close{color:var(--muted)}
 
 /* lightbox stays dark: it holds a film */
-.lbx-bg{background:rgba(20,19,17,.88)}
-.lbx-frame{border-radius:14px;border:0;background:#000}
-.lbx-cap{font-family:var(--sans);letter-spacing:.04em;text-transform:none;color:rgba(255,255,255,.82)}
-.lbx-x{border-radius:999px;background:#fff;border:0;color:var(--on-light)}
-.lbx-x:hover{background:#f3f1ea}
 
 /* nothing spins or pulses forever */
 .trust-cta .dot,#leather-feature .feature,#leather-feature .media::after,#leather-feature .feature .btn-grad,.contact::after,.brand-wm b,.eyebrow{animation:none!important}
@@ -1357,7 +1315,6 @@ footer::before{display:none}
 @media (max-height:520px) and (orientation:landscape){
   .hero{padding-top:22px;padding-bottom:14px;min-height:calc(100svh - 80px)}
   .hero .eyebrow{display:none}
-  .hero .mode-chip{margin-bottom:8px}
   .hero-logo{width:min(230px,32%);margin-bottom:2px}
   .hero h1{font-size:clamp(1.5rem,4vw,1.95rem);margin-bottom:6px}
   .hero p.lead{margin-bottom:10px;font-size:.88rem;max-width:560px}
@@ -1430,14 +1387,12 @@ footer{background:var(--deep);border-top:0}
 .watch-alt{border-radius:1px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;background:transparent;color:var(--ivory);border:1px solid rgba(243,239,230,.36)}
 .watch-alt::before{border-left-color:var(--ivory)}
 .watch-alt:hover{background:rgba(243,239,230,.07)}
-.mode-chip{border-radius:2px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;background:rgba(18,26,36,.4);border:1px solid rgba(243,239,230,.4)}
 .mode-n{border-radius:1px;background:var(--accent);color:#1e2c3a;letter-spacing:.04em}
 .tools-track span b,.tools-track.rev span b{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
 .trust-label{letter-spacing:.3em;font-size:.6rem}
 .tlogo{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em}
 .csquote blockquote,.rev-pull{font-family:var(--serif);font-weight:500}
 .rev-pull{font-size:1.85rem;border-left:1px solid var(--accent)}
-.rev-more{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
 .form-send{border-radius:2px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;padding:15px 26px}
 .contact-form input,.contact-form textarea{border-radius:2px;background:rgba(18,26,36,.22)}
 .contact-email{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);border-bottom:1px solid rgba(214,191,143,.5)}
@@ -1571,8 +1526,6 @@ footer .brand-sm{font-family:var(--serif);font-weight:600;color:var(--ink)}
   .hero{padding:84px 32px 68px}
   .hero .cta-row{position:relative;right:auto;bottom:auto;justify-content:center;gap:12px;margin-bottom:0}
 }
-.mode-chip{border-radius:999px;background:rgba(19,27,37,.46);border:1px solid rgba(246,248,250,.22);color:#fff;font:500 .8rem/1 var(--sans);letter-spacing:0;text-transform:none;padding:9px 14px 9px 12px}
-.mode-chip:hover{background:rgba(19,27,37,.66);border-color:rgba(246,248,250,.42)}
 .mode-n{border-radius:999px;background:var(--accent);color:var(--on-accent);font-family:var(--mono);letter-spacing:0}
 
 /* ---------- under the hero: clients + tools, quiet ---------- */
@@ -1679,7 +1632,6 @@ main>section:nth-of-type(even) .card,main>section:nth-of-type(even) .feature,mai
 .rev-pull{font-family:var(--serif);font-style:normal;font-weight:500;font-size:clamp(1.45rem,2.2vw,1.8rem);line-height:1.2;letter-spacing:-.028em;color:var(--ink);border-left:2px solid var(--accent);padding-left:16px}
 .rev-quote{font-size:.97rem;line-height:1.72;color:var(--ink-2)}
 .rev-feat .rev-quote{font-size:1rem}
-.rev-more{align-self:flex-start;font-family:var(--sans);font-weight:500;font-size:.84rem;letter-spacing:0;text-transform:none;color:var(--accent-ink);border-bottom:1px solid var(--accent-line)}
 .rev-meta{font-size:.8rem;color:var(--muted)}
 .rev-proof{color:var(--muted)}
 .rev-proof a{color:var(--accent-ink);border-bottom:1px solid var(--accent-line)}
@@ -1733,9 +1685,6 @@ footer{background:var(--deep);color:var(--muted);padding:52px clamp(16px,3vw,40p
 .wel-card{border-radius:22px;box-shadow:0 18px 24px -12px rgba(10,16,24,.5)}
 .wel-eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
 .wel-chip{border-radius:14px}
-.lbx-frame{border-radius:16px;box-shadow:0 18px 24px -12px rgba(0,0,0,.6)}
-.lbx-cap{font-family:var(--mono);font-size:.7rem;letter-spacing:.02em}
-.lbx-x{background:var(--ink);color:var(--on-light)}
 
 /* ---------- phones ---------- */
 @media (max-width:879.98px){
@@ -1759,7 +1708,6 @@ footer{background:var(--deep);color:var(--muted);padding:52px clamp(16px,3vw,40p
 @media (max-height:520px) and (orientation:landscape){
   .hero{padding-top:16px;padding-bottom:12px}
   .hero .eyebrow{display:none}
-  .hero .mode-chip{margin-bottom:6px}
   .hero-logo{width:min(220px,30%);margin-bottom:0}
   .hero h1{font-size:clamp(1.45rem,3.8vw,1.9rem);margin-bottom:6px}
   .hero p.lead{font-size:.86rem;margin-bottom:10px;max-width:560px}
@@ -1805,7 +1753,6 @@ footer{background:var(--deep);color:var(--muted);padding:52px clamp(16px,3vw,40p
 .rv-ver svg{width:16px;height:16px;fill:#9ad1ff}
 .rv-title{margin:10px 0 6px;font-family:var(--serif);font-weight:600;font-size:1.25rem;color:#f6f8fa;line-height:1.3}
 .rv-item .rev-quote{margin:8px 0 0;font-size:.98rem;line-height:1.65;color:#e3eaf1}
-.rv-item .rev-more{margin-top:8px}
 .rv-proj{margin-top:12px;font-size:.8rem;color:#d3dde7}
 @media (max-width:900px){.rv-wrap{grid-template-columns:1fr}.rv-sum{position:static}}
 @media (max-width:520px){.rv-ver span{display:none}.rv-item{padding:18px}}
@@ -2938,14 +2885,6 @@ footer.ft2{background:var(--b0)!important}
   </div>
 </footer>
 
-<div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Video">
-  <div class="lbx-bg" data-lbx-close></div>
-  <div class="lbx-box">
-    <button class="lbx-x" type="button" data-lbx-close aria-label="Close video">&#10005;</button>
-    <div class="lbx-frame"></div>
-    <div class="lbx-cap"></div>
-  </div>
-</div>
 <script>
   const toggle=document.querySelector('.nav-toggle');
   const links=document.getElementById('navlinks');
@@ -3092,10 +3031,9 @@ navTargets.forEach(function(t){
   // keep hero bg video playing/looping (some browsers pause autoplay)
   const hv=document.getElementById('heroVid');
   // only load/play the hero videos on desktop with motion allowed — saves ~3MB on mobile; poster stays on small screens
-  const heroLogo=document.getElementById('heroLogo');
   // perf (23 Eyl 2026): both hero videos pause while they are off-screen (they kept decoding under the whole page,
   // and the 'pause' listener below restarted any pause) and play again when they scroll back in
-  const heroVis=new Set([hv,heroLogo].filter(Boolean));
+  const heroVis=new Set([hv].filter(Boolean));
   // a11y (25 Eki, WCAG 2.2.2): a visible pause button; once the visitor pauses, nothing restarts the hero
   let heroUserPaused=false; const hp=document.getElementById('heroPause');
   const playVid=v=>{ if(v===hv&&heroUserPaused)return; if(!heroVis.has(v))return; const p=v.play(); if(p&&p.catch)p.catch(()=>{}); };
@@ -3107,7 +3045,7 @@ navTargets.forEach(function(t){
      ya da hata verirse dosya doğrudan akışla açılıyor; tam sürüm de bir kez yeniden deneniyor. */
   const getBlob=(url,ms)=>{ const ac=('AbortController' in window)?new AbortController():null; const t=ac?setTimeout(()=>ac.abort(),ms):0;
     return fetch(url,ac?{signal:ac.signal}:{}).then(r=>r.ok?r.blob():Promise.reject(r.status)).then(b=>{ clearTimeout(t); return URL.createObjectURL(b); },e=>{ clearTimeout(t); throw e; }); };
-  const startHeroVids=()=>{ const ok=matchMedia('(min-width:761px)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches; if(!ok)return; [hv,heroLogo].forEach(v=>{ if(!v||!v.dataset.src||v.src||v.dataset.loading)return; v.dataset.loading='1';
+  const startHeroVids=()=>{ const ok=matchMedia('(min-width:761px)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches; if(!ok)return; [hv].forEach(v=>{ if(!v||!v.dataset.src||v.src||v.dataset.loading)return; v.dataset.loading='1';
     const begin=src=>{ v.src=src; v.load(); playVid(v); v.addEventListener('error',()=>{ if(!v.dataset.direct){ v.dataset.direct='1'; v.src=v.dataset.src; v.load(); playVid(v); } },{once:true}); };
     getBlob(v.dataset.src,6000).catch(()=>v.dataset.src).then(src=>{ begin(src);
       /* then the full reel in the background; it takes over when the first set ends, on the same frame */
@@ -3119,7 +3057,7 @@ navTargets.forEach(function(t){
   const heroIO=new IntersectionObserver(es=>es.forEach(e=>{ const v=e.target;
     if(e.isIntersecting){ heroVis.add(v); if(v.paused&&(v===hv||v.src))playVid(v); }
     else { heroVis.delete(v); if(!v.paused)v.pause(); } }));
-  [hv,heroLogo].forEach(v=>{ if(!v)return; heroIO.observe(v); v.addEventListener('play',()=>{ if(!heroVis.has(v))v.pause(); }); });
+  [hv].forEach(v=>{ if(!v)return; heroIO.observe(v); v.addEventListener('play',()=>{ if(!heroVis.has(v))v.pause(); }); });
   if(hv){
     const playHero=()=>playVid(hv);
     hv.addEventListener('ended',()=>{hv.currentTime=0;playHero();});
@@ -3169,69 +3107,7 @@ navTargets.forEach(function(t){
   const vio=new IntersectionObserver((es)=>es.forEach(e=>{ if(!e.isIntersecting && !e.target.paused) e.target.pause(); }),{threshold:.05});
   cardVids.forEach(v=>{ v.addEventListener('play',()=>vio.observe(v)); v.addEventListener('pause',()=>vio.unobserve(v)); if(!v.paused)vio.observe(v); });
 
-  // pause the decorative contact iframe's heavy animation loop while it is scrolled off-screen
-  // (fail-safe: if the iframe never gets the message it simply keeps running — no visual regression)
-  const cFrame=document.querySelector('.contact-visual iframe');
-  if(cFrame){
-    let framePlaying=true;
-    const post=(m)=>{ try{ if(cFrame.contentWindow) cFrame.contentWindow.postMessage(m,'*'); }catch(e){} };
-    const cfo=new IntersectionObserver((es)=>es.forEach(e=>{
-      if(e.isIntersecting){ if(!framePlaying){ framePlaying=true; post('eb-play'); } }
-      else { if(framePlaying){ framePlaying=false; post('eb-pause'); } }
-    }),{rootMargin:'150px 0px'});
-    cfo.observe(cFrame);
-  }
 
-  // video lightbox — [data-lightbox] klibi sayfanin uzerinde acar, otomatik oynatir
-  (function(){
-    var lb=document.getElementById('lbx'); if(!lb) return;
-    var frame=lb.querySelector('.lbx-frame'), cap=lb.querySelector('.lbx-cap'), xb=lb.querySelector('.lbx-x');
-    var opener=null, prevOv='';
-    function open(id,title){
-      frame.innerHTML='';
-      var f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-      f.title=title||'Video'; f.setAttribute('frameborder','0');
-      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true;
-      frame.appendChild(f);
-      cap.textContent=title||'';
-      lb.classList.add('open');
-      prevOv=document.body.style.overflow; document.body.style.overflow='hidden';
-      xb.focus();
-    }
-    function close(){
-      if(!lb.classList.contains('open')) return;
-      lb.classList.remove('open'); frame.innerHTML='';
-      document.body.style.overflow=prevOv;
-      if(opener && opener.focus) opener.focus();
-      opener=null;
-    }
-    document.querySelectorAll('a[data-lightbox]').forEach(function(a){
-      a.addEventListener('click',function(e){
-        e.preventDefault(); opener=a;
-        open(a.getAttribute('data-lightbox'), a.getAttribute('data-lbx-title')||'');
-      });
-    });
-    lb.querySelectorAll('[data-lbx-close]').forEach(function(el){ el.addEventListener('click',close); });
-    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
-  })();
-
-  // inline YouTube play — click a [data-yt] card to swap its thumbnail for an embedded player (stays on-site)
-  document.querySelectorAll('a[data-yt]').forEach(el=>{
-    el.addEventListener('click',e=>{
-      e.preventDefault();
-      const id=el.getAttribute('data-yt');
-      const thumb=el.querySelector('.thumb')||el;
-      if(thumb.querySelector('iframe'))return;
-      const f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-      f.title=(el.querySelector('.card-body h3')?.textContent||'Video'); f.setAttribute('frameborder','0');
-      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
-      f.allowFullscreen=true;
-      f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;z-index:6;border-radius:inherit';
-      thumb.appendChild(f);
-    });
-  });
 
 
   // EB player: our own controls, with the frame under the cursor shown above the timeline
@@ -3343,20 +3219,13 @@ navTargets.forEach(function(t){
     });
   }
 
-  // detective mode progress on the view switch (kept by /files/)
-  (function(){var n=0;try{n=Object.keys(JSON.parse(localStorage.getItem('eb_files_seen')||'{}')||{}).length}catch(e){}
-    var c=document.querySelector('.mode-chip .mode-n');if(c&&n){c.textContent=Math.min(n,9)+'/9';c.hidden=false}})();
 
   // (the click ripple is gone: the calm theme hides .click-ripple, so every click built and removed an invisible span)
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74", "spa": false}'></script><!-- End Cloudflare Web Analytics -->
 
 
-<script>document.querySelectorAll('.rev-more').forEach(function(b){b.addEventListener('click',function(){
-var q=b.parentElement.querySelector('.rev-quote');var open=!q.classList.toggle('rev-clamp');
-var L=document.documentElement.lang||'en';
-b.textContent=open?(L==='tr'?'Kısalt':L==='de'?'Weniger anzeigen':'Show less')
-:(L==='tr'?'Yorumun tamamını oku':L==='de'?'Ganze Bewertung lesen':'Read the full review');});});</script><script>
+<script>
 (function(){var bar=document.querySelector('.ugc-filter'),g=document.querySelector('#ugc .g-ugc');if(!bar||!g)return;bar.hidden=false;
 bar.querySelectorAll('.uf').forEach(function(x){var c=x.getAttribute('data-cat'),n=g.querySelectorAll(c==='all'?':scope>[data-cat]':':scope>[data-cat="'+c+'"]').length,i=x.querySelector('i');if(i)i.textContent=n;});
 bar.addEventListener('click',function(e){var b=e.target.closest('.uf');if(!b)return;var c=b.getAttribute('data-cat');

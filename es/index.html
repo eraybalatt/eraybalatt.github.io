@@ -258,12 +258,6 @@
   @media(max-width:760px){#films > .blk,#films > .cspair,#films > .grid.g-3{margin-top:26px}}
 
   
-  }
-  /* --- Novora: metin solda, filmler sagda ve kucuk --- */
-  .filmpair figure:nth-child(2){padding:12px 14px 14px}
-  .filmpair figure:nth-child(2) .fp-play{width:100%}
-  .filmpair figure:nth-child(2) .fp-head{opacity:.9}
-  
   #films .csheet img{max-width:660px}
   #films .csheet figcaption{max-width:660px}
   /* --- cam yuzeyler: koyu zemin uzerinde derinlik --- */
@@ -292,27 +286,6 @@
   .watch-alt:hover{background:rgba(181,187,194,.16);border-color:rgba(198,202,207,.6);transform:translateY(-1px)}
   .watch-alt:focus-visible{outline:2px solid #b9bfc5;outline-offset:3px}
   /* video lightbox */
-  .lbx{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:26px}
-  .lbx.open{display:flex}
-  .lbx-bg{position:absolute;inset:0;background:rgba(9,10,11,.88);
-    backdrop-filter:blur(12px) saturate(1.1);-webkit-backdrop-filter:blur(12px) saturate(1.1);
-    animation:lbxfade .22s ease}
-  .lbx-box{position:relative;width:min(1080px,100%);animation:lbxrise .3s cubic-bezier(.2,.8,.3,1)}
-  .lbx-frame{position:relative;aspect-ratio:16/9;width:100%;border-radius:15px;overflow:hidden;background:#0c0d0e;
-    border:1px solid rgba(181,187,194,.3);
-    box-shadow:0 44px 120px -44px rgba(0,0,0,.92), 0 0 0 1px rgba(181,187,194,.08)}
-  .lbx-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .lbx-cap{margin:13px 3px 0;font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:.72rem;
-    letter-spacing:.15em;text-transform:uppercase;color:#dcdfe2}
-  .lbx-x{position:absolute;top:-15px;right:-15px;width:38px;height:38px;border-radius:50%;cursor:pointer;
-    border:1px solid rgba(198,202,207,.45);background:#151719;color:#eeeff0;font-size:1.05rem;line-height:1;
-    display:grid;place-items:center;transition:background .18s ease,transform .18s ease}
-  .lbx-x:hover{background:#23272b;transform:scale(1.08)}
-  .lbx-x:focus-visible{outline:2px solid #b9bfc5;outline-offset:3px}
-  @keyframes lbxfade{from{opacity:0}to{opacity:1}}
-  @keyframes lbxrise{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
-  @media(max-width:620px){.lbx{padding:15px}.lbx-x{top:-12px;right:-4px;width:34px;height:34px}}
-  @media(prefers-reduced-motion:reduce){.lbx-bg,.lbx-box{animation:none}}
   .fp-side{margin-top:20px;max-width:210px}
   .fp-side .fp-play{border-radius:9px}
   .fp-side .fp-head{font-size:.6rem}
@@ -349,8 +322,6 @@
   .rev-pull{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:1.12rem;line-height:1.45;color:#c2c7cc;
     margin:0 0 12px;padding-left:14px;border-left:3px solid rgba(181,187,194,.65)}
   .rev-clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-  .rev-more{margin-top:11px;background:none;border:0;padding:0;cursor:pointer;font-family:'Inter',system-ui,-apple-system,sans-serif;
-    font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#c2c7cc;border-bottom:1px solid rgba(194,199,204,.45)}
   .foot-row{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
   .foot-right{display:flex;align-items:center;gap:16px;font-size:.82rem;color:var(--muted)}
   .foot-right .dot{width:7px;height:7px;border-radius:50%;background:#43d67d;box-shadow:0 0 8px rgba(67,214,125,.8);display:inline-block;margin-right:7px}
@@ -1136,14 +1107,7 @@ footer .brand-sm{background:none;-webkit-background-clip:border-box;background-c
 }
 @media (min-width:880px) and (max-height:820px){.hero-logo{width:min(470px,70%)}}
 /* the one way into the case wall */
-.mode-chip{z-index:3;display:inline-flex;align-items:center;gap:9px;padding:9px 15px 9px 13px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);color:#fff;font:500 .82rem/1 var(--sans);white-space:nowrap;transition:background .2s,border-color .2s}
-.mode-chip:hover{background:rgba(255,255,255,.24);border-color:rgba(255,255,255,.55)}
-.mode-chip svg{width:15px;height:15px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.2}
-.mode-chip svg path{stroke-width:.9}
-.mode-chip i{font-style:normal;opacity:.8}
 .mode-n{font:600 .7rem/1 var(--sans);padding:3px 6px;border-radius:999px;background:#fff;color:var(--on-light)}
-@media (min-width:880px){.hero .mode-chip{position:absolute;top:24px;left:24px}}
-@media (max-width:879.98px){.hero .mode-chip{position:relative;margin:0 auto 18px}}
 
 /* bands under the hero */
 .trust{background:transparent;border:0}
@@ -1258,7 +1222,6 @@ main>section:first-of-type{border-top:0}
 .rev-feat{border-color:var(--line-2)!important;background:var(--card)!important;box-shadow:var(--shadow)!important}
 .rev-pull{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.6rem;line-height:1.25;color:var(--ink);border-left:2px solid var(--accent);padding-left:16px}
 .rev-quote{color:var(--ink-2);font-weight:400}
-.rev-more{font-family:var(--sans);font-weight:500;font-size:.8rem;letter-spacing:0;text-transform:none;color:var(--accent);border-bottom:1px solid rgba(214,191,143,.35)}
 .rev-meta,.rev-proof{color:var(--muted)}
 .rev-proof a{color:var(--accent);border-bottom:1px solid rgba(214,191,143,.35)}
 
@@ -1322,11 +1285,6 @@ footer::before{display:none}
 .wel-close{color:var(--muted)}
 
 /* lightbox stays dark: it holds a film */
-.lbx-bg{background:rgba(20,19,17,.88)}
-.lbx-frame{border-radius:14px;border:0;background:#000}
-.lbx-cap{font-family:var(--sans);letter-spacing:.04em;text-transform:none;color:rgba(255,255,255,.82)}
-.lbx-x{border-radius:999px;background:#fff;border:0;color:var(--on-light)}
-.lbx-x:hover{background:#f3f1ea}
 
 /* nothing spins or pulses forever */
 .trust-cta .dot,#leather-feature .feature,#leather-feature .media::after,#leather-feature .feature .btn-grad,.contact::after,.brand-wm b,.eyebrow{animation:none!important}
@@ -1353,7 +1311,6 @@ footer::before{display:none}
 @media (max-height:520px) and (orientation:landscape){
   .hero{padding-top:22px;padding-bottom:14px;min-height:calc(100svh - 80px)}
   .hero .eyebrow{display:none}
-  .hero .mode-chip{margin-bottom:8px}
   .hero-logo{width:min(230px,32%);margin-bottom:2px}
   .hero h1{font-size:clamp(1.5rem,4vw,1.95rem);margin-bottom:6px}
   .hero p.lead{margin-bottom:10px;font-size:.88rem;max-width:560px}
@@ -1426,14 +1383,12 @@ footer{background:var(--deep);border-top:0}
 .watch-alt{border-radius:1px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;background:transparent;color:var(--ivory);border:1px solid rgba(243,239,230,.36)}
 .watch-alt::before{border-left-color:var(--ivory)}
 .watch-alt:hover{background:rgba(243,239,230,.07)}
-.mode-chip{border-radius:2px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;background:rgba(18,26,36,.4);border:1px solid rgba(243,239,230,.4)}
 .mode-n{border-radius:1px;background:var(--accent);color:#1e2c3a;letter-spacing:.04em}
 .tools-track span b,.tools-track.rev span b{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
 .trust-label{letter-spacing:.3em;font-size:.6rem}
 .tlogo{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.02em}
 .csquote blockquote,.rev-pull{font-family:var(--serif);font-weight:500}
 .rev-pull{font-size:1.85rem;border-left:1px solid var(--accent)}
-.rev-more{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
 .form-send{border-radius:2px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;padding:15px 26px}
 .contact-form input,.contact-form textarea{border-radius:2px;background:rgba(18,26,36,.22)}
 .contact-email{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);border-bottom:1px solid rgba(214,191,143,.5)}
@@ -1567,8 +1522,6 @@ footer .brand-sm{font-family:var(--serif);font-weight:600;color:var(--ink)}
   .hero{padding:84px 32px 68px}
   .hero .cta-row{position:relative;right:auto;bottom:auto;justify-content:center;gap:12px;margin-bottom:0}
 }
-.mode-chip{border-radius:999px;background:rgba(19,27,37,.46);border:1px solid rgba(246,248,250,.22);color:#fff;font:500 .8rem/1 var(--sans);letter-spacing:0;text-transform:none;padding:9px 14px 9px 12px}
-.mode-chip:hover{background:rgba(19,27,37,.66);border-color:rgba(246,248,250,.42)}
 .mode-n{border-radius:999px;background:var(--accent);color:var(--on-accent);font-family:var(--mono);letter-spacing:0}
 
 /* ---------- under the hero: clients + tools, quiet ---------- */
@@ -1675,7 +1628,6 @@ main>section:nth-of-type(even) .card,main>section:nth-of-type(even) .feature,mai
 .rev-pull{font-family:var(--serif);font-style:normal;font-weight:500;font-size:clamp(1.45rem,2.2vw,1.8rem);line-height:1.2;letter-spacing:-.028em;color:var(--ink);border-left:2px solid var(--accent);padding-left:16px}
 .rev-quote{font-size:.97rem;line-height:1.72;color:var(--ink-2)}
 .rev-feat .rev-quote{font-size:1rem}
-.rev-more{align-self:flex-start;font-family:var(--sans);font-weight:500;font-size:.84rem;letter-spacing:0;text-transform:none;color:var(--accent-ink);border-bottom:1px solid var(--accent-line)}
 .rev-meta{font-size:.8rem;color:var(--muted)}
 .rev-proof{color:var(--muted)}
 .rev-proof a{color:var(--accent-ink);border-bottom:1px solid var(--accent-line)}
@@ -1729,9 +1681,6 @@ footer{background:var(--deep);color:var(--muted);padding:52px clamp(16px,3vw,40p
 .wel-card{border-radius:22px;box-shadow:0 18px 24px -12px rgba(10,16,24,.5)}
 .wel-eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
 .wel-chip{border-radius:14px}
-.lbx-frame{border-radius:16px;box-shadow:0 18px 24px -12px rgba(0,0,0,.6)}
-.lbx-cap{font-family:var(--mono);font-size:.7rem;letter-spacing:.02em}
-.lbx-x{background:var(--ink);color:var(--on-light)}
 
 /* ---------- phones ---------- */
 @media (max-width:879.98px){
@@ -1755,7 +1704,6 @@ footer{background:var(--deep);color:var(--muted);padding:52px clamp(16px,3vw,40p
 @media (max-height:520px) and (orientation:landscape){
   .hero{padding-top:16px;padding-bottom:12px}
   .hero .eyebrow{display:none}
-  .hero .mode-chip{margin-bottom:6px}
   .hero-logo{width:min(220px,30%);margin-bottom:0}
   .hero h1{font-size:clamp(1.45rem,3.8vw,1.9rem);margin-bottom:6px}
   .hero p.lead{font-size:.86rem;margin-bottom:10px;max-width:560px}
@@ -1801,7 +1749,6 @@ footer{background:var(--deep);color:var(--muted);padding:52px clamp(16px,3vw,40p
 .rv-ver svg{width:16px;height:16px;fill:#9ad1ff}
 .rv-title{margin:10px 0 6px;font-family:var(--serif);font-weight:600;font-size:1.25rem;color:#f6f8fa;line-height:1.3}
 .rv-item .rev-quote{margin:8px 0 0;font-size:.98rem;line-height:1.65;color:#e3eaf1}
-.rv-item .rev-more{margin-top:8px}
 .rv-proj{margin-top:12px;font-size:.8rem;color:#d3dde7}
 @media (max-width:900px){.rv-wrap{grid-template-columns:1fr}.rv-sum{position:static}}
 @media (max-width:520px){.rv-ver span{display:none}.rv-item{padding:18px}}
@@ -2456,45 +2403,45 @@ footer.ft2{background:var(--b0)!important}
 <div aria-hidden="true" id="loader"><svg aria-hidden="true" class="loader-motif" height="114" viewbox="0 0 120 120" width="114"><g fill="none" stroke="#a8dcff" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="6"><path d="M51.971 18.029L60 10L88.749 38.749"></path><path d="M101.971 51.971L110 60L81.251 88.749"></path><path d="M68.029 101.971L60 110L31.251 81.251"></path><path d="M18.029 68.029L10 60L38.749 31.251"></path><path d="M24.64 36.01L24.64 24.64L65.29 24.64"></path><path d="M83.99 24.64L95.36 24.64L95.36 65.29"></path><path d="M95.36 83.99L95.36 95.36L54.71 95.36"></path><path d="M36.01 95.36L24.64 95.36L24.64 54.71"></path></g></svg></div>
 <noscript><style>#loader{display:none!important}</style></noscript>
 <script>(function(){var l=document.getElementById("loader");if(!l)return;var t0=Date.now();function fin(){var w=Math.max(0,120-(Date.now()-t0));setTimeout(function(){l.classList.add("done");setTimeout(function(){if(l.parentNode)l.parentNode.removeChild(l);},350);},w);}if(document.readyState!=="loading")fin();else document.addEventListener("DOMContentLoaded",fin);setTimeout(fin,2500);})();</script>
-<a class="skip-link" data-en="Skip to content" data-tr="İçeriğe geç" href="#main">Saltar al contenido</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <div aria-hidden="true" class="blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="blob b5"></div></div>
 <div aria-hidden="true" aria-labelledby="welTitle" aria-modal="true" id="welcome" role="dialog">
 <div class="wel-card">
 <button aria-label="Cerrar" class="wel-close" type="button">✕</button>
 <div aria-hidden="true" class="wel-star"></div>
-<div class="wel-eyebrow" data-en="Welcome" data-tr="Merhaba">Bienvenido</div>
-<h2 data-en="What would you like to see?" data-tr="Ne görmek istersin?" id="welTitle">¿Qué te gustaría ver?</h2>
-<p class="wel-sub" data-en="Pick one — I'll take you straight there." data-tr="Birini seç — seni oraya götüreyim.">Elige uno y te llevo directo.</p>
+<div class="wel-eyebrow">Bienvenido</div>
+<h2 id="welTitle">¿Qué te gustaría ver?</h2>
+<p class="wel-sub">Elige uno y te llevo directo.</p>
 <div class="wel-grid">
-<button class="wel-chip" data-en="UGC Ads" data-go="ugc" data-tr="UGC Reklamları" type="button">Anuncios UGC</button>
-<button class="wel-chip" data-en="Product Films" data-go="bushido" data-tr="Ürün Filmleri" type="button">Películas de producto</button>
-<button class="wel-chip" data-en="Music Videos" data-go="music" data-tr="Müzik Videoları" type="button">Videoclips</button>
-<button class="wel-chip" data-en="Documentaries" data-go="flawless-feature" data-tr="Belgeseller" type="button">Documentales</button>
-<button class="wel-chip" data-en="Short Films" data-go="films" data-tr="Kısa Filmler" type="button">Cortometrajes</button>
-<button class="wel-chip" data-en="What I Do" data-go="brands" data-tr="Neler Yapıyorum" type="button">Qué hago</button>
+<button class="wel-chip" data-go="ugc" type="button">Anuncios UGC</button>
+<button class="wel-chip" data-go="bushido" type="button">Películas de producto</button>
+<button class="wel-chip" data-go="music" type="button">Videoclips</button>
+<button class="wel-chip" data-go="flawless-feature" type="button">Documentales</button>
+<button class="wel-chip" data-go="films" type="button">Cortometrajes</button>
+<button class="wel-chip" data-go="brands" type="button">Qué hago</button>
 </div>
-<button class="wel-skip" data-en="I'll just browse →" data-tr="Sadece gezineceğim →" type="button">Prefiero explorar →</button>
+<button class="wel-skip" type="button">Prefiero explorar →</button>
 </div>
 </div>
 <header class="nav">
 <div class="nav-inner">
 <a aria-label="Eray Balat — Director and Creative Producer, back to top" class="brand" href="#home" id="brandTop"><span aria-hidden="true" class="brand-mark"><svg height="36" viewbox="0 0 120 120" width="36" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="7"><path d="M51.971 18.029L60 10L88.749 38.749"></path><path d="M101.971 51.971L110 60L81.251 88.749"></path><path d="M68.029 101.971L60 110L31.251 81.251"></path><path d="M18.029 68.029L10 60L38.749 31.251"></path><path d="M24.64 36.01L24.64 24.64L65.29 24.64"></path><path d="M83.99 24.64L95.36 24.64L95.36 65.29"></path><path d="M95.36 83.99L95.36 95.36L54.71 95.36"></path><path d="M36.01 95.36L24.64 95.36L24.64 54.71"></path></g></svg></span><span class="brand-wm"><b>ERAY BALAT</b><i lang="en">Director · Creative Producer</i></span></a>
 <nav class="nav-links" id="navlinks">
-<a data-en="Featured" data-tr="Öne çıkanlar" href="#featured">Destacado</a>
-<a data-en="Ads &amp; UGC" data-tr="Reklam ve UGC" href="#ugc">Anuncios &amp; UGC</a>
-<a data-en="Short films" data-tr="Kısa filmler" href="#films">Cortometrajes</a>
-<a data-en="Music videos" data-tr="Müzik klipleri" href="#music">Videoclips</a>
-<a data-en="About" data-tr="Hakkımda" href="#about">Sobre mí</a>
-<a data-en="Rates" data-hire="" data-tr="Fiyatlar" href="/hire/">Tarifas</a>
+<a href="#featured">Destacado</a>
+<a href="#ugc">Anuncios &amp; UGC</a>
+<a href="#films">Cortometrajes</a>
+<a href="#music">Videoclips</a>
+<a href="#about">Sobre mí</a>
+<a data-hire="" href="/hire/">Tarifas</a>
 <span class="nav-ctas">
-<a class="nav-cta quote-nav" data-en="Get a quote →" data-tr="Teklif al →" href="#contact">Pide presupuesto →</a>
-<a class="nav-cta ghost case-nav" href="/files/"><svg aria-hidden="true" class="cc-mag" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"></circle><path d="M15 15l5.5 5.5"></path><path d="M8 8.4a3 3 0 0 1 2.4-1.2" stroke-width="1.4"></path></svg><span data-en="Detective mode" data-tr="Dedektif modu">Modo detective</span></a>
+<a class="nav-cta quote-nav" href="#contact">Pide presupuesto →</a>
+<a class="nav-cta ghost case-nav" href="/files/"><svg aria-hidden="true" class="cc-mag" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"></circle><path d="M15 15l5.5 5.5"></path><path d="M8 8.4a3 3 0 0 1 2.4-1.2" stroke-width="1.4"></path></svg><span>Modo detective</span></a>
 </span>
 </nav>
 <div class="nav-right">
 <div aria-label="Estado del estudio" class="nav-studio" role="group">
-<a class="ns-row ns-go" href="#contact"><span aria-hidden="true" class="ns-dot"></span><b data-en="Taking projects" data-tr="Proje alıyorum">Aceptando proyectos</b><span aria-hidden="true" class="ns-arrow">→</span></a>
-<div class="ns-row ns-small ns-tr"><svg aria-hidden="true" class="tr-badge" viewbox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z" fill="#2f6fe8"></path><path d="M12 6.9l1.5 3.1 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z" fill="#fff"></path></svg><span data-en="Top Rated on Upwork" data-tr="Upwork'te Top Rated">Top Rated en Upwork</span></div><div class="ns-row ns-small"><span aria-hidden="true" class="ns-star">★</span> <span data-en="5.0 · 100% Job Success" data-tr="5.0 · %100 iş başarısı">5.0 · 100% Job Success</span></div>
+<a class="ns-row ns-go" href="#contact"><span aria-hidden="true" class="ns-dot"></span><b>Aceptando proyectos</b><span aria-hidden="true" class="ns-arrow">→</span></a>
+<div class="ns-row ns-small ns-tr"><svg aria-hidden="true" class="tr-badge" viewbox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z" fill="#2f6fe8"></path><path d="M12 6.9l1.5 3.1 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z" fill="#fff"></path></svg><span>Top Rated en Upwork</span></div><div class="ns-row ns-small"><span aria-hidden="true" class="ns-star">★</span> <span>5.0 · 100% Job Success</span></div>
 <div class="ns-social"><a aria-label="Upwork" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener me" target="_blank"><svg aria-hidden="true"><use href="#ic-upwork"></use></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/in/eraybalat/" rel="noopener me" target="_blank"><svg aria-hidden="true"><use href="#ic-linkedin"></use></svg></a><a aria-label="Instagram" href="https://www.instagram.com/documenteray/" rel="noopener me" target="_blank"><svg aria-hidden="true"><use href="#ic-instagram"></use></svg></a></div>
 </div>
 <div aria-label="Idioma" class="lang" role="group">
@@ -2504,7 +2451,7 @@ footer.ft2{background:var(--b0)!important}
 </div>
 <div class="lang-menu" hidden="" id="langMenu">
 <a href="/fr/" hreflang="fr" lang="fr">Français</a><a href="/de/" hreflang="de" lang="de">Deutsch</a><a href="/it/" hreflang="it" lang="it">Italiano</a><a href="/es/" hreflang="es" lang="es">Español</a><a href="/pt/" hreflang="pt" lang="pt">Português</a><a href="/fi/" hreflang="fi" lang="fi">Suomi</a><a href="/zh/" hreflang="zh" lang="zh">中文</a><a href="/ja/" hreflang="ja" lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko">한국어</a><a dir="rtl" href="/ar/" hreflang="ar" lang="ar">العربية</a>
-<span class="lm-note" data-en="AI-assisted translations" data-tr="Yapay zekâ destekli çeviriler">Traducciones asistidas por IA</span>
+<span class="lm-note">Traducciones asistidas por IA</span>
 </div>
 <button aria-controls="navlinks" aria-expanded="false" aria-label="Menu" class="nav-toggle">☰</button>
 </div>
@@ -2518,10 +2465,10 @@ footer.ft2{background:var(--b0)!important}
 <video autoplay="" class="hero-bg" data-src="/hero-trailer-a.mp4" data-src-full="/hero-trailer.mp4" id="heroVid" loop="" muted="" playsinline="" preload="none"></video>
 <button aria-label="Pausar el video de fondo" aria-pressed="false" class="hero-pause" hidden="" id="heroPause" type="button"><span aria-hidden="true"></span></button>
 <div class="hero-ov"></div>
-<a class="topbar" href="#contact"><span aria-hidden="true" class="tb-dot"></span><span class="tb-a" data-en="Open for new projects" data-tr="Yeni projelere açığım">Disponible para nuevos proyectos</span><span aria-hidden="true" class="tb-sep">·</span><span class="tb-b" data-en="5 films in production right now" data-tr="Şu an 5 film yapımda">5 películas en producción ahora mismo</span><span class="tb-go" data-en="Get a quote →" data-tr="Teklif al →">Pide presupuesto →</span></a>
-<h1 class="rin hero-brush" data-en="&lt;em&gt;Frame by frame&lt;/em&gt;, with AI." data-tr="&lt;em&gt;Kare kare&lt;/em&gt;, yapay zekâyla."><em>Fotograma a fotograma</em>, con IA.</h1>
+<a class="topbar" href="#contact"><span aria-hidden="true" class="tb-dot"></span><span class="tb-a">Disponible para nuevos proyectos</span><span aria-hidden="true" class="tb-sep">·</span><span class="tb-b">5 películas en producción ahora mismo</span><span class="tb-go">Pide presupuesto →</span></a>
+<h1 class="rin hero-brush"><em>Fotograma a fotograma</em>, con IA.</h1>
 <div class="cta-row rin">
-<a class="btn btn-grad" data-en="See the work ↓" data-tr="İşleri gör ↓" href="#featured">Ver el trabajo ↓</a>
+<a class="btn btn-grad" href="#featured">Ver el trabajo ↓</a>
 </div>
 </section>
 </div>
@@ -2529,112 +2476,112 @@ footer.ft2{background:var(--b0)!important}
 <!-- HOW I WORK: one compact row -->
 <section aria-label="How I work" class="tf2">
 <div class="tf2-top">
-<span class="tf-label" data-en="How I work" data-tr="Nasıl çalışıyorum">Cómo trabajo</span>
-<p class="tf2-line" data-en='I orchestrate the models myself: APIs, agents and workflows in one pipeline, run on &lt;b class="fal-name"&gt;&lt;svg aria-hidden="true"&gt;&lt;use href="#ic-falmark"/&gt;&lt;/svg&gt;fal&lt;/b&gt;.' data-tr="Modelleri kendim yönetiyorum: API'ler, ajanlar ve iş akışları tek bir üretim hattında, &lt;b class=&quot;fal-name&quot;&gt;&lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use href=&quot;#ic-falmark&quot;/&gt;&lt;/svg&gt;fal&lt;/b&gt; üzerinde.">Orquesto los modelos yo mismo: APIs, agentes y flujos de trabajo en un solo pipeline, sobre <b class="fal-name"><svg aria-hidden="true"><use href="#ic-falmark"></use></svg>fal</b>.</p>
+<span class="tf-label">Cómo trabajo</span>
+<p class="tf2-line">Orquesto los modelos yo mismo: APIs, agentes y flujos de trabajo en un solo pipeline, sobre <b class="fal-name"><svg aria-hidden="true"><use href="#ic-falmark"></use></svg>fal</b>.</p>
 </div>
-<ol class="tf2-steps"><li><i>01</i><span data-en="Script" data-tr="Senaryo">Guion</span></li><li><i>02</i><span data-en="Look" data-tr="Görünüm">Estética</span></li><li><i>03</i><span data-en="Motion" data-tr="Hareket">Movimiento</span></li><li><i>04</i><span data-en="Sound" data-tr="Ses">Sonido</span></li><li><i>05</i><span data-en="Finish" data-tr="Bitiş">Acabado</span></li></ol>
+<ol class="tf2-steps"><li><i>01</i><span>Guion</span></li><li><i>02</i><span>Estética</span></li><li><i>03</i><span>Movimiento</span></li><li><i>04</i><span>Sonido</span></li><li><i>05</i><span>Acabado</span></li></ol>
 <ul aria-label="Tools" class="tf2-logos"><li class="fal"><svg aria-hidden="true"><use href="#ic-falmark"></use></svg>fal</li><li><svg aria-hidden="true"><use href="#ic-claude"></use></svg>Claude</li><li><svg aria-hidden="true"><use href="#ic-gemini"></use></svg>Nano Banana</li><li><svg aria-hidden="true"><use href="#ic-openai"></use></svg>GPT Image</li><li><svg aria-hidden="true"><use href="#ic-kling"></use></svg>Kling</li><li><svg aria-hidden="true"><use href="#ic-deepmind"></use></svg>Veo</li><li><svg aria-hidden="true"><use href="#ic-bytedance"></use></svg>Seedance</li><li><svg aria-hidden="true"><use href="#ic-magnific"></use></svg>Magnific</li><li><svg aria-hidden="true"><use href="#ic-topaz"></use></svg>Topaz</li><li><svg aria-hidden="true"><use href="#ic-elevenlabs"></use></svg>ElevenLabs</li><li><svg aria-hidden="true"><use href="#ic-suno"></use></svg>Suno</li><li><svg aria-hidden="true"><use href="#ic-pr"></use></svg>Premiere</li><li><svg aria-hidden="true"><use href="#ic-ae"></use></svg>After Effects</li></ul>
 </section>
 <main id="main" tabindex="-1">
 <!-- ABOUT -->
 <section id="about">
-<div class="eyebrow reveal" data-en="About" data-tr="Hakkımda">Sobre mí</div>
+<div class="eyebrow reveal">Sobre mí</div>
 <h2 class="sec-title reveal">Eray Balat</h2>
-<p class="about-role reveal" data-en="Creative Producer · AI Filmmaker · Kayseri, Türkiye" data-tr='&lt;span lang="en"&gt;Creative Producer&lt;/span&gt; · Yapay zekâ film yönetmeni · Kayseri, Türkiye'>Creative Producer · Cineasta de IA · Kayseri, Türkiye</p>
+<p class="about-role reveal">Creative Producer · Cineasta de IA · Kayseri, Türkiye</p>
 <div class="about-wrap" style="margin-top:26px">
 <div class="about-stack reveal">
 <img alt="Eray Balat" class="as-1" decoding="async" loading="lazy" src="/profile.webp?v=7"/>
 <img alt="Eray Balat en rodaje, Ámsterdam" class="as-2" decoding="async" loading="lazy" src="/about-1.webp?v=2"/>
 </div>
 <div class="about-body reveal">
-<p class="about-lead" data-en="I'm Eray Balat, a creative producer and AI filmmaker based in Kayseri, Türkiye. I combine live footage, motion design and generative media, and take a project from concept and storyboard through edit, animation, sound and finishing, for clients in the US, Europe and Türkiye." data-tr="Ben Eray Balat; Kayseri merkezli creative producer ve yapay zekâ film yönetmeniyim. Yapay zeka ile video, reklam filmi, müzik klibi ve belgesel üretiyorum: gerçek çekimi, motion tasarımı ve üretken medyayı birleştirip bir projeyi konsept ve storyboard'dan kurguya, animasyona, sese ve bitişe kadar götürüyorum. ABD, Avrupa ve Türkiye'deki müşterilerle çalışıyorum.">Soy Eray Balat, creative producer y cineasta de IA con base en Kayseri, Türkiye. Combino imagen real, motion design y medios generativos, y llevo un proyecto desde el concepto y el storyboard hasta el montaje, la animación, el sonido y el acabado, para clientes en EE. UU., Europa y Türkiye.</p>
-<p class="about-lang" data-en="Turkish (native) · English (working) · German and Arabic (basic)" data-tr="Türkçe (ana dil) · İngilizce (iş düzeyi) · Almanca ve Arapça (temel)">Turco (nativo) · Inglés (profesional) · Alemán y árabe (básico)</p>
-<a aria-label="Upwork profile: 100% Job Success, Top Rated" class="about-badges" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener" target="_blank"><span class="ub"><svg aria-hidden="true" class="ub-ic" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="10.4" stroke="#2f6fe8" stroke-width="1.8"></circle><path d="M6.6 9.2l2.9 2.3L12 7.6l2.5 3.9 2.9-2.3-1.1 6.6H7.7z" fill="#2f6fe8"></path></svg><span data-en="100% Job Success" data-tr="%100 iş başarısı">100% Job Success</span></span><span class="ub"><svg aria-hidden="true" class="ub-ic" viewbox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z" fill="#2f6fe8"></path><path d="M12 6.9l1.5 3.1 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z" fill="#fff"></path></svg><span>Top Rated</span></span><span class="ub-src">Upwork ↗</span></a>
-<div class="about-clients"><span class="ac-label" data-en="Clients" data-tr="Müşteriler">Clientes</span><ul class="wlogos"><li class="wl-icon wl-eru"><img alt="" height="44" src="/logos/erciyes-tip-en.webp" width="44"/><span class="wl-two"><b data-en="Erciyes University" data-tr="Erciyes Üniversitesi">Universidad de Erciyes</b><small data-en="Faculty of Medicine" data-tr="Tıp Fakültesi">Facultad de Medicina</small></span></li><li class="wl-word wl-umg"><b>UNIVERSAL</b><small>MUSIC TÜRKİYE</small></li><li class="wl-icon"><img alt="" height="24" src="/logos/tenniscut-icon.webp" width="34"/><span>TennisCut</span></li><li class="wl-icon"><img alt="" height="26" src="/logos/blarma-icon.webp" width="26"/><span>Blarma</span></li><li class="wl-word wl-bahs"><span>bahs.</span></li><li class="wl-img"><img alt="Takma Takma" height="28" src="/logos/takmatakma.webp" width="120"/></li><li class="wl-img"><img alt="Novora Zeytin" height="38" src="/logos/novora.webp" width="62"/></li><li class="wl-img"><img alt="Suno" height="21" src="/logos/suno.webp" width="86"/></li></ul></div>
+<p class="about-lead">Soy Eray Balat, creative producer y cineasta de IA con base en Kayseri, Türkiye. Combino imagen real, motion design y medios generativos, y llevo un proyecto desde el concepto y el storyboard hasta el montaje, la animación, el sonido y el acabado, para clientes en EE. UU., Europa y Türkiye.</p>
+<p class="about-lang">Turco (nativo) · Inglés (profesional) · Alemán y árabe (básico)</p>
+<a aria-label="Upwork profile: 100% Job Success, Top Rated" class="about-badges" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener" target="_blank"><span class="ub"><svg aria-hidden="true" class="ub-ic" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="10.4" stroke="#2f6fe8" stroke-width="1.8"></circle><path d="M6.6 9.2l2.9 2.3L12 7.6l2.5 3.9 2.9-2.3-1.1 6.6H7.7z" fill="#2f6fe8"></path></svg><span>100% Job Success</span></span><span class="ub"><svg aria-hidden="true" class="ub-ic" viewbox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z" fill="#2f6fe8"></path><path d="M12 6.9l1.5 3.1 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z" fill="#fff"></path></svg><span>Top Rated</span></span><span class="ub-src">Upwork ↗</span></a>
+<div class="about-clients"><span class="ac-label">Clientes</span><ul class="wlogos"><li class="wl-icon wl-eru"><img alt="" height="44" src="/logos/erciyes-tip-en.webp" width="44"/><span class="wl-two"><b>Universidad de Erciyes</b><small>Facultad de Medicina</small></span></li><li class="wl-word wl-umg"><b>UNIVERSAL</b><small>MUSIC TÜRKİYE</small></li><li class="wl-icon"><img alt="" height="24" src="/logos/tenniscut-icon.webp" width="34"/><span>TennisCut</span></li><li class="wl-icon"><img alt="" height="26" src="/logos/blarma-icon.webp" width="26"/><span>Blarma</span></li><li class="wl-word wl-bahs"><span>bahs.</span></li><li class="wl-img"><img alt="Takma Takma" height="28" src="/logos/takmatakma.webp" width="120"/></li><li class="wl-img"><img alt="Novora Zeytin" height="38" src="/logos/novora.webp" width="62"/></li><li class="wl-img"><img alt="Suno" height="21" src="/logos/suno.webp" width="86"/></li></ul></div>
 </div>
 </div>
 </section>
 <!-- FLAWLESS — FEATURED DOCUMENTARY -->
 <section id="featured">
-<div class="eyebrow reveal" data-en="Featured" data-tr="Öne çıkanlar">Destacado</div>
-<h2 class="sec-title reveal" data-en="Featured work" data-tr="Öne çıkan işler">Trabajo destacado</h2>
+<div class="eyebrow reveal">Destacado</div>
+<h2 class="sec-title reveal">Trabajo destacado</h2>
 <article class="gn-feature reveal" id="gevher-nesibe">
 <div class="gn-stage">
-<a aria-label="Abrir Gevher Nesibe, 1206" class="gn-slides" href="/gevher-nesibe/"><figure class="gn-sl on"><img alt="El hospital y la escuela de medicina desde el aire, con el monte Erciyes detrás" decoding="async" height="502" loading="eager" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/hero-s.webp" srcset="/gevher-nesibe/hero-s.webp 900w, /gevher-nesibe/hero-m.webp 1200w, /gevher-nesibe/hero.webp 1800w" width="900"/><figcaption data-en="Erciyes and the hospital, 1206" data-tr="Erciyes ve şifahane, 1206">Erciyes y el hospital, 1206</figcaption></figure><figure class="gn-sl"><img alt="La puerta tallada al abrirse" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g03-tackapi-s.webp" srcset="/gevher-nesibe/g03-tackapi-s.webp 900w, /gevher-nesibe/g03-tackapi-m.webp 1200w, /gevher-nesibe/g03-tackapi.webp 1800w" width="900"/><figcaption data-en="The carved gate" data-tr="Oymalı taçkapı">La puerta tallada</figcaption></figure><figure class="gn-sl"><img alt="La fuente del patio" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g05-havuz-s.webp" srcset="/gevher-nesibe/g05-havuz-s.webp 900w, /gevher-nesibe/g05-havuz-m.webp 1200w, /gevher-nesibe/g05-havuz.webp 1800w" width="900"/><figcaption data-en="The courtyard pool" data-tr="Havuzlu avlu">El estanque del patio</figcaption></figure><figure class="gn-sl"><img alt="Un maestro y un alumno sobre un libro" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g07-hoca-talebe-s.webp" srcset="/gevher-nesibe/g07-hoca-talebe-s.webp 900w, /gevher-nesibe/g07-hoca-talebe-m.webp 1200w, /gevher-nesibe/g07-hoca-talebe.webp 1800w" width="900"/><figcaption data-en="Master and student" data-tr="Hoca ve talebe">Maestro y alumno</figcaption></figure><figure class="gn-sl"><img alt="Un médico examinando un frasco de vidrio" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g11-karure-s.webp" srcset="/gevher-nesibe/g11-karure-s.webp 900w, /gevher-nesibe/g11-karure-m.webp 1200w, /gevher-nesibe/g11-karure.webp 1800w" width="900"/><figcaption data-en="Reading the flask" data-tr="Kârûre muayenesi">Leyendo el matraz</figcaption></figure><figure class="gn-sl"><img alt="Un paciente curado se despide en la puerta" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g14-veda-s.webp" srcset="/gevher-nesibe/g14-veda-s.webp 900w, /gevher-nesibe/g14-veda-m.webp 1200w, /gevher-nesibe/g14-veda.webp 1800w" width="900"/><figcaption data-en="Farewell" data-tr="Veda">Despedida</figcaption></figure></a>
-<span class="gn-soon" data-en="Film coming soon" data-tr="Film çok yakında">Película próximamente</span>
+<a aria-label="Abrir Gevher Nesibe, 1206" class="gn-slides" href="/gevher-nesibe/"><figure class="gn-sl on"><img alt="El hospital y la escuela de medicina desde el aire, con el monte Erciyes detrás" decoding="async" height="502" loading="eager" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/hero-s.webp" srcset="/gevher-nesibe/hero-s.webp 900w, /gevher-nesibe/hero-m.webp 1200w, /gevher-nesibe/hero.webp 1800w" width="900"/><figcaption>Erciyes y el hospital, 1206</figcaption></figure><figure class="gn-sl"><img alt="La puerta tallada al abrirse" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g03-tackapi-s.webp" srcset="/gevher-nesibe/g03-tackapi-s.webp 900w, /gevher-nesibe/g03-tackapi-m.webp 1200w, /gevher-nesibe/g03-tackapi.webp 1800w" width="900"/><figcaption>La puerta tallada</figcaption></figure><figure class="gn-sl"><img alt="La fuente del patio" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g05-havuz-s.webp" srcset="/gevher-nesibe/g05-havuz-s.webp 900w, /gevher-nesibe/g05-havuz-m.webp 1200w, /gevher-nesibe/g05-havuz.webp 1800w" width="900"/><figcaption>El estanque del patio</figcaption></figure><figure class="gn-sl"><img alt="Un maestro y un alumno sobre un libro" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g07-hoca-talebe-s.webp" srcset="/gevher-nesibe/g07-hoca-talebe-s.webp 900w, /gevher-nesibe/g07-hoca-talebe-m.webp 1200w, /gevher-nesibe/g07-hoca-talebe.webp 1800w" width="900"/><figcaption>Maestro y alumno</figcaption></figure><figure class="gn-sl"><img alt="Un médico examinando un frasco de vidrio" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g11-karure-s.webp" srcset="/gevher-nesibe/g11-karure-s.webp 900w, /gevher-nesibe/g11-karure-m.webp 1200w, /gevher-nesibe/g11-karure.webp 1800w" width="900"/><figcaption>Leyendo el matraz</figcaption></figure><figure class="gn-sl"><img alt="Un paciente curado se despide en la puerta" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g14-veda-s.webp" srcset="/gevher-nesibe/g14-veda-s.webp 900w, /gevher-nesibe/g14-veda-m.webp 1200w, /gevher-nesibe/g14-veda.webp 1800w" width="900"/><figcaption>Despedida</figcaption></figure></a>
+<span class="gn-soon">Película próximamente</span>
 <div aria-label="Frames" class="gn-dots" role="group"><button aria-label="Frame 1" class="gn-dot on" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/hero-s.webp" width="900"/></button><button aria-label="Frame 2" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g03-tackapi-s.webp" width="900"/></button><button aria-label="Frame 3" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g05-havuz-s.webp" width="900"/></button><button aria-label="Frame 4" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g07-hoca-talebe-s.webp" width="900"/></button><button aria-label="Frame 5" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g11-karure-s.webp" width="900"/></button><button aria-label="Frame 6" class="gn-dot" type="button"><img alt="" decoding="async" height="502" loading="lazy" src="/gevher-nesibe/g14-veda-s.webp" width="900"/></button></div>
 </div>
 <div class="gn-body">
-<div class="gn-client"><span data-en="Client" data-tr="Müşteri">Cliente</span><b data-en="Erciyes University · Faculty of Medicine" data-tr="Erciyes Üniversitesi · Tıp Fakültesi">Universidad de Erciyes · Facultad de Medicina</b></div>
+<div class="gn-client"><span>Cliente</span><b>Universidad de Erciyes · Facultad de Medicina</b></div>
 <h3>Gevher Nesibe, <em>1206</em></h3>
-<p class="gn-sub" data-en="AI production for the faculty's promotional film" data-tr="Fakültenin tanıtım filmi için yapay zekâ prodüksiyonu">Producción con IA para la película promocional de la facultad</p>
-<p data-en="The faculty asked us to bring its story back to the Gevher Nesibe hospital and medical school, built in Kayseri in 1206. We rebuilt the complex from survey drawings as a Blender model, then filmed it with AI: the carved gate, the courtyard, the lessons, the cures and the farewell." data-tr="Fakülte, hikâyesini 1206'da Kayseri'de kurulan Gevher Nesibe Şifahanesi'ne geri götürmemizi istedi. Yapıyı rölöve çizimlerinden Blender maketi olarak yeniden kurduk, sonra yapay zekâyla çektik: oymalı taçkapı, avlu, dersler, tedaviler ve veda.">La facultad nos pidió llevar su historia de vuelta al hospital y escuela de medicina Gevher Nesibe, construido en Kayseri en 1206. Reconstruimos el complejo en Blender a partir de planos de levantamiento y luego lo filmamos con IA: la puerta tallada, el patio, las lecciones, las curas y la despedida.</p>
-<dl class="gn-facts"><div><dt data-en="Our part" data-tr="Bizim payımız">Nuestra parte</dt><dd data-en="AI production" data-tr="Yapay zekâ prodüksiyonu">Producción con IA</dd></div><div><dt data-en="Studio" data-tr="Stüdyo">Estudio</dt><dd>Citrine Studio</dd></div><div><dt data-en="With" data-tr="İş birliği">Con</dt><dd data-en="Faculty of Communication" data-tr="İletişim Fakültesi">Facultad de Comunicación</dd></div><div><dt data-en="Period" data-tr="Dönem">Periodo</dt><dd data-en="Aug–Oct 2026" data-tr="Ağustos–Ekim 2026">ago–oct 2026</dd></div><div><dt data-en="Method" data-tr="Yöntem">Método</dt><dd data-en="Survey → Blender → AI → grade" data-tr="Rölöve → Blender → AI → renk">Planos → Blender → IA → etalonaje</dd></div></dl>
-<a class="gn-btn" data-en="See the process →" data-tr="Süreci gör →" href="/gevher-nesibe/">Ver el proceso →</a>
+<p class="gn-sub">Producción con IA para la película promocional de la facultad</p>
+<p>La facultad nos pidió llevar su historia de vuelta al hospital y escuela de medicina Gevher Nesibe, construido en Kayseri en 1206. Reconstruimos el complejo en Blender a partir de planos de levantamiento y luego lo filmamos con IA: la puerta tallada, el patio, las lecciones, las curas y la despedida.</p>
+<dl class="gn-facts"><div><dt>Nuestra parte</dt><dd>Producción con IA</dd></div><div><dt>Estudio</dt><dd>Citrine Studio</dd></div><div><dt>Con</dt><dd>Facultad de Comunicación</dd></div><div><dt>Periodo</dt><dd>ago–oct 2026</dd></div><div><dt>Método</dt><dd>Planos → Blender → IA → etalonaje</dd></div></dl>
+<a class="gn-btn" href="/gevher-nesibe/">Ver el proceso →</a>
 </div>
 </article>
 <div class="feat2">
 <article class="fcard reveal" id="flawless-feature">
 <a aria-label="Abrir el caso de estudio FLAWLESS" class="fc-media" href="/flawless/"><img alt="FLAWLESS: Leonardo Notarbartolo, who led the 2003 Antwerp diamond heist, with his line from the film: the theft had gone entirely smoothly" decoding="async" height="675" loading="lazy" src="/flawless/cover-notarbartolo-s.webp" width="1200"/></a>
 <div class="fc-body">
-<div class="role" data-en="Documentary · CITRINE" data-tr="Belgesel · CITRINE">Documental · CITRINE</div>
+<div class="role">Documental · CITRINE</div>
 <h3>FLAWLESS</h3>
-<p data-en="The Antwerp diamond heist, with an interview from the man who led it. $100M gone from a vault called unbreakable." data-tr="Anvers elmas soygunu, onu yöneten adamla yapılmış bir röportajla. Kırılamaz denen bir kasadan 100 milyon dolar.">El robo de diamantes de Amberes, con una entrevista al hombre que lo dirigió. 100 millones de dólares desaparecidos de una cámara acorazada llamada inexpugnable.</p>
-<div class="spots"><span data-en="The mastermind on camera" data-tr="Kamerada soygunun beyni">El cerebro, ante la cámara</span><span>16:56 · 4K</span></div>
-<a class="btn btn-grad" data-en="See the case study →" data-tr="Vaka çalışmasını gör →" href="/flawless/">Ver el caso de estudio →</a>
+<p>El robo de diamantes de Amberes, con una entrevista al hombre que lo dirigió. 100 millones de dólares desaparecidos de una cámara acorazada llamada inexpugnable.</p>
+<div class="spots"><span>El cerebro, ante la cámara</span><span>16:56 · 4K</span></div>
+<a class="btn btn-grad" href="/flawless/">Ver el caso de estudio →</a>
 </div>
 </article>
 <article class="fcard reveal" id="bushido">
 <a aria-label="Abrir la campaña Bushido" class="fc-media" href="/bushido/"><img alt="Bushido campaign: close-ups of Ayla with the face bar and Kaan looking into the camera, from the films" decoding="async" height="675" loading="lazy" src="/bushido-feature-v4-s.webp" width="1200"/></a>
 <div class="fc-body">
-<div class="role" data-en="Campaign concept · Citrine Studio × Bushido" data-tr="Kampanya konsepti · Citrine Studio × Bushido">Concepto de campaña · Citrine Studio × Bushido</div>
-<h3 data-en="Bushido · The Morning Ritual" data-tr="Bushido · Sabah Ritüeli">Bushido · El ritual de la mañana</h3>
-<p data-en="A grooming brand campaign with a cast of two. Ayla and Kaan keep the same face through three films and a 4K product capsule." data-tr="İki kişilik kadroyla bir bakım markası kampanyası. Ayla ve Kaan üç filmde ve 4K ürün kapsülünde aynı yüzle kalıyor.">Una campaña para una marca de cuidado masculino con un reparto de dos. Ayla y Kaan mantienen el mismo rostro en tres películas y una cápsula de producto en 4K.</p>
-<div class="spots"><span data-en="Built in 72 hours" data-tr="72 saatte kuruldu">Hecho en 72 horas</span><span data-en="3 films" data-tr="3 film">3 películas</span><span data-en="Original score" data-tr="Özgün müzik">Música original</span></div>
-<a class="btn btn-grad" data-en="See the campaign →" data-tr="Kampanyayı gör →" href="/bushido/">Ver la campaña →</a>
+<div class="role">Concepto de campaña · Citrine Studio × Bushido</div>
+<h3>Bushido · El ritual de la mañana</h3>
+<p>Una campaña para una marca de cuidado masculino con un reparto de dos. Ayla y Kaan mantienen el mismo rostro en tres películas y una cápsula de producto en 4K.</p>
+<div class="spots"><span>Hecho en 72 horas</span><span>3 películas</span><span>Música original</span></div>
+<a class="btn btn-grad" href="/bushido/">Ver la campaña →</a>
 </div>
 </article>
 </div>
 </section>
 <!-- LEATHER — FEATURED COLLECTION -->
 <section id="ugc">
-<div class="eyebrow reveal" data-en="UGC &amp; Ads" data-tr="UGC &amp; Reklam">UGC &amp; anuncios</div>
-<h2 class="sec-title reveal" data-en="UGC &amp; Short-Form Ads" data-tr="UGC ve Kısa Reklamlar">UGC &amp; anuncios de formato corto</h2>
-<p class="sec-sub reveal" data-en="Vertical ads built to stop the scroll." data-tr="Kaydırmayı durdurmak için dikey reklamlar.">Anuncios verticales hechos para detener el scroll.</p>
-<div aria-label="Filtrar los anuncios" class="ugc-filter reveal" hidden="" role="group"><button aria-pressed="true" class="uf on" data-cat="all" type="button"><span data-en="All" data-tr="Tümü">Todos</span><i>14</i></button><button aria-pressed="false" class="uf" data-cat="app" type="button"><span data-en="App ads" data-tr="Uygulama reklamları">Anuncios de apps</span><i>9</i></button><button aria-pressed="false" class="uf" data-cat="ugc" type="button"><span>UGC</span><i>1</i></button><button aria-pressed="false" class="uf" data-cat="brand" type="button"><span data-en="Brand films" data-tr="Marka filmleri">Películas de marca</span><i>4</i></button></div>
+<div class="eyebrow reveal">UGC &amp; anuncios</div>
+<h2 class="sec-title reveal">UGC &amp; anuncios de formato corto</h2>
+<p class="sec-sub reveal">Anuncios verticales hechos para detener el scroll.</p>
+<div aria-label="Filtrar los anuncios" class="ugc-filter reveal" hidden="" role="group"><button aria-pressed="true" class="uf on" data-cat="all" type="button"><span>Todos</span><i>14</i></button><button aria-pressed="false" class="uf" data-cat="app" type="button"><span>Anuncios de apps</span><i>9</i></button><button aria-pressed="false" class="uf" data-cat="ugc" type="button"><span>UGC</span><i>1</i></button><button aria-pressed="false" class="uf" data-cat="brand" type="button"><span>Películas de marca</span><i>4</i></button></div>
 <div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <div class="grid g-ugc">
-<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/tenniscut-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-1.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — The Moment</h3><p data-en="Sports app campaign · hook film" data-tr="Spor uygulaması kampanyası · kanca filmi">Campaña de app deportiva · película gancho</p></div></div>
-<div class="card reveal" data-cat="app"><div class="thumb v cover-c"><video data-poster="/tenniscut-2-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-2.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Dead Time Remover</h3><p data-en="Proof film · real app screens, animated" data-tr="Kanıt filmi · gerçek uygulama ekranları, animasyonlu">Película demostrativa · pantallas reales de la app, animadas</p></div></div>
-<div class="card reveal" data-cat="app"><div class="thumb v cover-f"><video data-poster="/tenniscut-3-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-3.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Best of Us</h3><p data-en="Brand film · original score" data-tr="Marka filmi · özgün müzik">Película de marca · música original</p></div></div>
-<a class="card reveal" data-cat="brand" href="https://youtube.com/shorts/zhqaCtjbwmI" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/konfuse-poster-s.webp" loop="" muted="" playsinline="" preload="none" src="/konfuse.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Konfuse</span><span class="spec" data-en="Spec" data-tr="Spec">Spec</span></div><div class="card-body"><h3>Konfuse — Brand World Film</h3><p data-en="Spec film for the brand · original score" data-tr="Kendi girişimim · spec film · özgün müzik">Pieza spec para la marca · música original</p></div></a>
-<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/blarma-ingilizce_toplanti_b-itiraf-p-s.webp?v=2" loop="" muted="" playsinline="" preload="none" src="/blarma-ingilizce_toplanti_b-itiraf.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Blarma</span></div><div class="card-body"><h3 data-en="Blarma — The Meeting" data-tr="Blarma — Toplantı">Blarma — La reunión</h3><p data-en="Live Meta ad · English set · confession hook" data-tr="Yayında Meta reklamı · İngilizce set · itiraf açılışı">Anuncio activo en Meta · versión en inglés · gancho de confesión</p></div></div>
-<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/blarma-almanca_firin_a-kontrol-p-s.webp?v=2" loop="" muted="" playsinline="" preload="none" src="/blarma-almanca_firin_a-kontrol.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Blarma</span></div><div class="card-body"><h3 data-en="Blarma — First Morning in Germany" data-tr="Blarma — Almanya’da İlk Sabah">Blarma — Primera mañana en Alemania</h3><p data-en="Live Meta ad · German set · der, die or das?" data-tr="Yayında Meta reklamı · Almanca set · der, die, das?">Anuncio activo en Meta · versión en alemán · ¿der, die o das?</p></div></div>
-<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/blarma-az_ingilis_a-test-p-s.webp?v=3" loop="" muted="" playsinline="" preload="none" src="/blarma-az_ingilis_a-test.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Blarma</span></div><div class="card-body"><h3 data-en="Blarma — Name It in 3 Seconds" data-tr="Blarma — 3 Saniyede Söyle">Blarma — Dilo en 3 segundos</h3><p data-en="Live Meta ad · Azerbaijan set · word-test hook" data-tr="Yayında Meta reklamı · Azerbaycan seti · kelime testi açılışı">Anuncio activo en Meta · versión Azerbaiyán · gancho de prueba de palabra</p></div></div>
-<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/blarma-az_ingilis_c-defter-p-s.webp?v=3" loop="" muted="" playsinline="" preload="none" src="/blarma-az_ingilis_c-defter.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Blarma</span></div><div class="card-body"><h3 data-en="Blarma — The Notebook" data-tr="Blarma — Defter">Blarma — La libreta</h3><p data-en="Live Meta ad · Azerbaijan set · notebook hook" data-tr="Yayında Meta reklamı · Azerbaycan seti · defter açılışı">Anuncio activo en Meta · versión Azerbaiyán · gancho de la libreta</p></div></div>
-<div class="card reveal" data-cat="brand"><div class="thumb v cover-e"><video data-poster="/takmatakma-A-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/takmatakma-A.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Takma Takma</span></div><div class="card-body"><h3 data-en="Takma Takma — Back to the ’80s" data-tr="Takma Takma — 80’lere Dönüş">Takma Takma — De vuelta a los ’80</h3><p data-en="Brand film · nails &amp; lashes · original brand song" data-tr="Marka filmi · tırnak ve kirpik · özgün marka şarkısı">Película de marca · uñas &amp; pestañas · canción original de la marca</p></div></div>
-<div class="card reveal" data-cat="brand"><div class="thumb v cover-e"><video data-poster="/takmatakma-B-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/takmatakma-B.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Takma Takma</span></div><div class="card-body"><h3 data-en="Takma Takma — Tap &amp; Shine" data-tr="Takma Takma — Tak ve Parla">Takma Takma — Tap &amp; Shine</h3><p data-en="Campaign film · real store &amp; product shots" data-tr="Kampanya filmi · gerçek mağaza ve ürün çekimleri">Película de campaña · tomas reales de tienda &amp; producto</p></div></div>
-<div class="card reveal" data-cat="ugc"><div class="thumb v cover-a"><video data-poster="/dtc-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/dtc-1.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">DTC</span></div><div class="card-body"><h3 data-en="DTC Skincare — Story Ad" data-tr="DTC Cilt Bakımı — Hikâye Reklamı">Skincare DTC — Anuncio narrativo</h3><p data-en="Long-form UGC · story-driven" data-tr="Uzun format UGC · hikâye odaklı">UGC de formato largo · basado en una historia</p></div></div>
-<a class="card reveal" data-cat="app" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" rel="noopener" target="_blank"><div class="thumb v cover-a"><video data-poster="/esim-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/esim.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">eSIM.io</span><span class="spec" data-en="Case study" data-tr="Vaka çalışması">Caso de estudio</span></div><div class="card-body"><h3>eSIM.io — AI UGC</h3><p data-en="Case study, not a client job · 4K" data-tr="Vaka çalışması, müşteri işi değil · 4K">Caso de estudio, no un encargo de cliente · 4K</p></div></a>
-<a class="card reveal" data-cat="brand" href="https://youtube.com/shorts/TGTcOunFfUY" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/bushido/assets/video/poster-3-s.webp" loop="" muted="" playsinline="" preload="none" src="/bushido/assets/video/film-3.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Bushido</span></div><div class="card-body"><h3 data-en="The Reel — The Morning Ritual" data-tr="Reel — Sabah Ritüeli">The Reel — El ritual de la mañana</h3><p data-en="Hero film · both rituals" data-tr="Ana film · iki ritüel">Película principal · ambos rituales</p></div></a>
-<a class="card reveal" data-cat="app" href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" rel="noopener" target="_blank"><div class="thumb v cover-d"><video data-poster="/telicall-en-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/telicall-en.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TeliCall</span><span class="spec" data-en="Case study" data-tr="Vaka çalışması">Caso de estudio</span></div><div class="card-body"><h3>The Call Home · EN</h3><p data-en="Case study for TeliCall, not a client job" data-tr="TeliCall için vaka çalışması, müşteri işi değil">Caso de estudio para TeliCall, no un encargo de cliente</p><span class="vstat" data-en="Lip-synced original" data-tr="Dudak senkronlu orijinal">Original con lip-sync</span></div></a>
+<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/tenniscut-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-1.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — The Moment</h3><p>Campaña de app deportiva · película gancho</p></div></div>
+<div class="card reveal" data-cat="app"><div class="thumb v cover-c"><video data-poster="/tenniscut-2-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-2.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Dead Time Remover</h3><p>Película demostrativa · pantallas reales de la app, animadas</p></div></div>
+<div class="card reveal" data-cat="app"><div class="thumb v cover-f"><video data-poster="/tenniscut-3-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-3.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Best of Us</h3><p>Película de marca · música original</p></div></div>
+<a class="card reveal" data-cat="brand" href="https://youtube.com/shorts/zhqaCtjbwmI" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/konfuse-poster-s.webp" loop="" muted="" playsinline="" preload="none" src="/konfuse.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Konfuse</span><span class="spec">Spec</span></div><div class="card-body"><h3>Konfuse — Brand World Film</h3><p>Pieza spec para la marca · música original</p></div></a>
+<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/blarma-ingilizce_toplanti_b-itiraf-p-s.webp?v=2" loop="" muted="" playsinline="" preload="none" src="/blarma-ingilizce_toplanti_b-itiraf.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Blarma</span></div><div class="card-body"><h3>Blarma — La reunión</h3><p>Anuncio activo en Meta · versión en inglés · gancho de confesión</p></div></div>
+<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/blarma-almanca_firin_a-kontrol-p-s.webp?v=2" loop="" muted="" playsinline="" preload="none" src="/blarma-almanca_firin_a-kontrol.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Blarma</span></div><div class="card-body"><h3>Blarma — Primera mañana en Alemania</h3><p>Anuncio activo en Meta · versión en alemán · ¿der, die o das?</p></div></div>
+<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/blarma-az_ingilis_a-test-p-s.webp?v=3" loop="" muted="" playsinline="" preload="none" src="/blarma-az_ingilis_a-test.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Blarma</span></div><div class="card-body"><h3>Blarma — Dilo en 3 segundos</h3><p>Anuncio activo en Meta · versión Azerbaiyán · gancho de prueba de palabra</p></div></div>
+<div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/blarma-az_ingilis_c-defter-p-s.webp?v=3" loop="" muted="" playsinline="" preload="none" src="/blarma-az_ingilis_c-defter.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Blarma</span></div><div class="card-body"><h3>Blarma — La libreta</h3><p>Anuncio activo en Meta · versión Azerbaiyán · gancho de la libreta</p></div></div>
+<div class="card reveal" data-cat="brand"><div class="thumb v cover-e"><video data-poster="/takmatakma-A-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/takmatakma-A.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Takma Takma</span></div><div class="card-body"><h3>Takma Takma — De vuelta a los ’80</h3><p>Película de marca · uñas &amp; pestañas · canción original de la marca</p></div></div>
+<div class="card reveal" data-cat="brand"><div class="thumb v cover-e"><video data-poster="/takmatakma-B-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/takmatakma-B.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Takma Takma</span></div><div class="card-body"><h3>Takma Takma — Tap &amp; Shine</h3><p>Película de campaña · tomas reales de tienda &amp; producto</p></div></div>
+<div class="card reveal" data-cat="ugc"><div class="thumb v cover-a"><video data-poster="/dtc-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/dtc-1.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">DTC</span></div><div class="card-body"><h3>Skincare DTC — Anuncio narrativo</h3><p>UGC de formato largo · basado en una historia</p></div></div>
+<a class="card reveal" data-cat="app" href="https://www.upwork.com/freelancers/eraybalat?p=2066988850557579264" rel="noopener" target="_blank"><div class="thumb v cover-a"><video data-poster="/esim-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/esim.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">eSIM.io</span><span class="spec">Caso de estudio</span></div><div class="card-body"><h3>eSIM.io — AI UGC</h3><p>Caso de estudio, no un encargo de cliente · 4K</p></div></a>
+<a class="card reveal" data-cat="brand" href="https://youtube.com/shorts/TGTcOunFfUY" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/bushido/assets/video/poster-3-s.webp" loop="" muted="" playsinline="" preload="none" src="/bushido/assets/video/film-3.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Bushido</span></div><div class="card-body"><h3>The Reel — El ritual de la mañana</h3><p>Película principal · ambos rituales</p></div></a>
+<a class="card reveal" data-cat="app" href="https://www.upwork.com/freelancers/eraybalat?p=2066987706385002496" rel="noopener" target="_blank"><div class="thumb v cover-d"><video data-poster="/telicall-en-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/telicall-en.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TeliCall</span><span class="spec">Caso de estudio</span></div><div class="card-body"><h3>The Call Home · EN</h3><p>Caso de estudio para TeliCall, no un encargo de cliente</p><span class="vstat">Original con lip-sync</span></div></a>
 </div>
 <div class="slj-new reveal" id="seljaris">
-<div class="sn-text"><img alt="" aria-hidden="true" class="sn-mark" decoding="async" loading="lazy" src="/seljaris-mark.webp"/><span class="sn-badge" data-en="New" data-tr="Yeni">Nuevo</span><div class="sn-id"><img alt="" decoding="async" height="52" src="/seljaris-logo.webp" width="52"/><div><h3>Seljaris</h3><small data-en="AI series · Instagram" data-tr="AI serisi · Instagram">Serie con IA · Instagram</small></div></div><p data-en="My AI series: a masked Seljuk warrior, from Manzikert in 1071 to Montana in 1899. Short cinematic films, made frame by frame." data-tr="AI serim: maskeli bir Selçuklu savaşçısı, 1071 Malazgirt’ten 1899 Montana’ya. Kare kare üretilmiş kısa sinematik filmler.">Mi serie con IA: un guerrero selyúcida enmascarado, de Manzikert en 1071 a Montana en 1899. Cortos cinematográficos, hechos fotograma a fotograma.</p><ul class="sn-eps"><li><b>01</b><span data-en="The Arrow" data-tr="Ok">La flecha</span><em data-en="2 Oct 2026" data-tr="2 Eki 2026">2 oct 2026</em></li><li><b>02</b><span data-en="The Prayer" data-tr="Dua">La plegaria</span><em data-en="3 Oct 2026" data-tr="3 Eki 2026">3 oct 2026</em></li><li><b>03</b><span data-en="The Shroud" data-tr="Kefen">El sudario</span><em data-en="3 Oct 2026" data-tr="3 Eki 2026">3 oct 2026</em></li><li><b>04</b><span data-en="The Summit" data-tr="Zirve">La cumbre</span><em data-en="4 Oct 2026" data-tr="4 Eki 2026">4 oct 2026</em></li><li><b>05</b><span data-en="Don’t Be Afraid" data-tr="Korkma">No tengas miedo</span><em data-en="5 Oct 2026" data-tr="5 Eki 2026">5 oct 2026</em></li><li><b>06</b><span data-en="Out of Time · Montana, 1899" data-tr="Zamanın Dışında · Montana, 1899">Fuera del tiempo · Montana, 1899</span><em data-en="10 Oct 2026" data-tr="10 Eki 2026">10 oct 2026</em></li></ul><div class="sn-tags"><span data-en="9:16 short films" data-tr="9:16 kısa filmler">Cortos en 9:16</span><span data-en="Original character" data-tr="Özgün karakter">Personaje original</span><span data-en="Seljuk tiles &amp; miniatures" data-tr="Selçuklu çini ve minyatürleri">Azulejos &amp; miniaturas selyúcidas</span></div><a class="sn-follow" data-en="Follow @seljaris ↗" data-tr="@seljaris’i takip et ↗" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank">Sigue a @seljaris ↗</a></div>
+<div class="sn-text"><img alt="" aria-hidden="true" class="sn-mark" decoding="async" loading="lazy" src="/seljaris-mark.webp"/><span class="sn-badge">Nuevo</span><div class="sn-id"><img alt="" decoding="async" height="52" src="/seljaris-logo.webp" width="52"/><div><h3>Seljaris</h3><small>Serie con IA · Instagram</small></div></div><p>Mi serie con IA: un guerrero selyúcida enmascarado, de Manzikert en 1071 a Montana en 1899. Cortos cinematográficos, hechos fotograma a fotograma.</p><ul class="sn-eps"><li><b>01</b><span>La flecha</span><em>2 oct 2026</em></li><li><b>02</b><span>La plegaria</span><em>3 oct 2026</em></li><li><b>03</b><span>El sudario</span><em>3 oct 2026</em></li><li><b>04</b><span>La cumbre</span><em>4 oct 2026</em></li><li><b>05</b><span>No tengas miedo</span><em>5 oct 2026</em></li><li><b>06</b><span>Fuera del tiempo · Montana, 1899</span><em>10 oct 2026</em></li></ul><div class="sn-tags"><span>Cortos en 9:16</span><span>Personaje original</span><span>Azulejos &amp; miniaturas selyúcidas</span></div><a class="sn-follow" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank">Sigue a @seljaris ↗</a></div>
 <div class="sn-vids">
-<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-oot-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-oot.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="Out of Time" data-tr="Zamanın Dışında">Fuera del tiempo</h3><p data-en="Montana, 1899 · 15 scenes" data-tr="Montana, 1899 · 15 sahne">Montana, 1899 · 15 escenas</p></div></a>
-<a class="card sn-card" href="https://www.instagram.com/reel/Dd9QWP_s-tl/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-1.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="The Arrow" data-tr="Ok">La flecha</h3><p data-en="New AI series · Instagram ↗" data-tr="Yeni AI serisi · Instagram ↗">Nueva serie con IA · Instagram ↗</p></div></a>
-<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-2-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-2.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="The Prayer" data-tr="Dua">La plegaria</h3><p data-en="Manzikert, 1071 · Instagram ↗" data-tr="Malazgirt, 1071 · Instagram ↗">Manzikert, 1071 · Instagram ↗</p></div></a>
-<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-3-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-3.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="The Shroud" data-tr="Kefen">El sudario</h3><p data-en="Manzikert, 1071" data-tr="Malazgirt, 1071">Manzikert, 1071</p></div></a>
-<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-4-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-4.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="The Summit" data-tr="Zirve">La cumbre</h3><p data-en="He climbed alone" data-tr="Tek başına tırmandı">Subió solo</p></div></a>
-<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-5-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-5.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3 data-en="Don’t Be Afraid" data-tr="Korkma">No tengas miedo</h3><p data-en="Ahlat, into the storm" data-tr="Ahlat, fırtınaya doğru">Ahlat, hacia la tormenta</p></div></a>
+<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-oot-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-oot.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3>Fuera del tiempo</h3><p>Montana, 1899 · 15 escenas</p></div></a>
+<a class="card sn-card" href="https://www.instagram.com/reel/Dd9QWP_s-tl/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-1.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3>La flecha</h3><p>Nueva serie con IA · Instagram ↗</p></div></a>
+<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-2-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-2.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3>La plegaria</h3><p>Manzikert, 1071 · Instagram ↗</p></div></a>
+<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-3-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-3.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3>El sudario</h3><p>Manzikert, 1071</p></div></a>
+<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-4-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-4.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3>La cumbre</h3><p>Subió solo</p></div></a>
+<a class="card sn-card" href="https://www.instagram.com/seljaris/" rel="noopener" target="_blank"><div class="thumb v cover-e"><video data-poster="/seljaris-5-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/seljaris-5.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Seljaris</span></div><div class="card-body"><h3>No tengas miedo</h3><p>Ahlat, hacia la tormenta</p></div></a>
 </div>
 </div>
 </section>
 <section id="films">
-<div class="eyebrow reveal" data-en="Cinema" data-tr="Sinema">Cine</div>
-<h2 class="sec-title reveal" data-en="Short Films" data-tr="Kısa Filmler">Cortometrajes</h2>
-<p class="sec-sub reveal" data-en="Trailers and shorts, as director or editor." data-tr="Fragmanlar ve kısa filmler, yönetmen ya da kurgucu olarak.">Tráilers y cortos, como director o montador.</p>
+<div class="eyebrow reveal">Cine</div>
+<h2 class="sec-title reveal">Cortometrajes</h2>
+<p class="sec-sub reveal">Tráilers y cortos, como director o montador.</p>
 <div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <div class="feature reveal" style="grid-template-columns:1.62fr 1fr;gap:38px">
 <a aria-label="Reproducir COLD START, 2 minutos 4 segundos" class="media" data-thumbs="/thumbs/coldstart-film-v2" data-vid="/coldstart-film-v2.mp4" data-vid-poster="/film-coldstart-p.webp" href="/coldstart-film-v2.mp4">
@@ -2643,16 +2590,16 @@ footer.ft2{background:var(--b0)!important}
 <span class="pill" style="z-index:2">2:04</span>
 </a>
 <div>
-<div class="role" data-en="Sci-fi trailer · US client" data-tr="Bilim kurgu fragmanı · ABD'li müşteri">Tráiler de ciencia ficción · cliente de EE. UU.</div>
+<div class="role">Tráiler de ciencia ficción · cliente de EE. UU.</div>
 <h3>COLD START</h3>
-<p data-en="The client sent AI footage and voice files. I turned them into one film: edit, sound, colour and an original score, in nine days." data-tr="Müşteri yapay zekâ görüntüleri ve ses kayıtları gönderdi. Hepsini tek bir filme çevirdim: kurgu, ses, renk ve özgün müzik, dokuz günde.">El cliente envió material de IA y archivos de voz. Los convertí en una sola película: montaje, sonido, color y música original, en nueve días.</p>
-<div class="spots"><span data-en="9 days" data-tr="9 gün">9 días</span><span data-en="5-star Upwork review" data-tr="Upwork'te 5 yıldız">Reseña de 5 estrellas en Upwork</span><span data-en="Original score" data-tr="Özgün müzik">Música original</span></div>
-<blockquote class="feat-quote"><span data-en="“He caught continuity and pacing problems I’d missed.”" data-tr="“Benim gözden kaçırdığım süreklilik ve tempo sorunlarını yakaladı.”">“Detectó problemas de continuidad y ritmo que a mí se me habían escapado.”</span><cite data-en="The client, on Upwork" data-tr="Müşteri, Upwork üzerinden">El cliente, en Upwork</cite></blockquote>
+<p>El cliente envió material de IA y archivos de voz. Los convertí en una sola película: montaje, sonido, color y música original, en nueve días.</p>
+<div class="spots"><span>9 días</span><span>Reseña de 5 estrellas en Upwork</span><span>Música original</span></div>
+<blockquote class="feat-quote"><span>“Detectó problemas de continuidad y ritmo que a mí se me habían escapado.”</span><cite>El cliente, en Upwork</cite></blockquote>
 </div>
 </div>
 <figure class="csheet csheet-wide csstrip reveal">
 <picture><source height="565" media="(max-width:700px)" srcset="/coldstart-quad.webp" width="1000"/><img alt="Four frames from COLD START: arctic dawn, a scientist on the phone in a lab, snowmobiles on ice, a hospital bedside." decoding="async" height="251" loading="lazy" src="/coldstart-strip.webp" width="1800"/></picture>
-<figcaption data-en="Four frames from the cut, one cold look." data-tr="Kurgudan dört kare, tek bir soğuk renk.">Cuatro fotogramas del montaje, una sola estética fría.</figcaption>
+<figcaption>Cuatro fotogramas del montaje, una sola estética fría.</figcaption>
 </figure>
 <div aria-hidden="true" class="slj-divider reveal" style="margin:36px auto 30px"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <div class="feature reveal" style="grid-template-columns:1.62fr 1fr;gap:38px">
@@ -2662,29 +2609,29 @@ footer.ft2{background:var(--b0)!important}
 <span class="pill" style="z-index:2">0:27</span>
 </a>
 <div>
-<div class="role" data-en="Animated brand film · Olive producer, Bursa" data-tr="Animasyon marka filmi · Zeytin üreticisi, Bursa">Película de marca animada · productor de aceitunas, Bursa</div>
-<h3 data-en="Novora — Health is in the Roots" data-tr="Novora — Sağlık Köklerinde">Novora — La salud está en las raíces</h3>
-<p data-en="One olive grove by Lake Iznik, from first light to the table. I storyboarded it first, gave Nova the bird a turnaround sheet so it stays the same in every scene, then finished edit, voice and score in two languages." data-tr="İznik Gölü kıyısında tek bir zeytinlik, ilk ışıktan sofraya. Önce storyboard'u çizdim, Nova kuşuna her sahnede aynı kalsın diye bir dönüş sayfası hazırladım, sonra kurguyu, sesi ve müziği iki dilde bitirdim.">Un olivar junto al lago de Iznik, del amanecer a la mesa. Primero hice el storyboard, le di a Nova, el pájaro, una hoja de giro para que fuera idéntico en cada escena, y luego terminé montaje, voz y música en dos idiomas.</p>
-<div class="spots"><span data-en="27 sec · 4K" data-tr="27 sn · 4K">27 s · 4K</span><span data-en="English + Turkish" data-tr="İngilizce + Türkçe">Inglés + turco</span><span data-en="Delivered a day early" data-tr="Bir gün erken teslim">Entregado un día antes</span></div>
-<a class="watch-alt" data-en="Watch the Turkish version" data-thumbs="/thumbs/novora-film-tr" data-tr="Türkçe versiyonunu izle" data-vid-into="novoraPlayer" href="/novora-film-tr.mp4">Ver la versión en turco</a>
+<div class="role">Película de marca animada · productor de aceitunas, Bursa</div>
+<h3>Novora — La salud está en las raíces</h3>
+<p>Un olivar junto al lago de Iznik, del amanecer a la mesa. Primero hice el storyboard, le di a Nova, el pájaro, una hoja de giro para que fuera idéntico en cada escena, y luego terminé montaje, voz y música en dos idiomas.</p>
+<div class="spots"><span>27 s · 4K</span><span>Inglés + turco</span><span>Entregado un día antes</span></div>
+<a class="watch-alt" data-thumbs="/thumbs/novora-film-tr" data-vid-into="novoraPlayer" href="/novora-film-tr.mp4">Ver la versión en turco</a>
 </div>
 </div>
 <figure class="csheet csheet-wide csstrip reveal">
 <picture><source height="565" media="(max-width:700px)" srcset="/novora-quad.webp" width="1000"/><img alt="Four frames from the Novora brand film: Nova the black bird on an olive branch above a misty lake at dawn, Nova beside an ancient olive trunk in shafts of morning light, green, purple and black olives ripening on a branch, and Nova leaning on a jar of Novora olives." decoding="async" height="251" loading="lazy" src="/novora-strip.webp" width="1800"/></picture>
-<figcaption data-en="Four scenes from the film, built from the storyboard frame for frame." data-tr="Filmden dört sahne, storyboard'a kare kare sadık.">Cuatro escenas de la película, construidas fotograma a fotograma desde el storyboard.</figcaption>
+<figcaption>Cuatro escenas de la película, construidas fotograma a fotograma desde el storyboard.</figcaption>
 </figure>
-<div class="lv-head reveal"><h3 data-en="Live-action shorts" data-tr="Gerçek çekim kısa filmler">Cortos de imagen real</h3><p data-en="Shot on camera with real actors. No AI." data-tr="Kamerayla, gerçek oyuncularla çekildi. Yapay zekâ yok.">Rodados con cámara y actores reales. Sin IA.</p></div>
+<div class="lv-head reveal"><h3>Cortos de imagen real</h3><p>Rodados con cámara y actores reales. Sin IA.</p></div>
 <div class="grid g-3 lv-grid">
-<a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" rel="noopener" target="_blank"><div class="thumb cover-a"><video data-poster="/film-boomerang-p2-s.webp" loop="" muted="" playsinline="" preload="none" src="/film-boomerang.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><img alt="Honorable Mention — Robert F. Kennedy Human Rights Student Video Contest 2026" decoding="async" loading="lazy" src="/laurel-white-sm.webp" style="position:absolute;top:9px;right:9px;left:auto;bottom:auto;width:40px;height:40px;z-index:3;opacity:.92;filter:drop-shadow(0 0 5px rgba(0,0,0,.6))"/></div><div class="card-body"><h3>Boomerang</h3><p class="rf-meta" data-en="Editor · Honorable Mention, RFK 2026" data-tr="Kurgu · Mansiyon, RFK 2026">Montador · Mención de honor, RFK 2026</p></div></a>
-<a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" rel="noopener" target="_blank"><div class="thumb cover-f"><video data-poster="/film-diepost-p2-s.webp" loop="" muted="" playsinline="" preload="none" src="/film-diepost.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button></div><div class="card-body"><h3>Die Post</h3><p class="rf-meta" data-en="Writer, director · Erciyes University, 2024" data-tr="Senaryo, yönetmen · Erciyes Üniversitesi, 2024">Guionista, director · Universidad de Erciyes, 2024</p></div></a>
-<a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" rel="noopener" target="_blank"><div class="thumb cover-c"><video data-poster="/film-runorrun-p2-s.webp" loop="" muted="" playsinline="" preload="none" src="/film-runorrun.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button></div><div class="card-body"><h3>Run or Run</h3><p class="rf-meta" data-en="Writer, director, actor · 2:34" data-tr="Senaryo, yönetmen, oyuncu · 2:34">Guionista, director, actor · 2:34</p></div></a>
-<a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" rel="noopener" target="_blank"><div class="thumb cover-b"><img alt="Switzerland in One Hour — live-action short shot in a single hour" decoding="async" loading="lazy" src="/yt/rYHPU-_RqOc.webp"/><span class="play"></span></div><div class="card-body"><h3>Switzerland in One Hour</h3><p class="rf-meta" data-en="Director · shot in one hour, my first day on set" data-tr="Yönetmen · bir saatte çekildi, sette ilk günüm">Director · rodado en una hora, mi primer día en un set</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=oH3zKef9h0Q" rel="noopener" target="_blank"><div class="thumb cover-a"><video data-poster="/film-boomerang-p2-s.webp" loop="" muted="" playsinline="" preload="none" src="/film-boomerang.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><img alt="Honorable Mention — Robert F. Kennedy Human Rights Student Video Contest 2026" decoding="async" loading="lazy" src="/laurel-white-sm.webp" style="position:absolute;top:9px;right:9px;left:auto;bottom:auto;width:40px;height:40px;z-index:3;opacity:.92;filter:drop-shadow(0 0 5px rgba(0,0,0,.6))"/></div><div class="card-body"><h3>Boomerang</h3><p class="rf-meta">Montador · Mención de honor, RFK 2026</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=kvaQqoMVsVA" rel="noopener" target="_blank"><div class="thumb cover-f"><video data-poster="/film-diepost-p2-s.webp" loop="" muted="" playsinline="" preload="none" src="/film-diepost.mp4?v=2"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button></div><div class="card-body"><h3>Die Post</h3><p class="rf-meta">Guionista, director · Universidad de Erciyes, 2024</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=-XgWX9IR5xE" rel="noopener" target="_blank"><div class="thumb cover-c"><video data-poster="/film-runorrun-p2-s.webp" loop="" muted="" playsinline="" preload="none" src="/film-runorrun.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button></div><div class="card-body"><h3>Run or Run</h3><p class="rf-meta">Guionista, director, actor · 2:34</p></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=rYHPU-_RqOc" rel="noopener" target="_blank"><div class="thumb cover-b"><img alt="Switzerland in One Hour — live-action short shot in a single hour" decoding="async" loading="lazy" src="/yt/rYHPU-_RqOc.webp"/><span class="play"></span></div><div class="card-body"><h3>Switzerland in One Hour</h3><p class="rf-meta">Director · rodado en una hora, mi primer día en un set</p></div></a>
 </div>
 </section>
 <section id="music">
-<div class="eyebrow reveal" data-en="Music Videos" data-tr="Müzik Videoları">Videoclips</div>
-<h2 class="sec-title reveal" data-en="AI Music Videos" data-tr="AI Müzik Videoları">Videoclips con IA</h2>
-<p class="sec-sub reveal" data-en="Official videos for Universal Music Türkiye artists. One was made entirely within a single model family, to meet the label's licensing rules." data-tr="Universal Music Türkiye sanatçıları için resmi klipler. Biri, plak şirketinin lisans kuralları gereği tamamen tek bir model ailesiyle üretildi.">Videos oficiales para artistas de Universal Music Türkiye. Uno se hizo íntegramente con una sola familia de modelos, para cumplir las reglas de licencia del sello.</p>
+<div class="eyebrow reveal">Videoclips</div>
+<h2 class="sec-title reveal">Videoclips con IA</h2>
+<p class="sec-sub reveal">Videos oficiales para artistas de Universal Music Türkiye. Uno se hizo íntegramente con una sola familia de modelos, para cumplir las reglas de licencia del sello.</p>
 <div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <article class="mvx reveal">
 <a aria-label="Reproducir el videoclip de anime con IA" class="mvx-media" data-thumbs="/thumbs/anime-mv-v3" data-vid="/anime-mv.mp4?v=3" data-vid-poster="/mv-anime-cover2.webp" href="/anime-mv.mp4?v=3">
@@ -2693,57 +2640,57 @@ footer.ft2{background:var(--b0)!important}
 </a>
 <div class="mvx-body">
 <div>
-<div class="role" data-en="Music video · AI animation" data-tr="Müzik klibi · AI animasyon">Videoclip · animación con IA</div>
-<h3 data-en="AI Anime &lt;em&gt;Music Video&lt;/em&gt;" data-tr="AI Anime &lt;em&gt;Müzik Klibi&lt;/em&gt;"><em>Videoclip</em> anime con IA</h3>
-<p data-en="Seven years of an artist's career in four animated eras, played on the LED wall at the live concert." data-tr="Bir sanatçının yedi yılı dört animasyon döneminde; canlı konserde LED ekranda oynatıldı.">Siete años de carrera de un artista en cuatro eras animadas, proyectados en la pantalla LED del concierto en vivo.</p>
+<div class="role">Videoclip · animación con IA</div>
+<h3><em>Videoclip</em> anime con IA</h3>
+<p>Siete años de carrera de un artista en cuatro eras animadas, proyectados en la pantalla LED del concierto en vivo.</p>
 </div>
 <div class="mvx-side">
-<div class="spots"><span data-en="≈32K plays" data-tr="≈32K izlenme">≈32K reproducciones</span><span data-en="4 eras" data-tr="4 dönem">4 eras</span><span data-en="Played live" data-tr="Konserde oynatıldı">Proyectado en vivo</span></div>
-<div class="mvx-btns"><a class="btn btn-grad" data-en="See the case →" data-tr="Vaka çalışmasını gör →" href="/anime/">Ver el caso →</a><a class="btn btn-ghost" data-en="Watch on Instagram ↗" data-tr="Instagram'da izle ↗" href="https://www.instagram.com/reel/DU6mb6XCTpQ/" rel="noopener" target="_blank">Ver en Instagram ↗</a></div>
+<div class="spots"><span>≈32K reproducciones</span><span>4 eras</span><span>Proyectado en vivo</span></div>
+<div class="mvx-btns"><a class="btn btn-grad" href="/anime/">Ver el caso →</a><a class="btn btn-ghost" href="https://www.instagram.com/reel/DU6mb6XCTpQ/" rel="noopener" target="_blank">Ver en Instagram ↗</a></div>
 </div>
 </div>
 </article>
 <img alt="Two scenes from each of the four eras: a black-and-white rooftop above the city, a masked figure in a red vortex and his close-up, a producer at a synth and decks, the artist seen from above in white, violet eyes under flight goggles and a motorbike racing across a neon grid." class="mv-strip reveal" decoding="async" height="507" loading="lazy" src="/strip-anime-8.webp" width="1800"/>
 <div class="grid g-2" style="margin-bottom:18px">
-<a class="card reveal" href="https://www.youtube.com/watch?v=BKrTmSCBO5E" rel="noopener" target="_blank"><div class="thumb cover-e"><video data-poster="/mv-reallife-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/mv-reallife.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">▶ Universal Music · 47K</span></div><div class="card-body"><h3>Modd — real life</h3><p data-en="Official Music Video · AI: Eray &amp; Berkay Efe Balat" data-tr="Resmi Klip · AI: Eray &amp; Berkay Efe Balat">Videoclip oficial · IA: Eray y Berkay Efe Balat</p><img alt="Four frames from Modd, real life: a crying anime girl in blue light, a man in a red jacket in a dark alley, a woman at a candlelit table, and the same woman smiling in a restaurant." class="rf-strip" decoding="async" height="166" loading="lazy" src="/strip-reallife.webp" width="1200"/></div></a>
-<a class="card reveal" href="https://www.youtube.com/watch?v=8mvHYSP0Mdg" rel="noopener" target="_blank"><div class="thumb cover-a"><img alt="Modd - tarih" decoding="async" loading="lazy" src="/yt/8mvHYSP0Mdg.webp"/><span class="play"></span><span class="pill">Universal Music</span></div><div class="card-body"><h3>Modd — tarih</h3><p data-en="Official Lyric Video · Universal Music Türkiye" data-tr="Resmi Lyric Video · Universal Music Türkiye">Lyric video oficial · Universal Music Türkiye</p><img alt="Four frames from Modd, tarih: a man pushing a burning shopping cart past fires, a UFO beaming the cart, the man floating with the cart among asteroids, and the cart at the edge of a volcano." class="rf-strip" decoding="async" height="166" loading="lazy" src="/strip-tarih.webp" width="1200"/></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=BKrTmSCBO5E" rel="noopener" target="_blank"><div class="thumb cover-e"><video data-poster="/mv-reallife-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/mv-reallife.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">▶ Universal Music · 47K</span></div><div class="card-body"><h3>Modd — real life</h3><p>Videoclip oficial · IA: Eray y Berkay Efe Balat</p><img alt="Four frames from Modd, real life: a crying anime girl in blue light, a man in a red jacket in a dark alley, a woman at a candlelit table, and the same woman smiling in a restaurant." class="rf-strip" decoding="async" height="166" loading="lazy" src="/strip-reallife.webp" width="1200"/></div></a>
+<a class="card reveal" href="https://www.youtube.com/watch?v=8mvHYSP0Mdg" rel="noopener" target="_blank"><div class="thumb cover-a"><img alt="Modd - tarih" decoding="async" loading="lazy" src="/yt/8mvHYSP0Mdg.webp"/><span class="play"></span><span class="pill">Universal Music</span></div><div class="card-body"><h3>Modd — tarih</h3><p>Lyric video oficial · Universal Music Türkiye</p><img alt="Four frames from Modd, tarih: a man pushing a burning shopping cart past fires, a UFO beaming the cart, the man floating with the cart among asteroids, and the cart at the edge of a volcano." class="rf-strip" decoding="async" height="166" loading="lazy" src="/strip-tarih.webp" width="1200"/></div></a>
 </div>
 </section>
 <section id="brands">
-<div class="eyebrow reveal" data-en="What I make" data-tr="Neler yapıyorum">Lo que hago</div>
-<h2 class="sec-title reveal" data-en="Images · Video · Music" data-tr="Görsel · Video · Müzik">Imagen · Video · Música</h2>
+<div class="eyebrow reveal">Lo que hago</div>
+<h2 class="sec-title reveal">Imagen · Video · Música</h2>
 <div class="mk-grid">
 <a class="mk reveal" href="/bushido/">
 <span class="mk-media"><img alt="Ayla from the Bushido campaign, holding the soap bar to her cheek" decoding="async" height="800" loading="lazy" src="/cap-images-v2.webp" width="800"/></span>
-<span class="mk-b"><b data-en="AI images" data-tr="AI görsel">Imágenes con IA</b><small data-en="Characters and products that stay the same, shot after shot." data-tr="Her planda aynı kalan karakterler ve ürünler.">Personajes y productos que se mantienen idénticos, plano tras plano.</small><i data-en="See the Bushido campaign →" data-tr="Bushido kampanyasını gör →">Ver la campaña de Bushido →</i></span>
+<span class="mk-b"><b>Imágenes con IA</b><small>Personajes y productos que se mantienen idénticos, plano tras plano.</small><i>Ver la campaña de Bushido →</i></span>
 </a>
 <a class="mk reveal" href="#ugc">
 <span class="mk-media"><img alt="A tennis player mid-swing, hair flying, from the TennisCut film Best of Us" decoding="async" height="800" loading="lazy" src="/cap-videos-v2.webp" width="800"/></span>
-<span class="mk-b"><b data-en="AI video" data-tr="AI video">Video con IA</b><small data-en="Ads, brand films, documentaries and music videos, finished like real productions." data-tr="Reklamlar, marka filmleri, belgeseller ve klipler; gerçek bir prodüksiyon gibi bitiriliyor.">Anuncios, películas de marca, documentales y videoclips, terminados como producciones reales.</small><i data-en="Watch the ads →" data-tr="Reklamları izle →">Ver los anuncios →</i></span>
+<span class="mk-b"><b>Video con IA</b><small>Anuncios, películas de marca, documentales y videoclips, terminados como producciones reales.</small><i>Ver los anuncios →</i></span>
 </a>
 <div class="mk mk-music reveal">
 <div class="mk-media au" data-src="/best-of-us-score.m4a">
 <button aria-label="Escuchar 30 segundos de la banda sonora de Best of Us" class="au-play" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path class="au-i-play" d="M8 5.5v13l10.5-6.5z"></path><path class="au-i-pause" d="M7 5h3.6v14H7zM13.4 5H17v14h-3.6z"></path></svg></button>
 <svg aria-hidden="true" class="au-wave" preserveaspectratio="none" viewbox="0 0 318 40"><rect height="32.5" rx="1.5" width="3" x="0" y="3.8"></rect><rect height="33.5" rx="1.5" width="3" x="5" y="3.2"></rect><rect height="38.0" rx="1.5" width="3" x="10" y="1.0"></rect><rect height="35.5" rx="1.5" width="3" x="15" y="2.3"></rect><rect height="24.2" rx="1.5" width="3" x="20" y="7.9"></rect><rect height="25.8" rx="1.5" width="3" x="25" y="7.1"></rect><rect height="19.5" rx="1.5" width="3" x="30" y="10.2"></rect><rect height="15.7" rx="1.5" width="3" x="35" y="12.2"></rect><rect height="16.6" rx="1.5" width="3" x="40" y="11.7"></rect><rect height="17.5" rx="1.5" width="3" x="45" y="11.2"></rect><rect height="13.5" rx="1.5" width="3" x="50" y="13.3"></rect><rect height="20.4" rx="1.5" width="3" x="55" y="9.8"></rect><rect height="17.0" rx="1.5" width="3" x="60" y="11.5"></rect><rect height="12.1" rx="1.5" width="3" x="65" y="14.0"></rect><rect height="11.9" rx="1.5" width="3" x="70" y="14.0"></rect><rect height="7.8" rx="1.5" width="3" x="75" y="16.1"></rect><rect height="2.9" rx="1.5" width="3" x="80" y="18.5"></rect><rect height="2.0" rx="1.5" width="3" x="85" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="90" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="95" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="100" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="105" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="110" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="115" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="120" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="125" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="130" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="135" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="140" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="145" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="150" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="155" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="160" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="165" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="170" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="175" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="180" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="185" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="190" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="195" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="200" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="205" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="210" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="215" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="220" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="225" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="230" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="235" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="240" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="245" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="250" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="255" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="260" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="265" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="270" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="275" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="280" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="285" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="290" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="295" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="300" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="305" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="310" y="19.0"></rect><rect height="2.0" rx="1.5" width="3" x="315" y="19.0"></rect></svg>
-<span class="au-meta"><b>Best of Us</b><small data-en="TennisCut · from the film" data-tr="TennisCut · filmden">TennisCut · de la película</small></span>
+<span class="au-meta"><b>Best of Us</b><small>TennisCut · de la película</small></span>
 <span class="au-t">0:00 / 0:30</span>
 </div>
-<span class="mk-b"><b data-en="AI music" data-tr="AI müzik">Música con IA</b><small data-en="Original scores and songs. Suno Ambassador, 5,500+ tracks made." data-tr="Özgün müzikler ve şarkılar. Suno Ambassador, 5.500+ parça.">Bandas sonoras y canciones originales. Suno Ambassador, más de 5,500 temas creados.</small><a class="mk-link" data-en="Hear the full score ↗" data-tr="Müziğin tamamını dinle ↗" href="https://youtu.be/quwA1jmdskw" rel="noopener" target="_blank">Escucha la banda sonora completa ↗</a></span>
+<span class="mk-b"><b>Música con IA</b><small>Bandas sonoras y canciones originales. Suno Ambassador, más de 5,500 temas creados.</small><a class="mk-link" href="https://youtu.be/quwA1jmdskw" rel="noopener" target="_blank">Escucha la banda sonora completa ↗</a></span>
 </div>
 </div>
-<div class="row-label reveal" data-en="Writing, code &amp; more" data-tr="Yazılar, kod ve dahası">Escritura, código &amp; más</div>
+<div class="row-label reveal">Escritura, código &amp; más</div>
 <div class="res-row reveal">
-<a data-blog="" data-en="Writing" data-tr="Yazılar" href="/blog/">Escritura</a>
+<a data-blog="" href="/blog/">Escritura</a>
 <a href="https://medium.com/@eraybalat" rel="noopener" target="_blank">Medium ↗</a>
 <a href="https://github.com/eraybalatt" rel="noopener" target="_blank">GitHub ↗</a>
 <a href="https://huggingface.co/ErayBalat" rel="noopener" target="_blank">Hugging Face ↗</a>
-<a data-en="Leather atelier" data-tr="Deri atölyesi" href="/leather/">Taller de cuero</a>
+<a href="/leather/">Taller de cuero</a>
 </div>
 <details class="archive">
-<summary data-en="Archive — personal studies" data-tr="Arşiv — kişisel çalışmalar">Archivo — estudios personales</summary>
+<summary>Archivo — estudios personales</summary>
 <div class="arc-group" id="vlab">
-<h3 class="arc-title" data-en="Cinematic Experiments" data-tr="Sinematik Denemeler">Experimentos cinematográficos</h3>
-<p class="arc-sub" data-en="Personal work — cinematic studies in light, motion and character." data-tr="Kişisel çalışmalar — ışık, hareket ve karakter üzerine sinematik denemeler.">Trabajo personal — estudios cinematográficos de luz, movimiento y personaje.</p>
+<h3 class="arc-title">Experimentos cinematográficos</h3>
+<p class="arc-sub">Trabajo personal — estudios cinematográficos de luz, movimiento y personaje.</p>
 <div class="grid g-shorts">
 <a class="card" href="https://www.instagram.com/documenteray" rel="noopener" target="_blank"><div class="thumb cover-e"><img alt="Cinematic AI art — study 1" decoding="async" loading="lazy" src="/art-1.webp"/></div></a>
 <a class="card" href="https://www.instagram.com/documenteray" rel="noopener" target="_blank"><div class="thumb cover-c"><img alt="Cinematic AI art — study 2" decoding="async" loading="lazy" src="/art-2.webp"/></div></a>
@@ -2762,13 +2709,13 @@ footer.ft2{background:var(--b0)!important}
 <a class="card" href="https://www.instagram.com/documenteray" rel="noopener" target="_blank"><div class="thumb cover-c"><img alt="Cinematic AI art — study 15" decoding="async" loading="lazy" src="/art-16.webp"/></div></a>
 <a class="card" href="https://www.instagram.com/documenteray" rel="noopener" target="_blank"><div class="thumb cover-d"><img alt="Cinematic AI art — study 16" decoding="async" loading="lazy" src="/art-17.webp"/></div></a>
 </div>
-<p class="embed-note" data-en='Full series on &lt;a href="https://www.instagram.com/documenteray/" target="_blank" rel="noopener" style="color:var(--c2)"&gt;Instagram&lt;/a&gt; · &lt;a href="https://www.behance.net/eraybalat" target="_blank" rel="noopener" style="color:var(--c2)"&gt;Behance&lt;/a&gt;' data-tr="Tüm seri &lt;a href=&quot;https://www.instagram.com/documenteray/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;color:var(--c2)&quot;&gt;Instagram&lt;/a&gt; · &lt;a href=&quot;https://www.behance.net/eraybalat&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;color:var(--c2)&quot;&gt;Behance&lt;/a&gt;'de" style="margin-top:22px"><a href="https://www.instagram.com/documenteray/" rel="noopener" style="color:var(--c2)" target="_blank">Instagram</a> · <a href="https://www.behance.net/eraybalat" rel="noopener" style="color:var(--c2)" target="_blank">Behance</a></p>
+<p class="embed-note" style="margin-top:22px"><a href="https://www.instagram.com/documenteray/" rel="noopener" style="color:var(--c2)" target="_blank">Instagram</a> · <a href="https://www.behance.net/eraybalat" rel="noopener" style="color:var(--c2)" target="_blank">Behance</a></p>
 </div>
 <div class="arc-group" id="animbb">
-<h3 class="arc-title" data-en="Breaking Bad — Pixar Style" data-tr="Breaking Bad — Pixar Tarzı">Breaking Bad — Estilo Pixar</h3>
-<p class="arc-sub" data-en="A personal AI animation study — iconic Breaking Bad scenes reimagined in a Pixar / 3D-animated style." data-tr="Kişisel bir AI animasyon çalışması — ikonik Breaking Bad sahneleri Pixar / 3D animasyon tarzında yeniden hayal edildi.">Un estudio personal de animación con IA: escenas icónicas de Breaking Bad reimaginadas en estilo Pixar / animación 3D.</p>
+<h3 class="arc-title">Breaking Bad — Estilo Pixar</h3>
+<p class="arc-sub">Un estudio personal de animación con IA: escenas icónicas de Breaking Bad reimaginadas en estilo Pixar / animación 3D.</p>
 <div class="grid g-3">
-<a class="card" href="https://www.instagram.com/documenteray" rel="noopener" target="_blank"><div class="thumb cover-e"><img alt="Breaking Bad Pixar style — Los Pollos Hermanos" decoding="async" loading="lazy" src="/bb-1.webp"/><span class="pill" data-en="Pixar Style" data-tr="Pixar tarzı">Estilo Pixar</span></div></a>
+<a class="card" href="https://www.instagram.com/documenteray" rel="noopener" target="_blank"><div class="thumb cover-e"><img alt="Breaking Bad Pixar style — Los Pollos Hermanos" decoding="async" loading="lazy" src="/bb-1.webp"/><span class="pill">Estilo Pixar</span></div></a>
 <a class="card" href="https://www.instagram.com/documenteray" rel="noopener" target="_blank"><div class="thumb cover-e"><img alt="Breaking Bad Pixar style — frame 3" decoding="async" loading="lazy" src="/bb-3.webp"/></div></a>
 <a class="card" href="https://www.instagram.com/documenteray" rel="noopener" target="_blank"><div class="thumb cover-c"><img alt="Breaking Bad Pixar style — frame 4" decoding="async" loading="lazy" src="/bb-4.webp"/></div></a>
 <a class="card" href="https://www.instagram.com/documenteray" rel="noopener" target="_blank"><div class="thumb cover-b"><img alt="Breaking Bad Pixar style — frame 5" decoding="async" loading="lazy" src="/bb-5.webp"/></div></a>
@@ -2783,47 +2730,47 @@ footer.ft2{background:var(--b0)!important}
 </section>
 <div aria-hidden="true" class="slj-divider"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <section id="reviews">
-<div class="eyebrow reveal" data-en="Client reviews" data-tr="Müşteri yorumları">Reseñas de clientes</div>
-<h2 class="sec-title reveal" data-en="What clients say" data-tr="Müşteriler ne diyor">Lo que dicen los clientes</h2>
+<div class="eyebrow reveal">Reseñas de clientes</div>
+<h2 class="sec-title reveal">Lo que dicen los clientes</h2>
 <div class="rv-strip reveal">
 <span class="rv-big"><b>5.0</b><span aria-label="5 de 5 estrellas" class="rv-stars" role="img"><svg aria-hidden="true" viewbox="0 0 20 20"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg aria-hidden="true" viewbox="0 0 20 20"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg aria-hidden="true" viewbox="0 0 20 20"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg aria-hidden="true" viewbox="0 0 20 20"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg><svg aria-hidden="true" viewbox="0 0 20 20"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"></path></svg></span></span>
-<span class="rv-note" data-en="Every public review on Upwork" data-tr="Upwork'teki tüm herkese açık yorumlar">Todas las reseñas públicas en Upwork</span>
+<span class="rv-note">Todas las reseñas públicas en Upwork</span>
 <span class="rv-fact rv-tr"><svg aria-hidden="true" class="tr-badge" viewbox="0 0 24 24"><path d="M12 1.6l9 5.2v10.4l-9 5.2-9-5.2V6.8z" fill="#2f6fe8"></path><path d="M12 6.9l1.5 3.1 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z" fill="#fff"></path></svg><b>Top Rated</b></span>
-<span class="rv-fact"><b>100%</b><span data-en="Job Success" data-tr="İş başarısı">Job Success</span></span>
-<span class="rv-fact"><b>10</b><span data-en="Upwork jobs" data-tr="Upwork işi">Trabajos en Upwork</span></span>
-<a class="rv-cta" data-en="See them on Upwork ↗" data-tr="Upwork'te gör ↗" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener" target="_blank">Verlas en Upwork ↗</a>
+<span class="rv-fact"><b>100%</b><span>Job Success</span></span>
+<span class="rv-fact"><b>10</b><span>Trabajos en Upwork</span></span>
+<a class="rv-cta" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener" target="_blank">Verlas en Upwork ↗</a>
 </div>
 <div class="rv-grid">
 <figure class="rv2 rv2-lead reveal">
 <a aria-label="COLD START, the trailer this review is about" class="rv2-media" href="#films"><img alt="A frame from COLD START" decoding="async" height="450" loading="lazy" src="/film-coldstart-p-s.webp" width="800"/></a>
 <div class="rv2-body">
-<p class="rv2-q" data-en="&amp;ldquo;I&amp;rsquo;d hire him again without hesitation.&amp;rdquo;" data-tr="&amp;ldquo;Onunla hiç tereddütsüz yine çalışırım.&amp;rdquo;">“Lo volvería a contratar sin dudarlo.”</p>
-<p class="rv2-x" data-en="&amp;ldquo;He was outstanding from the first cut to the last. He caught continuity and pacing problems I&amp;rsquo;d missed &amp;hellip; and hit every milestone early or on time.&amp;rdquo;" data-tr="&amp;ldquo;İlk kurgudan sonuncusuna kadar olağanüstüydü. Benim gözden kaçırdığım süreklilik ve tempo sorunlarını yakaladı &amp;hellip; ve her teslim noktasına erken ya da tam zamanında ulaştı.&amp;rdquo;">“Estuvo excelente desde el primer corte hasta el último. Detectó problemas de continuidad y ritmo que a mí se me habían escapado … y cumplió cada hito antes de tiempo o a tiempo.”</p>
-<figcaption><b data-en="Film director, sci-fi trailer" data-tr="Film yönetmeni, bilim kurgu fragmanı">Director de cine, tráiler de ciencia ficción</b><span data-en="United States · COLD START · August 2026" data-tr="ABD · COLD START · Ağustos 2026">Estados Unidos · COLD START · agosto de 2026</span></figcaption>
+<p class="rv2-q">“Lo volvería a contratar sin dudarlo.”</p>
+<p class="rv2-x">“Estuvo excelente desde el primer corte hasta el último. Detectó problemas de continuidad y ritmo que a mí se me habían escapado … y cumplió cada hito antes de tiempo o a tiempo.”</p>
+<figcaption><b>Director de cine, tráiler de ciencia ficción</b><span>Estados Unidos · COLD START · agosto de 2026</span></figcaption>
 </div>
 </figure>
 <figure class="rv2 reveal">
-<p class="rv2-q rv2-q-s" data-en="“Congratulations on the production quality. The interface effects look great, and the idea is strong and fits the app perfectly.”" data-tr="“Genel olarak production quality açısından tebrik ediyorum. Arayüz efektleri süper görünüyor; fikir çok güçlü ve app ile tam uyuyor.”">“Enhorabuena por la calidad de producción. Los efectos de interfaz se ven geniales, y la idea es sólida y encaja perfectamente con la app.”</p>
-<figcaption><b>Alper Tellioğlu</b><span data-en="TennisCut · three product films" data-tr="TennisCut · üç ürün filmi">TennisCut · tres películas de producto</span></figcaption>
+<p class="rv2-q rv2-q-s">“Enhorabuena por la calidad de producción. Los efectos de interfaz se ven geniales, y la idea es sólida y encaja perfectamente con la app.”</p>
+<figcaption><b>Alper Tellioğlu</b><span>TennisCut · tres películas de producto</span></figcaption>
 </figure>
 <figure class="rv2 reveal">
-<p class="rv2-q rv2-q-s" data-en="&amp;ldquo;Eray was great to work with. Will definitely do some more projects with him in the future.&amp;rdquo;" data-tr="&amp;ldquo;Eray'la çalışmak harikaydı. Gelecekte kesinlikle başka projeler de yapacağız.&amp;rdquo;">“Fue un gusto trabajar con Eray. Sin duda haremos más proyectos con él en el futuro.”</p>
-<figcaption><b><bdi>Minh P.</bdi></b><span data-en="United States · AI ad recreation system" data-tr="ABD · AI reklam üretim sistemi">Estados Unidos · Sistema de recreación de anuncios con IA</span></figcaption>
+<p class="rv2-q rv2-q-s">“Fue un gusto trabajar con Eray. Sin duda haremos más proyectos con él en el futuro.”</p>
+<figcaption><b><bdi>Minh P.</bdi></b><span>Estados Unidos · Sistema de recreación de anuncios con IA</span></figcaption>
 </figure>
 <figure class="rv2 reveal">
-<p class="rv2-q rv2-q-s" data-en="&amp;ldquo;Fast and quality work from Eray.&amp;rdquo;" data-tr="&amp;ldquo;Eray'dan hızlı ve kaliteli iş.&amp;rdquo;">“Trabajo rápido y de calidad por parte de Eray.”</p>
-<figcaption><b><bdi>Solovista L.</bdi></b><span data-en="Cyprus · Short-form ads, editing &amp;amp; motion" data-tr="Kıbrıs · Kısa reklamlar, kurgu ve motion">Chipre · Anuncios de formato corto, montaje &amp; motion</span></figcaption>
+<p class="rv2-q rv2-q-s">“Trabajo rápido y de calidad por parte de Eray.”</p>
+<figcaption><b><bdi>Solovista L.</bdi></b><span>Chipre · Anuncios de formato corto, montaje &amp; motion</span></figcaption>
 </figure>
 </div>
 </section>
 <div aria-hidden="true" class="slj-divider"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
-<div class="chwrap reveal"><a class="chstrip" href="https://www.youtube.com/@citrinevideos" rel="noopener" target="_blank"><img alt="CITRINE" decoding="async" height="80" loading="lazy" src="/citrine-blue.png" width="296"/><div><h3 data-en="CITRINE — Documentary Channel" data-tr="CITRINE — Belgesel Kanalı">CITRINE — Canal de documentales</h3><p data-en="In-depth animated documentaries →" data-tr="Derinlemesine animasyon belgeseller →">Documentales animados en profundidad →</p></div></a></div>
+<div class="chwrap reveal"><a class="chstrip" href="https://www.youtube.com/@citrinevideos" rel="noopener" target="_blank"><img alt="CITRINE" decoding="async" height="80" loading="lazy" src="/citrine-blue.png" width="296"/><div><h3>CITRINE — Canal de documentales</h3><p>Documentales animados en profundidad →</p></div></a></div>
 <section id="contact">
 <div class="contact ct3 reveal">
 <div class="ct3-head">
-<div class="eyebrow" data-en="Start a project" data-tr="Proje başlat">Empieza un proyecto</div>
-<h2 class="sec-title" data-en="Get a fixed quote in 24 hours" data-tr="24 saatte sabit fiyat teklifi al">Recibe un presupuesto cerrado en 24 horas</h2>
-<p class="sec-sub" data-en="Tell me what you're making. You get scope, timeline and a fixed price, free." data-tr="Ne yaptığını anlat. Kapsam, süre ve sabit fiyat ücretsiz olarak gelsin.">Cuéntame qué estás haciendo. Recibes alcance, plazos y un precio cerrado, gratis.</p>
+<div class="eyebrow">Empieza un proyecto</div>
+<h2 class="sec-title">Recibe un presupuesto cerrado en 24 horas</h2>
+<p class="sec-sub">Cuéntame qué estás haciendo. Recibes alcance, plazos y un precio cerrado, gratis.</p>
 </div>
 <div class="ct3-grid">
 <form action="https://api.web3forms.com/submit" autocomplete="on" class="contact-form ct3-form" id="cform" method="post">
@@ -2831,24 +2778,24 @@ footer.ft2{background:var(--b0)!important}
 <input name="subject" type="hidden" value="New project inquiry — eraybalat.com"/>
 <input name="redirect" type="hidden" value="https://eraybalat.com/#contact"/>
 <input aria-hidden="true" autocomplete="off" name="botcheck" style="display:none" tabindex="-1" type="checkbox"/>
-<fieldset class="chips"><legend data-en="What do you need?" data-tr="Neye ihtiyacın var?">¿Qué necesitas?</legend><label class="chip"><input name="project_type" type="radio" value="Brand or product film"/><span data-en="Brand film" data-tr="Marka filmi">Película de marca</span></label><label class="chip"><input name="project_type" type="radio" value="UGC / social ad"/><span data-en="UGC ad" data-tr="UGC reklam">Anuncio UGC</span></label><label class="chip"><input name="project_type" type="radio" value="Documentary"/><span data-en="Documentary" data-tr="Belgesel">Documental</span></label><label class="chip"><input name="project_type" type="radio" value="Music video"/><span data-en="Music video" data-tr="Müzik klibi">Videoclip</span></label><label class="chip"><input name="project_type" type="radio" value="Something else"/><span data-en="Something else" data-tr="Başka bir şey">Otra cosa</span></label></fieldset>
-<label class="cf-lbl" data-en="Email" data-tr="E-posta" for="cf-email">Correo</label>
+<fieldset class="chips"><legend>¿Qué necesitas?</legend><label class="chip"><input name="project_type" type="radio" value="Brand or product film"/><span>Película de marca</span></label><label class="chip"><input name="project_type" type="radio" value="UGC / social ad"/><span>Anuncio UGC</span></label><label class="chip"><input name="project_type" type="radio" value="Documentary"/><span>Documental</span></label><label class="chip"><input name="project_type" type="radio" value="Music video"/><span>Videoclip</span></label><label class="chip"><input name="project_type" type="radio" value="Something else"/><span>Otra cosa</span></label></fieldset>
+<label class="cf-lbl" for="cf-email">Correo</label>
 <input aria-label="Tu correo" autocomplete="email" data-ph-en="Your email" data-ph-es="Tu correo" data-ph-tr="E-posta adresin" id="cf-email" name="email" placeholder="Tu correo" required="" type="email"/>
-<label class="cf-lbl" data-en="Project" data-tr="Proje" for="cf-msg">Proyecto</label>
+<label class="cf-lbl" for="cf-msg">Proyecto</label>
 <textarea aria-label="Cuéntame tu proyecto" data-ph-en="What are you making, and by when?" data-ph-es="¿Qué estás haciendo y para cuándo?" data-ph-tr="Ne yapıyorsun, ne zamana lazım?" id="cf-msg" name="message" placeholder="¿Qué estás haciendo y para cuándo?" required="" rows="3"></textarea>
-<button class="form-send" data-en="Get my quote →" data-tr="Teklifimi al →" type="submit">Quiero mi presupuesto →</button>
-<p class="ct-note" data-en="Free, no obligation. Replies within hours, US time too." data-tr="Ücretsiz, bağlayıcı değil. Birkaç saat içinde dönüş, ABD saatinde de.">Gratis y sin compromiso. Respondo en pocas horas, también en horario de EE. UU.</p>
-<p class="ct-note"><a class="pv-link" data-en="How I handle your data" data-tr="Verilerinizi nasıl işlediğim" href="/privacy/">Cómo trato tus datos</a></p>
+<button class="form-send" type="submit">Quiero mi presupuesto →</button>
+<p class="ct-note">Gratis y sin compromiso. Respondo en pocas horas, también en horario de EE. UU.</p>
+<p class="ct-note"><a class="pv-link" href="/privacy/">Cómo trato tus datos</a></p>
 <p aria-live="polite" class="form-status"></p>
 </form>
 <aside class="ct3-side">
 <ul class="cv-trust">
-<li data-en="Fixed price, agreed before production" data-tr="Üretimden önce anlaşılan sabit fiyat">Precio cerrado, acordado antes de la producción</li>
-<li data-en="Pay through Upwork escrow if you prefer" data-tr="İstersen ödeme Upwork güvencesiyle">Paga mediante el escrow de Upwork si lo prefieres</li>
-<li data-en="Full commercial rights on delivery" data-tr="Teslimde tüm ticari haklar">Derechos comerciales completos en la entrega</li>
+<li>Precio cerrado, acordado antes de la producción</li>
+<li>Paga mediante el escrow de Upwork si lo prefieres</li>
+<li>Derechos comerciales completos en la entrega</li>
 </ul>
-<figure class="ct3-quote"><blockquote data-en="&amp;ldquo;I&amp;rsquo;d hire him again without hesitation.&amp;rdquo;" data-tr="&amp;ldquo;Onunla hiç tereddütsüz yine çalışırım.&amp;rdquo;">“Lo volvería a contratar sin dudarlo.”</blockquote><figcaption><span data-en="Film director, US · ★ 5.0 on Upwork" data-tr="Film yönetmeni, ABD · Upwork'te ★ 5.0">Director de cine, EE. UU. · ★ 5.0 en Upwork</span></figcaption></figure>
-<div class="ct3-direct"><a class="contact-email" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a><a class="social-cta" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener" target="_blank"><span aria-hidden="true" class="uw-dot"></span><span data-en="Hire me on Upwork →" data-tr="Upwork'te benimle çalış →">Contrátame en Upwork →</span></a></div>
+<figure class="ct3-quote"><blockquote>“Lo volvería a contratar sin dudarlo.”</blockquote><figcaption><span>Director de cine, EE. UU. · ★ 5.0 en Upwork</span></figcaption></figure>
+<div class="ct3-direct"><a class="contact-email" href="mailto:eray@eraybalat.com">eray@eraybalat.com</a><a class="social-cta" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener" target="_blank"><span aria-hidden="true" class="uw-dot"></span><span>Contrátame en Upwork →</span></a></div>
 </aside>
 </div>
 </div>
@@ -2858,46 +2805,38 @@ footer.ft2{background:var(--b0)!important}
 <div class="ft-grid">
 <div class="ft-brand">
 <a aria-label="Eray Balat, volver arriba" class="ft-logo" href="#home"><svg aria-hidden="true" fill="none" height="34" stroke="currentColor" stroke-width="9" viewbox="0 0 120 120" width="34"><path d="M51.971 18.029L60 10L88.749 38.749"></path><path d="M101.971 51.971L110 60L81.251 88.749"></path><path d="M68.029 101.971L60 110L31.251 81.251"></path><path d="M18.029 68.029L10 60L38.749 31.251"></path><path d="M24.64 36.01L24.64 24.64L65.29 24.64"></path><path d="M83.99 24.64L95.36 24.64L95.36 65.29"></path><path d="M95.36 83.99L95.36 95.36L54.71 95.36"></path><path d="M36.01 95.36L24.64 95.36L24.64 54.71"></path></svg><span>Eray Balat</span></a>
-<p data-en="Director and creative producer in Kayseri, Türkiye. Product films, ads, documentaries and music videos for clients in the US, Europe and Türkiye." data-tr="Kayseri'de yönetmen ve creative producer. ABD, Avrupa ve Türkiye'deki müşteriler için ürün filmleri, reklamlar, belgeseller ve müzik videoları.">Director y productor creativo en Kayseri, Turquía. Películas de producto, anuncios, documentales y videoclips para clientes en EE. UU., Europa y Turquía.</p>
-<a class="ft-cta" data-en="Get a quote →" data-tr="Teklif al →" href="#contact">Pide presupuesto →</a>
+<p>Director y productor creativo en Kayseri, Turquía. Películas de producto, anuncios, documentales y videoclips para clientes en EE. UU., Europa y Turquía.</p>
+<a class="ft-cta" href="#contact">Pide presupuesto →</a>
 </div>
 <nav aria-label="Work" class="ft-col">
-<p class="ft-h" data-en="Work" data-tr="İşler">Trabajo</p>
-<a data-en="Ads" data-tr="Reklamlar" href="#ugc">Anuncios</a>
-<a data-en="Films" data-tr="Filmler" href="#films">Películas</a>
-<a data-en="Documentary" data-tr="Belgesel" href="/flawless/">Documental</a>
-<a data-en="Music videos" data-tr="Müzik videoları" href="#music">Videoclips</a>
-<a data-en="Detective mode" data-tr="Dedektif modu" href="/files/">Modo detective</a>
+<p class="ft-h">Trabajo</p>
+<a href="#ugc">Anuncios</a>
+<a href="#films">Películas</a>
+<a href="/flawless/">Documental</a>
+<a href="#music">Videoclips</a>
+<a href="/files/">Modo detective</a>
 </nav>
 <nav aria-label="Info" class="ft-col">
-<p class="ft-h" data-en="Info" data-tr="Bilgi">Info</p>
-<a data-en="Rates" data-hire="" data-tr="Fiyatlar" href="/hire/">Tarifas</a>
-<a data-en="FAQ" data-faq="" data-tr="SSS" href="/faq/">Preguntas</a>
-<a data-blog="" data-en="Writing" data-tr="Yazılar" href="/blog/">Escritura</a>
-<a data-en="Leather atelier" data-tr="Deri atölyesi" href="/leather/">Taller de cuero</a>
-<a data-en="AI video in Türkiye" data-tr="AI video prodüksiyon (EN)" href="/ai-video-production-turkey/">Vídeo con IA en Türkiye</a>
+<p class="ft-h">Info</p>
+<a data-hire="" href="/hire/">Tarifas</a>
+<a data-faq="" href="/faq/">Preguntas</a>
+<a data-blog="" href="/blog/">Escritura</a>
+<a href="/leather/">Taller de cuero</a>
+<a href="/ai-video-production-turkey/">Vídeo con IA en Türkiye</a>
 </nav>
 <div class="ft-col ft-contact">
-<p class="ft-h" data-en="Contact" data-tr="İletişim">Contacto</p>
+<p class="ft-h">Contacto</p>
 <a href="mailto:eray@eraybalat.com">eray@eraybalat.com</a>
 <a href="https://www.upwork.com/freelancers/eraybalat" rel="noopener" target="_blank">Upwork ↗</a>
 <div class="ft-icons"><a aria-label="Upwork" href="https://www.upwork.com/freelancers/eraybalat" rel="noopener me" target="_blank" title="Upwork"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.1 8.2c-1.9 0-3.4 1.2-4 3.2-.9-1.4-1.6-3-2-4.3h-2.4v5.2a2 2 0 1 1-4 0V7.1H2.3v5.2a4.4 4.4 0 0 0 8.8.2c.5.9 1.1 1.9 1.9 2.7l-1.6 7.4h2.5l1.1-5.4c1 .6 2.1 1 3.3 1 2.7 0 4.9-2.2 4.9-5s-2.2-5-4.9-5m0 7.5c-1 0-2-.4-2.7-1.1l.2-.9v-.1c.2-1.1.8-2.9 2.5-2.9 1.3 0 2.4 1.1 2.4 2.5s-1.1 2.5-2.4 2.5"></path></svg></a><a aria-label="Instagram" href="https://www.instagram.com/documenteray/" rel="noopener me" target="_blank" title="Instagram"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="17.6" rx="5" width="17.6" x="3.2" y="3.2"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.3" cy="6.7" fill="currentColor" r="1.15" stroke="none"></circle></svg></a><a aria-label="YouTube" href="https://www.youtube.com/@eraybalat" rel="noopener me" target="_blank" title="YouTube"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="13.2" rx="4" width="19.6" x="2.2" y="5.4"></rect><path d="M10.3 9.4v5.2L14.9 12z" fill="currentColor" stroke="none"></path></svg></a><a aria-label="LinkedIn" href="https://www.linkedin.com/in/eraybalat/" rel="noopener me" target="_blank" title="LinkedIn"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="17.6" rx="3" width="17.6" x="3.2" y="3.2"></rect><path d="M7.4 10.5v6.1"></path><circle cx="7.4" cy="7.6" fill="currentColor" r="1.05" stroke="none"></circle><path d="M11.2 16.6v-6.1M11.2 13c0-1.35 1-2.3 2.3-2.3s2.3.95 2.3 2.3v3.6"></path></svg></a><a aria-label="X" href="https://x.com/documenteray" rel="noopener me" target="_blank" title="X"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.1L4.7 21H1.5l7.5-8.6L1.2 3h6.6l4.5 5.6zM16.4 19.1h1.8L7.7 4.8H5.8z"></path></svg></a><a aria-label="Behance" href="https://www.behance.net/eraybalat" rel="noopener me" target="_blank" title="Behance"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M9 5.6c1.9 0 3.1 1 3.1 2.6 0 1.1-.6 1.9-1.5 2.3 1.3.4 2 1.3 2 2.7 0 1.9-1.4 3-3.5 3H2V5.6zm-.5 4.1c.8 0 1.3-.4 1.3-1.1 0-.7-.5-1.1-1.3-1.1H4.6v2.2zm.3 4.6c.9 0 1.5-.4 1.5-1.2s-.6-1.2-1.5-1.2H4.6v2.4zM15 5.9h5.6v1.5H15zM18 9.4c2.4 0 4 1.7 4 4.3v.6h-5.9c.2 1.1 1 1.7 2.1 1.7.8 0 1.4-.3 1.7-.9h2c-.5 1.6-1.9 2.6-3.8 2.6-2.5 0-4.2-1.7-4.2-4.2s1.7-4.1 4.1-4.1m-1.9 3.4h3.8c-.2-1-.9-1.6-1.9-1.6s-1.7.6-1.9 1.6"></path></svg></a><a aria-label="Medium" href="https://medium.com/@eraybalat" rel="noopener me" target="_blank" title="Medium"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><ellipse cx="6.3" cy="12" rx="6.3" ry="5.9"></ellipse><ellipse cx="16.5" cy="12" rx="3" ry="5.9"></ellipse><ellipse cx="21.9" cy="12" rx="1.1" ry="5.9"></ellipse></svg></a><a aria-label="FilmFreeway" href="https://filmfreeway.com/ErayBalat" rel="noopener me" target="_blank" title="FilmFreeway"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="14.8" rx="2.4" width="18.8" x="2.6" y="4.6"></rect><path d="M7.4 4.6v14.8M16.6 4.6v14.8M2.6 9.3h4.8M2.6 14.7h4.8M16.6 9.3h4.8M16.6 14.7h4.8"></path></svg></a><a aria-label="Hugging Face" href="https://huggingface.co/ErayBalat" rel="noopener me" target="_blank" title="Hugging Face"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.6a9 9 0 1 0 0 18 9 9 0 0 0 0-18m-3 6.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4m6 0a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4m-6.6 4.6h7.2c.4 0 .7.4.6.8-.5 1.7-2 2.8-4.2 2.8s-3.7-1.1-4.2-2.8c-.1-.4.2-.8.6-.8"></path></svg></a><a aria-label="GitHub" href="https://github.com/eraybalatt" rel="noopener me" target="_blank" title="GitHub"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 1.8a10.2 10.2 0 0 0-3.2 19.9c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.4 4.6-4.6 4.9.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.2 10.2 0 0 0 12 1.8"></path></svg></a><a aria-label="Letterboxd" href="https://letterboxd.com/eraybalat/" rel="noopener me" target="_blank" title="Letterboxd"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><circle cx="5.9" cy="12" r="4.6"></circle><circle cx="12" cy="12" r="4.6"></circle><circle cx="18.1" cy="12" r="4.6"></circle></svg></a><a aria-label="Freelancer" href="https://www.freelancer.com/u/eraybalat" rel="noopener me" target="_blank" title="Freelancer"><svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M14.6 3.2 12 9.7h6.6zM11.2 3.2H4.6l2 3.5zM3.4 5.6l-1.6 3.9 3.6-1.4zM10 11.3H2.2l9.5 9.5zM20.6 11.3h-9l-1.9 7.6z"></path></svg></a></div>
 </div>
 </div>
 <div class="ft-bottom">
-<span>© <span id="year"></span> Eray Balat · Citrine Studio · <span data-en="All rights reserved." data-tr="Tüm hakları saklıdır.">Todos los derechos reservados.</span></span>
-<a data-en="Privacy" data-tr="Gizlilik" href="/privacy/">Privacidad</a>
-<a data-en="Back to top ↑" data-tr="Başa dön ↑" href="#home">Volver arriba ↑</a>
+<span>© <span id="year"></span> Eray Balat · Citrine Studio · <span>Todos los derechos reservados.</span></span>
+<a href="/privacy/">Privacidad</a>
+<a href="#home">Volver arriba ↑</a>
 <span class="ft-ai">Traducciones asistidas por IA</span></div>
 </footer>
-<div aria-label="Video" aria-modal="true" class="lbx" id="lbx" role="dialog">
-<div class="lbx-bg" data-lbx-close=""></div>
-<div class="lbx-box">
-<button aria-label="Cerrar el video" class="lbx-x" data-lbx-close="" type="button">✕</button>
-<div class="lbx-frame"></div>
-<div class="lbx-cap"></div>
-</div>
-</div>
 <script>
   const toggle=document.querySelector('.nav-toggle');
   const links=document.getElementById('navlinks');
@@ -3045,10 +2984,9 @@ navTargets.forEach(function(t){
   // keep hero bg video playing/looping (some browsers pause autoplay)
   const hv=document.getElementById('heroVid');
   // only load/play the hero videos on desktop with motion allowed — saves ~3MB on mobile; poster stays on small screens
-  const heroLogo=document.getElementById('heroLogo');
   // perf (23 Eyl 2026): both hero videos pause while they are off-screen (they kept decoding under the whole page,
   // and the 'pause' listener below restarted any pause) and play again when they scroll back in
-  const heroVis=new Set([hv,heroLogo].filter(Boolean));
+  const heroVis=new Set([hv].filter(Boolean));
   // a11y (25 Eki, WCAG 2.2.2): a visible pause button; once the visitor pauses, nothing restarts the hero
   let heroUserPaused=false; const hp=document.getElementById('heroPause');
   const playVid=v=>{ if(v===hv&&heroUserPaused)return; if(!heroVis.has(v))return; const p=v.play(); if(p&&p.catch)p.catch(()=>{}); };
@@ -3060,7 +2998,7 @@ navTargets.forEach(function(t){
      ya da hata verirse dosya doğrudan akışla açılıyor; tam sürüm de bir kez yeniden deneniyor. */
   const getBlob=(url,ms)=>{ const ac=('AbortController' in window)?new AbortController():null; const t=ac?setTimeout(()=>ac.abort(),ms):0;
     return fetch(url,ac?{signal:ac.signal}:{}).then(r=>r.ok?r.blob():Promise.reject(r.status)).then(b=>{ clearTimeout(t); return URL.createObjectURL(b); },e=>{ clearTimeout(t); throw e; }); };
-  const startHeroVids=()=>{ const ok=matchMedia('(min-width:761px)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches; if(!ok)return; [hv,heroLogo].forEach(v=>{ if(!v||!v.dataset.src||v.src||v.dataset.loading)return; v.dataset.loading='1';
+  const startHeroVids=()=>{ const ok=matchMedia('(min-width:761px)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches; if(!ok)return; [hv].forEach(v=>{ if(!v||!v.dataset.src||v.src||v.dataset.loading)return; v.dataset.loading='1';
     const begin=src=>{ v.src=src; v.load(); playVid(v); v.addEventListener('error',()=>{ if(!v.dataset.direct){ v.dataset.direct='1'; v.src=v.dataset.src; v.load(); playVid(v); } },{once:true}); };
     getBlob(v.dataset.src,6000).catch(()=>v.dataset.src).then(src=>{ begin(src);
       /* then the full reel in the background; it takes over when the first set ends, on the same frame */
@@ -3072,7 +3010,7 @@ navTargets.forEach(function(t){
   const heroIO=new IntersectionObserver(es=>es.forEach(e=>{ const v=e.target;
     if(e.isIntersecting){ heroVis.add(v); if(v.paused&&(v===hv||v.src))playVid(v); }
     else { heroVis.delete(v); if(!v.paused)v.pause(); } }));
-  [hv,heroLogo].forEach(v=>{ if(!v)return; heroIO.observe(v); v.addEventListener('play',()=>{ if(!heroVis.has(v))v.pause(); }); });
+  [hv].forEach(v=>{ if(!v)return; heroIO.observe(v); v.addEventListener('play',()=>{ if(!heroVis.has(v))v.pause(); }); });
   if(hv){
     const playHero=()=>playVid(hv);
     hv.addEventListener('ended',()=>{hv.currentTime=0;playHero();});
@@ -3122,69 +3060,7 @@ navTargets.forEach(function(t){
   const vio=new IntersectionObserver((es)=>es.forEach(e=>{ if(!e.isIntersecting && !e.target.paused) e.target.pause(); }),{threshold:.05});
   cardVids.forEach(v=>{ v.addEventListener('play',()=>vio.observe(v)); v.addEventListener('pause',()=>vio.unobserve(v)); if(!v.paused)vio.observe(v); });
 
-  // pause the decorative contact iframe's heavy animation loop while it is scrolled off-screen
-  // (fail-safe: if the iframe never gets the message it simply keeps running — no visual regression)
-  const cFrame=document.querySelector('.contact-visual iframe');
-  if(cFrame){
-    let framePlaying=true;
-    const post=(m)=>{ try{ if(cFrame.contentWindow) cFrame.contentWindow.postMessage(m,'*'); }catch(e){} };
-    const cfo=new IntersectionObserver((es)=>es.forEach(e=>{
-      if(e.isIntersecting){ if(!framePlaying){ framePlaying=true; post('eb-play'); } }
-      else { if(framePlaying){ framePlaying=false; post('eb-pause'); } }
-    }),{rootMargin:'150px 0px'});
-    cfo.observe(cFrame);
-  }
 
-  // video lightbox — [data-lightbox] klibi sayfanin uzerinde acar, otomatik oynatir
-  (function(){
-    var lb=document.getElementById('lbx'); if(!lb) return;
-    var frame=lb.querySelector('.lbx-frame'), cap=lb.querySelector('.lbx-cap'), xb=lb.querySelector('.lbx-x');
-    var opener=null, prevOv='';
-    function open(id,title){
-      frame.innerHTML='';
-      var f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-      f.title=title||'Video'; f.setAttribute('frameborder','0');
-      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen=true;
-      frame.appendChild(f);
-      cap.textContent=title||'';
-      lb.classList.add('open');
-      prevOv=document.body.style.overflow; document.body.style.overflow='hidden';
-      xb.focus();
-    }
-    function close(){
-      if(!lb.classList.contains('open')) return;
-      lb.classList.remove('open'); frame.innerHTML='';
-      document.body.style.overflow=prevOv;
-      if(opener && opener.focus) opener.focus();
-      opener=null;
-    }
-    document.querySelectorAll('a[data-lightbox]').forEach(function(a){
-      a.addEventListener('click',function(e){
-        e.preventDefault(); opener=a;
-        open(a.getAttribute('data-lightbox'), a.getAttribute('data-lbx-title')||'');
-      });
-    });
-    lb.querySelectorAll('[data-lbx-close]').forEach(function(el){ el.addEventListener('click',close); });
-    document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
-  })();
-
-  // inline YouTube play — click a [data-yt] card to swap its thumbnail for an embedded player (stays on-site)
-  document.querySelectorAll('a[data-yt]').forEach(el=>{
-    el.addEventListener('click',e=>{
-      e.preventDefault();
-      const id=el.getAttribute('data-yt');
-      const thumb=el.querySelector('.thumb')||el;
-      if(thumb.querySelector('iframe'))return;
-      const f=document.createElement('iframe');
-      f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-      f.title=(el.querySelector('.card-body h3')?.textContent||'Video'); f.setAttribute('frameborder','0');
-      f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
-      f.allowFullscreen=true;
-      f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;z-index:6;border-radius:inherit';
-      thumb.appendChild(f);
-    });
-  });
 
 
   // EB player: our own controls, with the frame under the cursor shown above the timeline
@@ -3296,18 +3172,11 @@ navTargets.forEach(function(t){
     });
   }
 
-  // detective mode progress on the view switch (kept by /files/)
-  (function(){var n=0;try{n=Object.keys(JSON.parse(localStorage.getItem('eb_files_seen')||'{}')||{}).length}catch(e){}
-    var c=document.querySelector('.mode-chip .mode-n');if(c&&n){c.textContent=Math.min(n,9)+'/9';c.hidden=false}})();
 
   // (the click ripple is gone: the calm theme hides .click-ripple, so every click built and removed an invisible span)
 </script>
 <!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74", "spa": false}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script><!-- End Cloudflare Web Analytics -->
-<script>document.querySelectorAll('.rev-more').forEach(function(b){b.addEventListener('click',function(){
-var q=b.parentElement.querySelector('.rev-quote');var open=!q.classList.toggle('rev-clamp');
-var L=document.documentElement.lang||'en';
-b.textContent=open?(L==='tr'?'Kısalt':L==='de'?'Weniger anzeigen':'Show less')
-:(L==='tr'?'Yorumun tamamını oku':L==='de'?'Ganze Bewertung lesen':'Read the full review');});});</script><script>
+<script>
 (function(){var bar=document.querySelector('.ugc-filter'),g=document.querySelector('#ugc .g-ugc');if(!bar||!g)return;bar.hidden=false;
 bar.querySelectorAll('.uf').forEach(function(x){var c=x.getAttribute('data-cat'),n=g.querySelectorAll(c==='all'?':scope>[data-cat]':':scope>[data-cat="'+c+'"]').length,i=x.querySelector('i');if(i)i.textContent=n;});
 bar.addEventListener('click',function(e){var b=e.target.closest('.uf');if(!b)return;var c=b.getAttribute('data-cat');
