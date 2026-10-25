@@ -65,6 +65,7 @@ SUBPAGES = [
 ]
 # alt sayfaların TR sürümüne giden bağlantılar (TR ana sayfa bunlara yönlenir)
 SUB_TR_HREF = {f"/{p['dir']}/": f"/tr/{p['dir']}/" for p in SUBPAGES}
+SUB_TR_HREF["/privacy/"] = "/gizlilik/"
 JS_REL = re.compile(r"""(["'])(?!/|https?:|data:|#)([\w\-./]+\.(?:webp|jpe?g|png|mp4|svg|json))\1""")
 
 

@@ -150,7 +150,7 @@ Ekranın üst kısmındaki (above-the-fold) içeriğe bunu koyarsan, **JS çalı
 ## 🚀 Yayına alma
 
 ```bash
-git add -A
+git add <değiştirdiğin dosyalar>   # asla git add -A (iç dosyalar yayına çıkar)
 git commit -m "..."
 git push origin main
 ```

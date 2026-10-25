@@ -3,7 +3,7 @@
 <head>
 <script>(function(){try{var ok=['en','tr'],l;var p=(new URLSearchParams(location.search).get('lang')||location.hash.replace('#',''))||'';if(ok.includes(p)){l=p}else{try{l=localStorage.getItem('lang')}catch(e){}}if(!ok.includes(l)){var n=(navigator.language||'en').slice(0,2).toLowerCase();l=n==='tr'?'tr':'en';}document.documentElement.lang=l;}catch(e){}})();</script>
 <meta charset="UTF-8" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' blob:; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self' blob:; frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com; base-uri 'self'; form-action 'self' https://api.web3forms.com; object-src 'none'; upgrade-insecure-requests" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -2450,6 +2450,7 @@ footer.ft2{background:var(--b0)!important}
 .tf2{width:min(1180px,calc(100% - 32px))}@media(min-width:880px){.tf2{width:min(1180px,calc(100% - 56px))}}
 .tf2-steps li+li::before{margin-right:0;margin-inline-end:6px}
 @media(max-width:600px){.tf2-steps li+li::before{display:none}.tf2-steps{gap:6px 14px}}
+.ct-note .pv-link{color:#d3dde7;text-decoration:underline;text-underline-offset:3px}
 </style>
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*.mp4*"}},{"not":{"href_matches":"/*.pdf"}},{"not":{"href_matches":"/*.m4a"}},{"not":{"href_matches":"/files/*"}},{"not":{"href_matches":"/tr/files/*"}},{"not":{"selector_matches":"[data-vid],[data-vid-into],[download]"}}]},"eagerness":"moderate"}]}</script>
 </head>
@@ -2870,9 +2871,10 @@ footer.ft2{background:var(--b0)!important}
         <p class="sec-sub" data-en="Tell me what you&#x27;re making. You get scope, timeline and a fixed price, free." data-tr="Ne yaptığını anlat. Kapsam, süre ve sabit fiyat ücretsiz olarak gelsin.">Tell me what you're making. You get scope, timeline and a fixed price, free.</p>
       </div>
       <div class="ct3-grid">
-        <form class="contact-form ct3-form" id="cform" autocomplete="on">
+        <form class="contact-form ct3-form" id="cform" method="post" action="https://api.web3forms.com/submit" autocomplete="on">
           <input type="hidden" name="access_key" value="b77ff153-998f-4550-aaff-2e1c474df49d" />
           <input type="hidden" name="subject" value="New project inquiry — eraybalat.com" />
+          <input type="hidden" name="redirect" value="https://eraybalat.com/#contact" />
           <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <fieldset class="chips"><legend data-en="What do you need?" data-tr="Neye ihtiyacın var?">What do you need?</legend><label class="chip"><input type="radio" name="project_type" value="Brand or product film" /><span data-en="Brand film" data-tr="Marka filmi">Brand film</span></label><label class="chip"><input type="radio" name="project_type" value="UGC / social ad" /><span data-en="UGC ad" data-tr="UGC reklam">UGC ad</span></label><label class="chip"><input type="radio" name="project_type" value="Documentary" /><span data-en="Documentary" data-tr="Belgesel">Documentary</span></label><label class="chip"><input type="radio" name="project_type" value="Music video" /><span data-en="Music video" data-tr="Müzik klibi">Music video</span></label><label class="chip"><input type="radio" name="project_type" value="Something else" /><span data-en="Something else" data-tr="Başka bir şey">Something else</span></label></fieldset>
           <label class="cf-lbl" for="cf-email" data-en="Email" data-tr="E-posta">Email</label>
@@ -2881,6 +2883,7 @@ footer.ft2{background:var(--b0)!important}
           <textarea id="cf-msg" name="message" rows="3" placeholder="What are you making, and by when?" data-ph-en="What are you making, and by when?" data-ph-tr="Ne yapıyorsun, ne zamana lazım?" aria-label="Tell me about your project" required></textarea>
           <button type="submit" class="form-send" data-en="Get my quote →" data-tr="Teklifimi al →">Get my quote →</button>
           <p class="ct-note" data-en="Free, no obligation. Replies within hours, US time too." data-tr="Ücretsiz, bağlayıcı değil. Birkaç saat içinde dönüş, ABD saatinde de.">Free, no obligation. Replies within hours, US time too.</p>
+          <p class="ct-note"><a class="pv-link" href="/privacy/" data-en="How I handle your data" data-tr="Verilerinizi nasıl işlediğim">How I handle your data</a></p>
           <p class="form-status" aria-live="polite"></p>
         </form>
         <aside class="ct3-side">
@@ -2930,6 +2933,7 @@ footer.ft2{background:var(--b0)!important}
   </div>
   <div class="ft-bottom">
     <span>© <span id="year"></span> Eray Balat · Citrine Studio · <span data-en="All rights reserved." data-tr="Tüm hakları saklıdır.">All rights reserved.</span></span>
+    <a href="/privacy/" data-en="Privacy" data-tr="Gizlilik">Privacy</a>
     <a href="#home" data-en="Back to top ↑" data-tr="Başa dön ↑">Back to top ↑</a>
   </div>
 </footer>
@@ -3330,7 +3334,7 @@ navTargets.forEach(function(t){
       if(!key||key.indexOf('YOUR_')>-1){st.className='form-status err';st.textContent=T.notready[fl]||T.notready.en;return;}
       const orig=btn.textContent;btn.disabled=true;btn.textContent=T.sending[fl]||T.sending.en;
       try{
-        const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.assign(Object.fromEntries(new FormData(cform)),leadSrc()))});
+        const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify((o=>{delete o.redirect;return o})(Object.assign(Object.fromEntries(new FormData(cform)),leadSrc())))});
         const data=await res.json();
         if(data.success){st.className='form-status ok';st.textContent=T.ok[fl]||T.ok.en;cform.reset();}
         else{st.className='form-status err';st.textContent=T.fail[fl]||T.fail.en;}

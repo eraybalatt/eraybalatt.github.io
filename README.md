@@ -46,7 +46,7 @@ Sonra `http://localhost:8804` aç.
 ## Yayına alma
 
 ```bash
-git add -A
+git add <değiştirdiğin dosyalar>   # asla git add -A (iç dosyalar yayına çıkar)
 git commit -m "değişiklik açıklaması"
 git push origin main
 ```
