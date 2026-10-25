@@ -419,7 +419,9 @@
     var hb=document.querySelector('.hero-bg[data-loop]');
     // hero fonu: kart videosuyla AYNI URL (?v=2) -> tek indirme;
     // ve sayfa yuklendikten sonra -> ilk boyamayla yarismasin
-    if(hb){ var mountHero=function(){ mountVideo(hb,'/anime-mv.mp4?v=3'); };
+    // perf (25 Eki): phones get the 720 px rendition (same URL as the card below, so still one download)
+    var MV=matchMedia('(max-width:760px)').matches?'/anime-mv-m.mp4?v=1':'/anime-mv.mp4?v=3';
+    if(hb){ var mountHero=function(){ mountVideo(hb,MV); };
       if(document.readyState==='complete') setTimeout(mountHero,250);
       else window.addEventListener('load',function(){setTimeout(mountHero,250);},{once:true}); }
     document.querySelectorAll('.frame video, .concert-vid video').forEach(function(fv){ var vo=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ fv.preload='auto'; var p=fv.play(); if(p&&p.catch)p.catch(function(){}); } else { fv.pause(); } });},{threshold:.25}); vo.observe(fv); });
@@ -457,10 +459,12 @@
 <script>
 (function(){
   var v=document.getElementById('mvVid'); if(!v||!v.dataset.src)return;
+  var phone=matchMedia('(max-width:760px)').matches; if(phone) v.dataset.src='/anime-mv-m.mp4?v=1';
   function start(){ if(v.src)return; v.src=v.dataset.src; v.load();
     var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
-  if(document.readyState==='complete') setTimeout(start,200);
-  else window.addEventListener('load',function(){setTimeout(start,200);},{once:true});
+  function arm(){ if(phone&&'IntersectionObserver' in window){ var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ io.disconnect(); start(); } },{rootMargin:'300px 0px'}); io.observe(v); } else setTimeout(start,200); }
+  if(document.readyState==='complete') arm();
+  else window.addEventListener('load',arm,{once:true});
 })();
 </script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4e23e795ac2a4578be43001c45acbf74", "spa": false}'></script>

@@ -552,7 +552,8 @@
     if(n.k==="print"){
       e=document.createElement("figure");e.className="print";e.style.setProperty("--r",n.r);e.style.width=n.w+"px";
       var ph=Math.round((n.w-24)*n.ar);
-      e.innerHTML="<div class='ph' style='height:"+ph+"px'><img src='"+n.src+"' alt='' loading='lazy' decoding='async' draggable='false'>"+(n.vsrc?"<video muted loop playsinline preload='none'></video><span class='play'></span>":"")+"</div><figcaption>"+n.label+"</figcaption>"+
+      var th="_board/img/t/"+n.src.replace(/\//g,"_").replace(/\.(jpe?g|png|webp)$/i,"")+".webp";
+      e.innerHTML="<div class='ph' style='height:"+ph+"px'><img src='"+th+"' data-full='"+n.src+"' alt='' loading='lazy' decoding='async' draggable='false'>"+(n.vsrc?"<video muted loop playsinline preload='none'></video><span class='play'></span>":"")+"</div><figcaption>"+n.label+"</figcaption>"+
         "<i class='pinhead'></i>";
       if(n.pos)e.querySelector("img").style.objectPosition=n.pos;
     }else if(n.k==="card"){
@@ -745,6 +746,18 @@
       decorFrame:function(f,e){if(f.bare)return;var t=document.createElement("div");t.className="tag";t.innerHTML="<small>DOSYA "+f.no+"</small><b>"+f.t+"</b>";e.appendChild(t);
         var s=document.createElement("div");s.className="stamp";s.textContent=f.st;e.appendChild(s)},
       render:function(n){var e=el(n);if(!e)return null;if(n.vsrc){var v=e.querySelector("video");v.dataset.src=n.vsrc;n.v=v}return e}});
+    /* perf (25 Eki): prints start as 320 px thumbnails (the overview shows them at 8-46 px). A print swaps to its full
+       image, once, as soon as it is on screen and drawn wider than its thumbnail can cover (width x devicePixelRatio).
+       Checked when a print enters the screen and when a camera move ends (the engine drops #world.mv 240 ms after). */
+    (function(){var wE=document.getElementById("world");if(!wE||!("IntersectionObserver" in window))return;var vis=new Set();
+      function big(im){var w=im.getBoundingClientRect().width*(window.devicePixelRatio||1);return w>300;}
+      function up(im){if(im.dataset.full){im.src=im.dataset.full;im.removeAttribute("data-full");io.unobserve(im);vis.delete(im);}}
+      function check(){Array.from(vis).forEach(function(im){if(big(im))up(im);});}
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){vis.add(e.target);if(big(e.target))up(e.target);}else vis.delete(e.target);});},{rootMargin:"200px"});
+      function scan(){document.querySelectorAll("img[data-full]").forEach(function(im){if(!im.__o){im.__o=1;io.observe(im);}});}scan();
+      new MutationObserver(scan).observe(wE,{childList:true,subtree:true});
+      var wasMv=false;new MutationObserver(function(){var mv=wE.classList.contains("mv");if(wasMv&&!mv)check();wasMv=mv;}).observe(wE,{attributes:true,attributeFilter:["class"]});
+      setTimeout(check,1500);})();
     /* what fades with the zoom level goes into groups that fade as a unit (see .mks / svg.lk-*), each at the depth it painted at:
        the markers above the prints and under the covers; the local strings, the far strings, then their heads, under the prints.
        The ten heads stacked on the photo pin stay in the original svg, which stays right under the prints so they all share one layer;

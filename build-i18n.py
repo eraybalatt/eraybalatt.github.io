@@ -47,7 +47,7 @@ BLOG_HREF = {"en": "/blog/", "tr": "/yazilar/"}
 FILES_HREF = {"en": "/files/", "tr": "/tr/files/"}
 HOME_HREF = {"en": "/", "tr": "/tr/"}
 
-REL_ATTRS = ["src", "poster", "href", "data-poster", "data-src", "data-full", "data-image", "data-vid", "data-vid-poster"]
+REL_ATTRS = ["src", "poster", "href", "data-href", "data-poster", "data-src", "data-full", "data-image", "data-vid", "data-vid-poster"]
 
 # 25 Eki 2026: vaka sayfalarının statik TR sürümleri (/tr/<dir>/). Türkçe metin bu sayfalarda
 # sadece data-tr içinde duruyordu; JS çalıştırmayan tarayıcılar sayfayı İngilizce görüyordu.
