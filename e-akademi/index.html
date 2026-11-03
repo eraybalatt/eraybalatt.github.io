@@ -7,6 +7,8 @@
 <meta name="description" content="E-Akademi Eğitim Ağı sponsorluk sayfası: üç YouTube eğitim kanalı, 75 bin abone, 23,5 milyon izlenme. Yazılı ve KPSS haftalarında öğrenciye, veliye ve öğretmene ulaşın." />
 <meta name="robots" content="noindex, follow" />
 <link rel="canonical" href="https://eraybalat.com/e-akademi/" />
+<link rel="alternate" hreflang="tr" href="https://eraybalat.com/e-akademi/" />
+<link rel="alternate" hreflang="en" href="https://eraybalat.com/e-akademi/en/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Eray Balat" />
 <meta property="og:locale" content="tr_TR" />
@@ -43,6 +45,8 @@ img{display:block;max-width:100%}
 .bar nav{display:flex;gap:20px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .bar nav a{text-decoration:none;color:var(--muted)}
 .bar nav a:hover{color:var(--ink)}
+.bar nav a.lang{color:var(--ink-2);border:1px solid var(--line-2);padding:6px 9px;border-radius:4px}
+.bar nav a.lang:hover{border-color:var(--accent);color:var(--ink)}
 .bar .cta{color:var(--on-accent)!important;background:var(--accent);padding:7px 12px;border-radius:4px;font-weight:600}
 
 /* hero */
@@ -169,7 +173,7 @@ footer a:hover{color:var(--ink)}
 }
 @media (max-width:640px){
   .wrap{padding:0 16px}
-  .bar nav a:not(.cta){display:none}
+  .bar nav a:not(.cta):not(.lang){display:none}
   .hero{padding:56px 0 40px}
   .g2{grid-template-columns:1fr}
   .out{grid-template-columns:1fr;gap:24px}
@@ -194,6 +198,7 @@ footer a:hover{color:var(--ink)}
       <a href="#kanallar">Kanallar</a>
       <a href="#formatlar">Formatlar</a>
       <a href="#takvim">Takvim</a>
+      <a class="lang" href="/e-akademi/en/" hreflang="en" lang="en">EN</a>
       <a class="cta" href="#iletisim">İletişim</a>
     </nav>
   </div>
