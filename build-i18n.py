@@ -65,6 +65,27 @@ SUBPAGES = [
 ]
 # alt sayfaların TR sürümüne giden bağlantılar (TR ana sayfa bunlara yönlenir)
 SUB_TR_HREF = {f"/{p['dir']}/": f"/tr/{p['dir']}/" for p in SUBPAGES}
+# 8 Kas 2026: Gevher Nesibe sayfasının Avrupa dilleri. Çeviriler i18n/gevher-nesibe/<dil>.json,
+# anahtar = data-en / data-cap-en metninin (HTML entity'leri çözülmüş) sha1[:10]'u. Sayfa "text" modunda:
+# çeviriler düz metin. Dil menüsündeki not: _ai_note.
+SUB_LANGS = {
+    "de": {"locale": "de_DE", "name": "Deutsch"},
+    "fr": {"locale": "fr_FR", "name": "Français"},
+    "it": {"locale": "it_IT", "name": "Italiano"},
+    "es": {"locale": "es_ES", "name": "Español"},
+    "nl": {"locale": "nl_NL", "name": "Nederlands"},
+    "pt": {"locale": "pt_PT", "name": "Português"},
+}
+SUB_LANG_NAMES = {"en": "English", "tr": "Türkçe", **{k: v["name"] for k, v in SUB_LANGS.items()}}
+
+
+def load_sub_tmap(dir_, lang):
+    f = os.path.join(ROOT, "i18n", dir_, lang + ".json")
+    return json.load(open(f, encoding="utf-8")) if os.path.exists(f) else None
+
+
+def sub_url(dir_, lang):
+    return f"{BASE}/{dir_}/" if lang == "en" else f"{BASE}/{lang}/{dir_}/"
 SUB_TR_HREF["/privacy/"] = "/gizlilik/"
 SUB_TR_HREF["/gevher-nesibe/#film"] = "/tr/gevher-nesibe/#film"
 JS_REL = re.compile(r"""(["'])(?!/|https?:|data:|#)([\w\-./]+\.(?:webp|jpe?g|png|mp4|svg|json))\1""")
@@ -250,6 +271,10 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
         for en_href, tr_href in SUB_TR_HREF.items():
             for a in soup.select(f'a[href="{en_href}"]'):
                 a["href"] = tr_href
+    elif lang in SUB_LANGS and load_sub_tmap("gevher-nesibe", lang) is not None:
+        for en_href in ("/gevher-nesibe/", "/gevher-nesibe/#film"):
+            for a in soup.select(f'a[href="{en_href}"]'):
+                a["href"] = f"/{lang}" + en_href
 
     # 6b) attribute translations + (extra languages) the AI-translation note in the footer
     if src_rel == "index.html":
@@ -318,52 +343,107 @@ def build(src_rel, lang, cfg, meta_all, tmap=None):
             "paths_fixed": fixed, "size_kb": round(len(out) / 1024)}
 
 
-def build_sub(job):
-    """Vaka sayfasının statik TR sürümü: /tr/<dir>/index.html."""
+def build_sub(job, lang="tr", tmap=None):
+    """Vaka sayfasının statik dil sürümü: /tr/<dir>/ ya da (tmap ile) /<dil>/<dir>/index.html."""
     raw = open(os.path.join(ROOT, job["src"]), encoding="utf-8").read()
     soup = BeautifulSoup(raw, "html.parser")
-    soup.html["lang"] = "tr"
+    soup.html["lang"] = lang
     en_url, tr_url = f"{BASE}/{job['dir']}/", f"{BASE}/tr/{job['dir']}/"
+    page_url = sub_url(job["dir"], lang)
 
     swapped = 0
-    for el in soup.select("[data-tr]"):
-        val = el["data-tr"]
-        el.clear()
-        if job["mode"] == "text":
+    if tmap is None:
+        for el in soup.select("[data-tr]"):
+            val = el["data-tr"]
+            el.clear()
+            if job["mode"] == "text":
+                el.append(val)
+            else:
+                for child in list(BeautifulSoup(val, "html.parser").contents):
+                    el.append(child)
+            swapped += 1
+    else:
+        import html as _html
+        for el in soup.select("[data-en]"):
+            key = tkey(_html.unescape(el["data-en"]))
+            val = tmap.get(key)
+            if not val:
+                MISSING.setdefault(lang, []).append(el["data-en"][:80])
+                continue
+            el.clear()
             el.append(val)
-        else:
-            for child in list(BeautifulSoup(val, "html.parser").contents):
-                el.append(child)
-        swapped += 1
+            swapped += 1
+        for el in soup.select("[data-cap-en]"):
+            val = tmap.get(tkey(_html.unescape(el["data-cap-en"])))
+            if val:
+                el[f"data-cap-{lang}"] = val
+                swapped += 1
+            else:
+                MISSING.setdefault(lang, []).append(el["data-cap-en"][:80])
+        # dil menüsü: aktif dil işaretli, AI çeviri notu
+        sel = soup.select_one(".lsel")
+        if sel is not None:
+            for o in sel.select("option"):
+                if o.get("value") == lang:
+                    o["selected"] = "selected"
+                else:
+                    o.attrs.pop("selected", None)
+        note = tmap.get("_ai_note")
+        if note and soup.footer:
+            t = soup.new_tag("span")
+            t["class"] = ["ft-ai"]
+            t.string = " · " + note
+            soup.footer.append(t)
     for el in soup.select("[data-aria-tr]"):
-        el["aria-label"] = el["data-aria-tr"]
+        if lang == "tr":
+            el["aria-label"] = el["data-aria-tr"]
     for el in soup.select("[data-href-tr]"):
-        el["href"] = el["data-href-tr"]
+        if lang == "tr":
+            el["href"] = el["data-href-tr"]
     # sayfa dili kilitli: kaydedilmiş 'en' tercihi TR sayfayı İngilizceye çevirmesin
     for s in soup.find_all("script"):
         if s.string and "getItem('lang')" in s.string and "documentElement.lang=" in s.string:
             s.decompose()
     for b in soup.select(".lang button[data-l], .lang-btn[data-lang]"):
-        on = (b.get("data-l") or b.get("data-lang")) == "tr"
+        on = (b.get("data-l") or b.get("data-lang")) == lang
         b["aria-pressed"] = "true" if on else "false"
         if b.get("data-lang"):
             b["class"] = [c for c in b.get("class", []) if c != "active"] + (["active"] if on else [])
+    if tmap is not None:
+        # EN/TR düğmeleri bu sayfada swap yapmasın, gerçek URL'lere gitsin
+        for b in soup.select(".lang button[data-l]"):
+            a = soup.new_tag("a", href=("/" + job["dir"] + "/") if b["data-l"] == "en" else f"/tr/{job['dir']}/")
+            a["hreflang"] = b["data-l"]
+            a.string = b.get_text()
+            b.replace_with(a)
 
+    t_, d_ = (job["t"], job["d"]) if tmap is None else (tmap.get("_meta_t", job["t"]), tmap.get("_meta_d", job["d"]))
+    loc = "tr_TR" if tmap is None else SUB_LANGS[lang]["locale"]
     if soup.title:
-        soup.title.string = job["t"]
-    for k, v in (("og:title", job["t"]), ("og:description", job["d"]), ("og:url", tr_url), ("og:locale", "tr_TR")):
+        soup.title.string = t_
+    for k, v in (("og:title", t_), ("og:description", d_), ("og:url", page_url), ("og:locale", loc)):
         set_meta(soup, "property", k, v)
-    for k, v in (("description", job["d"]), ("twitter:title", job["t"]), ("twitter:description", job["d"])):
+    for k, v in (("description", d_), ("twitter:title", t_), ("twitter:description", d_)):
         set_meta(soup, "name", k, v)
 
     for link in soup.find_all("link", rel=lambda r: r and ("canonical" in r or "alternate" in r)):
         if link.get("hreflang") or "canonical" in (link.get("rel") or []):
             link.decompose()
-    soup.head.append(soup.new_tag("link", rel="canonical", href=tr_url))
-    for hl, href in (("en", en_url), ("tr", tr_url), ("x-default", en_url)):
+    soup.head.append(soup.new_tag("link", rel="canonical", href=page_url))
+    extra = [(l, sub_url(job["dir"], l)) for l in SUB_LANGS if load_sub_tmap(job["dir"], l) is not None]
+    for hl, href in [("en", en_url), ("tr", tr_url)] + extra + [("x-default", en_url)]:
         t = soup.new_tag("link", rel="alternate", href=href)
         t["hreflang"] = hl
         soup.head.append(t)
+    for sc in soup.find_all("script", type="application/ld+json"):
+        try:
+            data = json.loads(sc.string)
+        except Exception:
+            continue
+        if isinstance(data, dict) and data.get("url"):
+            data["url"] = page_url
+            data["inLanguage"] = lang
+            sc.string = json.dumps(data, ensure_ascii=False)
 
     # göreli yollar: sayfa artık bir seviye derinde, kaynak klasörüne sabitle
     prefix = f"/{job['dir']}/"
@@ -394,7 +474,7 @@ def build_sub(job):
         if s.string:
             s.string = re.sub(r"url\((['\"]?)(?!/|https?:|data:)", lambda m: "url(" + m.group(1) + prefix, s.string)
 
-    dest_dir = os.path.join(OUT_ROOT, "tr", job["dir"])
+    dest_dir = os.path.join(OUT_ROOT, lang, job["dir"])
     os.makedirs(dest_dir, exist_ok=True)
     dest = os.path.join(dest_dir, "index.html")
     out = str(soup)
@@ -412,6 +492,10 @@ def main():
     results = []
     for job in SUBPAGES:
         results.append(("tr", build_sub(job)))
+        for lang in SUB_LANGS:
+            tmap = load_sub_tmap(job["dir"], lang)
+            if tmap is not None:
+                results.append((lang, build_sub(job, lang, tmap)))
     for job in JOBS:
         raw = open(os.path.join(ROOT, job["src"]), encoding="utf-8").read()
         meta_all = lang_meta(raw)

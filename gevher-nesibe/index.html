@@ -12,6 +12,12 @@
 <link rel="canonical" href="https://eraybalat.com/gevher-nesibe/" />
 <link rel="alternate" hreflang="en" href="https://eraybalat.com/gevher-nesibe/" />
 <link rel="alternate" hreflang="tr" href="https://eraybalat.com/tr/gevher-nesibe/" />
+<link rel="alternate" hreflang="de" href="https://eraybalat.com/de/gevher-nesibe/" />
+<link rel="alternate" hreflang="fr" href="https://eraybalat.com/fr/gevher-nesibe/" />
+<link rel="alternate" hreflang="it" href="https://eraybalat.com/it/gevher-nesibe/" />
+<link rel="alternate" hreflang="es" href="https://eraybalat.com/es/gevher-nesibe/" />
+<link rel="alternate" hreflang="nl" href="https://eraybalat.com/nl/gevher-nesibe/" />
+<link rel="alternate" hreflang="pt" href="https://eraybalat.com/pt/gevher-nesibe/" />
 <link rel="alternate" hreflang="x-default" href="https://eraybalat.com/gevher-nesibe/" />
 <meta name="theme-color" content="#10284a" />
 <meta property="og:type" content="website" />
@@ -47,7 +53,7 @@ a{color:var(--tq2)}
 .top a.home{color:var(--ink);text-decoration:none;font-weight:600;font-size:.92rem;text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .lang{display:flex;gap:2px;padding:3px;border-radius:999px;background:rgba(8,20,40,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .lang button{border:0;background:none;color:var(--body);font:600 .72rem 'IBM Plex Mono',monospace;letter-spacing:.06em;padding:6px 10px;border-radius:999px;cursor:pointer}
-.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}.lang a{display:inline-block;color:var(--body);font:600 .72rem 'IBM Plex Mono',monospace;letter-spacing:.06em;padding:6px 10px;border-radius:999px;text-decoration:none}.lang a:hover{background:rgba(255,255,255,.1)}
 .hero{position:relative;min-height:88svh;display:flex;align-items:flex-end;overflow:hidden}
 .hero picture img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero video{opacity:0;transition:opacity .8s}
@@ -272,12 +278,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
 .live{display:grid;gap:14px;grid-template-columns:1fr;margin-bottom:8px}@media(min-width:900px){.live{grid-template-columns:1fr 1fr}}.evo-r.pair{grid-template-columns:repeat(2,minmax(0,1fr))!important}.sbnote{font-size:.9rem;color:var(--dim);max-width:70ch;margin:0 0 12px}
 .cast{display:grid;gap:16px;grid-template-columns:1fr}@media(min-width:760px){.cast{grid-template-columns:1fr 1fr}}.cst{margin:0;display:grid;grid-template-columns:1fr;gap:6px;align-items:end}@media(min-width:560px){.cst{grid-template-columns:1.6fr 1fr}}.cst a img{width:100%;height:auto;border-radius:6px;display:block}.cst figcaption{grid-column:1/-1;display:flex;flex-direction:column;gap:2px;font-size:.84rem;color:var(--dim)}.cst figcaption b{font-family:var(--serif);font-weight:400;font-size:1.05rem;color:var(--ink)}
 .cred dd a{color:inherit;text-decoration:underline;text-decoration-color:var(--dim);text-underline-offset:3px}.cred dd a:hover{text-decoration-color:currentColor}
+.lang .lsw{display:inline-flex;align-items:center;gap:4px;padding:0 6px 0 8px;color:var(--body);font-size:.8rem;position:relative}.lang .lsel{appearance:none;-webkit-appearance:none;border:0;background:none;color:var(--body);font:600 .72rem 'IBM Plex Mono',monospace;letter-spacing:.06em;padding:6px 4px;cursor:pointer;max-width:92px}.lang .lsel:focus-visible{outline:2px solid var(--tq);outline-offset:2px;border-radius:6px}.lang .lsel option{color:#10233a;background:#fff}footer .ft-ai{color:var(--dim)}
 </style>
 </head>
 <body>
 <div class="progress" aria-hidden="true"></div><button class="totop" type="button" aria-label="Back to top">↑</button>
 <header class="top"><a class="home" href="/" data-href-tr="/tr/" data-en="← Eray Balat" data-tr="← Eray Balat">← Eray Balat</a>
-<div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="tr" aria-pressed="false">TR</button></div></header>
+<div class="lang" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="tr" aria-pressed="false">TR</button><label class="lsw"><span aria-hidden="true">🌐</span><select class="lsel" aria-label="Language"><option value="en">English</option><option value="tr">Türkçe</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="it">Italiano</option><option value="es">Español</option><option value="nl">Nederlands</option><option value="pt">Português</option></select></label></div></header>
 <main>
 <div class="hero">
 <picture><img src="hero-s.webp" srcset="hero-s.webp 900w, hero.webp 1800w" sizes="(max-width:760px) 300px, 100vw" width="1800" height="1004" alt="The Gevher Nesibe hospital and medical school in 1206, seen from the air with Mount Erciyes behind it" fetchpriority="high" /></picture>
@@ -321,11 +328,11 @@ function setLang(l){L=l;document.documentElement.lang=l;try{localStorage.setItem
 document.querySelectorAll('[data-'+l+']').forEach(function(el){el.textContent=el.getAttribute('data-'+l)});
 document.querySelectorAll('[data-href-tr]').forEach(function(el){if(!el.dataset.hrefEn)el.dataset.hrefEn=el.getAttribute('href');el.setAttribute('href',l==='tr'?el.dataset.hrefTr:el.dataset.hrefEn)});
 document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});}
-document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+var LS=document.querySelector('.lsel');if(LS){var cur=document.documentElement.lang||'en';if([].some.call(LS.options,function(o){return o.value===cur}))LS.value=cur;LS.addEventListener('change',function(){var v=LS.value;if(v==='en'||v==='tr'){setLang(v);return;}location.href='/'+v+'/gevher-nesibe/'+location.hash;});}document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
 if(L!=='en')setLang(L);
 
 document.documentElement.classList.add('js');
-var LANG=function(){return document.documentElement.lang==='tr'?'tr':'en'};
+var LANG=function(){return document.documentElement.lang||'en'};
 var CALM=matchMedia('(prefers-reduced-motion:reduce)').matches;
 /* compare: 2 stages = drag slider (keyboard via range), 3 stages = tabs (arrow keys) */
 document.querySelectorAll('.cmp').forEach(function(f){var n=+f.dataset.n,b=f.querySelector('.cbox'),tabs=[].slice.call(f.querySelectorAll('.ct')),imgs=f.querySelectorAll('.cs'),r=f.querySelector('.cr');
