@@ -8,7 +8,7 @@ window.EB = {
     bushido:   { t: "Bushido", k: "Campaign concept · synthetic cast", role: "Director", href: "/bushido/", hrefLabel: "See the campaign" },
     novora:    { t: "Novora", k: "Animated brand film · 0:27 · TR / EN", role: "Director", href: "https://youtu.be/GAGlpIw3Q2Y", hrefLabel: "Watch (EN)" },
     konfuse:   { t: "Konfuse", k: "Brand world film", role: "Director", href: "https://youtube.com/shorts/zhqaCtjbwmI", hrefLabel: "Watch on YouTube" },
-    music:     { t: "Music videos", k: "Universal Music Türkiye", role: "AI creator" },
+    music:     { t: "Music videos", k: "Modd", role: "AI creator" },
     real:      { t: "Real footage", k: "Short films, shot on a camera", role: "Writer · director · editor" },
     about:     { t: "About", k: "Director, editor · Kayseri, Türkiye" },
     mark:      { t: "The mark", k: "An eight-point Seljuk star" },
@@ -51,7 +51,7 @@ window.EB = {
     "kf.what": "A brand world film for a leather duffel bag, with an <b>original score</b>.",
     "kf.world": "One world across every shot: mountains, a white horse, the landscape embroidered on the leather.",
 
-    "mv.what": "Official music videos for <b>Modd</b>, released by <b>Universal Music Türkiye</b>. AI creators: Eray and Berkay Efe Balat.",
+    "mv.what": "Official music videos for <b>Modd</b>. AI creators: Eray and Berkay Efe Balat.",
 
     "rf.what": "Shot on a camera. No AI. I still shoot when the film needs it.",
     "rf.swiss": "<b>Switzerland in One Hour</b> · a one-hour challenge, shot on my first day behind the camera",
@@ -78,7 +78,7 @@ window.EB = {
     "ab.bio": "Cinema at Erciyes University. Most of my films are built from generated footage; the work is making it hold together as one film. Edit, sound, colour and score are finished in house.",
     "ab.tools": "Nano Banana · Kling · Seedance · Flora · Firefly · Topaz · ElevenLabs · Suno · Premiere Pro · After Effects · Photoshop",
     "ab.suno": "<b>5,500+ songs</b> made on Suno. Suno Ambassador, 2025.",
-    "ab.clients": "Universal Music Türkiye · TennisCut · Novora · Konfuse",
+    "ab.clients": "TennisCut · Novora · Konfuse",
 
     "mk.what": "An eight-point Seljuk star, drawn as a square and a diamond that pass over and under each other, eight times. Stars like it run through the Seljuk stonework of Kayseri.",
 

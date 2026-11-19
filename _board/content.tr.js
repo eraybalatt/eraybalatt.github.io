@@ -8,7 +8,7 @@ window.EB = {
     bushido:   { t: "Bushido", k: "Kampanya konsepti · sentetik oyuncular", role: "Yönetmen", href: "/bushido/", hrefLabel: "Kampanyayı gör" },
     novora:    { t: "Novora", k: "Animasyon marka filmi · 0:27 · TR / EN", role: "Yönetmen", href: "https://youtu.be/S9hG_Ga7wIg", hrefLabel: "İzle (TR)" },
     konfuse:   { t: "Konfuse", k: "Marka dünyası filmi", role: "Yönetmen", href: "https://youtube.com/shorts/zhqaCtjbwmI", hrefLabel: "YouTube'da izle" },
-    music:     { t: "Müzik videoları", k: "Universal Music Türkiye", role: "AI yapımcı" },
+    music:     { t: "Müzik videoları", k: "Modd", role: "AI yapımcı" },
     real:      { t: "Gerçek çekim", k: "Kamerayla çekilmiş kısa filmler", role: "Senarist · yönetmen · kurgucu" },
     about:     { t: "Hakkımda", k: "Yönetmen, kurgucu · Kayseri, Türkiye" },
     mark:      { t: "İşaret", k: "Sekiz köşeli Selçuklu yıldızı" },
@@ -51,7 +51,7 @@ window.EB = {
     "kf.what": "Deri bir seyahat çantası için <b>özgün müzikli</b> bir marka dünyası filmi.",
     "kf.world": "Her planda tek bir dünya: dağlar, beyaz bir at, derinin üstüne işlenmiş manzara.",
 
-    "mv.what": "<b>Universal Music Türkiye</b>'nin yayınladığı <b>Modd</b> resmî müzik videoları. AI yapımcılar: Eray ve Berkay Efe Balat.",
+    "mv.what": "<b>Modd</b> için resmî müzik videoları. AI yapımcılar: Eray ve Berkay Efe Balat.",
 
     "rf.what": "Kamerayla çekildi. AI yok. Film gerektirdiğinde hâlâ çekiyorum.",
     "rf.swiss": "<b>Switzerland in One Hour</b> · bir saatlik meydan okuma, kamera arkasındaki ilk günümde çekildi",
@@ -78,7 +78,7 @@ window.EB = {
     "ab.bio": "Erciyes Üniversitesi'nde sinema okuyorum. Filmlerimin çoğu üretilmiş görüntüden kuruluyor; asıl iş onu tek bir film gibi bir arada tutmak. Kurgu, ses, renk ve müzik evde bitiyor.",
     "ab.tools": "Nano Banana · Kling · Seedance · Flora · Firefly · Topaz · ElevenLabs · Suno · Premiere Pro · After Effects · Photoshop",
     "ab.suno": "Suno'da <b>5.500'den fazla şarkı</b>. Suno Ambassador, 2025.",
-    "ab.clients": "Universal Music Türkiye · TennisCut · Novora · Konfuse",
+    "ab.clients": "TennisCut · Novora · Konfuse",
 
     "mk.what": "Sekiz köşeli bir Selçuklu yıldızı: sekiz kez birbirinin üstünden ve altından geçen bir kare ve bir eşkenar dörtgen. Kayseri'deki Selçuklu taş işçiliğinde bu yıldızlar her yerde.",
 
