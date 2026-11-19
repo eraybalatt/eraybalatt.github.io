@@ -80,6 +80,46 @@
 
 /* 8 Kas 2026: light colour pass */
 :root{--acc-tq:#5fd4c4;--acc-gd:#f2cd86;--acc-tq-line:rgba(95,212,196,.5);--acc-gd-line:rgba(242,205,134,.5)}#featured .eyebrow,#brands .eyebrow{color:#bdeee7}#featured .eyebrow::before,#brands .eyebrow::before{background:var(--acc-tq)!important;box-shadow:0 0 0 3px rgba(95,212,196,.18)}#films .eyebrow,#reviews .eyebrow{color:#f6e3b8}#films .eyebrow::before,#reviews .eyebrow::before{background:var(--acc-gd)!important;box-shadow:0 0 0 3px rgba(242,205,134,.18)}#ugc .eyebrow::before,#music .eyebrow::before,#contact .eyebrow::before,#about .eyebrow::before{box-shadow:0 0 0 3px rgba(76,194,255,.18)}#featured .sec-title em,#brands .sec-title em{color:#a9ece2}#films .sec-title em,#reviews .sec-title em{color:#f6dca3}.card,.fcard,.rev-card{box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}@media(hover:hover){.card:hover{border-color:rgba(76,194,255,.45);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 14px 30px -16px rgba(5,14,30,.7),0 0 0 1px rgba(76,194,255,.12)}#featured .card:hover,#brands .card:hover{border-color:var(--acc-tq-line)}#films .card:hover,#reviews .card:hover{border-color:var(--acc-gd-line)}}main>section+section{border-top:1px solid rgba(154,209,255,.07)}main>section{position:relative}main>section::before{content:"";position:absolute;inset:0;height:min(720px,100%);pointer-events:none;z-index:0;background:radial-gradient(34% 62% at 34% 6%,rgba(76,194,255,.10) 0%,rgba(76,194,255,0) 100%)}#featured::before,#brands::before{background:radial-gradient(34% 62% at 34% 6%,rgba(95,212,196,.12) 0%,rgba(95,212,196,0) 100%)}#films::before,#reviews::before{background:radial-gradient(34% 62% at 34% 6%,rgba(242,205,134,.10) 0%,rgba(242,205,134,0) 100%)}main>section>*{position:relative;z-index:1}
+/* 19 Kas 2026: Aydınlıkevler 175 öne çıkan kartı. Aydınlık, sıcak ışık; sonsuz CSS animasyonu yok (döngü video, yalnız görünürken oynar), büyük bulanık gölge yok, ışık gradyanla */
+.ay-feature{--ay-ink:#1d1a16;--ay-body:#433c33;--ay-brick:#8a2424;--ay-gold:#d9a441;--ay-gink:#5f3d06;display:grid;grid-template-columns:minmax(0,1fr);margin:10px 0 26px;border-radius:22px;overflow:hidden;color:var(--ay-ink);background:radial-gradient(55% 70% at 26% 42%,rgba(255,204,124,.85),rgba(255,204,124,0) 70%),radial-gradient(60% 60% at 100% 0%,rgba(255,244,224,.95),rgba(255,244,224,0) 70%),linear-gradient(135deg,#fff8ec 0%,#fcebcf 55%,#f4d29a 100%);box-shadow:0 0 0 1px rgba(255,222,166,.75),0 0 0 7px rgba(255,200,120,.13)}
+.ay-stage{position:relative;display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.8vw,18px);padding:40px 14px 30px;overflow:hidden}
+.ay-stage::before{content:"";position:absolute;right:-12%;top:-35%;width:95%;height:170%;pointer-events:none;background:conic-gradient(from 200deg at 58% 30%,rgba(255,232,186,0) 0deg,rgba(255,240,204,.6) 13deg,rgba(255,232,186,0) 32deg,rgba(255,244,214,.45) 60deg,rgba(255,232,186,0) 84deg,rgba(255,240,204,.35) 112deg,rgba(255,232,186,0) 134deg)}
+.ay-ph{position:relative;z-index:1;margin:0;flex:0 0 auto;width:27%;max-width:168px;aspect-ratio:9/16;border-radius:18px;padding:5px;background:linear-gradient(160deg,#fff,#efdfc4);box-shadow:0 0 0 1px rgba(29,26,22,.08),0 14px 24px -16px rgba(140,90,20,.55);text-decoration:none;color:inherit}
+.ay-ph img,.ay-ph video{width:100%;height:100%;object-fit:cover;border-radius:13px;display:block;background:#e9dcc6}
+.ay-main{width:40%;max-width:252px;border-radius:24px;padding:7px;box-shadow:0 0 0 1px rgba(29,26,22,.08),0 0 0 6px rgba(255,255,255,.5),0 18px 30px -18px rgba(140,90,20,.6)}
+.ay-main video{border-radius:18px}
+.ay-main::after{content:"";position:absolute;inset:7px;border-radius:18px;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.5) 48%,rgba(255,255,255,0) 62%);background-size:300% 100%;background-position:120% 0}
+.ay-feature.show .ay-main::after{animation:aysweep 2s .6s ease-out forwards}
+@keyframes aysweep{to{background-position:-60% 0}}
+.ay-main:focus-visible,.ay-btn:focus-visible,.ay-btn2:focus-visible{outline:3px solid var(--ay-brick);outline-offset:3px}
+.ay-tag{position:absolute;z-index:2;left:50%;top:11px;transform:translateX(-50%);max-width:90%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:3px 8px;border-radius:999px;background:rgba(29,26,22,.72);color:#fff;font:600 .56rem var(--mono,monospace);letter-spacing:.08em;text-transform:uppercase}
+.ay-new{position:absolute;z-index:3;left:16px;top:13px;padding:5px 12px;border-radius:999px;background:var(--ay-brick);color:#fff;font:700 .64rem var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase}
+.ay-body{position:relative;padding:28px 28px 30px;display:flex;flex-direction:column;justify-content:center}
+.ay-client{display:flex;flex-direction:column;gap:2px;padding-left:12px;border-left:2px solid var(--ay-gold);margin-bottom:16px}
+.ay-client span{font:600 .64rem var(--mono,monospace);letter-spacing:.14em;text-transform:uppercase;color:var(--ay-gink)}
+.ay-client b{font-weight:600;color:var(--ay-ink);font-size:.95rem}
+.ay-body h3{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,3.8vw,3.1rem);line-height:1;margin:0;color:var(--ay-ink)}
+.ay-feature .ay-body h3 em{font-style:italic;color:var(--ay-brick) !important}
+.ay-shine{position:relative;display:inline-block}
+.ay-shine::after{content:attr(data-shine) / "";position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none;background:linear-gradient(100deg,rgba(201,138,30,0) 0%,rgba(201,138,30,0) 40%,#c98a1e 47%,#fff0c2 51%,#c98a1e 55%,rgba(201,138,30,0) 62%,rgba(201,138,30,0) 100%);background-size:260% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.ay-feature.show .ay-shine::after{animation:ayshine 2.4s .35s ease-out forwards}
+@keyframes ayshine{to{background-position:0 0}}
+.ay-sub{font-family:var(--display);font-style:italic;font-size:1.25rem;color:var(--ay-brick);margin:6px 0 12px}
+.ay-body>p:not(.ay-sub){color:var(--ay-body);font-size:.96rem;line-height:1.6;margin:0 0 14px}
+.ay-pts{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:8px}
+.ay-pts li{position:relative;padding-left:22px;color:var(--ay-body);font-size:.92rem;line-height:1.5}
+.ay-pts li::before{content:"";position:absolute;left:2px;top:.5em;width:9px;height:9px;border-radius:50%;background:var(--ay-gold);box-shadow:0 0 0 3px rgba(217,164,65,.24)}
+.ay-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:0 0 20px;padding:14px 0;border-top:1px solid rgba(133,88,16,.22);border-bottom:1px solid rgba(133,88,16,.22)}
+.ay-facts dt{font:600 .62rem var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--ay-gink);margin-bottom:2px}
+.ay-facts dd{margin:0;color:var(--ay-ink);font-size:.88rem}
+.ay-btns{display:flex;flex-wrap:wrap;gap:10px}
+.ay-btn{padding:12px 22px;border-radius:999px;background:var(--ay-brick);color:#fff;font-weight:700;text-decoration:none}
+.ay-btn:hover{background:#9e2f2f;color:#fff}
+.ay-btn2{padding:12px 20px;border-radius:999px;background:#fff;color:var(--ay-ink);font-weight:700;text-decoration:none;box-shadow:inset 0 0 0 1px rgba(29,26,22,.16)}
+.ay-btn2:hover{color:var(--ay-ink);box-shadow:inset 0 0 0 1px var(--ay-gold)}
+@media (min-width:1000px){.ay-feature{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}.ay-stage{padding:44px 18px 40px}}
+@media (max-width:600px){.ay-body{padding:22px 20px 24px}.ay-stage{padding:44px 8px 24px}.ay-ph{border-radius:14px;padding:4px}.ay-ph img{border-radius:10px}.ay-main{border-radius:18px;padding:5px}.ay-main video{border-radius:13px}.ay-main::after{inset:5px;border-radius:13px}.ay-tag{top:7px;font-size:.5rem;padding:2px 6px;letter-spacing:.04em}}
+@media (prefers-reduced-motion:reduce){.ay-feature.show .ay-main::after{animation:none}.ay-shine::after{display:none}}
 </style>
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/*.mp4*"}},{"not":{"href_matches":"/*.pdf"}},{"not":{"href_matches":"/*.m4a"}},{"not":{"href_matches":"/files/*"}},{"not":{"href_matches":"/tr/files/*"}},{"not":{"selector_matches":"[data-vid],[data-vid-into],[download]"}}]},"eagerness":"moderate"}]}</script>
 <link href="https://eraybalat.com/ja/" rel="canonical"/><link href="https://eraybalat.com/" hreflang="en" rel="alternate"/><link href="https://eraybalat.com/tr/" hreflang="tr" rel="alternate"/><link href="https://eraybalat.com/fr/" hreflang="fr" rel="alternate"/><link href="https://eraybalat.com/de/" hreflang="de" rel="alternate"/><link href="https://eraybalat.com/it/" hreflang="it" rel="alternate"/><link href="https://eraybalat.com/es/" hreflang="es" rel="alternate"/><link href="https://eraybalat.com/pt/" hreflang="pt" rel="alternate"/><link href="https://eraybalat.com/fi/" hreflang="fi" rel="alternate"/><link href="https://eraybalat.com/zh/" hreflang="zh" rel="alternate"/><link href="https://eraybalat.com/ja/" hreflang="ja" rel="alternate"/><link href="https://eraybalat.com/ko/" hreflang="ko" rel="alternate"/><link href="https://eraybalat.com/ar/" hreflang="ar" rel="alternate"/><link href="https://eraybalat.com/" hreflang="x-default" rel="alternate"/><script>window.__formT={"sending": "送信中…", "ok": "✓ ありがとうございます。すぐにご連絡します。", "fail": "送信できませんでした。eray@eraybalat.com まで直接ご連絡ください。", "neterr": "ネットワークエラーです。eray@eraybalat.com まで直接ご連絡ください。", "notready": "フォームは現在利用できません。eray@eraybalat.com までご連絡ください。"};</script>
@@ -193,6 +233,23 @@
 <section id="featured">
 <div class="eyebrow reveal">注目作</div>
 <h2 class="sec-title reveal">注目の作品</h2>
+<article class="ay-feature reveal" id="aydinlikevler-175">
+<div class="ay-stage">
+<span class="ay-new">NEW</span>
+<figure class="ay-ph"><img alt="実際のドローン映像にカメラを合わせた建物の3Dモデル" decoding="async" height="960" loading="lazy" src="/aydinlikevler-175/img/bts-match-c-s.webp" width="540"/><figcaption class="ay-tag">Blender 3D</figcaption></figure>
+<a aria-label="Aydınlıkevler 175 の事例を開く" class="ay-ph ay-main" href="/aydinlikevler-175/"><video aria-hidden="true" data-ay-loop="" data-ay-poster="/aydinlikevler-175/img/f2-before-s.webp" data-poster-calm="/aydinlikevler-175/img/f2-after-s.webp" loop="" muted="" playsinline="" preload="none"><source src="/aydinlikevler-175/hero-loop.mp4" type="video/mp4"/></video><span class="ay-tag">2026 → 2028</span></a>
+<figure class="ay-ph"><img alt="夜の完成した棟と3D路面電車" decoding="async" height="960" loading="lazy" src="/aydinlikevler-175/img/f2-night-s.webp" width="540"/><figcaption class="ay-tag">3D路面電車</figcaption></figure>
+</div>
+<div class="ay-body">
+<div class="ay-client"><span>クライアント</span><b>Alphan İnşaat · Kayseri</b></div>
+<h3><span class="ay-shine" data-shine="Aydınlıkevler">Aydınlıkevler</span> <em>175</em></h3>
+<p class="ay-sub">まだ存在しない建物を売る</p>
+<p>まだ工事現場だった住宅プロジェクトのための、30秒の縦型広告2本。現場とデベロッパーをロケで撮影し、デベロッパーの3DモデルをBlenderで再構築して実際のドローンカメラに合わせ、完成した棟、街並み、インテリアをAIで生成しました。建築には一切手を加えていません。</p>
+<ul class="ay-pts"><li>カットなしのワンショット：デベロッパーの背後のコンクリート躯体が2028年の建物へと変わる</li><li>カメラに合わせた3Dガイドフレームが、ファサード、階数、敷地を図面どおりに保つ</li><li>実寸の3D路面電車。カメラを半ピクセル精度で解析し、自らのレールの上に合成</li></ul>
+<dl class="ay-facts"><div><dt>フォーマット</dt><dd>2 × 30秒 · 9:16</dd></div><div><dt>スタジオ</dt><dd>Citrine Studio</dd></div><div><dt>期間</dt><dd>2026年10月〜11月</dd></div><div><dt>手法</dt><dd>撮影 → Blender → AI → 3D路面電車</dd></div></dl>
+<div class="ay-btns"><a class="ay-btn" href="/aydinlikevler-175/">制作方法を見る →</a><a class="ay-btn2" href="/aydinlikevler-175/#films">▶ 広告を観る</a></div>
+</div>
+</article>
 <article class="gn-feature reveal" id="gevher-nesibe">
 <div class="gn-stage">
 <a aria-label="Gevher Nesibe, 1206 を開く" class="gn-slides" href="/gevher-nesibe/"><figure class="gn-sl on"><img alt="上空から見た病院と医学校、背後にエルジエス山" decoding="async" height="502" loading="eager" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/hero-s.webp" srcset="/gevher-nesibe/hero-s.webp 900w, /gevher-nesibe/hero-m.webp 1200w, /gevher-nesibe/hero.webp 1800w" width="900"/><figcaption>Erciyesと病院、1206年</figcaption></figure><figure class="gn-sl"><img alt="彫刻の門が開く" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g03-tackapi-s.webp" srcset="/gevher-nesibe/g03-tackapi-s.webp 900w, /gevher-nesibe/g03-tackapi-m.webp 1200w, /gevher-nesibe/g03-tackapi.webp 1800w" width="900"/><figcaption>彫刻の門</figcaption></figure><figure class="gn-sl"><img alt="中庭の池" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g05-havuz-s.webp" srcset="/gevher-nesibe/g05-havuz-s.webp 900w, /gevher-nesibe/g05-havuz-m.webp 1200w, /gevher-nesibe/g05-havuz.webp 1800w" width="900"/><figcaption>中庭の池</figcaption></figure><figure class="gn-sl"><img alt="本を囲む師と弟子" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g07-hoca-talebe-s.webp" srcset="/gevher-nesibe/g07-hoca-talebe-s.webp 900w, /gevher-nesibe/g07-hoca-talebe-m.webp 1200w, /gevher-nesibe/g07-hoca-talebe.webp 1800w" width="900"/><figcaption>師と弟子</figcaption></figure><figure class="gn-sl"><img alt="ガラスのフラスコを見つめる医師" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g11-karure-s.webp" srcset="/gevher-nesibe/g11-karure-s.webp 900w, /gevher-nesibe/g11-karure-m.webp 1200w, /gevher-nesibe/g11-karure.webp 1800w" width="900"/><figcaption>フラスコを読む</figcaption></figure><figure class="gn-sl"><img alt="回復した患者が戸口で別れを告げる" decoding="async" height="502" loading="lazy" sizes="(min-width:1000px) 55vw, 100vw" src="/gevher-nesibe/g14-veda-s.webp" srcset="/gevher-nesibe/g14-veda-s.webp 900w, /gevher-nesibe/g14-veda-m.webp 1200w, /gevher-nesibe/g14-veda.webp 1800w" width="900"/><figcaption>別れ</figcaption></figure></a>
@@ -236,9 +293,11 @@
 <div class="eyebrow reveal">UGC &amp; 広告</div>
 <h2 class="sec-title reveal">UGC &amp; ショート広告</h2>
 <p class="sec-sub reveal">スクロールを止める縦型広告。</p>
-<div aria-label="広告を絞り込む" class="ugc-filter reveal" hidden="" role="group"><button aria-pressed="true" class="uf on" data-cat="all" type="button"><span>すべて</span><i>14</i></button><button aria-pressed="false" class="uf" data-cat="app" type="button"><span>アプリ広告</span><i>9</i></button><button aria-pressed="false" class="uf" data-cat="ugc" type="button"><span>UGC</span><i>1</i></button><button aria-pressed="false" class="uf" data-cat="brand" type="button"><span>ブランド映像</span><i>4</i></button></div>
+<div aria-label="広告を絞り込む" class="ugc-filter reveal" hidden="" role="group"><button aria-pressed="true" class="uf on" data-cat="all" type="button"><span>すべて</span><i>16</i></button><button aria-pressed="false" class="uf" data-cat="estate" type="button"><span>不動産</span><i>2</i></button><button aria-pressed="false" class="uf" data-cat="app" type="button"><span>アプリ広告</span><i>9</i></button><button aria-pressed="false" class="uf" data-cat="ugc" type="button"><span>UGC</span><i>1</i></button><button aria-pressed="false" class="uf" data-cat="brand" type="button"><span>ブランド映像</span><i>4</i></button></div>
 <div aria-hidden="true" class="slj-divider reveal"><span class="slj-line"></span><span class="slj-star"></span><span class="slj-line"></span></div>
 <div class="grid g-ugc">
+<a class="card reveal" data-cat="estate" href="/aydinlikevler-175/"><div class="thumb v cover-c"><video data-poster="/aydinlikevler-175/img/f1-key-s.webp" loop="" muted="" playsinline="" preload="none" src="/aydinlikevler-175/film-1.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Alphan İnşaat</span></div><div class="card-body"><h3>Aydınlıkevler 175 — この鍵は、あなたのものに</h3><p>不動産広告 · 実写、3D、AI</p></div></a>
+<a class="card reveal" data-cat="estate" href="/aydinlikevler-175/"><div class="thumb v cover-c"><video data-poster="/aydinlikevler-175/img/f2-after-s.webp" loop="" muted="" playsinline="" preload="none" src="/aydinlikevler-175/film-2.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">Alphan İnşaat</span></div><div class="card-body"><h3>Aydınlıkevler 175 — 2028年のあなたの家</h3><p>不動産広告 · 2026年から2028年へのワンショット · 3D路面電車</p></div></a>
 <div class="card reveal" data-cat="app"><div class="thumb v cover-b"><video data-poster="/tenniscut-1-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-1.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — The Moment</h3><p>スポーツアプリのキャンペーン · フック映像</p></div></div>
 <div class="card reveal" data-cat="app"><div class="thumb v cover-c"><video data-poster="/tenniscut-2-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-2.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Dead Time Remover</h3><p>プルーフ映像 · 実際のアプリ画面をアニメーション化</p></div></div>
 <div class="card reveal" data-cat="app"><div class="thumb v cover-f"><video data-poster="/tenniscut-3-p-s.webp" loop="" muted="" playsinline="" preload="none" src="/tenniscut-3.mp4"></video><button aria-label="Unmute video" aria-pressed="false" class="sndbtn" type="button">🔇</button><span class="pill">TennisCut</span></div><div class="card-body"><h3>TennisCut — Best of Us</h3><p>ブランド映像 · オリジナル楽曲</p></div></div>
@@ -900,5 +959,12 @@ function start(){if(!calm&&!t)t=setInterval(function(){show(i+1)},3800)}function
 var held=false;dt.forEach(function(d,n){d.addEventListener('click',function(){held=true;stop();show(n)})});
 st.addEventListener('mouseenter',stop);st.addEventListener('mouseleave',function(){if(!held)start()});st.addEventListener('focusin',stop);st.addEventListener('focusout',function(){if(!held)start()});
 if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){st.querySelectorAll('img[loading=lazy]').forEach(function(x){x.loading='eager'});if(!held)start()}else stop()})}).observe(st)}})();</script>
+<script>/* 19 Kas 2026: Aydınlıkevler kartı - kapak 900px yaklaşınca yüklenir, döngü yalnız görünürken oynar; hareket azaltmada ve Save-Data'da oynamaz, bitmiş kare gösterilir */
+(function(){var v=document.querySelector('[data-ay-loop]');if(!v)return;var c=navigator.connection,calm=matchMedia('(prefers-reduced-motion:reduce)').matches||(c&&c.saveData);
+function poster(){if(!v.getAttribute('poster'))v.poster=(calm&&v.getAttribute('data-poster-calm'))||v.getAttribute('data-ay-poster')}
+if(!('IntersectionObserver' in window)){poster();return}
+new IntersectionObserver(function(es,o){if(es[0].isIntersecting){poster();o.disconnect()}},{rootMargin:'900px 0px'}).observe(v);
+if(calm)return;
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.preload='auto';var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.3}).observe(v)})();</script>
 </body>
 </html>

@@ -337,5 +337,44 @@
     "ja": "背景動画を一時停止",
     "ko": "배경 동영상 일시정지",
     "ar": "أوقف فيديو الخلفية مؤقتًا"
+  },
+  "Camera-matched 3D model of the building in the real drone shot": {
+    "tr": "Gerçek drone planında kameraya eşlenmiş 3D bina modeli",
+    "fr": "Maquette 3D de l’immeuble calée sur la caméra, dans le vrai plan drone",
+    "de": "Auf die Kamera gematchtes 3D-Modell des Gebäudes in der echten Drohnenaufnahme",
+    "it": "Modello 3D dell’edificio allineato alla camera, nella vera ripresa drone",
+    "es": "Modelo 3D del edificio ajustado a la cámara en el plano real del dron",
+    "pt": "Modelo 3D do prédio alinhado à câmera na tomada real do drone",
+    "fi": "Kameraan sovitettu 3D-malli rakennuksesta todellisessa drone-otoksessa",
+    "zh": "真实无人机镜头中与相机匹配的建筑 3D 模型",
+    "ja": "実際のドローン映像にカメラを合わせた建物の3Dモデル",
+    "ko": "실제 드론 화면에 카메라를 맞춘 건물 3D 모델",
+    "ar": "نموذج ثلاثي الأبعاد للمبنى مطابق للكاميرا داخل لقطة الطائرة المسيّرة الحقيقية"
+  },
+  "The finished blocks at night with the 3D trams": {
+    "tr": "Gece bitmiş bloklar ve 3D tramvaylar",
+    "fr": "Les immeubles achevés de nuit, avec les trams 3D",
+    "de": "Die fertigen Blöcke bei Nacht mit den 3D-Straßenbahnen",
+    "it": "I blocchi finiti di notte con i tram 3D",
+    "es": "Los bloques terminados de noche con los tranvías 3D",
+    "pt": "Os blocos prontos à noite com os bondes 3D",
+    "fi": "Valmiit talot yöllä 3D-raitiovaunujen kanssa",
+    "zh": "夜晚建成的楼栋与 3D 有轨电车",
+    "ja": "夜の完成した棟と3D路面電車",
+    "ko": "밤의 완공된 동과 3D 트램",
+    "ar": "المباني المكتملة ليلًا مع الترام ثلاثي الأبعاد"
+  },
+  "Open the Aydınlıkevler 175 case study": {
+    "tr": "Aydınlıkevler 175 vaka çalışmasını aç",
+    "fr": "Ouvrir l’étude de cas Aydınlıkevler 175",
+    "de": "Fallstudie Aydınlıkevler 175 öffnen",
+    "it": "Apri il caso studio Aydınlıkevler 175",
+    "es": "Abrir el caso de estudio Aydınlıkevler 175",
+    "pt": "Abrir o estudo de caso Aydınlıkevler 175",
+    "fi": "Avaa Aydınlıkevler 175 -tapaustutkimus",
+    "zh": "打开 Aydınlıkevler 175 案例",
+    "ja": "Aydınlıkevler 175 の事例を開く",
+    "ko": "Aydınlıkevler 175 사례 열기",
+    "ar": "افتح دراسة حالة Aydınlıkevler 175"
   }
 }

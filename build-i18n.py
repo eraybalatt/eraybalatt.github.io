@@ -62,6 +62,12 @@ SUBPAGES = [
      "t": "FLAWLESS — Antwerp Elmas Soygunu · CITRINE · Eray Balat",
      "d": "FLAWLESS: 2003 Antwerp Elmas Soygunu'nu yeniden kuran 4K yapay zekâ belgeseli; soygunun lideri "
           "Leonardo Notarbartolo ile özel röportaj. Yönetmen: Eray Balat."},
+    # 19 Kas 2026: Alphan İnşaat gayrimenkul reklamları vaka sayfası (kaynak: ALPHAN - Aydinlikevler 175/19_Portfolyo_Vaka_Calismasi)
+    {"src": "aydinlikevler-175/index.html", "dir": "aydinlikevler-175", "mode": "text",
+     "t": "Aydınlıkevler 175 · Gerçek çekim, 3D ve yapay zekâyla gayrimenkul reklamı · Eray Balat",
+     "d": "Alphan İnşaat için Aydınlıkevler 175: henüz şantiye olan bir konut projesi için iki dikey reklam filmi. "
+          "Saha çekimi, drone görüntüsüne eşlenen 3D model, bitmiş binalar için yapay zekâ ve sahnelere kare kare "
+          "oturtulan gerçek ölçüde 3D tramvay. Citrine Studio."},
 ]
 # alt sayfaların TR sürümüne giden bağlantılar (TR ana sayfa bunlara yönlenir)
 SUB_TR_HREF = {f"/{p['dir']}/": f"/tr/{p['dir']}/" for p in SUBPAGES}
@@ -88,6 +94,7 @@ def sub_url(dir_, lang):
     return f"{BASE}/{dir_}/" if lang == "en" else f"{BASE}/{lang}/{dir_}/"
 SUB_TR_HREF["/privacy/"] = "/gizlilik/"
 SUB_TR_HREF["/gevher-nesibe/#film"] = "/tr/gevher-nesibe/#film"
+SUB_TR_HREF["/aydinlikevler-175/#films"] = "/tr/aydinlikevler-175/#films"
 JS_REL = re.compile(r"""(["'])(?!/|https?:|data:|#)([\w\-./]+\.(?:webp|jpe?g|png|mp4|svg|json))\1""")
 
 
